@@ -22,7 +22,9 @@ When you click the **Knit** button a document will be generated that includes bo
 summary(cars)
 ```
 
-
+```{r myplot}
+plot(1:12)
+```
 
 ## Math 
 

@@ -3,7 +3,7 @@
 # or "https://USERNAME.github.io/REPO_NAME/" if not the first
 # replace USERNAME and REPO_NAME
 # If deploy on Netlify, change it to "/"
-baseURL = "https://www.dcassol.com/docsy_Rmarkdown/"
+baseURL = "https://girke.bioinformatics.ucr.edu/GEN242_docsy//"
 title = "Docsy Rmarkdown"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit", "\\.utf8"]
 enableRobotsTXT = true
