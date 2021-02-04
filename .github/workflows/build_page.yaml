@@ -1,0 +1,69 @@
+on:
+  push:
+     branches:
+       - main
+
+name: build_and_deploy_gh_pages
+
+jobs:
+  blogdown:
+    name: build_and_push_to_gh_pages
+    if: "contains(toJSON(github.event.commits.*.message), 'pg_build') && ! contains(toJSON(github.event.commits.*.message), 'no_render')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: "recursive"
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: install node pkgs
+        run: |
+          npm install -g postcss-cli
+          npm install autoprefixer
+          npm audit fix
+      - uses: r-lib/actions/setup-r@v1
+      - uses: r-lib/actions/setup-pandoc@v1
+      - name: Cache R packages
+        uses: actions/cache@v2
+        with:
+          path: ${{ env.R_LIBS_USER }}
+          key: blogdown-1-dep
+          restore-keys: blogdown-1-dep
+      - name: Install system dependencies
+        run: bash .github/bash/install_system.sh
+      - name: Install R dependencies
+        run: Rscript R/solve_deps.R
+      - name: Install Hugo
+        run: Rscript -e 'blogdown::install_hugo(extended = TRUE)'
+      - name: Run hugo_build()
+        run: |
+          Rscript -e 'blogdown::build_site(build_rmd = "md5sum")'
+          Rscript -e 'writeLines(as.character(Sys.time()), "blogdown/timestamp.txt")'
+      - name: Update github
+        run: |
+          git config --local user.name "dcassol"
+          git config --local user.email "danicassol@gmail.com"
+          git add -A
+          git commit -m "Bot update public and md5sum table" -a
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+  ph-pages:
+    name: gh_pages_only
+    if: "contains(toJSON(github.event.commits.*.message), 'no_render')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public

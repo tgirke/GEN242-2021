@@ -1,0 +1,15 @@
+
+[build]
+command = "cd themes/docsy && git submodule update -f --init && cd ../.. && hugo"
+publish = "netlify"
+[build.environment]
+HUGO_VERSION = "0.79.0"
+
+[context]
+[context.branch-deploy]
+command = "hugo -F -b $DEPLOY_PRIME_URL --baseURL /" 
+[context.deploy-preview]
+command = "hugo -F -b $DEPLOY_PRIME_URL --baseURL /"
+[context.production]
+[context.production.environment]
+HUGO_ENV = "production"

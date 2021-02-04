@@ -1,0 +1,70 @@
+---
+title: "Basic R markdown"
+author: "author"
+date: "1/28/2021"
+output: html_document
+bibliography: bibtex.bib
+weight: 1
+type: docs
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+
+
+## Math 
+
+$$\sum(a+b)$$
+
+Inline math $\sum(a+b)$. 
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+## Violin Plot with `ggplot2`
+
+```{r}
+# Library
+library(ggplot2)
+# create a dataset
+data <- data.frame(
+  name=c( rep("A",500), rep("B",500), rep("B",500), rep("C",20), rep('D', 100)  ),
+  value=c( rnorm(500, 10, 5), rnorm(500, 13, 1), rnorm(500, 18, 1), rnorm(20, 25, 4), rnorm(100, 12, 1) )
+)
+
+# Most basic violin chart
+p <- ggplot(data, aes(x=name, y=value, fill=name)) + # fill=name allow to automatically dedicate a color for each group
+  geom_violin()
+p
+```
+
+## Violin Plot with interactive plot (plotly)
+
+```{r, message=FALSE}
+library(plotly)
+ggplotly(p)
+```
+
+Add references [@R-2021]. 
+
+## References
+

@@ -1,0 +1,260 @@
+# If deploy on github pages, change baseURL to repo's url
+# eg: "https://USERNAME.github.io/" if this is your first website
+# or "https://USERNAME.github.io/REPO_NAME/" if not the first
+# replace USERNAME and REPO_NAME
+# If deploy on Netlify, change it to "/"
+baseURL = "https://www.dcassol.com/docsy_Rmarkdown/"
+title = "Docsy Rmarkdown"
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit", "\\.utf8"]
+enableRobotsTXT = true
+relativeURLs = true
+
+# Hugo allows theme composition (and inheritance). The precedence is from left to right.
+theme = ["docsy"]
+# Will give values to .Lastmod etc.
+enableGitInfo = true
+
+# Language settings
+contentDir = "content/en"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+# Useful when translating.
+enableMissingTranslationPlaceholders = true
+
+disableKinds = ["taxonomy", "taxonomyTerm"]
+
+# Highlighting config
+pygmentsCodeFences = false
+pygmentsUseClasses = false
+# Use the new Chroma Go highlighter in Hugo.
+pygmentsUseClassic = false
+pygmentsOptions = "linenos=table"
+# See https://help.farbox.com/pygments.html
+# pygmentsStyle = "vs"
+
+# Configure how URLs look like per section.
+[permalinks]
+blog = "/:section/:year/:month/:day/:slug/"
+
+## Configuration for BlackFriday markdown parser: https://github.com/russross/blackfriday
+## not used in HUGO > 0.6
+#[blackfriday]
+#plainIDAnchors = true
+#hrefTargetBlank = true
+#angledQuotes = false
+#latexDashes = true
+
+# Image processing configuration.
+[imaging]
+resampleFilter = "CatmullRom"
+quality = 75
+anchor = "smart"
+
+[services]
+[services.googleAnalytics]
+# Comment out the next line to disable GA tracking. Also disables the feature described in [params.ui.feedback].
+id = "UA-00000000-0"
+
+# Language configuration
+
+[languages]
+[languages.en]
+title = "Goldydocs"
+description = "A Docsy example site"
+languageName ="English"
+time_format_default = "2006-01-02"
+time_format_blog = "2006-01-02"
+## Weight used for sorting.
+## uncomment below for more than one language support
+#weight = 1
+#[languages.no]
+#title = "Goldydocs"
+#description = "Docsy er operativsystem for skyen"
+#languageName ="Norsk"
+#contentDir = "content/no"
+#time_format_default = "02.01.2006"
+#time_format_blog = "02.01.2006"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+## markdown parse level, start with h2 headings ('##'), can be low as 1
+  [markup.tableOfContents]
+    endLevel = 6
+    ordered = false
+    startLevel = 2
+## prism.js to hightlight, comment default
+#  [markup.highlight]
+      # See a complete list of available styles at https://xyproto.github.io/splash/docs/all.html
+      # Uncomment if you want your chosen highlight style used for code blocks without a specified language
+      # guessSyntax = "true"
+
+
+# Everything below this are Site Params
+[params]
+copyright = "The Docsy Authors"
+privacy_policy = "https://policies.google.com/privacy"
+
+# First one is picked as the Twitter card image if not set on page.
+# images = ["images/project-illustration.png"]
+
+# server location time will be used to parse timestamps in markdown headers
+# See this for locations https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+# if not provided, UTC will be used
+serverTimeLocation = "America/Los_Angeles"
+
+# When the "visibleDate" is specified in markdown header, how to hide the html
+# one of "soft" or "hard". soft will be using javascript, hard will prevent the
+# content being added at markdown rendering level
+visHideMethod = "soft"
+
+# A link to latest version of the docs. Used in the "version-banner" partial to
+# point people to the main doc site.
+url_latest_version = "https://systempipe.org/systempipeshinysite/docs"
+
+# Repository configuration (URLs for in-page links to opening issues and suggesting changes)
+github_repo = "https://github.com/systemPipeR/"
+# An optional link to a related project repo. For example, the sibling repository where your product code lives.
+github_project_repo = "https://github.com/systemPipeR/"
+# Since Github change default from "master" to "main", specify here.
+github_branch = "main"
+# Specify a value here if your content directory is not in your repo's root directory
+# github_subdir = ""
+
+# Google Custom Search Engine ID. Remove or comment out to disable search.
+# gcs_engine_id = "011737558837375720776:fsdu1nryfng"
+
+# Enable Algolia DocSearch
+algolia_docsearch = false
+
+# Enable Lunr.js offline search
+offlineSearch = true
+
+# Enable syntax highlighting and copy buttons on code blocks with Prism
+prism_syntax_highlighting = true
+
+# Menu title if your navbar has a versions selector to access old versions of your site.
+# This menu appears only if you have at least one [params.versions] set.
+version_menu = "v1.1dev"
+
+# Flag used in the "version-banner" partial to decide whether to display a
+# banner on every page indicating that this is an archived version of the docs.
+# Set this flag to "true" if you want to display the banner.
+archived_version = false
+
+## The version number for the version of the docs represented in this doc set.
+## Used in the "version-banner" partial to display a version number for the
+## current doc set.
+## uncomment below for more than one versions of website links
+#version = "v1.0"
+
+#[[params.versions]]
+#  version = "v1.0"
+#  githubbranch = "master"
+#  url = "https://google.com"
+
+#[[params.versions]]
+#  version = "v1.1"
+#  githubbranch = "master"
+#  url = "https://google.com"
+
+# User interface configuration
+[params.ui]
+# Enable to show the side bar menu in its compact state.
+sidebar_menu_compact = false
+#  Set to true to disable breadcrumb navigation.
+breadcrumb_disable = false
+#  Set to true to hide the sidebar search box (the top nav search box will still be displayed if search is enabled)
+sidebar_search_disable = false
+#  Set to false if you don't want to display a logo (/assets/icons/logo.svg) in the top nav bar
+navbar_logo = true
+# Set to true to disable the About link in the site footer
+footer_about_disable = false
+
+# Adds a H2 section titled "Feedback" to the bottom of each doc. The responses are sent to Google Analytics as events.
+# This feature depends on [services.googleAnalytics] and will be disabled if "services.googleAnalytics.id" is not set.
+# If you want this feature, but occasionally need to remove the "Feedback" section from a single page,
+# add "hide_feedback: true" to the page's front matter.
+[params.ui.feedback]
+enable = true
+# The responses that the user sees after clicking "yes" (the page was helpful) or "no" (the page was not helpful).
+yes = 'Glad to hear it! Please <a href="https://github.com/USERNAME/REPOSITORY/issues/new">tell us how we can improve</a>.'
+no = 'Sorry to hear that. Please <a href="https://github.com/USERNAME/REPOSITORY/issues/new">tell us how we can improve</a>.'
+
+# Adds a reading time to the top of each doc.
+# If you want this feature, but occasionally need to remove the Reading time from a single page,
+# add "hide_readingtime: true" to the page's front matter
+[params.ui.readingtime]
+enable = true
+
+[params.links]
+# End user relevant links. These will show up on left side of footer and in the community page if you have one.
+[[params.links.user]]
+	name = "User mailing list"
+	url = "https://example.org/mail"
+	icon = "fa fa-envelope"
+        desc = "Discussion and help from your fellow users"
+[[params.links.user]]
+	name ="Twitter"
+	url = "https://example.org/twitter"
+	icon = "fab fa-twitter"
+        desc = "Follow us on Twitter to get the latest news!"
+[[params.links.user]]
+	name = "Stack Overflow"
+	url = "https://example.org/stack"
+	icon = "fab fa-stack-overflow"
+        desc = "Practical questions and curated answers"
+# Developer relevant links. These will show up on right side of footer and in the community page if you have one.
+[[params.links.developer]]
+	name = "GitHub"
+	url = "https://github.com/google/docsy"
+	icon = "fab fa-github"
+        desc = "Development takes place here!"
+[[params.links.developer]]
+	name = "Slack"
+	url = "https://example.org/slack"
+	icon = "fab fa-slack"
+        desc = "Chat with other project developers"
+[[params.links.developer]]
+	name = "Developer mailing list"
+	url = "https://example.org/mail"
+	icon = "fa fa-envelope"
+        desc = "Discuss development issues around the project"
+
+
+# Top-level navigation (horizontal)
+##
+[[menu.main]]
+  name = "Documentation"
+  weight = 1
+  url = "/docs/"
+  [[menu.main]]
+    name = "overview"
+    url = "/docs/overview/"
+    parent = "Documentation"
+    weight = 1
+##
+[[menu.main]]
+  name = "Rmarkdown"
+  weight = 2
+  url = "/rmarkdown/"
+  [[menu.main]]
+    name = "Basic Example"
+    url = "/rmarkdown/examples/example_rmd"
+    parent = "Rmarkdown"
+    weight = 1
+##
+[[menu.main]]
+  name = "About"
+  weight = 3
+  url = "/about/"
+[[menu.main]]
+  name = "About"
+  weight = 4
+  url = "/blog/"
+[[menu.main]]
+  name = "Blog"
+  weight = 5
+  url = "/community/"
+
