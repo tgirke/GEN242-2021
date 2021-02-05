@@ -16,4 +16,4 @@ cp -r public/* docs/ # Copy build/rendered pages to docs
 git add -A :/
 git commit -am "some edits"
 git push -u origin main
-echo "Committed/pushed changes to gh-pages branch on GitHub"
+echo "Committed/pushed changes to GitHub"
