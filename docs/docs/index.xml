@@ -3416,11 +3416,11 @@ bar := &amp;quot;foo&amp;quot;;
     </item>
     
     <item>
-      <title>Tutorials: Introduction to R</title>
-      <link>/tutorials/rbasics/rbasics/</link>
+      <title>Rmarkdown: Introduction to R</title>
+      <link>/rmarkdown/tutorials/rbasics/rbasics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/tutorials/rbasics/rbasics/</guid>
+      <guid>/rmarkdown/tutorials/rbasics/rbasics/</guid>
       <description>
         
         
@@ -3983,9 +3983,9 @@ close(zz)
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;frame1 &amp;lt;- iris[sample(1:length(iris[,1]), 30), ]
 frame1[1:2,]
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##    Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
-## 1           5.1         3.5          1.4         0.2     setosa
-## 64          6.1         2.9          4.7         1.4 versicolor
+&lt;pre&gt;&lt;code&gt;##     Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
+## 95           5.6         2.7          4.2         1.3 versicolor
+## 139          6.0         3.0          4.8         1.8  virginica
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;dim(frame1)
 &lt;/code&gt;&lt;/pre&gt;
@@ -4715,7 +4715,7 @@ top-to-bottom. This makes for easy to type and readable code.&lt;/p&gt;
     ggplot(aes(Samples, Values, fill = Species)) + 
         geom_bar(position=&amp;quot;dodge&amp;quot;, stat=&amp;quot;identity&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../en/tutorials/rbasics/Rbasics_files/figure-html/plyr_chaining3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../en/rmarkdown/tutorials/rbasics/Rbasics_files/figure-html/plyr_chaining3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;h1 id=&#34;sqlite-databases&#34;&gt;SQLite Databases&lt;/h1&gt;
 &lt;p&gt;&lt;code&gt;SQLite&lt;/code&gt; is a lightweight relational database solution. The &lt;code&gt;RSQLite&lt;/code&gt; package provides an easy to use interface to create, manage and query &lt;code&gt;SQLite&lt;/code&gt; databases directly from R. Basic instructions
 for using &lt;code&gt;SQLite&lt;/code&gt; from the command-line are available &lt;a href=&#34;https://www.sqlite.org/cli.html&#34;&gt;here&lt;/a&gt;. A short introduction to &lt;code&gt;RSQLite&lt;/code&gt; is available &lt;a href=&#34;https://github.com/rstats-db/RSQLite/blob/master/vignettes/RSQLite.Rmd&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
@@ -4739,16 +4739,16 @@ dbWriteTable(mydb, &amp;quot;mydf2&amp;quot;, mydf2)
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;dbGetQuery(mydb, &#39;SELECT * FROM mydf2&#39;)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##      ids Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
-## 1   id49          5.3         3.7          1.5         0.2     setosa
-## 2    id6          5.4         3.9          1.7         0.4     setosa
-## 3  id106          7.6         3.0          6.6         2.1  virginica
-## 4   id87          6.7         3.1          4.7         1.5 versicolor
-## 5  id111          6.5         3.2          5.1         2.0  virginica
-## 6   id30          4.7         3.2          1.6         0.2     setosa
-## 7  id120          6.0         2.2          5.0         1.5  virginica
-## 8   id69          6.2         2.2          4.5         1.5 versicolor
-## 9   id66          6.7         3.1          4.4         1.4 versicolor
-## 10 id122          5.6         2.8          4.9         2.0  virginica
+## 1  id104          6.3         2.9          5.6         1.8  virginica
+## 2  id135          6.1         2.6          5.6         1.4  virginica
+## 3   id49          5.3         3.7          1.5         0.2     setosa
+## 4   id37          5.5         3.5          1.3         0.2     setosa
+## 5  id139          6.0         3.0          4.8         1.8  virginica
+## 6  id133          6.4         2.8          5.6         2.2  virginica
+## 7   id52          6.4         3.2          4.5         1.5 versicolor
+## 8    id6          5.4         3.9          1.7         0.4     setosa
+## 9   id40          5.1         3.4          1.5         0.2     setosa
+## 10  id74          6.1         2.8          4.7         1.2 versicolor
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;query-database&#34;&gt;Query database&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;dbGetQuery(mydb, &#39;SELECT * FROM mydf1 WHERE &amp;quot;Sepal.Length&amp;quot; &amp;lt; 4.6&#39;)
@@ -4766,26 +4766,26 @@ dbWriteTable(mydb, &amp;quot;mydf2&amp;quot;, mydf2)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##      ids Sepal.Length Sepal.Width Petal.Length Petal.Width    Species   ids Sepal.Length
 ## 1    id6          5.4         3.9          1.7         0.4     setosa   id6          5.4
-## 2   id30          4.7         3.2          1.6         0.2     setosa  id30          4.7
-## 3   id49          5.3         3.7          1.5         0.2     setosa  id49          5.3
-## 4   id66          6.7         3.1          4.4         1.4 versicolor  id66          6.7
-## 5   id69          6.2         2.2          4.5         1.5 versicolor  id69          6.2
-## 6   id87          6.7         3.1          4.7         1.5 versicolor  id87          6.7
-## 7  id106          7.6         3.0          6.6         2.1  virginica id106          7.6
-## 8  id111          6.5         3.2          5.1         2.0  virginica id111          6.5
-## 9  id120          6.0         2.2          5.0         1.5  virginica id120          6.0
-## 10 id122          5.6         2.8          4.9         2.0  virginica id122          5.6
+## 2   id37          5.5         3.5          1.3         0.2     setosa  id37          5.5
+## 3   id40          5.1         3.4          1.5         0.2     setosa  id40          5.1
+## 4   id49          5.3         3.7          1.5         0.2     setosa  id49          5.3
+## 5   id52          6.4         3.2          4.5         1.5 versicolor  id52          6.4
+## 6   id74          6.1         2.8          4.7         1.2 versicolor  id74          6.1
+## 7  id104          6.3         2.9          5.6         1.8  virginica id104          6.3
+## 8  id133          6.4         2.8          5.6         2.2  virginica id133          6.4
+## 9  id135          6.1         2.6          5.6         1.4  virginica id135          6.1
+## 10 id139          6.0         3.0          4.8         1.8  virginica id139          6.0
 ##    Sepal.Width Petal.Length Petal.Width    Species
 ## 1          3.9          1.7         0.4     setosa
-## 2          3.2          1.6         0.2     setosa
-## 3          3.7          1.5         0.2     setosa
-## 4          3.1          4.4         1.4 versicolor
-## 5          2.2          4.5         1.5 versicolor
-## 6          3.1          4.7         1.5 versicolor
-## 7          3.0          6.6         2.1  virginica
-## 8          3.2          5.1         2.0  virginica
-## 9          2.2          5.0         1.5  virginica
-## 10         2.8          4.9         2.0  virginica
+## 2          3.5          1.3         0.2     setosa
+## 3          3.4          1.5         0.2     setosa
+## 4          3.7          1.5         0.2     setosa
+## 5          3.2          4.5         1.5 versicolor
+## 6          2.8          4.7         1.2 versicolor
+## 7          2.9          5.6         1.8  virginica
+## 8          2.8          5.6         2.2  virginica
+## 9          2.6          5.6         1.4  virginica
+## 10         3.0          4.8         1.8  virginica
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h1 id=&#34;graphics-in-r&#34;&gt;Graphics in R&lt;/h1&gt;
 &lt;h2 id=&#34;advantages&#34;&gt;Advantages&lt;/h2&gt;
@@ -4872,22 +4872,22 @@ y &amp;lt;- matrix(runif(30), ncol=3, dimnames=list(letters[1:10], LETTERS[1:3])
 &lt;p&gt;Plot data&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;plot(y[,1], y[,2]) 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../en/tutorials/rbasics/Rbasics_files/figure-html/basic_scatter_plot-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../en/rmarkdown/tutorials/rbasics/Rbasics_files/figure-html/basic_scatter_plot-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;h3 id=&#34;all-pairs&#34;&gt;All pairs&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;pairs(y) 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../en/tutorials/rbasics/Rbasics_files/figure-html/pairs_scatter_plot-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../en/rmarkdown/tutorials/rbasics/Rbasics_files/figure-html/pairs_scatter_plot-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;h3 id=&#34;with-labels&#34;&gt;With labels&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;plot(y[,1], y[,2], pch=20, col=&amp;quot;red&amp;quot;, main=&amp;quot;Symbols and Labels&amp;quot;)
 text(y[,1]+0.03, y[,2], rownames(y))
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../en/tutorials/rbasics/Rbasics_files/figure-html/labels_scatter_plot-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../en/rmarkdown/tutorials/rbasics/Rbasics_files/figure-html/labels_scatter_plot-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;h2 id=&#34;more-examples&#34;&gt;More examples&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Print instead of symbols the row names&lt;/strong&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;plot(y[,1], y[,2], type=&amp;quot;n&amp;quot;, main=&amp;quot;Plot of Labels&amp;quot;)
 text(y[,1], y[,2], rownames(y)) 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../en/tutorials/rbasics/Rbasics_files/figure-html/row_scatter_plot-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../en/rmarkdown/tutorials/rbasics/Rbasics_files/figure-html/row_scatter_plot-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Usage of important plotting parameters&lt;/strong&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;grid(5, 5, lwd = 2) 
 op &amp;lt;- par(mar=c(8,8,8,8), bg=&amp;quot;lightblue&amp;quot;)
@@ -4909,7 +4909,7 @@ par(op)
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;plot(y[,1], y[,2])
 myline &amp;lt;- lm(y[,2]~y[,1]); abline(myline, lwd=2) 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../en/tutorials/rbasics/Rbasics_files/figure-html/plot_regression-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../en/rmarkdown/tutorials/rbasics/Rbasics_files/figure-html/plot_regression-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;summary(myline) 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## 
@@ -4935,18 +4935,18 @@ myline &amp;lt;- lm(y[,2]~y[,1]); abline(myline, lwd=2)
 &lt;p&gt;Same plot as above, but on log scale&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;plot(y[,1], y[,2], log=&amp;quot;xy&amp;quot;) 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../en/tutorials/rbasics/Rbasics_files/figure-html/plot_regression_log-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../en/rmarkdown/tutorials/rbasics/Rbasics_files/figure-html/plot_regression_log-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;h3 id=&#34;add-a-mathematical-expression&#34;&gt;Add a mathematical expression&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;plot(y[,1], y[,2]); text(y[1,1], y[1,2], expression(sum(frac(1,sqrt(x^2*pi)))), cex=1.3) 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../en/tutorials/rbasics/Rbasics_files/figure-html/plot_regression_math-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../en/rmarkdown/tutorials/rbasics/Rbasics_files/figure-html/plot_regression_math-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;h2 id=&#34;homework-3b&#34;&gt;Homework 3B&lt;/h2&gt;
 &lt;p&gt;Homework 3B: &lt;a href=&#34;http://girke.bioinformatics.ucr.edu/GEN242/mydoc_homework_03.html&#34;&gt;Scatter Plots&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;line-plots&#34;&gt;Line Plots&lt;/h2&gt;
 &lt;h3 id=&#34;single-data-set&#34;&gt;Single data set&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;plot(y[,1], type=&amp;quot;l&amp;quot;, lwd=2, col=&amp;quot;blue&amp;quot;) 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../en/tutorials/rbasics/Rbasics_files/figure-html/plot_line_single-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../en/rmarkdown/tutorials/rbasics/Rbasics_files/figure-html/plot_line_single-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;h3 id=&#34;many-data-sets&#34;&gt;Many Data Sets&lt;/h3&gt;
 &lt;p&gt;Plots line graph for all columns in data frame &lt;code&gt;y&lt;/code&gt;. The &lt;code&gt;split.screen&lt;/code&gt; function is used in this example in a for loop to overlay several line graphs in the same plot.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;split.screen(c(1,1)) 
@@ -4959,7 +4959,7 @@ for(i in 2:length(y[1,])) {
     plot(y[,i], ylim=c(0,1), type=&amp;quot;l&amp;quot;, lwd=2, col=i, xaxt=&amp;quot;n&amp;quot;, yaxt=&amp;quot;n&amp;quot;, ylab=&amp;quot;&amp;quot;, xlab=&amp;quot;&amp;quot;, main=&amp;quot;&amp;quot;, bty=&amp;quot;n&amp;quot;) 
 }
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../en/tutorials/rbasics/Rbasics_files/figure-html/plot_line_many-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../en/rmarkdown/tutorials/rbasics/Rbasics_files/figure-html/plot_line_many-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;close.screen(all=TRUE) 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;bar-plots&#34;&gt;Bar Plots&lt;/h2&gt;
@@ -4967,27 +4967,27 @@ for(i in 2:length(y[1,])) {
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;barplot(y[1:4,], ylim=c(0, max(y[1:4,])+0.3), beside=TRUE, legend=letters[1:4]) 
 text(labels=round(as.vector(as.matrix(y[1:4,])),2), x=seq(1.5, 13, by=1) + sort(rep(c(0,1,2), 4)), y=as.vector(as.matrix(y[1:4,]))+0.04) 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../en/tutorials/rbasics/Rbasics_files/figure-html/plot_bar_simple-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../en/rmarkdown/tutorials/rbasics/Rbasics_files/figure-html/plot_bar_simple-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;h3 id=&#34;error-bars&#34;&gt;Error Bars&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;bar &amp;lt;- barplot(m &amp;lt;- rowMeans(y) * 10, ylim=c(0, 10))
 stdev &amp;lt;- sd(t(y))
 arrows(bar, m, bar, m + stdev, length=0.15, angle = 90)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../en/tutorials/rbasics/Rbasics_files/figure-html/plot_bar_error-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../en/rmarkdown/tutorials/rbasics/Rbasics_files/figure-html/plot_bar_error-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;h2 id=&#34;histograms&#34;&gt;Histograms&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;hist(y, freq=TRUE, breaks=10)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../en/tutorials/rbasics/Rbasics_files/figure-html/plot_hist-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../en/rmarkdown/tutorials/rbasics/Rbasics_files/figure-html/plot_hist-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;h2 id=&#34;density-plots&#34;&gt;Density Plots&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;plot(density(y), col=&amp;quot;red&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../en/tutorials/rbasics/Rbasics_files/figure-html/plot_dens-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../en/rmarkdown/tutorials/rbasics/Rbasics_files/figure-html/plot_dens-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;h2 id=&#34;pie-charts&#34;&gt;Pie Charts&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;pie(y[,1], col=rainbow(length(y[,1]), start=0.1, end=0.8), clockwise=TRUE)
 legend(&amp;quot;topright&amp;quot;, legend=row.names(y), cex=1.3, bty=&amp;quot;n&amp;quot;, pch=15, pt.cex=1.8, 
 col=rainbow(length(y[,1]), start=0.1, end=0.8), ncol=1) 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../en/tutorials/rbasics/Rbasics_files/figure-html/plot_pie-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../en/rmarkdown/tutorials/rbasics/Rbasics_files/figure-html/plot_pie-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;h2 id=&#34;color-selection-utilities&#34;&gt;Color Selection Utilities&lt;/h2&gt;
 &lt;p&gt;Default color palette and how to change it&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;palette()
@@ -5165,7 +5165,7 @@ data.frame(my_mw_target4, mean=mymean, stdev=mystdev)[1:2,5:12]
 &lt;!-- end list --&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;plot(my_mw_target4[1:500,3:4], col=&amp;quot;red&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../en/tutorials/rbasics/Rbasics_files/figure-html/plot_example-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../en/rmarkdown/tutorials/rbasics/Rbasics_files/figure-html/plot_example-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;h2 id=&#34;export-results-and-run-entire-exercise-as-script&#34;&gt;Export Results and Run Entire Exercise as Script&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Step 11&lt;/strong&gt;: Write the data frame &lt;code&gt;my_mw_target4&lt;/code&gt; into a tab-delimited text file and inspect it in Excel.&lt;/li&gt;
@@ -5403,7 +5403,7 @@ and &lt;code&gt;fig.width&lt;/code&gt; arguments.&lt;/p&gt;
 dsmall &amp;lt;- diamonds[sample(nrow(diamonds), 1000), ]
 ggplot(dsmall, aes(color, price/carat)) + geom_jitter(alpha = I(1 / 2), aes(color=color))
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../en/tutorials/rbasics/Rbasics_files/figure-html/some_jitter_plot-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../en/rmarkdown/tutorials/rbasics/Rbasics_files/figure-html/some_jitter_plot-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Sometimes it can be useful to explicitly write an image to a file and then insert that
 image into the final document by referencing its file name in the R Markdown source. For
 instance, this can be useful for time consuming analyses. The following code will generate a
@@ -5574,11 +5574,11 @@ dir() # Lists available Shiny examples (directories).
     </item>
     
     <item>
-      <title>Tutorials: My First R Markdown Document</title>
-      <link>/tutorials/rbasics/sample/</link>
+      <title>Rmarkdown: My First R Markdown Document</title>
+      <link>/rmarkdown/tutorials/rbasics/sample/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/tutorials/rbasics/sample/</guid>
+      <guid>/rmarkdown/tutorials/rbasics/sample/</guid>
       <description>
         
         
@@ -5825,7 +5825,7 @@ and &lt;code&gt;fig.width&lt;/code&gt; arguments.&lt;/p&gt;
 dsmall &amp;lt;- diamonds[sample(nrow(diamonds), 1000), ]
 ggplot(dsmall, aes(color, price/carat)) + geom_jitter(alpha = I(1 / 2), aes(color=color))
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../en/tutorials/rbasics/sample_files/figure-html/some_jitter_plot-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../en/rmarkdown/tutorials/rbasics/sample_files/figure-html/some_jitter_plot-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Sometimes it can be useful to explicitly write an image to a file and then insert that
 image into the final document by referencing its file name in the R Markdown source. For
 instance, this can be useful for time consuming analyses. The following code will generate a

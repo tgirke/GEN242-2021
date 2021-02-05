@@ -111,12 +111,12 @@ visHideMethod = "soft"
 
 # A link to latest version of the docs. Used in the "version-banner" partial to
 # point people to the main doc site.
-url_latest_version = "https://systempipe.org/systempipeshinysite/docs"
+url_latest_version = "https://github.com/tgirke/GEN242_docsy/content/en/"
 
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
-github_repo = "https://github.com/systemPipeR/"
+github_repo = "https://github.com/GEN242_docsy/"
 # An optional link to a related project repo. For example, the sibling repository where your product code lives.
-github_project_repo = "https://github.com/systemPipeR/"
+github_project_repo = "https://github.com/GEN242_docsy/"
 # Since Github change default from "master" to "main", specify here.
 github_branch = "main"
 # Specify a value here if your content directory is not in your repo's root directory
