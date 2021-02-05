@@ -59,8 +59,8 @@ id = "UA-00000000-0"
 
 [languages]
 [languages.en]
-title = "Goldydocs"
-description = "A Docsy example site"
+title = "GEN242"
+description = "Spring 2021"
 languageName ="English"
 time_format_default = "2006-01-02"
 time_format_blog = "2006-01-02"
