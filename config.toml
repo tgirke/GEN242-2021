@@ -14,6 +14,9 @@ theme = ["docsy"]
 # Will give values to .Lastmod etc.
 enableGitInfo = true
 
+# ThG-Custom Changes
+publishDir = "docs" # writes rendered pages to docs rather than default public. Former is expected by GitHub website deployment 
+
 # Language settings
 contentDir = "content/en"
 defaultContentLanguage = "en"

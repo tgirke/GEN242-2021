@@ -7,10 +7,10 @@
 git checkout main  
 
 ## (2) Build site and copy rendered pages to docs 
-rm -rf public/* # clean out public
-rm -rf docs/* # clean out docs (assumes dir exists)
+# rm -rf public/* # clean out public -> not required with publishDir = "docs" in config.toml
+# rm -rf docs/* # clean out docs (assumes dir exists) -> not required with publishDir = "docs" in config.toml
 Rscript -e "blogdown::build_site()" # Build site with blogdown via command-line call
-cp -r public/* docs/ # Copy build/rendered pages to docs
+# cp -r public/* docs/ # Copy build/rendered pages to docs -> not required with publishDir = "docs" in config.toml
 
 ## (3) Commit and push changes
 git add -A :/
