@@ -97,7 +97,7 @@ time_format_blog = "2006-01-02"
 # Everything below this are Site Params
 [params]
 copyright = "The GEN242 Instructors"
-privacy_policy = "https://policies.google.com/privacy"
+privacy_policy = "https://www.ucr.edu/privacy.html"
 
 # First one is picked as the Twitter card image if not set on page.
 # images = ["images/project-illustration.png"]
