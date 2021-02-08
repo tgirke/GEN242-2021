@@ -304,7 +304,7 @@ enable = true
   parent = "Resources"
   weight = 3
 [[menu.main]]
-  name = "Docsy"
+  name = "Hugo, Docsy & R"
   url = "https://www.dcassol.com/docsy_Rmarkdown/rmarkdown/install/"
   parent = "Resources"
   weight = 3
