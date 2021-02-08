@@ -1,6 +1,6 @@
 ---
-title: " Hugo Docsy + Rmarkdown support"
-linkTitle: "Rmarkdown"
+title: "Tutorials"
+linkTitle: "Tutorials"
 weight: 20
 menu:
   main:

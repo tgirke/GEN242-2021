@@ -250,23 +250,42 @@ enable = true
   weight = 3
 ##
 [[menu.main]]
-  name = "Documentation"
+  name = "Lectures"
   weight = 2
   url = "/docs/"
   [[menu.main]]
     name = "overview"
     url = "/docs/overview/"
-    parent = "Documentation"
+    parent = "Lectures"
     weight = 1
 ##
 [[menu.main]]
-  name = "Rmarkdown"
+  name = "Tutorials"
   weight = 3
   url = "/rmarkdown/"
   [[menu.main]]
     name = "Basic Example"
     url = "/rmarkdown/examples/example_rmd"
-    parent = "Rmarkdown"
+    parent = "Tutorials"
     weight = 1
-##
+## 
+[[menu.main]]
+  name = "Resources"
+  url = "create_landing"
+  weight = 4
+[[menu.main]]
+  name = "Piazza"
+  url = "https://piazza.com/ucr/spring2021/gen242/home"
+  parent = "Resources"
+  weight = 1
+[[menu.main]]
+  name = "GitHub"
+  url = "https://github.com/tgirke/GEN242_docsy"
+  parent = "Resources"
+  weight = 2
+[[menu.main]]
+  name = "Bioconductor"
+  url = "https://bioconductor.org/"
+  parent = "Resources"
+  weight = 3
 
