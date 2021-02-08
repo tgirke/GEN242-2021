@@ -303,4 +303,9 @@ enable = true
   url = "https://bioconductor.org/"
   parent = "Resources"
   weight = 3
+[[menu.main]]
+  name = "Docsy"
+  url = "https://www.dcassol.com/docsy_Rmarkdown/rmarkdown/install/"
+  parent = "Resources"
+  weight = 3
 
