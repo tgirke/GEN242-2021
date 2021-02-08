@@ -87,6 +87,20 @@ ggplotly(p)
     </item>
     
     <item>
+      <title>About: Syllabus</title>
+      <link>/about/syllabus/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/about/syllabus/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;syllabus&#34;&gt;Syllabus&lt;/h2&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Bed and Chair Metrics</title>
       <link>/docs/tasks/beds/</link>
       <pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate>
@@ -809,6 +823,20 @@ hugo server
     </item>
     
     <item>
+      <title>About: Internal Resources</title>
+      <link>/about/internal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/about/internal/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;internal-resources&#34;&gt;Internal Resources&lt;/h2&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Rmarkdown: Invisible Example</title>
       <link>/rmarkdown/examples/invisible/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1236,6 +1264,22 @@ ToDo
 &lt;li&gt;Add documentation for the custom configuration.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/details&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>About: Course Schedule</title>
+      <link>/about/schedule/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/about/schedule/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;detailed-course-schedule&#34;&gt;Detailed course schedule&lt;/h2&gt;
+&lt;p&gt;Note: this schedule is preliminary and subject to changes.&lt;/p&gt;
+&lt;iframe width=&#39;100%&#39; height=&#39;925&#39; src=&#34;https://docs.google.com/spreadsheets/d/e/2PACX-1vSz6Dr1tbm6Okw8OHPExEqJWPkQUcrULsxUbrfaI-YMemYfaiHdmela7TO322LjvuAQiSxJrrRiusIG/pubhtml?gid=0&amp;amp;single=true&amp;amp;widget=true&amp;amp;headers=false&#34;&gt;&lt;/iframe&gt;
 
       </description>
     </item>

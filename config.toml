@@ -230,8 +230,28 @@ enable = true
 # Top-level navigation (horizontal)
 ##
 [[menu.main]]
-  name = "Documentation"
+  name = "About"
   weight = 1
+  url = "/about/"
+[[menu.main]]
+  name = "Syllabus"
+  url = "/about/Syllabus/"
+  parent = "About"
+  weight = 1
+[[menu.main]]
+  name = "Internal"
+  url = "/about/Internal/"
+  parent = "About"
+  weight = 2
+[[menu.main]]
+  name = "Schedule"
+  url = "/about/Schedule/"
+  parent = "About"
+  weight = 3
+##
+[[menu.main]]
+  name = "Documentation"
+  weight = 2
   url = "/docs/"
   [[menu.main]]
     name = "overview"
@@ -241,7 +261,7 @@ enable = true
 ##
 [[menu.main]]
   name = "Rmarkdown"
-  weight = 2
+  weight = 3
   url = "/rmarkdown/"
   [[menu.main]]
     name = "Basic Example"
@@ -249,3 +269,4 @@ enable = true
     parent = "Rmarkdown"
     weight = 1
 ##
+
