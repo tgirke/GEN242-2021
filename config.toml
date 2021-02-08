@@ -249,16 +249,3 @@ enable = true
     parent = "Rmarkdown"
     weight = 1
 ##
-[[menu.main]]
-  name = "About"
-  weight = 3
-  url = "/about/"
-[[menu.main]]
-  name = "About"
-  weight = 4
-  url = "/blog/"
-[[menu.main]]
-  name = "Blog"
-  weight = 5
-  url = "/community/"
-
