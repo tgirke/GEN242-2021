@@ -260,6 +260,21 @@ enable = true
     weight = 1
 ##
 [[menu.main]]
+  name = "Assignments"
+  weight = 3
+  url = "/assignments/"
+  [[menu.main]]
+    name = "Homework"
+    url = "/assignments/Homework/"
+    parent = "Assignments"
+    weight = 1
+  [[menu.main]]
+    name = "Projects"
+    url = "/assignments/Projects/"
+    parent = "Assignments"
+    weight = 1
+##
+[[menu.main]]
   name = "Tutorials"
   weight = 3
   url = "/rmarkdown/"

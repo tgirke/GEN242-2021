@@ -138,13 +138,25 @@
   </url>
   
   <url>
+    <loc>/assignments/</loc>
+  </url>
+  
+  <url>
+    <loc>/assignments/homework/</loc>
+  </url>
+  
+  <url>
     <loc>/docs/</loc>
-    <lastmod>2021-02-04T12:57:29-08:00</lastmod>
+    <lastmod>2021-02-07T17:54:17-08:00</lastmod>
   </url>
   
   <url>
     <loc>/blog/news/</loc>
     <lastmod>2021-02-04T12:57:29-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/assignments/projects/</loc>
   </url>
   
   <url>
@@ -154,7 +166,7 @@
   
   <url>
     <loc>/rmarkdown/</loc>
-    <lastmod>2021-02-04T12:57:29-08:00</lastmod>
+    <lastmod>2021-02-07T17:54:17-08:00</lastmod>
   </url>
   
   <url>
