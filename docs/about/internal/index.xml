@@ -1,0 +1,125 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GEN242 – Internal Resources</title>
+    <link>/about/internal/</link>
+    <description>Recent content in Internal Resources on GEN242</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/about/internal/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>About: Installation</title>
+      <link>/about/internal/install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/about/internal/install/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;quick-start&#34;&gt;Quick start&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Click on the &lt;strong&gt;Use this Template&lt;/strong&gt; button.&lt;/li&gt;
+&lt;li&gt;Choose a Repository Name&lt;/li&gt;
+&lt;li&gt;Click on the &lt;strong&gt;Create repository from template&lt;/strong&gt; button.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/dcassol/images/main/usetemplte.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;usage-locally&#34;&gt;Usage locally&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Go to your new repository that created from our template &lt;code&gt;https://github.com/&amp;lt;username&amp;gt;/&amp;lt;repository_name&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Click on the &lt;strong&gt;Code&lt;/strong&gt; button.&lt;/li&gt;
+&lt;li&gt;Copy the URL &lt;code&gt;https://github.com/&amp;lt;username&amp;gt;/&amp;lt;repository_name&amp;gt;.git&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Open terminal&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;git clone --recurse-submodules --depth 1 https://github.com/&amp;lt;username&amp;gt;/&amp;lt;repository_name&amp;gt;.git
+cd &amp;lt;repository_name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Run the website locally&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;hugo server
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Run the website locally with &lt;code&gt;blogdown&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;blogdown::serve_site()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;prerequisites-and-installation&#34;&gt;Prerequisites and Installation&lt;/h2&gt;
+&lt;h3 id=&#34;install-blogdown-and-hugo&#34;&gt;Install {blogdown} and Hugo&lt;/h3&gt;
+&lt;h4 id=&#34;blogdown&#34;&gt;blogdown&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;installed.packages(&amp;quot;rstudio/blogdown&amp;quot;)
+# If anything wrong try develop version
+remotes::install_github(&amp;quot;rstudio/blogdown&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;hugo&#34;&gt;Hugo&lt;/h4&gt;
+&lt;p&gt;You need a recent extended version (we recommend version 0.79.0 or later) of Hugo
+to do local builds and previews of sites that use Docsy.&lt;/p&gt;
+&lt;p&gt;It is recommended to install &lt;code&gt;Hugo&lt;/code&gt; from R for working with {blogdown}&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;blogdown::install_hugo(extended = TRUE)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;or from commandline&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wget https://github.com/gohugoio/hugo/releases/download/v0.79.0/hugo_extended_0.79.0_Linux-64bit.deb
+sudo dpkg -i  hugo_extended_0.79.0_Linux-64bit.deb 
+hugo version
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;For &lt;code&gt;Windows&lt;/code&gt; and &lt;code&gt;macOS&lt;/code&gt; please see instructions &lt;a href=&#34;https://www.docsy.dev/docs/getting-started/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;install-postcss&#34;&gt;Install PostCSS&lt;/h4&gt;
+&lt;p&gt;To build or update your site&amp;rsquo;s CSS resources, you also need &lt;code&gt;PostCSS&lt;/code&gt; to create the final assets. If you need to install it, you must have a recent version of &lt;code&gt;NodeJS&lt;/code&gt; installed on your machine so you can use &lt;code&gt;npm&lt;/code&gt;, the Node package manager. By default &lt;code&gt;npm&lt;/code&gt; installs tools under the directory where you run &lt;code&gt;npm&lt;/code&gt; install:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo npm install -D autoprefixer
+sudo npm install -D postcss-cli
+# Starting in version 8 of postcss-cli, you must also separately install postcss:
+
+sudo npm install -D postcss
+
+# go to your website directory
+cd &amp;lt;repository_name&amp;gt;
+npm audit fix
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;run-the-website-locally&#34;&gt;Run the website locally&lt;/h3&gt;
+&lt;h4 id=&#34;with-blogdown&#34;&gt;with {blogdown}&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Open R in console or Rstudio&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This repo contains a &lt;code&gt;.Rprofile&lt;/code&gt; file that will automatically serve the site
+for you R starting directory is this newly cloned repository. Otherwise,
+change working directory to the repository and run:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;blogdown::serve_site()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You should see a website is opened in your local browser or Rstudio viewer.&lt;/p&gt;
+&lt;h4 id=&#34;run-the-website-locally-on-the-terminal&#34;&gt;Run the website locally on the terminal&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd YOUR_NEW_REPO_PATH
+hugo server
+&lt;/code&gt;&lt;/pre&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>About: Internal Resources</title>
+      <link>/about/internal/resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/about/internal/resources/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;internal&#34;&gt;Internal&lt;/h2&gt;
+&lt;p&gt;This page provides a link to password protected resources that are only accessible to students of this class.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://bit.ly/3jHSNTP&#34;&gt;Course Planning Sheet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/personal&#34;&gt;GitHub&lt;/a&gt;: private repositories for course assignments (homework and course projects)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://education.github.com/&#34;&gt;GitHub Education&lt;/a&gt;: provides free extra benefits to students&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://piazza.com/ucr/spring2018/gen242/home&#34;&gt;Piazza&lt;/a&gt;: for communication among students and instructor (please avoid email!)&lt;/li&gt;
+&lt;li&gt;How to set up and maintain this site: see &lt;a href=&#34;https://girke.bioinformatics.ucr.edu/GEN242_docsy/rmarkdown/install/&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

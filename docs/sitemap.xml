@@ -8,13 +8,12 @@
   </url>
   
   <url>
-    <loc>/docs/overview/</loc>
-    <lastmod>2021-02-04T12:57:29-08:00</lastmod>
+    <loc>/about/introduction/</loc>
   </url>
   
   <url>
-    <loc>/about/syllabus/</loc>
-    <lastmod>2021-02-11T21:08:33-08:00</lastmod>
+    <loc>/docs/overview/</loc>
+    <lastmod>2021-02-04T12:57:29-08:00</lastmod>
   </url>
   
   <url>
@@ -33,13 +32,13 @@
   </url>
   
   <url>
-    <loc>/about/internal/</loc>
-    <lastmod>2021-02-07T17:41:41-08:00</lastmod>
+    <loc>/rmarkdown/examples/invisible/</loc>
+    <lastmod>2021-02-04T12:57:29-08:00</lastmod>
   </url>
   
   <url>
-    <loc>/rmarkdown/examples/invisible/</loc>
-    <lastmod>2021-02-04T12:57:29-08:00</lastmod>
+    <loc>/about/syllabus/</loc>
+    <lastmod>2021-02-11T21:08:33-08:00</lastmod>
   </url>
   
   <url>
@@ -64,7 +63,7 @@
   
   <url>
     <loc>/about/schedule/</loc>
-    <lastmod>2021-02-07T17:41:41-08:00</lastmod>
+    <lastmod>2021-02-12T11:43:12-08:00</lastmod>
   </url>
   
   <url>
@@ -85,10 +84,6 @@
   <url>
     <loc>/rmarkdown/deploy/</loc>
     <lastmod>2021-02-04T12:57:29-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/about/install/</loc>
   </url>
   
   <url>
@@ -114,6 +109,14 @@
   <url>
     <loc>/rmarkdown/commonproblems/</loc>
     <lastmod>2021-02-04T12:57:29-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/about/internal/install/</loc>
+  </url>
+  
+  <url>
+    <loc>/about/internal/resources/</loc>
   </url>
   
   <url>
@@ -219,6 +222,10 @@
   <url>
     <loc>/</loc>
     <lastmod>2021-02-11T20:05:53-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/about/internal/</loc>
   </url>
   
   <url>

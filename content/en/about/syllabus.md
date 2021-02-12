@@ -3,7 +3,7 @@ title: "Syllabus - GEN242"
 linkTitle: "Syllabus"
 type: docs
 description: >
-weight: 1
+weight: 2
 ---
 
 ## Course title

@@ -1,12 +1,13 @@
 ---
 title: "Internal Resources"
-linkTitle: "Internal"
+linkTitle: "Resources"
+weight: 7
 type: docs
-description: This page provides a link to password protected resources that are only accessible to students of this class.
-weight: 2
 ---
 
 ## Internal
+
+This page provides a link to password protected resources that are only accessible to students of this class.
 
 - [Course Planning Sheet](https://bit.ly/3jHSNTP)
 - [GitHub](https://github.com/personal): private repositories for course assignments (homework and course projects)
