@@ -2993,13 +2993,13 @@ For site with sensitive content like homework solutions, &amp;ldquo;hard&amp;rdq
         
         
         &lt;h2 id=&#34;internal&#34;&gt;Internal&lt;/h2&gt;
-&lt;p&gt;This page provides a link to password protected resources that are only accessible to students of this class.&lt;/p&gt;
+&lt;p&gt;This page provides links to password protected resources that are only accessible to the instructor and/or students enrolled in this class.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://bit.ly/3jHSNTP&#34;&gt;Course Planning Sheet&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/personal&#34;&gt;GitHub&lt;/a&gt;: private repositories for course assignments (homework and course projects)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://education.github.com/&#34;&gt;GitHub Education&lt;/a&gt;: provides free extra benefits to students&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://piazza.com/ucr/spring2018/gen242/home&#34;&gt;Piazza&lt;/a&gt;: for communication among students and instructor (please avoid email!)&lt;/li&gt;
-&lt;li&gt;How to set up and maintain this site: see &lt;a href=&#34;https://girke.bioinformatics.ucr.edu/GEN242_docsy/rmarkdown/install/&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;How to set up and maintain this site: see &lt;a href=&#34;../about/internal/install/&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
