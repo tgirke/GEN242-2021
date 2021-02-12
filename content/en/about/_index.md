@@ -1,5 +1,5 @@
 ---
 title: "About GEN242"
-linkTitle: "Home"
+linkTitle: "About"
 type: docs
 ---

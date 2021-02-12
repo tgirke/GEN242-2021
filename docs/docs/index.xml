@@ -87,7 +87,7 @@ ggplotly(p)
     </item>
     
     <item>
-      <title>About: Syllabus</title>
+      <title>About: Syllabus - GEN242</title>
       <link>/about/syllabus/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -95,7 +95,281 @@ ggplotly(p)
       <description>
         
         
-        &lt;h2 id=&#34;syllabus&#34;&gt;Syllabus&lt;/h2&gt;
+        &lt;h2 id=&#34;course-title&#34;&gt;Course title&lt;/h2&gt;
+&lt;p&gt;Data Analysis in Genome Biology &lt;br&gt;
+GEN242 - Spring 2021&lt;/p&gt;
+&lt;h2 id=&#34;printable-syllabus&#34;&gt;Printable syllabus&lt;/h2&gt;
+&lt;p&gt;See Google Doc version &lt;a href=&#34;https://goo.gl/fo42NS&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;instructor&#34;&gt;Instructor&lt;/h2&gt;
+&lt;p&gt;Name: Thomas Girke &lt;br&gt;
+Email: &lt;a href=&#34;mailto:thomas.girke@ucr.edu&#34;&gt;thomas.girke@ucr.edu&lt;/a&gt; &lt;br&gt;
+Office location: 1207F Genomics &lt;br&gt;
+Office hours: Tue &amp;amp; Thu 4:30 - 5:30 PM&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;Introduction to algorithms, statistical methods and data analysis programming
+routines relevant for genome biology. The class consists of three
+main components: lectures, hands-on practicals and student course projects. The
+lecture topics cover databases, sequence (NGS) analysis, phylogenetics,
+comparative genomics, genome-wide profiling methods, network biology and more.
+The hands-on practicals include homework assignments and course projects
+focusing on data analysis programming of next generation genome data using
+command-line tools on a computer cluster and the programming environment R.
+Credit: 4 units (2x 1.5 hours lectures, 1 hour discussion)&lt;/p&gt;
+&lt;h2 id=&#34;objectives-of-course&#34;&gt;Objectives of course&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Acquire understanding of algorithms used in bioinformatics&lt;/li&gt;
+&lt;li&gt;Obtain hands-on experience in large scale data analysis.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
+&lt;p&gt;The main prerequisite for this course is a strong interest in acquiring the
+skills required for mastering the computational aspects of modern genome
+research.&lt;/p&gt;
+&lt;h2 id=&#34;structure-of-course&#34;&gt;Structure of course&lt;/h2&gt;
+&lt;p&gt;Two lectures per week (1.5 hours each) plus one discussion section (1 hour).
+During the first weeks the discussion section will be used for data analysis
+tutorials using Linux command-line tools and R.&lt;/p&gt;
+&lt;h2 id=&#34;time&#34;&gt;Time&lt;/h2&gt;
+&lt;p&gt;Lecture: Tue/Thu 2:00-3:20 PM &lt;br&gt;
+Discussion: Thu 3:30-4:20 PM&lt;/p&gt;
+&lt;h2 id=&#34;location&#34;&gt;Location&lt;/h2&gt;
+&lt;p&gt;Online via video conferencing software&lt;/p&gt;
+&lt;h2 id=&#34;grading&#34;&gt;Grading&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Homework assignments: 40%&lt;/li&gt;
+&lt;li&gt;Scientific paper presentation: 20%&lt;/li&gt;
+&lt;li&gt;Course project presentations: 20%&lt;/li&gt;
+&lt;li&gt;Final project report: 20%&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Grading policy:&lt;/strong&gt; Given the diverse educational background of the students in GEN242, all assignments are designed to be solvable by students from both experimental and quantitative disciplines, including those with no or only limited prior experience in programming and/or data modeling. The weight of each of the four gradable components in this class is given above in percent.
+&lt;strong&gt;(1)&lt;/strong&gt; The homeworks include 8-10 assignments throughout the class. They cover algorithms and data analysis programming problems using the R language. The grading of these assignments is mainly based on correctness, reproducibility and reusability of the analysis code.
+&lt;strong&gt;(2-4)&lt;/strong&gt; Students will work in groups of 3-5 members on a Challenge Project addressing a specific data analysis problem in genome data sciences. As part of their project, students will present a scientific paper &lt;strong&gt;(2)&lt;/strong&gt; closely related to their project (see reading list for details). The results of the Challenge Projects &lt;strong&gt;(3)&lt;/strong&gt; will be presented and discussed by each student at the end of the course. In addition, each student will write a detailed analysis report &lt;strong&gt;(4)&lt;/strong&gt; of the assigned course project. The latter will be written in the style of a scientific publication and should include a detailed description of the results including all analysis code to fully reproduce the project results followed by a critical discussion of the outcomes. The grading of both the paper and project presentations &lt;strong&gt;(2-3)&lt;/strong&gt; includes anonymous feedback from all students as well as the instructor, where understanding of the material, clarity of the oral presentations and critical thinking are the main grading criteria. The final project reports &lt;strong&gt;(4)&lt;/strong&gt; will be graded by the instructor with an emphasis on scientific and coding accuracy, overall understanding of the topic, as well as reproducibility of the results.&lt;/p&gt;
+&lt;h2 id=&#34;materials-needed&#34;&gt;Materials needed&lt;/h2&gt;
+&lt;p&gt;Students are expected to bring to each class meeting a laptop with a functional wireless
+connection and a recent internet browser version (e.g. Firefox, Chrome or
+Safari) preinstalled. Tablet computers with mobile operating systems are not
+suitable for running the required software. User accounts on a research
+computer cluster will be provided at the beginning of the course. To log in to
+the cluster, students also need to install a terminal application for their
+operating system (&lt;em&gt;e.g.&lt;/em&gt; &lt;a href=&#34;http://www.iterm2.com/#/section/home&#34;&gt;iTerm2&lt;/a&gt; on OS X,
+and &lt;a href=&#34;http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html&#34;&gt;PuTTY&lt;/a&gt; or
+&lt;a href=&#34;http://mobaxterm.mobatek.net/&#34;&gt;MobaXterm&lt;/a&gt; on Windows) as well as a file exchange software such as
+&lt;a href=&#34;https://filezilla-project.org/download.php?type=client&#34;&gt;FileZilla&lt;/a&gt;. In
+addition, a recent version of &lt;a href=&#34;http://www.r-project.org&#34;&gt;R&lt;/a&gt; and
+&lt;a href=&#34;http://rstudio.org&#34;&gt;RStudio&lt;/a&gt; should be installed on each laptop.&lt;/p&gt;
+&lt;h2 id=&#34;schedule&#34;&gt;Schedule&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Week&lt;/th&gt;
+&lt;th&gt;Topic&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Week 1&lt;/td&gt;
+&lt;td&gt;Course Introduction&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Databases and Software for Genome Biology&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Discussion: Introduction to Linux and HPC&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Reading: A1, T1, T2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Week 2&lt;/td&gt;
+&lt;td&gt;Sequencing Technologies&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Discussion: Introduction to R&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Reading: A2-A4, T3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Week 3&lt;/td&gt;
+&lt;td&gt;Sequence Alignments and Searching&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Multiple Sequence Alignments&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Discussion: Programming in R&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Reading: A5-A6, T4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Week 4&lt;/td&gt;
+&lt;td&gt;Short Read Alignment Algorithms&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Discussion: Basics of NGS Analysis&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Reading: A7-A10, T5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Week 5&lt;/td&gt;
+&lt;td&gt;Gene Expression Analysis using Microarrays and RNA-Seq&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Discussion: NGS Workflow Overview; RNA-Seq Analysis&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Reading: A11-A15, T6-T7&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Week 6&lt;/td&gt;
+&lt;td&gt;Analysis of ChIP-Seq and VAR-Seq Experiments&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Discussion: ChIP-Seq and VAR-Seq Analysis&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Reading: A16-A18, T8-T9&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Week 7&lt;/td&gt;
+&lt;td&gt;Students present publication related to their chosen course project&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Discussion: Q&amp;amp;A about papers&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Reading: A19-A23&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Week 8&lt;/td&gt;
+&lt;td&gt;Clustering algorithms&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Pathway and GO annotation systems&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Discussion: Gene Set Enrichment Analysis&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Reading: A24-A26, T6 (Sec 3.14-3.15), T10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Week 9&lt;/td&gt;
+&lt;td&gt;Genome and Transcriptome Assembly Algorithms&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Profile HMMs for Protein Family Modeling&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Introduction to Phylogenetics&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Discussion: Graphics and Data Visualization&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Reading: A27-A29, T11&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Week 10&lt;/td&gt;
+&lt;td&gt;Final presentations of student data analysis projects&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Discussion: Tips and tricks for efficient data analysis programming&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Reading: A30-A31, T3 (Sec 12,13-17)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&amp;mdash;&amp;mdash;&amp;mdash;&lt;/td&gt;
+&lt;td&gt;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;reading-list&#34;&gt;Reading list&lt;/h2&gt;
+&lt;h3 id=&#34;journal-articles&#34;&gt;Journal articles&lt;/h3&gt;
+&lt;p&gt;A1. Huber W, Carey VJ, Gentleman R, Anders S, Carlson M, Carvalho BS, Bravo HC, Davis S, Gatto L, Girke T, et al (2015) Orchestrating high-throughput genomic analysis with Bioconductor. Nat Methods 12: 115–121&lt;/p&gt;
+&lt;p&gt;A2. Metzker, M. L., Jan 2010. Sequencing technologies - the next generation. Nat Rev Genet 11 (1), 31–46.&lt;/p&gt;
+&lt;p&gt;A3. Needleman SB, Wunsch CD (1970) A general method applicable to the search for similarities in the amino acid sequence of two proteins. J Mol Biol 48, 443-453.&lt;/p&gt;
+&lt;p&gt;A4. Smith TF, Waterman MS (1981) Identification of common molecular subsequences. J Mol Biol 147, 195-197.&lt;/p&gt;
+&lt;p&gt;A5. Corpet F (1988) Multiple sequence alignment with hierarchical clustering. Nucleic Acids Res 16, 10881-90.&lt;/p&gt;
+&lt;p&gt;A6. Altschul, S. F., Gish, W., Miller, W., Myers, E. W., Lipman, D. J., Oct 1990. Basic local alignment search tool. J Mol Biol 215 (3), 403–410.&lt;/p&gt;
+&lt;p&gt;A7. Li, H, Durbin, R (2009) Fast and accurate short read alignment with Burrows-Wheeler transform. Bioinformatics, 25: 1754-1760.&lt;/p&gt;
+&lt;p&gt;A8. Dobin, A., Davis, C.A., Schlesinger, F., Drenkow, J., Zaleski, C., Jha, S., Batut, P., Chaisson, M., Gingeras, T.R., 2012. STAR: ultrafast universal RNA-seq aligner. Bioinformatics 29, 15–21.&lt;/p&gt;
+&lt;p&gt;A9. Langmead, B, Salzberg, S L (2012) Fast gapped-read alignment with Bowtie 2. Nat Methods, 9: 357-359.&lt;/p&gt;
+&lt;p&gt;A10. Kim D, Langmead B, Salzberg SL (2015) HISAT: a fast spliced aligner with low memory requirements. Nat Methods 12: 357–360&lt;/p&gt;
+&lt;p&gt;A11. Bray NL, Pimentel H, Melsted P, Pachter L (2016) Near-optimal probabilistic RNA-seq quantification. Nat Biotechnol. doi: 10.1038/nbt.3519&lt;/p&gt;
+&lt;p&gt;A12. Love MI, Huber W, Anders S (2014) Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. Genome Biol 15: 550&lt;/p&gt;
+&lt;p&gt;A13. Zhou X, Lindsay H, Robinson MD (2014) Robustly detecting differential expression in RNA sequencing data using observation weights. Nucleic Acids Res 42: e91&lt;/p&gt;
+&lt;p&gt;A14. Anders, S, Reyes, A, Huber, W (2012) Detecting differential usage of exons from RNA-seq data. Genome Res, 22: 2008-2017.&lt;/p&gt;
+&lt;p&gt;A15. Soneson, C, Delorenzi, M (2013) A comparison of methods for differential expression analysis of RNA-seq data. BMC Bioinformatics, 14: 91-91.&lt;/p&gt;
+&lt;p&gt;A16. Zhang Y, Liu T, Meyer CA, Eeckhoute J, Johnson DS, Bernstein BE, Nussbaum C, Myers RM, Brown M, Li W, et al (2008) Model-based analysis of ChIP-Seq (MACS). Genome Biol. doi: 10.1186/gb-2008-9-9-r137&lt;/p&gt;
+&lt;p&gt;A17. Wilbanks EG, Facciotti MT (2010) Evaluation of algorithm performance in ChIP-seq peak detection. PLoS One. doi: 10.1371/journal.pone.0011471.&lt;/p&gt;
+&lt;p&gt;A18. Landt et al. (2012) ChIP-seq guidelines and practices of the ENCODE and modENCODE consortia. Genome Res, 22: 1813-1831.&lt;/p&gt;
+&lt;p&gt;A19. McLeay, Robert C, and Timothy L Bailey. 2010. “Motif Enrichment Analysis: A Unified Framework and an Evaluation on ChIP Data.” BMC Bioinformatics 11: 165.&lt;/p&gt;
+&lt;p&gt;A20. Machanick, P, Bailey, T L (2011) MEME-ChIP: motif analysis of large DNA datasets. Bioinformatics, 27: 1696-1697.&lt;/p&gt;
+&lt;p&gt;A21. Tompa, M, N Li, T L Bailey, G M Church, B De Moor, E Eskin, A V Favorov, et al. 2005. “Assessing Computational Tools for the Discovery of Transcription Factor Binding Sites.” Nature Biotechnology 23 (1): 137–44.&lt;/p&gt;
+&lt;p&gt;A22. DePristo MA, Banks E, Poplin R, Garimella KV, Maguire JR, Hartl C, Philippakis AA, del Angel G, Rivas MA, Hanna M, et al (2011) A framework for variation discovery and genotyping using next-generation DNA sequencing data. Nat Genet 43: 491–498.&lt;/p&gt;
+&lt;p&gt;A23. Shihab HA, Rogers MF, Gough J, Mort M, Cooper DN, Day INM, Gaunt TR, Campbell C (2015) An integrative approach to predicting the functional effects of non-coding and coding sequence variation. Bioinformatics 31: 1536–1543.&lt;/p&gt;
+&lt;p&gt;A24. Raymond JW, Blankley CJ, Willett P (2003) Comparison of chemical clustering methods using graph- and fingerprint-based similarity measures. J Mol Graph Model 21: 421–433.&lt;/p&gt;
+&lt;p&gt;A25. Subramanian A, Tamayo P, Mootha VK, Mukherjee S, Ebert BL, Gillette MA, Paulovich A, Pomeroy SL, Golub TR, Lander ES, et al (2005) Gene set enrichment analysis: a knowledge-based approach for interpreting genome-wide expression profiles. Proc Natl Acad Sci U S A 102: 15545–15550.&lt;/p&gt;
+&lt;p&gt;A26. Ashburner M, Ball CA, Blake JA, Botstein D, Butler H, Cherry JM, Davis AP, Dolinski K, Dwight SS, Eppig JT, et al (2000) Gene ontology: tool for the unification of biology. The Gene Ontology Consortium. Nat Genet 25: 25–29.&lt;/p&gt;
+&lt;p&gt;A27. Alkan, C, Sajjadian, S, Eichler, E E (2011) Limitations of next-generation genome sequence assembly. Nat Methods, 8: 61-65.&lt;/p&gt;
+&lt;p&gt;A28. Eddy SR (1998) Profile hidden Markov models. Bioinformatics 14: 755–763.&lt;/p&gt;
+&lt;p&gt;A29. Grabherr, M G, Haas, B J, Yassour, M, Levin, J Z, Thompson, D A, Amit, I, Adiconis, X, Fan, L, Raychowdhury, R, Zeng, Q, Chen, Z, Mauceli, E, Hacohen, N, Gnirke, A, Rhind, N, di Palma, F, Birren, B W, Nusbaum, C, Lindblad-Toh, K, Friedman, N, Regev, A (2011) Full-length transcriptome assembly from RNA-Seq data without a reference genome. Nat Biotechnol, 29: 644-652.&lt;/p&gt;
+&lt;p&gt;A30. Zeitouni, B, Boeva, V, Janoueix-Lerosey, I, Loeillet, S, Legoix-ne, P, Nicolas, A, Delattre, O, Barillot, E (2010) SVDetect: a tool to identify genomic structural variations from paired-end and mate-pair sequencing data. Bioinformatics, 26: 1895-1896.&lt;/p&gt;
+&lt;p&gt;A31. Ronquist F, Teslenko M, van der Mark P, Ayres DL, Darling A, Höhna S, Larget B, Liu L, Suchard MA, Huelsenbeck JP (2012) MrBayes 3.2: efficient Bayesian phylogenetic inference and model choice across a large model space. Syst Biol 61: 539–542.&lt;/p&gt;
+&lt;h3 id=&#34;tutorials&#34;&gt;Tutorials&lt;/h3&gt;
+&lt;p&gt;T1. &lt;a href=&#34;http://girke.bioinformatics.ucr.edu/GEN242/mydoc_tutorial_01.html&#34;&gt;GitHub Introduction&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;T2. &lt;a href=&#34;http://girke.bioinformatics.ucr.edu/GEN242/mydoc_tutorial_02.html&#34;&gt;Introduction to Computer Clusters and Linux&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;T3. &lt;a href=&#34;http://girke.bioinformatics.ucr.edu/GEN242/mydoc_Rbasics_01.html&#34;&gt;Introduction to R&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;T4. &lt;a href=&#34;http://girke.bioinformatics.ucr.edu/GEN242/mydoc_Programming_in_R_01.html&#34;&gt;Programming in R&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;T5. &lt;a href=&#34;http://girke.bioinformatics.ucr.edu/GEN242/mydoc_Rsequences_01.html&#34;&gt;NGS Analysis Basics&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;T6. &lt;a href=&#34;http://girke.bioinformatics.ucr.edu/GEN242/mydoc_systemPipeR_1.html&#34;&gt;NGS Workflows&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;T7. &lt;a href=&#34;http://girke.bioinformatics.ucr.edu/GEN242/mydoc_systemPipeRNAseq_01.html&#34;&gt;RNA-Seq Workflow&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;T8. &lt;a href=&#34;http://girke.bioinformatics.ucr.edu/GEN242/mydoc_systemPipeChIPseq_01.html&#34;&gt;ChIP-Seq Workflow&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;T9. &lt;a href=&#34;http://girke.bioinformatics.ucr.edu/GEN242/mydoc_systemPipeVARseq_01.html&#34;&gt;VAR-Seq Workflow&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;T10. &lt;a href=&#34;http://girke.bioinformatics.ucr.edu/GEN242/mydoc_Rclustering_1.html&#34;&gt;Unsupervised Learning&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;T11. &lt;a href=&#34;http://girke.bioinformatics.ucr.edu/GEN242/mydoc_Rgraphics_1.html&#34;&gt;Data Visualization&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;books&#34;&gt;Books&lt;/h3&gt;
+&lt;p&gt;Note: there is no need to purchase any books for this course as most reading material will be based on journal articles!&lt;/p&gt;
+&lt;p&gt;General
+Jonathan Pevsner (2009) Bioinformatics and Functional Genomics. Wiley-Blackwell; 2nd Edition, 992 pages.&lt;/p&gt;
+&lt;p&gt;Algorithms
+Jones N and Pevzner P (2004) An Introduction to Bioinformatics Algorithms. MIT Press, Massachusetts, 435 pages.&lt;/p&gt;
+&lt;p&gt;Sequence Analysis
+Durbin, R, Eddy, S, Krogh, A, Mitchison, G. (1998) Biological Sequence Analysis: Probabilistic Models of Proteins and Nucleic Acids. Cambridge University Press, UK, 356 pages.&lt;/p&gt;
+&lt;p&gt;Parida L (2008) Pattern Discovery in Bioinformatics: Theory &amp;amp; Algorithms. CRC Press, London, 526 pages.&lt;/p&gt;
+&lt;p&gt;Profiling Bioinformatics
+Gentleman, R, Carey, V, Dudoit, S, Irizarry, R, Huber, W (2005) Bioinformatics and Computational Biology Solutions Using R and Bioconductor. Springer, New York, 473 pages.&lt;/p&gt;
+&lt;p&gt;Phylogenetics
+Felsenstein, J (2004) Inferring Phylogenies. Sinauer, Massachusetts, 664 pages.&lt;/p&gt;
+&lt;p&gt;Paradis (2006) Analysis of Phylogenetics and Evolution with R. Springer, New York, 211 pages.&lt;/p&gt;
 
       </description>
     </item>
