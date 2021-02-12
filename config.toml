@@ -255,12 +255,12 @@ enable = true
   weight = 4
   [[menu.main]]
     name = "Resources"
-    url = "/about/internal/Resources/"
+    url = "/about/internal/resources/"
     parent = "About"
     weight = 5
   [[menu.main]]
     name = "Installation"
-    url = "/about/internal/Installation/"
+    url = "/about/internal/install/"
     parent = "About"
     weight = 6
 ##
