@@ -248,6 +248,11 @@ enable = true
   url = "/about/Schedule/"
   parent = "About"
   weight = 3
+[[menu.main]]
+  name = "Install"
+  url = "/about/Install/"
+  parent = "About"
+  weight = 4
 ##
 [[menu.main]]
   name = "Lectures"
