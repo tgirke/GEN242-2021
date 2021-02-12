@@ -255,7 +255,7 @@ enable = true
   weight = 4
   [[menu.main]]
     name = "Resources"
-    url = "/about/internal/resources/"
+    url = "/about/internal/internal_resources/"
     parent = "About"
     weight = 5
   [[menu.main]]
