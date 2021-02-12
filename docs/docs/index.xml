@@ -2984,6 +2984,28 @@ For site with sensitive content like homework solutions, &amp;ldquo;hard&amp;rdq
     </item>
     
     <item>
+      <title>About: Internal Resources</title>
+      <link>/about/internal/resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/about/internal/resources/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;internal&#34;&gt;Internal&lt;/h2&gt;
+&lt;p&gt;This page provides a link to password protected resources that are only accessible to students of this class.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://bit.ly/3jHSNTP&#34;&gt;Course Planning Sheet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/personal&#34;&gt;GitHub&lt;/a&gt;: private repositories for course assignments (homework and course projects)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://education.github.com/&#34;&gt;GitHub Education&lt;/a&gt;: provides free extra benefits to students&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://piazza.com/ucr/spring2018/gen242/home&#34;&gt;Piazza&lt;/a&gt;: for communication among students and instructor (please avoid email!)&lt;/li&gt;
+&lt;li&gt;How to set up and maintain this site: see &lt;a href=&#34;https://girke.bioinformatics.ucr.edu/GEN242_docsy/rmarkdown/install/&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Rmarkdown: Common Problems</title>
       <link>/rmarkdown/commonproblems/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -3098,28 +3120,6 @@ change working directory to the repository and run:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd YOUR_NEW_REPO_PATH
 hugo server
 &lt;/code&gt;&lt;/pre&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>About: Internal Resources</title>
-      <link>/about/internal/resources/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/about/internal/resources/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;internal&#34;&gt;Internal&lt;/h2&gt;
-&lt;p&gt;This page provides a link to password protected resources that are only accessible to students of this class.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://bit.ly/3jHSNTP&#34;&gt;Course Planning Sheet&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/personal&#34;&gt;GitHub&lt;/a&gt;: private repositories for course assignments (homework and course projects)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://education.github.com/&#34;&gt;GitHub Education&lt;/a&gt;: provides free extra benefits to students&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://piazza.com/ucr/spring2018/gen242/home&#34;&gt;Piazza&lt;/a&gt;: for communication among students and instructor (please avoid email!)&lt;/li&gt;
-&lt;li&gt;How to set up and maintain this site: see &lt;a href=&#34;https://girke.bioinformatics.ucr.edu/GEN242_docsy/rmarkdown/install/&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 
       </description>
     </item>

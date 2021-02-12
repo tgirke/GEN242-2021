@@ -233,36 +233,36 @@ enable = true
   name = "About"
   weight = 1
   url = "/about/"
-[[menu.main]]
-  name = "Introduction"
-  url = "/about/Introduction/"
-  parent = "About"
-  weight = 2
-[[menu.main]]
-  name = "Syllabus"
-  url = "/about/Syllabus/"
-  parent = "About"
-  weight = 3
-[[menu.main]]
-  name = "Schedule"
-  url = "/about/Schedule/"
-  parent = "About"
-  weight = 4
+  [[menu.main]]
+    name = "Introduction"
+    url = "/about/Introduction/"
+    parent = "About"
+    weight = 1
+  [[menu.main]]
+    name = "Syllabus"
+    url = "/about/Syllabus/"
+    parent = "About"
+    weight = 2
+  [[menu.main]]
+    name = "Schedule"
+    url = "/about/Schedule/"
+    parent = "About"
+    weight = 3
 [[menu.main]]
   name = "Internal"
   url = "/about/internal/"
   parent = "About"
-  weight = 5
-[[menu.main]]
-  name = "Resources"
-  url = "/about/internal/Resources/"
-  parent = "Resources"
-  weight = 6
-[[menu.main]]
-  name = "Installation"
-  url = "/about/internal/Installation/"
-  parent = "Resources"
-  weight = 7
+  weight = 4
+  [[menu.main]]
+    name = "Resources"
+    url = "/about/internal/Resources/"
+    parent = "About"
+    weight = 5
+  [[menu.main]]
+    name = "Installation"
+    url = "/about/internal/Installation/"
+    parent = "About"
+    weight = 6
 ##
 [[menu.main]]
   name = "Lectures"

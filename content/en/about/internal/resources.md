@@ -1,7 +1,7 @@
 ---
 title: "Internal Resources"
 linkTitle: "Resources"
-weight: 7
+weight: 5
 type: docs
 ---
 

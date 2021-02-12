@@ -9,6 +9,7 @@
   
   <url>
     <loc>/about/introduction/</loc>
+    <lastmod>2021-02-12T13:04:32-08:00</lastmod>
   </url>
   
   <url>
@@ -38,7 +39,7 @@
   
   <url>
     <loc>/about/syllabus/</loc>
-    <lastmod>2021-02-11T21:08:33-08:00</lastmod>
+    <lastmod>2021-02-12T13:04:32-08:00</lastmod>
   </url>
   
   <url>
@@ -102,6 +103,11 @@
   </url>
   
   <url>
+    <loc>/about/internal/resources/</loc>
+    <lastmod>2021-02-12T13:04:32-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/docs/tasks/</loc>
     <lastmod>2021-02-04T12:57:29-08:00</lastmod>
   </url>
@@ -113,10 +119,7 @@
   
   <url>
     <loc>/about/internal/install/</loc>
-  </url>
-  
-  <url>
-    <loc>/about/internal/resources/</loc>
+    <lastmod>2021-02-12T13:04:32-08:00</lastmod>
   </url>
   
   <url>
@@ -221,11 +224,12 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2021-02-11T20:05:53-08:00</lastmod>
+    <lastmod>2021-02-12T13:04:32-08:00</lastmod>
   </url>
   
   <url>
     <loc>/about/internal/</loc>
+    <lastmod>2021-02-12T13:04:32-08:00</lastmod>
   </url>
   
   <url>
