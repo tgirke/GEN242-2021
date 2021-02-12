@@ -120,7 +120,6 @@ addition, a recent version of [R](http://www.r-project.org) and
 | Week 10 | Final presentations of student data analysis projects               |
 |         | Discussion: Tips and tricks for efficient data analysis programming |
 |         | Reading: A30-A31, T3 (Sec 12,13-17)                                 |
-|---------|---------------------------------------------------------------------|
 
 
 ## Reading list
