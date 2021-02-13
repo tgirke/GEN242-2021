@@ -280,6 +280,16 @@ enable = true
     weight = 2
 ##
 [[menu.main]]
+  name = "Tutorial"
+  weight = 3
+  url = "/rmarkdown/"
+  [[menu.main]]
+    name = "Basic Example"
+    url = "/rmarkdown/examples/example_rmd"
+    parent = "Tutorials"
+    weight = 1
+##
+[[menu.main]]
   name = "Assignments"
   weight = 3
   url = "/assignments/"
@@ -292,16 +302,6 @@ enable = true
     name = "Projects"
     url = "/assignments/Projects/"
     parent = "Assignments"
-    weight = 1
-##
-[[menu.main]]
-  name = "Tutorial"
-  weight = 3
-  url = "/rmarkdown/"
-  [[menu.main]]
-    name = "Basic Example"
-    url = "/rmarkdown/examples/example_rmd"
-    parent = "Tutorials"
     weight = 1
 ## 
 [[menu.main]]

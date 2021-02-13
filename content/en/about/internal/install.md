@@ -1,5 +1,5 @@
 ---
-title: "Deployment and Maintenance of this Teaching Site"
+title: "Deployment and Maintenance of this Site"
 linkTitle: "Installation"
 weight: 6
 type: docs
@@ -8,7 +8,7 @@ type: docs
 <br/>
 <br/>
 
-> This page provides instructions how create new deployment instances of this teaching site, and how to configure and customize it. 
+> This page provides instructions how to create new deployment instances of this teaching site, and how to configure and customize it. 
 > It uses the Docsy theme of the Hugo framework for building content driven websites. 
 
 ## Quick start

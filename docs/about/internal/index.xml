@@ -38,7 +38,7 @@
     </item>
     
     <item>
-      <title>About: Deployment and Maintenance of this Teaching Site</title>
+      <title>About: Deployment and Maintenance of this Site</title>
       <link>/about/internal/install/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -49,7 +49,7 @@
         &lt;br/&gt;
 &lt;br/&gt;
 &lt;blockquote&gt;
-&lt;p&gt;This page provides instructions how create new deployment instances of this teaching site, and how to configure and customize it.
+&lt;p&gt;This page provides instructions how to create new deployment instances of this teaching site, and how to configure and customize it.
 It uses the Docsy theme of the Hugo framework for building content driven websites.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;quick-start&#34;&gt;Quick start&lt;/h2&gt;
