@@ -267,12 +267,17 @@ enable = true
 [[menu.main]]
   name = "Lectures"
   weight = 2
-  url = "/docs/"
+  url = "/lectures/"
   [[menu.main]]
-    name = "overview"
-    url = "/docs/overview/"
+    name = "Slides"
+    url = "/lectures/slides/"
     parent = "Lectures"
     weight = 1
+  [[menu.main]]
+    name = "Tutorials"
+    url = "/lectures/tutorials/"
+    parent = "Lectures"
+    weight = 2
 ##
 [[menu.main]]
   name = "Assignments"
@@ -290,7 +295,7 @@ enable = true
     weight = 1
 ##
 [[menu.main]]
-  name = "Tutorials"
+  name = "Tutorial"
   weight = 3
   url = "/rmarkdown/"
   [[menu.main]]

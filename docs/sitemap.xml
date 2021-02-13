@@ -13,26 +13,6 @@
   </url>
   
   <url>
-    <loc>/docs/overview/</loc>
-    <lastmod>2021-02-04T12:57:29-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/docs/tasks/beds/</loc>
-    <lastmod>2021-02-04T12:57:29-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/docs/tasks/ponycopters/configuring-ponycopters/</loc>
-    <lastmod>2021-02-04T12:57:29-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/docs/getting-started/</loc>
-    <lastmod>2021-02-04T12:57:29-08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/rmarkdown/examples/invisible/</loc>
     <lastmod>2021-02-04T12:57:29-08:00</lastmod>
   </url>
@@ -48,16 +28,6 @@
   </url>
   
   <url>
-    <loc>/docs/examples/</loc>
-    <lastmod>2021-02-04T12:57:29-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/docs/tasks/ponycopters/launching-ponycopters/</loc>
-    <lastmod>2021-02-04T12:57:29-08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/rmarkdown/newcontent/</loc>
     <lastmod>2021-02-04T12:57:29-08:00</lastmod>
   </url>
@@ -68,32 +38,7 @@
   </url>
   
   <url>
-    <loc>/docs/tutorials/multi-bear/</loc>
-    <lastmod>2021-02-04T12:57:29-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/docs/tasks/porridge/</loc>
-    <lastmod>2021-02-04T12:57:29-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/docs/concepts/</loc>
-    <lastmod>2021-02-04T12:57:29-08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/rmarkdown/deploy/</loc>
-    <lastmod>2021-02-04T12:57:29-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/docs/tasks/task/</loc>
-    <lastmod>2021-02-04T12:57:29-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/docs/tutorials/tutorial2/</loc>
     <lastmod>2021-02-04T12:57:29-08:00</lastmod>
   </url>
   
@@ -108,11 +53,6 @@
   </url>
   
   <url>
-    <loc>/docs/tasks/</loc>
-    <lastmod>2021-02-04T12:57:29-08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/rmarkdown/commonproblems/</loc>
     <lastmod>2021-02-04T12:57:29-08:00</lastmod>
   </url>
@@ -123,22 +63,7 @@
   </url>
   
   <url>
-    <loc>/docs/tutorials/</loc>
-    <lastmod>2021-02-04T12:57:29-08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/rmarkdown/other/</loc>
-    <lastmod>2021-02-04T12:57:29-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/docs/reference/</loc>
-    <lastmod>2021-02-04T12:57:29-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/docs/contribution-guidelines/</loc>
     <lastmod>2021-02-04T12:57:29-08:00</lastmod>
   </url>
   
@@ -150,11 +75,6 @@
   <url>
     <loc>/assignments/homework/</loc>
     <lastmod>2021-02-07T18:08:55-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/docs/</loc>
-    <lastmod>2021-02-07T17:54:17-08:00</lastmod>
   </url>
   
   <url>
@@ -198,21 +118,6 @@
   </url>
   
   <url>
-    <loc>/docs/getting-started/example-page/</loc>
-    <lastmod>2021-02-04T12:57:29-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/docs/reference/parameter-reference/</loc>
-    <lastmod>2021-02-04T12:57:29-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/docs/tasks/ponycopters/</loc>
-    <lastmod>2021-02-04T12:57:29-08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/about/</loc>
     <lastmod>2021-02-11T20:39:37-08:00</lastmod>
   </url>
@@ -238,6 +143,10 @@
   </url>
   
   <url>
+    <loc>/lectures/</loc>
+  </url>
+  
+  <url>
     <loc>/rmarkdown/tutorials/rbasics/sample/</loc>
     <lastmod>2021-02-04T17:39:58-08:00</lastmod>
   </url>
@@ -245,6 +154,14 @@
   <url>
     <loc>/search/</loc>
     <lastmod>2021-02-04T12:57:29-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/lectures/slides/</loc>
+  </url>
+  
+  <url>
+    <loc>/lectures/tutorials/</loc>
   </url>
   
 </urlset>

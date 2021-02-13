@@ -7,7 +7,7 @@ type: docs
 
 ## Internal
 
-This page provides links to password protected resources that are only accessible to the instructor and/or students enrolled in this class.
+> This page provides links to password protected resources that are only accessible to the instructor and/or students enrolled in this class.
 
 - [Course Planning Sheet](https://bit.ly/3jHSNTP)
 - [GitHub](https://github.com/personal): private repositories for course assignments (homework and course projects)
