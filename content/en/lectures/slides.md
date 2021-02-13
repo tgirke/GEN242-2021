@@ -5,10 +5,31 @@ description: >
 type: docs
 ---
 
-## Course Introduction
+> Teaching material will be posted one day before each class meeting.
+
+### Course Introduction
+
++ ...
++ ...
+
+### Molbiol and Genome Basics
+
++ ...
++ ...
+
+### Databases and Software
+
++ ...
++ ...
+
+### DNA Sequencing
+
++ ...
++ ...
+
+### Introduction to R
+
++ ...
++ ...
 
 
-## Molbiol Basics
-
-
-## Databases and Software
