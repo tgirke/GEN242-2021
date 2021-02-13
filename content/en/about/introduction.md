@@ -6,7 +6,7 @@ description: >
 weight: 1
 ---
 
-<img align="right" title="gen242logo" src="/img/logo1_large.jpg"><img/>
+<img align="right" title="gen242logo" src="/img/logo1.jpg"><img/>
 
 ## Overview
 
