@@ -1,5 +1,4 @@
 ---
-
 title: "Programming in R" 
 author: "Author: Thomas Girke"
 date: "Last update: 13 February, 2021" 
@@ -17,26 +16,6 @@ output:
 fontsize: 14pt
 bibliography: bibtex.bib
 ---
-
------
-
-title: “Programming in R”
-author: “Author: Thomas Girke”
-date: “Last update: 13 February, 2021”
-output:
-html\_document:
-toc: true
-toc\_float:
-collapsed: true
-smooth\_scroll: true
-toc\_depth: 3
-fig\_caption: yes
-code\_folding: show
-number\_sections: true
-
-fontsize: 14pt
-bibliography: bibtex.bib
-—
 
 <!--
 - Compile from command-line
@@ -58,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
-# Overview
+## Overview
 
 One of the main attractions of using the R
 (<http://cran.at.r-project.org>) environment is
@@ -66,7 +45,7 @@ the ease with which users can write their own programs and custom functions.
 The R programming syntax is extremely easy to learn, even for users with no
 previous programming experience. Once the basic R programming control
 structures are understood, users can use the R language as a powerful
-environment to perform complex custom analyses of almost any type of data (<span class="citeproc-not-found" data-reference-id="Gentleman2008-xo">**???**</span>).
+environment to perform complex custom analyses of almost any type of data (Gentleman 2008).
 
 ## Why Programming in R?
 
@@ -106,7 +85,7 @@ Programming in R using RStudio
 
 <center>
 
-<img title="R_Interfaces" src="images/rstudio.png"/>
+<img title="R_Interfaces" src="../images/rstudio.png"/>
 
 </center>
 
@@ -118,7 +97,7 @@ Programming in R using Vim or Emacs
 
 <center>
 
-<img title="vim-r" src="images/vimR.png"/>
+<img title="vim-r" src="../images/vimR.png"/>
 
 </center>
 
@@ -1033,3 +1012,13 @@ sessionInfo()
     ## [33] compiler_4.0.3      generics_0.1.0      scales_1.1.1        pkgconfig_2.0.3
 
 # References
+
+<div id="refs" class="references">
+
+<div id="ref-Gentleman2008-xo">
+
+Gentleman, Robert. 2008. *R Programming for Bioinformatics (Chapman & Hall/CRC Computer Science & Data Analysis)*. 1 edition. Chapman; Hall/CRC. <http://www.amazon.com/Programming-Bioinformatics-Chapman-Computer-Analysis/dp/1420063677>.
+
+</div>
+
+</div>

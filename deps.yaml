@@ -5,6 +5,7 @@ CRAN: [
 ]
 
 Bioc: [
+  limma
   
 ]
 

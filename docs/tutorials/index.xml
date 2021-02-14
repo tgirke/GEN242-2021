@@ -22,24 +22,7 @@
       <description>
         
         
-        &lt;hr&gt;
-&lt;p&gt;title: “Programming in R”
-author: “Author: Thomas Girke”
-date: “Last update: 13 February, 2021”
-output:
-html_document:
-toc: true
-toc_float:
-collapsed: true
-smooth_scroll: true
-toc_depth: 3
-fig_caption: yes
-code_folding: show
-number_sections: true&lt;/p&gt;
-&lt;p&gt;fontsize: 14pt
-bibliography: bibtex.bib
-—&lt;/p&gt;
-&lt;!--
+        &lt;!--
 - Compile from command-line
 Rscript -e &#34;rmarkdown::render(&#39;Programming_in_R.Rmd&#39;, c(&#39;html_document&#39;), clean=F); knitr::knit(&#39;Programming_in_R.Rmd&#39;, tangle=TRUE)&#34;; Rscript ../md2jekyll.R Programming_in_R.knit.md 9; Rscript -e &#34;rmarkdown::render(&#39;Programming_in_R.Rmd&#39;, c(&#39;pdf_document&#39;))&#34;
 --&gt;
@@ -56,14 +39,14 @@ document.addEventListener(&#34;DOMContentLoaded&#34;, function() {
       links[i].target = &#39;_blank&#39;;
 });
 &lt;/script&gt;
-&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;p&gt;One of the main attractions of using the R
 (&lt;a href=&#34;http://cran.at.r-project.org&#34;&gt;http://cran.at.r-project.org&lt;/a&gt;) environment is
 the ease with which users can write their own programs and custom functions.
 The R programming syntax is extremely easy to learn, even for users with no
 previous programming experience. Once the basic R programming control
 structures are understood, users can use the R language as a powerful
-environment to perform complex custom analyses of almost any type of data (&lt;span class=&#34;citeproc-not-found&#34; data-reference-id=&#34;Gentleman2008-xo&#34;&gt;&lt;strong&gt;???&lt;/strong&gt;&lt;/span&gt;).&lt;/p&gt;
+environment to perform complex custom analyses of almost any type of data (Gentleman 2008).&lt;/p&gt;
 &lt;h2 id=&#34;why-programming-in-r&#34;&gt;Why Programming in R?&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Powerful statistical environment and programming language&lt;/li&gt;
@@ -95,13 +78,13 @@ More details can be found in the R &amp;amp; BioConductor manual &lt;a href=&#34
 &lt;p&gt;Programming in R using RStudio&lt;/p&gt;
 &lt;/center&gt;
 &lt;center&gt;
-&lt;img title=&#34;R_Interfaces&#34; src=&#34;images/rstudio.png&#34;/&gt;
+&lt;img title=&#34;R_Interfaces&#34; src=&#34;../images/rstudio.png&#34;/&gt;
 &lt;/center&gt;
 &lt;center&gt;
 &lt;p&gt;Programming in R using Vim or Emacs&lt;/p&gt;
 &lt;/center&gt;
 &lt;center&gt;
-&lt;img title=&#34;vim-r&#34; src=&#34;images/vimR.png&#34;/&gt;
+&lt;img title=&#34;vim-r&#34; src=&#34;../images/vimR.png&#34;/&gt;
 &lt;/center&gt;
 &lt;h2 id=&#34;finding-help&#34;&gt;Finding Help&lt;/h2&gt;
 &lt;p&gt;Reference list on R programming (selection)&lt;/p&gt;
@@ -748,6 +731,11 @@ AAv[y]
 ## [33] compiler_4.0.3      generics_0.1.0      scales_1.1.1        pkgconfig_2.0.3
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h1 id=&#34;references&#34;&gt;References&lt;/h1&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references&#34;&gt;
+&lt;div id=&#34;ref-Gentleman2008-xo&#34;&gt;
+&lt;p&gt;Gentleman, Robert. 2008. &lt;em&gt;R Programming for Bioinformatics (Chapman &amp;amp; Hall/CRC Computer Science &amp;amp; Data Analysis)&lt;/em&gt;. 1 edition. Chapman; Hall/CRC. &lt;a href=&#34;http://www.amazon.com/Programming-Bioinformatics-Chapman-Computer-Analysis/dp/1420063677&#34;&gt;http://www.amazon.com/Programming-Bioinformatics-Chapman-Computer-Analysis/dp/1420063677&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
       </description>
     </item>

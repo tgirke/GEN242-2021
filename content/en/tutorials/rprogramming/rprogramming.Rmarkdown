@@ -36,7 +36,7 @@ suppressPackageStartupMessages({
     library(ggplot2) }) 
 ```
 
-# Overview
+## Overview
 
 One of the main attractions of using the R
 ([http://cran.at.r-project.org](http://cran.at.r-project.org)) environment is
@@ -79,10 +79,10 @@ Several excellent code editors are available that provide functionalities like R
 * [Notepad++ (NppToR)](https://sourceforge.net/projects/npptor/)
 
 <center>Programming in R using RStudio</center>
-<center><img title="R_Interfaces" src="images/rstudio.png"/></center>
+<center><img title="R_Interfaces" src="../images/rstudio.png"/></center>
 
 <center> Programming in R using Vim or Emacs</center>
-<center><img title="vim-r" src="images/vimR.png"/></center>
+<center><img title="vim-r" src="../images/vimR.png"/></center>
 
 ## Finding Help
 
