@@ -304,15 +304,25 @@ enable = true
     parent = "Tutorials"
     weight = 2
   [[menu.main]]
+    name = "Linux & HPCC Cluster"
+    url = "/tutorials/linux/linux/"
+    parent = "Tutorials"
+    weight = 3
+  [[menu.main]]
     name = "R Basics"
     url = "/tutorials/rbasics/rbasics/"
     parent = "Tutorials"
-    weight = 3
+    weight = 4
   [[menu.main]]
     name = "Sample"
     url = "/tutorials/rbasics/sample/"
     parent = "Tutorials"
-    weight = 4
+    weight = 5
+  [[menu.main]]
+    name = "Programming in R"
+    url = "/tutorials/rprogramming/rprogramming/"
+    parent = "Tutorials"
+    weight = 6
 ##
 [[menu.main]]
   name = "Assignments"

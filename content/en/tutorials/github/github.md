@@ -1,6 +1,6 @@
 ---
 title: GitHub Introduction
-linkTitle: "Github"
+linkTitle: "GitHub"
 weight: 1
 type: docs
 ---
