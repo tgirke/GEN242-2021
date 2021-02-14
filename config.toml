@@ -323,6 +323,11 @@ enable = true
     url = "/tutorials/rprogramming/rprogramming/"
     parent = "Tutorials"
     weight = 6
+  [[menu.main]]
+    name = "NGS Analysis Basics"
+    url = "/tutorials/rsequences/rsequences/"
+    parent = "Tutorials"
+    weight = 7
 ##
 [[menu.main]]
   name = "Assignments"

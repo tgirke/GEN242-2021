@@ -1,0 +1,9 @@
+base
+BiocStyle
+limma
+ggplot2
+BiocGenerics
+S4Vectors
+IRanges
+XVector
+Biostrings
