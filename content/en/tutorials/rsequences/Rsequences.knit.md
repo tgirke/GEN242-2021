@@ -1,7 +1,7 @@
 ---
 title: NGS Analysis Basics
 author: "Author: Thomas Girke"
-date: "Last update: 13 February, 2021" 
+date: "Last update: 14 February, 2021" 
 output:
   html_document:
     toc: true
