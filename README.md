@@ -1,4 +1,8 @@
-# Hugo Docsy + Rmarkdown support
+# Class: Data Analysis in Genome Biology (GEN242)
+
+The website of this repository is available [here](http://girke.bioinformatics.ucr.edu/GEN242).
+
+# How to Clone and Deploy this Hugo/Docsy Site with Rmarkdown Support
 
 This is the Hugo [Docsy theme](https://github.com/google/docsy) combining {[blogdown](https://github.com/rstudio/blogdown)} support for `Rmarkdown` files.
  
