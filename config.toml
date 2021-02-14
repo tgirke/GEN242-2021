@@ -299,15 +299,20 @@ enable = true
     parent = "Tutorials"
     weight = 1
   [[menu.main]]
+    name = "GitHub"
+    url = "/tutorials/github/github/"
+    parent = "Tutorials"
+    weight = 2
+  [[menu.main]]
     name = "R Basics"
     url = "/tutorials/rbasics/rbasics/"
     parent = "Tutorials"
-    weight = 2
+    weight = 3
   [[menu.main]]
     name = "Sample"
     url = "/tutorials/rbasics/sample/"
     parent = "Tutorials"
-    weight = 2
+    weight = 4
 ##
 [[menu.main]]
   name = "Assignments"
