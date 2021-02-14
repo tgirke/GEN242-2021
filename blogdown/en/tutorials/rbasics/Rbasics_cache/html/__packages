@@ -14,3 +14,4 @@ data.table
 RSQLite
 gplots
 knitr
+DT

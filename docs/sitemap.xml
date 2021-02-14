@@ -3,18 +3,8 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/rmarkdown/examples/example_rmd/</loc>
-    <lastmod>2021-02-04T14:56:28-08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/about/introduction/</loc>
     <lastmod>2021-02-13T12:20:56-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/rmarkdown/examples/invisible/</loc>
-    <lastmod>2021-02-04T12:57:29-08:00</lastmod>
   </url>
   
   <url>
@@ -23,28 +13,8 @@
   </url>
   
   <url>
-    <loc>/rmarkdown/examples/visible/</loc>
-    <lastmod>2021-02-04T12:57:29-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/rmarkdown/newcontent/</loc>
-    <lastmod>2021-02-04T12:57:29-08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/about/schedule/</loc>
     <lastmod>2021-02-12T11:43:12-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/rmarkdown/deploy/</loc>
-    <lastmod>2021-02-04T12:57:29-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/rmarkdown/new_features/new_features/</loc>
-    <lastmod>2021-02-04T12:57:29-08:00</lastmod>
   </url>
   
   <url>
@@ -53,18 +23,8 @@
   </url>
   
   <url>
-    <loc>/rmarkdown/commonproblems/</loc>
-    <lastmod>2021-02-04T12:57:29-08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/about/internal/install/</loc>
-    <lastmod>2021-02-13T12:14:54-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/rmarkdown/other/</loc>
-    <lastmod>2021-02-04T12:57:29-08:00</lastmod>
+    <lastmod>2021-02-13T13:30:39-08:00</lastmod>
   </url>
   
   <url>
@@ -93,13 +53,8 @@
   </url>
   
   <url>
-    <loc>/rmarkdown/</loc>
-    <lastmod>2021-02-07T17:54:17-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/rmarkdown/examples/</loc>
-    <lastmod>2021-02-04T12:57:29-08:00</lastmod>
+    <loc>/tutorials/</loc>
+    <lastmod>2021-02-04T17:39:58-08:00</lastmod>
   </url>
   
   <url>
@@ -128,8 +83,20 @@
   </url>
   
   <url>
+    <loc>/lectures/slides/slides_01/</loc>
+  </url>
+  
+  <url>
+    <loc>/lectures/slides/slides_03/</loc>
+  </url>
+  
+  <url>
     <loc>/</loc>
     <lastmod>2021-02-12T21:30:55-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/lectures/slides/slides_02/</loc>
   </url>
   
   <url>
@@ -138,7 +105,7 @@
   </url>
   
   <url>
-    <loc>/rmarkdown/tutorials/rbasics/rbasics/</loc>
+    <loc>/tutorials/rbasics/rbasics/</loc>
     <lastmod>2021-02-04T17:39:58-08:00</lastmod>
   </url>
   
@@ -148,7 +115,7 @@
   </url>
   
   <url>
-    <loc>/rmarkdown/tutorials/rbasics/sample/</loc>
+    <loc>/tutorials/rbasics/sample/</loc>
     <lastmod>2021-02-04T17:39:58-08:00</lastmod>
   </url>
   
@@ -159,7 +126,6 @@
   
   <url>
     <loc>/lectures/slides/</loc>
-    <lastmod>2021-02-12T16:33:50-08:00</lastmod>
   </url>
   
   <url>

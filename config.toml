@@ -274,24 +274,44 @@ enable = true
     parent = "Lectures"
     weight = 1
   [[menu.main]]
-    name = "Tutorials"
-    url = "/lectures/tutorials/"
+    name = "Course Introduction"
+    url = "/lectures/slides/slides_01/"
     parent = "Lectures"
+    weight = 2
+  [[menu.main]]
+    name = "Genome Basics"
+    url = "/lectures/slides/slides_02/"
+    parent = "Lectures"
+    weight = 3
+  [[menu.main]]
+    name = "Databases and Software"
+    url = "/lectures/slides/slides_03/"
+    parent = "Lectures"
+    weight = 4
+##
+[[menu.main]]
+  name = "Tutorials"
+  weight = 3
+  url = "/tutorials/"
+  [[menu.main]]
+    name = "Tutorials"
+    url = "/tutorials/"
+    parent = "Tutorials"
+    weight = 1
+  [[menu.main]]
+    name = "R Basics"
+    url = "/tutorials/rbasics/rbasics/"
+    parent = "Tutorials"
+    weight = 2
+  [[menu.main]]
+    name = "Sample"
+    url = "/tutorials/rbasics/sample/"
+    parent = "Tutorials"
     weight = 2
 ##
 [[menu.main]]
-  name = "Tutorial"
-  weight = 3
-  url = "/rmarkdown/"
-  [[menu.main]]
-    name = "Basic Example"
-    url = "/rmarkdown/examples/example_rmd"
-    parent = "Tutorials"
-    weight = 1
-##
-[[menu.main]]
   name = "Assignments"
-  weight = 3
+  weight = 4
   url = "/assignments/"
   [[menu.main]]
     name = "Homework"
@@ -307,25 +327,25 @@ enable = true
 [[menu.main]]
   name = "Resources"
   url = "create_landing"
-  weight = 4
-[[menu.main]]
-  name = "Piazza"
-  url = "https://piazza.com/ucr/spring2021/gen242/home"
-  parent = "Resources"
-  weight = 1
-[[menu.main]]
-  name = "GitHub"
-  url = "https://github.com/tgirke/GEN242_docsy"
-  parent = "Resources"
-  weight = 2
-[[menu.main]]
-  name = "Bioconductor"
-  url = "https://bioconductor.org/"
-  parent = "Resources"
-  weight = 3
-[[menu.main]]
-  name = "Hugo, Docsy & R"
-  url = "https://www.dcassol.com/docsy_Rmarkdown/rmarkdown/install/"
-  parent = "Resources"
-  weight = 3
+  weight = 5
+  [[menu.main]]
+    name = "Piazza"
+    url = "https://piazza.com/ucr/spring2021/gen242/home"
+    parent = "Resources"
+    weight = 1
+  [[menu.main]]
+    name = "GitHub"
+    url = "https://github.com/tgirke/GEN242"
+    parent = "Resources"
+    weight = 2
+  [[menu.main]]
+    name = "Bioconductor"
+    url = "https://bioconductor.org/"
+    parent = "Resources"
+    weight = 3
+  [[menu.main]]
+    name = "Hugo, Docsy & R"
+    url = "https://www.dcassol.com/docsy_Rmarkdown/rmarkdown/install/"
+    parent = "Resources"
+    weight = 3
 
