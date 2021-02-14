@@ -93,7 +93,7 @@ common operating systems.
 
 <center>
 
-<img title="R_Interfaces" src="images/rinterface.png"/>
+<img title="R_Interfaces" src="../images/rinterface.png"/>
 
 </center>
 
@@ -119,7 +119,7 @@ advanced.
 
 <center>
 
-<img title="RStudio" src="images/rstudio.png"/>
+<img title="RStudio" src="../images/rstudio.png"/>
 
 </center>
 
@@ -137,7 +137,7 @@ Terminal-based Working Environment for R: [Nvim-R-Tmux](http://girke.bioinformat
 
 <center>
 
-<img title="Nvim-R-Tmux" src="images/Nvim-R.gif" >
+<img title="Nvim-R-Tmux" src="../images/Nvim-R.gif" >
 
 </center>
 

@@ -65,7 +65,7 @@ common operating systems.
 
 ## R Working Environments
 
-<center><img title="R_Interfaces" src="images/rinterface.png"/></center>
+<center><img title="R_Interfaces" src="../images/rinterface.png"/></center>
 <center> R Projects and Interfaces</center>
 
 Some R working environments with support for syntax highlighting and utilities to send code 
@@ -82,7 +82,7 @@ to the R console:
 New integrated development environment (IDE) for [R](http://www.rstudio.com/ide/download/). Highly functional for both beginners and 
 advanced.
 
-<center><img title="RStudio" src="images/rstudio.png"/></center>
+<center><img title="RStudio" src="../images/rstudio.png"/></center>
 <center> RStudio IDE</center>
 
 Some userful shortcuts: `Ctrl+Enter` (send code), `Ctrl+Shift+C` (comment/uncomment), `Ctrl+1/2` (switch window focus)
@@ -91,7 +91,7 @@ Some userful shortcuts: `Ctrl+Enter` (send code), `Ctrl+Shift+C` (comment/uncomm
 
 Terminal-based Working Environment for R: [Nvim-R-Tmux](http://girke.bioinformatics.ucr.edu/GEN242/mydoc_tutorial_02.html#nvim-r-tmux-essentials). 
 
-<center><img title="Nvim-R-Tmux" src="images/Nvim-R.gif" ></center>
+<center><img title="Nvim-R-Tmux" src="../images/Nvim-R.gif" ></center>
 <center>Nvim-R-Tmux IDE for R</center>
 
 # R Package Repositories
