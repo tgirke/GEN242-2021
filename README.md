@@ -2,11 +2,11 @@
 
 The website of this repository is available [here](http://girke.bioinformatics.ucr.edu/GEN242).
 
-# How to Clone and Deploy this Hugo/Docsy Site with Rmarkdown Support
+## How to Clone and Deploy this Hugo/Docsy Site with Rmarkdown Support
 
 This is the Hugo [Docsy theme](https://github.com/google/docsy) combining {[blogdown](https://github.com/rstudio/blogdown)} support for `Rmarkdown` files.
  
-## Key features
+### Key features
 
 1. R code highlighting
 2. Math equations (Mathjax)
@@ -14,7 +14,7 @@ This is the Hugo [Docsy theme](https://github.com/google/docsy) combining {[blog
 4. Show/hide sidebars toggle
 5. Automatic deployment to Github pages or Netlify
 
-## Quick start
+### Quick start
 
 * Click on the **Use this Template** button.
 * Choose a Repository Name
@@ -22,7 +22,7 @@ This is the Hugo [Docsy theme](https://github.com/google/docsy) combining {[blog
 
 ![](https://raw.githubusercontent.com/dcassol/images/main/usetemplte.gif)
 
-### Usage locally
+#### Usage locally
 
 * Go to your new repository that created from our template `https://github.com/<username>/<repository_name>`
 * Click on the **Code** button.
@@ -46,18 +46,18 @@ hugo server
 blogdown::serve_site()
 ```
 
-## Prerequisites and Installation
+### Prerequisites and Installation
 
-### Install {[blogdown](https://github.com/rstudio/blogdown)} and [Hugo](https://github.com/gohugoio/hugo/releases)
+#### Install {[blogdown](https://github.com/rstudio/blogdown)} and [Hugo](https://github.com/gohugoio/hugo/releases)
 
-#### {[blogdown](https://github.com/rstudio/blogdown)}
+##### {[blogdown](https://github.com/rstudio/blogdown)}
 
 ```r
 installed.packages("rstudio/blogdown")
 # If anything wrong try develop version
 remotes::install_github("rstudio/blogdown")
 ```
-#### Hugo
+##### Hugo
 
 You need a recent extended version (we recommend version 0.79.0 or later) of Hugo 
 to do local builds and previews of sites that use Docsy.
@@ -77,7 +77,7 @@ hugo version
 
 For `Windows` and `macOS` please see instructions [here](https://www.docsy.dev/docs/getting-started/). 
 
-#### Install PostCSS
+##### Install PostCSS
 
 
 To build or update your site's CSS resources, you also need `PostCSS` to create the final assets. If you need to install it, you must have a recent version of `NodeJS` installed on your machine so you can use `npm`, the Node package manager. By default `npm` installs tools under the directory where you run `npm` install:
@@ -94,9 +94,9 @@ cd <repository_name>
 npm audit fix
 ```
 
-### Run the website locally 
+#### Run the website locally 
 
-#### with {blogdown}
+##### with {blogdown}
 
 * Open R in console or Rstudio
 
@@ -110,14 +110,14 @@ blogdown::serve_site()
 
 You should see a website is opened in your local browser or Rstudio viewer.
 
-#### Run the website locally on the terminal
+##### Run the website locally on the terminal
 
 ```bash
 cd YOUR_NEW_REPO_PATH
 hugo server
 ```
 
-## Create your website content
+### Create your website content
 
 This Docsy Template Project uses the [Docsy](https://github.com/google/docsy) theme, and we have provided a skeleton documentation structure for you to use when you clone the repo. The full documentation can be found [here](https://www.docsy.dev/docs/deployment/).
 
@@ -138,7 +138,7 @@ new `.markdown` will be used by Hugo to generate HTML.
 
 4. After the `.markdown` generation, changes will be reflected in the local browser in a second. 
 
-### Adding Content
+#### Adding Content
 
 * [Content sections and templates](https://www.docsy.dev/docs/adding-content/content/#content-section)
 
@@ -160,7 +160,7 @@ new `.markdown` will be used by Hugo to generate HTML.
   weight = 1
 ```
 
-## Build the website
+### Build the website
 
 If you are ready to publish the website, use
 ```r
@@ -179,18 +179,18 @@ ToDo
 
 </details>
 
-## Deploy
+### Deploy
 
-### Deploy to GitHub Pages
+#### Deploy to GitHub Pages
 
 Key feature: Fully automatic, **no need to build website locally**. Yes, you can skip `blogdown::build_site()` step locally.
 
-#### 1. Add all R and system packages to `/deps.yaml` file that are required to render your `Rmarkdown` files
+##### 1. Add all R and system packages to `/deps.yaml` file that are required to render your `Rmarkdown` files
 
 * Specify any CRAN, Bioconductor or Github packages you have used, in `yaml` array format. Github packages need to be `user_name/repo_name`.
 * The site building is happening on Github by an Ubuntu system, so specify any system packages to install that are required by your R packages. Only a single line, use space to separate each system dependencies.
 
-#### 2. Change base URL in config file
+##### 2. Change base URL in config file
 
 Change your `baseURL` in the `/config.toml`. 
 
@@ -198,7 +198,7 @@ Change your `baseURL` in the `/config.toml`.
 * If not, baseURL = "/" to your repo's url, like "`https://USERNAME.github.io/REPO_NAME/`".
 * If you use custom domain, baseURL = "/" to your custom url, like "`https://MY_DOMAIN_NAME.com/`".
 
-#### 3. Create a new branch named `gh-pages`
+##### 3. Create a new branch named `gh-pages`
 
 ```
 git checkout -b gh-pages
@@ -212,27 +212,27 @@ Or go to Github website create a branch by [clicking](https://docs.github.com/en
 
 You do *not* need to push any content to this `gh-pages` branch. This branch is automatically managed by Github Actions. 
 
-#### 4. Github Setting 
+##### 4. Github Setting 
 
 * Click on **Setting**
 * click on **GitHub Pages** 
 * Select Branch *gh-pages* and folder */(root)* and click on **Save**
 * Click on **Enforce HTTPS** 
 
-#### 5. Trigger page build
+##### 5. Trigger page build
 
 * To trigger a build and deployment event, in the `git commit` message, include the word "**pg_build**", 
 e.g. `git commit -m "blabla pg_build"`. This will run the full rendering process (rendering and deploy the website may still take a few minutes).
 * If you have build the site locally and updated the `/public` locally, in your commit message, include the word "**no_render**" will skip the site rendering + build process. Github Actions will directly use `/public` to host the website.
 
-#### Details
+##### Details
 
 * The first deployment can take some time because Github Actions need to install these packages. 
 After first successful deployment with Github Actions, all packages will be cached and 
 no need to install again later. So later deployment will be much faster.
 
  
-## Deploy to Netlify
+### Deploy to Netlify
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/2de20eae-a002-40ef-8c96-1fe54f9528d4/deploy-status)](https://app.netlify.com/sites/docsy-rmarkdown/deploys)
 
@@ -241,7 +241,7 @@ no need to install again later. So later deployment will be much faster.
 1. Before running `blogdown::build_site()`, in `/config.toml` change `baseURL` to "/" `baseURL="/"`
 1. Before deployment, in `/netlify.toml` change `publish` to "public" `publish = "public"`
 
-### Deploy to Netlify with GitHub
+#### Deploy to Netlify with GitHub
 
 * Go online to [Netlify.com](https://www.netlify.com/).
 * Click on the **Sign Up** button.
@@ -253,7 +253,7 @@ no need to install again later. So later deployment will be much faster.
   * Specify `HUGO_VERSION` as the **Key** for the new variable, and `0.79.0` for the **Value**.
 * Click on **Deploy site**.
 
-### Deploy to Netlify button
+#### Deploy to Netlify button
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/dcassol/docsy_Rmarkdown)
 
@@ -276,9 +276,9 @@ You can get a status badge for you website by going to Netlify website, login, g
 
 </details>
 
-## Common Problems
+### Common Problems
 
-### 1. During site building: 
+#### 1. During site building: 
 
 `Error: Error building site: POSTCSS: failed to transform "scss/main.css" (text/css):resource "scss/scss/main.scss_4853eb546e7a6c0898ed71feae7357c0" not found in file cache`.
 
@@ -288,7 +288,7 @@ npm audit fix
 ```
 More [information](https://github.com/google/docsy/issues/235)
 
-### 2. During site building: 
+#### 2. During site building: 
 
 `Error: Error building site: "~/content/en/_index.html:6:1": failed to extract shortcode: template for shortcode "blocks/cover" not found`.
 
@@ -297,7 +297,7 @@ cd YOUR_REPO
 git submodule update --init --recursive
 ```
 
-### 3. Rmarkdown rendering
+#### 3. Rmarkdown rendering
 
 ```r
 The extension tex_math_dollars is not supported for gfm
@@ -310,9 +310,9 @@ Update pandoc >= 2.12 solves the problem. Use `rmarkdown::pandoc_version()` to c
 If you use Rstudio, simply update Rstudio to the latest version which comes with pandoc >= 2.12 and 
 rmarkdown will use it automatically. Otherwise, you need to [update pandoc](https://pandoc.org/installing.html) by yourself.
 
-## Additional commands 
+### Additional commands 
 
-### 1. `docsy` theme update 
+#### 1. `docsy` theme update 
 
 * Adding and update the theme
 
