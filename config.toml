@@ -341,7 +341,7 @@ enable = true
 ## 
 [[menu.main]]
   name = "Resources"
-  url = "create_landing"
+  url = "/resources/"
   weight = 5
   [[menu.main]]
     name = "Piazza"
