@@ -59,14 +59,14 @@ The HPCC Cluster (formerly called biocluster) is a shared research computing sys
 + Login command on OS X or Linux 
 
 ```sh
-ssh -XY user@biocluster.ucr.edu
+ssh -XY user@cluster.hpcc.ucr.edu
 ```
   
 Type password
 
 + Windows: provide same information in a terminal application like [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) or [MobaXterm](http://mobaxterm.mobatek.net/).
     
-    + Host name: `biocluster.ucr.edu`
+    + Host name: `cluster.hpcc.ucr.edu`
     + User name: ...
     + Password: ...
 
@@ -236,7 +236,7 @@ ln -s original_filename new_nickname
 * Most common research databases used in bioinformatics are available
 * Support of most common programming languages used in research computing
 * A module system is used to facilitate the management of software tools. This includes any number of versions of each software.
-* New software install requests can be sent to support@biocluster.ucr.edu.
+* New software install requests can be sent to support@hpcc.ucr.edu.
 * To use software manged under the module system, users need to learn using some basic commands. The most common commands are listed below.
 
 Print available modules
@@ -476,7 +476,7 @@ in each user account. If this is not the case then follow the quick configuratio
 Skip these steps if Nvim-R-Tmux is already configured in your account. Or follow the [detailed
 instructions](https://gist.github.com/tgirke/7a7c197b443243937f68c422e5471899) to install Nvim-R-Tmux from scratch on your own system.
 
-1. Log in to your user account on HPCC and execute `install_nvimRtmux`. Alternatively, follow these step-by-step [install commands](http://biocluster.ucr.edu/~tgirke/Documents/R_BioCond/My_R_Scripts/vim-r-plugin/README_nvimRtmux).
+1. Log in to your user account on HPCC and execute `install_nvimRtmux`. Alternatively, follow these step-by-step [install commands](http://cluster.hpcc.ucr.edu/~tgirke/Documents/R_BioCond/My_R_Scripts/vim-r-plugin/README_nvimRtmux).
 2. To enable the nvim-R-tmux environment, log out and in again.
 3. Follow usage instructions of next section.
 
