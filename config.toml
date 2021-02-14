@@ -3,7 +3,7 @@
 # or "https://USERNAME.github.io/REPO_NAME/" if not the first
 # replace USERNAME and REPO_NAME
 # If deploy on Netlify, change it to "/"
-baseURL = "https://girke.bioinformatics.ucr.edu/GEN242_docsy/"
+baseURL = "https://girke.bioinformatics.ucr.edu/GEN242/"
 title = "GEN242"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit", "\\.utf8"]
 enableRobotsTXT = true
@@ -114,12 +114,12 @@ visHideMethod = "soft"
 
 # A link to latest version of the docs. Used in the "version-banner" partial to
 # point people to the main doc site.
-url_latest_version = "https://github.com/tgirke/GEN242_docsy/"
+url_latest_version = "https://github.com/tgirke/GEN242/"
 
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
-github_repo = "https://github.com/tgirke/GEN242_docsy/"
+github_repo = "https://github.com/tgirke/GEN242/"
 # An optional link to a related project repo. For example, the sibling repository where your product code lives.
-github_project_repo = "https://github.com/tgirke/GEN242_docsy"
+github_project_repo = "https://github.com/tgirke/GEN242"
 # Since Github change default from "master" to "main", specify here.
 github_branch = "main"
 # Specify a value here if your content directory is not in your repo's root directory
