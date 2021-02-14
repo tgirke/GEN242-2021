@@ -1,6 +1,6 @@
 ---
-title: "Docsy Blog"
-linkTitle: "Blog"
+title: "GEN242 News"
+linkTitle: "News"
 menu:
   main:
     weight: 30
