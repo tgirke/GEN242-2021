@@ -349,7 +349,7 @@ enable = true
     parent = "Resources"
     weight = 1
   [[menu.main]]
-    name = "GitHub Repos"
+    name = "GitHub Repo"
     url = "https://github.com/tgirke/GEN242"
     parent = "Resources"
     weight = 2
