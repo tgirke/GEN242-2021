@@ -309,12 +309,12 @@ enable = true
     parent = "Tutorials"
     weight = 3
   [[menu.main]]
-    name = "R Basics"
+    name = "Introduction to R"
     url = "/tutorials/rbasics/rbasics/"
     parent = "Tutorials"
     weight = 4
   [[menu.main]]
-    name = "Sample"
+    name = "Sample R Markdown"
     url = "/tutorials/rbasics/sample/"
     parent = "Tutorials"
     weight = 5

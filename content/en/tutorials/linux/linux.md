@@ -1,7 +1,7 @@
 ---
 title: Introduction to HPCC Cluster and Linux
 linkTitle: "Linux & HPCC Cluster"
-weight: 2
+weight: 3
 type: docs
 ---
 

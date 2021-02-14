@@ -14,6 +14,7 @@ output:
     number_sections: true
 fontsize: 14pt
 bibliography: bibtex.bib
+weight: 4
 type: docs
 ---
 

@@ -15,6 +15,7 @@ output:
 fontsize: 14pt
 bibliography: bibtex.bib
 type: docs
+weight: 5
 ---
 
 <script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
