@@ -254,7 +254,7 @@ enable = true
   parent = "About"
   weight = 4
   [[menu.main]]
-    name = "Internal Resources"
+    name = "Resources"
     url = "/about/internal/internal_resources/"
     parent = "About"
     weight = 5
@@ -345,27 +345,27 @@ enable = true
     weight = 1
 ## 
 [[menu.main]]
-  name = "Resources"
+  name = "Links"
   url = "/external_resources/"
   weight = 5
   [[menu.main]]
     name = "Piazza"
     url = "https://piazza.com/ucr/spring2021/gen242/home"
-    parent = "Resources"
+    parent = "Links"
     weight = 1
   [[menu.main]]
     name = "GitHub Repo"
     url = "https://github.com/tgirke/GEN242"
-    parent = "Resources"
+    parent = "Links"
     weight = 2
   [[menu.main]]
     name = "Bioconductor"
     url = "https://bioconductor.org/"
-    parent = "Resources"
+    parent = "Links"
     weight = 3
   [[menu.main]]
     name = "Hugo, Docsy & R"
     url = "https://www.dcassol.com/docsy_Rmarkdown/rmarkdown/install/"
-    parent = "Resources"
+    parent = "Links"
     weight = 3
 
