@@ -1,5 +1,5 @@
 ---
-title: "External Resources"
+title: "Links"
 linkTitle: "Resources"
 type: docs
 ---
