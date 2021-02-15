@@ -21,3 +21,5 @@ GenomicAlignments
 ShortRead
 systemPipeR
 rtracklayer
+AnnotationDbi
+GenomicFeatures

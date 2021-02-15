@@ -420,12 +420,12 @@ dsetq1[1:2]
 ## Processing FASTQ Files with ShortRead
 
 The following expains the basic usage of `ShortReadQ` objects. To make the sample code work, 
-download and unzip this [file](http://faculty.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_6_10_2012/Rsequences/data.zip) to your current working directory.
+download and unzip this [file](http://cluster.hpcc.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_6_10_2012/Rsequences/data.zip) to your current working directory.
 The following code performs the download for you.
 
 ```{r read_fastq1, eval=TRUE, message=FALSE, warnings=FALSE}
 library(ShortRead)
-download.file("http://faculty.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_6_10_2012/Rsequences/data.zip", "data.zip")
+download.file("http://cluster.hpcc.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_6_10_2012/Rsequences/data.zip", "data.zip")
 unzip("data.zip")
 ```
 
@@ -554,7 +554,7 @@ gr <- GRanges(seqnames = Rle(c("chr1", "chr2", "chr1", "chr3"), c(1, 3, 2, 4)), 
 
 ### Import GFF into `GRanges` Object
 ```{r genomicranges2, eval=TRUE, message=FALSE, warnings=FALSE}
-gff <- import.gff("http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/Samples/gff3.gff") # Imports a simplified GFF3 genome annotation file.
+gff <- import.gff("http://cluster.hpcc.ucr.edu/~tgirke/Documents/R_BioCond/Samples/gff3.gff") # Imports a simplified GFF3 genome annotation file.
 seqlengths(gff) <- end(ranges(gff[which(values(gff)[,"type"]=="chromosome"),])) 
 names(gff) <- 1:length(gff) # Assigns names to corresponding slot
 gff[1:4,]
@@ -563,12 +563,6 @@ gff[1:4,]
 ### Coerce `GRanges` object to `data.frame`
 ```{r genomicranges3, eval=TRUE, message=FALSE, warnings=FALSE}
 as.data.frame(gff)[1:4, 1:7]
-```
-
-### Coerce `GRanges` to `RangedData` object and vice versa
-```{r genomicranges4, eval=TRUE, message=FALSE, warnings=FALSE}
-gff_rd <- as(gff, "RangedData") 
-gff_gr <- as(gff_rd, "GRanges") 
 ```
 
 ## Utilities for Range Containers
@@ -672,7 +666,7 @@ lapply(sp[1:4], length) # Looping over GRangesList objects similar to lists
 Storing annotation ranges in `TranscriptDb` databases makes many operations more robust and convenient.
 ```{r txdb_objects1, eval=TRUE, message=FALSE, warnings=FALSE}
 library(GenomicFeatures)
-download.file("http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/Samples/gff3.gff", "data/gff3.gff")
+download.file("http://cluster.hpcc.ucr.edu/~tgirke/Documents/R_BioCond/Samples/gff3.gff", "data/gff3.gff")
 txdb <- makeTxDbFromGFF(file="data/gff3.gff", format="gff", dataSource="TAIR", organism="Arabidopsis thaliana")
 saveDb(txdb, file="./data/TAIR10.sqlite")
 txdb <- loadDb("./data/TAIR10.sqlite")
@@ -785,7 +779,7 @@ This homework is due on Thu, May 4th at 6:00 PM.
 
 ## Homework Solutions
 
-See [here](https://drive.google.com/open?id=1MBSAUqaIPws-NypULR9DYI7-QcM4Llu2)
+See [here]()
 
 # Session Info
 
