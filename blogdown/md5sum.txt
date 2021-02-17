@@ -5,5 +5,5 @@
 "content/en/tutorials/rbasics/Rbasics.Rmarkdown" "d0b6795150c49d7d5a1ebd701b91edbb"
 "content/en/tutorials/rbasics/sample.Rmarkdown" "b94bfe5d863d8bcff325819a7fffe2d7"
 "content/en/tutorials/reference/reference.Rmarkdown" "345f444c7beee1062f0d4c7c16559b4d"
-"content/en/tutorials/rprogramming/rprogramming.Rmarkdown" "4d99b28f8f272365a5ba6ac53fb58be7"
-"content/en/tutorials/rsequences/Rsequences.Rmarkdown" "bb67d34bf332dcc734dedf973816077f"
+"content/en/tutorials/rprogramming/rprogramming.Rmarkdown" "2fa1bb09128adb28bb2075a154daab37"
+"content/en/tutorials/rsequences/Rsequences.Rmarkdown" "bd696076ff490d5f0a7349c3571b8a5b"

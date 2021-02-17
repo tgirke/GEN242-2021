@@ -48,7 +48,7 @@ __R Base__
 
 __Bioconductor__
 
-Bioconductor packages provide much more sophisticated string handling utilities for sequence analysis [@Lawrence2013-kt, @Huber2015-ag].
+Bioconductor packages provide much more sophisticated string handling utilities for sequence analysis [@Lawrence2013-kt; @Huber2015-ag].
 
 * [Biostrings](http://bioconductor.org/packages/release/bioc/html/Biostrings.html): general sequence analysis environment
 * [ShortRead](http://bioconductor.org/packages/release/bioc/html/ShortRead.html): pipeline for short read data

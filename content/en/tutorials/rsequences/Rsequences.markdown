@@ -1,7 +1,7 @@
 ---
 title: NGS Analysis Basics
 author: "Author: Thomas Girke"
-date: "Last update: 15 February, 2021" 
+date: "Last update: 16 February, 2021" 
 output:
   html_document:
     toc: true
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 **Bioconductor**
 
-Bioconductor packages provide much more sophisticated string handling utilities for sequence analysis (Lawrence et al. 2013, @Huber2015-ag).
+Bioconductor packages provide much more sophisticated string handling utilities for sequence analysis (Lawrence et al. 2013; Huber et al. 2015).
 
   - [Biostrings](http://bioconductor.org/packages/release/bioc/html/Biostrings.html): general sequence analysis environment
   - [ShortRead](http://bioconductor.org/packages/release/bioc/html/ShortRead.html): pipeline for short read data
