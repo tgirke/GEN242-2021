@@ -30,11 +30,17 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           	{{ range .Children }}
-          	  <a class="dropdown-item" href="{{ with .Page }}{{ .RelPermalink }}{{ else }}{{ .URL | relLangURL }}{{ end }}">{{ .Name }}</a>
+          	  {{ $level := (float 1) }}
+              {{ if (isset .Params "level") }}
+                {{ $level = (float .Params.level) }}
+              {{ end }}
+              {{ $space := (float 1) }}
+              <a class="dropdown-item" href="{{ with .Page }}{{ .RelPermalink }}{{ else }}{{ .URL | relLangURL }}{{ end }}"
+              style="padding-left: {{ ( mul  $level $space ) }}rem; font-weight: calc(3/{{ add $level 2 }}*500)">
+                 {{ .Name }}
+              </a>
           	{{ end }}
           </div>
-				{{ if .HasChildren }}
-				{{ end }}
 				{{ else }}
 					<a class="nav-link{{if $active }} active{{end}}" href="{{ with .Page }}{{ .RelPermalink }}{{ else }}{{ .URL | relLangURL }}{{ end }}" {{ if ne $url.Host $baseurl.Host }}target="_blank" {{ end }}><span{{if $active }} class="active"{{end}}>{{ .Name }}</span></a>
 				{{ end }}

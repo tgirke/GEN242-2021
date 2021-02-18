@@ -258,11 +258,15 @@ enable = true
     url = "/about/internal/internal_resources/"
     parent = "About"
     weight = 5
+    [menu.main.params]
+      level = 2
   [[menu.main]]
     name = "Installation"
     url = "/about/internal/install/"
     parent = "About"
     weight = 6
+    [menu.main.params]
+      level = 2
 ##
 [[menu.main]]
   name = "Lectures"
@@ -278,16 +282,22 @@ enable = true
     url = "/lectures/slides/slides_01/"
     parent = "Lectures"
     weight = 2
+    [menu.main.params]
+      level = 2
   [[menu.main]]
     name = "Genome Basics"
     url = "/lectures/slides/slides_02/"
     parent = "Lectures"
     weight = 3
+    [menu.main.params]
+      level = 2
   [[menu.main]]
     name = "Databases and Software"
     url = "/lectures/slides/slides_03/"
     parent = "Lectures"
     weight = 4
+    [menu.main.params]
+      level = 2
 ##
 [[menu.main]]
   name = "Tutorials"
