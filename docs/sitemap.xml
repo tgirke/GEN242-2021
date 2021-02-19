@@ -8,8 +8,7 @@
   </url>
   
   <url>
-    <loc>/tutorials/github/github/</loc>
-    <lastmod>2021-02-13T19:01:59-08:00</lastmod>
+    <loc>/manuals/github/github/</loc>
   </url>
   
   <url>
@@ -18,8 +17,7 @@
   </url>
   
   <url>
-    <loc>/tutorials/linux/linux/</loc>
-    <lastmod>2021-02-14T10:27:23-08:00</lastmod>
+    <loc>/manuals/linux/linux/</loc>
   </url>
   
   <url>
@@ -28,8 +26,7 @@
   </url>
   
   <url>
-    <loc>/tutorials/rbasics/rbasics/</loc>
-    <lastmod>2021-02-15T15:37:29-08:00</lastmod>
+    <loc>/manuals/rbasics/rbasics/</loc>
   </url>
   
   <url>
@@ -38,8 +35,7 @@
   </url>
   
   <url>
-    <loc>/tutorials/rbasics/sample/</loc>
-    <lastmod>2021-02-15T15:37:29-08:00</lastmod>
+    <loc>/manuals/rbasics/sample/</loc>
   </url>
   
   <url>
@@ -48,8 +44,7 @@
   </url>
   
   <url>
-    <loc>/tutorials/rprogramming/rprogramming/</loc>
-    <lastmod>2021-02-16T18:36:41-08:00</lastmod>
+    <loc>/manuals/rprogramming/rprogramming/</loc>
   </url>
   
   <url>
@@ -63,6 +58,10 @@
   </url>
   
   <url>
+    <loc>/manuals/</loc>
+  </url>
+  
+  <url>
     <loc>/blog/news/</loc>
     <lastmod>2021-02-13T19:27:35-08:00</lastmod>
   </url>
@@ -73,13 +72,88 @@
   </url>
   
   <url>
-    <loc>/tutorials/</loc>
-    <lastmod>2021-02-13T17:34:36-08:00</lastmod>
+    <loc>/slides/slides_01/</loc>
+  </url>
+  
+  <url>
+    <loc>/slides/slides_02/</loc>
+  </url>
+  
+  <url>
+    <loc>/slides/slides_03/</loc>
+  </url>
+  
+  <url>
+    <loc>/slides/slides_04/</loc>
+  </url>
+  
+  <url>
+    <loc>/slides/slides_05/</loc>
+  </url>
+  
+  <url>
+    <loc>/slides/slides_06/</loc>
+  </url>
+  
+  <url>
+    <loc>/slides/slides_07/</loc>
+  </url>
+  
+  <url>
+    <loc>/slides/slides_08/</loc>
+  </url>
+  
+  <url>
+    <loc>/slides/slides_09/</loc>
+  </url>
+  
+  <url>
+    <loc>/tutorials/tutorial_01/</loc>
+  </url>
+  
+  <url>
+    <loc>/tutorials/tutorial_02/</loc>
+  </url>
+  
+  <url>
+    <loc>/tutorials/tutorial_03/</loc>
+  </url>
+  
+  <url>
+    <loc>/tutorials/tutorial_04/</loc>
+  </url>
+  
+  <url>
+    <loc>/tutorials/tutorial_05/</loc>
+  </url>
+  
+  <url>
+    <loc>/tutorials/tutorial_06/</loc>
+  </url>
+  
+  <url>
+    <loc>/tutorials/tutorial_07/</loc>
+  </url>
+  
+  <url>
+    <loc>/tutorials/tutorial_08/</loc>
+  </url>
+  
+  <url>
+    <loc>/tutorials/tutorial_09/</loc>
+  </url>
+  
+  <url>
+    <loc>/tutorials/tutorial_10/</loc>
+  </url>
+  
+  <url>
+    <loc>/tutorials/tutorial_11/</loc>
   </url>
   
   <url>
     <loc>/blog/2021/02/13/first-day-of-instructions/</loc>
-    <lastmod>2021-02-13T19:27:35-08:00</lastmod>
+    <lastmod>2021-02-17T17:38:26-08:00</lastmod>
   </url>
   
   <url>
@@ -88,23 +162,8 @@
   </url>
   
   <url>
-    <loc>/lectures/slides/slides_01/</loc>
-    <lastmod>2021-02-13T17:34:36-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/lectures/slides/slides_03/</loc>
-    <lastmod>2021-02-13T17:34:36-08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/</loc>
     <lastmod>2021-02-16T20:20:48-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/lectures/slides/slides_02/</loc>
-    <lastmod>2021-02-13T17:34:36-08:00</lastmod>
   </url>
   
   <url>
@@ -113,18 +172,12 @@
   </url>
   
   <url>
-    <loc>/lectures/</loc>
-    <lastmod>2021-02-12T16:23:56-08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/blog/</loc>
     <lastmod>2021-02-13T19:27:35-08:00</lastmod>
   </url>
   
   <url>
-    <loc>/tutorials/rsequences/rsequences/</loc>
-    <lastmod>2021-02-16T18:36:41-08:00</lastmod>
+    <loc>/manuals/rsequences/rsequences/</loc>
   </url>
   
   <url>
@@ -138,13 +191,12 @@
   </url>
   
   <url>
-    <loc>/lectures/slides/</loc>
-    <lastmod>2021-02-13T17:34:36-08:00</lastmod>
+    <loc>/slides/</loc>
   </url>
   
   <url>
-    <loc>/tutorials/tutorials/</loc>
-    <lastmod>2021-02-13T20:57:53-08:00</lastmod>
+    <loc>/tutorials/</loc>
+    <lastmod>2021-02-13T17:34:36-08:00</lastmod>
   </url>
   
 </urlset>

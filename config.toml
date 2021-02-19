@@ -269,79 +269,158 @@ enable = true
       level = 2
 ##
 [[menu.main]]
-  name = "Lectures"
+  name = "Slides"
   weight = 2
-  url = "/lectures/"
+  url = "/slides/"
   [[menu.main]]
-    name = "Slides"
-    url = "/lectures/slides/"
-    parent = "Lectures"
-    weight = 1
+    name = "Course Introduction (S1)"
+    url = "/slides/slides_01"
+    parent = "Slides"
+    weight = 101
   [[menu.main]]
-    name = "Course Introduction"
-    url = "/lectures/slides/slides_01/"
-    parent = "Lectures"
-    weight = 2
-    [menu.main.params]
-      level = 2
+    name = "Genome Basics (S2)"
+    url = "/slides/slides_02"
+    parent = "Slides"
+    weight = 102
   [[menu.main]]
-    name = "Genome Basics"
-    url = "/lectures/slides/slides_02/"
-    parent = "Lectures"
-    weight = 3
-    [menu.main.params]
-      level = 2
+    name = "Databases and Software (S3)"
+    url = "/slides/slides_03"
+    parent = "Slides"
+    weight = 103
   [[menu.main]]
-    name = "Databases and Software"
-    url = "/lectures/slides/slides_03/"
-    parent = "Lectures"
-    weight = 4
-    [menu.main.params]
-      level = 2
+    name = "DNA Sequencing (S4)"
+    url = "/slides/slides_04"
+    parent = "Slides"
+    weight = 104
+  [[menu.main]]
+    name = "Introduction to R (S5)"
+    url = "/slides/slides_05"
+    parent = "Slides"
+    weight = 105
+  [[menu.main]]
+    name = "Sequence Alignments (S6)"
+    url = "/slides/slides_06"
+    parent = "Slides"
+    weight = 106
+  [[menu.main]]
+    name = "Programming in R (S7)"
+    url = "/slides/slides_07"
+    parent = "Slides"
+    weight = 107
+  [[menu.main]]
+    name = "Multiple Alignments (S8)"
+    url = "/slides/slides_08"
+    parent = "Slides"
+    weight = 108
+  [[menu.main]]
+    name = "Short Read Alignments (S9)"
+    url = "/slides/slides_09"
+    parent = "Slides"
+    weight = 109
 ##
 [[menu.main]]
   name = "Tutorials"
   weight = 3
   url = "/tutorials/"
   [[menu.main]]
-    name = "Tutorials"
-    url = "/tutorials/"
+    name = "GitHub Introduction (T1)"
+    url = "/tutorials/tutorial_01"
     parent = "Tutorials"
+    weight = 201
+  [[menu.main]]
+    name = "Linux and HPCC Cluster (T2)"
+    url = "/tutorials/tutorial_02"
+    parent = "Tutorials"
+    weight = 202
+  [[menu.main]]
+    name = "Introduction to R (T3)"
+    url = "/tutorials/tutorial_03"
+    parent = "Tutorials"
+    weight = 203
+  [[menu.main]]
+    name = "Programming in R (T4)"
+    url = "/tutorials/tutorial_04"
+    parent = "Tutorials"
+    weight = 204
+  [[menu.main]]
+    name = "NGS Analysis Basics (T5)"
+    url = "/tutorials/tutorial_05"
+    parent = "Tutorials"
+    weight = 205
+  [[menu.main]]
+    name = "RNA-Seq Workflow (T6)"
+    url = "/tutorials/tutorial_06"
+    parent = "Tutorials"
+    weight = 206
+  [[menu.main]]
+    name = "scRNA-Seq Workflow (T7)"
+    url = "/tutorials/tutorial_07"
+    parent = "Tutorials"
+    weight = 207
+  [[menu.main]]
+    name = "ChIP-Seq Workflow (T8)"
+    url = "/tutorials/tutorial_08"
+    parent = "Tutorials"
+    weight = 208
+  [[menu.main]]
+    name = "VAR-Seq Workflow (T9)"
+    url = "/tutorials/tutorial_09"
+    parent = "Tutorials"
+    weight = 209
+  [[menu.main]]
+    name = "Graphics and Visualization (T10)"
+    url = "/tutorials/tutorial_10"
+    parent = "Tutorials"
+    weight = 210
+  [[menu.main]]
+    name = "Cluster Analysis and Data Mining (T11)"
+    url = "/tutorials/tutorial_11"
+    parent = "Tutorials"
+    weight = 211
+##
+[[menu.main]]
+  name = "Manuals"
+  weight = 4
+  url = "/manuals/"
+  [[menu.main]]
+    name = "Manuals"
+    url = "/manuals/"
+    parent = "manuals"
     weight = 1
   [[menu.main]]
     name = "GitHub"
-    url = "/tutorials/github/github/"
-    parent = "Tutorials"
+    url = "/manuals/github/github/"
+    parent = "Manuals"
     weight = 2
   [[menu.main]]
     name = "Linux & HPCC Cluster"
-    url = "/tutorials/linux/linux/"
-    parent = "Tutorials"
+    url = "/manuals/linux/linux/"
+    parent = "Manuals"
     weight = 3
   [[menu.main]]
     name = "Introduction to R"
-    url = "/tutorials/rbasics/rbasics/"
-    parent = "Tutorials"
+    url = "/manuals/rbasics/rbasics/"
+    parent = "Manuals"
     weight = 4
   [[menu.main]]
     name = "Sample R Markdown"
-    url = "/tutorials/rbasics/sample/"
-    parent = "Tutorials"
+    url = "/manuals/rbasics/sample/"
+    parent = "Manuals"
     weight = 5
   [[menu.main]]
     name = "Programming in R"
-    url = "/tutorials/rprogramming/rprogramming/"
-    parent = "Tutorials"
+    url = "/manuals/rprogramming/rprogramming/"
+    parent = "Manuals"
     weight = 6
   [[menu.main]]
     name = "NGS Analysis Basics"
-    url = "/tutorials/rsequences/rsequences/"
-    parent = "Tutorials"
+    url = "/manuals/rsequences/rsequences/"
+    parent = "Manuals"
     weight = 7
 ##
 [[menu.main]]
   name = "Assignments"
-  weight = 4
+  weight = 5
   url = "/assignments/"
   [[menu.main]]
     name = "Homework"
@@ -357,7 +436,7 @@ enable = true
 [[menu.main]]
   name = "Links"
   url = "/external_resources/"
-  weight = 5
+  weight = 6
   [[menu.main]]
     name = "Piazza"
     url = "https://piazza.com/ucr/spring2021/gen242/home"
