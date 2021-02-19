@@ -1,9 +1,9 @@
 ---
-title: "Homework 2"
-linkTitle: "HW2"
+title: "Homework 3"
+linkTitle: "HW3"
 description: >
 type: docs
-weight: 302
+weight: 303
 ---
 
 <br></br>
