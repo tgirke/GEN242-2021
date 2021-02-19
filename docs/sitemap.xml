@@ -53,16 +53,6 @@
   </url>
   
   <url>
-    <loc>/assignments/</loc>
-    <lastmod>2021-02-07T18:08:55-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/assignments/homework/</loc>
-    <lastmod>2021-02-07T18:08:55-08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/manuals/</loc>
     <lastmod>2021-02-18T20:54:40-08:00</lastmod>
   </url>
@@ -70,11 +60,6 @@
   <url>
     <loc>/blog/news/</loc>
     <lastmod>2021-02-13T19:27:35-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/assignments/projects/</loc>
-    <lastmod>2021-02-07T18:08:55-08:00</lastmod>
   </url>
   
   <url>
@@ -228,6 +213,36 @@
   </url>
   
   <url>
+    <loc>/assignments/homework/</loc>
+    <lastmod>2021-02-07T18:08:55-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/assignments/homework/hw1/</loc>
+  </url>
+  
+  <url>
+    <loc>/assignments/homework/hw2/</loc>
+  </url>
+  
+  <url>
+    <loc>/assignments/projects/</loc>
+    <lastmod>2021-02-07T18:08:55-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/assignments/projects/project_01/</loc>
+  </url>
+  
+  <url>
+    <loc>/assignments/presentations/</loc>
+  </url>
+  
+  <url>
+    <loc>/assignments/presentations/presentation_01/</loc>
+  </url>
+  
+  <url>
     <loc>/blog/2021/02/13/first-day-of-instructions/</loc>
     <lastmod>2021-02-17T17:38:26-08:00</lastmod>
   </url>
@@ -235,6 +250,11 @@
   <url>
     <loc>/about/</loc>
     <lastmod>2021-02-11T20:39:37-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/assignments/</loc>
+    <lastmod>2021-02-07T18:08:55-08:00</lastmod>
   </url>
   
   <url>

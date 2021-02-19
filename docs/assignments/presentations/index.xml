@@ -1,0 +1,32 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GEN242 – Project and Paper Presentations</title>
+    <link>/assignments/presentations/</link>
+    <description>Recent content in Project and Paper Presentations on GEN242</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/assignments/presentations/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Assignments: Presentation 1</title>
+      <link>/assignments/presentations/presentation_01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/assignments/presentations/presentation_01/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;br&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;Presentation to be posted.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

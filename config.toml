@@ -2,7 +2,8 @@
 # eg: "https://USERNAME.github.io/" if this is your first website
 # or "https://USERNAME.github.io/REPO_NAME/" if not the first
 # replace USERNAME and REPO_NAME
-# If deploy on Netlify, change it to "/"
+# To run locally with 'hugo server' or deploy on Netlify, enable the following line and disable the one after it.
+# baseURL = "/"
 baseURL = "https://girke.bioinformatics.ucr.edu/GEN242/"
 title = "GEN242"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit", "\\.utf8"]
@@ -476,12 +477,45 @@ enable = true
     name = "Homework"
     url = "/assignments/Homework/"
     parent = "Assignments"
-    weight = 1
+    weight = 300
+  [[menu.main]]
+    name = "HW1"
+    url = "/assignments/Homework/HW1/"
+    parent = "Assignments"
+    weight = 301
+    [menu.main.params]
+      level = 2
+  [[menu.main]]
+    name = "HW2"
+    url = "/assignments/Homework/HW2/"
+    parent = "Assignments"
+    weight = 302
+    [menu.main.params]
+      level = 2
   [[menu.main]]
     name = "Projects"
     url = "/assignments/Projects/"
     parent = "Assignments"
-    weight = 1
+    weight = 400
+  [[menu.main]]
+    name = "Project_01"
+    url = "/assignments/Projects/Project_01/"
+    parent = "Assignments"
+    weight = 401
+    [menu.main.params]
+      level = 2
+  [[menu.main]]
+    name = "Presentations"
+    url = "/assignments/Presentations/"
+    parent = "Assignments"
+    weight = 500
+  [[menu.main]]
+    name = "Presentation_01"
+    url = "/assignments/Presentations/Presentation_01/"
+    parent = "Assignments"
+    weight = 501
+    [menu.main.params]
+      level = 2
 ## 
 [[menu.main]]
   name = "Links"
