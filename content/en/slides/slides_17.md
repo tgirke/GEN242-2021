@@ -3,7 +3,7 @@ title: "Gene Annotation, Ontologies and Enrichment Methods"
 linkTitle: "Gene Annotation and Ontologies"
 description: >
 type: docs
-weight: 116
+weight: 117
 ---
 
 <br></br>
