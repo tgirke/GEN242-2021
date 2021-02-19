@@ -334,37 +334,37 @@ enable = true
     weight = 112
   [[menu.main]]
     name = "RNA-Seq Overview (S13)"
-    url = "/slides/workflows/slides_13/"
+    url = "/slides/slides_13/"
     parent = "Slides"
     weight = 113
   [[menu.main]]
     name = "scRNA-Seq Overview (S14)"
-    url = "/slides/workflows/slides_14/"
+    url = "/slides/slides_14/"
     parent = "Slides"
     weight = 114
   [[menu.main]]
     name = "ChIP-Seq Overview (S15)"
-    url = "/slides/workflows/slides_15/"
+    url = "/slides/slides_15/"
     parent = "Slides"
     weight = 115
   [[menu.main]]
     name = "VAR-Seq Overview (S16)"
-    url = "/slides/workflows/slides_16/"
+    url = "/slides/slides_16/"
     parent = "Slides"
     weight = 116
   [[menu.main]]
     name = "Gene Annotation and Ontologies (S17)"
-    url = "/slides/workflows/slides_17/"
+    url = "/slides/slides_17/"
     parent = "Slides"
     weight = 117
   [[menu.main]]
     name = "Sequence Assembly (S18)"
-    url = "/slides/workflows/slides_18/"
+    url = "/slides/slides_18/"
     parent = "Slides"
     weight = 118
   [[menu.main]]
     name = "Cluster Analysis (S19)"
-    url = "/slides/workflows/slides_19/"
+    url = "/slides/slides_19/"
     parent = "Slides"
     weight = 119
 ##
