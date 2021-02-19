@@ -346,14 +346,27 @@ enable = true
     name = "ChIP-Seq Overview (S15)"
     url = "/slides/workflows/slides_15/"
     parent = "Slides"
+    weight = 115
   [[menu.main]]
     name = "VAR-Seq Overview (S16)"
     url = "/slides/workflows/slides_16/"
     parent = "Slides"
+    weight = 116
   [[menu.main]]
     name = "Gene Annotation and Ontologies (S17)"
     url = "/slides/workflows/slides_17/"
     parent = "Slides"
+    weight = 117
+  [[menu.main]]
+    name = "Sequence Assembly (S18)"
+    url = "/slides/workflows/slides_18/"
+    parent = "Slides"
+    weight = 118
+  [[menu.main]]
+    name = "Cluster Analysis (S19)"
+    url = "/slides/workflows/slides_19/"
+    parent = "Slides"
+    weight = 119
 ##
 [[menu.main]]
   name = "Tutorials"
