@@ -1,7 +1,7 @@
 ---
 title: "Programming in R" 
 author: "Author: Thomas Girke"
-date: "Last update: 18 February, 2021" 
+date: "Last update: 19 February, 2021" 
 output:
   html_document:
     toc: true
@@ -976,7 +976,7 @@ This homework is due on Thu, April 26th at 6:00 PM.
 
 See [here]()
 
-# Session Info
+## Session Info
 
 ``` r
 sessionInfo()
@@ -1013,7 +1013,7 @@ sessionInfo()
     ## [29] rmarkdown_2.5       blogdown_1.1.7      stringi_1.5.3       pillar_1.4.7       
     ## [33] compiler_4.0.4      generics_0.1.0      scales_1.1.1        pkgconfig_2.0.3
 
-# References
+## References
 
 <div id="refs" class="references">
 

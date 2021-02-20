@@ -464,10 +464,15 @@ enable = true
     parent = "Manuals"
     weight = 6
   [[menu.main]]
+    name = "Parallel Evaluations in R"
+    url = "/manuals/rparallel/rparallel/"
+    parent = "Manuals"
+    weight = 7
+  [[menu.main]]
     name = "NGS Analysis Basics"
     url = "/manuals/rsequences/rsequences/"
     parent = "Manuals"
-    weight = 7
+    weight = 8
 ##
 [[menu.main]]
   name = "Assignments"

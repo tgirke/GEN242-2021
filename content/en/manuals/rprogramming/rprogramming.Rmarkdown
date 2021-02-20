@@ -713,11 +713,11 @@ This homework is due on Thu, April 26th at 6:00 PM.
 
 See [here]()
 
-# Session Info
+## Session Info
 
 ```{r sessionInfo}
 sessionInfo()
 ```
 
-# References
+## References
 

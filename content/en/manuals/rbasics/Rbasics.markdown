@@ -1,7 +1,7 @@
 ---
 title: "Introduction to R" 
 author: "Author: Thomas Girke"
-date: "Last update: 18 February, 2021" 
+date: "Last update: 19 February, 2021" 
 output:
   html_document:
     toc: true
@@ -2467,7 +2467,7 @@ package from Bioconductor.
  ---
 title: "My First R Markdown Document"
 author: "Author: First Last"
-date: "Last update: 18 February, 2021"
+date: "Last update: 19 February, 2021"
 output:
   BiocStyle::html_document:
     toc: true
@@ -2762,7 +2762,7 @@ runApp("01_hello") # Runs first example app in directory
 dir() # Lists available Shiny examples (directories). 
 ```
 
-# Session Info
+## Session Info
 
 ``` r
 sessionInfo()
@@ -2811,7 +2811,7 @@ sessionInfo()
     ## [65] stringi_1.5.3       Rcpp_1.0.5          vctrs_0.3.5         dbplyr_2.0.0       
     ## [69] tidyselect_1.1.0    xfun_0.20
 
-# References
+## References
 
 <div id="refs" class="references">
 

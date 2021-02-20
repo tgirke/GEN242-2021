@@ -15,7 +15,7 @@ output:
 
 fontsize: 14pt
 bibliography: bibtex.bib
-weith: 7
+weith: 8
 type: docs
 ---
 
@@ -787,5 +787,5 @@ See [here]()
 sessionInfo()
 ```
 
-# References
+## References
 

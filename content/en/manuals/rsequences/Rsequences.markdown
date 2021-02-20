@@ -1,7 +1,7 @@
 ---
 title: NGS Analysis Basics
 author: "Author: Thomas Girke"
-date: "Last update: 18 February, 2021" 
+date: "Last update: 19 February, 2021" 
 output:
   html_document:
     toc: true
@@ -15,7 +15,7 @@ output:
 
 fontsize: 14pt
 bibliography: bibtex.bib
-weith: 7
+weith: 8
 type: docs
 ---
 
@@ -1837,7 +1837,7 @@ sessionInfo()
     ##  [97] openssl_1.4.3            munsell_0.5.0            viridisLite_0.3.0       
     ## [100] askpass_1.1
 
-# References
+## References
 
 <div id="refs" class="references">
 
