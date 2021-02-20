@@ -95,13 +95,13 @@ Terminal-based Working Environment for R: [Nvim-R-Tmux](http://girke.bioinformat
 <center><img title="Nvim-R-Tmux" src="../images/Nvim-R.gif" ></center>
 <center>Nvim-R-Tmux IDE for R</center>
 
-# R Package Repositories
+## R Package Repositories
 
 * CRAN (>11,000 packages) general data analysis - [URL](http://cran.at.r-project.org/)
 * Bioconductor (>1,100 packages) bioscience data analysis - [URL](http://www.bioconductor.org/)
 * Omegahat (>90 packages) programming interfaces - [URL](https://github.com/omegahat?tab=repositories)
 
-# Installation of R Packages
+## Installation of R Packages
 
 1. Install R for your operating system from [CRAN](http://cran.at.r-project.org/).
 
@@ -120,15 +120,15 @@ Terminal-based Working Environment for R: [Nvim-R-Tmux](http://girke.bioinformat
     if (!requireNamespace("BiocManager", quietly = TRUE))
         install.packages("BiocManager") # Installs BiocManager if not available yet
     BiocManager::version() # Reports Bioconductor version
-    BiocManager::install(c("pkg1", "pkg2")) # Installs packages specified under "pkg1" and "pkg2" 
+    BiocManager::install(c("pkg1", "pkg2")) # Installs packages specified under "pkg1" 
     ```
 
 5. For more details consult the [Bioc Install page](http://www.bioconductor.org/install/)
 and [BiocInstaller](http://www.bioconductor.org/packages/release/bioc/html/BiocInstaller.html) package.
 
-# Getting Around
+## Getting Around
 
-## Startup and Closing Behavior
+### Startup and Closing Behavior
 
 * __Starting R__:
     The R GUI versions, including RStudio, under Windows and Mac OS X can be
@@ -188,7 +188,7 @@ Change current working directory
 setwd("/home/user")
 ```
 
-# Basic Syntax
+## Basic Syntax
 
 General R command syntax
 
@@ -235,9 +235,9 @@ $ R CMD BATCH my_script.R
 $ R --slave < my_script.R 
 ```
 
-# Data Types 
+## Data Types 
 
-## Numeric data
+### Numeric data
 
 Example: `1, 2, 3, ...`
 
@@ -249,7 +249,7 @@ is.numeric(x)
 as.character(x)
 ```
 
-## Character data
+### Character data
 
 Example: `"a", "b", "c", ...`
 
@@ -260,7 +260,7 @@ is.character(x)
 as.numeric(x)
 ```
 
-## Complex data
+### Complex data
 
 Example: mix of both
 
@@ -268,7 +268,7 @@ Example: mix of both
 c(1, "b", 3)
 ```
 
-## Logical data
+### Logical data
 
 Example: `TRUE` of `FALSE`
 
@@ -279,11 +279,11 @@ x
 which(x) # Returns index for the 'TRUE' values in logical vector
 ```
 
-# Data Objects
+## Data Objects
 
-## Object types
+### Object types
 
-## Vectors (1D)
+#### Vectors (1D)
 
 Definition: `numeric` or `character`
 
@@ -295,7 +295,7 @@ myVec[c(2,4,6,8)]
 myVec[c("b", "d", "f")]
 ```
 
-## Factors (1D)
+#### Factors (1D)
 
 Definition: vectors with grouping information
 
@@ -303,7 +303,7 @@ Definition: vectors with grouping information
 factor(c("dog", "cat", "mouse", "dog", "dog", "cat"))
 ```
 
-## Matrices (2D)
+#### Matrices (2D)
 
 Definition: two dimensional structures with data of same type
 
@@ -314,7 +314,7 @@ myMA[1:2,]
 myMA[1, , drop=FALSE]
 ```
 
-## Data Frames (2D)
+#### Data Frames (2D)
 
 Definition: two dimensional objects with data of variable types
 
@@ -323,12 +323,12 @@ myDF <- data.frame(Col1=1:10, Col2=10:1)
 myDF[1:2, ]
 ```
 
-## Arrays
+#### Arrays
 
 Definition: data structure with one, two or more dimensions
 
 
-## Lists
+#### Lists
 
 Definition: containers for any object type
 
@@ -376,9 +376,9 @@ __(4.) Subset with `$` sign__: references a single column or list component by i
 iris$Species[1:8]
 ```
 
-# Important Utilities
+## Important Utilities
 	
-## Combining Objects
+### Combining Objects
 
 The `c` function combines vectors and lists
 
@@ -396,7 +396,7 @@ ma
 rbind(ma, ma)
 ```
 
-## Accessing Dimensions of Objects
+### Accessing Dimensions of Objects
 
 Length and dimension information of objects
 
@@ -405,7 +405,7 @@ length(iris$Species)
 dim(iris)
 ```
 
-## Accessing Name Slots of Objects
+### Accessing Name Slots of Objects
 
 Accessing row and column names of 2D objects
 ```{r col_row_names, eval=TRUE}
@@ -419,7 +419,7 @@ names(myVec)
 names(myL)
 ```
 
-## Sorting Objects
+### Sorting Objects
 
 The function `sort` returns a vector in ascending or descending order
 ```{r sort_objects, eval=TRUE}
@@ -438,9 +438,9 @@ Sorting multiple columns
 iris[order(iris$Sepal.Length, iris$Sepal.Width),][1:2,]
 ```
 
-# Operators and Calculations
+## Operators and Calculations
 
-## Comparison Operators
+### Comparison Operators
 
 Comparison operators: `==`, `!=`, `<`, `>`, `<=`, `>=`
 ```{r comparison_operators, eval=TRUE}
@@ -452,7 +452,7 @@ x <- 1:10; y <- 10:1
 x > y & x > 5
 ```
 
-## Basic Calculations
+### Basic Calculations
 
 To look up math functions, see Function Index [here](http://cran.at.r-project.org/doc/manuals/R-intro.html#Function-and-variable-index)
 ```{r logical_calculations, eval=TRUE}
@@ -462,8 +462,8 @@ mean(x)
 apply(iris[1:6,1:3], 1, mean) 
 ```
 
-# Reading and Writing External Data
-## Import of tabular data
+## Reading and Writing External Data
+### Import of tabular data
 
 Import of a tab-delimited tabular file
 ```{r read_delim, eval=FALSE}
@@ -489,33 +489,33 @@ myDF <- as.data.frame(mysheet)
 myDF
 ```
 
-## Export of tabular data
+### Export of tabular data
 ```{r write_table, eval=FALSE}
 write.table(myDF, file="myfile.xls", sep="\t", quote=FALSE, col.names=NA)
 ```
 
-## Line-wise import
+### Line-wise import
 ```{r readlines, eval=FALSE}
 myDF <- readLines("myData.txt")
 ```
 
-## Line-wise export
+### Line-wise export
 ```{r writelines, eval=FALSE}
 writeLines(month.name, "myData.txt")
 ```
 
-## Export R object
+### Export R object
 ```{r saveRDSlist, eval=FALSE}
 mylist <- list(C1=iris[,1], C2=iris[,2]) # Example to export
 saveRDS(mylist, "mylist.rds")
 ```
 
-## Import R object
+### Import R object
 ```{r readRDSlist, eval=FALSE}
 mylist <- readRDS("mylist.rds")
 ```
 
-## Copy and paste into R
+### Copy and paste into R
 
 On Windows/Linux systems
 ```{r paste_windows, eval=FALSE}
@@ -526,7 +526,7 @@ On Mac OS X systems
 read.delim(pipe("pbpaste")) 
 ```
 
-## Copy and paste from R 
+### Copy and paste from R 
 
 On Windows/Linux systems
 ```{r copy_windows, eval=FALSE}
@@ -540,13 +540,13 @@ write.table(iris, zz, sep="\t", col.names=NA, quote=F)
 close(zz) 
 ```
 
-## Homework 3A 
+### Homework 3A 
 
-Homework 3A: [Object Subsetting Routines and Import/Export](http://girke.bioinformatics.ucr.edu/GEN242/mydoc_homework_03.html)
+Homework 3A: [Object Subsetting Routines and Import/Export](https://girke.bioinformatics.ucr.edu/GEN242/assignments/homework/hw3/)
 
-# Useful R Functions
+## Useful R Functions
 
-## Unique entries
+### Unique entries
 
 Make vector entries unique with `unique`
 
@@ -555,28 +555,28 @@ length(iris$Sepal.Length)
 length(unique(iris$Sepal.Length))
 ```
 
-## Count occurrences
+### Count occurrences
 
 Count occurrences of entries with `table`
 ```{r table, eval=TRUE}
 table(iris$Species)
 ```
 
-## Aggregate data
+### Aggregate data
 
 Compute aggregate statistics with `aggregate`
 ```{r aggregate, eval=TRUE}
 aggregate(iris[,1:4], by=list(iris$Species), FUN=mean, na.rm=TRUE)
 ```
 
-## Intersect data
+### Intersect data
 
 Compute intersect between two vectors with `%in%`
 ```{r intersect, eval=TRUE}
 month.name %in% c("May", "July")
 ```
 
-## Merge data frames
+### Merge data frames
 
 Join two data frames by common field entries with `merge` (here row names `by.x=0`). To obtain only the common rows, change `all=TRUE` to `all=FALSE`. To merge on specific columns, refer to them by their position numbers or their column names.
 ```{r merge, eval=TRUE}
@@ -587,7 +587,7 @@ my_result <- merge(frame1, iris, by.x = 0, by.y = 0, all = TRUE)
 dim(my_result)
 ```
 
-# dplyr Environment
+## dplyr Environment
 
 Modern object classes and methods for handling `data.frame` like structures
 are provided by the `dplyr` and `data.table` packages. The following gives a
@@ -603,7 +603,7 @@ More detailed tutorials on this topic can be found here:
 * [Big data with `dplyr` and `data.table`](https://www.r-bloggers.com/working-with-large-datasets-with-dplyr-and-data-table/)
 * [Fast lookups with `dplyr` and `data.table`](https://www.r-bloggers.com/fast-data-lookups-in-r-dplyr-vs-data-table/)
 
-## Installation
+### Installation
 
 The `dplyr` environment has evolved into an ecosystem of packages. To simplify
 package management, one can install and load the entire collection via the
@@ -615,7 +615,7 @@ package management, one can install and load the entire collection via the
 install.packages("tidyverse")
 ```
 
-## Construct a `tibble` (`tibble`)
+### Construct a `tibble` (`tibble`)
 
 ```{r data_frame_tbl1, eval=TRUE}
 library(tidyverse)
@@ -628,7 +628,7 @@ Alternative functions producing the same result include `as_data_frame` and `tbl
 as_data_frame(iris) 
 tbl_df(iris) 
 ```
-## Reading and writing tabular files
+### Reading and writing tabular files
 
 While the base R read/write utilities can be used for `data.frames`, best time
 performance with the least amount of typing is achieved with the export/import
@@ -636,7 +636,7 @@ functions from the `readr` package. For very large files the `fread` function fr
 the `data.table` package achieves the best time performance. 
 
 
-### Import with `readr` 
+#### Import with `readr` 
 
 Import functions provided by `readr` include:
 
@@ -663,7 +663,7 @@ iris_df
 
 To import Google Sheets directly into R, see [here](http://girke.bioinformatics.ucr.edu/GEN242/mydoc_Rbasics_10.html).
 
-### Fast table import with `fread` 
+#### Fast table import with `fread` 
 
 The `fread` function from the `data.table` package provides the best time performance for reading large
 tabular files into R.
@@ -681,7 +681,7 @@ command for preprocessing the file. The following example illustrates this optio
 fread("grep -v '^#' iris.txt") 
 ```
 
-### Export with `readr` 
+#### Export with `readr` 
 
 Export function provided by `readr` inlcude
 
@@ -697,7 +697,7 @@ default settings than the base R `write.table` function.
 write_tsv(iris_df, "iris.txt")
 ```
 
-## Column and row binds
+### Column and row binds
 
 The equivalents to base R's `rbind` and `cbind` are `bind_rows` and `bind_cols`, respectively.
 
@@ -706,7 +706,7 @@ bind_cols(iris_df, iris_df)
 bind_rows(iris_df, iris_df)
 ```
 
-## Extract column as vector
+### Extract column as vector
 
 The subsetting operators `[[` and `$`can be used to extract from a `tibble` single columns as vector.
 
@@ -715,7 +715,7 @@ iris_df[[5]][1:12]
 iris_df$Species[1:12]
 ```
 
-## Important `dplyr` functions
+### Important `dplyr` functions
 
 1. `filter()` and `slice()`
 2. `arrange()`
@@ -726,27 +726,27 @@ iris_df$Species[1:12]
 7. `sample_n()` and `sample_frac()`
 
 
-## Slice and filter functions 
+### Slice and filter functions 
 
-### Filter function
+#### Filter function
 
 ```{r plyr_filter, eval=TRUE}
 filter(iris_df, Sepal.Length > 7.5, Species=="virginica")
 ```
 
-### Base R code equivalent
+#### Base R code equivalent
 
 ```{r plyr_filter_base, eval=TRUE}
 iris_df[iris_df[, "Sepal.Length"] > 7.5 & iris_df[, "Species"]=="virginica", ]
 ```
 
-### Including boolean operators
+#### Including boolean operators
 
 ```{r plyr_filter_boolean, eval=TRUE}
 filter(iris_df, Sepal.Length > 7.5 | Sepal.Length < 5.5, Species=="virginica")
 ```
 
-### Subset rows by position
+#### Subset rows by position
 
 `dplyr` approach
 
@@ -760,7 +760,7 @@ Base R code equivalent
 iris_df[1:2,]
 ```
 
-### Subset rows by names
+#### Subset rows by names
 
 Since `tibbles` do not contain row names, row wise subsetting via the `[,]` operator cannot be used.
 However, the corresponding behavior can be achieved by passing to `select` a row position index 
@@ -788,7 +788,7 @@ rownames(df1_old) <- df1_old[,1]
 df1_old[c("g10", "g4", "g4"),]
 ```
 
-## Sorting with `arrange`
+### Sorting with `arrange`
 
 Row-wise ordering based on specific columns
 
@@ -811,7 +811,7 @@ iris_df[order(iris_df$Species, iris_df$Sepal.Length, iris_df$Sepal.Width), ]
 iris_df[order(iris_df$Species, decreasing=TRUE), ] 
 ```
 
-## Select columns with `select`
+### Select columns with `select`
 
 Select specific columns
 
@@ -831,7 +831,7 @@ Drop specific columns (here range)
 select(iris_df, -(Sepal.Length : Petal.Width))
 ```
 
-## Renaming columns with `rename`
+### Renaming columns with `rename`
 
 
 `dplyr` approach
@@ -846,7 +846,7 @@ Base R code approach
 colnames(iris_df)[colnames(iris_df)=="Species"] <- "new_col_names"
 ```
 
-## Obtain unique rows with `distinct`
+### Obtain unique rows with `distinct`
 
 `dplyr` approach
 
@@ -860,9 +860,9 @@ Base R code approach
 iris_df[!duplicated(iris_df$Species),]
 ```
 
-## Add columns
+### Add columns
 
-### `mutate`
+#### `mutate`
 
 The `mutate` function allows to append columns to existing ones.
 
@@ -870,7 +870,7 @@ The `mutate` function allows to append columns to existing ones.
 mutate(iris_df, Ratio = Sepal.Length / Sepal.Width, Sum = Sepal.Length + Sepal.Width)
 ```
 
-### `transmute`
+#### `transmute`
 
 The `transmute` function does the same as `mutate` but drops existing columns
 
@@ -878,7 +878,7 @@ The `transmute` function does the same as `mutate` but drops existing columns
 transmute(iris_df, Ratio = Sepal.Length / Sepal.Width, Sum = Sepal.Length + Sepal.Width)
 ```
 
-### `bind_cols`
+#### `bind_cols`
 
 The `bind_cols` function is the equivalent of `cbind` in base R. To add rows, use the corresponding 
 `bind_rows` function.
@@ -887,7 +887,7 @@ The `bind_cols` function is the equivalent of `cbind` in base R. To add rows, us
 bind_cols(iris_df, iris_df)
 ```
 
-## Summarize data
+### Summarize data
 
 Summary calculation on single column
 
@@ -916,7 +916,7 @@ summarize_all(group_by(iris_df, Species), mean)
 Note: `group_by` does the looping for the user similar to `aggregate` or `tapply`.
 
 
-## Merging tibbles
+### Merging tibbles
 
 The `dplyr` package provides several join functions for merging `tibbles` by a common key column
 similar to the `merge` function in base R. These `*_join` functions include: 
@@ -935,31 +935,31 @@ df1
 df2 <- bind_cols(data_frame(ids2=paste0("g", c(2,5,11,12))), as_data_frame(matrix(1:16, 4, 4, dimnames=list(1:4, paste0("CB", 1:4)))))
 df2
 ```
-### Inner join
+#### Inner join
 
 ```{r plyr_inner_join, eval=TRUE}
 inner_join(df1, df2, by=c("ids1"="ids2"))
 ```
 
-### Left join
+#### Left join
 
 ```{r plyr_left_join, eval=TRUE}
 left_join(df1, df2, by=c("ids1"="ids2"))
 ```
 
-### Right join
+#### Right join
 
 ```{r plyr_right_join, eval=TRUE}
 right_join(df1, df2, by=c("ids1"="ids2"))
 ```
 
-### Full join
+#### Full join
 
 ```{r plyr_full_join, eval=TRUE}
 full_join(df1, df2, by=c("ids1"="ids2"))
 ```
 
-### Anti join
+#### Anti join
 
 ```{r plyr_anti_join, eval=TRUE}
 anti_join(df1, df2, by=c("ids1"="ids2"))
@@ -968,7 +968,7 @@ anti_join(df1, df2, by=c("ids1"="ids2"))
 For additional join options users want to cosult the `*_join` help pages.
 
 
-## Chaining
+### Chaining
 
 To simplify chaining of serveral operations, `dplyr` provides the `%>%`
 operator, where `x %>% f(y)` turns into `f(x, y)`. This way one can pipe
@@ -976,7 +976,7 @@ together multiple operations by writing them from left-to-right or
 top-to-bottom. This makes for easy to type and readable code.
 
 
-### Example 1
+#### Example 1
 
 Series of data manipulations and export
 
@@ -990,7 +990,7 @@ read_tsv("iris.txt") %>% # Import with read_tbv from readr package
     # write_tsv("iris.txt") # Export to file, omitted here to show result 
 ```
 
-### Example 2
+#### Example 2
 
 Series of summary calculations for grouped data (`group_by`)
 
@@ -1004,7 +1004,7 @@ iris_df %>% # Declare tibble to use
               Total=n()) 
 ```
 
-### Example 3
+#### Example 3
 
 Combining `dplyr` chaining with `ggplot`
 
@@ -1017,7 +1017,7 @@ iris_df %>%
         geom_bar(position="dodge", stat="identity")
 ```
 
-# SQLite Databases
+## SQLite Databases
 
 `SQLite` is a lightweight relational database solution. The `RSQLite` package provides an easy to use interface to create, manage and query `SQLite` databases directly from R. Basic instructions
 for using `SQLite` from the command-line are available [here](https://www.sqlite.org/cli.html). A short introduction to `RSQLite` is available [here](https://github.com/rstats-db/RSQLite/blob/master/vignettes/RSQLite.Rmd).
@@ -1037,25 +1037,25 @@ dbWriteTable(mydb, "mydf1", mydf1)
 dbWriteTable(mydb, "mydf2", mydf2)
 ```
 
-## List names of tables in database
+### List names of tables in database
 
 ```{r list_tables, eval=TRUE}
 dbListTables(mydb)
 ```
 
-## Import table into `data.frame`
+### Import table into `data.frame`
 
 ```{r import_sqlite_tables, eval=TRUE}
 dbGetQuery(mydb, 'SELECT * FROM mydf2')
 ```
 
-## Query database
+### Query database
 
 ```{r query_sqlite_tables, eval=TRUE}
 dbGetQuery(mydb, 'SELECT * FROM mydf1 WHERE "Sepal.Length" < 4.6')
 ```
 
-## Join tables
+### Join tables
 
 The two tables can be joined on the shared `ids` column as follows. 
 
@@ -1064,9 +1064,9 @@ dbGetQuery(mydb, 'SELECT * FROM mydf1, mydf2 WHERE mydf1.ids = mydf2.ids')
 ```
 
 
-# Graphics in R
+## Graphics in R
 
-## Advantages
+### Advantages
 
 - Powerful environment for visualizing scientific data
 - Integrated graphics and statistics infrastructure
@@ -1076,7 +1076,7 @@ dbGetQuery(mydb, 'SELECT * FROM mydf1, mydf2 WHERE mydf1.ids = mydf2.ids')
 - Full [LaTeX](http://www.latex-project.org/) and Markdown support via `knitr` and `R markdown`
 - Vast number of R packages with graphics utilities
 
-## Documentation for R Graphics
+### Documentation for R Graphics
 
 __General__
 
@@ -1091,7 +1091,7 @@ __Interactive graphics__
 - `iplots` - [URL](http://www.rosuda.org/iplots/)
 - Open GL (`rgl`) - [URL](http://rgl.neoscientists.org/gallery.shtml)
 
-## Graphics Environments
+### Graphics Environments
 
 __Viewing and saving graphics in R__
 
@@ -1111,7 +1111,7 @@ __Four major graphic environments__
 - `lattice`: [Manual](http://lmdvr.r-forge.r-project.org), [Intro](http://www.his.sunderland.ac.uk/~cs0her/Statistics/UsingLatticeGraphicsInR.htm), [Book](http://www.amazon.com/Lattice-Multivariate-Data-Visualization-Use/dp/0387759689)
 - `ggplot2`: [Manual](http://had.co.nz/ggplot2/), [Intro](http://www.ling.upenn.edu/~joseff/rstudy/summer2010_ggplot2_intro.html), [Book](http://had.co.nz/ggplot2/book/)
 
-## Base Graphics: Overview
+### Base Graphics: Overview
 
 __Important high-level plotting functions__
 
@@ -1131,13 +1131,13 @@ __Help on graphics functions__
 - `?plot`
 - `?par`
 
-### Preferred Object Types
+#### Preferred Object Types
 
 - Matrices and data frames
 - Vectors
 - Named vectors
 
-## Scatter Plots
+### Scatter Plots
 
 ### Basic Scatter Plot
 
@@ -1153,20 +1153,20 @@ Plot data
 plot(y[,1], y[,2]) 
 ```
 
-### All pairs
+#### All pairs
 
 ```{r pairs_scatter_plot, eval=TRUE}
 pairs(y) 
 ```
 
-### With labels
+#### With labels
 
 ```{r labels_scatter_plot, eval=TRUE}
 plot(y[,1], y[,2], pch=20, col="red", main="Symbols and Labels")
 text(y[,1]+0.03, y[,2], rownames(y))
 ```
 
-## More examples
+### More examples
 
 __Print instead of symbols the row names__
 
@@ -1195,7 +1195,7 @@ __Important arguments_
 - For details see `?par`
 
 
-### Add regression line 
+#### Add regression line 
 
 ```{r plot_regression, eval=TRUE}
 plot(y[,1], y[,2])
@@ -1203,7 +1203,7 @@ myline <- lm(y[,2]~y[,1]); abline(myline, lwd=2)
 summary(myline) 
 ```
 
-### Log scale
+#### Log scale
 
 Same plot as above, but on log scale
 
@@ -1211,26 +1211,26 @@ Same plot as above, but on log scale
 plot(y[,1], y[,2], log="xy") 
 ```
 
-### Add a mathematical expression
+#### Add a mathematical expression
 
 ```{r plot_regression_math, eval=TRUE}
 plot(y[,1], y[,2]); text(y[1,1], y[1,2], expression(sum(frac(1,sqrt(x^2*pi)))), cex=1.3) 
 ```
 
-## Homework 3B 
+### Homework 3B 
 
 Homework 3B: [Scatter Plots](http://girke.bioinformatics.ucr.edu/GEN242/mydoc_homework_03.html)
 
 
-## Line Plots
+### Line Plots
 
-### Single data set
+#### Single data set
 
 ```{r plot_line_single, eval=TRUE}
 plot(y[,1], type="l", lwd=2, col="blue") 
 ```
 
-### Many Data Sets
+#### Many Data Sets
 
 Plots line graph for all columns in data frame `y`. The `split.screen` function is used in this example in a for loop to overlay several line graphs in the same plot. 
 
@@ -1244,16 +1244,16 @@ for(i in 2:length(y[1,])) {
 close.screen(all=TRUE) 
 ```
 
-## Bar Plots 
+### Bar Plots 
 
-### Basics
+#### Basics
 
 ```{r plot_bar_simple, eval=TRUE}
 barplot(y[1:4,], ylim=c(0, max(y[1:4,])+0.3), beside=TRUE, legend=letters[1:4]) 
 text(labels=round(as.vector(as.matrix(y[1:4,])),2), x=seq(1.5, 13, by=1) + sort(rep(c(0,1,2), 4)), y=as.vector(as.matrix(y[1:4,]))+0.04) 
 ```
     
-### Error Bars
+#### Error Bars
 
 ```{r plot_bar_error, eval=TRUE}
 bar <- barplot(m <- rowMeans(y) * 10, ylim=c(0, 10))
@@ -1261,19 +1261,19 @@ stdev <- sd(t(y))
 arrows(bar, m, bar, m + stdev, length=0.15, angle = 90)
 ```
 
-## Histograms
+### Histograms
 
 ```{r plot_hist, eval=TRUE}
 hist(y, freq=TRUE, breaks=10)
 ```
 
-## Density Plots
+### Density Plots
 
 ```{r plot_dens, eval=TRUE}
 plot(density(y), col="red")
 ```
 
-## Pie Charts
+### Pie Charts
 
 ```{r plot_pie, eval=TRUE}
 pie(y[,1], col=rainbow(length(y[,1]), start=0.1, end=0.8), clockwise=TRUE)
@@ -1281,7 +1281,7 @@ legend("topright", legend=row.names(y), cex=1.3, bty="n", pch=15, pt.cex=1.8,
 col=rainbow(length(y[,1]), start=0.1, end=0.8), ncol=1) 
 ```
 
-## Color Selection Utilities
+### Color Selection Utilities
 
 Default color palette and how to change it
 
@@ -1305,7 +1305,7 @@ colorpanel(5, "darkblue", "yellow", "white")
 Much more on colors in R see Earl Glynn's color chart [here](http://research.stowers-institute.org/efg/R/Color/Chart/)
 
 
-## Saving Graphics to File
+### Saving Graphics to File
 
 After the `pdf()` command all graphs are redirected to file `test.pdf`. Works for all common formats similarly: jpeg, png, ps, tiff, ...
 ```{r save_graphics, eval=FALSE}
@@ -1325,17 +1325,17 @@ dev.off()
 
 
 
-## Homework 3C
+### Homework 3C
 
-Homework 3C: [Bar Plots](http://girke.bioinformatics.ucr.edu/GEN242/mydoc_homework_03.html)
+Homework 3C: [Bar Plots](https://girke.bioinformatics.ucr.edu/GEN242/assignments/homework/hw3/)
 
-# Analysis Routine
+## Analysis Routine
 
-## Overview
+### Overview
 
 The following exercise introduces a variety of useful data analysis utilities in R. 
 
-## Analysis Routine: Data Import
+### Analysis Routine: Data Import
 
 - __Step 1__: To get started with this exercise, direct your R session to a dedicated workshop directory and download into this directory the following sample tables. Then import the files into Excel and save them as tab delimited text files.
 
@@ -1369,7 +1369,7 @@ my_target <- read.delim(file="http://faculty.ucr.edu/~tgirke/Documents/R_BioCond
 my_target[1:2,]
 ```
 
-## Merging Data Frames
+### Merging Data Frames
 
 - __Step 2__: Assign uniform gene ID column titles
 
@@ -1402,7 +1402,7 @@ my_mw_target2a[is.na(my_mw_target2a)] <- 0
 my_mw_target2a <- as.data.frame(my_mw_target2a)
 ```
 
-## Filtering Data
+### Filtering Data
 
 - __Step 5__: Retrieve all records with a value of greater than 100,000 in 'MW' column and 'C' value in 'Loc' column (targeted to chloroplast).
 
@@ -1415,7 +1415,7 @@ dim(query)
 - __Homework 3F__: How many protein entries in the `my`_mw`_target` data frame have a MW of greater then 4,000 and less then 5,000. Subset the data frame accordingly and sort it by MW to check that your result is correct.
 
 
-## String Substitutions
+### String Substitutions
 
 - __Step 6__: Use a regular expression in a substitute function to generate a separate ID column that lacks the gene model extensions.
 <<label=Exercise 4.7, eval=TRUE, echo=TRUE, keep.source=TRUE>>=
@@ -1427,7 +1427,7 @@ my_mw_target3[1:3,1:8]
 
 - __Homework 3G__: Retrieve those rows in `my_mw_target3` where the second column contains the following identifiers: `c("AT5G52930.1", "AT4G18950.1", "AT1G15385.1", "AT4G36500.1", "AT1G67530.1")`. Use the `%in%` function for this query. As an alternative approach, assign the second column to the row index of the data frame and then perform the same query again using the row index. Explain the difference of the two methods.
 
-## Calculations on Data Frames
+### Calculations on Data Frames
 
 - __Step 7__: Count the number of duplicates in the loci column with the `table` function and append the result to the data frame with the `cbind` function.
 
@@ -1450,7 +1450,7 @@ mystdev <- apply(my_mw_target4[,6:9], 1, sd, na.rm=TRUE)
 data.frame(my_mw_target4, mean=mymean, stdev=mystdev)[1:2,5:12] 
 ```
 
-## Plotting Example
+### Plotting Example
 
 - __Step 10__: Generate scatter plot columns: 'MW' and 'Residues' 
 
@@ -1458,7 +1458,7 @@ data.frame(my_mw_target4, mean=mymean, stdev=mystdev)[1:2,5:12]
 plot(my_mw_target4[1:500,3:4], col="red")
 ```
 
-## Export Results and Run Entire Exercise as Script
+### Export Results and Run Entire Exercise as Script
 
 - __Step 11__: Write the data frame `my_mw_target4` into a tab-delimited text file and inspect it in Excel.
 
@@ -1473,9 +1473,9 @@ source("exerciseRbasics.R")
 ```
 
 
-# R Markdown
+## R Markdown
 
-## Overview
+### Overview
 
 R Markdown combines markdown (an easy to write plain text format) with embedded
 R code chunks. When compiling R Markdown documents, the code components can be
@@ -1490,15 +1490,15 @@ resulting `.md` file is rendered by `pandoc` to the final output formats
 management is also supported by R Markdown using embedded Latex syntax and
 Bibtex, respectively.
 
-## Quick Start
+### Quick Start
 
-### Install R Markdown
+#### Install R Markdown
 
 ```{r install_rmarkdown, eval=FALSE}
 install.packages("rmarkdown")
 ```
 
-### Initialize a new R Markdown (`Rmd`) script
+#### Initialize a new R Markdown (`Rmd`) script
 
 To minimize typing, it can be helful to start with an R Markdown template and
 then modify it as needed. Note the file name of an R Markdown scirpt needs to
@@ -1513,7 +1513,7 @@ Users want to download these files, open the `sample.Rmd` file with their prefer
 the location of these two files.
 
 
-### Metadata section
+#### Metadata section
 
 The metadata section (YAML header) in an R Markdown script defines how it will be processed and 
 rendered. The metadata section also includes both title, author, and date information as well as 
@@ -1538,7 +1538,7 @@ bibliography: bibtex.bib
  ---
 ```
 
-### Render `Rmd` script
+#### Render `Rmd` script
 
 An R Markdown script can be evaluated and rendered with the following `render` command or by pressing the `knit` button in RStudio.
 The `output_format` argument defines the format of the output (_e.g._ `html_document`). The setting `output_format="all"` will generate 
@@ -1567,7 +1567,7 @@ command from the command-line.
 $ make -B
 ```
 
-### R code chunks
+#### R code chunks
 
 R Code Chunks can be embedded in an R Markdown script by using three backticks
 at the beginning of a new line along with arguments enclosed in curly braces
@@ -1596,7 +1596,7 @@ The following lists the most important arguments to control the behavior of R co
 For more details on code chunk options see [here](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf).
 
 
-### Learning Markdown
+#### Learning Markdown
 
 The basic syntax of Markdown and derivatives like kramdown is extremely easy to learn. Rather
 than providing another introduction on this topic, here are some useful sites for learning Markdown:
@@ -1607,7 +1607,7 @@ than providing another introduction on this topic, here are some useful sites fo
 + [R Markdown Cheat Sheet](http://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
 + [kramdown Syntax](http://kramdown.gettalong.org/syntax.html)
 
-### Tables
+#### Tables
 
 There are several ways to render tables. First, they can be printed within the R code chunks. Second, 
 much nicer formatted tables can be generated with the functions `kable`, `pander` or `xtable`. The following
@@ -1630,7 +1630,7 @@ datatable(iris, filter = 'top', options = list(
 	 ))
 ```
 
-### Figures
+#### Figures
 
 Plots generated by the R code chunks in an R Markdown document can be automatically 
 inserted in the output file. The size of the figure can be controlled with the `fig.height`
@@ -1655,13 +1655,13 @@ dev.off()
 ```
 <center><img title="some_title" src="../images/myplot.png"/></center>
 
-### Inline R code
+#### Inline R code
 
 To evaluate R code inline, one can enclose an R expression with a single back-tick
 followed by `r` and then the actual expression.  For instance, the back-ticked version 
 of 'r 1 + 1' evaluates to `r 1 + 1` and 'r pi' evaluates to `r pi`.
 
-### Mathematical equations
+#### Mathematical equations
 
 To render mathematical equations, one can use standard Latex syntax. When expressions are 
 enclosed with single `$` signs then they will be shown inline, while 
@@ -1670,7 +1670,7 @@ Latex syntax `d(X,Y) = \sqrt[]{ \sum_{i=1}^{n}{(x_{i}-y_{i})^2} }` renders in di
 
 $$d(X,Y) = \sqrt[]{ \sum_{i=1}^{n}{(x_{i}-y_{i})^2} }$$
 
-### Citations and bibliographies
+#### Citations and bibliographies
 
 Citations and bibliographies can be autogenerated in R Markdown in a similar
 way as in Latex/Bibtex. Reference collections should be stored in a separate
@@ -1687,7 +1687,7 @@ the corresponding [R Markdown page](http://rmarkdown.rstudio.com/authoring_bibli
 Also, for general reference management and outputting references in Bibtex format [Paperpile](https://paperpile.com/features) 
 can be very helpful.
 
-### Viewing R Markdown report on HPCC cluster
+#### Viewing R Markdown report on HPCC cluster
 
 R Markdown reports located on UCR's HPCC Cluster can be viewed locally in a web browser (without moving 
 the source HTML) by creating a symbolic link from a user's `.html` directory. This way any updates to 
@@ -1709,9 +1709,9 @@ A sample R Markdown report for an RNA-Seq project is given here:
 + [RNASeq.Rmd](https://raw.githubusercontent.com/tgirke/GEN242/gh-pages/pages/mydoc/demo_files/systemPipeRNAseq.Rmd){:target="_blank"}
 
 
-# Shiny Web Apps
+## Shiny Web Apps
 
-## What is Shiny?
+### What is Shiny?
 
 [Shiny](https://shiny.rstudio.com/gallery/) is an R-based environment for building interactive web applications for
 data analysis and exploration. Since most JavaScript code is autogenerated by
@@ -1736,7 +1736,7 @@ AWS, GCP, [shinyapp.io](http://www.shinyapps.io/) service). The basic structure 
 
 Alternatively, the `ui` and `server` functions can be organized in two script files, a `ui.R` and a `server.R` script, respectively. 
 
-## Develop and test Shiny app locally
+### Develop and test Shiny app locally
 
 Open R and set session to parent directory (here `myappdir`) containing shiny script `app.R`, and the
 run it with the `runApp()` function. A sample `app.R` script for testing can be downloaded from [here](https://raw.githubusercontent.com/tgirke/GEN242/gh-pages/_vignettes/07_Rbasics/shinyapp/app.R).
@@ -1747,7 +1747,7 @@ runApp("myappdir") # To show code in app, add argument: display.mode="showcase"
 ```
 This will open the app in a web browser.
 
-## Deploy on web server
+### Deploy on web server
 
 This can be done on local or cloud systems. An easy solution is to get an account on [shinyapps.io](http://www.shinyapps.io/)
 and then deploy Shiny apps there. For details, see [here](https://shiny.rstudio.com/deploy/).
@@ -1758,7 +1758,7 @@ library(rsconnect)
 deployApp()
 ```
 
-## Example Shiny app
+### Example Shiny app
 
 The following Shiny app is hosted on `shinyapps.io` and embedded into the markdown (or html) source of this page
 using the following iframe syntax:
@@ -1770,7 +1770,7 @@ using the following iframe syntax:
 <iframe src="https://tgirke.shinyapps.io/diamonds/" style="border: none; width: 880px; height: 900px"></iframe>
 
 
-## Learning Shiny
+### Learning Shiny
 
 The Shiny section on the Rstudio site contains excellent [tutorials](https://shiny.rstudio.com/tutorial/).
 In addition, users may want to explore the example apps included in the `shiny` package. This can be

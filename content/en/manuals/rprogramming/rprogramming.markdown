@@ -1,7 +1,7 @@
 ---
 title: "Programming in R" 
 author: "Author: Thomas Girke"
-date: "Last update: 19 February, 2021" 
+date: "Last update: 20 February, 2021" 
 output:
   html_document:
     toc: true
@@ -119,11 +119,11 @@ Reference list on R programming (selection)
   - [High-Performance R](http://www.statistik.uni-dortmund.de/useR-2008/tutorials/useR2008introhighperfR.pdf), Dirk Eddelbuettel tutorial presented at useR-2008
   - [C/C++ level programming for R](http://www.stat.harvard.edu/ccr2005/index.html), Gopi Goswami
 
-# Control Structures
+## Control Structures
 
-## Important Operators
+### Important Operators
 
-### Comparison operators
+#### Comparison operators
 
   - `==` (equal)
   - `!=` (not equal)
@@ -132,13 +132,13 @@ Reference list on R programming (selection)
   - `<` (less than)
   - `<=` (less than or equal)
 
-### Logical operators
+#### Logical operators
 
   - `&` (and)
   - `|` (or)
   - `!` (not)
 
-## Conditional Executions: `if` Statements
+### Conditional Executions: `if` Statements
 
 An `if` statement operates on length-one logical vectors.
 
@@ -164,7 +164,7 @@ if(1==0) {
 
     ## [1] 2
 
-## Conditional Executions: `ifelse` Statements
+### Conditional Executions: `ifelse` Statements
 
 The `ifelse` statement operates on vectors.
 
@@ -183,9 +183,9 @@ ifelse(x<5, x, 0)
 
     ##  [1] 1 2 3 4 0 0 0 0 0 0
 
-# Loops
+## Loops
 
-## `for` loop
+### `for` loop
 
 `for` loops iterate over elements of a looping vector.
 
@@ -224,7 +224,7 @@ myve[1:8]
 
     ## [1] 3.333333 3.100000 3.066667 3.066667 3.333333 3.666667 3.133333 3.300000
 
-### Conditional Stop of Loops
+#### Conditional Stop of Loops
 
 The `stop` function can be used to break out of a loop (or a function) when a condition becomes `TRUE`. In addition, an error message will be printed.
 
@@ -242,7 +242,7 @@ for(i in seq(along=x)) {
 }
 ```
 
-## `while` loop
+### `while` loop
 
 Iterates as long as a condition is true.
 
@@ -268,9 +268,9 @@ while(z<5) {
     ## [1] 4
     ## [1] 6
 
-## The `apply` Function Family
+### The `apply` Function Family
 
-### `apply`
+#### `apply`
 
 **Syntax**
 
@@ -294,7 +294,7 @@ apply(iris[1:8,1:3], 1, mean)
     ##        1        2        3        4        5        6        7        8 
     ## 3.333333 3.100000 3.066667 3.066667 3.333333 3.666667 3.133333 3.300000
 
-### `tapply`
+#### `tapply`
 
 Applies a function to vector components that are defined by a factor.
 
@@ -321,7 +321,7 @@ tapply(iris$Sepal.Length, iris$Species, mean)
     ##     setosa versicolor  virginica 
     ##      5.006      5.936      6.588
 
-### `sapply` and `lapply`
+#### `sapply` and `lapply`
 
 Both apply a function to vector or list objects. The `lapply` function always returns a list object, while `sapply` returns `vector` or `matrix` objects when it is possible.
 
@@ -355,9 +355,9 @@ lapply(names(l), function(x) mean(l[[x]]))
 sapply(names(l), function(x) mean(l[[x]]))
 ```
 
-# Functions
+## Functions
 
-## Function Overview
+### Function Overview
 
 A very useful feature of the R environment is the possibility to expand existing functions and to easily write custom functions. In fact, most of the R software can be viewed as a series of R functions.
 
@@ -377,7 +377,7 @@ myfct(arg1=..., arg2=...)
 
 The value returned by a function is the value of the function body, which is usually an unassigned final expression, *e.g.*: `return()`
 
-## Function Syntax Rules
+### Function Syntax Rules
 
 **General**
 
@@ -406,7 +406,7 @@ The value returned by a function is the value of the function body, which is usu
 
   - Variables created inside a function exist only for the life time of a function. Thus, they are not accessible outside of the function. To force variables in functions to exist globally, one can use the double assignment operator: `<<-`
 
-## Examples
+### Examples
 
 **Define sample function**
 
@@ -459,9 +459,9 @@ myfct
     ## }
     ## <bytecode: 0x575bef4fbd40>
 
-# Useful Utilities
+## Useful Utilities
 
-## Debugging Utilities
+### Debugging Utilities
 
 Several debugging utilities are available for R. They include:
 
@@ -473,11 +473,11 @@ Several debugging utilities are available for R. They include:
 
 The [Debugging in R page](http://www.stats.uwo.ca/faculty/murdoch/software/debuggingR/) provides an overview of the available resources.
 
-## Regular Expressions
+### Regular Expressions
 
 R’s regular expression utilities work similar as in other languages. To learn how to use them in R, one can consult the main help page on this topic with `?regexp`.
 
-### String matching with `grep`
+#### String matching with `grep`
 
 The grep function can be used for finding patterns in strings, here letter `A` in vector `month.name`.
 
@@ -487,7 +487,7 @@ month.name[grep("A", month.name)]
 
     ## [1] "April"  "August"
 
-### String substitution with `gsub`
+#### String substitution with `gsub`
 
 Example for using regular expressions to substitute a pattern by another one using a back reference. Remember: single escapes `\` need to be double escaped `\\` in R.
 
@@ -497,7 +497,7 @@ gsub('(i.*a)', 'xxx_\\1', "virginica", perl = TRUE)
 
     ## [1] "vxxx_irginica"
 
-## Interpreting a Character String as Expression
+### Interpreting a Character String as Expression
 
 Some useful examples
 
@@ -526,7 +526,7 @@ eval(parse(text=mylist[1]))
 
     ## [1] 150
 
-## Replacement, Split and Paste Functions for Strings
+### Replacement, Split and Paste Functions for Strings
 
 **Selected examples**
 
@@ -556,7 +556,7 @@ paste(rev(unlist(strsplit(x, NULL))), collapse="")
 
     ## [1] "yr_aun_aJ"
 
-## Time, Date and Sleep
+### Time, Date and Sleep
 
 **Selected examples**
 
@@ -583,9 +583,9 @@ Pause execution of R expressions for a given number of seconds (e.g. in loop)
 Sys.sleep(1) 
 ```
 
-### Example
+#### Example
 
-#### Import of Specific File Lines with Regular Expression
+##### Import of Specific File Lines with Regular Expression
 
 The following example demonstrates the retrieval of specific lines from an external file with a regular expression. First, an external file is created with the `cat` function, all lines of this file are imported into a vector with `readLines`, the specific elements (lines) are then retieved with the `grep` function, and the resulting lines are split into vector fields with `strsplit`.
 
@@ -618,17 +618,17 @@ system("blastall -p blastp -i seq.fasta -d uniprot -o seq.blastp")
     ## Warning in system("blastall -p blastp -i seq.fasta -d uniprot -o seq.blastp"): error in running
     ## command
 
-# Running R Scripts
+## Running R Scripts
 
-## Possibilities for Executing R Scripts
+### Possibilities for Executing R Scripts
 
-### R console
+#### R console
 
 ``` r
 source("my_script.R")
 ```
 
-### Command-line
+#### Command-line
 
 ``` sh
 Rscript my_script.R # or just ./myscript.R after making it executable
@@ -636,7 +636,7 @@ R CMD BATCH my_script.R # Alternative way 1
 R --slave < my_script.R # Alternative way 2
 ```
 
-### Passing arguments from command-line to R
+#### Passing arguments from command-line to R
 
 Create an R script named `test.R` with the following content:
 
@@ -653,9 +653,9 @@ Rscript test.R 10
 
 In the given example the number `10` is passed on from the command-line as an argument to the R script which is used to return to `STDOUT` the first 10 rows of the `iris` sample data. If several arguments are provided, they will be interpreted as one string and need to be split in R with the strsplit function. A more detailed example can be found [here](http://manuals.bioinformatics.ucr.edu/home/ht-seq#TOC-Quality-Reports-of-FASTQ-Files-).
 
-# Building R Packages
+## Building R Packages
 
-## Short Overview of Package Building Process
+### Short Overview of Package Building Process
 
 R packages can be built with the `package.skeleton` function. The given example will create a directory named `mypackage` containing the skeleton of the package for all functions, methods and classes defined in the R script(s) passed on to the `code_files` argument. The basic structure of the package directory is described [here](http://manuals.bioinformatics.ucr.edu/home/programming-in-r#Progr_pack). The package directory will also contain a file named `Read-and-delete-me` with instructions for completing the package:
 
@@ -678,11 +678,11 @@ install.packages("mypackage_1.0.tar.gz", repos=NULL)
 
 For more details see [here](http://manuals.bioinformatics.ucr.edu/home/programming-in-r#TOC-Building-R-Packages)
 
-# Programming Exercises
+## Programming Exercises
 
-## Exercise 1
+### Exercise 1
 
-### `for` loop
+#### `for` loop
 
 **Task 1.1**: Compute the mean of each row in `myMA` by applying the mean function in a `for` loop.
 
@@ -702,7 +702,7 @@ myResult[1:4, ]
     ## 3  0.1452555 -0.85005686  0.8514295 -0.4692688 -0.95188121 -0.2549044
     ## 4  0.9678927 -0.48747853  0.5058947  0.5961237 -0.84373458  0.1477396
 
-### `while` loop
+#### `while` loop
 
 **Task 1.2**: Compute the mean of each row in `myMA` by applying the mean function in a `while` loop.
 
@@ -731,7 +731,7 @@ all(myResult[,6] == myResult[,7])
 
     ## [1] TRUE
 
-### `apply` loop
+#### `apply` loop
 
 **Task 1.4**: Compute the mean of each row in myMA by applying the mean function in an `apply` loop
 
@@ -747,7 +747,7 @@ myResult[1:4, -c(1,2)]
     ## 3  0.8514295 -0.4692688 -0.95188121 -0.2549044 -0.2549044 -0.2549044
     ## 4  0.5058947  0.5961237 -0.84373458  0.1477396  0.1477396  0.1477396
 
-### Avoiding loops
+#### Avoiding loops
 
 **Task 1.5**: When operating on large data sets it is much faster to use the rowMeans function
 
@@ -763,9 +763,9 @@ myResult[1:4, -c(1,2,3)]
     ## 3 -0.4692688 -0.95188121 -0.2549044 -0.2549044 -0.2549044 -0.2549044
     ## 4  0.5961237 -0.84373458  0.1477396  0.1477396  0.1477396  0.1477396
 
-## Exercise 2
+### Exercise 2
 
-### Custom functions
+#### Custom functions
 
 **Task 2.1**: Use the following code as basis to implement a function that allows the user to compute the mean for any combination of columns in a matrix or data frame. The first argument of this function should specify the input data set, the second the mathematical function to be passed on (*e.g.* `mean`, `sd`, `max`) and the third one should allow the selection of the columns by providing a grouping vector.
 
@@ -799,9 +799,9 @@ Solution
 
 -->
 
-## Exercise 3
+### Exercise 3
 
-### Nested loops to generate similarity matrices
+#### Nested loops to generate similarity matrices
 
 **Task 3.1**: Create a sample list populated with character vectors of different lengths
 
@@ -860,9 +860,9 @@ image(olMA)
 
 <img src="/en/manuals/rprogramming/rprogramming_files/figure-html/nested_loops3-1.png" width="672" />
 
-## Exercise 4
+### Exercise 4
 
-### Build your own R package
+#### Build your own R package
 
 **Task 4.1**: Save one or more of your functions to a file called `script.R` and build the package with the `package.skeleton` function.
 
@@ -884,9 +884,9 @@ library(mypackage)
 ?myMAcomp # Opens help for function defined by mypackage
 ```
 
-# Homework 5
+## Homework 5
 
-## Reverse and complement of DNA
+### Reverse and complement of DNA
 
 **Task 1**: Write a `RevComp` function that returns the reverse and complement of a DNA sequence string. Include an argument that will allow to return only the reversed sequence, the complemented sequence or the reversed and complemented sequence. The following R functions will be useful for the implementation:
 
@@ -926,7 +926,7 @@ chartr("ATGC", "TACG", x)
 
 **Task 2**: Write a function that applies the `RevComp` function to many sequences stored in a vector.
 
-## Translate DNA into Protein
+### Translate DNA into Protein
 
 **Task 3**: Write a function that will translate one or many DNA sequences in all three reading frames into proteins. The following commands will simplify this task:
 
@@ -964,15 +964,15 @@ AAv[y]
     ## GAT TGC AGG TTA CGT 
     ## "D" "C" "R" "L" "R"
 
-## Homework submission
+### Homework submission
 
 Submit the 3 functions in one well structured and annotated R script to the instructor. The script should include instructions on how to use the functions.
 
-## Due date
+### Due date
 
 This homework is due on Thu, April 26th at 6:00 PM.
 
-## Homework Solutions
+### Homework Solutions
 
 See [here]()
 

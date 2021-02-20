@@ -103,11 +103,11 @@ Reference list on R programming (selection)
 * [C/C++ level programming for R](http://www.stat.harvard.edu/ccr2005/index.html), Gopi Goswami
 
 
-# Control Structures
+## Control Structures
 
-## Important Operators
+### Important Operators
 
-### Comparison operators
+#### Comparison operators
 
 * `==` (equal)
 * `!=` (not equal)
@@ -116,13 +116,13 @@ Reference list on R programming (selection)
 * `<` (less than)
 * `<=` (less than or equal)
 
-### Logical operators
+#### Logical operators
 		
 * `&` (and)
 * `|` (or) 
 * `!` (not)
 
-## Conditional Executions: `if` Statements
+### Conditional Executions: `if` Statements
 
 An `if` statement operates on length-one logical vectors.
 
@@ -144,7 +144,7 @@ if(1==0) {
 }
 ```
 
-## Conditional Executions: `ifelse` Statements
+### Conditional Executions: `ifelse` Statements
 
 The `ifelse` statement operates on vectors.
 
@@ -158,9 +158,9 @@ x <- 1:10
 ifelse(x<5, x, 0)
 ```
 
-# Loops
+## Loops
 
-## `for` loop
+### `for` loop
 
 `for` loops iterate over elements of a looping vector.
 
@@ -191,7 +191,7 @@ for(i in seq(along=myve)) {
 myve[1:8]
 ```
 
-### Conditional Stop of Loops
+#### Conditional Stop of Loops
 
 The `stop` function can be used to break out of a loop (or a function) when a condition becomes `TRUE`. In addition, an error message will be printed.
 
@@ -208,7 +208,7 @@ for(i in seq(along=x)) {
 }
 ```
 
-## `while` loop
+### `while` loop
 
 Iterates as long as a condition is true.
 
@@ -228,9 +228,9 @@ while(z<5) {
 }
 ```
 
-## The `apply` Function Family
+### The `apply` Function Family
 
-### `apply`
+#### `apply`
 
 __Syntax__
 ```{r apply_loop, eval=FALSE}
@@ -249,7 +249,7 @@ __Example__
 apply(iris[1:8,1:3], 1, mean)
 ```
 
-### `tapply`
+#### `tapply`
 
 Applies a function to vector components that are defined by a factor.
 
@@ -264,7 +264,7 @@ iris[1:2,]
 tapply(iris$Sepal.Length, iris$Species, mean)
 ```
 
-### `sapply` and `lapply`
+#### `sapply` and `lapply`
 
 Both apply a function to vector or list objects. The `lapply` function always returns a list object, while `sapply` returns `vector` or `matrix` objects when it is possible. 
 
@@ -281,9 +281,9 @@ lapply(names(l), function(x) mean(l[[x]]))
 sapply(names(l), function(x) mean(l[[x]]))
 ```
 
-# Functions
+## Functions
 
-## Function Overview
+### Function Overview
 
 A very useful feature of the R environment is the possibility to expand existing functions and to easily write custom functions. In fact, most of the R software can be viewed as a series of R functions.
 
@@ -299,7 +299,7 @@ myfct(arg1=..., arg2=...)
 ```
 The value returned by a function is the value of the function body, which is usually an unassigned final expression, _e.g._: `return()`
 
-## Function Syntax Rules
+### Function Syntax Rules
 	
 __General__
 
@@ -328,7 +328,7 @@ __Scope__
 
 * Variables created inside a function exist only for the life time of a function. Thus, they are not accessible outside of the function. To force variables in functions to exist globally, one can use the double assignment operator: `<<-` 
 
-## Examples
+### Examples
 
 __Define sample function__
 
@@ -363,9 +363,9 @@ Print function definition (often unintended)
 myfct 
 ```
 
-# Useful Utilities
+## Useful Utilities
 
-## Debugging Utilities
+### Debugging Utilities
 
 Several debugging utilities are available for R. They include:
 
@@ -377,18 +377,18 @@ Several debugging utilities are available for R. They include:
 
 The [Debugging in R page](http://www.stats.uwo.ca/faculty/murdoch/software/debuggingR/) provides an overview of the available resources.
 
-## Regular Expressions
+### Regular Expressions
 
 R's regular expression utilities work similar as in other languages. To learn how to use them in R, one can consult the main help page on this topic with `?regexp`.
 
-### String matching with `grep`
+#### String matching with `grep`
 
 The grep function can be used for finding patterns in strings, here letter `A` in vector `month.name`.
 ```{r grep_fct, eval=TRUE}
 month.name[grep("A", month.name)] 
 ```
 
-### String substitution with `gsub`
+#### String substitution with `gsub`
 
 Example for using regular expressions to substitute a pattern by another one using a back reference. Remember: single escapes `\` need to be double escaped `\\` in R.
 
@@ -396,7 +396,7 @@ Example for using regular expressions to substitute a pattern by another one usi
 gsub('(i.*a)', 'xxx_\\1', "virginica", perl = TRUE) 
 ```
 
-## Interpreting a Character String as Expression
+### Interpreting a Character String as Expression
 
 Some useful examples
 
@@ -417,7 +417,7 @@ Alternative approach
 eval(parse(text=mylist[1])) 
 ```
 
-## Replacement, Split and Paste Functions for Strings
+### Replacement, Split and Paste Functions for Strings
 
 __Selected examples__
 
@@ -438,7 +438,7 @@ Reverse a character string by splitting first all characters into vector fields
 paste(rev(unlist(strsplit(x, NULL))), collapse="") 
 ```
 
-## Time, Date and Sleep
+### Time, Date and Sleep
 
 __Selected examples__
 
@@ -457,9 +457,9 @@ Pause execution of R expressions for a given number of seconds (e.g. in loop)
 Sys.sleep(1) 
 ```
 
-### Example
+#### Example
 
-#### Import of Specific File Lines with Regular Expression
+##### Import of Specific File Lines with Regular Expression
 
 The following example demonstrates the retrieval of specific lines from an external file with a regular expression. First, an external file is created with the `cat` function, all lines of this file are imported into a vector with `readLines`, the specific elements (lines) are then retieved with the `grep` function, and the resulting lines are split into vector fields with `strsplit`.
 
@@ -477,23 +477,23 @@ External command-line software can be called with `system`. The following exampl
 system("blastall -p blastp -i seq.fasta -d uniprot -o seq.blastp")
 ```
 
-# Running R Scripts
+## Running R Scripts
 
-## Possibilities for Executing R Scripts
+### Possibilities for Executing R Scripts
 
-### R console
+#### R console
 ```{r r_script1, eval=FALSE}
 source("my_script.R")
 ```
 
-### Command-line
+#### Command-line
 
 ```{sh r_cmd_script1, eval=FALSE}
 Rscript my_script.R # or just ./myscript.R after making it executable
 R CMD BATCH my_script.R # Alternative way 1 
 R --slave < my_script.R # Alternative way 2
 ```
-### Passing arguments from command-line to R
+#### Passing arguments from command-line to R
 
 Create an R script named `test.R` with the following content:
 
@@ -509,9 +509,9 @@ Rscript test.R 10
 
 In the given example the number `10` is passed on from the command-line as an argument to the R script which is used to return to `STDOUT` the first 10 rows of the `iris` sample data. If several arguments are provided, they will be interpreted as one string and need to be split in R with the strsplit function. A more detailed example can be found [here](http://manuals.bioinformatics.ucr.edu/home/ht-seq\#TOC-Quality-Reports-of-FASTQ-Files-).
 
-# Building R Packages
+## Building R Packages
 
-## Short Overview of Package Building Process
+### Short Overview of Package Building Process
 
 R packages can be built with the `package.skeleton` function. The given example will create a directory named `mypackage` containing the skeleton of the package for all functions, methods and classes defined in the R script(s) passed on to the `code_files` argument. The basic structure of the package directory is described [here](http://manuals.bioinformatics.ucr.edu/home/programming-in-r#Progr_pack). The package directory will also contain a file named `Read-and-delete-me` with instructions for completing the package:
 
@@ -533,11 +533,11 @@ install.packages("mypackage_1.0.tar.gz", repos=NULL)
 
 For more details see [here](http://manuals.bioinformatics.ucr.edu/home/programming-in-r#TOC-Building-R-Packages)
 
-# Programming Exercises
+## Programming Exercises
 
-## Exercise 1
+### Exercise 1
 
-### `for` loop
+#### `for` loop
 
 __Task 1.1__: Compute the mean of each row in `myMA` by applying the mean function in a `for` loop.
 
@@ -551,7 +551,7 @@ myResult <- cbind(myMA, mean_for=myve_for)
 myResult[1:4, ]
 ```
 
-### `while` loop
+#### `while` loop
 
 __Task 1.2__: Compute the mean of each row in `myMA` by applying the mean function in a `while` loop.
 
@@ -570,7 +570,7 @@ __Task 1.3__: Confirm that the results from both mean calculations are identical
 all(myResult[,6] == myResult[,7])
 ```
 
-### `apply` loop
+#### `apply` loop
 	
 __Task 1.4__: Compute the mean of each row in myMA by applying the mean function in an `apply` loop
 ```{r exercise1_apply, eval=TRUE}
@@ -579,7 +579,7 @@ myResult <- cbind(myMA, mean_for=myve_for, mean_while=myve_while, mean_apply=myv
 myResult[1:4, -c(1,2)]
 ```
 
-### Avoiding loops
+#### Avoiding loops
 
 __Task 1.5__: When operating on large data sets it is much faster to use the rowMeans function
 
@@ -589,9 +589,9 @@ myResult <- cbind(myMA, mean_for=myve_for, mean_while=myve_while, mean_apply=myv
 myResult[1:4, -c(1,2,3)]
 ```
 
-## Exercise 2 
+### Exercise 2 
 
-### Custom functions
+#### Custom functions
 
 __Task 2.1__: Use the following code as basis to implement a function that allows the user to compute the mean for any combination of columns in a matrix or data frame. The first argument of this function should specify the input data set, the second the mathematical function to be passed on (_e.g._ `mean`, `sd`, `max`) and the third one should allow the selection of the columns by providing a grouping vector.
 
@@ -617,9 +617,9 @@ myMAcomp(myMA=myMA, group=c(1,1,1,2,2,2,3,3,4,4), myfct=mean)[1:2,]
 -->
 
 
-## Exercise 3
+### Exercise 3
 
-### Nested loops to generate similarity matrices
+#### Nested loops to generate similarity matrices
 
 __Task 3.1__: Create a sample list populated with character vectors of different lengths
 
@@ -642,9 +642,9 @@ __Task 3.3__ Plot the resulting intersect matrix as heat map. The `image` or the
 image(olMA)
 ```
 
-## Exercise 4
+### Exercise 4
 
-### Build your own R package
+#### Build your own R package
 
 __Task 4.1__: Save one or more of your functions to a file called `script.R` and build the package with the `package.skeleton` function.
 
@@ -666,9 +666,9 @@ library(mypackage)
 ?myMAcomp # Opens help for function defined by mypackage
 ```
 
-# Homework 5
+## Homework 5
 
-## Reverse and complement of DNA
+### Reverse and complement of DNA
 
 __Task 1__: Write a `RevComp` function that returns the reverse and complement of a DNA sequence string. Include an argument that will allow to return only the reversed sequence, the complemented sequence or the reversed and complemented sequence. The following R functions will be useful for the implementation: 
 
@@ -686,7 +686,7 @@ chartr("ATGC", "TACG", x)
 
 __Task 2__: Write a function that applies the `RevComp` function to many sequences stored in a vector.
 
-## Translate DNA into Protein
+### Translate DNA into Protein
 
 __Task 3__: Write a function that will translate one or many DNA sequences in all three reading frames into proteins. The following commands will simplify this task:
 
@@ -702,14 +702,14 @@ y <- y[grep("^...$", y)]
 AAv[y] 
 ```
 
-## Homework submission
+### Homework submission
 Submit the 3 functions in one well structured and annotated R script to the instructor. The script should include instructions on how to use the functions.
 
-## Due date
+### Due date
 
 This homework is due on Thu, April 26th at 6:00 PM.
 
-## Homework Solutions
+### Homework Solutions
 
 See [here]()
 
