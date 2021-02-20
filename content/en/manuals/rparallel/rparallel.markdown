@@ -105,14 +105,13 @@ specified in the `slurm.tmpl` file (under `module load`).
 ``` r
 library('RenvModule')
 module('load','slurm') # Loads slurm among other modules
-
 library(batchtools)
 myFct <- function(x) {
     Sys.sleep(10) # to see job in queue, pause for 10 sec
     result <- cbind(iris[x, 1:4,],
         Node=system("hostname", intern=TRUE),
         Rversion=paste(R.Version()[6:7], collapse="."))
-}
+    }
 ```
 
 ### Submit jobs from R to cluster

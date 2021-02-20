@@ -2,7 +2,7 @@
 "content/en/docs/test.Rmarkdown" "57a94487fffa01fffde108829d91b2e3"
 "content/en/manuals/rbasics/Rbasics.Rmarkdown" "9dc53d1ac7a862d3a91886f5eb3ee4b8"
 "content/en/manuals/rbasics/sample.Rmarkdown" "b94bfe5d863d8bcff325819a7fffe2d7"
-"content/en/manuals/rparallel/rparallel.Rmarkdown" "c1589be3b0e93f0a30b7582cca5891fe"
+"content/en/manuals/rparallel/rparallel.Rmarkdown" "4dd434501166cfadb8bd9d3715dea1c7"
 "content/en/manuals/rprogramming/rprogramming.Rmarkdown" "691996bba1dbfbafa373463d44c51a7d"
 "content/en/manuals/rsequences/Rsequences.Rmarkdown" "76db72bfcf4ef9e7996b11197a0f03f5"
 "content/en/rmarkdown/examples/example_rmd.Rmarkdown" "f742c6cb51209c0348f4db7c606042ad"
