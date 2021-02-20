@@ -1,7 +1,7 @@
 ---
 title: "Introduction to R" 
 author: "Author: Thomas Girke"
-date: "Last update: 19 February, 2021" 
+date: "Last update: 20 February, 2021" 
 output:
   html_document:
     toc: true
@@ -170,11 +170,10 @@ Nvim-R-Tmux IDE for R
 4.  Install Bioconductor packages as follows:
     
     ``` r
-    source("http://www.bioconductor.org/biocLite.R")
-    #library(BiocInstaller)
-    BiocVersion()
-    biocLite()
-    biocLite(c("pkg1", "pkg2"))
+    if (!requireNamespace("BiocManager", quietly = TRUE))
+        install.packages("BiocManager") # Installs BiocManager if not available yet
+    BiocManager::version() # Reports Bioconductor version
+    BiocManager::install(c("pkg1", "pkg2")) # Installs packages specified under "pkg1" and "pkg2" 
     ```
 
 5.  For more details consult the [Bioc Install page](http://www.bioconductor.org/install/)
@@ -215,6 +214,12 @@ Create an object with the assignment operator `<-` or `=`
 
 ``` r
 object <- ...
+```
+
+Instead of the assignment operator one can use the `assign` function
+
+``` r
+assign("x", function(arguments))
 ```
 
 List objects in current R session
@@ -379,6 +384,7 @@ Definition: `numeric` or `character`
 
 ``` r
 myVec <- 1:10; names(myVec) <- letters[1:10]  
+myVec <- setNames(1:10, letters[1:10]) # Same as above in single step
 myVec[1:5]
 ```
 
@@ -2467,7 +2473,7 @@ package from Bioconductor.
  ---
 title: "My First R Markdown Document"
 author: "Author: First Last"
-date: "Last update: 19 February, 2021"
+date: "Last update: 20 February, 2021"
 output:
   BiocStyle::html_document:
     toc: true

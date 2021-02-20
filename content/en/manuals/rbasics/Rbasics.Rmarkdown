@@ -117,11 +117,10 @@ Terminal-based Working Environment for R: [Nvim-R-Tmux](http://girke.bioinformat
 4. Install Bioconductor packages as follows:
 
     ```{r install_bioc, eval=FALSE}
-    source("http://www.bioconductor.org/biocLite.R")
-    #library(BiocInstaller)
-    BiocVersion()
-    biocLite()
-    biocLite(c("pkg1", "pkg2"))
+    if (!requireNamespace("BiocManager", quietly = TRUE))
+        install.packages("BiocManager") # Installs BiocManager if not available yet
+    BiocManager::version() # Reports Bioconductor version
+    BiocManager::install(c("pkg1", "pkg2")) # Installs packages specified under "pkg1" and "pkg2" 
     ```
 
 5. For more details consult the [Bioc Install page](http://www.bioconductor.org/install/)
@@ -162,6 +161,11 @@ Save workspace image? [y/n/c]:
 Create an object with the assignment operator `<-` or `=`
 ```{r r_assignment, eval=FALSE}
 object <- ...
+```
+
+Instead of the assignment operator one can use the `assign` function
+```{r r_assign_fct, eval=FALSE}
+assign("x", function(arguments))
 ```
 
 List objects in current R session
@@ -285,6 +289,7 @@ Definition: `numeric` or `character`
 
 ```{r r_vector_object, eval=TRUE}
 myVec <- 1:10; names(myVec) <- letters[1:10]  
+myVec <- setNames(1:10, letters[1:10]) # Same as above in single step
 myVec[1:5]
 myVec[c(2,4,6,8)]
 myVec[c("b", "d", "f")]
