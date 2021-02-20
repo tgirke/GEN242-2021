@@ -21,10 +21,10 @@
 <meta property="og:description" content="Overview  R provides a large number of packages for parallel evaluations on multi-core, multi-socket and multi-node systems. The latter are usually referred to as computer clusters. MPI is also supported For an overview of parallelization packages available for R see here One of the most comprehensive parallel computing environments for R is batchtools. Older versions of this package were released under the name BatchJobs (Bischl et al. 2015). batchtools supports both multi-core and multi-node computations with and without schedulers." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/manuals/rparallel/rparallel/" />
-<meta property="article:modified_time" content="2021-02-19T20:07:28-08:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-02-19T20:17:25-08:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Parallel Evaluations in R">
 <meta itemprop="description" content="Overview  R provides a large number of packages for parallel evaluations on multi-core, multi-socket and multi-node systems. The latter are usually referred to as computer clusters. MPI is also supported For an overview of parallelization packages available for R see here One of the most comprehensive parallel computing environments for R is batchtools. Older versions of this package were released under the name BatchJobs (Bischl et al. 2015). batchtools supports both multi-core and multi-node computations with and without schedulers.">
-<meta itemprop="dateModified" content="2021-02-19T20:07:28-08:00" />
+<meta itemprop="dateModified" content="2021-02-19T20:17:25-08:00" />
 <meta itemprop="wordCount" content="817">
 
 
@@ -1171,70 +1171,8 @@ reduceResults(rbind)
 </div>
 
 	
-		<style>
-  .feedback--answer {
-    display: inline-block;
-  }
-  .feedback--answer-no {
-    margin-left: 1em;
-  }
-  .feedback--response {
-    display: none;
-    margin-top: 1em;
-  }
-  .feedback--response__visible {
-    display: block;
-  }
-</style>
-<div class="d-print-none">
-<h2 class="feedback--title">Feedback</h2>
-<p class="feedback--question">Was this page helpful?</p>
-<button class="feedback--answer feedback--answer-yes">Yes</button>
-<button class="feedback--answer feedback--answer-no">No</button>
-<p class="feedback--response feedback--response-yes">
-  Glad to hear it! Please <a href="https://github.com/tgirke/GEN242/issues/new">tell us how we can improve</a>.
-</p>
-<p class="feedback--response feedback--response-no">
-  Sorry to hear that. Please <a href="https://github.com/tgirke/GEN242/issues/new">tell us how we can improve</a>.
-</p>
-</div>
-<script>
-  const yesButton = document.querySelector('.feedback--answer-yes');
-  const noButton = document.querySelector('.feedback--answer-no');
-  const yesResponse = document.querySelector('.feedback--response-yes');
-  const noResponse = document.querySelector('.feedback--response-no');
-  const disableButtons = () => {
-    yesButton.disabled = true;
-    noButton.disabled = true;
-  };
-  const sendFeedback = (value) => {
-    if (typeof ga !== 'function') return;
-    const args = {
-      command: 'send',
-      hitType: 'event',
-      category: 'Helpful',
-      action: 'click',
-      label: window.location.pathname,
-      value: value
-    };
-    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
-  };
-  yesButton.addEventListener('click', () => {
-    yesResponse.classList.add('feedback--response__visible');
-    disableButtons();
-    sendFeedback(1);
-  });
-  noButton.addEventListener('click', () => {
-    noResponse.classList.add('feedback--response__visible');
-    disableButtons();
-    sendFeedback(0);
-  });
-</script>
-
-		<br />
 	
-	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-02-19: <a  href="https://github.com/tgirke/GEN242//commit/f242e7b40a284d60052f062bad364d73b47c8848">some edits (f242e7b)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-02-19: <a  href="https://github.com/tgirke/GEN242//commit/6d9198def0d933fe641e75660f5a8b53a0edb755">some edits (6d9198d)</a>
 </div>
 </div>
 
