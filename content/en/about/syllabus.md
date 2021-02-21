@@ -191,27 +191,27 @@ A31. Ronquist F, Teslenko M, van der Mark P, Ayres DL, Darling A, Höhna S, Larg
 
 ### Tutorials
 
-T1. [GitHub Introduction](http://girke.bioinformatics.ucr.edu/GEN242/mydoc_tutorial_01.html)
+T1. [GitHub Introduction](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/tutorial_01/)
 
-T2. [Introduction to Computer Clusters and Linux](http://girke.bioinformatics.ucr.edu/GEN242/mydoc_tutorial_02.html)
+T2. [Introduction to Computer Clusters and Linux](http://girke.bioinformatics.ucr.edu/GEN242/tutorials/tutorial_02/)
 
-T3. [Introduction to R](http://girke.bioinformatics.ucr.edu/GEN242/mydoc_Rbasics_01.html) 
+T3. [Introduction to R](http://girke.bioinformatics.ucr.edu/GEN242/tutorials/tutorial_03/) 
 
-T4. [Programming in R](http://girke.bioinformatics.ucr.edu/GEN242/mydoc_Programming_in_R_01.html)
+T4. [Programming in R](http://girke.bioinformatics.ucr.edu/GEN242/tutorials/tutorial_04/)
 
-T5. [NGS Analysis Basics](http://girke.bioinformatics.ucr.edu/GEN242/mydoc_Rsequences_01.html)
+T5. [NGS Analysis Basics](http://girke.bioinformatics.ucr.edu/GEN242/tutorials/tutorial_05/)
 
-T6. [NGS Workflows](http://girke.bioinformatics.ucr.edu/GEN242/mydoc_systemPipeR_1.html)
+T6. [NGS Workflows](http://girke.bioinformatics.ucr.edu/GEN242/tutorials/tutorial_06/)
  
-T7. [RNA-Seq Workflow](http://girke.bioinformatics.ucr.edu/GEN242/mydoc_systemPipeRNAseq_01.html) 
+T7. [RNA-Seq Workflow](http://girke.bioinformatics.ucr.edu/GEN242/tutorials/tutorial_07/) 
 
-T8. [ChIP-Seq Workflow](http://girke.bioinformatics.ucr.edu/GEN242/mydoc_systemPipeChIPseq_01.html)
+T8. [ChIP-Seq Workflow](http://girke.bioinformatics.ucr.edu/GEN242/tutorials/tutorial_08)
 
-T9. [VAR-Seq Workflow](http://girke.bioinformatics.ucr.edu/GEN242/mydoc_systemPipeVARseq_01.html) 
+T9. [VAR-Seq Workflow](http://girke.bioinformatics.ucr.edu/GEN242/tutorials/tutorial_09/) 
 
-T10. [Unsupervised Learning](http://girke.bioinformatics.ucr.edu/GEN242/mydoc_Rclustering_1.html)
+T10. [Unsupervised Learning](http://girke.bioinformatics.ucr.edu/GEN242/tutorials/tutorial_10/)
 
-T11. [Data Visualization](http://girke.bioinformatics.ucr.edu/GEN242/mydoc_Rgraphics_1.html)
+T11. [Data Visualization](http://girke.bioinformatics.ucr.edu/GEN242/tutorials/tutorial_11/)
 
 
 ### Books 
