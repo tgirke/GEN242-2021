@@ -82,6 +82,7 @@ addition, a recent version of [R](http://www.r-project.org) and
 
 ## Schedule
 
+<span style="color: red;">Note: this schedule is from a previous offering of this class. The final schedule will be released during the first to include student suggestions.</span>
 
 |Week     |Topic                                                                |
 |---------|---------------------------------------------------------------------|
@@ -123,6 +124,8 @@ addition, a recent version of [R](http://www.r-project.org) and
 
 
 ## Reading list
+
+<span style="color: red;">Note: this reading list is from a previous offering of this class. The list will be finalized during the first two weeks to include student suggestions.</span>
 
 ### Journal articles
 
