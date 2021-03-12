@@ -18,6 +18,12 @@ network biology and more. The hands-on practicals include homework assignments a
 course projects focusing on data analysis programming of next generation genome data 
 using command-line tools on a computer cluster and the programming environment R. 
 
+## Special Topics
+
+Depending on student interests, one or more specialty topics may be included, such
+as the analysis of single cell (_e.g._ scRNA-Seq) or multi-omics data, or the development
+of an analysis tool including Shiny Apps. 
+
 ## Who should take this class?
 
 Students with a strong interest and motivation in acquiring the skills required for mastering
