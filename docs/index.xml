@@ -13,6 +13,25 @@
     
     
     <item>
+      <title>Blog: Special Topics</title>
+      <link>/blog/2021/03/11/special-topics/</link>
+      <pubDate>Thu, 11 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2021/03/11/special-topics/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;suggestions&#34;&gt;Suggestions&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Single cell profiling (&lt;em&gt;e.g.&lt;/em&gt; scRNA-Seq)&lt;/li&gt;
+&lt;li&gt;Comparative genomics (&lt;em&gt;e.g.&lt;/em&gt; ortholog assignments and/or assembly)&lt;/li&gt;
+&lt;li&gt;Tool development (&lt;em&gt;e.g.&lt;/em&gt; design of Shiny Apps)&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Blog: First Day of Instructions</title>
       <link>/blog/2021/02/13/first-day-of-instructions/</link>
       <pubDate>Sat, 13 Feb 2021 00:00:00 +0000</pubDate>
