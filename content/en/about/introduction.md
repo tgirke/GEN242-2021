@@ -17,7 +17,7 @@ lectures, hands-on practicals and student course projects. The lecture topics co
 network biology and more. The hands-on practicals include homework assignments and 
 course projects focusing on data analysis programming of next generation genome data 
 using command-line tools on a computer cluster and the programming environment R. 
-Depending on student interests, one or more specialty topic may be included, such
+Depending on student interests, one or more specialty topics may be included, such
 as the analysis of single cell (_e.g._ scRNA-Seq) experiments, multi-omics data, or 
 the development of web-based analysis tools (_e.g._ Shiny Apps). 
 
