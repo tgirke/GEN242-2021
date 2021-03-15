@@ -1,0 +1,2324 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.80.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+
+<link rel="shortcut icon" href="../../../favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="../../../favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="../../../favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="../../../favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="../../../favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="../../../favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="../../../favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="../../../favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="../../../favicons/android-192x192.png" sizes="192x192">
+
+<title>Graphics and Data Visualization in R | GEN242</title><meta property="og:title" content="Graphics and Data Visualization in R" />
+<meta property="og:description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Overview Graphics in R  Powerful environment for visualizing scientific data Integrated graphics and statistics infrastructure Publication quality graphics Fully programmable Highly reproducible Full LaTeX, Sweave, knitr and R Markdown support. Vast number of R packages with graphics utilities  Documentation on Graphics in R  General  Graphics Task Page R Graph Gallery R Graphical Manual Paul Murrell’s book R (Grid) Graphics   Interactive graphics  rggobi (GGobi) iplots Open GL (rgl)    Graphics Environments  Viewing and savings graphics in R  On-screen graphics postscript, pdf, svg jpeg/png/wmf/tiff/…   Four major graphics environments  Low-level infrastructure  R Base Graphics (low- and high-level) grid: Manual, Book   High-level infrastructure  lattice: Manual, Intro, Book ggplot2: Manual, Intro, Book      Base Graphics Overview  Important high-level plotting functions  plot: generic x-y plotting barplot: bar plots boxplot: box-and-whisker plot hist: histograms pie: pie charts dotchart: cleveland dot plots image, heatmap, contour, persp: functions to generate image-like plots qqnorm, qqline, qqplot: distribution comparison plots pairs, coplot: display of multivariant data   Help on these functions  ?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/manuals/rgraphics/rgraphics/" />
+<meta property="og:site_name" content="GEN242" />
+<meta itemprop="name" content="Graphics and Data Visualization in R">
+<meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Overview Graphics in R  Powerful environment for visualizing scientific data Integrated graphics and statistics infrastructure Publication quality graphics Fully programmable Highly reproducible Full LaTeX, Sweave, knitr and R Markdown support. Vast number of R packages with graphics utilities  Documentation on Graphics in R  General  Graphics Task Page R Graph Gallery R Graphical Manual Paul Murrell’s book R (Grid) Graphics   Interactive graphics  rggobi (GGobi) iplots Open GL (rgl)    Graphics Environments  Viewing and savings graphics in R  On-screen graphics postscript, pdf, svg jpeg/png/wmf/tiff/…   Four major graphics environments  Low-level infrastructure  R Base Graphics (low- and high-level) grid: Manual, Book   High-level infrastructure  lattice: Manual, Intro, Book ggplot2: Manual, Intro, Book      Base Graphics Overview  Important high-level plotting functions  plot: generic x-y plotting barplot: bar plots boxplot: box-and-whisker plot hist: histograms pie: pie charts dotchart: cleveland dot plots image, heatmap, contour, persp: functions to generate image-like plots qqnorm, qqline, qqplot: distribution comparison plots pairs, coplot: display of multivariant data   Help on these functions  ?">
+
+<meta itemprop="wordCount" content="4257">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Graphics and Data Visualization in R"/>
+<meta name="twitter:description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Overview Graphics in R  Powerful environment for visualizing scientific data Integrated graphics and statistics infrastructure Publication quality graphics Fully programmable Highly reproducible Full LaTeX, Sweave, knitr and R Markdown support. Vast number of R packages with graphics utilities  Documentation on Graphics in R  General  Graphics Task Page R Graph Gallery R Graphical Manual Paul Murrell’s book R (Grid) Graphics   Interactive graphics  rggobi (GGobi) iplots Open GL (rgl)    Graphics Environments  Viewing and savings graphics in R  On-screen graphics postscript, pdf, svg jpeg/png/wmf/tiff/…   Four major graphics environments  Low-level infrastructure  R Base Graphics (low- and high-level) grid: Manual, Book   High-level infrastructure  lattice: Manual, Intro, Book ggplot2: Manual, Intro, Book      Base Graphics Overview  Important high-level plotting functions  plot: generic x-y plotting barplot: bar plots boxplot: box-and-whisker plot hist: histograms pie: pie charts dotchart: cleveland dot plots image, heatmap, contour, persp: functions to generate image-like plots qqnorm, qqline, qqplot: distribution comparison plots pairs, coplot: display of multivariant data   Help on these functions  ?"/>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-00000000-0', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+<link rel="preload" href="../../../scss/main.min.1f416e6a5f646f231d085681bf2b4ebdad5d41f149a3977625affc97f735ab7e.css" as="style">
+<link href="../../../scss/main.min.1f416e6a5f646f231d085681bf2b4ebdad5d41f149a3977625affc97f735ab7e.css" rel="stylesheet" integrity="">
+
+
+<script
+  src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+
+<link rel="stylesheet" href="../../../css/prism.css"/>
+
+
+<script src="../../../js/driver0.9.8.min.js"></script>
+<link rel="stylesheet" href="../../../css/driver0.9.8.min.css"/>
+
+
+<link rel="stylesheet" href="../../../css/site.css"/>
+<script src="../../../js/site.js"></script>
+
+
+
+  </head>
+  <body class="td-page line-numbers">
+    <header>
+     
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+  <a class="navbar-brand" href="../../../">
+		<span class="font-weight-bold">GEN242</span>
+	</a>
+	<row class="header-switch">
+	  	<div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="sidebarSwitch" checked=true>
+        <label class="custom-control-label" for="sidebarSwitch">sidebar</label>
+      </div>
+    	<div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="tocSwitch" checked=true>
+        <label class="custom-control-label" for="tocSwitch">toc</label>
+      </div>
+	</row>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0" style="position: relative">
+				
+				
+				
+				
+				
+          <a class="nav-link dropdown-toggle" href="../../../about/" id="navbarDropdown" role="button">
+          	About
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../about/introduction/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Introduction
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../about/syllabus/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Syllabus
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../about/schedule/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Schedule
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../about/internal/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Internal
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../about/internal/internal_resources/"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 Resources
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../about/internal/install/"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 Installation
+              </a>
+          	
+          </div>
+				
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0" style="position: relative">
+				
+				
+				
+				
+				
+          <a class="nav-link dropdown-toggle" href="../../../slides/" id="navbarDropdown" role="button">
+          	Slides
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_01"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Course Introduction (S1)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_02"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Genome Basics (S2)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_03"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Databases and Software (S3)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_04"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 DNA Sequencing (S4)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_05"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Introduction to R (S5)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_06"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Sequence Alignments (S6)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_07"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Programming in R (S7)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_08"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Multiple Alignments (S8)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_09"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Short Read Alignments (S9)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_10"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 NGS Analysis Basics (S10)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_11"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Gene Expression Analysis (S11)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_12"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 NGS Workflows (S12)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_13/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 RNA-Seq Overview (S13)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_14/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 scRNA-Seq Overview (S14)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_15/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 ChIP-Seq Overview (S15)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_16/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 VAR-Seq Overview (S16)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_17/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Gene Annotation and Ontologies (S17)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_18/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Sequence Assembly (S18)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_19/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Cluster Analysis (S19)
+              </a>
+          	
+          </div>
+				
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0" style="position: relative">
+				
+				
+				
+				
+				
+          <a class="nav-link dropdown-toggle" href="../../../tutorials/" id="navbarDropdown" role="button">
+          	Tutorials
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/tutorial_01"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 GitHub Introduction (T1)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/tutorial_02"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Linux and HPCC Cluster (T2)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/tutorial_03"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Introduction to R (T3)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/tutorial_04"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Programming in R (T4)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/tutorial_05"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 NGS Analysis Basics (T5)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/tutorial_06"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 RNA-Seq Workflow (T6)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/tutorial_07"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 scRNA-Seq Workflow (T7)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/tutorial_08"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 ChIP-Seq Workflow (T8)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/tutorial_09"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 VAR-Seq Workflow (T9)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/tutorial_10"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Graphics and Visualization (T10)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/tutorial_11"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Cluster Analysis and Data Mining (T11)
+              </a>
+          	
+          </div>
+				
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0" style="position: relative">
+				
+				
+				
+				
+				
+          <a class="nav-link dropdown-toggle" href="../../../manuals/" id="navbarDropdown" role="button">
+          	Manuals
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../manuals/github/github/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 GitHub
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../manuals/linux/linux/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Linux &amp; HPCC Cluster
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../manuals/rbasics/rbasics/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Introduction to R
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../manuals/rbasics/sample/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Sample R Markdown
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../manuals/rprogramming/rprogramming/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Programming in R
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../manuals/rparallel/rparallel/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Parallel Evaluations in R
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../manuals/rsequences/rsequences/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 NGS Analysis Basics
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../manuals/rgraphics/rgraphics/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Graphics and Visualization
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../manuals/rclustering/rclustering/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Cluster Analysis
+              </a>
+          	
+          </div>
+				
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0" style="position: relative">
+				
+				
+				
+				
+				
+          <a class="nav-link dropdown-toggle" href="../../../assignments/" id="navbarDropdown" role="button">
+          	Assignments
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../assignments/homework/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Homework
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/homework/hw1/"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 HW1
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/homework/hw2/"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 HW2
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/homework/hw3/"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 HW3
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/homework/hw4/"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 HW4
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/homework/hw5/"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 HW5
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../assignments/projects/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Projects
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/projects/project_01/"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 Project_01
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/projects/project_02/"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 Project_02
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/projects/project_03/"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 Project_03
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/projects/project_04/"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 Project_04
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/projects/project_05/"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 Project_05
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../assignments/presentations/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Presentations
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/presentations/presentation_01/"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 Presentation_01
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/presentations/presentation_02/"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 Presentation_02
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/presentations/presentation_03/"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 Presentation_03
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/presentations/presentation_04/"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 Presentation_04
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/presentations/presentation_05/"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 Presentation_05
+              </a>
+          	
+          </div>
+				
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0" style="position: relative">
+				
+				
+				
+				
+				
+          <a class="nav-link dropdown-toggle" href="../../../external_resources/" id="navbarDropdown" role="button">
+          	Links
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="https://piazza.com/ucr/spring2021/gen242/home"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Piazza
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="https://github.com/tgirke/GEN242"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 GitHub Repo
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="https://bioconductor.org/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Bioconductor
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="https://www.dcassol.com/docsy_Rmarkdown/rmarkdown/install/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Hugo, Docsy &amp; R
+              </a>
+          	
+          </div>
+				
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0" style="position: relative">
+				
+				
+				
+				
+				
+				
+				
+					<a class="nav-link" href="../../../blog/" ><span>News</span></a>
+				
+			</li>
+			
+			
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block">
+
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="../../../offline-search-index.488a564f6157269079dd1263e5923fc3.json"
+  data-offline-search-base-href="../../../"
+  data-offline-search-max-results="10"
+>
+
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="../../../offline-search-index.488a564f6157269079dd1263e5923fc3.json"
+  data-offline-search-base-href="../../../"
+  data-offline-search-max-results="10"
+>
+
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav" id="td-section-nav">
+    
+    
+    
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="../../../manuals/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Manuals</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="manuals">
+      
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualsgithubgithub" href="../../../manuals/github/github/">GitHub</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualslinuxlinux" href="../../../manuals/linux/linux/">Linux &amp; HPCC Cluster</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualsrbasicsrbasics" href="../../../manuals/rbasics/rbasics/">Introduction to R</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualsrbasicssample" href="../../../manuals/rbasics/sample/">Sample R Markdown</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualsrprogrammingrprogramming" href="../../../manuals/rprogramming/rprogramming/">Programming in R</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualsrparallelrparallel" href="../../../manuals/rparallel/rparallel/">Parallel Evaluations in R</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualsrsequencesrsequences" href="../../../manuals/rsequences/rsequences/">NGS Analysis Basics</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page  active" id="m-manualsrgraphicsrgraphics" href="../../../manuals/rgraphics/rgraphics/">Graphics and Data Visualization in R</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualsrclusteringrclustering" href="../../../manuals/rclustering/rclustering/">Cluster Analysis in R</a>
+        
+      
+      
+    </li>
+  </ul>
+</ul>
+
+  </nav>
+</div>
+
+
+
+
+          </div>
+          
+          
+
+          
+            
+          
+
+          
+          
+              <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+                
+  
+  
+  
+  
+  
+  <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+  
+    
+    
+      
+    
+    
+    
+    
+    
+    
+    
+    
+    <a href="https://github.com/tgirke/GEN242//blob/main/content/en/manuals/rgraphics/Rgraphics.markdown" target="_blank"><i class="fa fa-code fa-fw"></i> View source code</a>
+    <a href="https://github.com/tgirke/GEN242//edit/main/content/en/manuals/rgraphics/Rgraphics.markdown" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+    <a href="https://github.com/tgirke/GEN242//new/main/content/en/manuals/rgraphics/Rgraphics.markdown?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" target="_blank"><i class="fa fa-edit fa-fw"></i> Create child page</a>
+    <a href="https://github.com/tgirke/GEN242//issues/new?title=Graphics%20and%20Data%20Visualization%20in%20R" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+    
+      
+      <a href="https://github.com/tgirke/GEN242/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
+    
+
+  
+  
+  </div>
+
+
+
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a>
+      <ul>
+        <li><a href="#graphics-in-r">Graphics in R</a></li>
+        <li><a href="#documentation-on-graphics-in-r">Documentation on Graphics in R</a></li>
+        <li><a href="#graphics-environments">Graphics Environments</a></li>
+      </ul>
+    </li>
+    <li><a href="#base-graphics">Base Graphics</a>
+      <ul>
+        <li><a href="#overview-1">Overview</a></li>
+        <li><a href="#preferred-input-data-objects">Preferred Input Data Objects</a></li>
+        <li><a href="#scatter-plots">Scatter Plots</a>
+          <ul>
+            <li><a href="#basic-scatter-plots">Basic scatter plots</a></li>
+            <li><a href="#all-pairs">All pairs</a></li>
+            <li><a href="#plot-labels">Plot labels</a></li>
+            <li><a href="#more-examples">More examples</a></li>
+            <li><a href="#exercise-1">Exercise 1</a></li>
+          </ul>
+        </li>
+        <li><a href="#line-plots">Line Plots</a>
+          <ul>
+            <li><a href="#single-data-set">Single Data Set</a></li>
+            <li><a href="#many-data-sets">Many Data Sets</a></li>
+          </ul>
+        </li>
+        <li><a href="#bar-plots">Bar Plots</a>
+          <ul>
+            <li><a href="#basics">Basics</a></li>
+            <li><a href="#error-bars">Error bars</a></li>
+            <li><a href="#mirrored-bar-plot">Mirrored bar plot</a></li>
+          </ul>
+        </li>
+        <li><a href="#histograms">Histograms</a></li>
+        <li><a href="#density-plots">Density Plots}</a></li>
+        <li><a href="#pie-charts">Pie Charts</a></li>
+        <li><a href="#color-selection-utilities">Color Selection Utilities</a></li>
+        <li><a href="#arranging-several-plots-on-single-page">Arranging Several Plots on Single Page</a>
+          <ul>
+            <li><a href="#arranging-plots-with-variable-width">Arranging Plots with Variable Width</a></li>
+          </ul>
+        </li>
+        <li><a href="#saving-graphics-to-files">Saving Graphics to Files</a>
+          <ul>
+            <li><a href="#exercise-2">Exercise 2</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#grid-graphics">Grid Graphics</a></li>
+    <li><a href="#lattice-graphics">lattice Graphics</a>
+      <ul>
+        <li><a href="#scatter-plot-sample">Scatter Plot Sample</a></li>
+        <li><a href="#line-plot-sample">Line Plot Sample</a></li>
+      </ul>
+    </li>
+    <li><a href="#ggplot2-graphics">ggplot2 Graphics</a>
+      <ul>
+        <li><a href="#ggplot2-usage"><code>ggplot2</code> Usage</a></li>
+        <li><a href="#qplot-function"><code>qplot</code> Function</a></li>
+        <li><a href="#qplot-scatter-plot-basics"><code>qplot</code>: scatter plot basics</a>
+          <ul>
+            <li><a href="#colored-groups">Colored groups</a></li>
+            <li><a href="#regression-line">Regression line</a></li>
+            <li><a href="#local-regression-curve-loess">Local regression curve (loess)</a></li>
+          </ul>
+        </li>
+        <li><a href="#ggplot-function"><code>ggplot</code> Function</a>
+          <ul>
+            <li><a href="#changing-plotting-themes-in-ggplot">Changing Plotting Themes in <code>ggplot</code></a></li>
+            <li><a href="#storing-ggplot-specifications">Storing <code>ggplot</code> Specifications</a></li>
+          </ul>
+        </li>
+        <li><a href="#ggplot-scatter-plots"><code>ggplot</code>: scatter plots</a>
+          <ul>
+            <li><a href="#basic-example">Basic example</a></li>
+            <li><a href="#regression-line-1">Regression line</a></li>
+            <li><a href="#several-regression-lines">Several regression lines</a></li>
+            <li><a href="#local-regression-curve-loess-1">Local regression curve (loess)</a></li>
+          </ul>
+        </li>
+        <li><a href="#ggplot-line-plot"><code>ggplot</code>: line plot</a></li>
+        <li><a href="#faceting">Faceting</a>
+          <ul>
+            <li><a href="#exercise-3">Exercise 3</a></li>
+          </ul>
+        </li>
+        <li><a href="#bar-plots-1">Bar Plots</a>
+          <ul>
+            <li><a href="#verical-orientation">Verical orientation</a></li>
+            <li><a href="#horizontal-orientation">Horizontal orientation</a></li>
+            <li><a href="#faceting-1">Faceting</a></li>
+            <li><a href="#error-bars-1">Error bars</a></li>
+            <li><a href="#mirrored">Mirrored</a></li>
+          </ul>
+        </li>
+        <li><a href="#changing-color-settings">Changing Color Settings</a>
+          <ul>
+            <li><a href="#using-standard-colors">Using standard colors</a></li>
+            <li><a href="#exercise-4">Exercise 4</a></li>
+          </ul>
+        </li>
+        <li><a href="#data-reformatting-example">Data reformatting example</a></li>
+        <li><a href="#jitter-plots">Jitter Plots</a></li>
+        <li><a href="#box-plots">Box plots</a></li>
+        <li><a href="#violin-plots">Violin plots</a></li>
+        <li><a href="#density-plots-1">Density plots</a>
+          <ul>
+            <li><a href="#line-coloring">Line coloring</a></li>
+            <li><a href="#area-coloring">Area coloring</a></li>
+          </ul>
+        </li>
+        <li><a href="#histograms-1">Histograms</a></li>
+        <li><a href="#pie-chart">Pie Chart</a></li>
+        <li><a href="#wind-rose-pie-chart">Wind Rose Pie Chart</a></li>
+        <li><a href="#arranging-graphics-on-page">Arranging Graphics on Page</a></li>
+        <li><a href="#inserting-graphics-into-plots">Inserting Graphics into Plots</a></li>
+      </ul>
+    </li>
+    <li><a href="#specialty-graphics">Specialty Graphics</a>
+      <ul>
+        <li><a href="#venn-diagrams">Venn Diagrams</a></li>
+        <li><a href="#compound-structures">Compound Structures</a></li>
+        <li><a href="#roc-plots">ROC Plots</a>
+          <ul>
+            <li><a href="#example">Example</a></li>
+          </ul>
+        </li>
+        <li><a href="#trees">Trees</a></li>
+      </ul>
+    </li>
+    <li><a href="#genome-graphics">Genome Graphics</a>
+      <ul>
+        <li><a href="#ggbio"><code>ggbio</code></a>
+          <ul>
+            <li><a href="#tracks-aligning-plots-along-chromosomes">Tracks: aligning plots along chromosomes</a></li>
+            <li><a href="#plotting-genomic-ranges">Plotting genomic ranges</a></li>
+            <li><a href="#plotting-coverage">Plotting coverage</a></li>
+            <li><a href="#mirrored-coverage">Mirrored coverage</a></li>
+          </ul>
+        </li>
+        <li><a href="#circular-genome-plots">Circular genome plots</a>
+          <ul>
+            <li><a href="#alignments-and-variants">Alignments and variants</a></li>
+          </ul>
+        </li>
+        <li><a href="#additional-examples">Additional examples</a></li>
+        <li><a href="#additional-genome-graphics">Additional genome graphics</a></li>
+        <li><a href="#genome-browser-igv">Genome Browser: IGV</a>
+          <ul>
+            <li><a href="#create-symbolic-links">Create symbolic links</a></li>
+            <li><a href="#controlling-igv-from-r">Controlling IGV from R</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+
+
+
+              </div>
+              <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+                
+  
+
+                <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../manuals/">Manuals</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="../../../manuals/rgraphics/rgraphics/">Graphics and Data Visualization in R</a>
+</li>
+
+	</ol>
+</nav	>
+
+                
+<div class="td-content">
+	<h1>Graphics and Data Visualization in R</h1>
+    
+	
+        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 20 minute read</p>
+           
+	<!--
+- Compile from command-line
+Rscript -e "rmarkdown::render('Rgraphics.Rmd', c('html_document'), clean=F); knitr::knit('Rgraphics.Rmd', tangle=TRUE)"; Rscript ../md2jekyll.R Rgraphics.knit.md 15; Rscript -e "rmarkdown::render('Rgraphics.Rmd', c('pdf_document'))"
+-->
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelector("h1").className = "title";
+});
+</script>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+  var links = document.links;  
+  for (var i = 0, linksLength = links.length; i < linksLength; i++)
+    if (links[i].hostname != window.location.hostname)
+      links[i].target = '_blank';
+});
+</script>
+<h2 id="overview">Overview</h2>
+<h3 id="graphics-in-r">Graphics in R</h3>
+<ul>
+<li>Powerful environment for visualizing scientific data</li>
+<li>Integrated graphics and statistics infrastructure</li>
+<li>Publication quality graphics</li>
+<li>Fully programmable</li>
+<li>Highly reproducible</li>
+<li>Full <a href="http://www.latex-project.org/">LaTeX</a>, <a href="http://www.stat.auckland.ac.nz/~dscott/782/Sweave-manual-20060104.pdf">Sweave</a>, <a href="http://yihui.name/knitr/">knitr</a> and <a href="http://rmarkdown.rstudio.com/">R Markdown</a> support.</li>
+<li>Vast number of R packages with graphics utilities</li>
+</ul>
+<h3 id="documentation-on-graphics-in-r">Documentation on Graphics in R</h3>
+<ul>
+<li>General
+<ul>
+<li><a href="http://cran.r-project.org/web/views/Graphics.html">Graphics Task Page</a></li>
+<li><a href="http://www.r-graph-gallery.com/">R Graph Gallery</a></li>
+<li><a href="http://bm2.genes.nig.ac.jp/RGM2/index.php">R Graphical Manual</a></li>
+<li><a href="http://www.stat.auckland.ac.nz/~paul/RGraphics/rgraphics.html">Paul Murrell’s book R (Grid) Graphics</a></li>
+</ul>
+</li>
+<li>Interactive graphics
+<ul>
+<li><a href="http://www.ggobi.org/"><code>rggobi</code> (GGobi)</a></li>
+<li><a href="http://www.iplots.org/"><code>iplots</code></a></li>
+<li><a href="http://rgl.neoscientists.org/gallery.shtml">Open GL (<code>rgl</code>)</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="graphics-environments">Graphics Environments</h3>
+<ul>
+<li>Viewing and savings graphics in R
+<ul>
+<li>On-screen graphics</li>
+<li>postscript, pdf, svg</li>
+<li>jpeg/png/wmf/tiff/…</li>
+</ul>
+</li>
+<li>Four major graphics environments
+<ul>
+<li>Low-level infrastructure
+<ul>
+<li>R Base Graphics (low- and high-level)</li>
+<li><code>grid</code>: <a href="http://www.stat.auckland.ac.nz/~paul/grid/grid.html">Manual</a>, <a href="http://www.stat.auckland.ac.nz/~paul/RGraphics/rgraphics.html">Book</a></li>
+</ul>
+</li>
+<li>High-level infrastructure
+<ul>
+<li><code>lattice</code>: <a href="http://lmdvr.r-forge.r-project.org">Manual</a>, <a href="http://www.his.sunderland.ac.uk/~cs0her/Statistics/UsingLatticeGraphicsInR.htm">Intro</a>, <a href="http://www.amazon.com/Lattice-Multivariate-Data-Visualization-Use/dp/0387759689">Book</a></li>
+<li><code>ggplot2</code>: <a href="http://docs.ggplot2.org/current/">Manual</a>, <a href="http://www.ling.upenn.edu/~joseff/rstudy/summer2010_ggplot2_intro.html">Intro</a>, <a href="http://had.co.nz/ggplot2/book/">Book</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="base-graphics">Base Graphics</h2>
+<h3 id="overview-1">Overview</h3>
+<ul>
+<li>Important high-level plotting functions
+<ul>
+<li><code>plot</code>: generic x-y plotting</li>
+<li><code>barplot</code>: bar plots</li>
+<li><code>boxplot</code>: box-and-whisker plot</li>
+<li><code>hist</code>: histograms</li>
+<li><code>pie</code>: pie charts</li>
+<li><code>dotchart</code>: cleveland dot plots</li>
+<li><code>image, heatmap, contour, persp</code>: functions to generate image-like plots</li>
+<li><code>qqnorm, qqline, qqplot</code>: distribution comparison plots</li>
+<li><code>pairs, coplot</code>: display of multivariant data</li>
+</ul>
+</li>
+<li>Help on these functions
+<ul>
+<li><code>?myfct</code></li>
+<li><code>?plot</code></li>
+<li><code>?par</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="preferred-input-data-objects">Preferred Input Data Objects</h3>
+<ul>
+<li>Matrices and data frames</li>
+<li>Vectors</li>
+<li>Named vectors</li>
+</ul>
+<h3 id="scatter-plots">Scatter Plots</h3>
+<h4 id="basic-scatter-plots">Basic scatter plots</h4>
+<p>Sample data set for subsequent plots</p>
+<pre><code class="language-r">set.seed(1410)
+y &lt;- matrix(runif(30), ncol=3, dimnames=list(letters[1:10], LETTERS[1:3]))
+plot(y[,1], y[,2]) 
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/scatter_plot_basic-1.png" width="672" /></p>
+<h4 id="all-pairs">All pairs</h4>
+<pre><code class="language-r">pairs(y) 
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/scatter_plot_allpairs-1.png" width="672" /></p>
+<h4 id="plot-labels">Plot labels</h4>
+<pre><code class="language-r">plot(y[,1], y[,2], pch=20, col=&quot;red&quot;, main=&quot;Symbols and Labels&quot;)
+text(y[,1]+0.03, y[,2], rownames(y))
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/scatter_plot_labels-1.png" width="672" /></p>
+<h4 id="more-examples">More examples</h4>
+<p>Print instead of symbols the row names</p>
+<pre><code class="language-r">plot(y[,1], y[,2], type=&quot;n&quot;, main=&quot;Plot of Labels&quot;)
+text(y[,1], y[,2], rownames(y)) 
+</code></pre>
+<p>Usage of important plotting parameters</p>
+<pre><code class="language-r">grid(5, 5, lwd = 2) 
+op &lt;- par(mar=c(8,8,8,8), bg=&quot;lightblue&quot;)
+plot(y[,1], y[,2], type=&quot;p&quot;, col=&quot;red&quot;, cex.lab=1.2, cex.axis=1.2, 
+     cex.main=1.2, cex.sub=1, lwd=4, pch=20, xlab=&quot;x label&quot;, 
+     ylab=&quot;y label&quot;, main=&quot;My Main&quot;, sub=&quot;My Sub&quot;)
+par(op)
+</code></pre>
+<p>Important arguments}
+- <code>mar</code>: specifies the margin sizes around the plotting area in order: <code>c(bottom, left, top, right)</code>
+- <code>col</code>: color of symbols
+- <code>pch</code>: type of symbols, samples: <code>example(points)</code>
+- <code>lwd</code>: size of symbols
+- <code>cex.*</code>: control font sizes
+- For details see <code>?par</code></p>
+<p>Add a regression line to a plot</p>
+<pre><code class="language-r">plot(y[,1], y[,2])
+myline &lt;- lm(y[,2]~y[,1]); abline(myline, lwd=2) 
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/scatter_plot_regress-1.png" width="672" /></p>
+<pre><code class="language-r">summary(myline) 
+</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = y[, 2] ~ y[, 1])
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.40357 -0.17912 -0.04299  0.22147  0.46623 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)  
+## (Intercept)   0.5764     0.2110   2.732   0.0258 *
+## y[, 1]       -0.3647     0.3959  -0.921   0.3839  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 0.3095 on 8 degrees of freedom
+## Multiple R-squared:  0.09589,    Adjusted R-squared:  -0.01712 
+## F-statistic: 0.8485 on 1 and 8 DF,  p-value: 0.3839
+</code></pre>
+<p>Same plot as above, but on log scale</p>
+<pre><code class="language-r">plot(y[,1], y[,2], log=&quot;xy&quot;) 
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/scatter_plot_log_scale-1.png" width="672" /></p>
+<p>Add a mathematical expression to a plot</p>
+<pre><code class="language-r">plot(y[,1], y[,2]); text(y[1,1], y[1,2], 
+     expression(sum(frac(1,sqrt(x^2*pi)))), cex=1.3) 
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/scatter_plot_math-1.png" width="672" /></p>
+<h4 id="exercise-1">Exercise 1</h4>
+<ul>
+<li><strong>Task 1</strong>: Generate scatter plot for first two columns in <code>iris</code> data frame and color dots by its <code>Species</code> column.</li>
+<li><strong>Task 2</strong>: Use the <code>xlim/ylim</code> arguments to set limits on the x- and y-axes so that all data points are restricted to the left bottom quadrant of the plot.</li>
+</ul>
+<p>Structure of iris data set:</p>
+<pre><code class="language-r">class(iris)
+</code></pre>
+<pre><code>## [1] &quot;data.frame&quot;
+</code></pre>
+<pre><code class="language-r">iris[1:4,]
+</code></pre>
+<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+</code></pre>
+<pre><code class="language-r">table(iris$Species)
+</code></pre>
+<pre><code>## 
+##     setosa versicolor  virginica 
+##         50         50         50
+</code></pre>
+<h3 id="line-plots">Line Plots</h3>
+<h4 id="single-data-set">Single Data Set</h4>
+<pre><code class="language-r">plot(y[,1], type=&quot;l&quot;, lwd=2, col=&quot;blue&quot;) 
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/line_plot_single-1.png" width="672" /></p>
+<h4 id="many-data-sets">Many Data Sets</h4>
+<p>Plots line graph for all columns in data frame <code>y</code>. The <code>split.screen</code> function is used in this example in a for loop to overlay several line graphs in the same plot.</p>
+<pre><code class="language-r">split.screen(c(1,1)) 
+</code></pre>
+<pre><code>## [1] 1
+</code></pre>
+<pre><code class="language-r">plot(y[,1], ylim=c(0,1), xlab=&quot;Measurement&quot;, ylab=&quot;Intensity&quot;, type=&quot;l&quot;, lwd=2, col=1)
+for(i in 2:length(y[1,])) { 
+    screen(1, new=FALSE)
+    plot(y[,i], ylim=c(0,1), type=&quot;l&quot;, lwd=2, col=i, xaxt=&quot;n&quot;, yaxt=&quot;n&quot;, ylab=&quot;&quot;, 
+             xlab=&quot;&quot;, main=&quot;&quot;, bty=&quot;n&quot;) 
+}
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/line_plot_many-1.png" width="672" /></p>
+<pre><code class="language-r">close.screen(all=TRUE) 
+</code></pre>
+<h3 id="bar-plots">Bar Plots</h3>
+<h4 id="basics">Basics</h4>
+<pre><code class="language-r">barplot(y[1:4,], ylim=c(0, max(y[1:4,])+0.3), beside=TRUE, 
+        legend=letters[1:4]) 
+text(labels=round(as.vector(as.matrix(y[1:4,])),2), x=seq(1.5, 13, by=1)
+     +sort(rep(c(0,1,2), 4)), y=as.vector(as.matrix(y[1:4,]))+0.04) 
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/bar_plot_basic-1.png" width="672" /></p>
+<h4 id="error-bars">Error bars</h4>
+<pre><code class="language-r">bar &lt;- barplot(m &lt;- rowMeans(y) * 10, ylim=c(0, 10))
+stdev &lt;- sd(t(y))
+arrows(bar, m, bar, m + stdev, length=0.15, angle = 90)
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/bar_plot_error_bar-1.png" width="672" /></p>
+<h4 id="mirrored-bar-plot">Mirrored bar plot</h4>
+<pre><code class="language-r">df &lt;- data.frame(group = rep(c(&quot;Above&quot;, &quot;Below&quot;), each=10), x = rep(1:10, 2), y = c(runif(10, 0, 1), runif(10, -1, 0)))
+plot(c(0,12),range(df$y),type = &quot;n&quot;)
+barplot(height = df$y[df$group == &quot;Above&quot;], add = TRUE,axes = FALSE)
+barplot(height = df$y[df$group == &quot;Below&quot;], add = TRUE,axes = FALSE)
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/bar_plot_mirrored-1.png" width="672" /></p>
+<h3 id="histograms">Histograms</h3>
+<pre><code class="language-r">hist(y, freq=TRUE, breaks=10)
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/hist_plot-1.png" width="672" /></p>
+<h3 id="density-plots">Density Plots}</h3>
+<pre><code class="language-r">plot(density(y), col=&quot;red&quot;)
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/density_plot-1.png" width="672" /></p>
+<h3 id="pie-charts">Pie Charts</h3>
+<pre><code class="language-r">pie(y[,1], col=rainbow(length(y[,1]), start=0.1, end=0.8), clockwise=TRUE)
+legend(&quot;topright&quot;, legend=row.names(y), cex=1.3, bty=&quot;n&quot;, pch=15, pt.cex=1.8, 
+col=rainbow(length(y[,1]), start=0.1, end=0.8), ncol=1) 
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/pie_chart-1.png" width="672" /></p>
+<h3 id="color-selection-utilities">Color Selection Utilities</h3>
+<p>Default color palette and how to change it</p>
+<pre><code class="language-r">palette()
+</code></pre>
+<pre><code>## [1] &quot;black&quot;   &quot;#DF536B&quot; &quot;#61D04F&quot; &quot;#2297E6&quot; &quot;#28E2E5&quot; &quot;#CD0BBC&quot; &quot;#F5C710&quot; &quot;gray62&quot;
+</code></pre>
+<pre><code class="language-r">palette(rainbow(5, start=0.1, end=0.2))
+palette()
+</code></pre>
+<pre><code>## [1] &quot;#FF9900&quot; &quot;#FFBF00&quot; &quot;#FFE600&quot; &quot;#F2FF00&quot; &quot;#CCFF00&quot;
+</code></pre>
+<pre><code class="language-r">palette(&quot;default&quot;)
+</code></pre>
+<p>The <code>gray</code> function allows to select any type of gray shades by providing values from 0 to 1</p>
+<pre><code class="language-r">gray(seq(0.1, 1, by= 0.2))
+</code></pre>
+<pre><code>## [1] &quot;#1A1A1A&quot; &quot;#4D4D4D&quot; &quot;#808080&quot; &quot;#B3B3B3&quot; &quot;#E6E6E6&quot;
+</code></pre>
+<p>Color gradients with <code>colorpanel</code> function from <code>gplots</code> library</p>
+<pre><code class="language-r">library(gplots)
+colorpanel(5, &quot;darkblue&quot;, &quot;yellow&quot;, &quot;white&quot;)
+</code></pre>
+<p>Much more on colors in R see Earl Glynn’s <a href="http://research.stowers-institute.org/efg/R/Color/Chart/">color chart</a></p>
+<h3 id="arranging-several-plots-on-single-page">Arranging Several Plots on Single Page</h3>
+<p>With <code>par(mfrow=c(nrow,ncol))</code> one can define how several plots are arranged next to each other.</p>
+<pre><code class="language-r">par(mfrow=c(2,3)); for(i in 1:6) { plot(1:10) } 
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/par_mfrow-1.png" width="672" /></p>
+<h4 id="arranging-plots-with-variable-width">Arranging Plots with Variable Width</h4>
+<p>The <code>layout</code> function allows to divide the plotting device into variable numbers of rows and columns with the column-widths and the row-heights specified in the respective arguments.</p>
+<pre><code class="language-r">nf &lt;- layout(matrix(c(1,2,3,3), 2, 2, byrow=TRUE), c(3,7), c(5,5), 
+             respect=TRUE)
+# layout.show(nf)
+for(i in 1:3) { barplot(1:10) } 
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/layout_plot-1.png" width="672" /></p>
+<h3 id="saving-graphics-to-files">Saving Graphics to Files</h3>
+<p>After the <code>pdf()</code> command all graphs are redirected to file <code>test.pdf</code>. Works for all common formats similarly: jpeg, png, ps, tiff, …</p>
+<pre><code class="language-r">pdf(&quot;test.pdf&quot;); plot(1:10, 1:10); dev.off() 
+</code></pre>
+<p>Generates Scalable Vector Graphics (SVG) files that can be edited in vector graphics programs, such as InkScape.</p>
+<pre><code class="language-r">svg(&quot;test.svg&quot;); plot(1:10, 1:10); dev.off() 
+</code></pre>
+<h4 id="exercise-2">Exercise 2</h4>
+<p>Bar plots</p>
+<ul>
+<li><strong>Task 1</strong>: Calculate the mean values for the <code>Species</code> components of the first four columns in the <code>iris</code> data set. Organize the results in a matrix where the row names are the unique values from the <code>iris Species</code> column and the column names are the same as in the first four <code>iris</code> columns.</li>
+<li><strong>Task 2</strong>: Generate two bar plots: one with stacked bars and one with horizontally arranged bars.</li>
+</ul>
+<p>Structure of iris data set:</p>
+<pre><code class="language-r">class(iris)
+</code></pre>
+<pre><code>## [1] &quot;data.frame&quot;
+</code></pre>
+<pre><code class="language-r">iris[1:4,]
+</code></pre>
+<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+</code></pre>
+<pre><code class="language-r">table(iris$Species)
+</code></pre>
+<pre><code>## 
+##     setosa versicolor  virginica 
+##         50         50         50
+</code></pre>
+<h2 id="grid-graphics">Grid Graphics</h2>
+<ul>
+<li>What is <code>grid</code>?
+<ul>
+<li>Low-level graphics system</li>
+<li>Highly flexible and controllable system</li>
+<li>Does not provide high-level functions</li>
+<li>Intended as development environment for custom plotting functions</li>
+<li>Pre-installed on new R distributions</li>
+</ul>
+</li>
+<li>Documentation and Help
+<ul>
+<li><a href="http://www.stat.auckland.ac.nz/~paul/grid/grid.html">Manual</a></li>
+<li><a href="http://www.stat.auckland.ac.nz/~paul/RGraphics/rgraphics.html">Book</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="lattice-graphics">lattice Graphics</h2>
+<ul>
+<li>What is <code>lattice</code>?
+<ul>
+<li>High-level graphics system</li>
+<li>Developed by Deepayan Sarkar</li>
+<li>Implements Trellis graphics system from S-Plus</li>
+<li>Simplifies high-level plotting tasks: arranging complex graphical features</li>
+<li>Syntax similar to R’s base graphics</li>
+</ul>
+</li>
+<li>Documentation and Help
+<ul>
+<li><a href="http://lmdvr.r-forge.r-project.org">Manual</a></li>
+<li><a href="http://www.his.sunderland.ac.uk/~cs0her/Statistics/UsingLatticeGraphicsInR.htm">Intro</a></li>
+<li><a href="http://www.amazon.com/Lattice-Multivariate-Data-Visualization-Use/dp/0387759689">Book</a></li>
+</ul>
+</li>
+</ul>
+<p>Open a list of all functions available in the lattice package</p>
+<pre><code class="language-r">library(help=lattice) 
+</code></pre>
+<p>Accessing and changing global parameters:</p>
+<pre><code class="language-r">?lattice.options
+?trellis.device
+</code></pre>
+<h3 id="scatter-plot-sample">Scatter Plot Sample</h3>
+<pre><code class="language-r">library(lattice)
+p1 &lt;- xyplot(1:8 ~ 1:8 | rep(LETTERS[1:4], each=2), as.table=TRUE) 
+plot(p1)
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/scatter_plot_lattice-1.png" width="672" /></p>
+<h3 id="line-plot-sample">Line Plot Sample</h3>
+<pre><code class="language-r">library(lattice)
+p2 &lt;- parallelplot(~iris[1:4] | Species, iris, horizontal.axis = FALSE, 
+              layout = c(1, 3, 1))  
+plot(p2)
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/line_plot_lattice-1.png" width="672" /></p>
+<h2 id="ggplot2-graphics">ggplot2 Graphics</h2>
+<ul>
+<li>What is <code>ggplot2</code>?
+<ul>
+<li>High-level graphics system developed by Hadley Wickham</li>
+<li>Implements grammar of graphics from <a href="http://www.amazon.com/Grammar-Graphics-Leland-Wilkinson/dp/0387987746">Leland Wilkinson</a></li>
+<li>Streamlines many graphics workflows for complex plots</li>
+<li>Syntax centered around main <code>ggplot</code> function</li>
+<li>Simpler <code>qplot</code> function provides many shortcuts</li>
+</ul>
+</li>
+<li>Documentation and Help
+<ul>
+<li><a href="http://had.co.nz/ggplot2/">Manual</a></li>
+<li><a href="http://www.ling.upenn.edu/~joseff/rstudy/summer2010_ggplot2_intro.html">Intro</a></li>
+<li><a href="http://had.co.nz/ggplot2/book/">Book</a></li>
+<li><a href="http://www.cookbook-r.com/Graphs/">Cookbook for R</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="ggplot2-usage"><code>ggplot2</code> Usage</h3>
+<ul>
+<li><code>ggplot</code> function accepts two arguments
+<ul>
+<li>Data set to be plotted</li>
+<li>Aesthetic mappings provided by <code>aes</code> function</li>
+</ul>
+</li>
+<li>Additional parameters such as geometric objects (<em>e.g.</em> points, lines, bars) are passed on by appending them with <code>+</code> as separator.</li>
+<li>List of available <code>geom_*</code> functions see <a href="http://docs.ggplot2.org/current/">here</a></li>
+<li>Settings of plotting theme can be accessed with the command <code>theme_get()</code> and its settings can be changed with <code>theme()</code>.</li>
+<li>Preferred input data object
+<ul>
+<li><code>qplot</code>: <code>data.frame</code> or <code>tibble</code> (support for <code>vector</code>, <code>matrix</code>, <code>...</code>)</li>
+<li><code>ggplot</code>: <code>data.frame</code> or <code>tibble</code></li>
+</ul>
+</li>
+<li>Packages with convenience utilities to create expected inputs
+<ul>
+<li><code>plyr</code></li>
+<li><code>reshape</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="qplot-function"><code>qplot</code> Function</h3>
+<p>The syntax of <code>qplot</code> is similar as R’s basic <code>plot</code> function</p>
+<ul>
+<li>Arguments
+<ul>
+<li><code>x</code>: x-coordinates (<em>e.g.</em> <code>col1</code>)</li>
+<li><code>y</code>: y-coordinates (<em>e.g.</em> <code>col2</code>)</li>
+<li><code>data</code>: <code>data.frame</code> or <code>tibble</code> with corresponding column names</li>
+<li><code>xlim, ylim</code>: <em>e.g.</em> <code>xlim=c(0,10)</code></li>
+<li><code>log</code>: <em>e.g.</em> <code>log=&quot;x&quot;</code> or <code>log=&quot;xy&quot;</code></li>
+<li><code>main</code>: main title; see <code>?plotmath</code> for mathematical formula</li>
+<li><code>xlab, ylab</code>: labels for the x- and y-axes</li>
+<li><code>color</code>, <code>shape</code>, <code>size</code></li>
+<li><code>...</code>: many arguments accepted by <code>plot</code> function</li>
+</ul>
+</li>
+</ul>
+<h3 id="qplot-scatter-plot-basics"><code>qplot</code>: scatter plot basics</h3>
+<p>Create sample data</p>
+<pre><code class="language-r">library(ggplot2)
+x &lt;- sample(1:10, 10); y &lt;- sample(1:10, 10); cat &lt;- rep(c(&quot;A&quot;, &quot;B&quot;), 5)
+</code></pre>
+<p>Simple scatter plot</p>
+<pre><code class="language-r">qplot(x, y, geom=&quot;point&quot;)
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/qplot_scatter_plot-1.png" width="672" /></p>
+<p>Prints dots with different sizes and colors</p>
+<pre><code class="language-r">qplot(x, y, geom=&quot;point&quot;, size=x, color=cat, 
+      main=&quot;Dot Size and Color Relative to Some Values&quot;)
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/qplot_scatter_plot_dot_param-1.png" width="672" /></p>
+<p>Drops legend</p>
+<pre><code class="language-r">qplot(x, y, geom=&quot;point&quot;, size=x, color=cat) + 
+      theme(legend.position = &quot;none&quot;)
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/qplot_scatter_plot_no_legend-1.png" width="672" /></p>
+<p>Plot different shapes</p>
+<pre><code class="language-r">qplot(x, y, geom=&quot;point&quot;, size=5, shape=cat)
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/qplot_scatter_plot_shapes-1.png" width="672" /></p>
+<h4 id="colored-groups">Colored groups</h4>
+<pre><code class="language-r">p &lt;- qplot(x, y, geom=&quot;point&quot;, size=x, color=cat, 
+            main=&quot;Dot Size and Color Relative to Some Values&quot;) + 
+     theme(legend.position = &quot;none&quot;)
+print(p)
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/qplot_scatter_plot_colored_groups-1.png" width="672" /></p>
+<h4 id="regression-line">Regression line</h4>
+<pre><code class="language-r">set.seed(1410)
+dsmall &lt;- diamonds[sample(nrow(diamonds), 1000), ]
+p &lt;- qplot(carat, price, data = dsmall) +
+           geom_smooth(method=&quot;lm&quot;)
+print(p)
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/qplot_scatter_regression_line-1.png" width="672" /></p>
+<h4 id="local-regression-curve-loess">Local regression curve (loess)</h4>
+<pre><code class="language-r">p &lt;- qplot(carat, price, data=dsmall, geom=c(&quot;point&quot;, &quot;smooth&quot;)) 
+print(p) # Setting se=FALSE removes error shade
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/qplot_scatter_regression_loess-1.png" width="672" /></p>
+<h3 id="ggplot-function"><code>ggplot</code> Function</h3>
+<ul>
+<li>More important than <code>qplot</code> to access full functionality of <code>ggplot2</code></li>
+<li>Main arguments
+<ul>
+<li>data set, usually a <code>data.frame</code> or <code>tibble</code></li>
+<li>aesthetic mappings provided by <code>aes</code> function</li>
+</ul>
+</li>
+<li>General <code>ggplot</code> syntax
+<ul>
+<li><code>ggplot(data, aes(...)) + geom() + ... + stat() + ...</code></li>
+</ul>
+</li>
+<li>Layer specifications
+<ul>
+<li><code>geom(mapping, data, ..., geom, position)</code></li>
+<li><code>stat(mapping, data, ..., stat, position)</code></li>
+</ul>
+</li>
+<li>Additional components
+<ul>
+<li><code>scales</code></li>
+<li><code>coordinates</code></li>
+<li><code>facet</code></li>
+</ul>
+</li>
+<li><code>aes()</code> mappings can be passed on to all components (<code>ggplot, geom</code>, etc.). Effects are global when passed on to <code>ggplot()</code> and local for other components.
+<ul>
+<li><code>x, y</code></li>
+<li><code>color</code>: grouping vector (factor)</li>
+<li><code>group</code>: grouping vector (factor)</li>
+</ul>
+</li>
+</ul>
+<h4 id="changing-plotting-themes-in-ggplot">Changing Plotting Themes in <code>ggplot</code></h4>
+<ul>
+<li>Theme settings can be accessed with <code>theme_get()</code></li>
+<li>Their settings can be changed with <code>theme()</code></li>
+</ul>
+<p>Example how to change background color to white</p>
+<pre><code class="language-r">... + theme(panel.background=element_rect(fill = &quot;white&quot;, colour = &quot;black&quot;)) 
+</code></pre>
+<h4 id="storing-ggplot-specifications">Storing <code>ggplot</code> Specifications</h4>
+<p>Plots and layers can be stored in variables</p>
+<pre><code class="language-r">p &lt;- ggplot(dsmall, aes(carat, price)) + geom_point() 
+p # or print(p)
+</code></pre>
+<p>Returns information about data and aesthetic mappings followed by each layer</p>
+<pre><code class="language-r">summary(p) 
+</code></pre>
+<p>Print dots with different sizes and colors</p>
+<pre><code class="language-r">bestfit &lt;- geom_smooth(method = &quot;lm&quot;, se = F, color = alpha(&quot;steelblue&quot;, 0.5), size = 2)
+p + bestfit # Plot with custom regression line
+</code></pre>
+<p>Syntax to pass on other data sets</p>
+<pre><code class="language-r">p %+% diamonds[sample(nrow(diamonds), 100),] 
+</code></pre>
+<p>Saves plot stored in variable <code>p</code> to file</p>
+<pre><code class="language-r">ggsave(p, file=&quot;myplot.pdf&quot;) 
+</code></pre>
+<h3 id="ggplot-scatter-plots"><code>ggplot</code>: scatter plots</h3>
+<h4 id="basic-example">Basic example</h4>
+<pre><code class="language-r">set.seed(1410)  
+dsmall &lt;- as.data.frame(diamonds[sample(nrow(diamonds), 1000), ])
+p &lt;- ggplot(dsmall, aes(carat, price, color=color)) + 
+            geom_point(size=4)
+print(p) 
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/ggplot_scatter_plot1-1.png" width="672" /></p>
+<h4 id="regression-line-1">Regression line</h4>
+<pre><code class="language-r">p &lt;- ggplot(dsmall, aes(carat, price)) + geom_point() + 
+            geom_smooth(method=&quot;lm&quot;, se=FALSE) +
+            theme(panel.background=element_rect(fill = &quot;white&quot;, colour = &quot;black&quot;))
+print(p) 
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/ggplot_regression_line-1.png" width="672" /></p>
+<h4 id="several-regression-lines">Several regression lines</h4>
+<pre><code class="language-r">p &lt;- ggplot(dsmall, aes(carat, price, group=color)) + 
+            geom_point(aes(color=color), size=2) + 
+            geom_smooth(aes(color=color), method = &quot;lm&quot;, se=FALSE) 
+print(p) 
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/ggplot_many_regression_lines-1.png" width="672" /></p>
+<h4 id="local-regression-curve-loess-1">Local regression curve (loess)</h4>
+<pre><code class="language-r">p &lt;- ggplot(dsmall, aes(carat, price)) + geom_point() + geom_smooth() 
+print(p) # Setting se=FALSE removes error shade
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/ggplot_loess_regression-1.png" width="672" /></p>
+<h3 id="ggplot-line-plot"><code>ggplot</code>: line plot</h3>
+<pre><code class="language-r">p &lt;- ggplot(iris, aes(Petal.Length, Petal.Width, group=Species, 
+            color=Species)) + geom_line() 
+print(p) 
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/ggplot_line_plot-1.png" width="672" /></p>
+<h3 id="faceting">Faceting</h3>
+<pre><code class="language-r">p &lt;- ggplot(iris, aes(Sepal.Length, Sepal.Width)) + 
+            geom_line(aes(color=Species), size=1) + 
+            facet_wrap(~Species, ncol=1)
+print(p) 
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/ggplot_line_plot_faceting-1.png" width="672" /></p>
+<h4 id="exercise-3">Exercise 3</h4>
+<p>Scatter plots with <code>ggplot2</code></p>
+<ul>
+<li><strong>Task 1</strong>: Generate scatter plot for first two columns in <code>iris</code> data frame and color dots by its <code>Species</code> column.</li>
+<li><strong>Task 2</strong>: Use the <code>xlim</code> and <code>ylim</code> arguments to set limits on the x- and y-axes so that all data points are restricted to the left bottom quadrant of the plot.</li>
+<li><strong>Task 3</strong>: Generate corresponding line plot with faceting show individual data sets in saparate plots.</li>
+</ul>
+<p>Structure of <code>iris</code> data set</p>
+<pre><code class="language-r">class(iris)
+</code></pre>
+<pre><code>## [1] &quot;data.frame&quot;
+</code></pre>
+<pre><code class="language-r">iris[1:4,]
+</code></pre>
+<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+</code></pre>
+<pre><code class="language-r">table(iris$Species)
+</code></pre>
+<pre><code>## 
+##     setosa versicolor  virginica 
+##         50         50         50
+</code></pre>
+<h3 id="bar-plots-1">Bar Plots</h3>
+<p>Sample Set: the following transforms the <code>iris</code> data set into a ggplot2-friendly format.</p>
+<p>Calculate mean values for aggregates given by <code>Species</code> column in <code>iris</code> data set</p>
+<pre><code class="language-r">iris_mean &lt;- aggregate(iris[,1:4], by=list(Species=iris$Species), FUN=mean) 
+</code></pre>
+<p>Calculate standard deviations for aggregates given by <code>Species</code> column in <code>iris</code> data set</p>
+<pre><code class="language-r">iris_sd &lt;- aggregate(iris[,1:4], by=list(Species=iris$Species), FUN=sd) 
+</code></pre>
+<p>Reformat <code>iris_mean</code> with <code>melt</code></p>
+<pre><code class="language-r">library(reshape2) # Defines melt function
+df_mean &lt;- melt(iris_mean, id.vars=c(&quot;Species&quot;), variable.name = &quot;Samples&quot;, value.name=&quot;Values&quot;)
+</code></pre>
+<p>Reformat <code>iris_sd</code> with <code>melt</code></p>
+<pre><code class="language-r">df_sd &lt;- melt(iris_sd, id.vars=c(&quot;Species&quot;), variable.name = &quot;Samples&quot;, value.name=&quot;Values&quot;)
+</code></pre>
+<p>Define standard deviation limits</p>
+<pre><code class="language-r">limits &lt;- aes(ymax = df_mean[,&quot;Values&quot;] + df_sd[,&quot;Values&quot;], ymin=df_mean[,&quot;Values&quot;] - df_sd[,&quot;Values&quot;])
+</code></pre>
+<h4 id="verical-orientation">Verical orientation</h4>
+<pre><code class="language-r">p &lt;- ggplot(df_mean, aes(Samples, Values, fill = Species)) + 
+        geom_bar(position=&quot;dodge&quot;, stat=&quot;identity&quot;)
+print(p) 
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/iris_mean_bar_plot-1.png" width="672" /></p>
+<p>To enforce that the bars are plotted in the order specified in the input data, one can instruct <code>ggplot</code>
+to do so by turning the corresponding column (here <code>Species</code>) into an ordered factor as follows.</p>
+<pre><code class="language-r">df_mean$Species &lt;- factor(df_mean$Species, levels=unique(df_mean$Species), ordered=TRUE)
+</code></pre>
+<p>In the above example this is not necessary since <code>ggplot</code> uses this order already.</p>
+<h4 id="horizontal-orientation">Horizontal orientation</h4>
+<pre><code class="language-r">p &lt;- ggplot(df_mean, aes(Samples, Values, fill = Species)) + 
+            geom_bar(position=&quot;dodge&quot;, stat=&quot;identity&quot;) + coord_flip() + 
+            theme(axis.text.y=element_text(angle=0, hjust=1))
+print(p) 
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/iris_mean_bar_plot_sideways-1.png" width="672" /></p>
+<h4 id="faceting-1">Faceting</h4>
+<pre><code class="language-r">p &lt;- ggplot(df_mean, aes(Samples, Values)) + geom_bar(aes(fill = Species), stat=&quot;identity&quot;) +
+            facet_wrap(~Species, ncol=1)
+print(p) 
+</code></pre>
+<h4 id="error-bars-1">Error bars</h4>
+<pre><code class="language-r">p &lt;- ggplot(df_mean, aes(Samples, Values, fill = Species)) + 
+        geom_bar(position=&quot;dodge&quot;, stat=&quot;identity&quot;) + geom_errorbar(limits, position=&quot;dodge&quot;) 
+print(p) 
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/iris_mean_bar_plot_error-1.png" width="672" /></p>
+<h4 id="mirrored">Mirrored</h4>
+<pre><code class="language-r">df &lt;- data.frame(group = rep(c(&quot;Above&quot;, &quot;Below&quot;), each=10), x = rep(1:10, 2), y = c(runif(10, 0, 1), runif(10, -1, 0)))
+p &lt;- ggplot(df, aes(x=x, y=y, fill=group)) + 
+        geom_bar(stat=&quot;identity&quot;, position=&quot;identity&quot;)
+print(p) 
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/ggplot2_mirrored_barplot-1.png" width="672" /></p>
+<h3 id="changing-color-settings">Changing Color Settings</h3>
+<pre><code class="language-r">library(RColorBrewer)
+# display.brewer.all() 
+p &lt;- ggplot(df_mean, aes(Samples, Values, fill=Species, color=Species)) +
+            geom_bar(position=&quot;dodge&quot;, stat=&quot;identity&quot;) + geom_errorbar(limits, position=&quot;dodge&quot;) + 
+            scale_fill_brewer(palette=&quot;Blues&quot;) + scale_color_brewer(palette = &quot;Greys&quot;) 
+print(p) 
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/ggplot2_color1-1.png" width="672" /></p>
+<h4 id="using-standard-colors">Using standard colors</h4>
+<pre><code class="language-r">p &lt;- ggplot(df_mean, aes(Samples, Values, fill=Species, color=Species)) + 
+            geom_bar(position=&quot;dodge&quot;, stat=&quot;identity&quot;) + geom_errorbar(limits, position=&quot;dodge&quot;) + 
+            scale_fill_manual(values=c(&quot;red&quot;, &quot;green3&quot;, &quot;blue&quot;)) + 
+            scale_color_manual(values=c(&quot;red&quot;, &quot;green3&quot;, &quot;blue&quot;)) 
+print(p) 
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/ggplot2_color2-1.png" width="672" /></p>
+<h4 id="exercise-4">Exercise 4</h4>
+<p>Bar plots</p>
+<ul>
+<li><strong>Task 1</strong>: Calculate the mean values for the <code>Species</code> components of the first four columns in the <code>iris</code> data set. Use the <code>melt</code> function from the <code>reshape2</code> package to bring the data into the expected format for <code>ggplot</code>.</li>
+<li><strong>Task 2</strong>: Generate two bar plots: one with stacked bars and one with horizontally arranged bars.</li>
+</ul>
+<p>Structure of iris data set</p>
+<pre><code class="language-r">class(iris)
+</code></pre>
+<pre><code>## [1] &quot;data.frame&quot;
+</code></pre>
+<pre><code class="language-r">iris[1:4,]
+</code></pre>
+<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+</code></pre>
+<pre><code class="language-r">table(iris$Species)
+</code></pre>
+<pre><code>## 
+##     setosa versicolor  virginica 
+##         50         50         50
+</code></pre>
+<h3 id="data-reformatting-example">Data reformatting example</h3>
+<p>Here for line plot</p>
+<pre><code class="language-r">y &lt;- matrix(rnorm(500), 100, 5, dimnames=list(paste(&quot;g&quot;, 1:100, sep=&quot;&quot;), paste(&quot;Sample&quot;, 1:5, sep=&quot;&quot;)))
+y &lt;- data.frame(Position=1:length(y[,1]), y)
+y[1:4, ] # First rows of input format expected by melt()
+</code></pre>
+<pre><code>##    Position    Sample1    Sample2    Sample3    Sample4     Sample5
+## g1        1  1.5336975 -1.0365027 -2.0276195 -0.4580396 -0.06460952
+## g2        2 -2.0960304  2.1878704  0.7260334  0.8274617  0.24192162
+## g3        3 -0.8233125  0.4250477  0.6526331 -0.4509962 -1.06778801
+## g4        4  1.0961555  0.8101104 -0.3403762 -0.7222191 -0.72737741
+</code></pre>
+<pre><code class="language-r">df &lt;- melt(y, id.vars=c(&quot;Position&quot;), variable.name = &quot;Samples&quot;, value.name=&quot;Values&quot;)
+p &lt;- ggplot(df, aes(Position, Values)) + geom_line(aes(color=Samples)) + facet_wrap(~Samples, ncol=1)
+print(p)
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/ggplot_melt_data-1.png" width="672" /></p>
+<p>Same data can be represented in box plot as follows</p>
+<pre><code class="language-r">ggplot(df, aes(Samples, Values, fill=Samples)) + geom_boxplot()
+</code></pre>
+<h3 id="jitter-plots">Jitter Plots</h3>
+<pre><code class="language-r">p &lt;- ggplot(dsmall, aes(color, price/carat)) + 
+            geom_jitter(alpha = I(1 / 2), aes(color=color))
+print(p) 
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/ggplot_jitter_plot-1.png" width="672" /></p>
+<h3 id="box-plots">Box plots</h3>
+<pre><code class="language-r">p &lt;- ggplot(dsmall, aes(color, price/carat, fill=color)) + geom_boxplot()
+print(p) 
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/ggplot_box_plot2-1.png" width="672" /></p>
+<h3 id="violin-plots">Violin plots</h3>
+<pre><code class="language-r">p &lt;- ggplot(dsmall, aes(color, price/carat, fill=color)) + geom_violin()                                                                                                      
+print(p)                                                                                                                                                                      
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/ggplot_box_violin-1.png" width="672" /></p>
+<h3 id="density-plots-1">Density plots</h3>
+<h4 id="line-coloring">Line coloring</h4>
+<pre><code class="language-r">p &lt;- ggplot(dsmall, aes(carat)) + geom_density(aes(color = color))
+print(p) 
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/ggplot_density_plot_linecol-1.png" width="672" /></p>
+<h4 id="area-coloring">Area coloring</h4>
+<pre><code class="language-r">p &lt;- ggplot(dsmall, aes(carat)) + geom_density(aes(fill = color))
+print(p) 
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/ggplot_density_plot_areacol-1.png" width="672" /></p>
+<h3 id="histograms-1">Histograms</h3>
+<pre><code class="language-r">p &lt;- ggplot(iris, aes(x=Sepal.Width)) + geom_histogram(aes(y = ..density.., 
+            fill = ..count..), binwidth=0.2) + geom_density()  
+print(p) 
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/ggplot_histogram-1.png" width="672" /></p>
+<h3 id="pie-chart">Pie Chart</h3>
+<pre><code class="language-r">df &lt;- data.frame(variable=rep(c(&quot;cat&quot;, &quot;mouse&quot;, &quot;dog&quot;, &quot;bird&quot;, &quot;fly&quot;)), 
+                 value=c(1,3,3,4,2)) 
+p &lt;- ggplot(df, aes(x = &quot;&quot;, y = value, fill = variable)) + 
+            geom_bar(width = 1, stat=&quot;identity&quot;) + 
+            coord_polar(&quot;y&quot;, start=pi / 3) + ggtitle(&quot;Pie Chart&quot;) 
+print(p) 
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/ggplot_pie_chart-1.png" width="672" /></p>
+<h3 id="wind-rose-pie-chart">Wind Rose Pie Chart</h3>
+<pre><code class="language-r">p &lt;- ggplot(df, aes(x = variable, y = value, fill = variable)) + 
+       geom_bar(width = 1, stat=&quot;identity&quot;) + coord_polar(&quot;y&quot;, start=pi / 3) + 
+       ggtitle(&quot;Pie Chart&quot;) 
+print(p) 
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/ggplot_windrose_pie_chart-1.png" width="672" /></p>
+<h3 id="arranging-graphics-on-page">Arranging Graphics on Page</h3>
+<p>Using <code>grid</code> package</p>
+<pre><code class="language-r">library(grid)
+a &lt;- ggplot(dsmall, aes(color, price/carat)) + geom_jitter(size=4, alpha = I(1 / 1.5), aes(color=color))
+b &lt;- ggplot(dsmall, aes(color, price/carat, color=color)) + geom_boxplot()
+c &lt;- ggplot(dsmall, aes(color, price/carat, fill=color)) + geom_boxplot() + theme(legend.position = &quot;none&quot;)
+grid.newpage() # Open a new page on grid device
+pushViewport(viewport(layout = grid.layout(2, 2))) # Assign to device viewport with 2 by 2 grid layout 
+print(a, vp = viewport(layout.pos.row = 1, layout.pos.col = 1:2))
+print(b, vp = viewport(layout.pos.row = 2, layout.pos.col = 1))
+print(c, vp = viewport(layout.pos.row = 2, layout.pos.col = 2, width=0.3, height=0.3, x=0.8, y=0.8))
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/ggplot_arrange_graphics-1.png" width="672" /></p>
+<p>Using <code>gridExtra</code> package</p>
+<pre><code class="language-r">library(gridExtra)                                                                                                                                                            
+grid.arrange(a, b, c, nrow = 2, ncol=2)                                                                                                                                       
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/ggplot_arrange_graphics2-1.png" width="672" /></p>
+<h3 id="inserting-graphics-into-plots">Inserting Graphics into Plots</h3>
+<pre><code class="language-r">library(grid)
+print(a)
+print(b, vp=viewport(width=0.3, height=0.3, x=0.8, y=0.8))
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/ggplot_insert_graphics-1.png" width="672" /></p>
+<h2 id="specialty-graphics">Specialty Graphics</h2>
+<h3 id="venn-diagrams">Venn Diagrams</h3>
+<pre><code class="language-r">library(systemPipeR)
+setlist5 &lt;- list(A=sample(letters, 18), B=sample(letters, 16), C=sample(letters, 20), D=sample(letters, 22), E=sample(letters, 18))
+OLlist5 &lt;- overLapper(setlist=setlist5, sep=&quot;_&quot;, type=&quot;vennsets&quot;)
+vennPlot(OLlist5, mymain=&quot;&quot;, mysub=&quot;&quot;, colmode=2, ccol=c(&quot;blue&quot;, &quot;red&quot;))
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/specgraph_venn-1.png" width="672" /></p>
+<h3 id="compound-structures">Compound Structures</h3>
+<p>Plots depictions of small molecules with <code>ChemmineR</code> package</p>
+<pre><code class="language-r">library(ChemmineR)
+data(sdfsample)
+plot(sdfsample[1], print=FALSE)
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/specgraph_structure-1.png" width="672" /></p>
+<h3 id="roc-plots">ROC Plots</h3>
+<p>A variety of libraries are available for plotting receiver operating characteristic (ROC) curves in R:</p>
+<ul>
+<li><a href="http://rocr.bioinf.mpi-sb.mpg.de/">ROCR</a></li>
+<li><a href="http://bioconductor.org/packages/release/bioc/html/ROC.html">ROC</a></li>
+<li><a href="http://web.expasy.org/pROC/">pROC</a></li>
+<li><a href="http://largedata.blogspot.com/2011/07/plotting-roc-curves-in-ggplot2.html">ggplot2</a></li>
+</ul>
+<h4 id="example">Example</h4>
+<p>Most commonly, in an ROC we plot the true positive rate (y-axis) against the false positive rate (x-axis) at decreasing thresholds.
+An illustrative example is provided in the <code>ROCR</code> package where one wants to inspect the content of the <code>ROCR.simple</code> object
+defining the structure of the input data in two vectors.</p>
+<pre><code class="language-r"># install.packages(&quot;ROCR&quot;) # Install if necessary on your laptop
+library(ROCR)
+data(ROCR.simple)
+ROCR.simple
+</code></pre>
+<pre><code>## $predictions
+##   [1] 0.612547843 0.364270971 0.432136142 0.140291078 0.384895941 0.244415489 0.970641299
+##   [8] 0.890172812 0.781781371 0.868751832 0.716680598 0.360168796 0.547983407 0.385240464
+##  [15] 0.423739359 0.101699993 0.628095575 0.744769966 0.657732644 0.490119891 0.072369921
+##  [22] 0.172741714 0.105722115 0.890078186 0.945548941 0.984667270 0.360180429 0.448687336
+##  [29] 0.014823599 0.543533783 0.292368449 0.701561487 0.715459280 0.714985914 0.120604738
+##  [36] 0.319672178 0.911723615 0.757325590 0.090988280 0.529402244 0.257402979 0.589909284
+##  [43] 0.708412104 0.326672910 0.086546283 0.879459891 0.362693564 0.230157183 0.779771989
+##  [50] 0.876086217 0.353281048 0.212014560 0.703293499 0.689075677 0.627012496 0.240911145
+##  [57] 0.402801992 0.134794140 0.120473353 0.665444679 0.536339509 0.623494622 0.885179651
+##  [64] 0.353777439 0.408939895 0.265686095 0.932159806 0.248500489 0.858876675 0.491735594
+##  [71] 0.151350957 0.694457482 0.496513160 0.123504905 0.499788081 0.310718619 0.907651100
+##  [78] 0.340078180 0.195097957 0.371936985 0.517308606 0.419560072 0.865639036 0.018527600
+##  [85] 0.539086009 0.005422562 0.772728821 0.703885141 0.348213542 0.277656869 0.458674210
+##  [92] 0.059045866 0.133257805 0.083685883 0.531958184 0.429650397 0.717845453 0.537091350
+##  [99] 0.212404891 0.930846938 0.083048377 0.468610247 0.393378108 0.663367560 0.349540913
+## [106] 0.194398425 0.844415442 0.959417835 0.211378771 0.943432189 0.598162949 0.834803976
+## [113] 0.576836208 0.380396459 0.161874325 0.912325837 0.642933593 0.392173971 0.122284044
+## [120] 0.586857799 0.180631658 0.085993218 0.700501359 0.060413627 0.531464015 0.084254795
+## [127] 0.448484671 0.938583020 0.531006532 0.785213140 0.905121019 0.748438143 0.605235403
+## [134] 0.842974300 0.835981859 0.364288579 0.492596896 0.488179708 0.259278968 0.991096434
+## [141] 0.757364019 0.288258273 0.773336236 0.040906997 0.110241034 0.760726142 0.984599159
+## [148] 0.253271061 0.697235328 0.620501132 0.814586047 0.300973098 0.378092079 0.016694412
+## [155] 0.698826511 0.658692553 0.470206008 0.501489336 0.239143340 0.050999138 0.088450984
+## [162] 0.107031842 0.746588080 0.480100183 0.336592126 0.579511087 0.118555284 0.233160827
+## [169] 0.461150807 0.370549294 0.770178504 0.537336015 0.463227453 0.790240205 0.883431431
+## [176] 0.745110673 0.007746305 0.012653524 0.868331219 0.439399995 0.540221346 0.567043171
+## [183] 0.035815400 0.806543942 0.248707470 0.696702150 0.081439129 0.336315317 0.126480399
+## [190] 0.636728451 0.030235062 0.268138293 0.983494405 0.728536415 0.739554341 0.522384507
+## [197] 0.858970526 0.383807972 0.606960209 0.138387070
+## 
+## $labels
+##   [1] 1 1 0 0 0 1 1 1 1 0 1 0 1 0 0 0 1 1 1 0 0 0 0 1 0 1 0 0 1 1 0 1 1 1 0 0 1 1 0 1 0 1 0 1 0 1 0
+##  [48] 1 0 1 1 0 1 0 1 0 0 0 0 1 1 1 1 0 0 0 1 0 1 0 0 1 0 0 0 0 0 0 0 0 1 0 1 0 0 1 1 0 0 1 0 0 1 0
+##  [95] 1 0 1 1 0 1 0 0 0 1 0 0 1 0 0 1 1 1 0 0 0 1 1 0 0 1 0 0 1 0 1 0 0 1 1 1 1 1 0 1 1 0 0 0 0 1 1
+## [142] 0 1 0 1 0 1 1 1 1 1 0 0 0 1 1 0 1 0 0 0 0 1 0 0 1 0 0 0 0 1 1 0 1 1 1 0 1 1 0 1 1 0 1 0 0 0 1
+## [189] 0 0 0 1 0 1 1 0 1 0 1 0
+</code></pre>
+<pre><code class="language-r">pred &lt;- prediction(ROCR.simple$predictions, ROCR.simple$labels)
+perf &lt;- performance( pred, &quot;tpr&quot;, &quot;fpr&quot; )
+plot(perf)
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/ROCR_example-1.png" width="672" /></p>
+<p>Obtain area under the curve (AUC)</p>
+<pre><code class="language-r">auc &lt;- performance( pred, &quot;tpr&quot;, &quot;fpr&quot;, measure = &quot;auc&quot;)                                                                                                                      
+auc@y.values[[1]]                                                                                                                                                             
+</code></pre>
+<pre><code>## [1] 0.8341875
+</code></pre>
+<h3 id="trees">Trees</h3>
+<p>The <a href="http://ape-package.ird.fr/ape_screenshots.html"><code>ape</code></a> package provides many useful utilities for phylogenetic analysis and tree plotting. Another useful package for
+plotting trees is <a href="http://bioconductor.org/packages/release/bioc/html/ggtree.html"><code>ggtree</code></a>. The following example plots two trees face to face with links to identical
+leaf labels.</p>
+<pre><code class="language-r">library(ape)
+tree1 &lt;- rtree(40)
+tree2 &lt;- rtree(20)
+association &lt;- cbind(tree2$tip.label, tree2$tip.label)
+cophyloplot(tree1, tree2, assoc = association,
+            length.line = 4, space = 28, gap = 3)
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/trees_ape1-1.png" width="672" /></p>
+<h2 id="genome-graphics">Genome Graphics</h2>
+<h3 id="ggbio"><code>ggbio</code></h3>
+<ul>
+<li>What is <code>ggbio</code>?
+<ul>
+<li>A programmable genome browser environment</li>
+</ul>
+</li>
+<li>Genome broswer concepts
+<ul>
+<li>A genome browser is a visulalization tool for plotting different types of genomic data in separate tracks along chromosomes.</li>
+<li>The <code>ggbio</code> package (Yin, Cook, and Lawrence 2012) facilitates plotting of complex genome data objects, such as read alignments (SAM/BAM), genomic context/annotation information (gff/txdb), variant calls (VCF/BCF), and more. To easily compare these data sets, it extends the faceting facility of <code>ggplot2</code> to genome browser-like tracks.</li>
+<li>Most of the core object types for handling genomic data with R/Bioconductor are supported: <code>GRanges</code>, <code>GAlignments</code>, <code>VCF</code>, etc. For more details, see Table 1.1 of the <code>ggbio</code> vignette <a href="http://www.bioconductor.org/packages/release/bioc/vignettes/ggbio/inst/doc/ggbio.pdf">here</a>.</li>
+<li><code>ggbio</code>’s convenience plotting function is <code>autoplot</code>. For more customizable plots, one can use the generic <code>ggplot</code> function.</li>
+<li>Apart from the standard <code>ggplot2</code> plotting components, <code>ggbio</code> defines serval new components useful for genomic data visualization. A detailed list is given in Table 1.2 of the vignette <a href="http://www.bioconductor.org/packages/release/bioc/vignettes/ggbio/inst/doc/ggbio.pdf">here</a>.</li>
+<li>Useful web sites:
+- <a href="http://www.tengfei.name/ggbio/docs/">ggbio manual</a>
+<ul>
+<li><a href="http://www.tengfei.name/ggbio/docs/man/">ggbio functions</a></li>
+<li><a href="http://www.tengfei.name/ggbio/docs/man/autoplot-method.html">autoplot demo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="tracks-aligning-plots-along-chromosomes">Tracks: aligning plots along chromosomes</h4>
+<pre><code class="language-r">library(ggbio)
+df1 &lt;- data.frame(time = 1:100, score = sin((1:100)/20)*10)
+p1 &lt;- qplot(data = df1, x = time, y = score, geom = &quot;line&quot;)
+df2 &lt;- data.frame(time = 30:120, score = sin((30:120)/20)*10, value = rnorm(120-30 +1))
+p2 &lt;- ggplot(data = df2, aes(x = time, y = score)) + geom_line() + geom_point(size = 2, aes(color = value))
+tracks(time1 = p1, time2 = p2) + xlim(1, 40) + theme_tracks_sunset()
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/ggbio_align-1.png" width="672" /></p>
+<h4 id="plotting-genomic-ranges">Plotting genomic ranges</h4>
+<p><code>GRanges</code> objects are essential for storing alignment or annotation ranges in R/Bioconductor. The following creates a sample <code>GRanges</code> object and plots its content.</p>
+<pre><code class="language-r">library(GenomicRanges)
+set.seed(1); N &lt;- 100; gr &lt;- GRanges(seqnames = sample(c(&quot;chr1&quot;, &quot;chr2&quot;, &quot;chr3&quot;), size = N, replace = TRUE), IRanges(start = sample(1:300, size = N, replace = TRUE), width = sample(70:75, size = N,replace = TRUE)), strand = sample(c(&quot;+&quot;, &quot;-&quot;), size = N, replace = TRUE), value = rnorm(N, 10, 3), score = rnorm(N, 100, 30), sample = sample(c(&quot;Normal&quot;, &quot;Tumor&quot;), size = N, replace = TRUE), pair = sample(letters, size = N, replace = TRUE))
+autoplot(gr, aes(color = strand, fill = strand), facets = strand ~ seqnames)
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/ggbio_granges-1.png" width="672" /></p>
+<h4 id="plotting-coverage">Plotting coverage</h4>
+<pre><code class="language-r">autoplot(gr, aes(color = strand, fill = strand), facets = strand ~ seqnames, stat = &quot;coverage&quot;)
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/ggbio_coverage-1.png" width="672" /></p>
+<h4 id="mirrored-coverage">Mirrored coverage</h4>
+<pre><code class="language-r">pos &lt;- sapply(coverage(gr[strand(gr)==&quot;+&quot;]), as.numeric)
+pos &lt;- data.frame(Chr=rep(names(pos), sapply(pos, length)), Strand=rep(&quot;+&quot;, length(unlist(pos))), Position=unlist(sapply(pos, function(x) 1:length(x))), Coverage=as.numeric(unlist(pos)))
+neg &lt;- sapply(coverage(gr[strand(gr)==&quot;-&quot;]), as.numeric)
+neg &lt;- data.frame(Chr=rep(names(neg), sapply(neg, length)), Strand=rep(&quot;-&quot;, length(unlist(neg))), Position=unlist(sapply(neg, function(x) 1:length(x))), Coverage=-as.numeric(unlist(neg)))
+covdf &lt;- rbind(pos, neg)
+p &lt;- ggplot(covdf, aes(Position, Coverage, fill=Strand)) + 
+        geom_bar(stat=&quot;identity&quot;, position=&quot;identity&quot;) + facet_wrap(~Chr)
+p
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/ggbio_mirrored_coverage-1.png" width="672" /></p>
+<h3 id="circular-genome-plots">Circular genome plots</h3>
+<pre><code class="language-r">ggplot(gr) + layout_circle(aes(fill = seqnames), geom = &quot;rect&quot;)
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/ggbio_circular1-1.png" width="672" /></p>
+<p>More complex circular example</p>
+<pre><code class="language-r">seqlengths(gr) &lt;- c(400, 500, 700)
+values(gr)$to.gr &lt;- gr[sample(1:length(gr), size = length(gr))]
+idx &lt;- sample(1:length(gr), size = 50)
+gr &lt;- gr[idx]
+ggplot() + layout_circle(gr, geom = &quot;ideo&quot;, fill = &quot;gray70&quot;, radius = 7, trackWidth = 3) +
+  layout_circle(gr, geom = &quot;bar&quot;, radius = 10, trackWidth = 4,
+                aes(fill = score, y = score)) +
+  layout_circle(gr, geom = &quot;point&quot;, color = &quot;red&quot;, radius = 14,
+                trackWidth = 3, grid = TRUE, aes(y = score)) +
+  layout_circle(gr, geom = &quot;link&quot;, linked.to = &quot;to.gr&quot;, radius = 6, trackWidth = 1)
+</code></pre>
+<center>
+<img title="vim-r" src="../images/circularplot.png"/>
+</center>
+<h4 id="alignments-and-variants">Alignments and variants</h4>
+<p>To make the following example work, please download and unpack this <a href="http://biocluster.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_12_16_2013/Rgraphics/data.zip">data archive</a> containing GFF, BAM and VCF sample files.</p>
+<pre><code class="language-r">library(rtracklayer); library(GenomicFeatures); library(Rsamtools); library(GenomicAlignments); library(VariantAnnotation)
+ga &lt;- readGAlignments(&quot;./data/SRR064167.fastq.bam&quot;, use.names=TRUE, param=ScanBamParam(which=GRanges(&quot;Chr5&quot;, IRanges(4000, 8000))))
+p1 &lt;- autoplot(ga, geom = &quot;rect&quot;)
+p2 &lt;- autoplot(ga, geom = &quot;line&quot;, stat = &quot;coverage&quot;)
+vcf &lt;- readVcf(file=&quot;data/varianttools_gnsap.vcf&quot;, genome=&quot;ATH1&quot;)
+p3 &lt;- autoplot(vcf[seqnames(vcf)==&quot;Chr5&quot;], type = &quot;fixed&quot;) + xlim(4000, 8000) + theme(legend.position = &quot;none&quot;, axis.text.y = element_blank(), axis.ticks.y=element_blank())
+txdb &lt;- makeTxDbFromGFF(file=&quot;./data/TAIR10_GFF3_trunc.gff&quot;, format=&quot;gff3&quot;)
+p4 &lt;- autoplot(txdb, which=GRanges(&quot;Chr5&quot;, IRanges(4000, 8000)), names.expr = &quot;gene_id&quot;)
+tracks(Reads=p1, Coverage=p2, Variant=p3, Transcripts=p4, heights = c(0.3, 0.2, 0.1, 0.35)) + ylab(&quot;&quot;)
+</code></pre>
+<p><img src="../../../en/manuals/rgraphics/Rgraphics_files/figure-html/ggbio_align_variants-1.png" width="672" /></p>
+<h3 id="additional-examples">Additional examples</h3>
+<p>See <code>autoplot</code> demo <a href="http://www.tengfei.name/ggbio/docs/man/autoplot-method.html">here</a></p>
+<h3 id="additional-genome-graphics">Additional genome graphics</h3>
+<ul>
+<li><a href="http://www.bioconductor.org/packages/devel/bioc/html/Gviz.html"><code>Gviz</code></a></li>
+<li><a href="http://cran.us.r-project.org/web/packages/RCircos/index.html"><code>RCircos</code></a> (Zhang, Meltzer, and Davis 2013)</li>
+<li><a href="http://bioconductor.org/packages/release/bioc/html/GenomeGraphs.html"><code>Genome Graphs</code></a></li>
+<li><a href="http://genoplotr.r-forge.r-project.org/"><code>genoPlotR</code></a></li>
+</ul>
+<h3 id="genome-browser-igv">Genome Browser: IGV</h3>
+<p>View genome data in IGV</p>
+<ul>
+<li>Download and open <a href="http://software.broadinstitute.org/software/igv/download">IGV</a></li>
+<li>Select in menu in top left corner <em>A. thaliana</em> (TAIR10)</li>
+<li>Upload the following indexed/sorted Bam files with <code>File -&gt; Load from URL...</code></li>
+</ul>
+<!-- end list -->
+<pre><code>http://faculty.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_6_10_2012/Rrnaseq/results/SRR064154.fastq.bam
+http://faculty.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_6_10_2012/Rrnaseq/results/SRR064155.fastq.bam
+http://faculty.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_6_10_2012/Rrnaseq/results/SRR064166.fastq.bam
+http://faculty.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_6_10_2012/Rrnaseq/results/SRR064167.fastq.bam
+</code></pre>
+<ul>
+<li>To view area of interest, enter its coordinates <code>Chr1:49,457-51,457</code> in position menu on top.</li>
+</ul>
+<center>
+<img title="vim-r" src="../images/igv_peak_3.png"/>
+</center>
+<h4 id="create-symbolic-links">Create symbolic links</h4>
+<p>For viewing BAM files in IGV as part of <code>systemPipeR</code> workflows.</p>
+<ul>
+<li><code>systemPipeR</code>: utilities for building NGS analysis pipelines.</li>
+</ul>
+<!-- end list -->
+<pre><code class="language-r">library(&quot;systemPipeR&quot;)
+symLink2bam(sysargs=args, htmldir=c(&quot;~/.html/&quot;, &quot;somedir/&quot;), 
+            urlbase=&quot;http://myserver.edu/~username/&quot;,
+            urlfile=&quot;IGVurl.txt&quot;)
+</code></pre>
+<h4 id="controlling-igv-from-r">Controlling IGV from R</h4>
+<p>Open IGV before running the following routine. Alternatively, open IGV from within R with <code>startIGV(&quot;lm&quot;)</code> .
+Note this may not work on all systems.</p>
+<pre><code class="language-r">library(SRAdb)
+myurls &lt;- readLines(&quot;http://biocluster.ucr.edu/~tgirke/Documents/R_BioCond/Samples/bam_urls.txt&quot;)
+#startIGV(&quot;lm&quot;) # opens IGV
+sock &lt;- IGVsocket()
+session &lt;- IGVsession(files=myurls, 
+                      sessionFile=&quot;session.xml&quot;, 
+                      genome=&quot;A. thaliana (TAIR10)&quot;)
+IGVload(sock, session)
+IGVgoto(sock, 'Chr1:45296-47019')
+</code></pre>
+<h2 id="references">References</h2>
+<div id="refs" class="references">
+<div id="ref-Yin2012-jj">
+<p>Yin, T, D Cook, and M Lawrence. 2012. “Ggbio: An R Package for Extending the Grammar of Graphics for Genomic Data.” <em>Genome Biol.</em> 13 (8). <a href="https://doi.org/10.1186/gb-2012-13-8-r77">https://doi.org/10.1186/gb-2012-13-8-r77</a>.</p>
+</div>
+<div id="ref-Zhang2013-zn">
+<p>Zhang, H, P Meltzer, and S Davis. 2013. “RCircos: An R Package for Circos 2D Track Plots.” <em>BMC Bioinformatics</em> 14: 244–44. <a href="https://doi.org/10.1186/1471-2105-14-244">https://doi.org/10.1186/1471-2105-14-244</a>.</p>
+</div>
+</div>
+
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 0001-01-01
+</div>
+</div>
+
+
+              </main>
+          
+
+
+        </div>
+      </div>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2021 The GEN242 Instructors All Rights Reserved</small>
+        <small class="ml-1"><a href="https://www.ucr.edu/privacy.html" target="_blank">Privacy Policy</a></small>
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+<script>
+  (function() {
+    var i, text, code, codes = document.getElementsByTagName('code');
+    for (i = 0; i < codes.length;) {
+      code = codes[i];
+      if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+        text = code.textContent;
+        if (/^\$[^$]/.test(text) && /[^$]\$$/.test(text)) {
+          text = text.replace(/^\$/, '\\(').replace(/\$$/, '\\)');
+          code.textContent = text;
+        }
+        if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+            /^\$(.|\s)+\$$/.test(text) ||
+            /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+          code.outerHTML = code.innerHTML;  
+          continue;
+        }
+      }
+      i++;
+    }
+  })();
+</script>
+<script src="../../../js/mathjax3.1.2.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true,
+        processEnvironments: true
+    },
+    // Center justify equations in code and markdown cells. Elsewhere
+    // we use CSS to left justify single line equations in code cells.
+    displayAlign: 'center',
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}},
+        linebreaks: { automatic: true }
+    }
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="../../../js/main.min.f820bfc507c3ebefe17f8881ec4ee10013f3b89ad9555a50acf9bb1771e6823f.js" integrity="sha256-&#43;CC/xQfD6&#43;/hf4iB7E7hABPzuJrZVVpQrPm7F3Hmgj8=" crossorigin="anonymous"></script>
+
+
+
+<script src='../../../js/prism.js'></script>
+
+
+
+  </body>
+</html>
