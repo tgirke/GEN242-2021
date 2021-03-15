@@ -1,5 +1,5 @@
 ---
-title: Graphics and Data Visualization in R 
+title: Graphics and Visualization
 author: "First/last name (first.last@ucr.edu)"
 date: "Last update: 15 March, 2021" 
 output:

@@ -1,5 +1,5 @@
 ---
-title: Graphics and Data Visualization in R 
+title: Graphics and Visualization
 author: "First/last name (first.last@ucr.edu)"
 date: "Last update: `r format(Sys.time(), '%d %B, %Y')`" 
 output:

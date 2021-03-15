@@ -17,21 +17,21 @@
 <link rel="icon" type="image/png" href="../../../favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="../../../favicons/android-192x192.png" sizes="192x192">
 
-<title>Graphics and Data Visualization in R | GEN242</title><meta property="og:title" content="Graphics and Data Visualization in R" />
+<title>Graphics and Visualization | GEN242</title><meta property="og:title" content="Graphics and Visualization" />
 <meta property="og:description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Overview Graphics in R  Powerful environment for visualizing scientific data Integrated graphics and statistics infrastructure Publication quality graphics Fully programmable Highly reproducible Full LaTeX, Sweave, knitr and R Markdown support. Vast number of R packages with graphics utilities  Documentation on Graphics in R  General  Graphics Task Page R Graph Gallery R Graphical Manual Paul Murrell’s book R (Grid) Graphics   Interactive graphics  rggobi (GGobi) iplots Open GL (rgl)    Graphics Environments  Viewing and savings graphics in R  On-screen graphics postscript, pdf, svg jpeg/png/wmf/tiff/…   Four major graphics environments  Low-level infrastructure  R Base Graphics (low- and high-level) grid: Manual, Book   High-level infrastructure  lattice: Manual, Intro, Book ggplot2: Manual, Intro, Book      Base Graphics Overview  Important high-level plotting functions  plot: generic x-y plotting barplot: bar plots boxplot: box-and-whisker plot hist: histograms pie: pie charts dotchart: cleveland dot plots image, heatmap, contour, persp: functions to generate image-like plots qqnorm, qqline, qqplot: distribution comparison plots pairs, coplot: display of multivariant data   Help on these functions  ?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/manuals/rgraphics/rgraphics/" />
-<meta property="og:site_name" content="GEN242" />
-<meta itemprop="name" content="Graphics and Data Visualization in R">
+<meta property="article:modified_time" content="2021-03-15T15:42:42-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta itemprop="name" content="Graphics and Visualization">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Overview Graphics in R  Powerful environment for visualizing scientific data Integrated graphics and statistics infrastructure Publication quality graphics Fully programmable Highly reproducible Full LaTeX, Sweave, knitr and R Markdown support. Vast number of R packages with graphics utilities  Documentation on Graphics in R  General  Graphics Task Page R Graph Gallery R Graphical Manual Paul Murrell’s book R (Grid) Graphics   Interactive graphics  rggobi (GGobi) iplots Open GL (rgl)    Graphics Environments  Viewing and savings graphics in R  On-screen graphics postscript, pdf, svg jpeg/png/wmf/tiff/…   Four major graphics environments  Low-level infrastructure  R Base Graphics (low- and high-level) grid: Manual, Book   High-level infrastructure  lattice: Manual, Intro, Book ggplot2: Manual, Intro, Book      Base Graphics Overview  Important high-level plotting functions  plot: generic x-y plotting barplot: bar plots boxplot: box-and-whisker plot hist: histograms pie: pie charts dotchart: cleveland dot plots image, heatmap, contour, persp: functions to generate image-like plots qqnorm, qqline, qqplot: distribution comparison plots pairs, coplot: display of multivariant data   Help on these functions  ?">
-
+<meta itemprop="dateModified" content="2021-03-15T15:42:42-07:00" />
 <meta itemprop="wordCount" content="4257">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Graphics and Data Visualization in R"/>
+<meta name="twitter:title" content="Graphics and Visualization"/>
 <meta name="twitter:description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Overview Graphics in R  Powerful environment for visualizing scientific data Integrated graphics and statistics infrastructure Publication quality graphics Fully programmable Highly reproducible Full LaTeX, Sweave, knitr and R Markdown support. Vast number of R packages with graphics utilities  Documentation on Graphics in R  General  Graphics Task Page R Graph Gallery R Graphical Manual Paul Murrell’s book R (Grid) Graphics   Interactive graphics  rggobi (GGobi) iplots Open GL (rgl)    Graphics Environments  Viewing and savings graphics in R  On-screen graphics postscript, pdf, svg jpeg/png/wmf/tiff/…   Four major graphics environments  Low-level infrastructure  R Base Graphics (low- and high-level) grid: Manual, Book   High-level infrastructure  lattice: Manual, Intro, Book ggplot2: Manual, Intro, Book      Base Graphics Overview  Important high-level plotting functions  plot: generic x-y plotting barplot: bar plots boxplot: box-and-whisker plot hist: histograms pie: pie charts dotchart: cleveland dot plots image, heatmap, contour, persp: functions to generate image-like plots qqnorm, qqline, qqplot: distribution comparison plots pairs, coplot: display of multivariant data   Help on these functions  ?"/>
 
 
@@ -788,7 +788,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.488a564f6157269079dd1263e5923fc3.json"
+  data-offline-search-index-json-src="../../../offline-search-index.a3e2c07021af993c290ebd92e9d982e1.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -820,7 +820,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.488a564f6157269079dd1263e5923fc3.json"
+  data-offline-search-index-json-src="../../../offline-search-index.a3e2c07021af993c290ebd92e9d982e1.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -909,7 +909,7 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page  active" id="m-manualsrgraphicsrgraphics" href="../../../manuals/rgraphics/rgraphics/">Graphics and Data Visualization in R</a>
+          <a class="td-sidebar-link td-sidebar-link__page  active" id="m-manualsrgraphicsrgraphics" href="../../../manuals/rgraphics/rgraphics/">Graphics and Visualization</a>
         
       
       
@@ -964,7 +964,7 @@ if (!doNotTrack) {
     <a href="https://github.com/tgirke/GEN242//blob/main/content/en/manuals/rgraphics/Rgraphics.markdown" target="_blank"><i class="fa fa-code fa-fw"></i> View source code</a>
     <a href="https://github.com/tgirke/GEN242//edit/main/content/en/manuals/rgraphics/Rgraphics.markdown" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
     <a href="https://github.com/tgirke/GEN242//new/main/content/en/manuals/rgraphics/Rgraphics.markdown?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" target="_blank"><i class="fa fa-edit fa-fw"></i> Create child page</a>
-    <a href="https://github.com/tgirke/GEN242//issues/new?title=Graphics%20and%20Data%20Visualization%20in%20R" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+    <a href="https://github.com/tgirke/GEN242//issues/new?title=Graphics%20and%20Visualization" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
     
       
       <a href="https://github.com/tgirke/GEN242/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
@@ -1165,7 +1165,7 @@ if (!doNotTrack) {
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="../../../manuals/rgraphics/rgraphics/">Graphics and Data Visualization in R</a>
+	<a href="../../../manuals/rgraphics/rgraphics/">Graphics and Visualization</a>
 </li>
 
 	</ol>
@@ -1173,7 +1173,7 @@ if (!doNotTrack) {
 
                 
 <div class="td-content">
-	<h1>Graphics and Data Visualization in R</h1>
+	<h1>Graphics and Visualization</h1>
     
 	
         <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 20 minute read</p>
@@ -2223,7 +2223,7 @@ IGVgoto(sock, 'Chr1:45296-47019')
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 0001-01-01
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-03-15: <a  href="https://github.com/tgirke/GEN242//commit/5356e726b685f2b99c969622bf4e1d54790634ef">some edits (5356e72)</a>
 </div>
 </div>
 
