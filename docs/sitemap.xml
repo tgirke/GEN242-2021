@@ -4,7 +4,7 @@
   
   <url>
     <loc>/about/introduction/</loc>
-    <lastmod>2021-03-11T16:31:35-08:00</lastmod>
+    <lastmod>2021-03-11T17:03:42-08:00</lastmod>
   </url>
   
   <url>
@@ -55,6 +55,15 @@
   <url>
     <loc>/manuals/rparallel/rparallel/</loc>
     <lastmod>2021-02-19T21:10:05-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/manuals/rsequences/rsequences/</loc>
+    <lastmod>2021-02-19T20:07:28-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/manuals/rclustering/rclustering/</loc>
   </url>
   
   <url>
@@ -329,7 +338,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2021-03-11T16:39:50-08:00</lastmod>
+    <lastmod>2021-03-11T17:03:42-08:00</lastmod>
   </url>
   
   <url>
@@ -340,11 +349,6 @@
   <url>
     <loc>/blog/</loc>
     <lastmod>2021-02-13T19:27:35-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/manuals/rsequences/rsequences/</loc>
-    <lastmod>2021-02-19T20:07:28-08:00</lastmod>
   </url>
   
   <url>

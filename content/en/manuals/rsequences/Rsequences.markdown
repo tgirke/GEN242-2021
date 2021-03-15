@@ -1,7 +1,7 @@
 ---
 title: NGS Analysis Basics
 author: "Author: Thomas Girke"
-date: "Last update: 19 February, 2021" 
+date: "Last update: 15 March, 2021" 
 output:
   html_document:
     toc: true
@@ -15,7 +15,7 @@ output:
 
 fontsize: 14pt
 bibliography: bibtex.bib
-weith: 8
+weight: 8
 type: docs
 ---
 
@@ -39,9 +39,9 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
-# Overview
+## Overview
 
-## Sequence Analysis in R and Bioconductor
+### Sequence Analysis in R and Bioconductor
 
 **R Base**
 
@@ -63,7 +63,7 @@ Bioconductor packages provide much more sophisticated string handling utilities 
   - [rtracklayer](http://bioconductor.org/packages/release/bioc/html/rtracklayer.html): Annotation imports, interface to online genome browsers
   - [HelloRanges](http://bioconductor.org/packages/release/bioc/html/HelloRanges.html): Bedtools semantics in Bioc’s Ranges infrastructure
 
-# Package Requirements
+## Package Requirements
 
 Several Bioconductor packages are required for this tutorial. To install them, execute
 the following lines in the R console. Please also make sure that you have a recent R version
@@ -76,11 +76,11 @@ if (!requireNamespace("BiocManager", quietly = TRUE))
 BiocManager::install(c("Biostrings", "GenomicRanges", "rtracklayer", "systemPipeR", "seqLogo", "ShortRead"))
 ```
 
-# Strings in R Base
+## Strings in R Base
 
-## Basic String Matching and Parsing
+### Basic String Matching and Parsing
 
-### String matching
+#### String matching
 
 Generate sample sequence data set
 
@@ -126,7 +126,7 @@ gsub("^ATG", "atg", myseq)
 
     ## [1] "atgCAGACATAGTG" "atgAACATAGATCC" "GTACAGATCAC"
 
-### Positional parsing
+#### Positional parsing
 
 ``` r
 nchar(myseq) # Computes length of strings
@@ -146,9 +146,9 @@ substring(myseq, c(1,4,7), c(2,6,10)) # Positional parsing of many strings
 
     ## [1] "AT"   "AAC"  "ATCA"
 
-## Random Sequence Generation
+### Random Sequence Generation
 
-### Random DNA sequences of any length
+#### Random DNA sequences of any length
 
 ``` r
 rand <- sapply(1:100, function(x) paste(sample(c("A","T","G","C"), sample(10:20), replace=T), collapse=""))
@@ -157,7 +157,7 @@ rand[1:3]
 
     ## [1] "GGTCTATTTGCTGG"   "CCTTCGCGGTAA"     "AGAACTGATGCCAGAG"
 
-### Count identical sequences
+#### Count identical sequences
 
 ``` r
 table(c(rand[1:4], rand[1]))
@@ -167,7 +167,7 @@ table(c(rand[1:4], rand[1]))
     ##    AGAACTGATGCCAGAG        CCTTCGCGGTAA      GGTCTATTTGCTGG GTTTCTCCCTCAAATACTG 
     ##                   1                   1                   2                   1
 
-### Extract reads from reference
+#### Extract reads from reference
 
 Note: this requires `Biostrings` package.
 
@@ -183,32 +183,32 @@ unlist(rand_set)
     ## 15000-letter DNAString object
     ## seq: TACGTACTTCAGAAGTATATCATGATAGGGATGCCCTGTACGTCCA...CCTAGCGGAGCCTACTAACGCCGGAATTCGAAGACTGAATACGTAC
 
-# Sequences in Bioconductor
+## Sequences in Bioconductor
 
-## Important Data Objects of Biostrings
+### Important Data Objects of Biostrings
 
-### `XString` for single sequence
+#### `XString` for single sequence
 
   - `DNAString`: for DNA
   - `RNAString`: for RNA
   - `AAString`: for amino acid
   - `BString`: for any string
 
-### `XStringSet` for many sequences
+#### `XStringSet` for many sequences
 
   - \`DNAStringSet\`\`: for DNA
   - `RNAStringSet`: for RNA
   - `AAStringSet`: for amino acid
   - `BStringSet`: for any string
 
-### `QualityScaleXStringSet` for sequences with quality data
+#### `QualityScaleXStringSet` for sequences with quality data
 
   - `QualityScaledDNAStringSet`: for DNA
   - `QualityScaledRNAStringSet`: for RNA
   - `QualityScaledAAStringSet`: for amino acid
   - `QualityScaledBStringSet`: for any string
 
-## Sequence Import and Export
+### Sequence Import and Export
 
 Download the following sequences to your current working directory and then import them into R:
 <ftp://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Bacteria/Halobacterium_sp_uid217/AE004437.ffn>
@@ -249,7 +249,7 @@ writeXStringSet(sub, file="./data/AE004437sub.ffn", width=80)
 
 Now inspect exported sequence file `AE004437sub.ffn` in a text editor
 
-## Working with `XString` Containers
+### Working with `XString` Containers
 
 The `XString` stores the different types of biosequences in dedicated containers
 
@@ -300,7 +300,7 @@ b
     ## 85-letter BString object
     ## seq: I store any set of characters. Other XString objects store only the IUPAC characters.
 
-## Working with `XStringSet` Containers
+### Working with `XStringSet` Containers
 
 `XStringSet` containers allow to store many biosequences in one object
 
@@ -342,7 +342,7 @@ DNAStringSet(dset, start=c(1,2,3), end=c(4,8,5))
     ## [2]     7 ATCGATC                                                               seq2
     ## [3]     3 ATA                                                                   seq3
 
-## Multiple Alignment Class
+### Multiple Alignment Class
 
 The `XMultipleAlignment` class stores the different types of multiple sequence alignments:
 
@@ -363,9 +363,9 @@ origMAlign
     ## [7] --------------CGGCTCCGCAGCGCCTCACTCG...----------------------------------- gi|45383056|ref|N...
     ## [8] GGGGGAGACTTCAGAAGTTGTTGTCCTCTCCGCTGA...----------------------------------- gi|213515133|ref|...
 
-## Basic Sequence Manipulations
+### Basic Sequence Manipulations
 
-### Reverse and Complement
+#### Reverse and Complement
 
 ``` r
 randset <- DNAStringSet(rand)
@@ -395,7 +395,7 @@ reverseComplement(randset[1:2])
     ## [1]    14 CCAGCAAATAGACC
     ## [2]    12 TTACCGCGAAGG
 
-## Translate DNA into Protein
+### Translate DNA into Protein
 
 ``` r
 translate(randset[1:2])
@@ -409,9 +409,9 @@ translate(randset[1:2])
     ## [1]     4 GLFA
     ## [2]     4 PSR*
 
-## Pattern Matching
+### Pattern Matching
 
-### Pattern matching with mismatches
+#### Pattern matching with mismatches
 
 Find pattern matches in reference
 
@@ -507,7 +507,7 @@ sapply(seq(along=myseq1), function(x)
        as.character(Views(myseq1[[x]], start(myvpos[[x]]), end(myvpos[[x]]))))[1:4] 
 ```
 
-### Pattern matching with regular expression support
+#### Pattern matching with regular expression support
 
 ``` r
 myseq <- DNAStringSet(c("ATGCAGACATAGTG", "ATGAACATAGATCC", "GTACAGATCAC"))
@@ -547,9 +547,9 @@ DNAStringSet(gsub("^ATG", "NNN", myseq)) # String substitution with regular expr
     ## [2]    14 NNNAACATAGATCC
     ## [3]    11 GTACAGATCAC
 
-## PWM Viewing and Searching
+### PWM Viewing and Searching
 
-### Plot with `seqLogo`
+#### Plot with `seqLogo`
 
 ``` r
 library(seqLogo) 
@@ -574,7 +574,7 @@ seqLogo(t(t(pwm) * 1/colSums(pwm)))
 
 <img src="/en/manuals/rsequences/Rsequences_files/figure-html/pwm_logo-1.png" width="672" />
 
-### Plot with `ggseqlogo`
+#### Plot with `ggseqlogo`
 
 The `ggseqlogo` package ([manual](https://omarwagih.github.io/ggseqlogo/))
 provides many customization options for plotting sequence logos. It also supports
@@ -603,9 +603,9 @@ matchPWM(pwm, chr, min.score=0.9)
     ##   [2]    10  12     3 [GGT]
     ##   [3]    16  18     3 [GCA]
 
-# NGS Sequences
+## NGS Sequences
 
-## Sequence and Quality Data: FASTQ Format
+### Sequence and Quality Data: FASTQ Format
 
 Four lines per sequence:
 
@@ -631,7 +631,7 @@ solely for illustration purposes.
     3. +SRR038845.53 HWI-EAS038:6:1:1:360 length=36
     4. BBCBBBBBB@@BAB?BBBBCBC>BBBAA8>BBBAA@
 
-## Sequence and Quality Data: `QualityScaleXStringSet`
+### Sequence and Quality Data: `QualityScaleXStringSet`
 
 Phred quality scores are integers from 0-50 that are
 stored as ASCII characters after adding 33. The basic R functions `rawToChar` and
@@ -676,7 +676,7 @@ dsetq1[1:2]
     ## [1]    20 (@5.;ECA0$.3<$'7?H3D
     ## [2]    20 5<(;1C@*BI:92&;#2F>I
 
-## Processing FASTQ Files with ShortRead
+### Processing FASTQ Files with ShortRead
 
 The following expains the basic usage of `ShortReadQ` objects. To make the sample code work,
 download and unzip this [file](http://cluster.hpcc.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_6_10_2012/Rsequences/data.zip) to your current working directory.
@@ -749,9 +749,9 @@ ShortReadQ(sread=sread(fq), quality=quality(fq), id=id(fq)) # Constructs a Short
     ## class: ShortReadQ
     ## length: 1000 reads; width: 36 cycles
 
-## FASTQ Quality Reports
+### FASTQ Quality Reports
 
-### Using `systemPipeR`
+#### Using `systemPipeR`
 
 The following `seeFastq` and `seeFastqPlot` functions generate and plot a series of useful quality statistics for a set of FASTQ files.
 
@@ -765,7 +765,7 @@ seeFastqPlot(fqlist)
 
 Handles many samples in one PDF file. For more details see [here](http://bioconductor.org/packages/devel/bioc/vignettes/systemPipeR/inst/doc/systemPipeR.html)
 
-### Using `ShortRead`
+#### Using `ShortRead`
 
 The `ShortRead` package contains several FASTQ quality reporting functions.
 
@@ -782,9 +782,9 @@ if(interactive())
 browseURL(res) 
 ```
 
-## Filtering and Trimming FASTQ Files with ShortRead
+### Filtering and Trimming FASTQ Files with ShortRead
 
-### Adaptor trimming
+#### Adaptor trimming
 
 ``` r
 fqtrim <- trimLRPatterns(Rpattern="GCCCGGGTAA", subject=fq)
@@ -805,7 +805,7 @@ sread(fqtrim)[1:2] # After trimming
     ## [1]    26 CAACGAGTTCACACCTTGGCCGACAG
     ## [2]    36 CCAATGATTTTTTTCCGTGTTTCAGAATACGGTTAA
 
-### Read counting and duplicate removal
+#### Read counting and duplicate removal
 
 ``` r
 tables(fq)$distribution # Counts read occurences
@@ -828,7 +828,7 @@ fq[!srduplicated(fq)]
     ## class: ShortReadQ
     ## length: 974 reads; width: 36 cycles
 
-### Trimming low quality tails
+#### Trimming low quality tails
 
 ``` r
 cutoff <- 30
@@ -841,7 +841,7 @@ sread(trimTails(fq, k=2, a=cutoff, successive=FALSE))[1:2]
     ## [1]     4 CAAC
     ## [2]    20 CCAATGATTTTTTTCCGTGT
 
-### Removal of reads with Phred scores below a threshold value
+#### Removal of reads with Phred scores below a threshold value
 
 ``` r
 cutoff <- 30
@@ -852,7 +852,7 @@ fq[qcount == 0] # Number of reads where all Phred scores >= 20
     ## class: ShortReadQ
     ## length: 349 reads; width: 36 cycles
 
-### Removal of reads with x Ns and/or low complexity segments
+#### Removal of reads with x Ns and/or low complexity segments
 
 ``` r
 filter1 <- nFilter(threshold=1) # Keeps only reads without Ns
@@ -864,7 +864,7 @@ fq[filter(fq)]
     ## class: ShortReadQ
     ## length: 989 reads; width: 36 cycles
 
-## Memory Efficient FASTQ Processing
+### Memory Efficient FASTQ Processing
 
 Streaming through FASTQ files with `FastqStreamer` and random sampling reads with `FastqSampler`
 
@@ -885,24 +885,24 @@ while(length(fq <- yield(f))) {
 close(f)
 ```
 
-# Range Operations
+## Range Operations
 
-## Important Data Objects for Range Operations
+### Important Data Objects for Range Operations
 
   - `IRanges`: stores range data only (IRanges library)
   - `GRanges`: stores ranges and annotations (GenomicRanges library)
   - `GRangesList`: list version of GRanges container (GenomicRanges library)
 
-## Range Data Are Stored in `IRanges` and `GRanges` Containers
+### Range Data Are Stored in `IRanges` and `GRanges` Containers
 
-### Construct `GRanges` Object
+#### Construct `GRanges` Object
 
 ``` r
 library(GenomicRanges); library(rtracklayer)
 gr <- GRanges(seqnames = Rle(c("chr1", "chr2", "chr1", "chr3"), c(1, 3, 2, 4)), ranges = IRanges(1:10, end = 7:16, names = head(letters, 10)), strand = Rle(strand(c("-", "+", "*", "+", "-")), c(1, 2, 2, 3, 2)), score = 1:10, GC = seq(1, 0, length = 10)) # Example of creating a GRanges object with its constructor function.
 ```
 
-### Import GFF into `GRanges` Object
+#### Import GFF into `GRanges` Object
 
 ``` r
 gff <- import.gff("http://cluster.hpcc.ucr.edu/~tgirke/Documents/R_BioCond/Samples/gff3.gff") # Imports a simplified GFF3 genome annotation file.
@@ -927,7 +927,7 @@ gff[1:4,]
     ##   -------
     ##   seqinfo: 7 sequences from an unspecified genome
 
-### Coerce `GRanges` object to `data.frame`
+#### Coerce `GRanges` object to `data.frame`
 
 ``` r
 as.data.frame(gff)[1:4, 1:7]
@@ -939,9 +939,9 @@ as.data.frame(gff)[1:4, 1:7]
     ## 3     Chr1  3631     5899     2269      + TAIR10       mRNA
     ## 4     Chr1  3760     5630     1871      + TAIR10    protein
 
-## Utilities for Range Containers
+### Utilities for Range Containers
 
-### Accessor and subsetting methods for GRanges objects
+#### Accessor and subsetting methods for GRanges objects
 
 Subsetting and replacement
 
@@ -1147,7 +1147,7 @@ gff[values(gff)[ ,"type"] == "gene"]
     ##   -------
     ##   seqinfo: 7 sequences from an unspecified genome
 
-### Useful utilities for GRanges objects
+#### Useful utilities for GRanges objects
 
 Remove chromosome ranges
 
@@ -1358,7 +1358,7 @@ subsetByOverlaps(gff, gff[1:4])
     ##   -------
     ##   seqinfo: 7 sequences from an unspecified genome
 
-## GRangesList Objects
+### GRangesList Objects
 
 ``` r
 sp <- split(gff, seq(along=gff)) # Stores every range in separate component of a GRangesList object
@@ -1500,7 +1500,7 @@ lapply(sp[1:4], length) # Looping over GRangesList objects similar to lists
     ## $`4`
     ## [1] 1
 
-# Transcript Ranges
+## Transcript Ranges
 
 Storing annotation ranges in `TranscriptDb` databases makes many operations more robust and convenient.
 
@@ -1641,7 +1641,7 @@ exonsBy(txdb, by = "gene")
     ## ...
     ## <19 more elements>
 
-## `txdb` from BioMart
+### `txdb` from BioMart
 
 Alternative sources for creating `txdb` databases are BioMart, Bioc annotation packages, UCSC, etc. The following shows how to create a `txdb` from BioMart.
 
@@ -1662,7 +1662,7 @@ listAttributes(mymart) # List available features
 getBM(attributes=c("ensembl_gene_id", "description"), mart=mymart)[1:4,]
 ```
 
-## Efficient Sequence Parsing
+### Efficient Sequence Parsing
 
 ### `getSeq`
 
@@ -1689,7 +1689,7 @@ getSeq(FaFile("./data/test"), gff)
     ## [441]   324 TCCGGTGACGCCCGCTAACACGGCGGGGGGTG...AATCACAAATGGTATGCGTCGTGTCAACTGCA ChrM
     ## [442]   324 TCCGGTGACGCCCGCTAACACGGCGGGGGGTG...AATCACAAATGGTATGCGTCGTGTCAACTGCA ChrM
 
-### `extractTranscriptSeqs`
+#### `extractTranscriptSeqs`
 
 Sequences composed of several ranges, such as transcripts (or CDSs) with several exons, can be parsed with `extractTranscriptSeqs`.
 Note: the following expects the genome sequence in a file called `mygenome.fasta` and a valid `txdb` defining the ranges for that
@@ -1701,9 +1701,9 @@ indexFa("mygenome.fasta") # Creates index for genome fasta
 txseq <- extractTranscriptSeqs(FaFile("mygenome.fasta"), txdb, use.names=TRUE) 
 ```
 
-# Homework 6
+## Homework 6
 
-## HW6a - Demultiplexing
+### HW6a - Demultiplexing
 
 Write a demultiplexing function that accepts any number of
 barcodes and splits a FASTQ file into as many subfiles as there are barcodes.
@@ -1728,7 +1728,7 @@ demultiplex <- function(x, barcode, nreads) {
 demultiplex(x=fastq[1], barcode=c("TT", "AA", "GG"), nreads=50)
 ```
 
-## HW6b - Sequence Parsing
+### HW6b - Sequence Parsing
 
   - Download `GFF` from *Halobacterium sp* [here](ftp://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Bacteria/Halobacterium_sp_uid217/AE004437.gff)
   - Download genome sequence from *Halobacterium sp* [here](ftp://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Bacteria/Halobacterium_sp_uid217/AE004437.fna)
@@ -1755,19 +1755,19 @@ names(p2) <- names(gene[names(gene) %in% neg])
 writeXStringSet(c(p1, p2), "./data/mypep.fasta")
 ```
 
-## Homework submission
+### Homework submission
 
 Submit the homework results in one well structured and annotated R script to the instructor. The script should include instructions on how to use the functions.
 
-## Due date
+### Due date
 
-This homework is due on Thu, May 4th at 6:00 PM.
+This homework is due on …
 
-## Homework Solutions
+### Homework Solutions
 
 See [here]()
 
-# Session Info
+## Session Info
 
 ``` r
 sessionInfo()

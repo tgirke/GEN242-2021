@@ -473,6 +473,11 @@ enable = true
     url = "/manuals/rsequences/rsequences/"
     parent = "Manuals"
     weight = 8
+  [[menu.main]]
+    name = "Cluster Analysis"
+    url = "/manuals/rclustering/rclustering/"
+    parent = "Manuals"
+    weight = 9
 ##
 [[menu.main]]
   name = "Assignments"
