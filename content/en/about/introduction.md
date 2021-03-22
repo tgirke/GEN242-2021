@@ -10,7 +10,7 @@ weight: 1
 
 ## Overview
 
-This course introduces algorithms, statistical methods and data analysis programming 
+zzz This course introduces algorithms, statistical methods and data analysis programming 
 routines relevant for genome biology. It consists of three main components:
 lectures, hands-on practicals and student course projects. The lecture topics cover databases, sequence 
 (NGS) analysis, phylogenetics, comparative genomics, genome-wide profiling methods, 
