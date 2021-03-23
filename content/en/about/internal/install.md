@@ -45,7 +45,7 @@ blogdown::serve_site()
 
 ## Prerequisites and Installation
 
-### Install {blogdown} and Hugo
+### Install blogdown and Hugo
 
 #### blogdown
 

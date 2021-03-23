@@ -80,7 +80,7 @@ cd &amp;lt;repository_name&amp;gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;blogdown::serve_site()
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;prerequisites-and-installation&#34;&gt;Prerequisites and Installation&lt;/h2&gt;
-&lt;h3 id=&#34;install-blogdown-and-hugo&#34;&gt;Install {blogdown} and Hugo&lt;/h3&gt;
+&lt;h3 id=&#34;install-blogdown-and-hugo&#34;&gt;Install blogdown and Hugo&lt;/h3&gt;
 &lt;h4 id=&#34;blogdown&#34;&gt;blogdown&lt;/h4&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;installed.packages(&amp;quot;rstudio/blogdown&amp;quot;)
 # If anything wrong try develop version
