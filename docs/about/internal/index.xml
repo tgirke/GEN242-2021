@@ -89,7 +89,7 @@ remotes::install_github(&amp;quot;rstudio/blogdown&amp;quot;)
 &lt;h4 id=&#34;hugo&#34;&gt;Hugo&lt;/h4&gt;
 &lt;p&gt;You need a recent extended version (we recommend version 0.79.0 or later) of Hugo
 to do local builds and previews of sites that use Docsy.&lt;/p&gt;
-&lt;p&gt;It is recommended to install &lt;code&gt;Hugo&lt;/code&gt; from R for working with {blogdown}&lt;/p&gt;
+&lt;p&gt;It is recommended to install &lt;code&gt;Hugo&lt;/code&gt; from R for working with blogdown&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;blogdown::install_hugo(extended = TRUE)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;or from commandline&lt;/p&gt;
@@ -111,7 +111,7 @@ cd &amp;lt;repository_name&amp;gt;
 npm audit fix
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;run-the-website-locally&#34;&gt;Run the website locally&lt;/h3&gt;
-&lt;h4 id=&#34;with-blogdown&#34;&gt;with {blogdown}&lt;/h4&gt;
+&lt;h4 id=&#34;with-blogdown&#34;&gt;with blogdown&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;Open R in console or Rstudio&lt;/li&gt;
 &lt;/ul&gt;

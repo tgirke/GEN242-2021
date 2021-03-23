@@ -59,7 +59,7 @@ remotes::install_github("rstudio/blogdown")
 You need a recent extended version (we recommend version 0.79.0 or later) of Hugo 
 to do local builds and previews of sites that use Docsy.
 
-It is recommended to install `Hugo` from R for working with {blogdown}
+It is recommended to install `Hugo` from R for working with blogdown
 
 ```r
 blogdown::install_hugo(extended = TRUE)
@@ -93,7 +93,7 @@ npm audit fix
 
 ### Run the website locally 
 
-#### with {blogdown}
+#### with blogdown
 
 * Open R in console or Rstudio
 
