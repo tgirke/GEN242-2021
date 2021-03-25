@@ -361,7 +361,7 @@ Often used in combination with a function definition:
 ``` r
 lapply(names(l), function(x) mean(l[[x]]))
 sapply(names(l), function(x) mean(l[[x]]))
-vapply(l, mean, FUN.VALUE=numeric(1))
+vapply(names(l), function(x) mean(l[[x]]), FUN.VALUE=numeric(1))
 ```
 
 ## Functions
