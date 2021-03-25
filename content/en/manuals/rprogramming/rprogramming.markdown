@@ -1,7 +1,7 @@
 ---
 title: "Programming in R" 
 author: "Author: Thomas Girke"
-date: "Last update: 20 February, 2021" 
+date: "Last update: 24 March, 2021" 
 output:
   html_document:
     toc: true
@@ -321,9 +321,10 @@ tapply(iris$Sepal.Length, iris$Species, mean)
     ##     setosa versicolor  virginica 
     ##      5.006      5.936      6.588
 
-#### `sapply` and `lapply`
+#### `sapply`, `lapply` and `vapply`
 
-Both apply a function to vector or list objects. The `lapply` function always returns a list object, while `sapply` returns `vector` or `matrix` objects when it is possible.
+All three apply a function to vector or list objects. The `lapply` function always returns a list object, while `sapply` returns `vector` or `matrix` objects when possible. If not then a list is returned.
+The `vapply` function returns a vector or array of type matching the `FUN.VALUE`. While more restrictive, `vapply` is a safer choice than `sapply` to avoid programming errors.
 
 **Examples**
 
@@ -348,11 +349,19 @@ sapply(l, mean)
     ##        a     beta    logic 
     ## 5.500000 4.535125 0.500000
 
+``` r
+vapply(l, mean, FUN.VALUE=numeric(1))
+```
+
+    ##        a     beta    logic 
+    ## 5.500000 4.535125 0.500000
+
 Often used in combination with a function definition:
 
 ``` r
 lapply(names(l), function(x) mean(l[[x]]))
 sapply(names(l), function(x) mean(l[[x]]))
+vapply(l, mean, FUN.VALUE=numeric(1))
 ```
 
 ## Functions

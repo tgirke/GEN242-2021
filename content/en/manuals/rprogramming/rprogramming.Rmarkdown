@@ -264,21 +264,24 @@ iris[1:2,]
 tapply(iris$Sepal.Length, iris$Species, mean)
 ```
 
-#### `sapply` and `lapply`
+#### `sapply`, `lapply` and `vapply`
 
-Both apply a function to vector or list objects. The `lapply` function always returns a list object, while `sapply` returns `vector` or `matrix` objects when it is possible. 
+All three apply a function to vector or list objects. The `lapply` function always returns a list object, while `sapply` returns `vector` or `matrix` objects when possible. If not then a list is returned.
+The `vapply` function returns a vector or array of type matching the `FUN.VALUE`. While more restrictive, `vapply` is a safer choice than `sapply` to avoid programming errors.
 
 __Examples__
 ```{r lapply_loop_example, eval=TRUE}
 l <- list(a = 1:10, beta = exp(-3:3), logic = c(TRUE,FALSE,FALSE,TRUE))
 lapply(l, mean)
 sapply(l, mean)
+vapply(l, mean, FUN.VALUE=numeric(1))
 ```
 
 Often used in combination with a function definition:
 ```{r lapply_loop_fct_example, eval=FALSE}
 lapply(names(l), function(x) mean(l[[x]]))
 sapply(names(l), function(x) mean(l[[x]]))
+vapply(l, mean, FUN.VALUE=numeric(1))
 ```
 
 ## Functions
