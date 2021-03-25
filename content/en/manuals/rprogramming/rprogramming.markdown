@@ -323,8 +323,9 @@ tapply(iris$Sepal.Length, iris$Species, mean)
 
 #### `sapply`, `lapply` and `vapply`
 
-All three apply a function to vector or list objects. The `lapply` function always returns a list object, while `sapply` returns `vector` or `matrix` objects when possible. If not then a list is returned.
-The `vapply` function returns a vector or array of type matching the `FUN.VALUE`. While more restrictive, `vapply` is a safer choice than `sapply` to avoid programming errors.
+All three apply a function to vector or list. The `lapply` function always returns a list, while `sapply` returns `vector` or `matrix` objects when possible. If not then a list is returned.
+The `vapply` function returns a vector or array of type matching the `FUN.VALUE`. Compared to `sappy`, `vapply` is a safer choice with respect to controlling specific output objects and data
+types to minimize exception handling problems.
 
 **Examples**
 
