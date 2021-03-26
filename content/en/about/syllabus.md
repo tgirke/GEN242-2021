@@ -21,6 +21,11 @@ Email: thomas.girke@ucr.edu <br>
 Office location: 1207F Genomics <br>
 Office hours: Tue & Thu 4:30 - 5:30 PM 
 
+## TA
+Name: Le Zhang <br> 
+Email: le.zhang001@email.ucr.edu <br>
+Office hour: Tue 11:00am - 12::00 pm
+
 
 ## Description
 
@@ -79,6 +84,11 @@ and [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) or
 [FileZilla](https://filezilla-project.org/download.php?type=client). In
 addition, a recent version of [R](http://www.r-project.org) and
 [RStudio](http://rstudio.org) should be installed on each laptop.
+
+GEN242-2021: This year the class is offered online. Students are recommended to have at least one 
+more monitor screen in addition to the laptop screen or use a single large and wide monitor screen.
+This setting will allow students to use one screen to watch the instructor's
+coding and practice the same coding on the other screen. 
 
 ## Schedule
 
