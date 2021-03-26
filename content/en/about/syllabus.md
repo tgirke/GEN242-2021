@@ -24,7 +24,7 @@ Office hours: Tue & Thu 4:30 - 5:30 PM
 ## TA
 Name: Le Zhang <br> 
 Email: le.zhang001@email.ucr.edu <br>
-Office hour: Tue 11:00am - 12::00 pm
+Office hour: Tue 11:00am - 12:00 pm
 
 
 ## Description
@@ -85,9 +85,10 @@ and [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) or
 addition, a recent version of [R](http://www.r-project.org) and
 [RStudio](http://rstudio.org) should be installed on each laptop.
 
-If possible students may want to attend class sessions from a monitor setup either with
-with one wide monitor or two monitors. This allows viewing of presentations
-on one screen and following along hands-on practicals on the other screen. 
+If possible students may want to attend class sessions from a monitor setup
+with either one large monitor (wide enough to display several windows) or two
+separate monitors. This allows simultaneous viewing of presentations on one
+screen and following along hands-on practicals on the other screen. 
 
 ## Schedule
 
