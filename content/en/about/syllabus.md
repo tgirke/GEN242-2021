@@ -85,10 +85,9 @@ and [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) or
 addition, a recent version of [R](http://www.r-project.org) and
 [RStudio](http://rstudio.org) should be installed on each laptop.
 
-GEN242-2021: This year the class is offered online. Students are recommended to have at least one 
-more monitor screen in addition to the laptop screen or use a single large and wide monitor screen.
-This setting will allow students to use one screen to watch the instructor's
-coding and practice the same coding on the other screen. 
+If possible students may want to attend class sessions from a monitor setup either with
+with one wide monitor or two monitors. This allows viewing of presentations
+on one screen and following along hands-on practicals on the other screen. 
 
 ## Schedule
 
