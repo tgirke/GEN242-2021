@@ -18,13 +18,16 @@ See Google Doc version [here](https://bit.ly/3aWtMQJ).
 ## Instructor
 Name: Thomas Girke <br> 
 Email: thomas.girke@ucr.edu <br>
-Office location: 1207F Genomics <br>
-Office hours: Tue & Thu 4:30 - 5:30 PM 
+Office location: virtual via Zoom <br>
+Office hour: Tue 4:30 - 5:30 PM <br>
+Zoom URL: privately shared
 
 ## TA
 Name: Le Zhang <br> 
 Email: le.zhang001@email.ucr.edu <br>
-Office hour: Tue 11:00am - 12:00 pm
+Office location: virtual via Zoom <br>
+Office hour: Tue 11:00 - 12:00 PM <br>
+Zoom URL: privately shared
 
 
 ## Description
@@ -139,6 +142,7 @@ screen and following along hands-on practicals on the other screen.
 
 ### Journal articles
 
+
 A1. Huber W, Carey VJ, Gentleman R, Anders S, Carlson M, Carvalho BS, Bravo HC, Davis S, Gatto L, Girke T, et al (2015) Orchestrating high-throughput genomic analysis with Bioconductor. Nat Methods 12: 115–121
 
 A2. Metzker, M. L., Jan 2010. Sequencing technologies - the next generation. Nat Rev Genet 11 (1), 31–46. 
@@ -191,15 +195,17 @@ A25. Subramanian A, Tamayo P, Mootha VK, Mukherjee S, Ebert BL, Gillette MA, Pau
 
 A26. Ashburner M, Ball CA, Blake JA, Botstein D, Butler H, Cherry JM, Davis AP, Dolinski K, Dwight SS, Eppig JT, et al (2000) Gene ontology: tool for the unification of biology. The Gene Ontology Consortium. Nat Genet 25: 25–29.
 
-A27. Alkan, C, Sajjadian, S, Eichler, E E (2011) Limitations of next-generation genome sequence assembly. Nat Methods, 8: 61-65. 
+A27. Zyla J, Marczyk M, Domaszewska T, Kaufmann SHE, Polanska J, Weiner J (2019) Gene set enrichment for reproducible science: comparison of CERNO and eight other algorithms. Bioinformatics 35: 5146–5154
 
-A28. Eddy SR (1998) Profile hidden Markov models. Bioinformatics 14: 755–763.
+A28. Alkan, C, Sajjadian, S, Eichler, E E (2011) Limitations of next-generation genome sequence assembly. Nat Methods, 8: 61-65. 
 
-A29. Grabherr, M G, Haas, B J, Yassour, M, Levin, J Z, Thompson, D A, Amit, I, Adiconis, X, Fan, L, Raychowdhury, R, Zeng, Q, Chen, Z, Mauceli, E, Hacohen, N, Gnirke, A, Rhind, N, di Palma, F, Birren, B W, Nusbaum, C, Lindblad-Toh, K, Friedman, N, Regev, A (2011) Full-length transcriptome assembly from RNA-Seq data without a reference genome. Nat Biotechnol, 29: 644-652. 
+A29. Eddy SR (1998) Profile hidden Markov models. Bioinformatics 14: 755–763.
 
-A30. Zeitouni, B, Boeva, V, Janoueix-Lerosey, I, Loeillet, S, Legoix-ne, P, Nicolas, A, Delattre, O, Barillot, E (2010) SVDetect: a tool to identify genomic structural variations from paired-end and mate-pair sequencing data. Bioinformatics, 26: 1895-1896.
+A30. Grabherr, M G, Haas, B J, Yassour, M, Levin, J Z, Thompson, D A, Amit, I, Adiconis, X, Fan, L, Raychowdhury, R, Zeng, Q, Chen, Z, Mauceli, E, Hacohen, N, Gnirke, A, Rhind, N, di Palma, F, Birren, B W, Nusbaum, C, Lindblad-Toh, K, Friedman, N, Regev, A (2011) Full-length transcriptome assembly from RNA-Seq data without a reference genome. Nat Biotechnol, 29: 644-652. 
 
-A31. Ronquist F, Teslenko M, van der Mark P, Ayres DL, Darling A, Höhna S, Larget B, Liu L, Suchard MA, Huelsenbeck JP (2012) MrBayes 3.2: efficient Bayesian phylogenetic inference and model choice across a large model space. Syst Biol 61: 539–542.
+A31. Zeitouni, B, Boeva, V, Janoueix-Lerosey, I, Loeillet, S, Legoix-ne, P, Nicolas, A, Delattre, O, Barillot, E (2010) SVDetect: a tool to identify genomic structural variations from paired-end and mate-pair sequencing data. Bioinformatics, 26: 1895-1896.
+
+A32. Ronquist F, Teslenko M, van der Mark P, Ayres DL, Darling A, Höhna S, Larget B, Liu L, Suchard MA, Huelsenbeck JP (2012) MrBayes 3.2: efficient Bayesian phylogenetic inference and model choice across a large model space. Syst Biol 61: 539–542.
 
 
 ### Tutorials
