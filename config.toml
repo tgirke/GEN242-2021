@@ -619,18 +619,23 @@ enable = true
     parent = "Links"
     weight = 1
   [[menu.main]]
+    name = "GitHub Classroom"
+    url = "https://classroom.github.com/classrooms/"
+    parent = "Links"
+    weight = 2
+  [[menu.main]]
     name = "GitHub Repo"
     url = "https://github.com/tgirke/GEN242"
     parent = "Links"
-    weight = 2
+    weight = 3
   [[menu.main]]
     name = "Bioconductor"
     url = "https://bioconductor.org/"
     parent = "Links"
-    weight = 3
+    weight = 4
   [[menu.main]]
     name = "Hugo, Docsy & R"
     url = "https://www.dcassol.com/docsy_Rmarkdown/rmarkdown/install/"
     parent = "Links"
-    weight = 3
+    weight = 5
 
