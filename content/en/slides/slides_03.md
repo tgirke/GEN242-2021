@@ -8,9 +8,9 @@ weight: 103
 
 <br></br>
 
-Slide show to be posted.
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSmL8ScleNYOZJK_jmfkhcsBn3j6tpiFqLRUwbtRWwl9yv9uVNj7sC4An928FdBMaZCNNTrDTYRMdi3/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
-[ [Download](...) ]
+[ [Download](https://docs.google.com/presentation/d/1QMKFF5iNrbO06VMG9lI6hTY-rMsb_k6LSd6qtHepRDk/edit?usp=sharing) ]
 
 
 
