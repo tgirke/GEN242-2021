@@ -375,12 +375,12 @@ enable = true
   url = "/tutorials/"
   [[menu.main]]
     name = "GitHub Introduction (T1)"
-    url = "/tutorials/tutorial_01"
+    url = "/tutorials/github/github/"
     parent = "Tutorials"
     weight = 201
   [[menu.main]]
     name = "Linux and HPCC Cluster (T2)"
-    url = "/tutorials/tutorial_02"
+    url = "/tutorials/linux/linux/"
     parent = "Tutorials"
     weight = 202
   [[menu.main]]
