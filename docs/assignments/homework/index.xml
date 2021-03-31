@@ -84,7 +84,7 @@
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Download code from this page&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;wget http://biocluster.ucr.edu/~tgirke/Linux.sh 
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;wget https://cluster.hpcc.ucr.edu/~tgirke/Linux.sh 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -138,21 +138,6 @@ Record result from final BLAST command (with &lt;code&gt;outfmt 6&lt;/code&gt;) 
 &lt;p&gt;Upload result file to your private course GitHub repository under &lt;code&gt;Homework/HW2/HW2.txt&lt;/code&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;due-date&#34;&gt;Due date&lt;/h2&gt;
 &lt;p&gt;Most homeworks will be due one week after they are assigned. This one is due on Thu, April 12th at 6:00 PM.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Assignments: Homework 2</title>
-      <link>/assignments/homework/hw02/hw2/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/assignments/homework/hw02/hw2/</guid>
-      <description>
-        
-        
-        &lt;p&gt;&lt;br&gt;&lt;/br&gt;&lt;/p&gt;
-&lt;p&gt;HW to be posted.&lt;/p&gt;
 
       </description>
     </item>
