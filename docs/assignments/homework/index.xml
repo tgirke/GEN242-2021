@@ -14,26 +14,140 @@
     
     
     <item>
-      <title>Assignments: Homework 1</title>
-      <link>/assignments/homework/hw1/</link>
+      <title>Assignments: HW1 - Online Databases and Software</title>
+      <link>/assignments/homework/hw01/hw01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/assignments/homework/hw1/</guid>
+      <guid>/assignments/homework/hw01/hw01/</guid>
       <description>
         
         
-        &lt;p&gt;&lt;br&gt;&lt;/br&gt;&lt;/p&gt;
-&lt;p&gt;HW to be posted.&lt;/p&gt;
+        &lt;h2 id=&#34;topic-databases-and-software&#34;&gt;Topic: Databases and Software&lt;/h2&gt;
+&lt;p&gt;This is an easy warm-up homework exposing students to a variety of online databases and software tools.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Go to &lt;a href=&#34;http://www.ncbi.nlm.nih.gov&#34;&gt;http://www.ncbi.nlm.nih.gov&lt;/a&gt;, select protein DB, run query: &lt;code&gt;P450 &amp;amp; hydroxylase &amp;amp; human [organism]&lt;/code&gt;, select under &lt;em&gt;Source&lt;/em&gt; databases UniProtKB/Swiss-Prot&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Report final query syntax from &lt;em&gt;Details&lt;/em&gt; page.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Save GIs from this final query to file (select GI List format under display)&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Report the number of retrieved GIs.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Retrieve the corresponding sequences through &lt;a href=&#34;http://www.ncbi.nlm.nih.gov/sites/batchentrez&#34;&gt;Batch-Entrez&lt;/a&gt; using GI list file as query input -&amp;gt; save sequences in FASTA format&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Generate multiple alignment and tree of these sequences using &lt;a href=&#34;http://bioinfo.genotoul.fr/multalin&#34;&gt;MultAalin&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Save multiple alignment and tree to file&lt;/li&gt;
+&lt;li&gt;Identify putative heme binding cysteine in multiple alignment&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Open corresponding &lt;a href=&#34;http://www.uniprot.org&#34;&gt;UniProt page&lt;/a&gt; and search for first P450 sequence in your list.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Compare putative heme binding cysteine with consensus pattern from Prosite database (&lt;a href=&#34;http://prosite.expasy.org/scanprosite/scanprosite_doc.html#mo_motifs&#34;&gt;Syntax&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Report corresponding Pfam ID&lt;/li&gt;
+&lt;li&gt;How many mouse (Mus musculus) sequences are in this family (use species tree from Pfam db)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.ncbi.nlm.nih.gov/blast/Blast.cgi&#34;&gt;BLASTP&lt;/a&gt; against nr database (use again first P450 in your list); on next two pages click on P450 and CypX domains, respectively (this runs RPS-BLAST).&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Compare resulting alignment with result from MultAlin&lt;/li&gt;
+&lt;li&gt;View 3D structure in Cn3D, save structure (screen shot) and highlight heme binding cysteine&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;homework-submission&#34;&gt;Homework submission&lt;/h2&gt;
+&lt;p&gt;Please assemble the results of this homework in one PDF file and upload it to your private course GitHub repository under &lt;code&gt;Homework/HW1/HW1.pdf&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;due-date&#34;&gt;Due date&lt;/h2&gt;
+&lt;p&gt;Most homeworks will be due one week after they are assigned. This one is due on Thu, April 12th at 6:00 PM.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Assignments: HW2 - Introduction to Biocluster and Linux</title>
+      <link>/assignments/homework/hw02/hw02/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/assignments/homework/hw02/hw02/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;topic-linux-basics&#34;&gt;Topic: Linux Basics&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Download code from this page&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;wget http://biocluster.ucr.edu/~tgirke/Linux.sh 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Download Halobacterium proteome and inspect it&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;wget ftp://ftp.ncbi.nlm.nih.gov/genomes/genbank/archaea/Halobacterium_salinarum/representative/GCA_000006805.1_ASM680v1/GCA_000006805.1_ASM680v1_protein.faa.gz
+gunzip GCA_000006805.1_ASM680v1_protein.faa.gz
+mv GCA_000006805.1_ASM680v1_protein.faa halobacterium.faa
+less halobacterium.faa # press q to quit
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;How many protein sequences are stored in the downloaded file?&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;grep &#39;&amp;gt;&#39; halobacterium.faa | wc
+grep &#39;^&amp;gt;&#39; halobacterium.faa --count
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;How many proteins contain the pattern &lt;code&gt;WxHxxH&lt;/code&gt; or &lt;code&gt;WxHxxHH&lt;/code&gt;?&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;egrep &#39;W.H..H{1,2}&#39; halobacterium.faa --count
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use &lt;code&gt;less&lt;/code&gt; to find IDs for pattern matches or use &lt;code&gt;awk&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;awk --posix -v RS=&#39;&amp;gt;&#39; &#39;/W.H..(H){1,2}/ { print &amp;quot;&amp;gt;&amp;quot; $0;}&#39; halobacterium.faa | less
+awk --posix -v RS=&#39;&amp;gt;&#39; &#39;/W.H..(H){1,2}/ { print &amp;quot;&amp;gt;&amp;quot; $0;}&#39; halobacterium.faa | grep &#39;^&amp;gt;&#39; | cut -c 2- | cut -f 1 -d\ &amp;gt; myIDs
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create a BLASTable database with &lt;code&gt;formatdb&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;module load ncbi-blast
+makeblastdb -in halobacterium.faa -out halobacterium.faa -dbtype prot -hash_index -parse_seqids
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Query BLASTable database by IDs stored in a file (&lt;em&gt;e.g.&lt;/em&gt; &lt;code&gt;myIDs&lt;/code&gt;)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;blastdbcmd -db halobacterium.faa -dbtype prot -entry_batch myIDs -get_dups -out myseq.fasta
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Run BLAST search for sequences stored in &lt;code&gt;myseq.fasta&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;blastp -query myseq.fasta -db halobacterium.faa -outfmt 0 -evalue 1e-6 -out blastp.out
+blastp -query myseq.fasta -db halobacterium.faa -outfmt 6 -evalue 1e-6 -out blastp.tab
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Additional exercise material in &lt;a href=&#34;http://hpcc.ucr.edu/manuals_linux-basics.html#exercises&#34;&gt;Linux Manual&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;homework-assignment&#34;&gt;Homework assignment&lt;/h2&gt;
+&lt;p&gt;Perform above analysis on the following &lt;em&gt;Escherichia coli&lt;/em&gt; strain: &lt;a href=&#34;ftp://ftp.ncbi.nih.gov/genomes/genbank/bacteria/Escherichia_coli/latest_assembly_versions/GCA_000461395.1_Esch_coli_UMEA_3592-1_V1/GCA_000461395.1_Esch_coli_UMEA_3592-1_V1_protein.faa.gz&#34;&gt;ftp://ftp.ncbi.nih.gov/genomes/genbank/bacteria/Escherichia_coli/latest_assembly_versions/GCA_000461395.1_Esch_coli_UMEA_3592-1_V1/GCA_000461395.1_Esch_coli_UMEA_3592-1_V1_protein.faa.gz&lt;/a&gt;.
+Record result from final BLAST command (with &lt;code&gt;outfmt 6&lt;/code&gt;) in text file.&lt;/p&gt;
+&lt;h2 id=&#34;homework-submission&#34;&gt;Homework submission&lt;/h2&gt;
+&lt;p&gt;Upload result file to your private course GitHub repository under &lt;code&gt;Homework/HW2/HW2.txt&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;due-date&#34;&gt;Due date&lt;/h2&gt;
+&lt;p&gt;Most homeworks will be due one week after they are assigned. This one is due on Thu, April 12th at 6:00 PM.&lt;/p&gt;
 
       </description>
     </item>
     
     <item>
       <title>Assignments: Homework 2</title>
-      <link>/assignments/homework/hw2/</link>
+      <link>/assignments/homework/hw02/hw2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/assignments/homework/hw2/</guid>
+      <guid>/assignments/homework/hw02/hw2/</guid>
       <description>
         
         

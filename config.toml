@@ -495,14 +495,14 @@ enable = true
     weight = 300
   [[menu.main]]
     name = "HW1"
-    url = "/assignments/Homework/HW1/"
+    url = "/assignments/Homework/HW01/HW01/"
     parent = "Assignments"
     weight = 301
     [menu.main.params]
       level = 2
   [[menu.main]]
     name = "HW2"
-    url = "/assignments/Homework/HW2/"
+    url = "/assignments/Homework/HW02/HW02/"
     parent = "Assignments"
     weight = 302
     [menu.main.params]
