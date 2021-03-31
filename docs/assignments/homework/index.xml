@@ -130,9 +130,9 @@ blastp -query myseq.fasta -db halobacterium.faa -outfmt 6 -evalue 1e-6 -out blas
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Additional exercise material in &lt;a href=&#34;http://hpcc.ucr.edu/manuals_linux-basics.html#exercises&#34;&gt;Linux Manual&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Additional exercise material in &lt;a href=&#34;https://hpcc.ucr.edu/manuals_linux-basics_shell.html&#34;&gt;Linux Manual&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;homework-assignment&#34;&gt;Homework assignment&lt;/h2&gt;
-&lt;p&gt;Perform above analysis on the following &lt;em&gt;Escherichia coli&lt;/em&gt; strain: &lt;a href=&#34;ftp://ftp.ncbi.nih.gov/genomes/genbank/bacteria/Escherichia_coli/latest_assembly_versions/GCA_000461395.1_Esch_coli_UMEA_3592-1_V1/GCA_000461395.1_Esch_coli_UMEA_3592-1_V1_protein.faa.gz&#34;&gt;ftp://ftp.ncbi.nih.gov/genomes/genbank/bacteria/Escherichia_coli/latest_assembly_versions/GCA_000461395.1_Esch_coli_UMEA_3592-1_V1/GCA_000461395.1_Esch_coli_UMEA_3592-1_V1_protein.faa.gz&lt;/a&gt;.
+&lt;p&gt;Perform above analysis on the following &lt;em&gt;Escherichia coli&lt;/em&gt; strain: &lt;a href=&#34;ftp://ftp.ncbi.nih.gov/genomes/genbank/bacteria/Escherichia_coli/latest_assembly_versions/GCA_000461395.1_Esch_coli_UMEA_3592-1_V1/GCA_000461395.1_Esch_coli_UMEA_3592-1_V1_protein.faa.gz&#34;&gt;Esch_coli_UMEA_3592-1_V1&lt;/a&gt;.
 Record result from final BLAST command (with &lt;code&gt;outfmt 6&lt;/code&gt;) in text file.&lt;/p&gt;
 &lt;h2 id=&#34;homework-submission&#34;&gt;Homework submission&lt;/h2&gt;
 &lt;p&gt;Upload result file to your private course GitHub repository under &lt;code&gt;Homework/HW2/HW2.txt&lt;/code&gt;.&lt;/p&gt;
