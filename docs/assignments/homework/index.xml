@@ -91,14 +91,11 @@ In this homework, you are asked to create a github &lt;strong&gt;private&lt;/str
 &lt;p&gt;Note, the creator of this demo cannot search for an invitation created by the same user
 (here lz100). Thus, the message &amp;lsquo;could not find lz100&amp;rsquo; at the end of the video. This
 will not be the case for students in the class.&lt;/p&gt;
-&lt;p&gt;No submission is required for this part (A).&lt;/p&gt;
+&lt;p&gt;Please assemble the results of part A of HW1 in one PDF file named &lt;code&gt;hw1.pdf&lt;/code&gt; and upload it to your private GitHub repository generated in part B. To do so, follow the upload instructions &lt;a href=&#34;https://girke.bioinformatics.ucr.edu/GEN242/tutorials/github/github/#online-file-upload&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;c-homework-submission-via-github-classroom&#34;&gt;C. Homework Submission via GitHub Classroom&lt;/h2&gt;
-&lt;p&gt;Click &lt;a href=&#34;https://classroom.github.com/a/uvuGwqec&#34;&gt;this link&lt;/a&gt; to accept the homework.
-It will create a private repository for you.&lt;/p&gt;
-&lt;p&gt;Please assemble the results of this homework in one PDF file and upload it to your private homework1 GitHub repository and name it &lt;code&gt;hw1.pdf&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Note: this new repository for the homework is &lt;strong&gt;different&lt;/strong&gt; from the
-repository in part A. This repository
-belongs to the &lt;code&gt;GEN242-2021&lt;/code&gt; Github classroom.&lt;/p&gt;
+&lt;p&gt;To also submit your homework to GitHub Classroom click &lt;a href=&#34;https://classroom.github.com/a/uvuGwqec&#34;&gt;this link&lt;/a&gt; to accept the homework.
+This will create a private homework repository in GitHub Classroom for you. Note: this new repository is &lt;strong&gt;different&lt;/strong&gt; from the
+repository in part A. It belongs to the &lt;code&gt;GEN242-2021&lt;/code&gt; Github classroom that will be used for all subsequent homework submissions.&lt;/p&gt;
 &lt;h2 id=&#34;due-date&#34;&gt;Due date&lt;/h2&gt;
 &lt;p&gt;Most homework will be due one week after they are assigned. This one is due on Thu, April 8th at 6:00 PM. You have unlimited attempts. Students can edit and re-upload files
 anytime before the deadline.&lt;/p&gt;
