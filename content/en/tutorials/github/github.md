@@ -99,7 +99,7 @@ Also try [interactive git tutorial](https://try.github.io/levels/1/challenges/1)
 
 ## Exercise
 
-Run the following git/github excercise from the command-line. Do this after creating a GitHub repos online according the instructions [here](https://girke.bioinformatics.ucr.edu/GEN242/assignments/homework/hw01/hw01/#b-homework-submission-to-a-private-github-repository).
+Run the following git/github excercise from the command-line. Do this after creating a GitHub repos according to the instructions above or online as outlined [here](https://girke.bioinformatics.ucr.edu/GEN242/assignments/homework/hw01/hw01/#b-homework-submission-to-a-private-github-repository).
 
 ```sh 
 git clone https://github.com/<user or org>/<repo name> 
