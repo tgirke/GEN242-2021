@@ -63,23 +63,25 @@
 &lt;/ol&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;ol start=&#34;6&#34;&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.ncbi.nlm.nih.gov/blast/Blast.cgi&#34;&gt;BLASTP&lt;/a&gt; against nr database (use again first P450 in your list); on next two pages click on P450 and CypX domains, respectively (this runs RPS-BLAST).
+&lt;li&gt;&lt;a href=&#34;http://www.ncbi.nlm.nih.gov/blast/Blast.cgi&#34;&gt;BLASTP&lt;/a&gt; against PDF database (use again first P450 in your list);
+on result page click first entry in BLAST hit list (here &lt;a href=&#34;https://www.ncbi.nlm.nih.gov/protein/3K9V_A?report=genbank&amp;amp;log$=protalign&amp;amp;blast_rank=1&amp;amp;RID=6BZUZS51016&#34;&gt;3K9V_A&lt;/a&gt;); then select &amp;lsquo;Identify Conserved Domains&amp;rsquo; on side bar; click blue bar labelled &amp;lsquo;CYP24A1&amp;rsquo;; then select &amp;lsquo;Interactive View&amp;rsquo; which will download &amp;lsquo;cd20645.cn3&amp;rsquo; file.
 &lt;ol&gt;
 &lt;li&gt;Compare resulting alignment with result from MultAlin&lt;/li&gt;
-&lt;li&gt;View 3D structure in Cn3D, save structure (screen shot) and highlight heme binding cysteine&lt;/li&gt;
+&lt;li&gt;View 3D structure in Cn3D, save structure (screen shot) and highlight heme binding cysteine. Note, Cn3D can be downloaded from &lt;a href=&#34;https://www.ncbi.nlm.nih.gov/Structure/CN3D/cn3d.shtml&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;b-homework-submission-to-a-private-github-repository&#34;&gt;B. Homework Submission to a Private GitHub Repository&lt;/h2&gt;
-&lt;p&gt;In this homework, you are asked to create a github &lt;strong&gt;private&lt;/strong&gt; repository.&lt;/p&gt;
+&lt;p&gt;To learn the basics of GitHub, this homework assignment will be uploaded to a private GitHub respository that will be shared with the instructors. To do so, follow these steps:
+In this homework, you are asked to create a github &lt;strong&gt;private&lt;/strong&gt; repository.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Login to your github.&lt;/li&gt;
-&lt;li&gt;Click the &amp;ldquo;&lt;strong&gt;New&amp;rdquo;&lt;/strong&gt; button from left sidebar.&lt;/li&gt;
-&lt;li&gt;In &amp;ldquo;&lt;strong&gt;Repository name&amp;rdquo;&lt;/strong&gt;, write &lt;strong&gt;&amp;ldquo;learn-github&amp;rdquo;&lt;/strong&gt; as the name.&lt;/li&gt;
+&lt;li&gt;Login to your GitHub account.&lt;/li&gt;
+&lt;li&gt;Click the &amp;ldquo;&lt;strong&gt;New&amp;rdquo;&lt;/strong&gt; button in the sidebar on the left.&lt;/li&gt;
+&lt;li&gt;Under &amp;ldquo;&lt;strong&gt;Repository name&amp;rdquo;&lt;/strong&gt;, use &lt;strong&gt;&amp;ldquo;learn-github&amp;rdquo;&lt;/strong&gt; as the name.&lt;/li&gt;
 &lt;li&gt;Choose &amp;ldquo;&lt;strong&gt;Private&lt;/strong&gt;&amp;rdquo;.&lt;/li&gt;
 &lt;li&gt;Choose to add a README file (optional).&lt;/li&gt;
 &lt;li&gt;Click &amp;ldquo;&lt;strong&gt;Create repository&lt;/strong&gt;&amp;rdquo;.&lt;/li&gt;
-&lt;li&gt;It should jump you to the new repo&amp;rsquo;s page. In the new page, click &amp;ldquo;&lt;strong&gt;Settings&lt;/strong&gt;&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;You should redirected to your new repo&amp;rsquo;s page. In the new page, click &amp;ldquo;&lt;strong&gt;Settings&lt;/strong&gt;&amp;rdquo;.&lt;/li&gt;
 &lt;li&gt;Click &amp;ldquo;&lt;strong&gt;Manage access&lt;/strong&gt;&amp;rdquo;, and the choose &amp;ldquo;&lt;strong&gt;Invite a collaborator&lt;/strong&gt;&amp;rdquo;.&lt;/li&gt;
 &lt;li&gt;Invite both &amp;ldquo;&lt;strong&gt;tgirke&lt;/strong&gt;&amp;rdquo; and &amp;ldquo;&lt;strong&gt;lz100&lt;/strong&gt;&amp;rdquo; and send out the invitation.&lt;/li&gt;
 &lt;/ol&gt;
