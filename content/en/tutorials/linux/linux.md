@@ -234,7 +234,7 @@ ln -s original_filename new_nickname
 ## Software and module system
 
 * Over 2,000 software tools are currently installed on HPCC Cluster
-* Custom installs in user accounts via various mechanisms, e.g. conda
+* Custom installs in user accounts via various mechanisms, e.g. environment management systems such as [conda](https://conda.io/projects/conda/en/latest/index.html)
 * Most common research databases used in bioinformatics are available
 * Support of most common programming languages used in research computing
 * A module system is used to facilitate the management of software tools. This includes any number of versions of each software.
