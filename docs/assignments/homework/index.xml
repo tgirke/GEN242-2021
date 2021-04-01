@@ -22,27 +22,7 @@
       <description>
         
         
-        &lt;h2 id=&#34;a-create-a-private-github-repository&#34;&gt;A: create a private GitHub repository&lt;/h2&gt;
-&lt;p&gt;In this homework, you are asked to create a github &lt;strong&gt;private&lt;/strong&gt; repository.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Login to your github.&lt;/li&gt;
-&lt;li&gt;Click the &amp;ldquo;&lt;strong&gt;New&amp;rdquo;&lt;/strong&gt; button from left sidebar.&lt;/li&gt;
-&lt;li&gt;In &amp;ldquo;&lt;strong&gt;Repository name&amp;rdquo;&lt;/strong&gt;, write &lt;strong&gt;&amp;ldquo;learn-github&amp;rdquo;&lt;/strong&gt; as the name.&lt;/li&gt;
-&lt;li&gt;Choose &amp;ldquo;&lt;strong&gt;Private&lt;/strong&gt;&amp;rdquo;.&lt;/li&gt;
-&lt;li&gt;Choose to add a README file (optional).&lt;/li&gt;
-&lt;li&gt;Click &amp;ldquo;&lt;strong&gt;Create repository&lt;/strong&gt;&amp;rdquo;.&lt;/li&gt;
-&lt;li&gt;It should jump you to the new repo&amp;rsquo;s page. In the new page, click &amp;ldquo;&lt;strong&gt;Settings&lt;/strong&gt;&amp;rdquo;.&lt;/li&gt;
-&lt;li&gt;Click &amp;ldquo;&lt;strong&gt;Manage access&lt;/strong&gt;&amp;rdquo;, and the choose &amp;ldquo;&lt;strong&gt;Invite a collaborator&lt;/strong&gt;&amp;rdquo;.&lt;/li&gt;
-&lt;li&gt;Invite both &amp;ldquo;&lt;strong&gt;tgirke&lt;/strong&gt;&amp;rdquo; and &amp;ldquo;&lt;strong&gt;lz100&lt;/strong&gt;&amp;rdquo; and send out the invitation.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;video width=&#34;100%&#34; height=&#34;100%&#34; controls&gt;
-  &lt;source src=&#34;https://github.com/GEN242-2021/class_notes/blob/main/week1/GitHub.mp4?raw=true&#34; type=&#34;video/mp4&#34;&gt;
-&lt;/video&gt;
-&lt;p&gt;Note, the creator of this demo cannot search for an invitation created by the same user
-(here lz100). Thus, the message &amp;lsquo;could not find &lt;code&gt;lz100&lt;/code&gt; at the end of the video. This
-will not be the case for students in the class.&lt;/p&gt;
-&lt;p&gt;No submission is required for this part (A).&lt;/p&gt;
-&lt;h2 id=&#34;b-databases-and-software&#34;&gt;B: Databases and Software&lt;/h2&gt;
+        &lt;h2 id=&#34;databases-and-software&#34;&gt;Databases and Software&lt;/h2&gt;
 &lt;p&gt;This is an easy warm-up homework exposing students to a variety of online databases and software tools.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -82,6 +62,26 @@ will not be the case for students in the class.&lt;/p&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
+&lt;h2 id=&#34;homework-submission-to-a-private-github-repository&#34;&gt;Homework submission to a private GitHub repository&lt;/h2&gt;
+&lt;p&gt;In this homework, you are asked to create a github &lt;strong&gt;private&lt;/strong&gt; repository.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Login to your github.&lt;/li&gt;
+&lt;li&gt;Click the &amp;ldquo;&lt;strong&gt;New&amp;rdquo;&lt;/strong&gt; button from left sidebar.&lt;/li&gt;
+&lt;li&gt;In &amp;ldquo;&lt;strong&gt;Repository name&amp;rdquo;&lt;/strong&gt;, write &lt;strong&gt;&amp;ldquo;learn-github&amp;rdquo;&lt;/strong&gt; as the name.&lt;/li&gt;
+&lt;li&gt;Choose &amp;ldquo;&lt;strong&gt;Private&lt;/strong&gt;&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;Choose to add a README file (optional).&lt;/li&gt;
+&lt;li&gt;Click &amp;ldquo;&lt;strong&gt;Create repository&lt;/strong&gt;&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;It should jump you to the new repo&amp;rsquo;s page. In the new page, click &amp;ldquo;&lt;strong&gt;Settings&lt;/strong&gt;&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;Click &amp;ldquo;&lt;strong&gt;Manage access&lt;/strong&gt;&amp;rdquo;, and the choose &amp;ldquo;&lt;strong&gt;Invite a collaborator&lt;/strong&gt;&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;Invite both &amp;ldquo;&lt;strong&gt;tgirke&lt;/strong&gt;&amp;rdquo; and &amp;ldquo;&lt;strong&gt;lz100&lt;/strong&gt;&amp;rdquo; and send out the invitation.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;video width=&#34;100%&#34; height=&#34;100%&#34; controls&gt;
+  &lt;source src=&#34;https://github.com/GEN242-2021/class_notes/blob/main/week1/GitHub.mp4?raw=true&#34; type=&#34;video/mp4&#34;&gt;
+&lt;/video&gt;
+&lt;p&gt;Note, the creator of this demo cannot search for an invitation created by the same user
+(here lz100). Thus, the message &amp;lsquo;could not find &lt;code&gt;lz100&lt;/code&gt; at the end of the video. This
+will not be the case for students in the class.&lt;/p&gt;
+&lt;p&gt;No submission is required for this part (A).&lt;/p&gt;
 &lt;h2 id=&#34;homework-submission&#34;&gt;Homework submission&lt;/h2&gt;
 &lt;p&gt;Click &lt;a href=&#34;https://classroom.github.com/a/uvuGwqec&#34;&gt;this link&lt;/a&gt; to accept the homework.
 It will create a private repository for you.&lt;/p&gt;
@@ -90,7 +90,7 @@ It will create a private repository for you.&lt;/p&gt;
 repository in part A. This repository
 belongs to the &lt;code&gt;GEN242-2021&lt;/code&gt; Github classroom.&lt;/p&gt;
 &lt;h2 id=&#34;due-date&#34;&gt;Due date&lt;/h2&gt;
-&lt;p&gt;Most homework will be due one week after they are assigned. This one is due on Thu, April 8th at 6:00 PM. You have unlimited attempts. You can edit/reupload files
+&lt;p&gt;Most homework will be due one week after they are assigned. This one is due on Thu, April 8th at 6:00 PM. You have unlimited attempts. Students can edit and re-upload files
 anytime before the deadline.&lt;/p&gt;
 
       </description>
