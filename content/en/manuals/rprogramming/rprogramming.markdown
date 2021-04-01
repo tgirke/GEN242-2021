@@ -1,7 +1,7 @@
 ---
 title: "Programming in R" 
 author: "Author: Thomas Girke"
-date: "Last update: 24 March, 2021" 
+date: "Last update: 31 March, 2021" 
 output:
   html_document:
     toc: true
@@ -23,13 +23,11 @@ type: docs
 - Compile from command-line
 Rscript -e "rmarkdown::render('Programming_in_R.Rmd', c('html_document'), clean=F); knitr::knit('Programming_in_R.Rmd', tangle=TRUE)"; Rscript ../md2jekyll.R Programming_in_R.knit.md 9; Rscript -e "rmarkdown::render('Programming_in_R.Rmd', c('pdf_document'))"
 -->
-
 <script type="text/javascript">
 document.addEventListener("DOMContentLoaded", function() {
   document.querySelector("h1").className = "title";
 });
 </script>
-
 <script type="text/javascript">
 document.addEventListener("DOMContentLoaded", function() {
   var links = document.links;  
@@ -51,15 +49,15 @@ environment to perform complex custom analyses of almost any type of data (Gentl
 
 ## Why Programming in R?
 
-  - Powerful statistical environment and programming language
-  - Facilitates reproducible research
-  - Efficient data structures make programming very easy
-  - Ease of implementing custom functions
-  - Powerful graphics
-  - Access to fast growing number of analysis packages
-  - Most widely used language in bioinformatics
-  - Is standard for data mining and biostatistical analysis
-  - Technical advantages: free, open-source, available for all OSs
+-   Powerful statistical environment and programming language
+-   Facilitates reproducible research
+-   Efficient data structures make programming very easy
+-   Ease of implementing custom functions
+-   Powerful graphics
+-   Access to fast growing number of analysis packages
+-   Most widely used language in bioinformatics
+-   Is standard for data mining and biostatistical analysis
+-   Technical advantages: free, open-source, available for all OSs
 
 ## R Basics
 
@@ -70,54 +68,43 @@ More details can be found in the R & BioConductor manual [here](http://manuals.b
 
 Several excellent code editors are available that provide functionalities like R syntax highlighting, auto code indenting and utilities to send code/functions to the R console.
 
-  - [RStudio](https://www.rstudio.com/products/rstudio/features/): GUI-based IDE for R
-  - [Vim-R-Tmux](http://manuals.bioinformatics.ucr.edu/home/programming-in-r/vim-r): R working environment based on vim and tmux
-  - [Emacs](http://www.xemacs.org/Download/index.html) ([ESS add-on package](http://ess.r-project.org/))
-  - [gedit](https://wiki.gnome.org/Apps/Gedit) and [Rgedit](https://wiki.gnome.org/Apps/Gedit)
-  - [RKWard](https://rkward.kde.org/)
-  - [Eclipse](http://www.walware.de/goto/statet)
-  - [Tinn-R](http://jekyll.math.byuh.edu/other/howto/tinnr/install.shtml)
-  - [Notepad++ (NppToR)](https://sourceforge.net/projects/npptor/)
+-   [RStudio](https://www.rstudio.com/products/rstudio/features/): GUI-based IDE for R
+-   [Vim-R-Tmux](http://manuals.bioinformatics.ucr.edu/home/programming-in-r/vim-r): R working environment based on vim and tmux
+-   [Emacs](http://www.xemacs.org/Download/index.html) ([ESS add-on package](http://ess.r-project.org/))
+-   [gedit](https://wiki.gnome.org/Apps/Gedit) and [Rgedit](https://wiki.gnome.org/Apps/Gedit)
+-   [RKWard](https://rkward.kde.org/)
+-   [Eclipse](http://www.walware.de/goto/statet)
+-   [Tinn-R](http://jekyll.math.byuh.edu/other/howto/tinnr/install.shtml)
+-   [Notepad++ (NppToR)](https://sourceforge.net/projects/npptor/)
 
 <center>
-
 Programming in R using RStudio
-
 </center>
-
 <center>
-
 <img title="R_Interfaces" src="../images/rstudio.png"/>
-
 </center>
-
 <center>
-
 Programming in R using Vim or Emacs
-
 </center>
-
 <center>
-
 <img title="vim-r" src="../images/vimR.png"/>
-
 </center>
 
 ## Finding Help
 
 Reference list on R programming (selection)
 
-  - [Advanced R](http://adv-r.had.co.nz/), by Hadley Wickham
-  - [R Programming for Bioinformatics](http://master.bioconductor.org/help/publications/books/r-programming-for-bioinformatics/), by Robert Gentleman
-  - [S Programming](http://www.stats.ox.ac.uk/pub/MASS3/Sprog/), by W. N. Venables and B. D. Ripley
-  - [Programming with Data](http://www.amazon.com/Programming-Data-Language-Lecture-Economics/dp/0387985034), by John M. Chambers
-  - [R Help](http://www1.maths.lth.se/help/R/) & [R Coding Conventions](http://www1.maths.lth.se/help/R/RCC/), Henrik Bengtsson, Lund University
-  - [Programming in R](http://zoonek2.free.fr/UNIX/48_R/02.html) (Vincent Zoonekynd)
-  - [Peter’s R Programming Pages](http://www2.warwick.ac.uk/fac/sci/moac/people/students/peter_cock/r), University of Warwick
-  - [Rtips](http://pj.freefaculty.org/R/statsRus.html), Paul Johnsson, University of Kansas
-  - [R for Programmers](http://heather.cs.ucdavis.edu/~matloff/r.html), Norm Matloff, UC Davis
-  - [High-Performance R](http://www.statistik.uni-dortmund.de/useR-2008/tutorials/useR2008introhighperfR.pdf), Dirk Eddelbuettel tutorial presented at useR-2008
-  - [C/C++ level programming for R](http://www.stat.harvard.edu/ccr2005/index.html), Gopi Goswami
+-   [Advanced R](http://adv-r.had.co.nz/), by Hadley Wickham
+-   [R Programming for Bioinformatics](http://master.bioconductor.org/help/publications/books/r-programming-for-bioinformatics/), by Robert Gentleman
+-   [S Programming](http://www.stats.ox.ac.uk/pub/MASS3/Sprog/), by W. N. Venables and B. D. Ripley
+-   [Programming with Data](http://www.amazon.com/Programming-Data-Language-Lecture-Economics/dp/0387985034), by John M. Chambers
+-   [R Help](http://www1.maths.lth.se/help/R/) & [R Coding Conventions](http://www1.maths.lth.se/help/R/RCC/), Henrik Bengtsson, Lund University
+-   [Programming in R](http://zoonek2.free.fr/UNIX/48_R/02.html) (Vincent Zoonekynd)
+-   [Peter’s R Programming Pages](http://www2.warwick.ac.uk/fac/sci/moac/people/students/peter_cock/r), University of Warwick
+-   [Rtips](http://pj.freefaculty.org/R/statsRus.html), Paul Johnsson, University of Kansas
+-   [R for Programmers](http://heather.cs.ucdavis.edu/~matloff/r.html), Norm Matloff, UC Davis
+-   [High-Performance R](http://www.statistik.uni-dortmund.de/useR-2008/tutorials/useR2008introhighperfR.pdf), Dirk Eddelbuettel tutorial presented at useR-2008
+-   [C/C++ level programming for R](http://www.stat.harvard.edu/ccr2005/index.html), Gopi Goswami
 
 ## Control Structures
 
@@ -125,18 +112,18 @@ Reference list on R programming (selection)
 
 #### Comparison operators
 
-  - `==` (equal)
-  - `!=` (not equal)
-  - `>` (greater than)
-  - `>=` (greater than or equal)
-  - `<` (less than)
-  - `<=` (less than or equal)
+-   `==` (equal)
+-   `!=` (not equal)
+-   `>` (greater than)
+-   `>=` (greater than or equal)
+-   `<` (less than)
+-   `<=` (less than or equal)
 
 #### Logical operators
 
-  - `&` (and)
-  - `|` (or)
-  - `!` (not)
+-   `&` (and)
+-   `|` (or)
+-   `!` (not)
 
 ### Conditional Executions: `if` Statements
 
@@ -280,10 +267,10 @@ apply(X, MARGIN, FUN, ARGs)
 
 **Arguments**
 
-  - `X`: `array`, `matrix` or `data.frame`
-  - `MARGIN`: `1` for rows, `2` for columns
-  - `FUN`: one or more functions
-  - `ARGs`: possible arguments for functions
+-   `X`: `array`, `matrix` or `data.frame`
+-   `MARGIN`: `1` for rows, `2` for columns
+-   `FUN`: one or more functions
+-   `ARGs`: possible arguments for functions
 
 **Example**
 
@@ -391,30 +378,30 @@ The value returned by a function is the value of the function body, which is usu
 
 **General**
 
-  - Functions are defined by
+-   Functions are defined by
     1.  The assignment with the keyword `function`
     2.  The declaration of arguments/variables (`arg1, arg2, ...`)
     3.  The definition of operations (`function_body`) that perform computations on the provided arguments. A function name needs to be assigned to call the function.
 
 **Naming**
 
-  - Function names can be almost anything. However, the usage of names of existing functions should be avoided.
+-   Function names can be almost anything. However, the usage of names of existing functions should be avoided.
 
 **Arguments**
 
-  - It is often useful to provide default values for arguments (*e.g.*: `arg1=1:10`). This way they don’t need to be provided in a function call. The argument list can also be left empty (`myfct <- function() { fct_body }`) if a function is expected to return always the same value(s). The argument `...` can be used to allow one function to pass on argument settings to another.
+-   It is often useful to provide default values for arguments (*e.g.*: `arg1=1:10`). This way they don’t need to be provided in a function call. The argument list can also be left empty (`myfct <- function() { fct_body }`) if a function is expected to return always the same value(s). The argument `...` can be used to allow one function to pass on argument settings to another.
 
 **Body**
 
-  - The actual expressions (commands/operations) are defined in the function body which should be enclosed by braces. The individual commands are separated by semicolons or new lines (preferred).
+-   The actual expressions (commands/operations) are defined in the function body which should be enclosed by braces. The individual commands are separated by semicolons or new lines (preferred).
 
 **Usage**
 
-  - Functions are called by their name followed by parentheses containing possible argument names. Empty parenthesis after the function name will result in an error message when a function requires certain arguments to be provided by the user. The function name alone will print the definition of a function.
+-   Functions are called by their name followed by parentheses containing possible argument names. Empty parenthesis after the function name will result in an error message when a function requires certain arguments to be provided by the user. The function name alone will print the definition of a function.
 
 **Scope**
 
-  - Variables created inside a function exist only for the life time of a function. Thus, they are not accessible outside of the function. To force variables in functions to exist globally, one can use the double assignment operator: `<<-`
+-   Variables created inside a function exist only for the life time of a function. Thus, they are not accessible outside of the function. To force variables in functions to exist globally, one can use the double assignment operator: `<<-`
 
 ### Examples
 
@@ -475,11 +462,11 @@ myfct
 
 Several debugging utilities are available for R. They include:
 
-  - `traceback`
-  - `browser`
-  - `options(error=recover)`
-  - `options(error=NULL)`
-  - `debug`
+-   `traceback`
+-   `browser`
+-   `options(error=recover)`
+-   `options(error=NULL)`
+-   `debug`
 
 The [Debugging in R page](http://www.stats.uwo.ca/faculty/murdoch/software/debuggingR/) provides an overview of the available resources.
 
@@ -1025,9 +1012,9 @@ sessionInfo()
 
 ## References
 
-<div id="refs" class="references">
+<div id="refs" class="references csl-bib-body hanging-indent">
 
-<div id="ref-Gentleman2008-xo">
+<div id="ref-Gentleman2008-xo" class="csl-entry">
 
 Gentleman, Robert. 2008. *R Programming for Bioinformatics (Chapman & Hall/CRC Computer Science & Data Analysis)*. 1 edition. Chapman; Hall/CRC. <http://www.amazon.com/Programming-Bioinformatics-Chapman-Computer-Analysis/dp/1420063677>.
 
