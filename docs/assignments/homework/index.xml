@@ -109,14 +109,14 @@ anytime before the deadline.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Download code from this page&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;wget https://cluster.hpcc.ucr.edu/~tgirke/Linux.sh 
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;wget https://cluster.hpcc.ucr.edu/~tgirke/Linux.sh --no-check-certificate 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Download Halobacterium proteome and inspect it&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;wget ftp://ftp.ncbi.nlm.nih.gov/genomes/genbank/archaea/Halobacterium_salinarum/representative/GCA_000006805.1_ASM680v1/GCA_000006805.1_ASM680v1_protein.faa.gz
-gunzip GCA_000006805.1_ASM680v1_protein.faa.gz
-mv GCA_000006805.1_ASM680v1_protein.faa halobacterium.faa
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;wget https://ftp.ncbi.nlm.nih.gov/genomes/genbank/archaea/Halobacterium_salinarum/representative/GCA_004799605.1_ASM479960v1/GCA_004799605.1_ASM479960v1_protein.faa.gz
+gunzip GCA_004799605.1_ASM479960v1_protein.faa.gz
+mv GCA_004799605.1_ASM479960v1_protein.faa halobacterium.faa
 less halobacterium.faa # press q to quit
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
