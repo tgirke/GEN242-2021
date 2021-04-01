@@ -26,30 +26,31 @@ The HPCC Cluster (formerly called biocluster) is a shared research computing sys
 
 ### Computer nodes
 
-- Over 4,500 CPU cores
-- 48 AMD computer nodes, each with 64 CPU cores and 512GB RAM
-- 40 Intel computer nodes, each with 32 CPU cores and 512GB RAM
-- 6 high-memory nodes, each 32 CPU cores and 1024GB RAM
-- 12 GPU nodes, each with 5,000 cuda cores
+- Over 8,000 CPU cores
+- 130 Intel, AMD and GPU nodes 
+- 32-128 CPU cores per node
+- 256-1,024 GB of RAM per node
+- 12 GPU nodes, each with total of over 80,000 cuda cores
     
 ### Interconnect 
 - FDR IB @56Gbs 
 
 ### Storage
 
-- Parallel GPFS storage system with 2.1 PB usable space
+- Parallel GPFS storage system with 3.0 PB usable space
+- File system scales to over 50 PB 
 - Backup of same architecture and similar amount
 
 ### User traffic
 
-- Computing tasks need to be submitted via `srun`
+- Computing tasks need to be submitted via `sbatch` or `srun`
 - HPCC Cluster headnode only for login, not for computing tasks!
 - Monitor cluster activity: `squeue` or `jobMonitor` (`qstatMonitor`)
 
 ### Manuals
 
-- [HPCC Cluster Manual](http://hpcc.ucr.edu/manuals_linux-cluster_intro.html)
-- [Linux Manual](http://hpcc.ucr.edu/manuals_linux-basics.html)
+- [HPCC Cluster Manual](https://hpcc.ucr.edu/manuals_linux-cluster_intro.html)
+- [Linux Manual](https://hpcc.ucr.edu/manuals_linux-basics.html)
 
 
 ## Linux Basics
@@ -177,7 +178,7 @@ grep pattern nonexistingfile 2 > mystderr
 
 ### Homework Assignment (HW2)
 
-See HW2 page [here](http://girke.bioinformatics.ucr.edu/GEN242/mydoc_homework_02.html).
+See HW2 page [here](https://girke.bioinformatics.ucr.edu/GEN242/assignments/homework/hw02/hw02/).
 
 ### Permissions and ownership
 

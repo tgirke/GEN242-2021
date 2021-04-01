@@ -27,7 +27,7 @@ What Is a Computer Cluster?   A computer cluster is an assembly of CPU units, so
 <meta itemprop="description" content="HPCC Cluster Overview The HPCC Cluster (formerly called biocluster) is a shared research computing system available at UCR. The HPCC website is available here.
 What Is a Computer Cluster?   A computer cluster is an assembly of CPU units, so called computer nodes that work together to perform many computations in parallel. To achieve this, an internal network (e.g. Infiniband interconnect) connects the nodes to a larger unit, while a head node controls the load and traffic across the entire system.">
 <meta itemprop="dateModified" content="2021-03-31T15:39:38-07:00" />
-<meta itemprop="wordCount" content="2659">
+<meta itemprop="wordCount" content="2654">
 
 
 
@@ -799,7 +799,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.ee82bbbe6e84b4a8d4375dbae015e6a5.json"
+  data-offline-search-index-json-src="../../../offline-search-index.e7ade20e7101c27c35075c1614c057d4.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -831,7 +831,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.ee82bbbe6e84b4a8d4375dbae015e6a5.json"
+  data-offline-search-index-json-src="../../../offline-search-index.e7ade20e7101c27c35075c1614c057d4.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1119,11 +1119,11 @@ if (!doNotTrack) {
 <h3 id="hardware-infrastructure">Hardware Infrastructure</h3>
 <h3 id="computer-nodes">Computer nodes</h3>
 <ul>
-<li>Over 4,500 CPU cores</li>
-<li>48 AMD computer nodes, each with 64 CPU cores and 512GB RAM</li>
-<li>40 Intel computer nodes, each with 32 CPU cores and 512GB RAM</li>
-<li>6 high-memory nodes, each 32 CPU cores and 1024GB RAM</li>
-<li>12 GPU nodes, each with 5,000 cuda cores</li>
+<li>Over 8,000 CPU cores</li>
+<li>130 Intel, AMD and GPU nodes</li>
+<li>32-128 CPU cores per node</li>
+<li>256-1,024 GB of RAM per node</li>
+<li>12 GPU nodes, each with total of over 80,000 cuda cores</li>
 </ul>
 <h3 id="interconnect">Interconnect</h3>
 <ul>
@@ -1131,19 +1131,20 @@ if (!doNotTrack) {
 </ul>
 <h3 id="storage">Storage</h3>
 <ul>
-<li>Parallel GPFS storage system with 2.1 PB usable space</li>
+<li>Parallel GPFS storage system with 3.0 PB usable space</li>
+<li>File system scales to over 50 PB</li>
 <li>Backup of same architecture and similar amount</li>
 </ul>
 <h3 id="user-traffic">User traffic</h3>
 <ul>
-<li>Computing tasks need to be submitted via <code>srun</code></li>
+<li>Computing tasks need to be submitted via <code>sbatch</code> or <code>srun</code></li>
 <li>HPCC Cluster headnode only for login, not for computing tasks!</li>
 <li>Monitor cluster activity: <code>squeue</code> or <code>jobMonitor</code> (<code>qstatMonitor</code>)</li>
 </ul>
 <h3 id="manuals">Manuals</h3>
 <ul>
-<li><a href="http://hpcc.ucr.edu/manuals_linux-cluster_intro.html">HPCC Cluster Manual</a></li>
-<li><a href="http://hpcc.ucr.edu/manuals_linux-basics.html">Linux Manual</a></li>
+<li><a href="https://hpcc.ucr.edu/manuals_linux-cluster_intro.html">HPCC Cluster Manual</a></li>
+<li><a href="https://hpcc.ucr.edu/manuals_linux-basics.html">Linux Manual</a></li>
 </ul>
 <h2 id="linux-basics">Linux Basics</h2>
 <h3 id="log-into-hpcc-cluster">Log into HPCC Cluster</h3>
@@ -1231,7 +1232,7 @@ scp user@remotehost:/home/user/file . # From remote to local
 <pre><code class="language-sh">grep pattern nonexistingfile 2 &gt; mystderr 
 </code></pre>
 <h3 id="homework-assignment-hw2">Homework Assignment (HW2)</h3>
-<p>See HW2 page <a href="http://girke.bioinformatics.ucr.edu/GEN242/mydoc_homework_02.html">here</a>.</p>
+<p>See HW2 page <a href="https://girke.bioinformatics.ucr.edu/GEN242/assignments/homework/hw02/hw02/">here</a>.</p>
 <h3 id="permissions-and-ownership">Permissions and ownership</h3>
 <p>List directories and files</p>
 <pre><code class="language-sh">ls -al 
