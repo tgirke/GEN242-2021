@@ -157,7 +157,7 @@ blastp -query myseq.fasta -db halobacterium.faa -outfmt 6 -evalue 1e-6 -out blas
 &lt;/ol&gt;
 &lt;p&gt;Additional exercise material in &lt;a href=&#34;https://hpcc.ucr.edu/manuals_linux-basics_shell.html&#34;&gt;Linux Manual&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;homework-assignment&#34;&gt;Homework assignment&lt;/h2&gt;
-&lt;p&gt;Perform above analysis on the protein sequences from &lt;a href=&#34;https://ftp.ncbi.nlm.nih.gov/genomes/genbank/bacteria/Escherichia_coli/reference/GCA_000008865.2_ASM886v2/GCA_000008865.2_ASM886v2_protein.faa.gz&#34;&gt;Escherichia coli&lt;/a&gt;.
+&lt;p&gt;Perform above analysis on the protein sequences from &lt;a href=&#34;https://ftp.ncbi.nlm.nih.gov/genomes/genbank/bacteria/Escherichia_coli/reference/GCA_000008865.2_ASM886v2/GCA_000008865.2_ASM886v2_protein.faa.gz&#34;&gt;E. coli&lt;/a&gt;. A right click on the link will allow you to copy the URL so that it can be used together with &lt;code&gt;wget&lt;/code&gt;.
 Record result from final BLAST command (with &lt;code&gt;outfmt 6&lt;/code&gt;) in text file.&lt;/p&gt;
 &lt;h2 id=&#34;homework-submission&#34;&gt;Homework submission&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://classroom.github.com/a/HZMNsG_T&#34;&gt;GEN242-2021 HW2&lt;/a&gt; on GitHub Classroom.&lt;/p&gt;
