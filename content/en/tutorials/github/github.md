@@ -11,16 +11,15 @@ type: docs
 ## GitHub in GEN242 
 
 + Note, this class will make heavy use of GitHub 
-+ Homework assignments will be submitted to private GitHub repositories: one repository for each student
++ Homework assignments will be submitted and graded on GitHub Classroom
 + Course projects will also use private GitHub repositories: one repository for each course project (shared among students of each project)
 + Each student will need a personal GitHub account. They can be created [here](https://github.com/personal).
-+ GitHub provides an unlimited number of free public repositories to each user. Via GitHub Education students can sign up for free private GitHub accounts (see [here](https://education.github.com)).
-+ All private GitHub accounts required for this class will be provided by the instructor via [GitHub Classroom](https://classroom.github.com/)
++ GitHub provides an unlimited number of free public repositories to each user. Via GitHub Education students can sign up for an extended number of free private GitHub accounts (see [here](https://education.github.com)).
 + For beginners this [quick guide](https://guides.github.com/activities/hello-world/) may be useful
 
 ## What are Git and GitHub?
 
-+ Git is a distributed version control system similar to SVN
++ Git is a version control system similar to SVN
 + GitHub is an online social coding service based on Git 
 + Combined Git/GitHub: environment for version control and social coding
 
@@ -66,7 +65,7 @@ Also try [interactive git tutorial](https://try.github.io/levels/1/challenges/1)
 
 ## GitHub Basics from Command-Line
 
-1. Generate a new remote repository on GitHub online or use [hub](https://hub.github.com/) command-line wrapper for this. To avoid errors with the online method, do not
+1. Generate a new remote repository on GitHub online or use [hub](https://hub.github.com/) or [GitHub CLI](https://github.com/cli/cli#installation) command-line wrappers for this. To avoid errors with the online method, do not
    initialize the new repository with README, license, or `.gitignore` files. You can
    add these files after your project has been pushed to GitHub.
 
