@@ -31,7 +31,7 @@ wget https://cluster.hpcc.ucr.edu/~tgirke/Linux.sh --no-check-certificate    Dow
 wget https://ftp.ncbi.nlm.nih.gov/genomes/genbank/archaea/Halobacterium_salinarum/representative/GCA_004799605.1_ASM479960v1/GCA_004799605.1_ASM479960v1_protein.faa.gz gunzip GCA_004799605.1_ASM479960v1_protein.faa.gz mv GCA_004799605.1_ASM479960v1_protein.faa halobacterium.faa less halobacterium.faa # press q to quit    How many protein sequences are stored in the downloaded file?
 grep &#39;&gt;&#39; halobacterium.faa | wc grep &#39;^&gt;&#39; halobacterium.faa --count    How many proteins contain the pattern WxHxxH or WxHxxHH?">
 <meta itemprop="dateModified" content="2021-04-01T11:14:20-07:00" />
-<meta itemprop="wordCount" content="346">
+<meta itemprop="wordCount" content="322">
 
 
 
@@ -805,7 +805,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.fa248cf9e92414e6f1a89436e8c16d9e.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.453706b664e9fcad25ee8491acc1f4d1.json"
   data-offline-search-base-href="../../../../"
   data-offline-search-max-results="10"
 >
@@ -837,7 +837,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.fa248cf9e92414e6f1a89436e8c16d9e.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.453706b664e9fcad25ee8491acc1f4d1.json"
   data-offline-search-base-href="../../../../"
   data-offline-search-max-results="10"
 >
@@ -1236,18 +1236,15 @@ hostname
 <p>Perform above analysis on the protein sequences from <a href="https://ftp.ncbi.nlm.nih.gov/genomes/genbank/bacteria/Escherichia_coli/reference/GCA_000008865.2_ASM886v2/GCA_000008865.2_ASM886v2_protein.faa.gz">E. coli</a>. A right click on the link will allow you to copy the URL so that it can be used together with <code>wget</code>.
 Record result from final BLAST command (with <code>outfmt 6</code>) in text file.</p>
 <h2 id="homework-submission">Homework submission</h2>
-<p><a href="https://classroom.github.com/a/HZMNsG_T">GEN242-2021 HW2</a> on GitHub Classroom.</p>
-<p>In case you made some mistakes in the final file, to have the auto-grading to give you partial credits:</p>
+<p>Submit your homework to <a href="https://classroom.github.com/a/HZMNsG_T">GEN242-2021 HW2</a> on GitHub Classroom by following these stepwise instructions:</p>
 <ol>
 <li>Upload your script and name it <code>hw2.sh</code>.</li>
 <li>Upload the unzipped faa file from step 1, name it <code>ecoli.faa</code>.</li>
 <li>Upload IDs from step 5 in a file named <code>myIDs</code>.</li>
-<li>Upload the final file from step 8, name it <code>ecoli.txt</code>.</li>
+<li>Upload the final file generated with <code>outfmt 6</code> from step 8, and name it <code>ecoli.txt</code>.</li>
 </ol>
-<p>If you are confident enough, only uploading the last file with the right answer will
-grant you full credits.</p>
 <h2 id="due-date">Due date</h2>
-<p>Most homeworks will be due one week after they are assigned. This one is due on Thu, April 15th at 6:00 PM.</p>
+<p>Most homeworks will be due one week after they are assigned. This one is due on Thu, April 8th at 6:00 PM.</p>
 
 	
 	
