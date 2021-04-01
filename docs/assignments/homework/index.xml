@@ -161,6 +161,12 @@ makeblastdb -in halobacterium.faa -out halobacterium.faa -dbtype prot -hash_inde
 blastp -query myseq.fasta -db halobacterium.faa -outfmt 6 -evalue 1e-6 -out blastp.tab
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Return system time and host name&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;date
+hostname
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Additional exercise material in &lt;a href=&#34;https://hpcc.ucr.edu/manuals_linux-basics_shell.html&#34;&gt;Linux Manual&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;homework-assignment&#34;&gt;Homework assignment&lt;/h2&gt;

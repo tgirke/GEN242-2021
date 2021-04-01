@@ -31,7 +31,7 @@ wget https://cluster.hpcc.ucr.edu/~tgirke/Linux.sh --no-check-certificate    Dow
 wget https://ftp.ncbi.nlm.nih.gov/genomes/genbank/archaea/Halobacterium_salinarum/representative/GCA_004799605.1_ASM479960v1/GCA_004799605.1_ASM479960v1_protein.faa.gz gunzip GCA_004799605.1_ASM479960v1_protein.faa.gz mv GCA_004799605.1_ASM479960v1_protein.faa halobacterium.faa less halobacterium.faa # press q to quit    How many protein sequences are stored in the downloaded file?
 grep &#39;&gt;&#39; halobacterium.faa | wc grep &#39;^&gt;&#39; halobacterium.faa --count    How many proteins contain the pattern WxHxxH or WxHxxHH?">
 <meta itemprop="dateModified" content="2021-03-31T21:08:08-07:00" />
-<meta itemprop="wordCount" content="338">
+<meta itemprop="wordCount" content="346">
 
 
 
@@ -805,7 +805,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.8b2e90e766f540b1b8b70c719cc9dade.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.3374517b6c3eeca3c476113743f0e6ee.json"
   data-offline-search-base-href="../../../../"
   data-offline-search-max-results="10"
 >
@@ -837,7 +837,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.8b2e90e766f540b1b8b70c719cc9dade.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.3374517b6c3eeca3c476113743f0e6ee.json"
   data-offline-search-base-href="../../../../"
   data-offline-search-max-results="10"
 >
@@ -1222,6 +1222,12 @@ makeblastdb -in halobacterium.faa -out halobacterium.faa -dbtype prot -hash_inde
 <p>Run BLAST search for sequences stored in <code>myseq.fasta</code></p>
 <pre><code class="language-sh">blastp -query myseq.fasta -db halobacterium.faa -outfmt 0 -evalue 1e-6 -out blastp.out
 blastp -query myseq.fasta -db halobacterium.faa -outfmt 6 -evalue 1e-6 -out blastp.tab
+</code></pre>
+</li>
+<li>
+<p>Return system time and host name</p>
+<pre><code class="language-sh">date
+hostname
 </code></pre>
 </li>
 </ol>
