@@ -108,7 +108,7 @@ git pull
 touch test # Creates empty file for testing
 git add test # or use '-A' for all
 git commit -am "some edits"
-git push -u origin master
+git push 
 ##-> Edit test file online and then run `git pull` to inspect changes
 ```
 
