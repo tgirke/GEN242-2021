@@ -10,7 +10,7 @@ weight: 105
 
 <iframe src="https://hpcc.ucr.edu/presentations/2020-12-18_Workshop/R_for_HPC/R_for_HPC.html" scrolling="yes", frameborder="0" width="1152" height="682" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
-[ [View Slides in Separate Browser Tab](https://hpcc.ucr.edu/presentations/2020-12-18_Workshop/R_for_HPC/R_for_HPC.html) ]{:target="_blank"}  
+[ [View Slides in Separate Browser Tab](https://hpcc.ucr.edu/presentations/2020-12-18_Workshop/R_for_HPC/R_for_HPC.html){:target="_blank"} ]
 
 
 
