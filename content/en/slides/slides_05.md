@@ -16,7 +16,7 @@ weight: 105
 <br></br>
 <br></br>
 
-This is a test...
+This is a test for an HTML slide show. Please ignore...
 
 [ <a href="https://hpcc.ucr.edu/presentations/2020-12-18_Workshop/R_for_HPC/R_for_HPC.html" target="_blank">View Slides in Separate Browser Tab</a> ]
 
