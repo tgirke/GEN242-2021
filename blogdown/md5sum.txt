@@ -10,6 +10,7 @@
 "content/en/manuals/rsequences/Rsequences.Rmarkdown" "17194b6f646eda181a1a0cc250549b16"
 "content/en/rmarkdown/examples/example_rmd.Rmarkdown" "f742c6cb51209c0348f4db7c606042ad"
 "content/en/rmarkdown/new_features/new_features.Rmarkdown" "d61278972d234700692dfabb044542ff"
+"content/en/slides/slides_07/R_for_HPC/R_for_HPC.Rmd" "bd9f225f2547c29e934a244cc1364055"
 "content/en/tutorials/rbasics/Rbasics.Rmarkdown" "d0b6795150c49d7d5a1ebd701b91edbb"
 "content/en/tutorials/rbasics/sample.Rmarkdown" "b94bfe5d863d8bcff325819a7fffe2d7"
 "content/en/tutorials/reference/reference.Rmarkdown" "345f444c7beee1062f0d4c7c16559b4d"
