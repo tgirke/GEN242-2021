@@ -385,7 +385,7 @@ enable = true
     weight = 202
   [[menu.main]]
     name = "Introduction to R (T3)"
-    url = "/tutorials/tutorial_03"
+    url = "/tutorials/rbasics/rbasics/"
     parent = "Tutorials"
     weight = 203
   [[menu.main]]
