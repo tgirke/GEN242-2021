@@ -224,7 +224,7 @@ table(iris$Species)
 &lt;li&gt;&lt;strong&gt;Task 2&lt;/strong&gt;: Generate two bar plots for the matrix generated in the previous step: one with stacked bars and one with horizontally arranged bars.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;d-h-analysis-worflow&#34;&gt;D-H. Analysis Worflow&lt;/h2&gt;
-&lt;p&gt;The instructions for these homework assignments are &lt;a href=&#34;http://girke.bioinformatics.ucr.edu/GEN242/mydoc_Rbasics_15.html&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The instructions for these homework assignments are &lt;a href=&#34;https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rbasics/rbasics/#analysis-routine&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;homework-submission&#34;&gt;Homework submission&lt;/h2&gt;
 &lt;p&gt;Assemble the code from the homework assignments A-H in a single R script (&lt;code&gt;HW3.R&lt;/code&gt;) and upload it to your private GitHub repository under &lt;code&gt;Homework/HW3/HW3.R&lt;/code&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;due-date&#34;&gt;Due date&lt;/h2&gt;
