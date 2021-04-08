@@ -202,22 +202,20 @@ Record result from final BLAST command (with &lt;code&gt;outfmt 6&lt;/code&gt;) 
 &lt;li&gt;&lt;strong&gt;Task 2&lt;/strong&gt;: Subset the first 12 rows, export the result to a text file and view it in a spreadsheet program like Excel or Google Sheets.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Task 3&lt;/strong&gt;: Change some column titles in your spreadsheet program, save the result to a tab delimited text file and import it back into R. Note, for this task you only want to include the &lt;code&gt;read.table&lt;/code&gt; command in the homework result (here R script).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Before you start it can be helpful to evaluate the structure of the &lt;code&gt;iris&lt;/code&gt; data set with the following commands:
-{% highlight r %}
-class(iris)
+&lt;p&gt;Before you start it can be helpful to evaluate the structure of the &lt;code&gt;iris&lt;/code&gt; data set with the following commands:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;class(iris)
 dim(iris)
 colnames(iris)
-{% endhighlight %}&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;b-scatter-plots&#34;&gt;B. Scatter Plots&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Task 1&lt;/strong&gt;: Generate a scatter plot for the first two columns of the &lt;code&gt;iris&lt;/code&gt; data frame and color the dots by the &lt;code&gt;Species&lt;/code&gt; column.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Task 2&lt;/strong&gt;: Use the &lt;code&gt;xlim/ylim&lt;/code&gt; arguments to set limits on the x- and y-axes so that all data points are restricted to the bottom left quadrant of the plot.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Again before you start, evaluate the structure of iris data set. The following commands are useful:&lt;/p&gt;
-&lt;p&gt;{% highlight r %}
-iris[1:4,]
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;iris[1:4,]
 table(iris$Species)
-{% endhighlight %}&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;c-bar-plots&#34;&gt;C. Bar Plots&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Task 1&lt;/strong&gt;: Calculate the mean values for the &lt;code&gt;Species&lt;/code&gt; components of the first four columns in the &lt;code&gt;iris&lt;/code&gt; data frame. Organize the results in a matrix where the row names are the unique values from the &lt;code&gt;iris Species&lt;/code&gt; column and the column names are the names of the first four &lt;code&gt;iris&lt;/code&gt; columns.&lt;/li&gt;
