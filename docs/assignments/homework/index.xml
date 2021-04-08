@@ -224,11 +224,17 @@ table(iris$Species)
 &lt;h2 id=&#34;d-h-analysis-worflow&#34;&gt;D-H. Analysis Worflow&lt;/h2&gt;
 &lt;p&gt;The instructions for these homework assignments are &lt;a href=&#34;https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rbasics/rbasics/#analysis-routine&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;homework-submission&#34;&gt;Homework submission&lt;/h2&gt;
-&lt;p&gt;Assemble the code from the homework assignments A-H in a single R script (&lt;code&gt;HW3.R&lt;/code&gt;) and upload it to your private GitHub repository under &lt;code&gt;Homework/HW3/HW3.R&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://classroom.github.com/a/XXVQaVVa&#34;&gt;Accept the homework3&lt;/a&gt; on Github classroom,
+and follow the upload instructions in the &lt;code&gt;README.md&lt;/code&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use the &lt;code&gt;hw3_template.R&lt;/code&gt; script, finish the code in there and rename it &lt;code&gt;hw3.R&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Upload your two plots from part &lt;strong&gt;B&lt;/strong&gt; and name it &lt;code&gt;plot3B_1.png&lt;/code&gt; and &lt;code&gt;plot3B_2.png&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Upload your two plots from part &lt;strong&gt;C&lt;/strong&gt; and name it &lt;code&gt;plot3C_1.png&lt;/code&gt; and &lt;code&gt;plot3C_2.png&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;due-date&#34;&gt;Due date&lt;/h2&gt;
-&lt;p&gt;This homework is due on Thu, April 20th at 6:00 PM.&lt;/p&gt;
+&lt;p&gt;This homework is due on Thu, April 15th at 6:00 PM.&lt;/p&gt;
 &lt;h2 id=&#34;homework-solutions&#34;&gt;Homework Solutions&lt;/h2&gt;
-&lt;p&gt;See &lt;a href=&#34;&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;to be posted&lt;/p&gt;
 
       </description>
     </item>
