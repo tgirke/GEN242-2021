@@ -22,12 +22,12 @@
  Overview What is R? R is a powerful statistical environment and programming language for the analysis and visualization of data. The associated Bioconductor and CRAN package repositories provide many additional R packages for statistical data analysis for a wide array of research areas." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rbasics/rbasics/" />
-<meta property="article:modified_time" content="2021-04-08T12:43:45-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-04-08T12:45:19-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Introduction to R">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
  Overview What is R? R is a powerful statistical environment and programming language for the analysis and visualization of data. The associated Bioconductor and CRAN package repositories provide many additional R packages for statistical data analysis for a wide array of research areas.">
-<meta itemprop="dateModified" content="2021-04-08T12:43:45-07:00" />
-<meta itemprop="wordCount" content="3834">
+<meta itemprop="dateModified" content="2021-04-08T12:45:19-07:00" />
+<meta itemprop="wordCount" content="3831">
 
 
 
@@ -799,7 +799,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.7e92e638f0ed4204a07de5db048d7ad4.json"
+  data-offline-search-index-json-src="../../../offline-search-index.35fd63a81d006d2aae7bce142f2e1884.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -831,7 +831,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.7e92e638f0ed4204a07de5db048d7ad4.json"
+  data-offline-search-index-json-src="../../../offline-search-index.35fd63a81d006d2aae7bce142f2e1884.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1701,10 +1701,6 @@ x &gt; y &amp; x &gt; 5
 <p>Import of a tab-delimited tabular file</p>
 <pre><code class="language-r">myDF &lt;- read.delim(&quot;myData.xls&quot;, sep=&quot;\t&quot;)
 </code></pre>
-<p>Import of Excel file. Note: working with tab- or comma-delimited files is more flexible and preferred.</p>
-<pre><code class="language-r">library(gdata)
-myDF &lt;- read.xls&quot;myData.xls&quot;)
-</code></pre>
 <p>Import of Google Sheets. The following example imports a sample Google Sheet from <a href="https://docs.google.com/spreadsheets/d/1U-32UcwZP1k3saKeaH1mbvEAOfZRdNHNkWK2GI1rpPM/edit#gid=472150521">here</a>.
 Detailed instructions for interacting from R with Google Sheets with the required <code>googlesheets4</code> package are <a href="https://googlesheets4.tidyverse.org/">here</a>.</p>
 <pre><code class="language-r">library(googlesheets4)
@@ -1712,7 +1708,7 @@ mysheet &lt;- read_sheet(&quot;1U-32UcwZP1k3saKeaH1mbvEAOfZRdNHNkWK2GI1rpPM&quot
 myDF &lt;- as.data.frame(mysheet)
 myDF
 </code></pre>
-<p>Import from Excel sheets works well with <code>readxl</code>. For details see the <code>readxl</code> package manual <a href="https://readxl.tidyverse.org/">here</a>.</p>
+<p>Import from Excel sheets works well with <code>readxl</code>. For details see the <code>readxl</code> package manual <a href="https://readxl.tidyverse.org/">here</a>. Note: working with tab- or comma-delimited files is more flexible and highly preferred for automated analysis workflows.</p>
 <pre><code class="language-r">library(&quot;readxl&quot;)
 mysheet &lt;- read_excel(targets_path, sheet=&quot;Sheet1&quot;)
 </code></pre>
@@ -1912,7 +1908,7 @@ plot(y[,1], y[,2], type=&quot;p&quot;, col=&quot;red&quot;, cex.lab=1.2, cex.axi
      ylab=&quot;y label&quot;, main=&quot;My Main&quot;, sub=&quot;My Sub&quot;)
 par(op)
 </code></pre>
-<p>__Important arguments_</p>
+<p><strong>Important arguments</strong></p>
 <ul>
 <li><code>mar</code>: specifies the margin sizes around the plotting area in order: <code>c(bottom, left, top, right)</code></li>
 <li><code>col</code>: color of symbols</li>
@@ -1957,7 +1953,7 @@ myline &lt;- lm(y[,2]~y[,1]); abline(myline, lwd=2)
 </code></pre>
 <p><img src="../../../en/tutorials/rbasics/Rbasics_files/figure-html/plot_regression_math-1.png" width="672" /></p>
 <h3 id="homework-3b">Homework 3B</h3>
-<p>Homework 3B: <a href="https://girke.bioinformatics.ucr.edu/GEN242/assignments/homework/hw3/hw03/">Scatter Plots</a></p>
+<p>Homework 3B: <a href="https://girke.bioinformatics.ucr.edu/GEN242/assignments/homework/hw03/hw03/">Scatter Plots</a></p>
 <h3 id="line-plots">Line Plots</h3>
 <h4 id="single-data-set">Single data set</h4>
 <pre><code class="language-r">plot(y[,1], type=&quot;l&quot;, lwd=2, col=&quot;blue&quot;) 
@@ -2042,7 +2038,7 @@ plot(1:10, 1:10)
 dev.off() 
 </code></pre>
 <h3 id="homework-3c">Homework 3C</h3>
-<p>Homework 3C: <a href="https://girke.bioinformatics.ucr.edu/GEN242/assignments/homework/hw3/hw03/">Bar Plots</a></p>
+<p>Homework 3C: <a href="https://girke.bioinformatics.ucr.edu/GEN242/assignments/homework/hw03/hw03/">Bar Plots</a></p>
 <h2 id="analysis-routine">Analysis Routine</h2>
 <h3 id="overview-1">Overview</h3>
 <p>The following exercise introduces a variety of useful data analysis utilities in R.</p>
@@ -2243,7 +2239,7 @@ data.frame(my_mw_target4, mean=mymean, stdev=mystdev)[1:2,5:12]
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-08: <a  href="https://github.com/tgirke/GEN242//commit/0fed5a8efb6067d3289f9e4a19bc0cd6c7eb947e">some edits (0fed5a8e)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-08: <a  href="https://github.com/tgirke/GEN242//commit/a96e0c779c0149c1c925c0e3121eacf17b022586">some edits (a96e0c77)</a>
 </div>
 </div>
 

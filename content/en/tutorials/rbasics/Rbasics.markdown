@@ -737,13 +737,6 @@ Import of a tab-delimited tabular file
 myDF <- read.delim("myData.xls", sep="\t")
 ```
 
-Import of Excel file. Note: working with tab- or comma-delimited files is more flexible and preferred.
-
-``` r
-library(gdata)
-myDF <- read.xls"myData.xls")
-```
-
 Import of Google Sheets. The following example imports a sample Google Sheet from [here](https://docs.google.com/spreadsheets/d/1U-32UcwZP1k3saKeaH1mbvEAOfZRdNHNkWK2GI1rpPM/edit#gid=472150521).
 Detailed instructions for interacting from R with Google Sheets with the required `googlesheets4` package are [here](https://googlesheets4.tidyverse.org/).
 
@@ -754,7 +747,7 @@ myDF <- as.data.frame(mysheet)
 myDF
 ```
 
-Import from Excel sheets works well with `readxl`. For details see the `readxl` package manual [here](https://readxl.tidyverse.org/).
+Import from Excel sheets works well with `readxl`. For details see the `readxl` package manual [here](https://readxl.tidyverse.org/). Note: working with tab- or comma-delimited files is more flexible and highly preferred for automated analysis workflows.
 
 ``` r
 library("readxl")
@@ -1045,7 +1038,7 @@ plot(y[,1], y[,2], type="p", col="red", cex.lab=1.2, cex.axis=1.2,
 par(op)
 ```
 
-\_\_Important arguments\_
+**Important arguments**
 
   - `mar`: specifies the margin sizes around the plotting area in order: `c(bottom, left, top, right)`
   - `col`: color of symbols
@@ -1106,7 +1099,7 @@ plot(y[,1], y[,2]); text(y[1,1], y[1,2], expression(sum(frac(1,sqrt(x^2*pi)))), 
 
 ### Homework 3B
 
-Homework 3B: [Scatter Plots](https://girke.bioinformatics.ucr.edu/GEN242/assignments/homework/hw3/hw03/)
+Homework 3B: [Scatter Plots](https://girke.bioinformatics.ucr.edu/GEN242/assignments/homework/hw03/hw03/)
 
 ### Line Plots
 
@@ -1250,7 +1243,7 @@ dev.off()
 
 ### Homework 3C
 
-Homework 3C: [Bar Plots](https://girke.bioinformatics.ucr.edu/GEN242/assignments/homework/hw3/hw03/)
+Homework 3C: [Bar Plots](https://girke.bioinformatics.ucr.edu/GEN242/assignments/homework/hw03/hw03/)
 
 ## Analysis Routine
 
