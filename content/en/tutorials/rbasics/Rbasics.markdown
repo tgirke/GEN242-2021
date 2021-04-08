@@ -63,6 +63,14 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
+<div style="text-align: right">
+
+Source code downloads:
+\[ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242/gh-pages/_vignettes/07_Rbasics/Rbasics.Rmd){:target="\_blank"} \],
+\[ [R](https://raw.githubusercontent.com/tgirke/GEN242/gh-pages/_vignettes/07_Rbasics/Rbasics.R){:target="\_blank"} \],
+
+</div>
+
 ## Overview
 
 ## What is R?
