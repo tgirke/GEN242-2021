@@ -979,7 +979,7 @@ my_mw_target4 <- cbind(my_mw_target3, Freq=mycounts[as.character(my_mw_target3[,
 - __Step 8__: Perform a vectorized devision of columns 3 and 4 (average AA weight per protein)
 
 ```{r calcul_2, eval=TRUE}
-data.frame(my_mw_target4, avg_AA_WT=(my_mw_target4[,3] / my_mw_target4[,4]))[1:2,5:11] 
+data.frame(my_mw_target4, avg_AA_WT=(my_mw_target4[,3] / my_mw_target4[,4]))[1:2,] 
 ```
 
 - __Step 9__: Calculate for each row the mean and standard deviation across several columns

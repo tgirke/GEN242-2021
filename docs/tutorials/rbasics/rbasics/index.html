@@ -22,12 +22,12 @@
  Overview What is R? R is a powerful statistical environment and programming language for the analysis and visualization of data. The associated Bioconductor and CRAN package repositories provide many additional R packages for statistical data analysis for a wide array of research areas." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rbasics/rbasics/" />
-<meta property="article:modified_time" content="2021-04-08T12:45:19-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-04-08T12:59:52-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Introduction to R">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
  Overview What is R? R is a powerful statistical environment and programming language for the analysis and visualization of data. The associated Bioconductor and CRAN package repositories provide many additional R packages for statistical data analysis for a wide array of research areas.">
-<meta itemprop="dateModified" content="2021-04-08T12:45:19-07:00" />
-<meta itemprop="wordCount" content="3831">
+<meta itemprop="dateModified" content="2021-04-08T12:59:52-07:00" />
+<meta itemprop="wordCount" content="3851">
 
 
 
@@ -799,7 +799,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.35fd63a81d006d2aae7bce142f2e1884.json"
+  data-offline-search-index-json-src="../../../offline-search-index.955a71f5c325f458e91cfe415d48fd73.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -831,7 +831,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.35fd63a81d006d2aae7bce142f2e1884.json"
+  data-offline-search-index-json-src="../../../offline-search-index.955a71f5c325f458e91cfe415d48fd73.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1201,7 +1201,7 @@ if (!doNotTrack) {
 	<h1>Introduction to R</h1>
     
 	
-        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 18 minute read</p>
+        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 19 minute read</p>
            
 	<!---
 - Compile from command-line
@@ -2152,11 +2152,14 @@ my_mw_target4 &lt;- cbind(my_mw_target3, Freq=mycounts[as.character(my_mw_target
 <li><strong>Step 8</strong>: Perform a vectorized devision of columns 3 and 4 (average AA weight per protein)</li>
 </ul>
 <!-- end list -->
-<pre><code class="language-r">data.frame(my_mw_target4, avg_AA_WT=(my_mw_target4[,3] / my_mw_target4[,4]))[1:2,5:11] 
+<pre><code class="language-r">data.frame(my_mw_target4, avg_AA_WT=(my_mw_target4[,3] / my_mw_target4[,4]))[1:2,] 
 </code></pre>
-<pre><code>##   Loc  cTP   mTP    SP other Freq.Var1 Freq.Freq
-## 1   _ 0.10 0.090 0.075 0.925 AT1G01010         1
-## 2   * 0.01 0.636 0.158 0.448 AT1G01020         2
+<pre><code>##        loci          ID Molecular.Weight.Da. Residues Loc  cTP   mTP    SP other Freq.Var1
+## 1 AT1G01010 AT1G01010.1                49426      429   _ 0.10 0.090 0.075 0.925 AT1G01010
+## 2 AT1G01020 AT1G01020.1                28092      245   * 0.01 0.636 0.158 0.448 AT1G01020
+##   Freq.Freq avg_AA_WT
+## 1         1  115.2121
+## 2         2  114.6612
 </code></pre>
 <ul>
 <li><strong>Step 9</strong>: Calculate for each row the mean and standard deviation across several columns</li>
@@ -2239,7 +2242,7 @@ data.frame(my_mw_target4, mean=mymean, stdev=mystdev)[1:2,5:12]
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-08: <a  href="https://github.com/tgirke/GEN242//commit/a96e0c779c0149c1c925c0e3121eacf17b022586">some edits (a96e0c77)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-08: <a  href="https://github.com/tgirke/GEN242//commit/f908e3b04f4836dfc316d42bc0b718ff36fc4d26">some edits (f908e3b0)</a>
 </div>
 </div>
 

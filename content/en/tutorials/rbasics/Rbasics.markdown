@@ -1387,12 +1387,15 @@ my_mw_target4 <- cbind(my_mw_target3, Freq=mycounts[as.character(my_mw_target3[,
 <!-- end list -->
 
 ``` r
-data.frame(my_mw_target4, avg_AA_WT=(my_mw_target4[,3] / my_mw_target4[,4]))[1:2,5:11] 
+data.frame(my_mw_target4, avg_AA_WT=(my_mw_target4[,3] / my_mw_target4[,4]))[1:2,] 
 ```
 
-    ##   Loc  cTP   mTP    SP other Freq.Var1 Freq.Freq
-    ## 1   _ 0.10 0.090 0.075 0.925 AT1G01010         1
-    ## 2   * 0.01 0.636 0.158 0.448 AT1G01020         2
+    ##        loci          ID Molecular.Weight.Da. Residues Loc  cTP   mTP    SP other Freq.Var1
+    ## 1 AT1G01010 AT1G01010.1                49426      429   _ 0.10 0.090 0.075 0.925 AT1G01010
+    ## 2 AT1G01020 AT1G01020.1                28092      245   * 0.01 0.636 0.158 0.448 AT1G01020
+    ##   Freq.Freq avg_AA_WT
+    ## 1         1  115.2121
+    ## 2         2  114.6612
 
   - **Step 9**: Calculate for each row the mean and standard deviation across several columns
 
