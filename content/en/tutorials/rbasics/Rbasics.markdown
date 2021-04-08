@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <div style="text-align: right">
 
-Source code downloads:
+Source code downloads:    
 \[ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242/main/static/custom/source_code/Rbasics.Rmd) \]    
 \[ [.R](https://raw.githubusercontent.com/tgirke/GEN242/main/static/custom/source_code/Rbasics.R) \]
 
