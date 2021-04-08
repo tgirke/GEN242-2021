@@ -11,7 +11,7 @@
 "content/en/rmarkdown/examples/example_rmd.Rmarkdown" "f742c6cb51209c0348f4db7c606042ad"
 "content/en/rmarkdown/new_features/new_features.Rmarkdown" "d61278972d234700692dfabb044542ff"
 "content/en/slides/slides_07/R_for_HPC/R_for_HPC.Rmd" "bd9f225f2547c29e934a244cc1364055"
-"content/en/tutorials/rbasics/Rbasics.Rmarkdown" "9c1d193db80bb4816ba3a16651ef4213"
+"content/en/tutorials/rbasics/Rbasics.Rmarkdown" "3cf3fc543a1729318c6120ed9ab79847"
 "content/en/tutorials/rbasics/sample.Rmarkdown" "b94bfe5d863d8bcff325819a7fffe2d7"
 "content/en/tutorials/reference/reference.Rmarkdown" "345f444c7beee1062f0d4c7c16559b4d"
 "content/en/tutorials/rprogramming/rprogramming.Rmarkdown" "2fa1bb09128adb28bb2075a154daab37"

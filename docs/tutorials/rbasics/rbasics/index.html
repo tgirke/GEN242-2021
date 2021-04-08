@@ -796,7 +796,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.6b150d31b524366ec46492d887cca328.json"
+  data-offline-search-index-json-src="../../../offline-search-index.a8ab52d805d68c81e4d6a02700f7de15.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -828,7 +828,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.6b150d31b524366ec46492d887cca328.json"
+  data-offline-search-index-json-src="../../../offline-search-index.a8ab52d805d68c81e4d6a02700f7de15.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1373,7 +1373,7 @@ advanced.</p>
 </center>
 <p>Some userful shortcuts: <code>Ctrl+Enter</code> (send code), <code>Ctrl+Shift+C</code> (comment/uncomment), <code>Ctrl+1/2</code> (switch window focus)</p>
 <h3 id="example-nvim-r-tmux">Example: Nvim-R-Tmux</h3>
-<p>Terminal-based Working Environment for R: <a href="http://girke.bioinformatics.ucr.edu/GEN242/mydoc_tutorial_02.html#nvim-r-tmux-essentials">Nvim-R-Tmux</a>.</p>
+<p>Terminal-based Working Environment for R: <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rbasics/rbasics/#reading-and-writing-external-data">Nvim-R-Tmux</a>.</p>
 <center>
 <p><img title="Nvim-R-Tmux" src="../images/Nvim-R.gif" ></p>
 </center>
@@ -1847,7 +1847,7 @@ write.table(iris, zz, sep=&quot;\t&quot;, col.names=NA, quote=F)
 close(zz) 
 </code></pre>
 <h3 id="homework-3a">Homework 3A</h3>
-<p>Homework 3A: <a href="https://girke.bioinformatics.ucr.edu/GEN242/assignments/homework/hw3/">Object Subsetting Routines and Import/Export</a></p>
+<p>Homework 3A: <a href="https://girke.bioinformatics.ucr.edu/GEN242/assignments/homework/hw3/hw03/">Object Subsetting Routines and Import/Export</a></p>
 <h2 id="useful-r-functions">Useful R Functions</h2>
 <h3 id="unique-entries">Unique entries</h3>
 <p>Make vector entries unique with <code>unique</code></p>
@@ -1982,7 +1982,7 @@ iris_df
 ## 10          4.9         3.1          1.5         0.1 setosa 
 ## # … with 140 more rows
 </code></pre>
-<p>To import Google Sheets directly into R, see <a href="http://girke.bioinformatics.ucr.edu/GEN242/mydoc_Rbasics_10.html">here</a>.</p>
+<p>To import Google Sheets directly into R, see <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rbasics/rbasics/#reading-and-writing-external-data">here</a>.</p>
 <h4 id="fast-table-import-with-fread">Fast table import with <code>fread</code></h4>
 <p>The <code>fread</code> function from the <code>data.table</code> package provides the best time performance for reading large
 tabular files into R.</p>
@@ -2845,7 +2845,7 @@ myline &lt;- lm(y[,2]~y[,1]); abline(myline, lwd=2)
 </code></pre>
 <p><img src="../../../en/tutorials/rbasics/Rbasics_files/figure-html/plot_regression_math-1.png" width="672" /></p>
 <h3 id="homework-3b">Homework 3B</h3>
-<p>Homework 3B: <a href="http://girke.bioinformatics.ucr.edu/GEN242/mydoc_homework_03.html">Scatter Plots</a></p>
+<p>Homework 3B: <a href="https://girke.bioinformatics.ucr.edu/GEN242/assignments/homework/hw3/hw03/">Scatter Plots</a></p>
 <h3 id="line-plots">Line Plots</h3>
 <h4 id="single-data-set">Single data set</h4>
 <pre><code class="language-r">plot(y[,1], type=&quot;l&quot;, lwd=2, col=&quot;blue&quot;) 
@@ -2930,7 +2930,7 @@ plot(1:10, 1:10)
 dev.off() 
 </code></pre>
 <h3 id="homework-3c">Homework 3C</h3>
-<p>Homework 3C: <a href="https://girke.bioinformatics.ucr.edu/GEN242/assignments/homework/hw3/">Bar Plots</a></p>
+<p>Homework 3C: <a href="https://girke.bioinformatics.ucr.edu/GEN242/assignments/homework/hw3/hw03/">Bar Plots</a></p>
 <h2 id="analysis-routine">Analysis Routine</h2>
 <h3 id="overview-1">Overview</h3>
 <p>The following exercise introduces a variety of useful data analysis utilities in R.</p>
@@ -3293,7 +3293,7 @@ kable(iris[1:12,])
 <p>A much more elegant and powerful solution is to create fully interactive tables
 with the <a href="https://rstudio.github.io/DT/"><code>DT</code> package</a>. This JavaScirpt based environment provides a wrapper to the DataTables library
 using jQuery. The resulting tables can be sorted, queried and resized by the
-user. For an example see <a href="http://girke.bioinformatics.ucr.edu/GEN242/pages/mydoc/Rbasics.html#1627_tables">here</a>.</p>
+user. For an example see below.</p>
 <pre><code class="language-r">library(DT)
 datatable(iris, filter = 'top', options = list(
       pageLength = 100, scrollX = TRUE, scrollY = &quot;600px&quot;, autoWidth = TRUE

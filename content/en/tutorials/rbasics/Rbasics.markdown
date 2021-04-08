@@ -134,7 +134,7 @@ Some userful shortcuts: `Ctrl+Enter` (send code), `Ctrl+Shift+C` (comment/uncomm
 
 ### Example: Nvim-R-Tmux
 
-Terminal-based Working Environment for R: [Nvim-R-Tmux](http://girke.bioinformatics.ucr.edu/GEN242/mydoc_tutorial_02.html#nvim-r-tmux-essentials).
+Terminal-based Working Environment for R: [Nvim-R-Tmux](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rbasics/rbasics/#reading-and-writing-external-data).
 
 <center>
 
@@ -841,7 +841,7 @@ close(zz)
 
 ### Homework 3A
 
-Homework 3A: [Object Subsetting Routines and Import/Export](https://girke.bioinformatics.ucr.edu/GEN242/assignments/homework/hw3/)
+Homework 3A: [Object Subsetting Routines and Import/Export](https://girke.bioinformatics.ucr.edu/GEN242/assignments/homework/hw3/hw03/)
 
 ## Useful R Functions
 
@@ -1024,7 +1024,7 @@ iris_df
     ## 10          4.9         3.1          1.5         0.1 setosa 
     ## # … with 140 more rows
 
-To import Google Sheets directly into R, see [here](http://girke.bioinformatics.ucr.edu/GEN242/mydoc_Rbasics_10.html).
+To import Google Sheets directly into R, see [here](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rbasics/rbasics/#reading-and-writing-external-data).
 
 #### Fast table import with `fread`
 
@@ -2106,7 +2106,7 @@ plot(y[,1], y[,2]); text(y[1,1], y[1,2], expression(sum(frac(1,sqrt(x^2*pi)))), 
 
 ### Homework 3B
 
-Homework 3B: [Scatter Plots](http://girke.bioinformatics.ucr.edu/GEN242/mydoc_homework_03.html)
+Homework 3B: [Scatter Plots](https://girke.bioinformatics.ucr.edu/GEN242/assignments/homework/hw3/hw03/)
 
 ### Line Plots
 
@@ -2250,7 +2250,7 @@ dev.off()
 
 ### Homework 3C
 
-Homework 3C: [Bar Plots](https://girke.bioinformatics.ucr.edu/GEN242/assignments/homework/hw3/)
+Homework 3C: [Bar Plots](https://girke.bioinformatics.ucr.edu/GEN242/assignments/homework/hw3/hw03/)
 
 ## Analysis Routine
 
@@ -2606,7 +2606,7 @@ kable(iris[1:12,])
 A much more elegant and powerful solution is to create fully interactive tables
 with the [`DT` package](https://rstudio.github.io/DT/). This JavaScirpt based environment provides a wrapper to the DataTables library
 using jQuery. The resulting tables can be sorted, queried and resized by the
-user. For an example see [here](http://girke.bioinformatics.ucr.edu/GEN242/pages/mydoc/Rbasics.html#1627_tables).
+user. For an example see below.
 
 ``` r
 library(DT)
