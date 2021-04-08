@@ -489,14 +489,11 @@ myDF <- read.xls"myData.xls")
 ```
 
 Import of Google Sheets. The following example imports a sample Google Sheet from [here](https://docs.google.com/spreadsheets/d/1U-32UcwZP1k3saKeaH1mbvEAOfZRdNHNkWK2GI1rpPM/edit#gid=472150521).
-Detailed instructions for interacting from R with Google Sheets with the required `googlesheets` package are [here](https://github.com/jennybc/googlesheets).
+Detailed instructions for interacting from R with Google Sheets with the required `googlesheets4` package are [here](https://googlesheets4.tidyverse.org/).
 
 ```{r read_gs, eval=FALSE}
-library("googlesheets"); library("dplyr"); library(knitr)
-gs_auth() # Creates authorizaton token (.httr-oauth) in current directory if not present
-sheetid <-"1U-32UcwZP1k3saKeaH1mbvEAOfZRdNHNkWK2GI1rpPM"
-gap <- gs_key(sheetid)
-mysheet <- gs_read(gap, skip=4)
+library(googlesheets4)
+mysheet <- read_sheet("1U-32UcwZP1k3saKeaH1mbvEAOfZRdNHNkWK2GI1rpPM", skip=4)
 myDF <- as.data.frame(mysheet)
 myDF
 ```

@@ -21,11 +21,11 @@
 <meta property="og:description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Overview What is R? R is a powerful statistical environment and programming language for the analysis and visualization of data. The associated Bioconductor and CRAN package repositories provide many additional R packages for statistical data analysis for a wide array of research areas." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rbasics/rbasics/" />
-<meta property="article:modified_time" content="2021-04-07T17:26:09-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-04-07T18:07:55-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Introduction to R">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Overview What is R? R is a powerful statistical environment and programming language for the analysis and visualization of data. The associated Bioconductor and CRAN package repositories provide many additional R packages for statistical data analysis for a wide array of research areas.">
-<meta itemprop="dateModified" content="2021-04-07T17:26:09-07:00" />
-<meta itemprop="wordCount" content="10205">
+<meta itemprop="dateModified" content="2021-04-07T18:07:55-07:00" />
+<meta itemprop="wordCount" content="10186">
 
 
 
@@ -796,7 +796,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.1ca7ea58dbd730eb8fd00527ecd14c64.json"
+  data-offline-search-index-json-src="../../../offline-search-index.177e27a7618f039945e4838fde1d4bab.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -828,7 +828,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.1ca7ea58dbd730eb8fd00527ecd14c64.json"
+  data-offline-search-index-json-src="../../../offline-search-index.177e27a7618f039945e4838fde1d4bab.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1808,12 +1808,9 @@ x &gt; y &amp; x &gt; 5
 myDF &lt;- read.xls&quot;myData.xls&quot;)
 </code></pre>
 <p>Import of Google Sheets. The following example imports a sample Google Sheet from <a href="https://docs.google.com/spreadsheets/d/1U-32UcwZP1k3saKeaH1mbvEAOfZRdNHNkWK2GI1rpPM/edit#gid=472150521">here</a>.
-Detailed instructions for interacting from R with Google Sheets with the required <code>googlesheets</code> package are <a href="https://github.com/jennybc/googlesheets">here</a>.</p>
-<pre><code class="language-r">library(&quot;googlesheets&quot;); library(&quot;dplyr&quot;); library(knitr)
-gs_auth() # Creates authorizaton token (.httr-oauth) in current directory if not present
-sheetid &lt;-&quot;1U-32UcwZP1k3saKeaH1mbvEAOfZRdNHNkWK2GI1rpPM&quot;
-gap &lt;- gs_key(sheetid)
-mysheet &lt;- gs_read(gap, skip=4)
+Detailed instructions for interacting from R with Google Sheets with the required <code>googlesheets4</code> package are <a href="https://googlesheets4.tidyverse.org/">here</a>.</p>
+<pre><code class="language-r">library(googlesheets4)
+mysheet &lt;- read_sheet(&quot;1U-32UcwZP1k3saKeaH1mbvEAOfZRdNHNkWK2GI1rpPM&quot;, skip=4)
 myDF &lt;- as.data.frame(mysheet)
 myDF
 </code></pre>
@@ -3482,7 +3479,7 @@ dir() # Lists available Shiny examples (directories).
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-07: <a  href="https://github.com/tgirke/GEN242//commit/0ce0b7f255926fec3e31a83e212623c6fa1b718d">some edits (0ce0b7f2)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-07: <a  href="https://github.com/tgirke/GEN242//commit/2c8c4b7973c2c871ac1f59e87b407a8214925789">some edits (2c8c4b79)</a>
 </div>
 </div>
 
