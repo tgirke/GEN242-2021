@@ -38,12 +38,6 @@ suppressPackageStartupMessages({
     library(ggplot2) }) 
 ```
 
-<div style="text-align: right"> 
-Source code downloads:
-[ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242/gh-pages/_vignettes/07_Rbasics/Rbasics.Rmd) ], 
-[ [R](https://raw.githubusercontent.com/tgirke/GEN242/gh-pages/_vignettes/07_Rbasics/Rbasics.R) ]
-</div>
-
 ## Overview
 
 ## What is R?
