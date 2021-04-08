@@ -66,8 +66,8 @@ document.addEventListener("DOMContentLoaded", function() {
 <div style="text-align: right">
 
 Source code downloads:
-\[ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242/gh-pages/_vignettes/07_Rbasics/Rbasics.Rmd){:target="\_blank"} \],
-\[ [R](https://raw.githubusercontent.com/tgirke/GEN242/gh-pages/_vignettes/07_Rbasics/Rbasics.R){:target="\_blank"} \],
+\[ [.Rmd](https://girke.bioinformatics.ucr.edu/GEN242/custom/custom/source_code/Rbasics.Rmd) \],
+\[ [.R](https://girke.bioinformatics.ucr.edu/GEN242/custom/custom/source_code/Rbasics.Rmd) \]
 
 </div>
 
