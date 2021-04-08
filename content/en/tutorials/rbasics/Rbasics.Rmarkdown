@@ -505,7 +505,7 @@ myDF
 ```
 
 Import from Excel sheets works well with `readxl`. For details see the `readxl` package manual [here](https://readxl.tidyverse.org/).
-```{r read_gs, eval=FALSE}
+```{r read_readxl, eval=FALSE}
 library("readxl")
 mysheet <- read_excel(targets_path, sheet="Sheet1")
 ```
