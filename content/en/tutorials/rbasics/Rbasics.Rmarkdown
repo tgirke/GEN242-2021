@@ -152,9 +152,9 @@ Save workspace image? [y/n/c]:
         
 * __Note__:
     When responding with `y`, then the entire R workspace will be written to
-    the `.RData` file which can become very large. Often it is sufficient to just
-    save an analysis protocol in an R source file. This way one can quickly
-    regenerate all data sets and objects. 
+    the `.RData` file which can become very large. Often it is better to select `n` here,
+    because a much better working pratice is to save an analysis protocol to an `R` or `Rmd` source file. 
+    This way one can quickly regenerate all data sets and objects needed in a future session. 
 
 
 ## Navigating directories
@@ -317,11 +317,22 @@ myMA[1, , drop=FALSE]
 
 #### Data Frames (2D)
 
-Definition: two dimensional objects with data of variable types
+Definition: `data.frames` are two dimensional objects with data of variable types
 
 ```{r r_dataframe_object, eval=TRUE}
 myDF <- data.frame(Col1=1:10, Col2=10:1) 
 myDF[1:2, ]
+```
+
+#### Tibbles
+
+`Tibbles` are a more modern version of `data.frames`. Among many other advantages, one can see
+here that `tibbles` have a nicer printing bahavior. Much more detailed information on this object
+class is provided in the [`dplyr`](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rbasics/rbasics/#dplyr-environment) section below.
+
+```{r r_tibble_object, eval=TRUE}
+library(tidyverse)
+as_tibble(iris)
 ```
 
 #### Arrays
