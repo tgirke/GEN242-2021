@@ -509,7 +509,7 @@ enable = true
       level = 2
   [[menu.main]]
     name = "HW3"
-    url = "/assignments/Homework/HW3/"
+    url = "/assignments/Homework/HW3/HW03/"
     parent = "Assignments"
     weight = 303
     [menu.main.params]
