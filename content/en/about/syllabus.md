@@ -19,7 +19,7 @@ See Google Doc version [here](https://bit.ly/3aWtMQJ).
 Name: Thomas Girke <br> 
 Email: thomas.girke@ucr.edu <br>
 Office location: virtual via Zoom <br>
-Office hour: Tue 4:30 - 5:30 PM <br>
+Office hour: Tue 4:30 - 5:30 PM & Fri 4:00 - 5:00 PM <br>
 Zoom URL: privately shared
 
 ## TA
