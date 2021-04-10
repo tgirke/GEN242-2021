@@ -16,9 +16,11 @@ mv GCA_000008865.2_ASM886v2_protein.faa ecoli.faa
 ## How many protein sequences are stored in the downloaded file?
 grep '>' ecoli.faa | wc
 grep '^>' ecoli.faa --count
+# Answer: 5,153 protein sequences
 
 ## How many proteins contain the pattern "WxHxxH" or "WxHxxHH"?
 egrep 'W.H..H{1,2}' ecoli.faa --count
+# Answer: 15 matches
 
 ## Use less to find IDs for pattern matches or use awk
 awk --posix -v RS='>' '/W.H..(H){1,2}/ { print ">" $0;}' ecoli.faa | less
@@ -34,8 +36,11 @@ blastdbcmd -db ecoli.faa -dbtype prot -entry_batch myIDs -get_dups -out myseq.fa
 ## Run BLAST search for sequences stored in myseq.fasta
 blastp -query myseq.fasta -db ecoli.faa -outfmt 0 -evalue 1e-6 -out blastp.out
 blastp -query myseq.fasta -db ecoli.faa -outfmt 6 -evalue 1e-6 -out blastp.tab
+# Answer created file with -outfmt 6 format and uploaded to hw1 repos on GitHub classroom
 
 ## Return system time and host name
-date
-hostname
+date 
+hostname 
+# Answer: Apr 06 16:25:58 PDT 2021
+# Answer: parrot or some other host name of a node on HPCC
 
