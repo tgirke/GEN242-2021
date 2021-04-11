@@ -541,31 +541,38 @@ enable = true
     [menu.main.params]
       level = 2
   [[menu.main]]
-    name = "RNA-Seq2 - DEG Methods"
-    url = "/assignments/Projects/project_rnaseq2/"
+    name = "RNA-Seq - DEG Methods 1"
+    url = "/assignments/Projects/rnaseq_deg1/"
     parent = "Assignments"
     weight = 402
+    [menu.main.params]
+      level = 2
+  [[menu.main]]
+    name = "RNA-Seq - DEG Methods 2"
+    url = "/assignments/Projects/rnaseq_deg1/"
+    parent = "Assignments"
+    weight = 403
     [menu.main.params]
       level = 2
   [[menu.main]]
     name = "Project_03"
     url = "/assignments/Projects/Project_03/"
     parent = "Assignments"
-    weight = 403
+    weight = 404
     [menu.main.params]
       level = 2
   [[menu.main]]
     name = "Project_04"
     url = "/assignments/Projects/Project_04/"
     parent = "Assignments"
-    weight = 404
+    weight = 405
     [menu.main.params]
       level = 2
   [[menu.main]]
     name = "Project_05"
     url = "/assignments/Projects/Project_05/"
     parent = "Assignments"
-    weight = 405
+    weight = 406
     [menu.main.params]
       level = 2
   [[menu.main]]
