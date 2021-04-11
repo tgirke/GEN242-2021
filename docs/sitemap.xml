@@ -278,6 +278,10 @@
   </url>
   
   <url>
+    <loc>/assignments/projects/project_overview/</loc>
+  </url>
+  
+  <url>
     <loc>/assignments/projects/rnaseq_aligners/</loc>
     <lastmod>2021-04-10T18:30:11-07:00</lastmod>
   </url>
