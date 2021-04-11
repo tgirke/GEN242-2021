@@ -534,7 +534,7 @@ enable = true
     parent = "Assignments"
     weight = 400
   [[menu.main]]
-    name = "Project_01"
+    name = "RNA-Seq - NGS Aligners"
     url = "/assignments/Projects/rnaseq_aligners/"
     parent = "Assignments"
     weight = 401
