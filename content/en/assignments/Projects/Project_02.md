@@ -1,5 +1,5 @@
 ---
-title: "RNA-Seq - Comparison of DEG analysis methods"
+title: "RNA-Seq - DEG analysis methods"
 linkTitle: "Project_02"
 description: >
 type: docs
