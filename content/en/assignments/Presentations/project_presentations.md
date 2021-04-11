@@ -8,7 +8,7 @@ weight: 502
 
 <br></br>
 
-Presentation to be posted.
+To be posted.
 
 
 
