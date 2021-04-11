@@ -11,24 +11,23 @@ weight: 401
 ## Introduction
 
 During the tutorial sessions of this class all students will perform the basic
-data analysis of three NGS Workflows including RNA-Seq, ChIP-Seq and VAR-Seq.
-In addition, every student will work in a group of 3-5 students on a Challenge
-Project addressing a specific data analysis task within one of the three NGS
+data analysis of at least two NGS Workflows including RNA-Seq, ChIP-Seq and ATAC-Seq.
+In addition, every student will work on a Challenge
+Project addressing a specific data analysis task within one of the general NGS
 Workflows. Students will also present a scientific paper closely related to
 their challenge topic (see
 [here](http://girke.bioinformatics.ucr.edu/GEN242/mydoc_paper_presentations.html)).
-To facilitate teamwork among group members, each course project will be
-assigned a private GitHub repository (see
-[here](https://docs.google.com/spreadsheets/d/1ULTa2bcfhzzj_6R0Ba1dnXiq2fr0get1V5pwIBCYRIY/edit#gid=1818533395)).
+To facilitate teamwork and communication with instructors, each course project will be
+assigned a private GitHub repository.
 
-The results of the Challenge Projects will be presented by each student group
+The results of the Challenge Projects will be presented by each student
 during the last week of the course (see Slideshow Template
-[here](https://docs.google.com/presentation/d/172QKFv_m2CYCwPVqAIZJ5SWzwMUSQYyF6YyXf8IDgiU/edit#slide=id.p)).
-In addition, each student will write a detailed analysis report of the assigned
+[here](https://docs.google.com/presentation/d/1XxV5kseWrmPuLzk0x64_sRFDunyg40iMF2qSUCJ2vPE/edit?usp=sharing)).
+In addition, each student will write a detailed analysis report for the assigned
 course project. This report needs to include all analysis steps of the
 corresponding NGS Workflow (_e.g._ full RNA-Seq analysis) as well as the
-code and results of the Challenge Project. The final project reports should be written
-in R Markdown. A basic tutorial on R Markdown is available [here](http://girke.bioinformatics.ucr.edu/GEN242/mydoc_Rbasics_15.html). 
+code and results of the Challenge Project. The final project reports will be written
+in R Markdown. A basic tutorial on R Markdown is available [here](https://girke.bioinformatics.ucr.edu/GEN242/manuals/rbasics/sample/). 
 Both the R Markdown script (`.Rmd`) along with the rendered HTML or PDF report will 
 be submitted to each student's private GitHub repository. All helper code used for 
 the challenge project needs to be organized as well documented R functions in each 
