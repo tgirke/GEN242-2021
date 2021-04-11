@@ -1,6 +1,6 @@
 ---
-title: "Homework 4"
-linkTitle: "HW4"
+title: "HW4: Pairwise Alignments"
+linkTitle: "HW4: Alignments"
 description: >
 type: docs
 weight: 304

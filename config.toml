@@ -508,21 +508,21 @@ enable = true
     [menu.main.params]
       level = 2
   [[menu.main]]
-    name = "HW3"
+    name = "HW3: R Basics"
     url = "/assignments/Homework/HW03/HW03/"
     parent = "Assignments"
     weight = 303
     [menu.main.params]
       level = 2
   [[menu.main]]
-    name = "HW4"
+    name = "HW4: Alignments"
     url = "/assignments/Homework/HW4/"
     parent = "Assignments"
     weight = 304
     [menu.main.params]
       level = 2
   [[menu.main]]
-    name = "HW5"
+    name = "HW5: R Programming"
     url = "/assignments/Homework/HW5/"
     parent = "Assignments"
     weight = 305
