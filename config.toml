@@ -534,7 +534,7 @@ enable = true
     parent = "Assignments"
     weight = 400
   [[menu.main]]
-    name = "Project Overview"
+    name = "Overview of Projects"
     url = "/assignments/Projects/project_overview/"
     parent = "Assignments"
     weight = 401
