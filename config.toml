@@ -541,7 +541,7 @@ enable = true
     [menu.main.params]
       level = 2
   [[menu.main]]
-    name = "Project_02"
+    name = "RNA-Seq2 - DEG Methods"
     url = "/assignments/Projects/Project_02/"
     parent = "Assignments"
     weight = 402
