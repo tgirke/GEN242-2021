@@ -14,16 +14,48 @@
     
     
     <item>
-      <title>Assignments: Project 1</title>
-      <link>/assignments/projects/project_01/</link>
+      <title>Assignments: RNA-Seq - NGS Aligners</title>
+      <link>/assignments/projects/rnaseq_aligners/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/assignments/projects/project_01/</guid>
+      <guid>/assignments/projects/rnaseq_aligners/</guid>
       <description>
         
         
         &lt;p&gt;&lt;br&gt;&lt;/br&gt;&lt;/p&gt;
-&lt;p&gt;Project to be posted.&lt;/p&gt;
+&lt;h2 id=&#34;rna-seq-workflow&#34;&gt;RNA-Seq Workflow&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Read quality assessment, filtering and trimming&lt;/li&gt;
+&lt;li&gt;Map reads against reference genome&lt;/li&gt;
+&lt;li&gt;Perform read counting for required ranges (&lt;em&gt;e.g.&lt;/em&gt; exonic gene ranges)&lt;/li&gt;
+&lt;li&gt;Normalization of read counts&lt;/li&gt;
+&lt;li&gt;Identification of differentially expressed genes (DEGs)&lt;/li&gt;
+&lt;li&gt;Clustering of gene expression profiles&lt;/li&gt;
+&lt;li&gt;Gene set enrichment analysis&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;challenge-project-comparison-of-rna-seq-aligners&#34;&gt;Challenge Project: Comparison of RNA-Seq Aligners&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Run workflow from start to finish (steps 1-7) on RNA-Seq data set from Howard et al. (2013)&lt;/li&gt;
+&lt;li&gt;Challenge project tasks
+&lt;ul&gt;
+&lt;li&gt;Compare at least 2 RNA-Seq alignment tools, such as HISAT2 and Kallisto, and evaluate the impact of the aligners on:
+&lt;ul&gt;
+&lt;li&gt;Read counts&lt;/li&gt;
+&lt;li&gt;Differentially expressed genes (DEGs)&lt;/li&gt;
+&lt;li&gt;Generate plots to compare the results efficiently&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Howard, B.E. et al., 2013. High-throughput RNA sequencing of pseudomonas-infected Arabidopsis reveals hidden transcriptome complexity and novel splice variants. PloS one, 8(10), p.e74183. &lt;a href=&#34;http://www.ncbi.nlm.nih.gov/pubmed/24098335&#34;&gt;PubMed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Kim D, Pertea G, Trapnell C, Pimentel H, Kelley R, Salzberg SL (2013) TopHat2: accurate alignment of transcriptomes in the presence of insertions, deletions and gene fusions. Genome Biol. doi: 10.1186/gb-2013-14-4-r36 &lt;a href=&#34;http://www.ncbi.nlm.nih.gov/pubmed/23618408&#34;&gt;PubMed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Kim D, Langmead B, Salzberg SL (2015) HISAT: a fast spliced aligner with low memory requirements. Nat Methods 12: 357–360 &lt;a href=&#34;http://www.ncbi.nlm.nih.gov/pubmed/25751142&#34;&gt;PubMed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Liao Y, Smyth GK, Shi W (2013) The Subread aligner: fast, accurate and scalable read mapping by seed-and-vote. Nucleic Acids Res 41: e108 &lt;a href=&#34;http://www.ncbi.nlm.nih.gov/pubmed/23558742&#34;&gt;PubMed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Bray NL, Pimentel H, Melsted P, Pachter L (2016) Near-optimal probabilistic RNA-seq quantification. Nat Biotechnol. doi: 10.1038/nbt.3519 &lt;a href=&#34;http://www.ncbi.nlm.nih.gov/pubmed/27043002&#34;&gt;PubMed&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
       </description>
     </item>
