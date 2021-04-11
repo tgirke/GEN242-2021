@@ -1,6 +1,6 @@
 ---
-title: "Presentation 2"
-linkTitle: "Presentation_02"
+title: "Student Project Presentations"
+linkTitle: "Project Presentations"
 description: >
 type: docs
 weight: 502

@@ -588,38 +588,17 @@ enable = true
     parent = "Assignments"
     weight = 500
   [[menu.main]]
-    name = "Presentation_01"
-    url = "/assignments/Presentations/Presentation_01/"
+    name = "Paper Presentations"
+    url = "/assignments/Presentations/paper_presentations/"
     parent = "Assignments"
     weight = 501
     [menu.main.params]
       level = 2
   [[menu.main]]
-    name = "Presentation_02"
-    url = "/assignments/Presentations/Presentation_02/"
+    name = "Project Presentations"
+    url = "/assignments/Presentations/project_presentations/"
     parent = "Assignments"
     weight = 502
-    [menu.main.params]
-      level = 2
-  [[menu.main]]
-    name = "Presentation_03"
-    url = "/assignments/Presentations/Presentation_03/"
-    parent = "Assignments"
-    weight = 503
-    [menu.main.params]
-      level = 2
-  [[menu.main]]
-    name = "Presentation_04"
-    url = "/assignments/Presentations/Presentation_04/"
-    parent = "Assignments"
-    weight = 504
-    [menu.main.params]
-      level = 2
-  [[menu.main]]
-    name = "Presentation_05"
-    url = "/assignments/Presentations/Presentation_05/"
-    parent = "Assignments"
-    weight = 505
     [menu.main.params]
       level = 2
 ## 

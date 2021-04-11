@@ -14,71 +14,62 @@
     
     
     <item>
-      <title>Assignments: Presentation 1</title>
-      <link>/assignments/presentations/presentation_01/</link>
+      <title>Assignments: Student Paper Presentations</title>
+      <link>/assignments/presentations/paper_presentations/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/assignments/presentations/presentation_01/</guid>
+      <guid>/assignments/presentations/paper_presentations/</guid>
       <description>
         
         
         &lt;p&gt;&lt;br&gt;&lt;/br&gt;&lt;/p&gt;
-&lt;p&gt;Presentation to be posted.&lt;/p&gt;
+&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;Each student has been assigned one journal publication to present in class. The
+expected structure of the paper presentations is outlined in this &lt;a href=&#34;https://docs.google.com/presentation/d/1XxV5kseWrmPuLzk0x64_sRFDunyg40iMF2qSUCJ2vPE/edit&#34;&gt;Slideshow Template&lt;/a&gt;.
+A detailed presentation schedule is available on the internal &lt;a href=&#34;&#34;&gt;Course Schedule&lt;/a&gt;.
+The following lists the assigned papers organized by course project topics.&lt;/p&gt;
+&lt;h2 id=&#34;publications-organized-by-course-projects&#34;&gt;Publications organized by course projects&lt;/h2&gt;
+&lt;p&gt;All references in &lt;a href=&#34;&#34;&gt;Paperpile&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;rna-seq---rna-seq-aligners&#34;&gt;RNA-Seq - RNA-Seq Aligners&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;rna-seq---deg-methods&#34;&gt;RNA-Seq - DEG Methods&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;rna-seq---clustering&#34;&gt;RNA-Seq - Clustering&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;rna-seqscrna-seq---embedding-high-dimensional-data&#34;&gt;RNA-Seq/scRNA-Seq - Embedding High-dimensional Data&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;chip-seq---functional-enrichment&#34;&gt;ChIP-Seq - Functional Enrichment&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;chip-seqatac-seq---visualization&#34;&gt;ChIP-Seq/ATAC-Seq - Visualization&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
 
       </description>
     </item>
     
     <item>
-      <title>Assignments: Presentation 2</title>
-      <link>/assignments/presentations/presentation_02/</link>
+      <title>Assignments: Student Project Presentations</title>
+      <link>/assignments/presentations/project_presentations/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/assignments/presentations/presentation_02/</guid>
-      <description>
-        
-        
-        &lt;p&gt;&lt;br&gt;&lt;/br&gt;&lt;/p&gt;
-&lt;p&gt;Presentation to be posted.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Assignments: Presentation 3</title>
-      <link>/assignments/presentations/presentation_03/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/assignments/presentations/presentation_03/</guid>
-      <description>
-        
-        
-        &lt;p&gt;&lt;br&gt;&lt;/br&gt;&lt;/p&gt;
-&lt;p&gt;Presentation to be posted.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Assignments: Presentation 4</title>
-      <link>/assignments/presentations/presentation_04/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/assignments/presentations/presentation_04/</guid>
-      <description>
-        
-        
-        &lt;p&gt;&lt;br&gt;&lt;/br&gt;&lt;/p&gt;
-&lt;p&gt;Presentation to be posted.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Assignments: Presentation 5</title>
-      <link>/assignments/presentations/presentation_05/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/assignments/presentations/presentation_05/</guid>
+      <guid>/assignments/presentations/project_presentations/</guid>
       <description>
         
         
