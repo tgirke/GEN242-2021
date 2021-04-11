@@ -1,5 +1,5 @@
 ---
-title: "RNA-Seq - DEG analysis methods"
+title: "RNA-Seq2 - DEG analysis methods"
 linkTitle: "Project_02"
 description: >
 type: docs
