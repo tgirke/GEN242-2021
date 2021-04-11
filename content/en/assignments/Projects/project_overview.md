@@ -42,7 +42,7 @@ following files:
 * `.Rmd` source script of project report 
 * Report rendered from `.Rmd` source in HTML or PDF format
 * `._Fct.R` file containing all helper functions used for challenge project
-* __Submission Deadline__ for reports: 6:00 PM, June 12th, 2018
+* __Submission Deadline__ for reports: 6:00 PM, June 8th, 2021
 
 
 ## Structure of final project report
