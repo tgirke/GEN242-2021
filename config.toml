@@ -494,14 +494,14 @@ enable = true
     parent = "Assignments"
     weight = 300
   [[menu.main]]
-    name = "HW1"
+    name = "HW1: Intro & GitHub"
     url = "/assignments/Homework/HW01/HW01/"
     parent = "Assignments"
     weight = 301
     [menu.main.params]
       level = 2
   [[menu.main]]
-    name = "HW2"
+    name = "HW2: Linux & HPC"
     url = "/assignments/Homework/HW02/HW02/"
     parent = "Assignments"
     weight = 302
