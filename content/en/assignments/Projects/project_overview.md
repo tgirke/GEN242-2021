@@ -1,6 +1,6 @@
 ---
 title: Overview of Course Projects 
-linkTitle: "Project-Overview"
+linkTitle: "Overview of Projects"
 description: >
 type: docs
 weight: 401

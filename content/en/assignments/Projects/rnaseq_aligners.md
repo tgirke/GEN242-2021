@@ -1,6 +1,6 @@
 ---
 title: RNA-Seq - NGS Aligners 
-linkTitle: "RNA-Seq-Aligners"
+linkTitle: "RNA-Seq Aligners"
 description: >
 type: docs
 weight: 401
