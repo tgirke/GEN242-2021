@@ -548,14 +548,14 @@ enable = true
     [menu.main.params]
       level = 2
   [[menu.main]]
-    name = "RNA-Seq - DEG Methods 1"
+    name = "RNA-Seq - DEG 1"
     url = "/assignments/Projects/rnaseq_deg1/"
     parent = "Assignments"
     weight = 403
     [menu.main.params]
       level = 2
   [[menu.main]]
-    name = "RNA-Seq - DEG Methods 2"
+    name = "RNA-Seq - DEG 2"
     url = "/assignments/Projects/rnaseq_deg1/"
     parent = "Assignments"
     weight = 404
