@@ -40,8 +40,8 @@ suppressPackageStartupMessages({
 
 <div style="text-align: right"> 
 Source code downloads: &nbsp; &nbsp;
-[ [.Rmd](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rbasics/Rbasics/Rbasics.Rmd) ] &nbsp; &nbsp; 
-[ [.R](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rbasics/Rbasics/Rbasics.R) ]
+[ [.Rmd](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rbasics/Rbasics.Rmd) ] &nbsp; &nbsp; 
+[ [.R](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rbasics/Rbasics.R) ]
 </div>
 
 ## Overview
