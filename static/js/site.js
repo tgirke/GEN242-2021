@@ -38,17 +38,12 @@ $(function(){
 });
 
 // insert pagesource button
-const driverSource = new Driver();
-function hightlightSourceLink(){
-  event.stopPropagation();
-  driverSource.highlight($('.td-page-meta a:contains("View source code")').get(0));
-}
 $(function(){
   if ($('.td-page-meta').get(0)) {
-    var sourceLink = $('.td-page-meta a:contains("View source code")');
-    if ($(".reading-time").get(0)) $(".reading-time").after(sourceLink.clone())
-    else $(".td-content h1:first-of-type").after(sourceLink.clone())
-  }
+    var sourceLink = $('.td-page-meta a.source-link');
+    if ($(".reading-time").get(0)) $(".reading-time").after(sourceLink.clone());
+    else $(".td-content h1:first-of-type").after(sourceLink.clone());
+    }
 });
 
 // highlight toc
@@ -109,3 +104,12 @@ function hideContent(visDate){
   }
 
 }
+
+// add target blank
+$(()=>{
+  $('.td-content a:contains("{t_blank}")').each(function(){
+    $(this)
+      .text($(this).text().replace("{t_blank}", ""))
+      .attr("target", "_blank");
+  });
+});

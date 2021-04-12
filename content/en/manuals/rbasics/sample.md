@@ -1,7 +1,7 @@
 ---
 title: "Sample R Markdown" 
 author: "Author: Your Name"
-date: "Last update: 18 February, 2021" 
+date: "Last update: 12 April, 2021" 
 output:
   html_document:
     toc: true
@@ -19,30 +19,18 @@ weight: 5
 ---
 
 <script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
-
 <script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
-
 <link href="/rmarkdown-libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
-
 <script src="/rmarkdown-libs/datatables-binding/datatables.js"></script>
-
 <link href="/rmarkdown-libs/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="/rmarkdown-libs/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
-
 <script src="/rmarkdown-libs/dt-core/js/jquery.dataTables.min.js"></script>
-
 <link href="/rmarkdown-libs/nouislider/jquery.nouislider.min.css" rel="stylesheet" />
-
 <script src="/rmarkdown-libs/nouislider/jquery.nouislider.min.js"></script>
-
 <link href="/rmarkdown-libs/selectize/selectize.bootstrap3.css" rel="stylesheet" />
-
 <script src="/rmarkdown-libs/selectize/selectize.min.js"></script>
-
 <link href="/rmarkdown-libs/crosstalk/css/crosstalk.css" rel="stylesheet" />
-
 <script src="/rmarkdown-libs/crosstalk/js/crosstalk.min.js"></script>
-
 <!---
 - Compile from command-line
 Rscript -e "rmarkdown::render('sample.Rmd', c('html_document'), clean=FALSE)"
@@ -78,8 +66,8 @@ then modify it as needed. Note the file name of an R Markdown scirpt needs to
 have the extension `.Rmd`. Template files for the following examples are available
 here:
 
-  - R Markdown sample script: [`sample.Rmd`](https://raw.githubusercontent.com/tgirke/GEN242/gh-pages/_vignettes/07_Rbasics/sample.Rmd)
-  - Bibtex file for handling citations and reference section: [`bibtex.bib`](https://raw.githubusercontent.com/tgirke/GEN242/gh-pages/_vignettes/07_Rbasics/bibtex.bib)
+-   R Markdown sample script: [`sample.Rmd`](https://raw.githubusercontent.com/tgirke/GEN242/gh-pages/_vignettes/07_Rbasics/sample.Rmd)
+-   Bibtex file for handling citations and reference section: [`bibtex.bib`](https://raw.githubusercontent.com/tgirke/GEN242/gh-pages/_vignettes/07_Rbasics/bibtex.bib)
 
 Users want to download these files, open the `sample.Rmd` file with their preferred R IDE
 (*e.g.* RStudio, vim or emacs), initilize an R session and then direct their R session to
@@ -94,21 +82,19 @@ with `pdf_document` and `html_document`, respectively. The `BiocStyle::` prefix 
 formatting style of the [`BiocStyle`](http://bioconductor.org/packages/release/bioc/html/BiocStyle.html)
 package from Bioconductor.
 
-``` 
- ---
-title: "My First R Markdown Document"
-author: "Author: First Last"
-date: "Last update: 18 February, 2021"
-output:
-  BiocStyle::html_document:
-    toc: true
-    toc_depth: 3
-    fig_caption: yes
+     ---
+    title: "My First R Markdown Document"
+    author: "Author: First Last"
+    date: "Last update: 12 April, 2021"
+    output:
+      BiocStyle::html_document:
+        toc: true
+        toc_depth: 3
+        fig_caption: yes
 
-fontsize: 14pt
-bibliography: bibtex.bib
- ---
-```
+    fontsize: 14pt
+    bibliography: bibtex.bib
+     ---
 
 ### Render `Rmd` script
 
@@ -148,22 +134,20 @@ plain R code. A code chunk is terminated by a new line starting with three backt
 The following shows an example of such a code chunk. Note the backslashes are
 not part of it. They have been added to print the code chunk syntax in this document.
 
-```` 
-    ```\{r code_chunk_name, eval=FALSE\}
-    x <- 1:10
-    ```
-````
+        ```\{r code_chunk_name, eval=FALSE\}
+        x <- 1:10
+        ```
 
 The following lists the most important arguments to control the behavior of R code chunks:
 
-  - `r`: specifies language for code chunk, here R
-  - `chode_chunk_name`: name of code chunk; this name needs to be unique
-  - `eval`: if assigned `TRUE` the code will be evaluated
-  - `warning`: if assigned `FALSE` warnings will not be shown
-  - `message`: if assigned `FALSE` messages will not be shown
-  - `cache`: if assigned `TRUE` results will be cached to reuse in future rendering instances
-  - `fig.height`: allows to specify height of figures in inches
-  - `fig.width`: allows to specify width of figures in inches
+-   `r`: specifies language for code chunk, here R
+-   `chode_chunk_name`: name of code chunk; this name needs to be unique
+-   `eval`: if assigned `TRUE` the code will be evaluated
+-   `warning`: if assigned `FALSE` warnings will not be shown
+-   `message`: if assigned `FALSE` messages will not be shown
+-   `cache`: if assigned `TRUE` results will be cached to reuse in future rendering instances
+-   `fig.height`: allows to specify height of figures in inches
+-   `fig.width`: allows to specify width of figures in inches
 
 For more details on code chunk options see [here](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf).
 
@@ -172,11 +156,11 @@ For more details on code chunk options see [here](https://www.rstudio.com/wp-con
 The basic syntax of Markdown and derivatives like kramdown is extremely easy to learn. Rather
 than providing another introduction on this topic, here are some useful sites for learning Markdown:
 
-  - [Markdown Intro on GitHub](https://guides.github.com/features/mastering-markdown/)
-  - [Markdown Cheet Sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-  - [Markdown Basics from RStudio](http://rmarkdown.rstudio.com/authoring_basics.html)
-  - [R Markdown Cheat Sheet](http://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
-  - [kramdown Syntax](http://kramdown.gettalong.org/syntax.html)
+-   [Markdown Intro on GitHub](https://guides.github.com/features/mastering-markdown/)
+-   [Markdown Cheet Sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+-   [Markdown Basics from RStudio](http://rmarkdown.rstudio.com/authoring_basics.html)
+-   [R Markdown Cheat Sheet](http://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+-   [kramdown Syntax](http://kramdown.gettalong.org/syntax.html)
 
 ### Tables
 
@@ -190,7 +174,7 @@ kable(iris[1:12,])
 ```
 
 | Sepal.Length | Sepal.Width | Petal.Length | Petal.Width | Species |
-| -----------: | ----------: | -----------: | ----------: | :------ |
+|-------------:|------------:|-------------:|------------:|:--------|
 |          5.1 |         3.5 |          1.4 |         0.2 | setosa  |
 |          4.9 |         3.0 |          1.4 |         0.2 | setosa  |
 |          4.7 |         3.2 |          1.3 |         0.2 | setosa  |
@@ -215,10 +199,7 @@ datatable(iris, filter = 'top', options = list(
 ))
 ```
 
-<div id="htmlwidget-1" class="datatables html-widget" style="width:100%;height:auto;">
-
-</div>
-
+<div id="htmlwidget-1" style="width:100%;height:auto;" class="datatables html-widget"></div>
 <script type="application/json" data-for="htmlwidget-1">{"x":{"filter":"top","filterHTML":"<tr>\n  <td><\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"4.3\" data-max=\"7.9\" data-scale=\"1\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"2\" data-max=\"4.4\" data-scale=\"1\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"1\" data-max=\"6.9\" data-scale=\"1\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"0.1\" data-max=\"2.5\" data-scale=\"1\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"factor\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"width: 100%; display: none;\">\n      <select multiple=\"multiple\" style=\"width: 100%;\" data-options=\"[&quot;setosa&quot;,&quot;versicolor&quot;,&quot;virginica&quot;]\"><\/select>\n    <\/div>\n  <\/td>\n<\/tr>","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120","121","122","123","124","125","126","127","128","129","130","131","132","133","134","135","136","137","138","139","140","141","142","143","144","145","146","147","148","149","150"],[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9,5.4,4.8,4.8,4.3,5.8,5.7,5.4,5.1,5.7,5.1,5.4,5.1,4.6,5.1,4.8,5,5,5.2,5.2,4.7,4.8,5.4,5.2,5.5,4.9,5,5.5,4.9,4.4,5.1,5,4.5,4.4,5,5.1,4.8,5.1,4.6,5.3,5,7,6.4,6.9,5.5,6.5,5.7,6.3,4.9,6.6,5.2,5,5.9,6,6.1,5.6,6.7,5.6,5.8,6.2,5.6,5.9,6.1,6.3,6.1,6.4,6.6,6.8,6.7,6,5.7,5.5,5.5,5.8,6,5.4,6,6.7,6.3,5.6,5.5,5.5,6.1,5.8,5,5.6,5.7,5.7,6.2,5.1,5.7,6.3,5.8,7.1,6.3,6.5,7.6,4.9,7.3,6.7,7.2,6.5,6.4,6.8,5.7,5.8,6.4,6.5,7.7,7.7,6,6.9,5.6,7.7,6.3,6.7,7.2,6.2,6.1,6.4,7.2,7.4,7.9,6.4,6.3,6.1,7.7,6.3,6.4,6,6.9,6.7,6.9,5.8,6.8,6.7,6.7,6.3,6.5,6.2,5.9],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1,3.7,3.4,3,3,4,4.4,3.9,3.5,3.8,3.8,3.4,3.7,3.6,3.3,3.4,3,3.4,3.5,3.4,3.2,3.1,3.4,4.1,4.2,3.1,3.2,3.5,3.6,3,3.4,3.5,2.3,3.2,3.5,3.8,3,3.8,3.2,3.7,3.3,3.2,3.2,3.1,2.3,2.8,2.8,3.3,2.4,2.9,2.7,2,3,2.2,2.9,2.9,3.1,3,2.7,2.2,2.5,3.2,2.8,2.5,2.8,2.9,3,2.8,3,2.9,2.6,2.4,2.4,2.7,2.7,3,3.4,3.1,2.3,3,2.5,2.6,3,2.6,2.3,2.7,3,2.9,2.9,2.5,2.8,3.3,2.7,3,2.9,3,3,2.5,2.9,2.5,3.6,3.2,2.7,3,2.5,2.8,3.2,3,3.8,2.6,2.2,3.2,2.8,2.8,2.7,3.3,3.2,2.8,3,2.8,3,2.8,3.8,2.8,2.8,2.6,3,3.4,3.1,3,3.1,3.1,3.1,2.7,3.2,3.3,3,2.5,3,3.4,3],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5,1.5,1.6,1.4,1.1,1.2,1.5,1.3,1.4,1.7,1.5,1.7,1.5,1,1.7,1.9,1.6,1.6,1.5,1.4,1.6,1.6,1.5,1.5,1.4,1.5,1.2,1.3,1.4,1.3,1.5,1.3,1.3,1.3,1.6,1.9,1.4,1.6,1.4,1.5,1.4,4.7,4.5,4.9,4,4.6,4.5,4.7,3.3,4.6,3.9,3.5,4.2,4,4.7,3.6,4.4,4.5,4.1,4.5,3.9,4.8,4,4.9,4.7,4.3,4.4,4.8,5,4.5,3.5,3.8,3.7,3.9,5.1,4.5,4.5,4.7,4.4,4.1,4,4.4,4.6,4,3.3,4.2,4.2,4.2,4.3,3,4.1,6,5.1,5.9,5.6,5.8,6.6,4.5,6.3,5.8,6.1,5.1,5.3,5.5,5,5.1,5.3,5.5,6.7,6.9,5,5.7,4.9,6.7,4.9,5.7,6,4.8,4.9,5.6,5.8,6.1,6.4,5.6,5.1,5.6,6.1,5.6,5.5,4.8,5.4,5.6,5.1,5.1,5.9,5.7,5.2,5,5.2,5.4,5.1],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1,0.2,0.2,0.1,0.1,0.2,0.4,0.4,0.3,0.3,0.3,0.2,0.4,0.2,0.5,0.2,0.2,0.4,0.2,0.2,0.2,0.2,0.4,0.1,0.2,0.2,0.2,0.2,0.1,0.2,0.2,0.3,0.3,0.2,0.6,0.4,0.3,0.2,0.2,0.2,0.2,1.4,1.5,1.5,1.3,1.5,1.3,1.6,1,1.3,1.4,1,1.5,1,1.4,1.3,1.4,1.5,1,1.5,1.1,1.8,1.3,1.5,1.2,1.3,1.4,1.4,1.7,1.5,1,1.1,1,1.2,1.6,1.5,1.6,1.5,1.3,1.3,1.3,1.2,1.4,1.2,1,1.3,1.2,1.3,1.3,1.1,1.3,2.5,1.9,2.1,1.8,2.2,2.1,1.7,1.8,1.8,2.5,2,1.9,2.1,2,2.4,2.3,1.8,2.2,2.3,1.5,2.3,2,2,1.8,2.1,1.8,1.8,1.8,2.1,1.6,1.9,2,2.2,1.5,1.4,2.3,2.4,1.8,1.8,2.1,2.4,2.3,1.9,2.3,2.5,2.3,1.9,2,2.3,1.8],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Sepal.Length<\/th>\n      <th>Sepal.Width<\/th>\n      <th>Petal.Length<\/th>\n      <th>Petal.Width<\/th>\n      <th>Species<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":100,"scrollX":true,"scrollY":"600px","autoWidth":true,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"orderClasses":false,"orderCellsTop":true}},"evals":[],"jsHooks":[]}</script>
 
 ### Figures
@@ -251,9 +232,7 @@ dev.off()
     ##   2
 
 <center>
-
 <img title="some_title" src="myplot.png"/>
-
 </center>
 
 ### Inline R code
@@ -278,7 +257,7 @@ way as in Latex/Bibtex. Reference collections should be stored in a separate
 file in Bibtex or other supported formats. To cite a publication in an R Markdown
 script, one uses the syntax `[@<id1>]` where `<id1>` needs to be replaced with a
 reference identifier present in the Bibtex database listed in the metadata section
-of the R Markdown script (*e.g.* `bibtex.bib`). For instance, to cite Lawrence et al.
+of the R Markdown script (*e.g.* `bibtex.bib`). For instance, to cite Lawrence et al. 
 (2013), one uses its reference identifier (*e.g.* `Lawrence2013-kt`) as `<id1>` (Lawrence et al. 2013).
 This will place the citation inline in the text and add the corresponding
 reference to a reference list at the end of the output document. For the latter a
@@ -310,13 +289,13 @@ If necessary access to the URL can be restricted with a password following the i
 sessionInfo()
 ```
 
-    ## R version 4.0.4 (2021-02-15)
+    ## R version 4.0.3 (2020-10-10)
     ## Platform: x86_64-pc-linux-gnu (64-bit)
-    ## Running under: Debian GNU/Linux 10 (buster)
+    ## Running under: Ubuntu 18.04.5 LTS
     ## 
     ## Matrix products: default
-    ## BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.8.0
-    ## LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.8.0
+    ## BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.7.1
+    ## LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.7.1
     ## 
     ## locale:
     ##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
@@ -330,25 +309,27 @@ sessionInfo()
     ## [1] stats     graphics  grDevices utils     datasets  methods   base     
     ## 
     ## other attached packages:
-    ## [1] ggplot2_3.3.2 DT_0.16       knitr_1.30   
+    ## [1] ggplot2_3.3.3 DT_0.17       knitr_1.31   
     ## 
     ## loaded via a namespace (and not attached):
-    ##  [1] compiler_4.0.4    pillar_1.4.7      highr_0.8         tools_4.0.4      
-    ##  [5] digest_0.6.27     viridisLite_0.3.0 jsonlite_1.7.1    evaluate_0.14    
-    ##  [9] lifecycle_0.2.0   tibble_3.0.4      gtable_0.3.0      pkgconfig_2.0.3  
-    ## [13] rlang_0.4.8       crosstalk_1.1.0.1 yaml_2.2.1        blogdown_1.1.7   
-    ## [17] xfun_0.20         withr_2.3.0       stringr_1.4.0     dplyr_1.0.2      
-    ## [21] generics_0.1.0    htmlwidgets_1.5.2 vctrs_0.3.5       grid_4.0.4       
-    ## [25] tidyselect_1.1.0  glue_1.4.2        R6_2.5.0          rmarkdown_2.5    
-    ## [29] bookdown_0.21     farver_2.0.3      purrr_0.3.4       magrittr_2.0.1   
-    ## [33] scales_1.1.1      htmltools_0.5.1.1 ellipsis_0.3.1    colorspace_2.0-0 
-    ## [37] labeling_0.4.2    stringi_1.5.3     munsell_0.5.0     crayon_1.3.4
+    ##  [1] bslib_0.2.4       compiler_4.0.3    pillar_1.5.0      jquerylib_0.1.3  
+    ##  [5] highr_0.8         tools_4.0.3       digest_0.6.27     viridisLite_0.3.0
+    ##  [9] jsonlite_1.7.2    evaluate_0.14     lifecycle_1.0.0   tibble_3.1.0     
+    ## [13] gtable_0.3.0      pkgconfig_2.0.3   rlang_0.4.10      DBI_1.1.1        
+    ## [17] crosstalk_1.1.1   yaml_2.2.1        blogdown_1.2      xfun_0.22        
+    ## [21] withr_2.4.1       dplyr_1.0.3       stringr_1.4.0     generics_0.1.0   
+    ## [25] htmlwidgets_1.5.3 sass_0.3.1        vctrs_0.3.6       tidyselect_1.1.0 
+    ## [29] grid_4.0.3        glue_1.4.2        R6_2.5.0          fansi_0.4.2      
+    ## [33] rmarkdown_2.7.7   bookdown_0.21.6   farver_2.0.3      purrr_0.3.4      
+    ## [37] magrittr_2.0.1    scales_1.1.1      htmltools_0.5.1.1 ellipsis_0.3.1   
+    ## [41] assertthat_0.2.1  colorspace_2.0-0  labeling_0.4.2    utf8_1.1.4       
+    ## [45] stringi_1.5.3     munsell_0.5.0     crayon_1.4.1
 
 # References
 
-<div id="refs" class="references">
+<div id="refs" class="references csl-bib-body hanging-indent">
 
-<div id="ref-Lawrence2013-kt">
+<div id="ref-Lawrence2013-kt" class="csl-entry">
 
 Lawrence, Michael, Wolfgang Huber, Hervé Pagès, Patrick Aboyoun, Marc Carlson, Robert Gentleman, Martin T Morgan, and Vincent J Carey. 2013. “Software for Computing and Annotating Genomic Ranges.” *PLoS Comput. Biol.* 9 (8): e1003118. <https://doi.org/10.1371/journal.pcbi.1003118>.
 
