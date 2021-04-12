@@ -214,7 +214,7 @@ dsmall <- diamonds[sample(nrow(diamonds), 1000), ]
 ggplot(dsmall, aes(color, price/carat)) + geom_jitter(alpha = I(1 / 2), aes(color=color))
 ```
 
-<img src="/en/manuals/rbasics/sample_files/figure-html/some_jitter_plot-1.png" width="672" />
+<img src="/en/tutorials/rbasics/sample_files/figure-html/some_jitter_plot-1.png" width="672" />
 
 Sometimes it can be useful to explicitly write an image to a file and then insert that
 image into the final document by referencing its file name in the R Markdown source. For
