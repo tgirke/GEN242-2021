@@ -13,7 +13,7 @@
 "content/en/rmarkdown/new_features/new_features.Rmarkdown" "d61278972d234700692dfabb044542ff"
 "content/en/slides/slides_07/R_for_HPC/R_for_HPC.Rmd" "bd9f225f2547c29e934a244cc1364055"
 "content/en/tutorials/rbasics/Rbasics.Rmarkdown" "873030ae4cfb9f854b415808bf1916aa"
-"content/en/tutorials/rbasics/Rbasics.Rmd" "0999ae5a8a2a012db8209b8da7967911"
+"content/en/tutorials/rbasics/Rbasics.Rmd" "230f7ec8af12fa01131964b2248b2c2c"
 "content/en/tutorials/rbasics/sample.Rmarkdown" "b94bfe5d863d8bcff325819a7fffe2d7"
 "content/en/tutorials/rbasics/sample.Rmd" "b94bfe5d863d8bcff325819a7fffe2d7"
 "content/en/tutorials/reference/reference.Rmarkdown" "345f444c7beee1062f0d4c7c16559b4d"
