@@ -65,7 +65,8 @@ ssh -XY user@cluster.hpcc.ucr.edu
   
 Type password
 
-+ Windows: provide same information in a terminal application like [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) or [MobaXterm](http://mobaxterm.mobatek.net/).
++ Windows: provide same information in a terminal application like [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) or [MobaXterm](http://mobaxterm.mobatek.net/). 
+[Here](https://mobaxterm.mobatek.net/demo.html) is an annimated usage introduction for MobaXterm.
     
     + Host name: `cluster.hpcc.ucr.edu`
     + User name: ...
