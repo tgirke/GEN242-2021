@@ -265,7 +265,7 @@ and follow the upload instructions in the &lt;code&gt;README.md&lt;/code&gt;.&lt
 P98187: FIPFSAGPRNCIGQK
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Use in each case BLOSUM50 as substitution matrix and 8 as gap extension penalty (no extra penalty for gap opening).
-Note, &lt;a href=&#34;https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/assignments/Homework/HW04/HW04b_StarterCode.R&#34;&gt;here&lt;/a&gt; is some R code to create the initial matrix programmatically for upload to a spreadsheet program. Alternatively, solve the entire homework by writing an R script.
+Note, &lt;a href=&#34;https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/assignments/Homework/HW04/HW04b_StarterCode.R&#34;&gt;here&lt;/a&gt; is helper code in R to create the initial matrix programmatically for upload to a spreadsheet program. Alternatively, solve the entire homework by writing an R script.
 Your answers should contain the following components:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Manually populated dynamic programming matrices&lt;/li&gt;
