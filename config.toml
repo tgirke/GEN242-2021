@@ -516,14 +516,14 @@ enable = true
       level = 2
   [[menu.main]]
     name = "HW4: Alignments"
-    url = "/assignments/Homework/HW4/HW04/"
+    url = "/assignments/Homework/HW04/HW04/"
     parent = "Assignments"
     weight = 304
     [menu.main.params]
       level = 2
   [[menu.main]]
     name = "HW5: R Programming"
-    url = "/assignments/Homework/HW5/"
+    url = "/assignments/Homework/HW05/"
     parent = "Assignments"
     weight = 305
     [menu.main.params]
