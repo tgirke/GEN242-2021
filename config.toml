@@ -523,7 +523,7 @@ enable = true
       level = 2
   [[menu.main]]
     name = "HW5: R Programming"
-    url = "/assignments/Homework/HW05/"
+    url = "/assignments/Homework/HW05/HW05"
     parent = "Assignments"
     weight = 305
     [menu.main.params]
