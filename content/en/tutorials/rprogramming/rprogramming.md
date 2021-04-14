@@ -322,7 +322,7 @@ The iterator functions `sapply`, `lapply` and `vapply` apply a function to
 vectors or lists. The `lapply` function always returns a list, while `sapply`
 returns `vector` or `matrix` objects when possible. If not then a list is
 returned. The `vapply` function returns a vector or array of type matching the
-`FUN.VALUE`. Compared to `sappy`, `vapply` is a safer choice with respect to
+`FUN.VALUE`. Compared to `sapply`, `vapply` is a safer choice with respect to
 controlling specific output types to avoid exception handling problems.
 
 **Examples**
