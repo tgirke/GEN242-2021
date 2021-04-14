@@ -22,12 +22,12 @@
  Overview One of the main attractions of using the R (http://cran.at.r-project.org) environment is the ease with which users can write their own programs and custom functions. The R programming syntax is extremely easy to learn, even for users with no previous programming experience." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rprogramming/rprogramming/" />
-<meta property="article:modified_time" content="2021-04-14T14:44:37-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-04-14T16:12:13-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Programming in R">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
  Overview One of the main attractions of using the R (http://cran.at.r-project.org) environment is the ease with which users can write their own programs and custom functions. The R programming syntax is extremely easy to learn, even for users with no previous programming experience.">
-<meta itemprop="dateModified" content="2021-04-14T14:44:37-07:00" />
-<meta itemprop="wordCount" content="3669">
+<meta itemprop="dateModified" content="2021-04-14T16:12:13-07:00" />
+<meta itemprop="wordCount" content="3261">
 
 
 
@@ -789,7 +789,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.69bb618d57b32692e582f020f1b32d73.json"
+  data-offline-search-index-json-src="../../../offline-search-index.5ca574101f09288cee693737a89ee633.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -821,7 +821,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.69bb618d57b32692e582f020f1b32d73.json"
+  data-offline-search-index-json-src="../../../offline-search-index.5ca574101f09288cee693737a89ee633.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1118,15 +1118,7 @@ if (!doNotTrack) {
         </li>
       </ul>
     </li>
-    <li><a href="#homework-5">Homework 5</a>
-      <ul>
-        <li><a href="#reverse-and-complement-of-dna">Reverse and complement of DNA</a></li>
-        <li><a href="#translate-dna-into-protein">Translate DNA into Protein</a></li>
-        <li><a href="#homework-submission">Homework submission</a></li>
-        <li><a href="#due-date">Due date</a></li>
-        <li><a href="#homework-solutions">Homework Solutions</a></li>
-      </ul>
-    </li>
+    <li><a href="#homework-5">Homework 5</a></li>
     <li><a href="#session-info">Session Info</a></li>
     <li><a href="#references">References</a></li>
   </ul>
@@ -1168,7 +1160,7 @@ if (!doNotTrack) {
 	<h1>Programming in R</h1>
     
 	
-        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 18 minute read</p>
+        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 16 minute read</p>
            
 	<!--
 - Compile from command-line
@@ -1208,23 +1200,23 @@ environment to perform complex custom analyses of almost any type of data (Gentl
 <li>Ease of implementing custom functions</li>
 <li>Powerful graphics</li>
 <li>Access to fast growing number of analysis packages</li>
-<li>Most widely used language in bioinformatics</li>
+<li>One of the most widely used languages in bioinformatics</li>
 <li>Is standard for data mining and biostatistical analysis</li>
 <li>Technical advantages: free, open-source, available for all OSs</li>
 </ul>
 <h2 id="r-basics">R Basics</h2>
-<p>The previous <a href="http://girke.bioinformatics.ucr.edu/GEN242/mydoc/mydoc_Rbasics_01.html">Rbasics</a> tutorial provides a general introduction to the usage of the R environment and its basic command syntax.
+<p>The previous <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rbasics/rbasics/">Rbasics</a> tutorial provides a general introduction to the usage of the R environment and its basic command syntax.
 More details can be found in the R &amp; BioConductor manual <a href="http://manuals.bioinformatics.ucr.edu/home/R_BioCondManual">here</a>.</p>
 <h2 id="code-editors-for-r">Code Editors for R</h2>
 <p>Several excellent code editors are available that provide functionalities like R syntax highlighting, auto code indenting and utilities to send code/functions to the R console.</p>
 <ul>
 <li><a href="https://www.rstudio.com/products/rstudio/features/">RStudio</a>: GUI-based IDE for R</li>
-<li><a href="http://manuals.bioinformatics.ucr.edu/home/programming-in-r/vim-r">Vim-R-Tmux</a>: R working environment based on vim and tmux</li>
+<li><a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/linux/linux/#nvim-r-tmux-essentials">Vim-R-Tmux</a>: R working environment based on vim and tmux</li>
 <li><a href="http://www.xemacs.org/Download/index.html">Emacs</a> (<a href="http://ess.r-project.org/">ESS add-on package</a>)</li>
 <li><a href="https://wiki.gnome.org/Apps/Gedit">gedit</a> and <a href="https://wiki.gnome.org/Apps/Gedit">Rgedit</a></li>
 <li><a href="https://rkward.kde.org/">RKWard</a></li>
 <li><a href="http://www.walware.de/goto/statet">Eclipse</a></li>
-<li><a href="http://jekyll.math.byuh.edu/other/howto/tinnr/install.shtml">Tinn-R</a></li>
+<li><a href="https://sourceforge.net/projects/tinn-r/files/Tinn-R%20portable/">Tinn-R</a></li>
 <li><a href="https://sourceforge.net/projects/npptor/">Notepad++ (NppToR)</a></li>
 </ul>
 <center>
@@ -1296,9 +1288,9 @@ Programming in R using Vim or Emacs
 </code></pre>
 <p><strong>Example</strong></p>
 <pre><code class="language-r">x &lt;- 1:10 
-ifelse(x&lt;5, x, 0)
+ifelse(x&lt;5, sqrt(x), 0)
 </code></pre>
-<pre><code>##  [1] 1 2 3 4 0 0 0 0 0 0
+<pre><code>##  [1] 1.000000 1.414214 1.732051 2.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
 </code></pre>
 <h2 id="loops">Loops</h2>
 <h3 id="for-loop"><code>for</code> loop</h3>
@@ -1395,9 +1387,12 @@ while(z&lt;5) {
 ##      5.006      5.936      6.588
 </code></pre>
 <h4 id="sapply-lapply-and-vapply"><code>sapply</code>, <code>lapply</code> and <code>vapply</code></h4>
-<p>All three apply a function to vector or list. The <code>lapply</code> function always returns a list, while <code>sapply</code> returns <code>vector</code> or <code>matrix</code> objects when possible. If not then a list is returned.
-The <code>vapply</code> function returns a vector or array of type matching the <code>FUN.VALUE</code>. Compared to <code>sappy</code>, <code>vapply</code> is a safer choice with respect to controlling specific output
-types to avoid exception handling problems.</p>
+<p>The iterator functions <code>sapply</code>, <code>lapply</code> and <code>vapply</code> apply a function to
+vectors or lists. The <code>lapply</code> function always returns a list, while <code>sapply</code>
+returns <code>vector</code> or <code>matrix</code> objects when possible. If not then a list is
+returned. The <code>vapply</code> function returns a vector or array of type matching the
+<code>FUN.VALUE</code>. Compared to <code>sappy</code>, <code>vapply</code> is a safer choice with respect to
+controlling specific output types to avoid exception handling problems.</p>
 <p><strong>Examples</strong></p>
 <pre><code class="language-r">l &lt;- list(a = 1:10, beta = exp(-3:3), logic = c(TRUE,FALSE,FALSE,TRUE))
 lapply(l, mean)
@@ -1794,69 +1789,7 @@ library(mypackage)
 ?myMAcomp # Opens help for function defined by mypackage
 </code></pre>
 <h2 id="homework-5">Homework 5</h2>
-<h3 id="reverse-and-complement-of-dna">Reverse and complement of DNA</h3>
-<p><strong>Task 1</strong>: Write a <code>RevComp</code> function that returns the reverse and complement of a DNA sequence string. Include an argument that will allow to return only the reversed sequence, the complemented sequence or the reversed and complemented sequence. The following R functions will be useful for the implementation:</p>
-<pre><code class="language-r">x &lt;- c(&quot;ATGCATTGGACGTTAG&quot;)  
-x
-</code></pre>
-<pre><code>## [1] &quot;ATGCATTGGACGTTAG&quot;
-</code></pre>
-<pre><code class="language-r">x &lt;- substring(x, 1:nchar(x), 1:nchar(x)) 
-x
-</code></pre>
-<pre><code>##  [1] &quot;A&quot; &quot;T&quot; &quot;G&quot; &quot;C&quot; &quot;A&quot; &quot;T&quot; &quot;T&quot; &quot;G&quot; &quot;G&quot; &quot;A&quot; &quot;C&quot; &quot;G&quot; &quot;T&quot; &quot;T&quot; &quot;A&quot; &quot;G&quot;
-</code></pre>
-<pre><code class="language-r">x &lt;- rev(x) 
-x
-</code></pre>
-<pre><code>##  [1] &quot;G&quot; &quot;A&quot; &quot;T&quot; &quot;T&quot; &quot;G&quot; &quot;C&quot; &quot;A&quot; &quot;G&quot; &quot;G&quot; &quot;T&quot; &quot;T&quot; &quot;A&quot; &quot;C&quot; &quot;G&quot; &quot;T&quot; &quot;A&quot;
-</code></pre>
-<pre><code class="language-r">x &lt;- paste(x, collapse=&quot;&quot;)
-x
-</code></pre>
-<pre><code>## [1] &quot;GATTGCAGGTTACGTA&quot;
-</code></pre>
-<pre><code class="language-r">chartr(&quot;ATGC&quot;, &quot;TACG&quot;, x) 
-</code></pre>
-<pre><code>## [1] &quot;CTAACGTCCAATGCAT&quot;
-</code></pre>
-<p><strong>Task 2</strong>: Write a function that applies the <code>RevComp</code> function to many sequences stored in a vector.</p>
-<h3 id="translate-dna-into-protein">Translate DNA into Protein</h3>
-<p><strong>Task 3</strong>: Write a function that will translate one or many DNA sequences in all three reading frames into proteins. The following commands will simplify this task:</p>
-<pre><code class="language-r">AAdf &lt;- read.table(file=&quot;http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/My_R_Scripts/AA.txt&quot;, header=TRUE, sep=&quot;\t&quot;) 
-AAdf[1:4,]
-</code></pre>
-<pre><code>##   Codon AA_1 AA_3 AA_Full AntiCodon
-## 1   TCA    S  Ser  Serine       TGA
-## 2   TCG    S  Ser  Serine       CGA
-## 3   TCC    S  Ser  Serine       GGA
-## 4   TCT    S  Ser  Serine       AGA
-</code></pre>
-<pre><code class="language-r">AAv &lt;- as.character(AAdf[,2]) 
-names(AAv) &lt;- AAdf[,1] 
-AAv
-</code></pre>
-<pre><code>## TCA TCG TCC TCT TTT TTC TTA TTG TAT TAC TAA TAG TGT TGC TGA TGG CTA CTG CTC CTT CCA CCG CCC CCT CAT 
-## &quot;S&quot; &quot;S&quot; &quot;S&quot; &quot;S&quot; &quot;F&quot; &quot;F&quot; &quot;L&quot; &quot;L&quot; &quot;Y&quot; &quot;Y&quot; &quot;*&quot; &quot;*&quot; &quot;C&quot; &quot;C&quot; &quot;*&quot; &quot;W&quot; &quot;L&quot; &quot;L&quot; &quot;L&quot; &quot;L&quot; &quot;P&quot; &quot;P&quot; &quot;P&quot; &quot;P&quot; &quot;H&quot; 
-## CAC CAA CAG CGA CGG CGC CGT ATT ATC ATA ATG ACA ACG ACC ACT AAT AAC AAA AAG AGT AGC AGA AGG GTA GTG 
-## &quot;H&quot; &quot;Q&quot; &quot;Q&quot; &quot;R&quot; &quot;R&quot; &quot;R&quot; &quot;R&quot; &quot;I&quot; &quot;I&quot; &quot;I&quot; &quot;M&quot; &quot;T&quot; &quot;T&quot; &quot;T&quot; &quot;T&quot; &quot;N&quot; &quot;N&quot; &quot;K&quot; &quot;K&quot; &quot;S&quot; &quot;S&quot; &quot;R&quot; &quot;R&quot; &quot;V&quot; &quot;V&quot; 
-## GTC GTT GCA GCG GCC GCT GAT GAC GAA GAG GGA GGG GGC GGT 
-## &quot;V&quot; &quot;V&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;D&quot; &quot;D&quot; &quot;E&quot; &quot;E&quot; &quot;G&quot; &quot;G&quot; &quot;G&quot; &quot;G&quot;
-</code></pre>
-<pre><code class="language-r">y &lt;- gsub(&quot;(...)&quot;, &quot;\\1_&quot;, x) 
-y &lt;- unlist(strsplit(y, &quot;_&quot;)) 
-y &lt;- y[grep(&quot;^...$&quot;, y)] 
-AAv[y] 
-</code></pre>
-<pre><code>## GAT TGC AGG TTA CGT 
-## &quot;D&quot; &quot;C&quot; &quot;R&quot; &quot;L&quot; &quot;R&quot;
-</code></pre>
-<h3 id="homework-submission">Homework submission</h3>
-<p>Submit the 3 functions in one well structured and annotated R script to the instructor. The script should include instructions on how to use the functions.</p>
-<h3 id="due-date">Due date</h3>
-<p>This homework is due on Thu, April 26th at 6:00 PM.</p>
-<h3 id="homework-solutions">Homework Solutions</h3>
-<p>See <a href="">here</a></p>
+<p>See homework section <a href="https://girke.bioinformatics.ucr.edu/GEN242/assignments/homework/hw05/hw05/">here</a>.</p>
 <h2 id="session-info">Session Info</h2>
 <pre><code class="language-r">sessionInfo()
 </code></pre>
@@ -1900,7 +1833,7 @@ AAv[y]
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-14: <a  href="https://github.com/tgirke/GEN242//commit/36c8a6c7eb9beb7e6fc68aba315b80cf5f17f686">some edits (36c8a6c7)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-14: <a  href="https://github.com/tgirke/GEN242//commit/f3ccee226d63228a0ea1f226c86684ddea59ad80">some edits (f3ccee22)</a>
 </div>
 </div>
 
