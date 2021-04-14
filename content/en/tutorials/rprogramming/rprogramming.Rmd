@@ -58,7 +58,7 @@ environment to perform complex custom analyses of almost any type of data [@Gent
 * Ease of implementing custom functions
 * Powerful graphics
 * Access to fast growing number of analysis packages
-* Most widely used language in bioinformatics
+* One of the most widely used languages in bioinformatics
 * Is standard for data mining and biostatistical analysis
 * Technical advantages: free, open-source, available for all OSs
 
