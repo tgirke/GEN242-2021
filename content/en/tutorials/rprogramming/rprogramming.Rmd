@@ -65,7 +65,7 @@ environment to perform complex custom analyses of almost any type of data [@Gent
 
 ## R Basics 
 
-The previous [Rbasics](http://girke.bioinformatics.ucr.edu/GEN242/mydoc/mydoc_Rbasics_01.html) tutorial provides a general introduction to the usage of the R environment and its basic command syntax.
+The previous [Rbasics](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rbasics/rbasics/) tutorial provides a general introduction to the usage of the R environment and its basic command syntax.
 More details can be found in the R & BioConductor manual [here](http://manuals.bioinformatics.ucr.edu/home/R_BioCondManual).
 
 ## Code Editors for R
@@ -73,12 +73,12 @@ More details can be found in the R & BioConductor manual [here](http://manuals.b
 Several excellent code editors are available that provide functionalities like R syntax highlighting, auto code indenting and utilities to send code/functions to the R console.
 
 * [RStudio](https://www.rstudio.com/products/rstudio/features/): GUI-based IDE for R
-* [Vim-R-Tmux](http://manuals.bioinformatics.ucr.edu/home/programming-in-r/vim-r): R working environment based on vim and tmux
+* [Vim-R-Tmux](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/linux/linux/#nvim-r-tmux-essentials): R working environment based on vim and tmux
 * [Emacs](http://www.xemacs.org/Download/index.html) ([ESS add-on package](http://ess.r-project.org/))
 * [gedit](https://wiki.gnome.org/Apps/Gedit) and [Rgedit](https://wiki.gnome.org/Apps/Gedit)
 * [RKWard](https://rkward.kde.org/)
 * [Eclipse](http://www.walware.de/goto/statet)
-* [Tinn-R](http://jekyll.math.byuh.edu/other/howto/tinnr/install.shtml)
+* [Tinn-R](https://sourceforge.net/projects/tinn-r/files/Tinn-R%20portable/)
 * [Notepad++ (NppToR)](https://sourceforge.net/projects/npptor/)
 
 <center>Programming in R using RStudio</center>
@@ -156,7 +156,7 @@ ifelse(test, true_value, false_value)
 __Example__
 ```{r ifelse_statement_example, eval=TRUE}
 x <- 1:10 
-ifelse(x<5, x, 0)
+ifelse(x<5, sqrt(x), 0)
 ```
 
 ## Loops
@@ -267,9 +267,12 @@ tapply(iris$Sepal.Length, iris$Species, mean)
 
 #### `sapply`, `lapply` and `vapply`
 
-All three apply a function to vector or list. The `lapply` function always returns a list, while `sapply` returns `vector` or `matrix` objects when possible. If not then a list is returned.
-The `vapply` function returns a vector or array of type matching the `FUN.VALUE`. Compared to `sappy`, `vapply` is a safer choice with respect to controlling specific output 
-types to avoid exception handling problems.
+The iterator functions `sapply`, `lapply` and `vapply` apply a function to
+vectors or lists. The `lapply` function always returns a list, while `sapply`
+returns `vector` or `matrix` objects when possible. If not then a list is
+returned.  The `vapply` function returns a vector or array of type matching the
+`FUN.VALUE`. Compared to `sappy`, `vapply` is a safer choice with respect to
+controlling specific output types to avoid exception handling problems.
 
 __Examples__
 ```{r lapply_loop_example, eval=TRUE}
