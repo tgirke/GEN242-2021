@@ -673,50 +673,8 @@ library(mypackage)
 
 ## Homework 5
 
-### Reverse and complement of DNA
+See homework section [here](https://girke.bioinformatics.ucr.edu/GEN242/assignments/homework/hw05/hw05/).
 
-__Task 1__: Write a `RevComp` function that returns the reverse and complement of a DNA sequence string. Include an argument that will allow to return only the reversed sequence, the complemented sequence or the reversed and complemented sequence. The following R functions will be useful for the implementation: 
-
-```{r hw_revcomp, eval=TRUE}
-x <- c("ATGCATTGGACGTTAG")  
-x
-x <- substring(x, 1:nchar(x), 1:nchar(x)) 
-x
-x <- rev(x) 
-x
-x <- paste(x, collapse="")
-x
-chartr("ATGC", "TACG", x) 
-```
-
-__Task 2__: Write a function that applies the `RevComp` function to many sequences stored in a vector.
-
-### Translate DNA into Protein
-
-__Task 3__: Write a function that will translate one or many DNA sequences in all three reading frames into proteins. The following commands will simplify this task:
-
-```{r hw_translate, eval=TRUE}
-AAdf <- read.table(file="http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/My_R_Scripts/AA.txt", header=TRUE, sep="\t") 
-AAdf[1:4,]
-AAv <- as.character(AAdf[,2]) 
-names(AAv) <- AAdf[,1] 
-AAv
-y <- gsub("(...)", "\\1_", x) 
-y <- unlist(strsplit(y, "_")) 
-y <- y[grep("^...$", y)] 
-AAv[y] 
-```
-
-### Homework submission
-Submit the 3 functions in one well structured and annotated R script to the instructor. The script should include instructions on how to use the functions.
-
-### Due date
-
-This homework is due on Thu, April 26th at 6:00 PM.
-
-### Homework Solutions
-
-See [here]()
 
 ## Session Info
 
