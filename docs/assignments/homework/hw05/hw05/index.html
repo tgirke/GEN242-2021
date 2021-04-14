@@ -22,12 +22,12 @@
 x &lt;- c(&quot;ATGCATTGGACGTTAG&quot;) x  ## [1] &quot;ATGCATTGGACGTTAG&quot;  x &lt;- substring(x, 1:nchar(x), 1:nchar(x)) x  ## [1] &quot;A&quot; &quot;T&quot; &quot;G&quot; &quot;C&quot; &quot;A&quot; &quot;T&quot; &quot;T&quot; &quot;G&quot; &quot;G&quot; &quot;A&quot; &quot;C&quot; &quot;G&quot; &quot;T&quot; &quot;T&quot; &quot;A&quot; &quot;G&quot;  x &lt;- rev(x) x  ## [1] &quot;G&quot; &quot;A&quot; &quot;T&quot; &quot;T&quot; &quot;G&quot; &quot;C&quot; &quot;A&quot; &quot;G&quot; &quot;G&quot; &quot;T&quot; &quot;T&quot; &quot;A&quot; &quot;C&quot; &quot;G&quot; &quot;T&quot; &quot;A&quot;  x &lt;- paste(x, collapse=&quot;&quot;) x  ## [1] &quot;GATTGCAGGTTACGTA&quot;  chartr(&quot;ATGC&quot;, &quot;TACG&quot;, x)  ## [1] &quot;CTAACGTCCAATGCAT&quot;  Task 2: Write a function that applies the RevComp function to many sequences stored in a vector." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/assignments/homework/hw05/hw05/" />
-<meta property="article:modified_time" content="2021-04-14T14:59:29-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-04-14T15:04:48-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="HW5 - Programming in R">
 <meta itemprop="description" content="A. Reverse and complement of DNA Task 1: Write a RevComp function that returns the reverse and complement of a DNA sequence string. Include an argument that will allow to return only the reversed sequence, the complemented sequence or the reversed and complemented sequence. The following R functions will be useful for the implementation:
 x &lt;- c(&quot;ATGCATTGGACGTTAG&quot;) x  ## [1] &quot;ATGCATTGGACGTTAG&quot;  x &lt;- substring(x, 1:nchar(x), 1:nchar(x)) x  ## [1] &quot;A&quot; &quot;T&quot; &quot;G&quot; &quot;C&quot; &quot;A&quot; &quot;T&quot; &quot;T&quot; &quot;G&quot; &quot;G&quot; &quot;A&quot; &quot;C&quot; &quot;G&quot; &quot;T&quot; &quot;T&quot; &quot;A&quot; &quot;G&quot;  x &lt;- rev(x) x  ## [1] &quot;G&quot; &quot;A&quot; &quot;T&quot; &quot;T&quot; &quot;G&quot; &quot;C&quot; &quot;A&quot; &quot;G&quot; &quot;G&quot; &quot;T&quot; &quot;T&quot; &quot;A&quot; &quot;C&quot; &quot;G&quot; &quot;T&quot; &quot;A&quot;  x &lt;- paste(x, collapse=&quot;&quot;) x  ## [1] &quot;GATTGCAGGTTACGTA&quot;  chartr(&quot;ATGC&quot;, &quot;TACG&quot;, x)  ## [1] &quot;CTAACGTCCAATGCAT&quot;  Task 2: Write a function that applies the RevComp function to many sequences stored in a vector.">
-<meta itemprop="dateModified" content="2021-04-14T14:59:29-07:00" />
-<meta itemprop="wordCount" content="422">
+<meta itemprop="dateModified" content="2021-04-14T15:04:48-07:00" />
+<meta itemprop="wordCount" content="426">
 
 
 
@@ -789,7 +789,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.90438c4f0efc43fc86dab3f47a64e1d5.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.c436de410283303b52478fce1946d12d.json"
   data-offline-search-base-href="../../../../"
   data-offline-search-max-results="10"
 >
@@ -821,7 +821,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.90438c4f0efc43fc86dab3f47a64e1d5.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.c436de410283303b52478fce1946d12d.json"
   data-offline-search-base-href="../../../../"
   data-offline-search-max-results="10"
 >
@@ -1221,11 +1221,11 @@ AAv[y]
 <h2 id="due-date">Due date</h2>
 <p>This homework is due on Thu, April 22 at 6:00 PM.</p>
 <h2 id="homework-solutions">Homework Solutions</h2>
-<p>See <a href="">here</a></p>
+<p>Will be posted after due date.</p>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-14: <a  href="https://github.com/tgirke/GEN242//commit/34258c16b890d270db1c5d7e7aa45192409d916f">some edits (34258c16)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-14: <a  href="https://github.com/tgirke/GEN242//commit/d60a7f1a989bac389ccfb972e4a8339206dbb57a">some edits (d60a7f1a)</a>
 </div>
 </div>
 
