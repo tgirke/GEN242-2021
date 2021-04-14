@@ -304,7 +304,69 @@ writePairwiseAlignments(p)
         
         
         &lt;p&gt;&lt;br&gt;&lt;/br&gt;&lt;/p&gt;
-&lt;p&gt;HW to be posted.&lt;/p&gt;
+&lt;h2 id=&#34;reverse-and-complement-of-dna&#34;&gt;Reverse and complement of DNA&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Task 1&lt;/strong&gt;: Write a &lt;code&gt;RevComp&lt;/code&gt; function that returns the reverse and complement of a DNA sequence string. Include an argument that will allow to return only the reversed sequence, the complemented sequence or the reversed and complemented sequence. The following R functions will be useful for the implementation:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;x &amp;lt;- c(&amp;quot;ATGCATTGGACGTTAG&amp;quot;)  
+x
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;ATGCATTGGACGTTAG&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;x &amp;lt;- substring(x, 1:nchar(x), 1:nchar(x)) 
+x
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##  [1] &amp;quot;A&amp;quot; &amp;quot;T&amp;quot; &amp;quot;G&amp;quot; &amp;quot;C&amp;quot; &amp;quot;A&amp;quot; &amp;quot;T&amp;quot; &amp;quot;T&amp;quot; &amp;quot;G&amp;quot; &amp;quot;G&amp;quot; &amp;quot;A&amp;quot; &amp;quot;C&amp;quot; &amp;quot;G&amp;quot; &amp;quot;T&amp;quot; &amp;quot;T&amp;quot; &amp;quot;A&amp;quot; &amp;quot;G&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;x &amp;lt;- rev(x) 
+x
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##  [1] &amp;quot;G&amp;quot; &amp;quot;A&amp;quot; &amp;quot;T&amp;quot; &amp;quot;T&amp;quot; &amp;quot;G&amp;quot; &amp;quot;C&amp;quot; &amp;quot;A&amp;quot; &amp;quot;G&amp;quot; &amp;quot;G&amp;quot; &amp;quot;T&amp;quot; &amp;quot;T&amp;quot; &amp;quot;A&amp;quot; &amp;quot;C&amp;quot; &amp;quot;G&amp;quot; &amp;quot;T&amp;quot; &amp;quot;A&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;x &amp;lt;- paste(x, collapse=&amp;quot;&amp;quot;)
+x
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;GATTGCAGGTTACGTA&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;chartr(&amp;quot;ATGC&amp;quot;, &amp;quot;TACG&amp;quot;, x) 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;CTAACGTCCAATGCAT&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Task 2&lt;/strong&gt;: Write a function that applies the &lt;code&gt;RevComp&lt;/code&gt; function to many sequences stored in a vector.&lt;/p&gt;
+&lt;h2 id=&#34;translate-dna-into-protein&#34;&gt;Translate DNA into Protein&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Task 3&lt;/strong&gt;: Write a function that will translate one or many DNA sequences in all three reading frames into proteins. The following commands will simplify this task:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;AAdf &amp;lt;- read.table(file=&amp;quot;http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/My_R_Scripts/AA.txt&amp;quot;, header=TRUE, sep=&amp;quot;\t&amp;quot;) 
+AAdf[1:4,]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   Codon AA_1 AA_3 AA_Full AntiCodon
+## 1   TCA    S  Ser  Serine       TGA
+## 2   TCG    S  Ser  Serine       CGA
+## 3   TCC    S  Ser  Serine       GGA
+## 4   TCT    S  Ser  Serine       AGA
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;AAv &amp;lt;- as.character(AAdf[,2]) 
+names(AAv) &amp;lt;- AAdf[,1] 
+AAv
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## TCA TCG TCC TCT TTT TTC TTA TTG TAT TAC TAA TAG TGT TGC TGA TGG CTA CTG CTC CTT CCA CCG CCC CCT CAT 
+## &amp;quot;S&amp;quot; &amp;quot;S&amp;quot; &amp;quot;S&amp;quot; &amp;quot;S&amp;quot; &amp;quot;F&amp;quot; &amp;quot;F&amp;quot; &amp;quot;L&amp;quot; &amp;quot;L&amp;quot; &amp;quot;Y&amp;quot; &amp;quot;Y&amp;quot; &amp;quot;*&amp;quot; &amp;quot;*&amp;quot; &amp;quot;C&amp;quot; &amp;quot;C&amp;quot; &amp;quot;*&amp;quot; &amp;quot;W&amp;quot; &amp;quot;L&amp;quot; &amp;quot;L&amp;quot; &amp;quot;L&amp;quot; &amp;quot;L&amp;quot; &amp;quot;P&amp;quot; &amp;quot;P&amp;quot; &amp;quot;P&amp;quot; &amp;quot;P&amp;quot; &amp;quot;H&amp;quot; 
+## CAC CAA CAG CGA CGG CGC CGT ATT ATC ATA ATG ACA ACG ACC ACT AAT AAC AAA AAG AGT AGC AGA AGG GTA GTG 
+## &amp;quot;H&amp;quot; &amp;quot;Q&amp;quot; &amp;quot;Q&amp;quot; &amp;quot;R&amp;quot; &amp;quot;R&amp;quot; &amp;quot;R&amp;quot; &amp;quot;R&amp;quot; &amp;quot;I&amp;quot; &amp;quot;I&amp;quot; &amp;quot;I&amp;quot; &amp;quot;M&amp;quot; &amp;quot;T&amp;quot; &amp;quot;T&amp;quot; &amp;quot;T&amp;quot; &amp;quot;T&amp;quot; &amp;quot;N&amp;quot; &amp;quot;N&amp;quot; &amp;quot;K&amp;quot; &amp;quot;K&amp;quot; &amp;quot;S&amp;quot; &amp;quot;S&amp;quot; &amp;quot;R&amp;quot; &amp;quot;R&amp;quot; &amp;quot;V&amp;quot; &amp;quot;V&amp;quot; 
+## GTC GTT GCA GCG GCC GCT GAT GAC GAA GAG GGA GGG GGC GGT 
+## &amp;quot;V&amp;quot; &amp;quot;V&amp;quot; &amp;quot;A&amp;quot; &amp;quot;A&amp;quot; &amp;quot;A&amp;quot; &amp;quot;A&amp;quot; &amp;quot;D&amp;quot; &amp;quot;D&amp;quot; &amp;quot;E&amp;quot; &amp;quot;E&amp;quot; &amp;quot;G&amp;quot; &amp;quot;G&amp;quot; &amp;quot;G&amp;quot; &amp;quot;G&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;y &amp;lt;- gsub(&amp;quot;(...)&amp;quot;, &amp;quot;\\1_&amp;quot;, x) 
+y &amp;lt;- unlist(strsplit(y, &amp;quot;_&amp;quot;)) 
+y &amp;lt;- y[grep(&amp;quot;^...$&amp;quot;, y)] 
+AAv[y] 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## GAT TGC AGG TTA CGT 
+## &amp;quot;D&amp;quot; &amp;quot;C&amp;quot; &amp;quot;R&amp;quot; &amp;quot;L&amp;quot; &amp;quot;R&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;homework-submission&#34;&gt;Homework submission&lt;/h2&gt;
+&lt;p&gt;Submit the 3 functions in one well structured and annotated R script to the instructor. The script should include instructions on how to use the functions.&lt;/p&gt;
+&lt;h2 id=&#34;due-date&#34;&gt;Due date&lt;/h2&gt;
+&lt;p&gt;This homework is due on Thu, April 22 at 6:00 PM.&lt;/p&gt;
+&lt;h2 id=&#34;homework-solutions&#34;&gt;Homework Solutions&lt;/h2&gt;
+&lt;p&gt;See &lt;a href=&#34;&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
 
       </description>
     </item>
