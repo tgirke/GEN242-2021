@@ -27,7 +27,7 @@ x &lt;- c(&quot;ATGCATTGGACGTTAG&quot;) x  ## [1] &quot;ATGCATTGGACGTTAG&quot;  
 <meta itemprop="description" content="A. Reverse and complement of DNA Task 1: Write a RevComp function that returns the reverse and complement of a DNA sequence string. Include an argument that will allow to return only the reversed sequence, the complemented sequence or the reversed and complemented sequence. The following R functions will be useful for the implementation:
 x &lt;- c(&quot;ATGCATTGGACGTTAG&quot;) x  ## [1] &quot;ATGCATTGGACGTTAG&quot;  x &lt;- substring(x, 1:nchar(x), 1:nchar(x)) x  ## [1] &quot;A&quot; &quot;T&quot; &quot;G&quot; &quot;C&quot; &quot;A&quot; &quot;T&quot; &quot;T&quot; &quot;G&quot; &quot;G&quot; &quot;A&quot; &quot;C&quot; &quot;G&quot; &quot;T&quot; &quot;T&quot; &quot;A&quot; &quot;G&quot;  x &lt;- rev(x) x  ## [1] &quot;G&quot; &quot;A&quot; &quot;T&quot; &quot;T&quot; &quot;G&quot; &quot;C&quot; &quot;A&quot; &quot;G&quot; &quot;G&quot; &quot;T&quot; &quot;T&quot; &quot;A&quot; &quot;C&quot; &quot;G&quot; &quot;T&quot; &quot;A&quot;  x &lt;- paste(x, collapse=&quot;&quot;) x  ## [1] &quot;GATTGCAGGTTACGTA&quot;  chartr(&quot;ATGC&quot;, &quot;TACG&quot;, x)  ## [1] &quot;CTAACGTCCAATGCAT&quot;  Task 2: Write a function that applies the RevComp function to many sequences stored in a vector.">
 <meta itemprop="dateModified" content="2021-04-14T15:07:03-07:00" />
-<meta itemprop="wordCount" content="426">
+<meta itemprop="wordCount" content="444">
 
 
 
@@ -789,7 +789,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.9ebc7ddc2448970a06083b779dd917a0.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.69bb618d57b32692e582f020f1b32d73.json"
   data-offline-search-base-href="../../../../"
   data-offline-search-max-results="10"
 >
@@ -821,7 +821,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.9ebc7ddc2448970a06083b779dd917a0.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.69bb618d57b32692e582f020f1b32d73.json"
   data-offline-search-base-href="../../../../"
   data-offline-search-max-results="10"
 >
@@ -1156,7 +1156,7 @@ if (!doNotTrack) {
 	<h1>HW5 - Programming in R</h1>
     
 	
-        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 2 minute read</p>
+        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 3 minute read</p>
            
 	<p><br></br></p>
 <h2 id="a-reverse-and-complement-of-dna">A. Reverse and complement of DNA</h2>
@@ -1217,7 +1217,8 @@ AAv[y]
 ## &quot;D&quot; &quot;C&quot; &quot;R&quot; &quot;L&quot; &quot;R&quot;
 </code></pre>
 <h2 id="homework-submission">Homework submission</h2>
-<p>Submit the 3 functions in one well structured and annotated R script to the instructor. The script should include instructions on how to use the functions.</p>
+<p>Accept the homework on <a href="https://classroom.github.com/a/5BpGYGxO">Github Classroom</a>, and follow the instructions in the <code>README.md</code> file.</p>
+<p>The tasks can be summarized as follows: submit the 3 functions in one well structured and annotated R script. The script should include instructions on how to use the functions.</p>
 <h2 id="due-date">Due date</h2>
 <p>This homework is due on Thu, April 22 at 6:00 PM.</p>
 <h2 id="homework-solutions">Homework Solutions</h2>
