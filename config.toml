@@ -390,7 +390,7 @@ enable = true
     weight = 203
   [[menu.main]]
     name = "Programming in R (T4)"
-    url = "/tutorials/tutorial_04"
+    url = "/tutorials/rprogramming/rprogramming/"
     parent = "Tutorials"
     weight = 204
   [[menu.main]]
