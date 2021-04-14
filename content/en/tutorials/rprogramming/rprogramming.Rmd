@@ -383,7 +383,7 @@ Several debugging utilities are available for R. They include:
 * `options(error=NULL)`
 * `debug`
 
-The [Debugging in R page](http://www.stats.uwo.ca/faculty/murdoch/software/debuggingR/) provides an overview of the available resources.
+The [Debugging in R page](https://adv-r.hadley.nz/debugging.html) provides an overview of the available resources.
 
 ### Regular Expressions
 
