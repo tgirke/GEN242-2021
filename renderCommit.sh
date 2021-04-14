@@ -13,6 +13,8 @@ Rscript -e "blogdown::build_site()" # Build site with blogdown via command-line 
 #Rscript -e "blogdown::build_site(build_rmd = 'md5sum')" # runs build only for rmd pages that have changed
 # cp -r public/* docs/ # Copy build/rendered pages to docs -> not required with publishDir = "docs" in config.toml
 
+Rscript -e "blogdown::serve_site()"
+
 ## (3) Commit and push changes
 git add -A :/
 git commit -am "some edits"
