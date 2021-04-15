@@ -689,7 +689,9 @@ Install package from source
 install.packages("mypackage_1.0.tar.gz", repos=NULL) 
 ```
 
-For more details see [here](http://manuals.bioinformatics.ucr.edu/home/programming-in-r#TOC-Building-R-Packages)
+For more details see [here](http://manuals.bioinformatics.ucr.edu/home/programming-in-r#TOC-Building-R-Packages).
+Additional utilities for building R packages are provided by `devtools::create` and `usethis::create_package`. For
+details see the *R Packages* online book by Hadley Wickham and Jenny Bryan [here](https://r-pkgs.org/package-structure-state.html#in-memory-package).
 
 ## Programming Exercises
 
