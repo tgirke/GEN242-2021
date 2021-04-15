@@ -814,7 +814,7 @@ Solution
 
 -->
 
-### Exercise 3 dlfdjfdldlf
+### Exercise 3
 
 #### Nested loops to generate similarity matrices
 
