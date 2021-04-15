@@ -22,12 +22,12 @@
  Overview One of the main attractions of using the R (http://cran.at.r-project.org) environment is the ease with which users can write their own programs and custom functions. The R programming syntax is extremely easy to learn, even for users with no previous programming experience." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rprogramming/rprogramming/" />
-<meta property="article:modified_time" content="2021-04-14T16:39:20-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-04-14T17:18:24-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Programming in R">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
  Overview One of the main attractions of using the R (http://cran.at.r-project.org) environment is the ease with which users can write their own programs and custom functions. The R programming syntax is extremely easy to learn, even for users with no previous programming experience.">
-<meta itemprop="dateModified" content="2021-04-14T16:39:20-07:00" />
-<meta itemprop="wordCount" content="3261">
+<meta itemprop="dateModified" content="2021-04-14T17:18:24-07:00" />
+<meta itemprop="wordCount" content="3276">
 
 
 
@@ -789,7 +789,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.04446ebc6c34897e53c2511747a8e88e.json"
+  data-offline-search-index-json-src="../../../offline-search-index.6a535b8d2576b6700ba6af7650fa1b09.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -821,7 +821,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.04446ebc6c34897e53c2511747a8e88e.json"
+  data-offline-search-index-json-src="../../../offline-search-index.6a535b8d2576b6700ba6af7650fa1b09.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1528,20 +1528,26 @@ vapply(names(l), function(x) mean(l[[x]]), FUN.VALUE=numeric(1))
 <h3 id="interpreting-a-character-string-as-expression">Interpreting a Character String as Expression</h3>
 <p>Some useful examples</p>
 <p>Generates vector of object names in session</p>
-<pre><code class="language-r">mylist &lt;- ls()
-mylist[1] 
+<pre><code class="language-r">myfct &lt;- function(x) x^2
+mylist &lt;- ls()
+n &lt;- which(mylist %in% &quot;myfct&quot;)
+mylist[n] 
 </code></pre>
-<pre><code>## [1] &quot;i&quot;
+<pre><code>## [1] &quot;myfct&quot;
 </code></pre>
-<p>Executes 1st entry as expression</p>
-<pre><code class="language-r">get(mylist[1])
+<p>Executes entry in position <code>n</code> as expression</p>
+<pre><code class="language-r">get(mylist[n])
 </code></pre>
-<pre><code>## [1] 150
+<pre><code>## function(x) x^2
+</code></pre>
+<pre><code class="language-r">get(mylist[n])(2)
+</code></pre>
+<pre><code>## [1] 4
 </code></pre>
 <p>Alternative approach</p>
-<pre><code class="language-r">eval(parse(text=mylist[1])) 
+<pre><code class="language-r">eval(parse(text=mylist[n])) 
 </code></pre>
-<pre><code>## [1] 150
+<pre><code>## function(x) x^2
 </code></pre>
 <h3 id="replacement-split-and-paste-functions-for-strings">Replacement, Split and Paste Functions for Strings</h3>
 <p><strong>Selected examples</strong></p>
@@ -1833,7 +1839,7 @@ library(mypackage)
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-14: <a  href="https://github.com/tgirke/GEN242//commit/9a27532a4e5bab643bbb895fad830b47dc91a38f">some edits (9a27532a)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-14: <a  href="https://github.com/tgirke/GEN242//commit/7482d589609e17c5a9dab365255d1f226c3dffce">some edits (7482d589)</a>
 </div>
 </div>
 
