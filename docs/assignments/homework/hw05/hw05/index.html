@@ -19,15 +19,15 @@
 
 <title>HW5 - Programming in R | GEN242</title><meta property="og:title" content="HW5 - Programming in R" />
 <meta property="og:description" content="Source code downloads: &nbsp; [ .R ]  A. Reverse and complement of DNA Task 1: Write a RevComp function that returns the reverse and complement of a DNA sequence string. Include an argument that will allow to return only the reversed sequence, the complemented sequence or the reversed and complemented sequence. The following R functions will be useful for the implementation:
-x &lt;- c(&quot;ATGCATTGGACGTTAG&quot;) x  ## [1] &quot;ATGCATTGGACGTTAG&quot;  x &lt;- substring(x, 1:nchar(x), 1:nchar(x)) x  ## [1] &quot;A&quot; &quot;T&quot; &quot;G&quot; &quot;C&quot; &quot;A&quot; &quot;T&quot; &quot;T&quot; &quot;G&quot; &quot;G&quot; &quot;A&quot; &quot;C&quot; &quot;G&quot; &quot;T&quot; &quot;T&quot; &quot;A&quot; &quot;G&quot;  x &lt;- rev(x) x  ## [1] &quot;G&quot; &quot;A&quot; &quot;T&quot; &quot;T&quot; &quot;G&quot; &quot;C&quot; &quot;A&quot; &quot;G&quot; &quot;G&quot; &quot;T&quot; &quot;T&quot; &quot;A&quot; &quot;C&quot; &quot;G&quot; &quot;T&quot; &quot;A&quot;  x &lt;- paste(x, collapse=&quot;&quot;) x  ## [1] &quot;GATTGCAGGTTACGTA&quot;  chartr(&quot;ATGC&quot;, &quot;TACG&quot;, x)  ## [1] &quot;CTAACGTCCAATGCAT&quot;  Task 2: Write a function that applies the RevComp function to many sequences stored in a vector." />
+Generate a short test DNA sequence" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/assignments/homework/hw05/hw05/" />
-<meta property="article:modified_time" content="2021-04-14T20:01:14-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-04-14T20:06:25-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="HW5 - Programming in R">
 <meta itemprop="description" content="Source code downloads: &nbsp; [ .R ]  A. Reverse and complement of DNA Task 1: Write a RevComp function that returns the reverse and complement of a DNA sequence string. Include an argument that will allow to return only the reversed sequence, the complemented sequence or the reversed and complemented sequence. The following R functions will be useful for the implementation:
-x &lt;- c(&quot;ATGCATTGGACGTTAG&quot;) x  ## [1] &quot;ATGCATTGGACGTTAG&quot;  x &lt;- substring(x, 1:nchar(x), 1:nchar(x)) x  ## [1] &quot;A&quot; &quot;T&quot; &quot;G&quot; &quot;C&quot; &quot;A&quot; &quot;T&quot; &quot;T&quot; &quot;G&quot; &quot;G&quot; &quot;A&quot; &quot;C&quot; &quot;G&quot; &quot;T&quot; &quot;T&quot; &quot;A&quot; &quot;G&quot;  x &lt;- rev(x) x  ## [1] &quot;G&quot; &quot;A&quot; &quot;T&quot; &quot;T&quot; &quot;G&quot; &quot;C&quot; &quot;A&quot; &quot;G&quot; &quot;G&quot; &quot;T&quot; &quot;T&quot; &quot;A&quot; &quot;C&quot; &quot;G&quot; &quot;T&quot; &quot;A&quot;  x &lt;- paste(x, collapse=&quot;&quot;) x  ## [1] &quot;GATTGCAGGTTACGTA&quot;  chartr(&quot;ATGC&quot;, &quot;TACG&quot;, x)  ## [1] &quot;CTAACGTCCAATGCAT&quot;  Task 2: Write a function that applies the RevComp function to many sequences stored in a vector.">
-<meta itemprop="dateModified" content="2021-04-14T20:01:14-07:00" />
-<meta itemprop="wordCount" content="455">
+Generate a short test DNA sequence">
+<meta itemprop="dateModified" content="2021-04-14T20:06:25-07:00" />
+<meta itemprop="wordCount" content="496">
 
 
 
@@ -35,7 +35,7 @@ x &lt;- c(&quot;ATGCATTGGACGTTAG&quot;) x  ## [1] &quot;ATGCATTGGACGTTAG&quot;  
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="HW5 - Programming in R"/>
 <meta name="twitter:description" content="Source code downloads: &nbsp; [ .R ]  A. Reverse and complement of DNA Task 1: Write a RevComp function that returns the reverse and complement of a DNA sequence string. Include an argument that will allow to return only the reversed sequence, the complemented sequence or the reversed and complemented sequence. The following R functions will be useful for the implementation:
-x &lt;- c(&quot;ATGCATTGGACGTTAG&quot;) x  ## [1] &quot;ATGCATTGGACGTTAG&quot;  x &lt;- substring(x, 1:nchar(x), 1:nchar(x)) x  ## [1] &quot;A&quot; &quot;T&quot; &quot;G&quot; &quot;C&quot; &quot;A&quot; &quot;T&quot; &quot;T&quot; &quot;G&quot; &quot;G&quot; &quot;A&quot; &quot;C&quot; &quot;G&quot; &quot;T&quot; &quot;T&quot; &quot;A&quot; &quot;G&quot;  x &lt;- rev(x) x  ## [1] &quot;G&quot; &quot;A&quot; &quot;T&quot; &quot;T&quot; &quot;G&quot; &quot;C&quot; &quot;A&quot; &quot;G&quot; &quot;G&quot; &quot;T&quot; &quot;T&quot; &quot;A&quot; &quot;C&quot; &quot;G&quot; &quot;T&quot; &quot;A&quot;  x &lt;- paste(x, collapse=&quot;&quot;) x  ## [1] &quot;GATTGCAGGTTACGTA&quot;  chartr(&quot;ATGC&quot;, &quot;TACG&quot;, x)  ## [1] &quot;CTAACGTCCAATGCAT&quot;  Task 2: Write a function that applies the RevComp function to many sequences stored in a vector."/>
+Generate a short test DNA sequence"/>
 
 
 <script type="application/javascript">
@@ -789,7 +789,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.9f2cf3f0552f32405a29913c24b4bef5.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.de4a9804ff95e70221fcb14470fcbebc.json"
   data-offline-search-base-href="../../../../"
   data-offline-search-max-results="10"
 >
@@ -821,7 +821,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.9f2cf3f0552f32405a29913c24b4bef5.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.de4a9804ff95e70221fcb14470fcbebc.json"
   data-offline-search-base-href="../../../../"
   data-offline-search-max-results="10"
 >
@@ -1164,26 +1164,31 @@ Source code downloads: &nbsp; <a href="https://raw.githubusercontent.com/tgirke/
 </div>
 <h2 id="a-reverse-and-complement-of-dna">A. Reverse and complement of DNA</h2>
 <p><strong>Task 1</strong>: Write a <code>RevComp</code> function that returns the reverse and complement of a DNA sequence string. Include an argument that will allow to return only the reversed sequence, the complemented sequence or the reversed and complemented sequence. The following R functions will be useful for the implementation:</p>
+<p>Generate a short test DNA sequence</p>
 <pre><code class="language-r">x &lt;- c(&quot;ATGCATTGGACGTTAG&quot;)  
 x
 </code></pre>
 <pre><code>## [1] &quot;ATGCATTGGACGTTAG&quot;
 </code></pre>
+<p>Vectorize sequence</p>
 <pre><code class="language-r">x &lt;- substring(x, 1:nchar(x), 1:nchar(x)) 
 x
 </code></pre>
 <pre><code>##  [1] &quot;A&quot; &quot;T&quot; &quot;G&quot; &quot;C&quot; &quot;A&quot; &quot;T&quot; &quot;T&quot; &quot;G&quot; &quot;G&quot; &quot;A&quot; &quot;C&quot; &quot;G&quot; &quot;T&quot; &quot;T&quot; &quot;A&quot; &quot;G&quot;
 </code></pre>
+<p>Reverse sequence</p>
 <pre><code class="language-r">x &lt;- rev(x) 
 x
 </code></pre>
 <pre><code>##  [1] &quot;G&quot; &quot;A&quot; &quot;T&quot; &quot;T&quot; &quot;G&quot; &quot;C&quot; &quot;A&quot; &quot;G&quot; &quot;G&quot; &quot;T&quot; &quot;T&quot; &quot;A&quot; &quot;C&quot; &quot;G&quot; &quot;T&quot; &quot;A&quot;
 </code></pre>
+<p>Collapse sequence back to character string</p>
 <pre><code class="language-r">x &lt;- paste(x, collapse=&quot;&quot;)
 x
 </code></pre>
 <pre><code>## [1] &quot;GATTGCAGGTTACGTA&quot;
 </code></pre>
+<p>Form complement of sequence</p>
 <pre><code class="language-r">chartr(&quot;ATGC&quot;, &quot;TACG&quot;, x) 
 </code></pre>
 <pre><code>## [1] &quot;CTAACGTCCAATGCAT&quot;
@@ -1191,6 +1196,7 @@ x
 <p><strong>Task 2</strong>: Write a function that applies the <code>RevComp</code> function to many sequences stored in a vector.</p>
 <h2 id="b-translate-dna-into-protein">B. Translate DNA into Protein</h2>
 <p><strong>Task 3</strong>: Write a function that will translate one or many DNA sequences in all three reading frames into proteins. The following commands will simplify this task:</p>
+<p>Import lookup table of genetic code</p>
 <pre><code class="language-r">AAdf &lt;- read.table(file=&quot;http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/My_R_Scripts/AA.txt&quot;, header=TRUE, sep=&quot;\t&quot;) 
 AAdf[1:4,]
 </code></pre>
@@ -1200,6 +1206,7 @@ AAdf[1:4,]
 ## 3   TCC    S  Ser  Serine       GGA
 ## 4   TCT    S  Ser  Serine       AGA
 </code></pre>
+<p>Generated named vector of relevant components</p>
 <pre><code class="language-r">AAv &lt;- as.character(AAdf[,2]) 
 names(AAv) &lt;- AAdf[,1] 
 AAv
@@ -1211,6 +1218,7 @@ AAv
 ## GTC GTT GCA GCG GCC GCT GAT GAC GAA GAG GGA GGG GGC GGT 
 ## &quot;V&quot; &quot;V&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;D&quot; &quot;D&quot; &quot;E&quot; &quot;E&quot; &quot;G&quot; &quot;G&quot; &quot;G&quot; &quot;G&quot;
 </code></pre>
+<p>Tripletize sequence and translate by name subsetting/sorting of AAv</p>
 <pre><code class="language-r">y &lt;- gsub(&quot;(...)&quot;, &quot;\\1_&quot;, x) 
 y &lt;- unlist(strsplit(y, &quot;_&quot;)) 
 y &lt;- y[grep(&quot;^...$&quot;, y)] 
@@ -1229,7 +1237,7 @@ AAv[y]
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-14: <a  href="https://github.com/tgirke/GEN242//commit/470f7a229676544f4fe6a0faa044b2fe23966a66">some edits (470f7a22)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-14: <a  href="https://github.com/tgirke/GEN242//commit/5aeeb3dd56f0db769a91a23b50d6ce8181a6605d">some edits (5aeeb3dd)</a>
 </div>
 </div>
 

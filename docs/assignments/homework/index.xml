@@ -305,26 +305,31 @@ Source code downloads: &amp;nbsp; &lt;a href=&#34;https://raw.githubusercontent.
 &lt;/div&gt;
 &lt;h2 id=&#34;a-reverse-and-complement-of-dna&#34;&gt;A. Reverse and complement of DNA&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Task 1&lt;/strong&gt;: Write a &lt;code&gt;RevComp&lt;/code&gt; function that returns the reverse and complement of a DNA sequence string. Include an argument that will allow to return only the reversed sequence, the complemented sequence or the reversed and complemented sequence. The following R functions will be useful for the implementation:&lt;/p&gt;
+&lt;p&gt;Generate a short test DNA sequence&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;x &amp;lt;- c(&amp;quot;ATGCATTGGACGTTAG&amp;quot;)  
 x
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## [1] &amp;quot;ATGCATTGGACGTTAG&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Vectorize sequence&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;x &amp;lt;- substring(x, 1:nchar(x), 1:nchar(x)) 
 x
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##  [1] &amp;quot;A&amp;quot; &amp;quot;T&amp;quot; &amp;quot;G&amp;quot; &amp;quot;C&amp;quot; &amp;quot;A&amp;quot; &amp;quot;T&amp;quot; &amp;quot;T&amp;quot; &amp;quot;G&amp;quot; &amp;quot;G&amp;quot; &amp;quot;A&amp;quot; &amp;quot;C&amp;quot; &amp;quot;G&amp;quot; &amp;quot;T&amp;quot; &amp;quot;T&amp;quot; &amp;quot;A&amp;quot; &amp;quot;G&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Reverse sequence&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;x &amp;lt;- rev(x) 
 x
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##  [1] &amp;quot;G&amp;quot; &amp;quot;A&amp;quot; &amp;quot;T&amp;quot; &amp;quot;T&amp;quot; &amp;quot;G&amp;quot; &amp;quot;C&amp;quot; &amp;quot;A&amp;quot; &amp;quot;G&amp;quot; &amp;quot;G&amp;quot; &amp;quot;T&amp;quot; &amp;quot;T&amp;quot; &amp;quot;A&amp;quot; &amp;quot;C&amp;quot; &amp;quot;G&amp;quot; &amp;quot;T&amp;quot; &amp;quot;A&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Collapse sequence back to character string&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;x &amp;lt;- paste(x, collapse=&amp;quot;&amp;quot;)
 x
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## [1] &amp;quot;GATTGCAGGTTACGTA&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Form complement of sequence&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;chartr(&amp;quot;ATGC&amp;quot;, &amp;quot;TACG&amp;quot;, x) 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## [1] &amp;quot;CTAACGTCCAATGCAT&amp;quot;
@@ -332,6 +337,7 @@ x
 &lt;p&gt;&lt;strong&gt;Task 2&lt;/strong&gt;: Write a function that applies the &lt;code&gt;RevComp&lt;/code&gt; function to many sequences stored in a vector.&lt;/p&gt;
 &lt;h2 id=&#34;b-translate-dna-into-protein&#34;&gt;B. Translate DNA into Protein&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Task 3&lt;/strong&gt;: Write a function that will translate one or many DNA sequences in all three reading frames into proteins. The following commands will simplify this task:&lt;/p&gt;
+&lt;p&gt;Import lookup table of genetic code&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;AAdf &amp;lt;- read.table(file=&amp;quot;http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/My_R_Scripts/AA.txt&amp;quot;, header=TRUE, sep=&amp;quot;\t&amp;quot;) 
 AAdf[1:4,]
 &lt;/code&gt;&lt;/pre&gt;
@@ -341,6 +347,7 @@ AAdf[1:4,]
 ## 3   TCC    S  Ser  Serine       GGA
 ## 4   TCT    S  Ser  Serine       AGA
 &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Generated named vector of relevant components&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;AAv &amp;lt;- as.character(AAdf[,2]) 
 names(AAv) &amp;lt;- AAdf[,1] 
 AAv
@@ -352,6 +359,7 @@ AAv
 ## GTC GTT GCA GCG GCC GCT GAT GAC GAA GAG GGA GGG GGC GGT 
 ## &amp;quot;V&amp;quot; &amp;quot;V&amp;quot; &amp;quot;A&amp;quot; &amp;quot;A&amp;quot; &amp;quot;A&amp;quot; &amp;quot;A&amp;quot; &amp;quot;D&amp;quot; &amp;quot;D&amp;quot; &amp;quot;E&amp;quot; &amp;quot;E&amp;quot; &amp;quot;G&amp;quot; &amp;quot;G&amp;quot; &amp;quot;G&amp;quot; &amp;quot;G&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Tripletize sequence and translate by name subsetting/sorting of AAv&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;y &amp;lt;- gsub(&amp;quot;(...)&amp;quot;, &amp;quot;\\1_&amp;quot;, x) 
 y &amp;lt;- unlist(strsplit(y, &amp;quot;_&amp;quot;)) 
 y &amp;lt;- y[grep(&amp;quot;^...$&amp;quot;, y)] 
