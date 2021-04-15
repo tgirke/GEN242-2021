@@ -18,23 +18,23 @@
 <link rel="icon" type="image/png" href="../../../../favicons/android-192x192.png" sizes="192x192">
 
 <title>HW5 - Programming in R | GEN242</title><meta property="og:title" content="HW5 - Programming in R" />
-<meta property="og:description" content="A. Reverse and complement of DNA Task 1: Write a RevComp function that returns the reverse and complement of a DNA sequence string. Include an argument that will allow to return only the reversed sequence, the complemented sequence or the reversed and complemented sequence. The following R functions will be useful for the implementation:
+<meta property="og:description" content="Source code downloads: &nbsp; &nbsp; [ [.R](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/assignments/Homework/HW05/HW05.R) ]  A. Reverse and complement of DNA Task 1: Write a RevComp function that returns the reverse and complement of a DNA sequence string. Include an argument that will allow to return only the reversed sequence, the complemented sequence or the reversed and complemented sequence. The following R functions will be useful for the implementation:
 x &lt;- c(&quot;ATGCATTGGACGTTAG&quot;) x  ## [1] &quot;ATGCATTGGACGTTAG&quot;  x &lt;- substring(x, 1:nchar(x), 1:nchar(x)) x  ## [1] &quot;A&quot; &quot;T&quot; &quot;G&quot; &quot;C&quot; &quot;A&quot; &quot;T&quot; &quot;T&quot; &quot;G&quot; &quot;G&quot; &quot;A&quot; &quot;C&quot; &quot;G&quot; &quot;T&quot; &quot;T&quot; &quot;A&quot; &quot;G&quot;  x &lt;- rev(x) x  ## [1] &quot;G&quot; &quot;A&quot; &quot;T&quot; &quot;T&quot; &quot;G&quot; &quot;C&quot; &quot;A&quot; &quot;G&quot; &quot;G&quot; &quot;T&quot; &quot;T&quot; &quot;A&quot; &quot;C&quot; &quot;G&quot; &quot;T&quot; &quot;A&quot;  x &lt;- paste(x, collapse=&quot;&quot;) x  ## [1] &quot;GATTGCAGGTTACGTA&quot;  chartr(&quot;ATGC&quot;, &quot;TACG&quot;, x)  ## [1] &quot;CTAACGTCCAATGCAT&quot;  Task 2: Write a function that applies the RevComp function to many sequences stored in a vector." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/assignments/homework/hw05/hw05/" />
 <meta property="article:modified_time" content="2021-04-14T19:32:41-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="HW5 - Programming in R">
-<meta itemprop="description" content="A. Reverse and complement of DNA Task 1: Write a RevComp function that returns the reverse and complement of a DNA sequence string. Include an argument that will allow to return only the reversed sequence, the complemented sequence or the reversed and complemented sequence. The following R functions will be useful for the implementation:
+<meta itemprop="description" content="Source code downloads: &nbsp; &nbsp; [ [.R](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/assignments/Homework/HW05/HW05.R) ]  A. Reverse and complement of DNA Task 1: Write a RevComp function that returns the reverse and complement of a DNA sequence string. Include an argument that will allow to return only the reversed sequence, the complemented sequence or the reversed and complemented sequence. The following R functions will be useful for the implementation:
 x &lt;- c(&quot;ATGCATTGGACGTTAG&quot;) x  ## [1] &quot;ATGCATTGGACGTTAG&quot;  x &lt;- substring(x, 1:nchar(x), 1:nchar(x)) x  ## [1] &quot;A&quot; &quot;T&quot; &quot;G&quot; &quot;C&quot; &quot;A&quot; &quot;T&quot; &quot;T&quot; &quot;G&quot; &quot;G&quot; &quot;A&quot; &quot;C&quot; &quot;G&quot; &quot;T&quot; &quot;T&quot; &quot;A&quot; &quot;G&quot;  x &lt;- rev(x) x  ## [1] &quot;G&quot; &quot;A&quot; &quot;T&quot; &quot;T&quot; &quot;G&quot; &quot;C&quot; &quot;A&quot; &quot;G&quot; &quot;G&quot; &quot;T&quot; &quot;T&quot; &quot;A&quot; &quot;C&quot; &quot;G&quot; &quot;T&quot; &quot;A&quot;  x &lt;- paste(x, collapse=&quot;&quot;) x  ## [1] &quot;GATTGCAGGTTACGTA&quot;  chartr(&quot;ATGC&quot;, &quot;TACG&quot;, x)  ## [1] &quot;CTAACGTCCAATGCAT&quot;  Task 2: Write a function that applies the RevComp function to many sequences stored in a vector.">
 <meta itemprop="dateModified" content="2021-04-14T19:32:41-07:00" />
-<meta itemprop="wordCount" content="448">
+<meta itemprop="wordCount" content="456">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="HW5 - Programming in R"/>
-<meta name="twitter:description" content="A. Reverse and complement of DNA Task 1: Write a RevComp function that returns the reverse and complement of a DNA sequence string. Include an argument that will allow to return only the reversed sequence, the complemented sequence or the reversed and complemented sequence. The following R functions will be useful for the implementation:
+<meta name="twitter:description" content="Source code downloads: &nbsp; &nbsp; [ [.R](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/assignments/Homework/HW05/HW05.R) ]  A. Reverse and complement of DNA Task 1: Write a RevComp function that returns the reverse and complement of a DNA sequence string. Include an argument that will allow to return only the reversed sequence, the complemented sequence or the reversed and complemented sequence. The following R functions will be useful for the implementation:
 x &lt;- c(&quot;ATGCATTGGACGTTAG&quot;) x  ## [1] &quot;ATGCATTGGACGTTAG&quot;  x &lt;- substring(x, 1:nchar(x), 1:nchar(x)) x  ## [1] &quot;A&quot; &quot;T&quot; &quot;G&quot; &quot;C&quot; &quot;A&quot; &quot;T&quot; &quot;T&quot; &quot;G&quot; &quot;G&quot; &quot;A&quot; &quot;C&quot; &quot;G&quot; &quot;T&quot; &quot;T&quot; &quot;A&quot; &quot;G&quot;  x &lt;- rev(x) x  ## [1] &quot;G&quot; &quot;A&quot; &quot;T&quot; &quot;T&quot; &quot;G&quot; &quot;C&quot; &quot;A&quot; &quot;G&quot; &quot;G&quot; &quot;T&quot; &quot;T&quot; &quot;A&quot; &quot;C&quot; &quot;G&quot; &quot;T&quot; &quot;A&quot;  x &lt;- paste(x, collapse=&quot;&quot;) x  ## [1] &quot;GATTGCAGGTTACGTA&quot;  chartr(&quot;ATGC&quot;, &quot;TACG&quot;, x)  ## [1] &quot;CTAACGTCCAATGCAT&quot;  Task 2: Write a function that applies the RevComp function to many sequences stored in a vector."/>
 
 
@@ -789,7 +789,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.ea20a74247c100508a74614d7c0af517.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.b75fb3ccfb5ae1e34e73076ba206e70e.json"
   data-offline-search-base-href="../../../../"
   data-offline-search-max-results="10"
 >
@@ -821,7 +821,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.ea20a74247c100508a74614d7c0af517.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.b75fb3ccfb5ae1e34e73076ba206e70e.json"
   data-offline-search-base-href="../../../../"
   data-offline-search-max-results="10"
 >
@@ -1159,6 +1159,10 @@ if (!doNotTrack) {
         <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 3 minute read</p>
            
 	<p><br></br></p>
+<div style="text-align: right"> 
+Source code downloads: &nbsp; &nbsp;
+[ [.R](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/assignments/Homework/HW05/HW05.R) ]
+</div>
 <h2 id="a-reverse-and-complement-of-dna">A. Reverse and complement of DNA</h2>
 <p><strong>Task 1</strong>: Write a <code>RevComp</code> function that returns the reverse and complement of a DNA sequence string. Include an argument that will allow to return only the reversed sequence, the complemented sequence or the reversed and complemented sequence. The following R functions will be useful for the implementation:</p>
 <pre><code class="language-r">x &lt;- c(&quot;ATGCATTGGACGTTAG&quot;)  

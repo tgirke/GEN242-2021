@@ -300,6 +300,10 @@ writePairwiseAlignments(p)
         
         
         &lt;p&gt;&lt;br&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;div style=&#34;text-align: right&#34;&gt; 
+Source code downloads: &amp;nbsp; &amp;nbsp;
+[ [.R](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/assignments/Homework/HW05/HW05.R) ]
+&lt;/div&gt;
 &lt;h2 id=&#34;a-reverse-and-complement-of-dna&#34;&gt;A. Reverse and complement of DNA&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Task 1&lt;/strong&gt;: Write a &lt;code&gt;RevComp&lt;/code&gt; function that returns the reverse and complement of a DNA sequence string. Include an argument that will allow to return only the reversed sequence, the complemented sequence or the reversed and complemented sequence. The following R functions will be useful for the implementation:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;x &amp;lt;- c(&amp;quot;ATGCATTGGACGTTAG&amp;quot;)  
