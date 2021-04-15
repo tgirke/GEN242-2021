@@ -28,7 +28,7 @@ if(1==0) {
 
 ## ----ifelse_statement_example, eval=TRUE--------------------------------------
 x <- 1:10 
-ifelse(x<5, x, 0)
+ifelse(x<5, sqrt(x), 0)
 
 
 ## ----for_loop, eval=FALSE-----------------------------------------------------
@@ -154,16 +154,19 @@ gsub('(i.*a)', 'xxx_\\1', "virginica", perl = TRUE)
 
 
 ## ----ls_fct, eval=TRUE--------------------------------------------------------
+myfct <- function(x) x^2
 mylist <- ls()
-mylist[1] 
+n <- which(mylist %in% "myfct")
+mylist[n] 
 
 
 ## ----eval_expr, eval=TRUE-----------------------------------------------------
-get(mylist[1])
+get(mylist[n])
+get(mylist[n])(2)
 
 
 ## ----eval_expr2, eval=TRUE----------------------------------------------------
-eval(parse(text=mylist[1])) 
+eval(parse(text=mylist[n])) 
 
 
 ## ----back_ref, eval=TRUE------------------------------------------------------
@@ -199,8 +202,8 @@ x <- x[c(grep("^J", as.character(x), perl = TRUE))]
 t(as.data.frame(strsplit(x, "u")))
 
 
-## ----system_blast, eval=TRUE--------------------------------------------------
-system("blastall -p blastp -i seq.fasta -d uniprot -o seq.blastp")
+## ----system_blast, eval=FALSE-------------------------------------------------
+## system("blastall -p blastp -i seq.fasta -d uniprot -o seq.blastp")
 
 
 ## ----r_script1, eval=FALSE----------------------------------------------------
@@ -305,7 +308,9 @@ olMA[1:12,]
 
 
 ## ----nested_loops3, eval=TRUE-------------------------------------------------
-image(olMA)
+library(pheatmap); library("RColorBrewer")
+pheatmap(olMA, color=brewer.pal(9,"Blues"), cluster_rows=FALSE, cluster_cols=FALSE, display_numbers=TRUE, number_format="%.0f", fontsize_number=10)
+# image(olMA) 
 
 
 ## ----package_skeleton2, eval=FALSE--------------------------------------------

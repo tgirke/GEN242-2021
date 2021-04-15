@@ -22,11 +22,11 @@
 x &lt;- c(&quot;ATGCATTGGACGTTAG&quot;) x  ## [1] &quot;ATGCATTGGACGTTAG&quot;  x &lt;- substring(x, 1:nchar(x), 1:nchar(x)) x  ## [1] &quot;A&quot; &quot;T&quot; &quot;G&quot; &quot;C&quot; &quot;A&quot; &quot;T&quot; &quot;T&quot; &quot;G&quot; &quot;G&quot; &quot;A&quot; &quot;C&quot; &quot;G&quot; &quot;T&quot; &quot;T&quot; &quot;A&quot; &quot;G&quot;  x &lt;- rev(x) x  ## [1] &quot;G&quot; &quot;A&quot; &quot;T&quot; &quot;T&quot; &quot;G&quot; &quot;C&quot; &quot;A&quot; &quot;G&quot; &quot;G&quot; &quot;T&quot; &quot;T&quot; &quot;A&quot; &quot;C&quot; &quot;G&quot; &quot;T&quot; &quot;A&quot;  x &lt;- paste(x, collapse=&quot;&quot;) x  ## [1] &quot;GATTGCAGGTTACGTA&quot;  chartr(&quot;ATGC&quot;, &quot;TACG&quot;, x)  ## [1] &quot;CTAACGTCCAATGCAT&quot;  Task 2: Write a function that applies the RevComp function to many sequences stored in a vector." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/assignments/homework/hw05/hw05/" />
-<meta property="article:modified_time" content="2021-04-14T15:14:48-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-04-14T19:32:41-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="HW5 - Programming in R">
 <meta itemprop="description" content="A. Reverse and complement of DNA Task 1: Write a RevComp function that returns the reverse and complement of a DNA sequence string. Include an argument that will allow to return only the reversed sequence, the complemented sequence or the reversed and complemented sequence. The following R functions will be useful for the implementation:
 x &lt;- c(&quot;ATGCATTGGACGTTAG&quot;) x  ## [1] &quot;ATGCATTGGACGTTAG&quot;  x &lt;- substring(x, 1:nchar(x), 1:nchar(x)) x  ## [1] &quot;A&quot; &quot;T&quot; &quot;G&quot; &quot;C&quot; &quot;A&quot; &quot;T&quot; &quot;T&quot; &quot;G&quot; &quot;G&quot; &quot;A&quot; &quot;C&quot; &quot;G&quot; &quot;T&quot; &quot;T&quot; &quot;A&quot; &quot;G&quot;  x &lt;- rev(x) x  ## [1] &quot;G&quot; &quot;A&quot; &quot;T&quot; &quot;T&quot; &quot;G&quot; &quot;C&quot; &quot;A&quot; &quot;G&quot; &quot;G&quot; &quot;T&quot; &quot;T&quot; &quot;A&quot; &quot;C&quot; &quot;G&quot; &quot;T&quot; &quot;A&quot;  x &lt;- paste(x, collapse=&quot;&quot;) x  ## [1] &quot;GATTGCAGGTTACGTA&quot;  chartr(&quot;ATGC&quot;, &quot;TACG&quot;, x)  ## [1] &quot;CTAACGTCCAATGCAT&quot;  Task 2: Write a function that applies the RevComp function to many sequences stored in a vector.">
-<meta itemprop="dateModified" content="2021-04-14T15:14:48-07:00" />
+<meta itemprop="dateModified" content="2021-04-14T19:32:41-07:00" />
 <meta itemprop="wordCount" content="448">
 
 
@@ -1226,7 +1226,7 @@ AAv[y]
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-14: <a  href="https://github.com/tgirke/GEN242//commit/dbd717e3ee8d3e62d65f5d2290679fe48c591902">some edits (dbd717e3)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-14: <a  href="https://github.com/tgirke/GEN242//commit/f55aaf0948a00e759f1c9e53eee67e57a14ecebb">some edits (f55aaf09)</a>
 </div>
 </div>
 
