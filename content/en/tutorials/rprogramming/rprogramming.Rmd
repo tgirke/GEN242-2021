@@ -629,7 +629,7 @@ myMAcomp(myMA=myMA, group=c(1,1,1,2,2,2,3,3,4,4), myfct=mean)[1:2,]
 -->
 
 
-### Exercise 3
+### Exercise 3 dlfdjfdldlf
 
 #### Nested loops to generate similarity matrices
 
