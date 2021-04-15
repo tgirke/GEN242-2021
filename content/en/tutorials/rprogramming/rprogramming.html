@@ -556,7 +556,7 @@ myResult[1:4, -c(1,2)]</code></pre>
 </div>
 <div id="avoiding-loops" class="section level4">
 <h4>Avoiding loops</h4>
-<p><strong>Task 1.5</strong>: When operating on large data sets it is much faster to use the rowMeans function</p>
+<p><strong>Task 1.5</strong>: When operating on large data sets it is much faster to use the <code>rowMeans</code> function</p>
 <pre class="r"><code>mymean &lt;- rowMeans(myMA)
 myResult &lt;- cbind(myMA, mean_for=myve_for, mean_while=myve_while, mean_apply=myve_apply, mean_int=mymean)
 myResult[1:4, -c(1,2,3)]</code></pre>
@@ -565,6 +565,7 @@ myResult[1:4, -c(1,2,3)]</code></pre>
 ## 2 -0.3208423 -0.4600894  0.02947028  0.02947028  0.02947028  0.02947028
 ## 3  0.9574395  1.0390970  0.42067691  0.42067691  0.42067691  0.42067691
 ## 4 -1.3904486 -0.1612300 -0.54604574 -0.54604574 -0.54604574 -0.54604574</code></pre>
+<p>To find out which other built-in functions for basic calculations exist, type <code>?rowMeans</code>.</p>
 </div>
 </div>
 <div id="exercise-2" class="section level3">

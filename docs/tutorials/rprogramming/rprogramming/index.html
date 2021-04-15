@@ -22,12 +22,12 @@
  Overview One of the main attractions of using the R (http://cran.at.r-project.org) environment is the ease with which users can write their own programs and custom functions. The R programming syntax is extremely easy to learn, even for users with no previous programming experience." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rprogramming/rprogramming/" />
-<meta property="article:modified_time" content="2021-04-14T17:44:13-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-04-14T17:56:01-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Programming in R">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
  Overview One of the main attractions of using the R (http://cran.at.r-project.org) environment is the ease with which users can write their own programs and custom functions. The R programming syntax is extremely easy to learn, even for users with no previous programming experience.">
-<meta itemprop="dateModified" content="2021-04-14T17:44:13-07:00" />
-<meta itemprop="wordCount" content="3259">
+<meta itemprop="dateModified" content="2021-04-14T17:56:01-07:00" />
+<meta itemprop="wordCount" content="3272">
 
 
 
@@ -789,7 +789,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.74cc3213c4c5cadf6a524bebf1a11683.json"
+  data-offline-search-index-json-src="../../../offline-search-index.d3078542d72252da0e2fd5121fd0a800.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -821,7 +821,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.74cc3213c4c5cadf6a524bebf1a11683.json"
+  data-offline-search-index-json-src="../../../offline-search-index.d3078542d72252da0e2fd5121fd0a800.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1583,7 +1583,7 @@ myResult[1:4, -c(1,2)]</code></pre>
 </div>
 <div id="avoiding-loops" class="section level4">
 <h4>Avoiding loops</h4>
-<p><strong>Task 1.5</strong>: When operating on large data sets it is much faster to use the rowMeans function</p>
+<p><strong>Task 1.5</strong>: When operating on large data sets it is much faster to use the <code>rowMeans</code> function</p>
 <pre class="r"><code>mymean &lt;- rowMeans(myMA)
 myResult &lt;- cbind(myMA, mean_for=myve_for, mean_while=myve_while, mean_apply=myve_apply, mean_int=mymean)
 myResult[1:4, -c(1,2,3)]</code></pre>
@@ -1592,6 +1592,7 @@ myResult[1:4, -c(1,2,3)]</code></pre>
 ## 2 -0.3208423 -0.4600894  0.02947028  0.02947028  0.02947028  0.02947028
 ## 3  0.9574395  1.0390970  0.42067691  0.42067691  0.42067691  0.42067691
 ## 4 -1.3904486 -0.1612300 -0.54604574 -0.54604574 -0.54604574 -0.54604574</code></pre>
+<p>To find out which other built-in functions for basic calculations exist, type <code>?rowMeans</code>.</p>
 </div>
 </div>
 <div id="exercise-2" class="section level3">
@@ -1734,7 +1735,7 @@ Gentleman, Robert. 2008. <em><span>R</span> Programming for Bioinformatics (Chap
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-14: <a  href="https://github.com/tgirke/GEN242//commit/ea177f019fab07afc2e12048604974c8b9fbeaef">some edits (ea177f01)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-14: <a  href="https://github.com/tgirke/GEN242//commit/ebd719fecc2776fd8b9b28a933a3e1421a4cca6c">some edits (ebd719fe)</a>
 </div>
 </div>
 

@@ -592,13 +592,14 @@ myResult[1:4, -c(1,2)]
 
 #### Avoiding loops
 
-__Task 1.5__: When operating on large data sets it is much faster to use the rowMeans function
+__Task 1.5__: When operating on large data sets it is much faster to use the `rowMeans` function
 
 ```{r exercise1_noloops, eval=TRUE}
 mymean <- rowMeans(myMA)
 myResult <- cbind(myMA, mean_for=myve_for, mean_while=myve_while, mean_apply=myve_apply, mean_int=mymean)
 myResult[1:4, -c(1,2,3)]
 ```
+To find out which other built-in functions for basic calculations exist, type `?rowMeans`.
 
 ### Exercise 2 
 
