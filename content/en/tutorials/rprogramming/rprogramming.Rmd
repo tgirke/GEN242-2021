@@ -410,19 +410,22 @@ Some useful examples
 
 Generates vector of object names in session
 ```{r ls_fct, eval=TRUE}
+myfct <- function(x) x^2
 mylist <- ls()
-mylist[1] 
+n <- which(mylist %in% "myfct")
+mylist[n] 
 ```
 
-Executes 1st entry as expression
+Executes entry in position `n` as expression
 
 ```{r eval_expr, eval=TRUE}
-get(mylist[1])
+get(mylist[n])
+get(mylist[n])(2)
 ```
 
 Alternative approach 
 ```{r eval_expr2, eval=TRUE}
-eval(parse(text=mylist[1])) 
+eval(parse(text=mylist[n])) 
 ```
 
 ### Replacement, Split and Paste Functions for Strings

@@ -1,7 +1,7 @@
 ---
 title: "Programming in R" 
 author: "Author: Thomas Girke"
-date: "Last update: 31 March, 2021" 
+date: "Last update: 14 April, 2021" 
 output:
   html_document:
     toc: true
@@ -971,7 +971,7 @@ This homework is due on Thu, April 26th at 6:00 PM.
 
 ### Homework Solutions
 
-See [here]()
+See homework section [here](https://girke.bioinformatics.ucr.edu/GEN242/assignments/homework/hw05/hw05/)
 
 ## Session Info
 
