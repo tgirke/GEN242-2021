@@ -2,3 +2,5 @@ base
 BiocStyle
 limma
 ggplot2
+pheatmap
+RColorBrewer

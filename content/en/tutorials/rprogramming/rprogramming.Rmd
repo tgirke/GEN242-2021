@@ -543,8 +543,8 @@ install.packages("mypackage_1.0.tar.gz", repos=NULL)
 ```
 
 For more details see [here](http://manuals.bioinformatics.ucr.edu/home/programming-in-r#TOC-Building-R-Packages). 
-Additional utilities for building R packages are provided by `devtools::create` and `usethis::create_package`. For 
-details see the _R Packages_ online book by Hadley Wickham and Jenny Bryan [here](https://r-pkgs.org/package-structure-state.html#in-memory-package).
+Additional utilities for building R packages are provided by `devtools::create` and `usethis::create_package` functions. 
+For details see the _R Packages_ online book by Hadley Wickham and Jenny Bryan [here](https://r-pkgs.org/package-structure-state.html#in-memory-package).
 
 ## Programming Exercises
 
@@ -651,9 +651,12 @@ olMA <- sapply(names(setlist), function(x) sapply(names(setlist),
                function(y) sum(setlist[[x]] %in% setlist[[y]])))
 olMA[1:12,] 
 ```
-__Task 3.3__ Plot the resulting intersect matrix as heat map. The `image` or the `heatmap.2` function from the `gplots` library can be used for this.
+__Task 3.3__ Plot the resulting intersect matrix as heat map. 
+The `image` or the `pheatmap` functions can be used for this.
 ```{r nested_loops3, eval=TRUE}
-image(olMA)
+library(pheatmap); library("RColorBrewer")
+pheatmap(olMA, color=brewer.pal(9,"Blues"), cluster_rows=FALSE, cluster_cols=FALSE, display_numbers=TRUE, number_format="%.0f", fontsize_number=10)
+# image(olMA) 
 ```
 
 ### Exercise 4

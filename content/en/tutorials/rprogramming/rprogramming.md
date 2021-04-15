@@ -690,8 +690,8 @@ install.packages("mypackage_1.0.tar.gz", repos=NULL)
 ```
 
 For more details see [here](http://manuals.bioinformatics.ucr.edu/home/programming-in-r#TOC-Building-R-Packages).
-Additional utilities for building R packages are provided by `devtools::create` and `usethis::create_package`. For
-details see the *R Packages* online book by Hadley Wickham and Jenny Bryan [here](https://r-pkgs.org/package-structure-state.html#in-memory-package).
+Additional utilities for building R packages are provided by `devtools::create` and `usethis::create_package` functions.
+For details see the *R Packages* online book by Hadley Wickham and Jenny Bryan [here](https://r-pkgs.org/package-structure-state.html#in-memory-package).
 
 ## Programming Exercises
 
@@ -869,13 +869,19 @@ olMA[1:12,]
     ## S11  6  4  7  5  9  6  6  5  6   6  13   7   4   8  10   6  10   9  10  10
     ## S12  5  6  7  6  7  8  6  5  7   8   7  15   6  10   8   9  10  10   7  11
 
-**Task 3.3** Plot the resulting intersect matrix as heat map. The `image` or the `heatmap.2` function from the `gplots` library can be used for this.
+**Task 3.3** Plot the resulting intersect matrix as heat map.
+The `image` or the `pheatmap` functions can be used for this.
 
 ``` r
-image(olMA)
+library(pheatmap); library("RColorBrewer")
+pheatmap(olMA, color=brewer.pal(9,"Blues"), cluster_rows=FALSE, cluster_cols=FALSE, display_numbers=TRUE, number_format="%.0f", fontsize_number=10)
 ```
 
 <img src="/en/tutorials/rprogramming/rprogramming_files/figure-html/nested_loops3-1.png" width="672" />
+
+``` r
+# image(olMA) 
+```
 
 ### Exercise 4
 
