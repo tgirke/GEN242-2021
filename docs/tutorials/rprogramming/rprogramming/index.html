@@ -22,12 +22,12 @@
  Overview One of the main attractions of using the R (http://cran.at.r-project.org) environment is the ease with which users can write their own programs and custom functions. The R programming syntax is extremely easy to learn, even for users with no previous programming experience." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rprogramming/rprogramming/" />
-<meta property="article:modified_time" content="2021-04-14T17:18:24-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-04-14T17:19:54-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Programming in R">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
  Overview One of the main attractions of using the R (http://cran.at.r-project.org) environment is the ease with which users can write their own programs and custom functions. The R programming syntax is extremely easy to learn, even for users with no previous programming experience.">
-<meta itemprop="dateModified" content="2021-04-14T17:18:24-07:00" />
-<meta itemprop="wordCount" content="3276">
+<meta itemprop="dateModified" content="2021-04-14T17:19:54-07:00" />
+<meta itemprop="wordCount" content="3259">
 
 
 
@@ -789,7 +789,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.6a535b8d2576b6700ba6af7650fa1b09.json"
+  data-offline-search-index-json-src="../../../offline-search-index.42cfe9c31741dda0a2e63a1996410c56.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -821,7 +821,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.6a535b8d2576b6700ba6af7650fa1b09.json"
+  data-offline-search-index-json-src="../../../offline-search-index.42cfe9c31741dda0a2e63a1996410c56.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1605,9 +1605,6 @@ t(as.data.frame(strsplit(x, &quot;u&quot;)))
 <p>External command-line software can be called with <code>system</code>. The following example calls <code>blastall</code> from R</p>
 <pre><code class="language-r">system(&quot;blastall -p blastp -i seq.fasta -d uniprot -o seq.blastp&quot;)
 </code></pre>
-<pre><code>## Warning in system(&quot;blastall -p blastp -i seq.fasta -d uniprot -o seq.blastp&quot;): error in running
-## command
-</code></pre>
 <h2 id="running-r-scripts">Running R Scripts</h2>
 <h3 id="possibilities-for-executing-r-scripts">Possibilities for Executing R Scripts</h3>
 <h4 id="r-console">R console</h4>
@@ -1630,7 +1627,7 @@ print(iris[1:myarg[6], ])
 <h2 id="building-r-packages">Building R Packages</h2>
 <h3 id="short-overview-of-package-building-process">Short Overview of Package Building Process</h3>
 <p>R packages can be built with the <code>package.skeleton</code> function. The given example will create a directory named <code>mypackage</code> containing the skeleton of the package for all functions, methods and classes defined in the R script(s) passed on to the <code>code_files</code> argument. The basic structure of the package directory is described <a href="http://manuals.bioinformatics.ucr.edu/home/programming-in-r#Progr_pack">here</a>. The package directory will also contain a file named <code>Read-and-delete-me</code> with instructions for completing the package:</p>
-<pre><code class="language-r">package.skeleton(name=&quot;mypackage&quot;, code_files=c(&quot;script1.R&quot;, &quot;script2.R&quot;))
+<pre><code class="language-r">zpackage.skeleton(name=&quot;mypackage&quot;, code_files=c(&quot;script1.R&quot;, &quot;script2.R&quot;))
 </code></pre>
 <p>Once a package skeleton is available one can build the package from the command-line (Linux/OS X). This will create a tarball of the package with its version number encoded in the file name. Subequently, the package tarball needs to be checked for errors with:</p>
 <pre><code class="language-r">R CMD build mypackage
@@ -1839,7 +1836,7 @@ library(mypackage)
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-14: <a  href="https://github.com/tgirke/GEN242//commit/7482d589609e17c5a9dab365255d1f226c3dffce">some edits (7482d589)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-14: <a  href="https://github.com/tgirke/GEN242//commit/5c8461e66072cd839f93a142d2b9da3786b78138">some edits (5c8461e6)</a>
 </div>
 </div>
 

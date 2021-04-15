@@ -631,9 +631,6 @@ External command-line software can be called with `system`. The following exampl
 system("blastall -p blastp -i seq.fasta -d uniprot -o seq.blastp")
 ```
 
-    ## Warning in system("blastall -p blastp -i seq.fasta -d uniprot -o seq.blastp"): error in running
-    ## command
-
 ## Running R Scripts
 
 ### Possibilities for Executing R Scripts
@@ -676,7 +673,7 @@ In the given example the number `10` is passed on from the command-line as an ar
 R packages can be built with the `package.skeleton` function. The given example will create a directory named `mypackage` containing the skeleton of the package for all functions, methods and classes defined in the R script(s) passed on to the `code_files` argument. The basic structure of the package directory is described [here](http://manuals.bioinformatics.ucr.edu/home/programming-in-r#Progr_pack). The package directory will also contain a file named `Read-and-delete-me` with instructions for completing the package:
 
 ``` r
-package.skeleton(name="mypackage", code_files=c("script1.R", "script2.R"))
+zpackage.skeleton(name="mypackage", code_files=c("script1.R", "script2.R"))
 ```
 
 Once a package skeleton is available one can build the package from the command-line (Linux/OS X). This will create a tarball of the package with its version number encoded in the file name. Subequently, the package tarball needs to be checked for errors with:
