@@ -493,7 +493,7 @@ print(iris[1:myarg[6], ])</code></pre>
 <div id="short-overview-of-package-building-process" class="section level3">
 <h3>Short Overview of Package Building Process</h3>
 <p>R packages can be built with the <code>package.skeleton</code> function. The given example will create a directory named <code>mypackage</code> containing the skeleton of the package for all functions, methods and classes defined in the R script(s) passed on to the <code>code_files</code> argument. The basic structure of the package directory is described <a href="http://manuals.bioinformatics.ucr.edu/home/programming-in-r#Progr_pack">here</a>. The package directory will also contain a file named <code>Read-and-delete-me</code> with instructions for completing the package:</p>
-<pre class="r"><code>xxxx  package.skeleton(name=&quot;mypackage&quot;, code_files=c(&quot;script1.R&quot;, &quot;script2.R&quot;))</code></pre>
+<pre class="r"><code>package.skeleton(name=&quot;mypackage&quot;, code_files=c(&quot;script1.R&quot;, &quot;script2.R&quot;))</code></pre>
 <p>Once a package skeleton is available one can build the package from the command-line (Linux/OS X). This will create a tarball of the package with its version number encoded in the file name. Subequently, the package tarball needs to be checked for errors with:</p>
 <pre class="r"><code>R CMD build mypackage
 R CMD check mypackage_1.0.tar.gz</code></pre>
