@@ -169,7 +169,7 @@ rsync -avzhe ssh user@remotehost:~/somedirectory .
 
 Upload directory or file(s)
 ```sh
-rsync -avzhe ssh somedirectory tgirke@cluster.hpcc.ucr.edu:~/
+rsync -avzhe ssh somedirectory user@hostname:~/
 ```
 
 ### STD IN/OUT/ERR, Redirect & Wildcards
