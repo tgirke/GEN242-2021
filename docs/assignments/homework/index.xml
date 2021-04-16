@@ -232,7 +232,7 @@ table(iris$Species)
 &lt;h2 id=&#34;due-date&#34;&gt;Due date&lt;/h2&gt;
 &lt;p&gt;This homework is due on Thu, April 15th at 6:00 PM.&lt;/p&gt;
 &lt;h2 id=&#34;homework-solutions&#34;&gt;Homework Solutions&lt;/h2&gt;
-&lt;p&gt;to be posted&lt;/p&gt;
+&lt;p&gt;See &lt;a href=&#34;https://raw.githubusercontent.com/tgirke/GEN242/main/static/custom/hw_solutions/hw3_solution.R&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
       </description>
     </item>
