@@ -135,9 +135,9 @@ Reference list on R programming (selection)
 -   `||` (or)
 -   `!` (not)
 
-Note: ‘&’ and ‘&&’ indicate logical AND and ‘\|’ and ‘\|\|’ indicate logical OR. The shorter form performs elementwise comparisons of vectors.
-The longer form evaluates left to right examining only the first element of each vector. Evaluation proceeds only until the result is determined.
-The longer form is preferred for programming control-flow, *e.g.* via `if` clauses.
+Note: `&` and `&&` indicate logical AND, while `|` and `||` indicate logical OR. The shorter form performs element-wise comparisons of same-length vectors.
+The longer form evaluates left to right examining only the first element of each vector (can be of different lengths). Evaluation proceeds only until the result
+is determined. The longer form is preferred for programming control-flow, *e.g.* via `if` clauses.
 
 ### Conditional Executions: `if` Statements
 
