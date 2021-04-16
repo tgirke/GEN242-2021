@@ -1,7 +1,7 @@
 ---
 title: "Programming in R" 
 author: "Author: Thomas Girke"
-date: "Last update: 14 April, 2021" 
+date: "Last update: 15 April, 2021" 
 output:
   html_document:
     toc: true
@@ -130,8 +130,14 @@ Reference list on R programming (selection)
 #### Logical operators
 
 -   `&` (and)
+-   `&&` (and)
 -   `|` (or)
+-   `||` (or)
 -   `!` (not)
+
+Note: ‘&’ and ‘&&’ indicate logical AND and ‘\|’ and ‘\|\|’ indicate logical OR. The shorter form performs elementwise comparisons of vectors.
+The longer form evaluates left to right examining only the first element of each vector. Evaluation proceeds only until the result is determined.
+The longer form is preferred for programming control-flow, *e.g.* via `if` clauses.
 
 ### Conditional Executions: `if` Statements
 

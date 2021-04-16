@@ -134,14 +134,39 @@ __GUI applications__
 + Mac OS X: [CyberDuck](http://cyberduck.en.softonic.com/mac)
 + Win/OS X/Linux: [FileZilla](https://filezilla-project.org/)
         
-__SCP command-line tool__
+__SCP: via command-line__
 
 ```sh
 scp file user@remotehost:/home/user/ # From local to remote 
 scp user@remotehost:/home/user/file . # From remote to local 
 ```
 
-	
+__RSYNC: via command-line__
+
+Print (view) content of remote directory
+
+```sh
+rsync user@remotehost:~/somedirectory/*
+```
+
+Download directory or file(s)
+
+```sh
+rsync -avzhe ssh user@remotehost:~/somedirectory .
+  # -a: recursive archive mode (thus -r not required), also preserves permissions, time stamps, etc 
+  # -v: verbose
+  # -z: compress data during transfer
+  # -h: print messages in human-readable format
+  # -e: specifies transfer protocol; using ssh here provides encryption during transfer
+  # --delete: files that were deleted on source will be deleted also in backup-destination
+  # -n: for testing use this dry-run option, but drop '-e ssh' in this case
+```
+
+Upload directory or file(s)
+```sh
+rsync -avzhe ssh somedirectory tgirke@cluster.hpcc.ucr.edu:~/
+```
+
 ### STD IN/OUT/ERR, Redirect & Wildcards
 
 Wildcard `*` to specify many files

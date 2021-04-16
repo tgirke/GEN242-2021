@@ -27,7 +27,7 @@ What Is a Computer Cluster?   A computer cluster is an assembly of CPU units, so
 <meta itemprop="description" content="HPCC Cluster Overview The HPCC Cluster (formerly called biocluster) is a shared research computing system available at UCR. The HPCC website is available here.
 What Is a Computer Cluster?   A computer cluster is an assembly of CPU units, so called computer nodes that work together to perform many computations in parallel. To achieve this, an internal network (e.g. Infiniband interconnect) connects the nodes to a larger unit, while a head node controls the load and traffic across the entire system.">
 <meta itemprop="dateModified" content="2021-04-12T17:51:25-07:00" />
-<meta itemprop="wordCount" content="2679">
+<meta itemprop="wordCount" content="2780">
 
 
 
@@ -789,7 +789,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.de4a9804ff95e70221fcb14470fcbebc.json"
+  data-offline-search-index-json-src="../../../offline-search-index.e752097335abe8d45b8aebd6f8157318.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -821,7 +821,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.de4a9804ff95e70221fcb14470fcbebc.json"
+  data-offline-search-index-json-src="../../../offline-search-index.e752097335abe8d45b8aebd6f8157318.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1099,7 +1099,7 @@ if (!doNotTrack) {
 	<h1>Introduction to HPCC Cluster and Linux</h1>
     
 	
-        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 13 minute read</p>
+        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 14 minute read</p>
            
 	<br/>
 <br/>
@@ -1207,9 +1207,26 @@ if (!doNotTrack) {
 <li>Mac OS X: <a href="http://cyberduck.en.softonic.com/mac">CyberDuck</a></li>
 <li>Win/OS X/Linux: <a href="https://filezilla-project.org/">FileZilla</a></li>
 </ul>
-<p><strong>SCP command-line tool</strong></p>
+<p><strong>SCP: via command-line</strong></p>
 <pre><code class="language-sh">scp file user@remotehost:/home/user/ # From local to remote 
 scp user@remotehost:/home/user/file . # From remote to local 
+</code></pre>
+<p><strong>RSYNC: via command-line</strong></p>
+<p>Print (view) content of remote directory</p>
+<pre><code class="language-sh">rsync user@remotehost:~/somedirectory/*
+</code></pre>
+<p>Download directory or file(s)</p>
+<pre><code class="language-sh">rsync -avzhe ssh user@remotehost:~/somedirectory .
+  # -a: recursive archive mode (thus -r not required), also preserves permissions, time stamps, etc 
+  # -v: verbose
+  # -z: compress data during transfer
+  # -h: print messages in human-readable format
+  # -e: specifies transfer protocol; using ssh here provides encryption during transfer
+  # --delete: files that were deleted on source will be deleted also in backup-destination
+  # -n: for testing use this dry-run option, but drop '-e ssh' in this case
+</code></pre>
+<p>Upload directory or file(s)</p>
+<pre><code class="language-sh">rsync -avzhe ssh somedirectory tgirke@cluster.hpcc.ucr.edu:~/
 </code></pre>
 <h3 id="std-inouterr-redirect--wildcards">STD IN/OUT/ERR, Redirect &amp; Wildcards</h3>
 <p>Wildcard <code>*</code> to specify many files</p>
