@@ -134,14 +134,19 @@ __GUI applications__
 + Mac OS X: [CyberDuck](http://cyberduck.en.softonic.com/mac)
 + Win/OS X/Linux: [FileZilla](https://filezilla-project.org/)
         
-__SCP: via command-line__
+__SCP: via command-line__ ([Manual](https://linux.die.net/man/1/scp))
+
+Advantages of this method include: batch up/downloads and ease of automation. 
 
 ```sh
 scp file user@remotehost:/home/user/ # From local to remote 
 scp user@remotehost:/home/user/file . # From remote to local 
 ```
 
-__RSYNC: via command-line__
+__RSYNC: via command-line__ ([Manual](https://linux.die.net/man/1/rsync))
+
+Advantages of this method include: same as SCP plus differential update options and viewing of directory content.
+
 
 Print (view) content of remote directory
 

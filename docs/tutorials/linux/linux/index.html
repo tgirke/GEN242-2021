@@ -22,12 +22,12 @@
 What Is a Computer Cluster?   A computer cluster is an assembly of CPU units, so called computer nodes that work together to perform many computations in parallel. To achieve this, an internal network (e.g. Infiniband interconnect) connects the nodes to a larger unit, while a head node controls the load and traffic across the entire system." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/linux/linux/" />
-<meta property="article:modified_time" content="2021-04-12T17:51:25-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-04-15T19:02:24-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Introduction to HPCC Cluster and Linux">
 <meta itemprop="description" content="HPCC Cluster Overview The HPCC Cluster (formerly called biocluster) is a shared research computing system available at UCR. The HPCC website is available here.
 What Is a Computer Cluster?   A computer cluster is an assembly of CPU units, so called computer nodes that work together to perform many computations in parallel. To achieve this, an internal network (e.g. Infiniband interconnect) connects the nodes to a larger unit, while a head node controls the load and traffic across the entire system.">
-<meta itemprop="dateModified" content="2021-04-12T17:51:25-07:00" />
-<meta itemprop="wordCount" content="2780">
+<meta itemprop="dateModified" content="2021-04-15T19:02:24-07:00" />
+<meta itemprop="wordCount" content="2810">
 
 
 
@@ -789,7 +789,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.e752097335abe8d45b8aebd6f8157318.json"
+  data-offline-search-index-json-src="../../../offline-search-index.1a321c6cdd16c0c7ffd3c721a6bee0af.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -821,7 +821,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.e752097335abe8d45b8aebd6f8157318.json"
+  data-offline-search-index-json-src="../../../offline-search-index.1a321c6cdd16c0c7ffd3c721a6bee0af.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1207,11 +1207,13 @@ if (!doNotTrack) {
 <li>Mac OS X: <a href="http://cyberduck.en.softonic.com/mac">CyberDuck</a></li>
 <li>Win/OS X/Linux: <a href="https://filezilla-project.org/">FileZilla</a></li>
 </ul>
-<p><strong>SCP: via command-line</strong></p>
+<p><strong>SCP: via command-line</strong> (<a href="https://linux.die.net/man/1/scp">Manual</a>)</p>
+<p>Advantages of this method include: batch up/downloads and ease of automation.</p>
 <pre><code class="language-sh">scp file user@remotehost:/home/user/ # From local to remote 
 scp user@remotehost:/home/user/file . # From remote to local 
 </code></pre>
-<p><strong>RSYNC: via command-line</strong></p>
+<p><strong>RSYNC: via command-line</strong> (<a href="https://linux.die.net/man/1/rsync">Manual</a>)</p>
+<p>Advantages of this method include: same as SCP plus differential update options and viewing of directory content.</p>
 <p>Print (view) content of remote directory</p>
 <pre><code class="language-sh">rsync user@remotehost:~/somedirectory/*
 </code></pre>
@@ -1553,7 +1555,7 @@ with the space bar. More details are available <a href="https://github.com/jalve
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-12: <a  href="https://github.com/tgirke/GEN242//commit/d7dc2659af08e771cce709c6e322cd3549f60ea9">some edits (d7dc2659)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-15: <a  href="https://github.com/tgirke/GEN242//commit/8917caafc418dfb07085d98a1bc998c13088d890">some edits (8917caaf)</a>
 </div>
 </div>
 
