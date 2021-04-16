@@ -27,7 +27,7 @@
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
  Overview What is R? R is a powerful statistical environment and programming language for the analysis and visualization of data. The associated Bioconductor and CRAN package repositories provide many additional R packages for statistical data analysis for a wide array of research areas.">
 <meta itemprop="dateModified" content="2021-04-12T21:58:06-07:00" />
-<meta itemprop="wordCount" content="3851">
+<meta itemprop="wordCount" content="3846">
 
 
 
@@ -789,7 +789,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.5e131dae8a8ae58c2252d92bb72c6de0.json"
+  data-offline-search-index-json-src="../../../offline-search-index.26474157a2efb19732a7c7c5603d57a0.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -821,7 +821,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.5e131dae8a8ae58c2252d92bb72c6de0.json"
+  data-offline-search-index-json-src="../../../offline-search-index.26474157a2efb19732a7c7c5603d57a0.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1193,7 +1193,7 @@ if (!doNotTrack) {
            
 	<!---
 - Compile from command-line
-Rscript -e "rmarkdown::render('Rbasics.Rmd', c('html_document'), clean=F); knitr::knit('Rbasics.Rmd', tangle=TRUE)"; Rscript ../md2jekyll.R Rbasics.knit.md 8; Rscript -e "rmarkdown::render('Rbasics.Rmd', c('pdf_document'))"
+Rscript -e "rmarkdown::render('Rbasics.Rmd', c('html_document'), clean=FALSE); knitr::knit('Rbasics.Rmd', tangle=TRUE)"; Rscript ../md2jekyll.R Rbasics.knit.md 8; Rscript -e "rmarkdown::render('Rbasics.Rmd', c('pdf_document'))"
 -->
 <script type="text/javascript">
 document.addEventListener("DOMContentLoaded", function() {
@@ -1242,7 +1242,7 @@ common operating systems.</p>
 <img title="R_Interfaces" src="../images/rinterface.png"/>
 </center>
 <center>
-<p>R Projects and Interfaces</p>
+R Projects and Interfaces
 </center>
 <p>Some R working environments with support for syntax highlighting and utilities to send code
 to the R console:</p>
@@ -1260,16 +1260,16 @@ advanced.</p>
 <img title="RStudio" src="../images/rstudio.png"/>
 </center>
 <center>
-<p>RStudio IDE</p>
+RStudio IDE
 </center>
 <p>Some userful shortcuts: <code>Ctrl+Enter</code> (send code), <code>Ctrl+Shift+C</code> (comment/uncomment), <code>Ctrl+1/2</code> (switch window focus)</p>
 <h3 id="example-nvim-r-tmux">Example: Nvim-R-Tmux</h3>
 <p>Terminal-based Working Environment for R: <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rbasics/rbasics/#reading-and-writing-external-data">Nvim-R-Tmux</a>.</p>
 <center>
-<p><img title="Nvim-R-Tmux" src="../images/Nvim-R.gif" ></p>
+<img title="Nvim-R-Tmux" src="../images/Nvim-R.gif" >
 </center>
 <center>
-<p>Nvim-R-Tmux IDE for R</p>
+Nvim-R-Tmux IDE for R
 </center>
 <h2 id="r-package-repositories">R Package Repositories</h2>
 <ul>
@@ -1323,7 +1323,6 @@ The R environment is controlled by hidden files in the startup directory:
 <p><strong>Closing R</strong>:</p>
 </li>
 </ul>
-<!-- end list -->
 <pre><code class="language-r">q()  
 </code></pre>
 <pre><code>Save workspace image? [y/n/c]:
@@ -1726,11 +1725,11 @@ saveRDS(mylist, &quot;mylist.rds&quot;)
 </code></pre>
 <h3 id="copy-and-paste-from-r">Copy and paste from R</h3>
 <p>On Windows/Linux systems</p>
-<pre><code class="language-r">write.table(iris, &quot;clipboard&quot;, sep=&quot;\t&quot;, col.names=NA, quote=F) 
+<pre><code class="language-r">write.table(iris, &quot;clipboard&quot;, sep=&quot;\t&quot;, col.names=NA, quote=FALSE) 
 </code></pre>
 <p>On Mac OS X systems</p>
 <pre><code class="language-r">zz &lt;- pipe('pbcopy', 'w')
-write.table(iris, zz, sep=&quot;\t&quot;, col.names=NA, quote=F)
+write.table(iris, zz, sep=&quot;\t&quot;, col.names=NA, quote=FALSE)
 close(zz) 
 </code></pre>
 <h3 id="homework-3a">Homework 3A</h3>
@@ -1823,17 +1822,14 @@ dim(my_result)
 <ol>
 <li>Low-level infrastructure</li>
 </ol>
-<!-- end list -->
 <ul>
 <li>R Base Graphics (low- and high-level)</li>
 <li><code>grid</code>: <a href="http://www.stat.auckland.ac.nz/~paul/grid/grid.html">Manual</a></li>
 </ul>
-<!-- end list -->
 <ol start="2">
 <li>High-level infrastructure
 \begin{itemize}</li>
 </ol>
-<!-- end list -->
 <ul>
 <li><code>lattice</code>: <a href="http://lmdvr.r-forge.r-project.org">Manual</a>, <a href="http://www.his.sunderland.ac.uk/~cs0her/Statistics/UsingLatticeGraphicsInR.htm">Intro</a>, <a href="http://www.amazon.com/Lattice-Multivariate-Data-Visualization-Use/dp/0387759689">Book</a></li>
 <li><code>ggplot2</code>: <a href="http://had.co.nz/ggplot2/">Manual</a>, <a href="http://www.ling.upenn.edu/~joseff/rstudy/summer2010_ggplot2_intro.html">Intro</a>, <a href="http://had.co.nz/ggplot2/book/">Book</a></li>
@@ -2042,15 +2038,15 @@ dev.off()
 </ul>
 <p><strong>Import the tables into R</strong></p>
 <p>Import molecular weight table</p>
-<pre><code class="language-r">my_mw &lt;- read.delim(file=&quot;MolecularWeight_tair7.xls&quot;, header=T, sep=&quot;\t&quot;) 
+<pre><code class="language-r">my_mw &lt;- read.delim(file=&quot;MolecularWeight_tair7.xls&quot;, header=TRUE, sep=&quot;\t&quot;) 
 my_mw[1:2,]
 </code></pre>
 <p>Import subcelluar targeting table</p>
-<pre><code class="language-r">my_target &lt;- read.delim(file=&quot;TargetP_analysis_tair7.xls&quot;, header=T, sep=&quot;\t&quot;) 
+<pre><code class="language-r">my_target &lt;- read.delim(file=&quot;TargetP_analysis_tair7.xls&quot;, header=TRUE, sep=&quot;\t&quot;) 
 my_target[1:2,]
 </code></pre>
 <p>Online import of molecular weight table</p>
-<pre><code class="language-r">my_mw &lt;- read.delim(file=&quot;http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/Samples/MolecularWeight_tair7.xls&quot;, header=T, sep=&quot;\t&quot;) 
+<pre><code class="language-r">my_mw &lt;- read.delim(file=&quot;http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/Samples/MolecularWeight_tair7.xls&quot;, header=TRUE, sep=&quot;\t&quot;) 
 my_mw[1:2,]
 </code></pre>
 <pre><code>##   Sequence.id Molecular.Weight.Da. Residues
@@ -2058,7 +2054,7 @@ my_mw[1:2,]
 ## 2 AT1G08530.1                27015      257
 </code></pre>
 <p>Online import of subcelluar targeting table</p>
-<pre><code class="language-r">my_target &lt;- read.delim(file=&quot;http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/Samples/TargetP_analysis_tair7.xls&quot;, header=T, sep=&quot;\t&quot;) 
+<pre><code class="language-r">my_target &lt;- read.delim(file=&quot;http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/Samples/TargetP_analysis_tair7.xls&quot;, header=TRUE, sep=&quot;\t&quot;) 
 my_target[1:2,]
 </code></pre>
 <pre><code>##      GeneName Loc   cTP   mTP    SP other
@@ -2069,20 +2065,17 @@ my_target[1:2,]
 <ul>
 <li><strong>Step 2</strong>: Assign uniform gene ID column titles</li>
 </ul>
-<!-- end list -->
 <pre><code class="language-r">colnames(my_target)[1] &lt;- &quot;ID&quot;
 colnames(my_mw)[1] &lt;- &quot;ID&quot; 
 </code></pre>
 <ul>
 <li><strong>Step 3</strong>: Merge the two tables based on common ID field</li>
 </ul>
-<!-- end list -->
 <pre><code class="language-r">my_mw_target &lt;- merge(my_mw, my_target, by.x=&quot;ID&quot;, by.y=&quot;ID&quot;, all.x=T)
 </code></pre>
 <ul>
 <li><strong>Step 4</strong>: Shorten one table before the merge and then remove the non-matching rows (NAs) in the merged file</li>
 </ul>
-<!-- end list -->
 <pre><code class="language-r">my_mw_target2a &lt;- merge(my_mw, my_target[1:40,], by.x=&quot;ID&quot;, by.y=&quot;ID&quot;, all.x=T)  # To remove non-matching rows, use the argument setting 'all=F'.
 my_mw_target2 &lt;- na.omit(my_mw_target2a) # Removes rows containing &quot;NAs&quot; (non-matching rows).
 </code></pre>
@@ -2094,7 +2087,6 @@ my_mw_target2 &lt;- na.omit(my_mw_target2a) # Removes rows containing &quot;NAs&
 <ul>
 <li><strong>Step 5</strong>: Retrieve all records with a value of greater than 100,000 in ‘MW’ column and ‘C’ value in ‘Loc’ column (targeted to chloroplast).</li>
 </ul>
-<!-- end list -->
 <pre><code class="language-r">query &lt;- my_mw_target[my_mw_target[, 2] &gt; 100000 &amp; my_mw_target[, 4] == &quot;C&quot;, ] 
 query[1:4, ]
 </code></pre>
@@ -2113,10 +2105,8 @@ query[1:4, ]
 </ul>
 <h3 id="string-substitutions">String Substitutions</h3>
 <ul>
-<li><strong>Step 6</strong>: Use a regular expression in a substitute function to generate a separate ID column that lacks the gene model extensions.
-&lt;&lt;label=Exercise 4.7, eval=TRUE, echo=TRUE, keep.source=TRUE&gt;&gt;=</li>
+<li><strong>Step 6</strong>: Use a regular expression in a substitute function to generate a separate ID column that lacks the gene model extensions.</li>
 </ul>
-<!-- end list -->
 <pre><code class="language-r">my_mw_target3 &lt;- data.frame(loci=gsub(&quot;\\..*&quot;, &quot;&quot;, as.character(my_mw_target[,1]), perl = TRUE), my_mw_target)
 my_mw_target3[1:3,1:8]
 </code></pre>
@@ -2132,14 +2122,12 @@ my_mw_target3[1:3,1:8]
 <ul>
 <li><strong>Step 7</strong>: Count the number of duplicates in the loci column with the <code>table</code> function and append the result to the data frame with the <code>cbind</code> function.</li>
 </ul>
-<!-- end list -->
 <pre><code class="language-r">mycounts &lt;- table(my_mw_target3[,1])[my_mw_target3[,1]]
 my_mw_target4 &lt;- cbind(my_mw_target3, Freq=mycounts[as.character(my_mw_target3[,1])]) 
 </code></pre>
 <ul>
 <li><strong>Step 8</strong>: Perform a vectorized devision of columns 3 and 4 (average AA weight per protein)</li>
 </ul>
-<!-- end list -->
 <pre><code class="language-r">data.frame(my_mw_target4, avg_AA_WT=(my_mw_target4[,3] / my_mw_target4[,4]))[1:2,] 
 </code></pre>
 <pre><code>##        loci          ID Molecular.Weight.Da. Residues Loc  cTP   mTP    SP other Freq.Var1
@@ -2152,7 +2140,6 @@ my_mw_target4 &lt;- cbind(my_mw_target3, Freq=mycounts[as.character(my_mw_target
 <ul>
 <li><strong>Step 9</strong>: Calculate for each row the mean and standard deviation across several columns</li>
 </ul>
-<!-- end list -->
 <pre><code class="language-r">mymean &lt;- apply(my_mw_target4[,6:9], 1, mean)
 mystdev &lt;- apply(my_mw_target4[,6:9], 1, sd, na.rm=TRUE)
 data.frame(my_mw_target4, mean=mymean, stdev=mystdev)[1:2,5:12] 
@@ -2165,7 +2152,6 @@ data.frame(my_mw_target4, mean=mymean, stdev=mystdev)[1:2,5:12]
 <ul>
 <li><strong>Step 10</strong>: Generate scatter plot columns: ‘MW’ and ‘Residues’</li>
 </ul>
-<!-- end list -->
 <pre><code class="language-r">plot(my_mw_target4[1:500,3:4], col=&quot;red&quot;)
 </code></pre>
 <p><img src="../../../en/tutorials/rbasics/Rbasics_files/figure-html/plot_example-1.png" width="672" /></p>
@@ -2173,13 +2159,11 @@ data.frame(my_mw_target4, mean=mymean, stdev=mystdev)[1:2,5:12]
 <ul>
 <li><strong>Step 11</strong>: Write the data frame <code>my_mw_target4</code> into a tab-delimited text file and inspect it in Excel.</li>
 </ul>
-<!-- end list -->
-<pre><code class="language-r">write.table(my_mw_target4, file=&quot;my_file.xls&quot;, quote=F, sep=&quot;\t&quot;, col.names = NA) 
+<pre><code class="language-r">write.table(my_mw_target4, file=&quot;my_file.xls&quot;, quote=FALSE, sep=&quot;\t&quot;, col.names = NA) 
 </code></pre>
 <ul>
 <li><strong>Homework 3H</strong>: Write all commands from this exercise into an R script named <code>exerciseRbasics.R</code>, or download it from <a href="http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/My_R_Scripts/exerciseRbasics.R">here</a>. Then execute the script with the <code>source</code> function like this: <code>source(&quot;exerciseRbasics.R&quot;)</code>. This will run all commands of this exercise and generate the corresponding output files in the current working directory.</li>
 </ul>
-<!-- end list -->
 <pre><code class="language-r">source(&quot;exerciseRbasics.R&quot;)
 </code></pre>
 <h2 id="session-info">Session Info</h2>

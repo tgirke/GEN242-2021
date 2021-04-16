@@ -1,7 +1,7 @@
 ---
 title: "Introduction to R" 
 author: "Author: Thomas Girke"
-date: "Last update: 12 April, 2021" 
+date: "Last update: 16 April, 2021" 
 output:
   html_document:
     toc: true
@@ -20,15 +20,13 @@ type: docs
 
 <!---
 - Compile from command-line
-Rscript -e "rmarkdown::render('Rbasics.Rmd', c('html_document'), clean=F); knitr::knit('Rbasics.Rmd', tangle=TRUE)"; Rscript ../md2jekyll.R Rbasics.knit.md 8; Rscript -e "rmarkdown::render('Rbasics.Rmd', c('pdf_document'))"
+Rscript -e "rmarkdown::render('Rbasics.Rmd', c('html_document'), clean=FALSE); knitr::knit('Rbasics.Rmd', tangle=TRUE)"; Rscript ../md2jekyll.R Rbasics.knit.md 8; Rscript -e "rmarkdown::render('Rbasics.Rmd', c('pdf_document'))"
 -->
-
 <script type="text/javascript">
 document.addEventListener("DOMContentLoaded", function() {
   document.querySelector("h1").className = "title";
 });
 </script>
-
 <script type="text/javascript">
 document.addEventListener("DOMContentLoaded", function() {
   var links = document.links;  
@@ -59,42 +57,37 @@ common operating systems.
 
 ## Why Using R?
 
-  - Complete statistical environment and programming language
-  - Efficient functions and data structures for data analysis
-  - Powerful graphics
-  - Access to fast growing number of analysis packages
-  - Most widely used language in bioinformatics
-  - Is standard for data mining and biostatistical analysis
-  - Technical advantages: free, open-source, available for all OSs
+-   Complete statistical environment and programming language
+-   Efficient functions and data structures for data analysis
+-   Powerful graphics
+-   Access to fast growing number of analysis packages
+-   Most widely used language in bioinformatics
+-   Is standard for data mining and biostatistical analysis
+-   Technical advantages: free, open-source, available for all OSs
 
 ## Books and Documentation
 
-  - simpleR - Using R for Introductory Statistics (John Verzani, 2004) - [URL](http://cran.r-project.org/doc/contrib/Verzani-SimpleR.pdf)
-  - Bioinformatics and Computational Biology Solutions Using R and Bioconductor (Gentleman et al., 2005) - [URL](http://www.bioconductor.org/help/publications/books/bioinformatics-and-computational-biology-solutions/)
-  - More on this see “Finding Help” section in UCR Manual - [URL](http://manuals.bioinformatics.ucr.edu/home/R_BioCondManual#TOC-Finding-Help)
+-   simpleR - Using R for Introductory Statistics (John Verzani, 2004) - [URL](http://cran.r-project.org/doc/contrib/Verzani-SimpleR.pdf)
+-   Bioinformatics and Computational Biology Solutions Using R and Bioconductor (Gentleman et al., 2005) - [URL](http://www.bioconductor.org/help/publications/books/bioinformatics-and-computational-biology-solutions/)
+-   More on this see “Finding Help” section in UCR Manual - [URL](http://manuals.bioinformatics.ucr.edu/home/R_BioCondManual#TOC-Finding-Help)
 
 ## R Working Environments
 
 <center>
-
 <img title="R_Interfaces" src="../images/rinterface.png"/>
-
 </center>
-
 <center>
-
 R Projects and Interfaces
-
 </center>
 
 Some R working environments with support for syntax highlighting and utilities to send code
 to the R console:
 
-  - [RStudio](https://www.rstudio.com/products/rstudio/features): excellent choice for beginners ([Cheat Sheet](http://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf))
-  - Basic R code editors provided by Rguis
-  - [gedit](https://wiki.gnome.org/Apps/Gedit), [Rgedit](http://rgedit.sourceforge.net/), [RKWard](https://rkward.kde.org/), [Eclipse](http://www.walware.de/goto/statet), [Tinn-R](http://www.sciviews.org/Tinn-R/), [Notepad++](https://notepad-plus-plus.org/), [NppToR](http://sourceforge.net/projects/npptor/)
-  - [Vim-R-Tmux](http://manuals.bioinformatics.ucr.edu/home/programming-in-r/vim-r): R working environment based on vim and tmux
-  - [Emacs](http://www.xemacs.org/Download/index.html) ([ESS add-on package](http://ess.r-project.org/))
+-   [RStudio](https://www.rstudio.com/products/rstudio/features): excellent choice for beginners ([Cheat Sheet](http://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf))
+-   Basic R code editors provided by Rguis
+-   [gedit](https://wiki.gnome.org/Apps/Gedit), [Rgedit](http://rgedit.sourceforge.net/), [RKWard](https://rkward.kde.org/), [Eclipse](http://www.walware.de/goto/statet), [Tinn-R](http://www.sciviews.org/Tinn-R/), [Notepad++](https://notepad-plus-plus.org/), [NppToR](http://sourceforge.net/projects/npptor/)
+-   [Vim-R-Tmux](http://manuals.bioinformatics.ucr.edu/home/programming-in-r/vim-r): R working environment based on vim and tmux
+-   [Emacs](http://www.xemacs.org/Download/index.html) ([ESS add-on package](http://ess.r-project.org/))
 
 ### Example: RStudio
 
@@ -102,15 +95,10 @@ New integrated development environment (IDE) for [R](http://www.rstudio.com/ide/
 advanced.
 
 <center>
-
 <img title="RStudio" src="../images/rstudio.png"/>
-
 </center>
-
 <center>
-
 RStudio IDE
-
 </center>
 
 Some userful shortcuts: `Ctrl+Enter` (send code), `Ctrl+Shift+C` (comment/uncomment), `Ctrl+1/2` (switch window focus)
@@ -120,23 +108,18 @@ Some userful shortcuts: `Ctrl+Enter` (send code), `Ctrl+Shift+C` (comment/uncomm
 Terminal-based Working Environment for R: [Nvim-R-Tmux](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rbasics/rbasics/#reading-and-writing-external-data).
 
 <center>
-
 <img title="Nvim-R-Tmux" src="../images/Nvim-R.gif" >
-
 </center>
-
 <center>
-
 Nvim-R-Tmux IDE for R
-
 </center>
 
 ## R Package Repositories
 
-  - CRAN (\>14,000 packages) general data analysis - [URL](http://cran.at.r-project.org/)
-  - Bioconductor (\>2,000 packages) bioscience data analysis - [URL](http://www.bioconductor.org/)
-  - Omegahat (\>90 packages) programming interfaces - [URL](https://github.com/omegahat?tab=repositories)
-  - RStudio packages - [URL](https://www.rstudio.com/products/rpackages/)
+-   CRAN (&gt;14,000 packages) general data analysis - [URL](http://cran.at.r-project.org/)
+-   Bioconductor (&gt;2,000 packages) bioscience data analysis - [URL](http://www.bioconductor.org/)
+-   Omegahat (&gt;90 packages) programming interfaces - [URL](https://github.com/omegahat?tab=repositories)
+-   RStudio packages - [URL](https://www.rstudio.com/products/rpackages/)
 
 ## Installation of R, RStudio and R Packages
 
@@ -145,14 +128,14 @@ Nvim-R-Tmux IDE for R
 2.  Install RStudio from [RStudio](http://www.rstudio.com/ide/download).
 
 3.  Install CRAN Packages from R console like this:
-    
+
     ``` r
     install.packages(c("pkg1", "pkg2")) 
     install.packages("pkg.zip", repos=NULL)
     ```
 
 4.  Install Bioconductor packages as follows:
-    
+
     ``` r
     if (!requireNamespace("BiocManager", quietly = TRUE))
         install.packages("BiocManager") # Installs BiocManager if not available yet
@@ -167,18 +150,16 @@ Nvim-R-Tmux IDE for R
 
 ### Startup and Closing Behavior
 
-  - **Starting R**:
+-   **Starting R**:
     The R GUI versions, including RStudio, under Windows and Mac OS X can be
     opened by double-clicking their icons. Alternatively, one can start it by
     typing `R` in a terminal (default under Linux).
 
-  - **Startup/Closing Behavior**:
+-   **Startup/Closing Behavior**:
     The R environment is controlled by hidden files in the startup directory:
     `.RData`, `.Rhistory` and `.Rprofile` (optional).
 
-  - **Closing R**:
-
-<!-- end list -->
+-   **Closing R**:
 
 ``` r
 q()  
@@ -186,7 +167,7 @@ q()
 
     Save workspace image? [y/n/c]:
 
-  - **Note**:
+-   **Note**:
     When responding with `y`, then the entire R workspace will be written to
     the `.RData` file which can become very large. Often it is better to select `n` here,
     because a much better working pratice is to save an analysis protocol to an `R` or `Rmd` source file.
@@ -806,14 +787,14 @@ read.delim(pipe("pbpaste"))
 On Windows/Linux systems
 
 ``` r
-write.table(iris, "clipboard", sep="\t", col.names=NA, quote=F) 
+write.table(iris, "clipboard", sep="\t", col.names=NA, quote=FALSE) 
 ```
 
 On Mac OS X systems
 
 ``` r
 zz <- pipe('pbcopy', 'w')
-write.table(iris, zz, sep="\t", col.names=NA, quote=F)
+write.table(iris, zz, sep="\t", col.names=NA, quote=FALSE)
 close(zz) 
 ```
 
@@ -904,81 +885,75 @@ dim(my_result)
 
 ### Advantages
 
-  - Powerful environment for visualizing scientific data
-  - Integrated graphics and statistics infrastructure
-  - Publication quality graphics
-  - Fully programmable
-  - Highly reproducible
-  - Full [LaTeX](http://www.latex-project.org/) and Markdown support via `knitr` and `R markdown`
-  - Vast number of R packages with graphics utilities
+-   Powerful environment for visualizing scientific data
+-   Integrated graphics and statistics infrastructure
+-   Publication quality graphics
+-   Fully programmable
+-   Highly reproducible
+-   Full [LaTeX](http://www.latex-project.org/) and Markdown support via `knitr` and `R markdown`
+-   Vast number of R packages with graphics utilities
 
 ### Documentation for R Graphics
 
 **General**
 
-  - Graphics Task Page - [URL](http://cran.r-project.org/web/views/Graphics.html)
-  - R Graph Gallery - [URL](http://addictedtor.free.fr/graphiques/allgraph.php)
-  - R Graphical Manual - [URL](http://cged.genes.nig.ac.jp/RGM2/index.php)
-  - Paul Murrell’s book R (Grid) Graphics - [URL](http://www.stat.auckland.ac.nz/~paul/RGraphics/rgraphics.html)
+-   Graphics Task Page - [URL](http://cran.r-project.org/web/views/Graphics.html)
+-   R Graph Gallery - [URL](http://addictedtor.free.fr/graphiques/allgraph.php)
+-   R Graphical Manual - [URL](http://cged.genes.nig.ac.jp/RGM2/index.php)
+-   Paul Murrell’s book R (Grid) Graphics - [URL](http://www.stat.auckland.ac.nz/~paul/RGraphics/rgraphics.html)
 
 **Interactive graphics**
 
-  - rggobi\` (GGobi) - [URL](http://www.ggobi.org/)
-  - `iplots` - [URL](http://www.rosuda.org/iplots/)
-  - Open GL (`rgl`) - [URL](http://rgl.neoscientists.org/gallery.shtml)
+-   rggobi\` (GGobi) - [URL](http://www.ggobi.org/)
+-   `iplots` - [URL](http://www.rosuda.org/iplots/)
+-   Open GL (`rgl`) - [URL](http://rgl.neoscientists.org/gallery.shtml)
 
 ### Graphics Environments
 
 **Viewing and saving graphics in R**
 
-  - On-screen graphics
-  - postscript, pdf, svg
-  - jpeg, png, wmf, tiff, …
+-   On-screen graphics
+-   postscript, pdf, svg
+-   jpeg, png, wmf, tiff, …
 
 **Four major graphic environments**
 
-1)  Low-level infrastructure
+1.  Low-level infrastructure
 
-<!-- end list -->
+-   R Base Graphics (low- and high-level)
+-   `grid`: [Manual](http://www.stat.auckland.ac.nz/~paul/grid/grid.html)
 
-  - R Base Graphics (low- and high-level)
-  - `grid`: [Manual](http://www.stat.auckland.ac.nz/~paul/grid/grid.html)
-
-<!-- end list -->
-
-2)  High-level infrastructure
+2.  High-level infrastructure
     \\begin{itemize}
 
-<!-- end list -->
-
-  - `lattice`: [Manual](http://lmdvr.r-forge.r-project.org), [Intro](http://www.his.sunderland.ac.uk/~cs0her/Statistics/UsingLatticeGraphicsInR.htm), [Book](http://www.amazon.com/Lattice-Multivariate-Data-Visualization-Use/dp/0387759689)
-  - `ggplot2`: [Manual](http://had.co.nz/ggplot2/), [Intro](http://www.ling.upenn.edu/~joseff/rstudy/summer2010_ggplot2_intro.html), [Book](http://had.co.nz/ggplot2/book/)
+-   `lattice`: [Manual](http://lmdvr.r-forge.r-project.org), [Intro](http://www.his.sunderland.ac.uk/~cs0her/Statistics/UsingLatticeGraphicsInR.htm), [Book](http://www.amazon.com/Lattice-Multivariate-Data-Visualization-Use/dp/0387759689)
+-   `ggplot2`: [Manual](http://had.co.nz/ggplot2/), [Intro](http://www.ling.upenn.edu/~joseff/rstudy/summer2010_ggplot2_intro.html), [Book](http://had.co.nz/ggplot2/book/)
 
 ### Base Graphics: Overview
 
 **Important high-level plotting functions**
 
-  - `plot`: generic x-y plotting
-  - `barplot`: bar plots
-  - `boxplot`: box-and-whisker plot
-  - `hist`: histograms
-  - `pie`: pie charts
-  - `dotchart`: cleveland dot plots
-  - `image, heatmap, contour, persp`: functions to generate image-like plots
-  - `qqnorm, qqline, qqplot`: distribution comparison plots
-  - `pairs, coplot`: display of multivariant data
+-   `plot`: generic x-y plotting
+-   `barplot`: bar plots
+-   `boxplot`: box-and-whisker plot
+-   `hist`: histograms
+-   `pie`: pie charts
+-   `dotchart`: cleveland dot plots
+-   `image, heatmap, contour, persp`: functions to generate image-like plots
+-   `qqnorm, qqline, qqplot`: distribution comparison plots
+-   `pairs, coplot`: display of multivariant data
 
 **Help on graphics functions**
 
-  - `?myfct`
-  - `?plot`
-  - `?par`
+-   `?myfct`
+-   `?plot`
+-   `?par`
 
 #### Preferred Object Types
 
-  - Matrices and data frames
-  - Vectors
-  - Named vectors
+-   Matrices and data frames
+-   Vectors
+-   Named vectors
 
 ### Scatter Plots
 
@@ -1040,12 +1015,12 @@ par(op)
 
 **Important arguments**
 
-  - `mar`: specifies the margin sizes around the plotting area in order: `c(bottom, left, top, right)`
-  - `col`: color of symbols
-  - `pch`: type of symbols, samples: `example(points)`
-  - `lwd`: size of symbols
-  - `cex.*`: control font sizes
-  - For details see `?par`
+-   `mar`: specifies the margin sizes around the plotting area in order: `c(bottom, left, top, right)`
+-   `col`: color of symbols
+-   `pch`: type of symbols, samples: `example(points)`
+-   `lwd`: size of symbols
+-   `cex.*`: control font sizes
+-   For details see `?par`
 
 #### Add regression line
 
@@ -1253,31 +1228,31 @@ The following exercise introduces a variety of useful data analysis utilities in
 
 ### Analysis Routine: Data Import
 
-  - **Step 1**: To get started with this exercise, direct your R session to a dedicated workshop directory and download into this directory the following sample tables. Then import the files into Excel and save them as tab delimited text files.
-    
-      - [MolecularWeight\_tair7.xls](http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/Samples/MolecularWeight_tair7.xls)
-      - [TargetP\_analysis\_tair7.xls](http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/Samples/TargetP_analysis_tair7.xls)
+-   **Step 1**: To get started with this exercise, direct your R session to a dedicated workshop directory and download into this directory the following sample tables. Then import the files into Excel and save them as tab delimited text files.
+
+    -   [MolecularWeight\_tair7.xls](http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/Samples/MolecularWeight_tair7.xls)
+    -   [TargetP\_analysis\_tair7.xls](http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/Samples/TargetP_analysis_tair7.xls)
 
 **Import the tables into R**
 
 Import molecular weight table
 
 ``` r
-my_mw <- read.delim(file="MolecularWeight_tair7.xls", header=T, sep="\t") 
+my_mw <- read.delim(file="MolecularWeight_tair7.xls", header=TRUE, sep="\t") 
 my_mw[1:2,]
 ```
 
 Import subcelluar targeting table
 
 ``` r
-my_target <- read.delim(file="TargetP_analysis_tair7.xls", header=T, sep="\t") 
+my_target <- read.delim(file="TargetP_analysis_tair7.xls", header=TRUE, sep="\t") 
 my_target[1:2,]
 ```
 
 Online import of molecular weight table
 
 ``` r
-my_mw <- read.delim(file="http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/Samples/MolecularWeight_tair7.xls", header=T, sep="\t") 
+my_mw <- read.delim(file="http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/Samples/MolecularWeight_tair7.xls", header=TRUE, sep="\t") 
 my_mw[1:2,]
 ```
 
@@ -1288,7 +1263,7 @@ my_mw[1:2,]
 Online import of subcelluar targeting table
 
 ``` r
-my_target <- read.delim(file="http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/Samples/TargetP_analysis_tair7.xls", header=T, sep="\t") 
+my_target <- read.delim(file="http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/Samples/TargetP_analysis_tair7.xls", header=TRUE, sep="\t") 
 my_target[1:2,]
 ```
 
@@ -1298,40 +1273,32 @@ my_target[1:2,]
 
 ### Merging Data Frames
 
-  - **Step 2**: Assign uniform gene ID column titles
-
-<!-- end list -->
+-   **Step 2**: Assign uniform gene ID column titles
 
 ``` r
 colnames(my_target)[1] <- "ID"
 colnames(my_mw)[1] <- "ID" 
 ```
 
-  - **Step 3**: Merge the two tables based on common ID field
-
-<!-- end list -->
+-   **Step 3**: Merge the two tables based on common ID field
 
 ``` r
 my_mw_target <- merge(my_mw, my_target, by.x="ID", by.y="ID", all.x=T)
 ```
 
-  - **Step 4**: Shorten one table before the merge and then remove the non-matching rows (NAs) in the merged file
-
-<!-- end list -->
+-   **Step 4**: Shorten one table before the merge and then remove the non-matching rows (NAs) in the merged file
 
 ``` r
 my_mw_target2a <- merge(my_mw, my_target[1:40,], by.x="ID", by.y="ID", all.x=T)  # To remove non-matching rows, use the argument setting 'all=F'.
 my_mw_target2 <- na.omit(my_mw_target2a) # Removes rows containing "NAs" (non-matching rows).
 ```
 
-  - **Homework 3D**: How can the merge function in the previous step be executed so that only the common rows among the two data frames are returned? Prove that both methods - the two step version with `na.omit` and your method - return identical results.
-  - **Homework 3E**: Replace all `NAs` in the data frame `my_mw_target2a` with zeros.
+-   **Homework 3D**: How can the merge function in the previous step be executed so that only the common rows among the two data frames are returned? Prove that both methods - the two step version with `na.omit` and your method - return identical results.
+-   **Homework 3E**: Replace all `NAs` in the data frame `my_mw_target2a` with zeros.
 
 ### Filtering Data
 
-  - **Step 5**: Retrieve all records with a value of greater than 100,000 in ‘MW’ column and ‘C’ value in ‘Loc’ column (targeted to chloroplast).
-
-<!-- end list -->
+-   **Step 5**: Retrieve all records with a value of greater than 100,000 in ‘MW’ column and ‘C’ value in ‘Loc’ column (targeted to chloroplast).
 
 ``` r
 query <- my_mw_target[my_mw_target[, 2] > 100000 & my_mw_target[, 4] == "C", ] 
@@ -1350,14 +1317,11 @@ dim(query)
 
     ## [1] 170   8
 
-  - **Homework 3F**: How many protein entries in the `my`\_mw`_target` data frame have a MW of greater then 4,000 and less then 5,000. Subset the data frame accordingly and sort it by MW to check that your result is correct.
+-   **Homework 3F**: How many protein entries in the `my`\_mw`_target` data frame have a MW of greater then 4,000 and less then 5,000. Subset the data frame accordingly and sort it by MW to check that your result is correct.
 
 ### String Substitutions
 
-  - **Step 6**: Use a regular expression in a substitute function to generate a separate ID column that lacks the gene model extensions.
-    \<\<label=Exercise 4.7, eval=TRUE, echo=TRUE, keep.source=TRUE\>\>=
-
-<!-- end list -->
+-   **Step 6**: Use a regular expression in a substitute function to generate a separate ID column that lacks the gene model extensions.
 
 ``` r
 my_mw_target3 <- data.frame(loci=gsub("\\..*", "", as.character(my_mw_target[,1]), perl = TRUE), my_mw_target)
@@ -1369,22 +1333,18 @@ my_mw_target3[1:3,1:8]
     ## 2 AT1G01020 AT1G01020.1                28092      245   * 0.01 0.636 0.158
     ## 3 AT1G01020 AT1G01020.2                21711      191   * 0.01 0.636 0.158
 
-  - **Homework 3G**: Retrieve those rows in `my_mw_target3` where the second column contains the following identifiers: `c("AT5G52930.1", "AT4G18950.1", "AT1G15385.1", "AT4G36500.1", "AT1G67530.1")`. Use the `%in%` function for this query. As an alternative approach, assign the second column to the row index of the data frame and then perform the same query again using the row index. Explain the difference of the two methods.
+-   **Homework 3G**: Retrieve those rows in `my_mw_target3` where the second column contains the following identifiers: `c("AT5G52930.1", "AT4G18950.1", "AT1G15385.1", "AT4G36500.1", "AT1G67530.1")`. Use the `%in%` function for this query. As an alternative approach, assign the second column to the row index of the data frame and then perform the same query again using the row index. Explain the difference of the two methods.
 
 ### Calculations on Data Frames
 
-  - **Step 7**: Count the number of duplicates in the loci column with the `table` function and append the result to the data frame with the `cbind` function.
-
-<!-- end list -->
+-   **Step 7**: Count the number of duplicates in the loci column with the `table` function and append the result to the data frame with the `cbind` function.
 
 ``` r
 mycounts <- table(my_mw_target3[,1])[my_mw_target3[,1]]
 my_mw_target4 <- cbind(my_mw_target3, Freq=mycounts[as.character(my_mw_target3[,1])]) 
 ```
 
-  - **Step 8**: Perform a vectorized devision of columns 3 and 4 (average AA weight per protein)
-
-<!-- end list -->
+-   **Step 8**: Perform a vectorized devision of columns 3 and 4 (average AA weight per protein)
 
 ``` r
 data.frame(my_mw_target4, avg_AA_WT=(my_mw_target4[,3] / my_mw_target4[,4]))[1:2,] 
@@ -1397,9 +1357,7 @@ data.frame(my_mw_target4, avg_AA_WT=(my_mw_target4[,3] / my_mw_target4[,4]))[1:2
     ## 1         1  115.2121
     ## 2         2  114.6612
 
-  - **Step 9**: Calculate for each row the mean and standard deviation across several columns
-
-<!-- end list -->
+-   **Step 9**: Calculate for each row the mean and standard deviation across several columns
 
 ``` r
 mymean <- apply(my_mw_target4[,6:9], 1, mean)
@@ -1413,9 +1371,7 @@ data.frame(my_mw_target4, mean=mymean, stdev=mystdev)[1:2,5:12]
 
 ### Plotting Example
 
-  - **Step 10**: Generate scatter plot columns: ‘MW’ and ‘Residues’
-
-<!-- end list -->
+-   **Step 10**: Generate scatter plot columns: ‘MW’ and ‘Residues’
 
 ``` r
 plot(my_mw_target4[1:500,3:4], col="red")
@@ -1425,17 +1381,13 @@ plot(my_mw_target4[1:500,3:4], col="red")
 
 ### Export Results and Run Entire Exercise as Script
 
-  - **Step 11**: Write the data frame `my_mw_target4` into a tab-delimited text file and inspect it in Excel.
-
-<!-- end list -->
+-   **Step 11**: Write the data frame `my_mw_target4` into a tab-delimited text file and inspect it in Excel.
 
 ``` r
-write.table(my_mw_target4, file="my_file.xls", quote=F, sep="\t", col.names = NA) 
+write.table(my_mw_target4, file="my_file.xls", quote=FALSE, sep="\t", col.names = NA) 
 ```
 
-  - **Homework 3H**: Write all commands from this exercise into an R script named `exerciseRbasics.R`, or download it from [here](http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/My_R_Scripts/exerciseRbasics.R). Then execute the script with the `source` function like this: `source("exerciseRbasics.R")`. This will run all commands of this exercise and generate the corresponding output files in the current working directory.
-
-<!-- end list -->
+-   **Homework 3H**: Write all commands from this exercise into an R script named `exerciseRbasics.R`, or download it from [here](http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/My_R_Scripts/exerciseRbasics.R). Then execute the script with the `source` function like this: `source("exerciseRbasics.R")`. This will run all commands of this exercise and generate the corresponding output files in the current working directory.
 
 ``` r
 source("exerciseRbasics.R")

@@ -20,7 +20,7 @@ type: docs
 
 <!---
 - Compile from command-line
-Rscript -e "rmarkdown::render('Rbasics.Rmd', c('html_document'), clean=F); knitr::knit('Rbasics.Rmd', tangle=TRUE)"; Rscript ../md2jekyll.R Rbasics.knit.md 8; Rscript -e "rmarkdown::render('Rbasics.Rmd', c('pdf_document'))"
+Rscript -e "rmarkdown::render('Rbasics.Rmd', c('html_document'), clean=FALSE); knitr::knit('Rbasics.Rmd', tangle=TRUE)"; Rscript ../md2jekyll.R Rbasics.knit.md 8; Rscript -e "rmarkdown::render('Rbasics.Rmd', c('pdf_document'))"
 -->
 
 ```{r style, echo = FALSE, results = 'asis'}
@@ -547,13 +547,13 @@ read.delim(pipe("pbpaste"))
 
 On Windows/Linux systems
 ```{r copy_windows, eval=FALSE}
-write.table(iris, "clipboard", sep="\t", col.names=NA, quote=F) 
+write.table(iris, "clipboard", sep="\t", col.names=NA, quote=FALSE) 
 ```
 
 On Mac OS X systems
 ```{r copy_osx, eval=FALSE}
 zz <- pipe('pbcopy', 'w')
-write.table(iris, zz, sep="\t", col.names=NA, quote=F)
+write.table(iris, zz, sep="\t", col.names=NA, quote=FALSE)
 close(zz) 
 ```
 
@@ -887,25 +887,25 @@ __Import the tables into R__
 Import molecular weight table
 
 ```{r import_data1, eval=FALSE}
-my_mw <- read.delim(file="MolecularWeight_tair7.xls", header=T, sep="\t") 
+my_mw <- read.delim(file="MolecularWeight_tair7.xls", header=TRUE, sep="\t") 
 my_mw[1:2,]
 ``` 
 
 Import subcelluar targeting table
 ```{r import_data2, eval=FALSE}
-my_target <- read.delim(file="TargetP_analysis_tair7.xls", header=T, sep="\t") 
+my_target <- read.delim(file="TargetP_analysis_tair7.xls", header=TRUE, sep="\t") 
 my_target[1:2,]
 ```
 
 Online import of molecular weight table
 ```{r import_data1b, eval=TRUE}
-my_mw <- read.delim(file="http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/Samples/MolecularWeight_tair7.xls", header=T, sep="\t") 
+my_mw <- read.delim(file="http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/Samples/MolecularWeight_tair7.xls", header=TRUE, sep="\t") 
 my_mw[1:2,]
 ``` 
 
 Online import of subcelluar targeting table
 ```{r import_data2b, eval=TRUE}
-my_target <- read.delim(file="http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/Samples/TargetP_analysis_tair7.xls", header=T, sep="\t") 
+my_target <- read.delim(file="http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/Samples/TargetP_analysis_tair7.xls", header=TRUE, sep="\t") 
 my_target[1:2,]
 ```
 
@@ -958,7 +958,6 @@ dim(query)
 ### String Substitutions
 
 - __Step 6__: Use a regular expression in a substitute function to generate a separate ID column that lacks the gene model extensions.
-<<label=Exercise 4.7, eval=TRUE, echo=TRUE, keep.source=TRUE>>=
 
 ```{r string_sub, eval=TRUE}
 my_mw_target3 <- data.frame(loci=gsub("\\..*", "", as.character(my_mw_target[,1]), perl = TRUE), my_mw_target)
@@ -1003,7 +1002,7 @@ plot(my_mw_target4[1:500,3:4], col="red")
 - __Step 11__: Write the data frame `my_mw_target4` into a tab-delimited text file and inspect it in Excel.
 
 ```{r export_example, eval=TRUE}
-write.table(my_mw_target4, file="my_file.xls", quote=F, sep="\t", col.names = NA) 
+write.table(my_mw_target4, file="my_file.xls", quote=FALSE, sep="\t", col.names = NA) 
 ```
 
 - __Homework 3H__: Write all commands from this exercise into an R script named `exerciseRbasics.R`, or download it from [here](http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/My_R_Scripts/exerciseRbasics.R). Then execute the script with the `source` function like this: `source("exerciseRbasics.R")`. This will run all commands of this exercise and generate the corresponding output files in the current working directory.
