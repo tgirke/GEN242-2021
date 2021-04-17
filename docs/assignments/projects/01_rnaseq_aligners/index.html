@@ -6,54 +6,33 @@
 <meta name="generator" content="Hugo 0.80.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
 
-<link rel="shortcut icon" href="../../favicons/favicon.ico" >
-<link rel="apple-touch-icon" href="../../favicons/apple-touch-icon-180x180.png" sizes="180x180">
-<link rel="icon" type="image/png" href="../../favicons/favicon-16x16.png" sizes="16x16">
-<link rel="icon" type="image/png" href="../../favicons/favicon-32x32.png" sizes="32x32">
-<link rel="icon" type="image/png" href="../../favicons/android-36x36.png" sizes="36x36">
-<link rel="icon" type="image/png" href="../../favicons/android-48x48.png" sizes="48x48">
-<link rel="icon" type="image/png" href="../../favicons/android-72x72.png" sizes="72x72">
-<link rel="icon" type="image/png" href="../../favicons/android-96x96.png" sizes="96x96">
-<link rel="icon" type="image/png" href="../../favicons/android-144x144.png" sizes="144x144">
-<link rel="icon" type="image/png" href="../../favicons/android-192x192.png" sizes="192x192">
+<link rel="shortcut icon" href="../../../favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="../../../favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="../../../favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="../../../favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="../../../favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="../../../favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="../../../favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="../../../favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="../../../favicons/android-192x192.png" sizes="192x192">
 
-<title>Introduction to R | GEN242</title><meta property="og:title" content="Introduction to R" />
-<meta property="og:description" content="
-
- [ Download ]
-
-  
-This is a test for an HTML slide show. Please ignore&hellip;
-[ View Slides in Separate Browser Tab ]
-  " />
+<title>RNA-Seq - NGS Aligners | GEN242</title><meta property="og:title" content="RNA-Seq - NGS Aligners" />
+<meta property="og:description" content="RNA-Seq Workflow  Read quality assessment, filtering and trimming Map reads against reference genome Perform read counting for required ranges (e.g. exonic gene ranges) Normalization of read counts Identification of differentially expressed genes (DEGs) Clustering of gene expression profiles Gene set enrichment analysis  Challenge Project: Comparison of RNA-Seq Aligners  Run workflow from start to finish (steps 1-7) on RNA-Seq data set from Howard et al. (2013) Challenge project tasks  Compare at least 2 RNA-Seq alignment tools, such as HISAT2 and Kallisto, and evaluate the impact of the aligners on:  Read counts Differentially expressed genes (DEGs) Generate plots to compare the results efficiently      References  Howard, B." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/slides/slides_05/" />
-<meta property="article:modified_time" content="2021-04-07T15:06:01-07:00" /><meta property="og:site_name" content="GEN242" />
-<meta itemprop="name" content="Introduction to R">
-<meta itemprop="description" content="
+<meta property="og:url" content="/assignments/projects/01_rnaseq_aligners/" />
+<meta property="og:site_name" content="GEN242" />
+<meta itemprop="name" content="RNA-Seq - NGS Aligners">
+<meta itemprop="description" content="RNA-Seq Workflow  Read quality assessment, filtering and trimming Map reads against reference genome Perform read counting for required ranges (e.g. exonic gene ranges) Normalization of read counts Identification of differentially expressed genes (DEGs) Clustering of gene expression profiles Gene set enrichment analysis  Challenge Project: Comparison of RNA-Seq Aligners  Run workflow from start to finish (steps 1-7) on RNA-Seq data set from Howard et al. (2013) Challenge project tasks  Compare at least 2 RNA-Seq alignment tools, such as HISAT2 and Kallisto, and evaluate the impact of the aligners on:  Read counts Differentially expressed genes (DEGs) Generate plots to compare the results efficiently      References  Howard, B.">
 
- [ Download ]
-
-  
-This is a test for an HTML slide show. Please ignore&hellip;
-[ View Slides in Separate Browser Tab ]
-  ">
-<meta itemprop="dateModified" content="2021-04-07T15:06:01-07:00" />
-<meta itemprop="wordCount" content="22">
+<meta itemprop="wordCount" content="221">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Introduction to R"/>
-<meta name="twitter:description" content="
-
- [ Download ]
-
-  
-This is a test for an HTML slide show. Please ignore&hellip;
-[ View Slides in Separate Browser Tab ]
-  "/>
+<meta name="twitter:title" content="RNA-Seq - NGS Aligners"/>
+<meta name="twitter:description" content="RNA-Seq Workflow  Read quality assessment, filtering and trimming Map reads against reference genome Perform read counting for required ranges (e.g. exonic gene ranges) Normalization of read counts Identification of differentially expressed genes (DEGs) Clustering of gene expression profiles Gene set enrichment analysis  Challenge Project: Comparison of RNA-Seq Aligners  Run workflow from start to finish (steps 1-7) on RNA-Seq data set from Howard et al. (2013) Challenge project tasks  Compare at least 2 RNA-Seq alignment tools, such as HISAT2 and Kallisto, and evaluate the impact of the aligners on:  Read counts Differentially expressed genes (DEGs) Generate plots to compare the results efficiently      References  Howard, B."/>
 
 
 <script type="application/javascript">
@@ -72,8 +51,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="../../scss/main.min.1f416e6a5f646f231d085681bf2b4ebdad5d41f149a3977625affc97f735ab7e.css" as="style">
-<link href="../../scss/main.min.1f416e6a5f646f231d085681bf2b4ebdad5d41f149a3977625affc97f735ab7e.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../../scss/main.min.1f416e6a5f646f231d085681bf2b4ebdad5d41f149a3977625affc97f735ab7e.css" as="style">
+<link href="../../../scss/main.min.1f416e6a5f646f231d085681bf2b4ebdad5d41f149a3977625affc97f735ab7e.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -88,15 +67,15 @@ if (!doNotTrack) {
 
 
 
-<link rel="stylesheet" href="../../css/prism.css"/>
+<link rel="stylesheet" href="../../../css/prism.css"/>
 
 
-<script src="../../js/driver0.9.8.min.js"></script>
-<link rel="stylesheet" href="../../css/driver0.9.8.min.css"/>
+<script src="../../../js/driver0.9.8.min.js"></script>
+<link rel="stylesheet" href="../../../css/driver0.9.8.min.css"/>
 
 
-<link rel="stylesheet" href="../../css/site.css"/>
-<script src="../../js/site.js"></script>
+<link rel="stylesheet" href="../../../css/site.css"/>
+<script src="../../../js/site.js"></script>
 
 
 
@@ -105,7 +84,7 @@ if (!doNotTrack) {
     <header>
      
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
-  <a class="navbar-brand" href="../../">
+  <a class="navbar-brand" href="../../../">
 		<span class="font-weight-bold">GEN242</span>
 	</a>
 	<row class="header-switch">
@@ -128,7 +107,7 @@ if (!doNotTrack) {
 				
 				
 				
-          <a class="nav-link dropdown-toggle" href="../../about/" id="navbarDropdown" role="button">
+          <a class="nav-link dropdown-toggle" href="../../../about/" id="navbarDropdown" role="button">
           	About
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -136,7 +115,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../about/introduction/"
+              <a class="dropdown-item" href="../../../about/introduction/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Introduction
               </a>
@@ -144,7 +123,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../about/syllabus/"
+              <a class="dropdown-item" href="../../../about/syllabus/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Syllabus
               </a>
@@ -152,7 +131,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../about/schedule/"
+              <a class="dropdown-item" href="../../../about/schedule/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Schedule
               </a>
@@ -160,7 +139,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../about/internal/"
+              <a class="dropdown-item" href="../../../about/internal/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Internal
               </a>
@@ -170,7 +149,7 @@ if (!doNotTrack) {
                 
               
               
-              <a class="dropdown-item" href="../../about/internal/internal_resources/"
+              <a class="dropdown-item" href="../../../about/internal/internal_resources/"
               style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  Resources
               </a>
@@ -180,7 +159,7 @@ if (!doNotTrack) {
                 
               
               
-              <a class="dropdown-item" href="../../about/internal/install/"
+              <a class="dropdown-item" href="../../../about/internal/install/"
               style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  Installation
               </a>
@@ -195,7 +174,7 @@ if (!doNotTrack) {
 				
 				
 				
-          <a class="nav-link dropdown-toggle" href="../../slides/" id="navbarDropdown" role="button">
+          <a class="nav-link dropdown-toggle" href="../../../slides/" id="navbarDropdown" role="button">
           	Slides
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -203,7 +182,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../slides/slides_01"
+              <a class="dropdown-item" href="../../../slides/slides_01"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Course Introduction (S1)
               </a>
@@ -211,7 +190,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../slides/slides_02"
+              <a class="dropdown-item" href="../../../slides/slides_02"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Genome Basics (S2)
               </a>
@@ -219,7 +198,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../slides/slides_03"
+              <a class="dropdown-item" href="../../../slides/slides_03"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Databases and Software (S3)
               </a>
@@ -227,7 +206,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../slides/slides_04"
+              <a class="dropdown-item" href="../../../slides/slides_04"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  DNA Sequencing (S4)
               </a>
@@ -235,7 +214,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../slides/slides_05"
+              <a class="dropdown-item" href="../../../slides/slides_05"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Introduction to R (S5)
               </a>
@@ -243,7 +222,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../slides/slides_06"
+              <a class="dropdown-item" href="../../../slides/slides_06"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Sequence Alignments (S6)
               </a>
@@ -251,7 +230,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../slides/slides_07"
+              <a class="dropdown-item" href="../../../slides/slides_07"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Programming in R (S7)
               </a>
@@ -259,7 +238,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../slides/slides_08"
+              <a class="dropdown-item" href="../../../slides/slides_08"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Multiple Alignments (S8)
               </a>
@@ -267,7 +246,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../slides/slides_09"
+              <a class="dropdown-item" href="../../../slides/slides_09"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Short Read Alignments (S9)
               </a>
@@ -275,7 +254,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../slides/slides_10"
+              <a class="dropdown-item" href="../../../slides/slides_10"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  NGS Analysis Basics (S10)
               </a>
@@ -283,7 +262,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../slides/slides_11"
+              <a class="dropdown-item" href="../../../slides/slides_11"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Gene Expression Analysis (S11)
               </a>
@@ -291,7 +270,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../slides/slides_12"
+              <a class="dropdown-item" href="../../../slides/slides_12"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  NGS Workflows (S12)
               </a>
@@ -299,7 +278,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../slides/slides_13/"
+              <a class="dropdown-item" href="../../../slides/slides_13/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  RNA-Seq Overview (S13)
               </a>
@@ -307,7 +286,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../slides/slides_14/"
+              <a class="dropdown-item" href="../../../slides/slides_14/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  scRNA-Seq Overview (S14)
               </a>
@@ -315,7 +294,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../slides/slides_15/"
+              <a class="dropdown-item" href="../../../slides/slides_15/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  ChIP-Seq Overview (S15)
               </a>
@@ -323,7 +302,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../slides/slides_16/"
+              <a class="dropdown-item" href="../../../slides/slides_16/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  VAR-Seq Overview (S16)
               </a>
@@ -331,7 +310,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../slides/slides_17/"
+              <a class="dropdown-item" href="../../../slides/slides_17/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Gene Annotation and Ontologies (S17)
               </a>
@@ -339,7 +318,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../slides/slides_18/"
+              <a class="dropdown-item" href="../../../slides/slides_18/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Sequence Assembly (S18)
               </a>
@@ -347,7 +326,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../slides/slides_19/"
+              <a class="dropdown-item" href="../../../slides/slides_19/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Cluster Analysis (S19)
               </a>
@@ -362,7 +341,7 @@ if (!doNotTrack) {
 				
 				
 				
-          <a class="nav-link dropdown-toggle" href="../../tutorials/" id="navbarDropdown" role="button">
+          <a class="nav-link dropdown-toggle" href="../../../tutorials/" id="navbarDropdown" role="button">
           	Tutorials
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -370,7 +349,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../tutorials/github/github/"
+              <a class="dropdown-item" href="../../../tutorials/github/github/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  GitHub Introduction (T1)
               </a>
@@ -378,7 +357,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../tutorials/linux/linux/"
+              <a class="dropdown-item" href="../../../tutorials/linux/linux/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Linux and HPCC Cluster (T2)
               </a>
@@ -386,7 +365,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../tutorials/rbasics/rbasics/"
+              <a class="dropdown-item" href="../../../tutorials/rbasics/rbasics/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Introduction to R (T3)
               </a>
@@ -394,7 +373,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../tutorials/rprogramming/rprogramming/"
+              <a class="dropdown-item" href="../../../tutorials/rprogramming/rprogramming/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Programming in R (T4)
               </a>
@@ -402,7 +381,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../tutorials/tutorial_05"
+              <a class="dropdown-item" href="../../../tutorials/tutorial_05"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  NGS Analysis Basics (T5)
               </a>
@@ -410,7 +389,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../tutorials/tutorial_06"
+              <a class="dropdown-item" href="../../../tutorials/tutorial_06"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  RNA-Seq Workflow (T6)
               </a>
@@ -418,7 +397,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../tutorials/tutorial_07"
+              <a class="dropdown-item" href="../../../tutorials/tutorial_07"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  scRNA-Seq Workflow (T7)
               </a>
@@ -426,7 +405,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../tutorials/tutorial_08"
+              <a class="dropdown-item" href="../../../tutorials/tutorial_08"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  ChIP-Seq Workflow (T8)
               </a>
@@ -434,7 +413,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../tutorials/tutorial_09"
+              <a class="dropdown-item" href="../../../tutorials/tutorial_09"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  VAR-Seq Workflow (T9)
               </a>
@@ -442,7 +421,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../tutorials/tutorial_10"
+              <a class="dropdown-item" href="../../../tutorials/tutorial_10"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Graphics and Visualization (T10)
               </a>
@@ -450,7 +429,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../tutorials/tutorial_11"
+              <a class="dropdown-item" href="../../../tutorials/tutorial_11"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Cluster Analysis and Data Mining (T11)
               </a>
@@ -465,7 +444,7 @@ if (!doNotTrack) {
 				
 				
 				
-          <a class="nav-link dropdown-toggle" href="../../manuals/" id="navbarDropdown" role="button">
+          <a class="nav-link dropdown-toggle" href="../../../manuals/" id="navbarDropdown" role="button">
           	Manuals
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -473,7 +452,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../manuals/github/github/"
+              <a class="dropdown-item" href="../../../manuals/github/github/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  GitHub
               </a>
@@ -481,7 +460,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../manuals/linux/linux/"
+              <a class="dropdown-item" href="../../../manuals/linux/linux/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Linux &amp; HPCC Cluster
               </a>
@@ -489,7 +468,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../manuals/rbasics/rbasics/"
+              <a class="dropdown-item" href="../../../manuals/rbasics/rbasics/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Introduction to R
               </a>
@@ -497,7 +476,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../manuals/rbasics/sample/"
+              <a class="dropdown-item" href="../../../manuals/rbasics/sample/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Sample R Markdown
               </a>
@@ -505,7 +484,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../manuals/rprogramming/rprogramming/"
+              <a class="dropdown-item" href="../../../manuals/rprogramming/rprogramming/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Programming in R
               </a>
@@ -513,7 +492,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../manuals/rparallel/rparallel/"
+              <a class="dropdown-item" href="../../../manuals/rparallel/rparallel/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Parallel Evaluations in R
               </a>
@@ -521,7 +500,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../manuals/rsequences/rsequences/"
+              <a class="dropdown-item" href="../../../manuals/rsequences/rsequences/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  NGS Analysis Basics
               </a>
@@ -529,7 +508,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../manuals/rgraphics/rgraphics/"
+              <a class="dropdown-item" href="../../../manuals/rgraphics/rgraphics/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Graphics and Visualization
               </a>
@@ -537,7 +516,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../manuals/rclustering/rclustering/"
+              <a class="dropdown-item" href="../../../manuals/rclustering/rclustering/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Cluster Analysis
               </a>
@@ -552,7 +531,7 @@ if (!doNotTrack) {
 				
 				
 				
-          <a class="nav-link dropdown-toggle" href="../../assignments/" id="navbarDropdown" role="button">
+          <a class="nav-link dropdown-toggle" href="../../../assignments/" id="navbarDropdown" role="button">
           	Assignments
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -560,7 +539,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../assignments/homework/"
+              <a class="dropdown-item" href="../../../assignments/homework/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Homework
               </a>
@@ -570,7 +549,7 @@ if (!doNotTrack) {
                 
               
               
-              <a class="dropdown-item" href="../../assignments/homework/hw01/hw01/"
+              <a class="dropdown-item" href="../../../assignments/homework/hw01/hw01/"
               style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  HW1: Intro &amp; GitHub
               </a>
@@ -580,7 +559,7 @@ if (!doNotTrack) {
                 
               
               
-              <a class="dropdown-item" href="../../assignments/homework/hw02/hw02/"
+              <a class="dropdown-item" href="../../../assignments/homework/hw02/hw02/"
               style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  HW2: Linux &amp; HPC
               </a>
@@ -590,7 +569,7 @@ if (!doNotTrack) {
                 
               
               
-              <a class="dropdown-item" href="../../assignments/homework/hw03/hw03/"
+              <a class="dropdown-item" href="../../../assignments/homework/hw03/hw03/"
               style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  HW3: R Basics
               </a>
@@ -600,7 +579,7 @@ if (!doNotTrack) {
                 
               
               
-              <a class="dropdown-item" href="../../assignments/homework/hw04/hw04/"
+              <a class="dropdown-item" href="../../../assignments/homework/hw04/hw04/"
               style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  HW4: Alignments
               </a>
@@ -610,7 +589,7 @@ if (!doNotTrack) {
                 
               
               
-              <a class="dropdown-item" href="../../assignments/homework/hw05/hw05"
+              <a class="dropdown-item" href="../../../assignments/homework/hw05/hw05"
               style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  HW5: R Programming
               </a>
@@ -618,7 +597,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../assignments/projects/"
+              <a class="dropdown-item" href="../../../assignments/projects/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Projects
               </a>
@@ -628,7 +607,7 @@ if (!doNotTrack) {
                 
               
               
-              <a class="dropdown-item" href="../../assignments/projects/project_overview/"
+              <a class="dropdown-item" href="../../../assignments/projects/project_overview/"
               style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  Overview of Projects
               </a>
@@ -638,7 +617,7 @@ if (!doNotTrack) {
                 
               
               
-              <a class="dropdown-item" href="../../assignments/projects/01_rnaseq_aligners/"
+              <a class="dropdown-item" href="../../../assignments/projects/01_rnaseq_aligners/"
               style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  RNA-Seq - NGS Aligners
               </a>
@@ -648,7 +627,7 @@ if (!doNotTrack) {
                 
               
               
-              <a class="dropdown-item" href="../../assignments/projects/rnaseq_deg1/"
+              <a class="dropdown-item" href="../../../assignments/projects/rnaseq_deg1/"
               style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  RNA-Seq - DEG 1
               </a>
@@ -658,7 +637,7 @@ if (!doNotTrack) {
                 
               
               
-              <a class="dropdown-item" href="../../assignments/projects/rnaseq_deg1/"
+              <a class="dropdown-item" href="../../../assignments/projects/rnaseq_deg1/"
               style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  RNA-Seq - DEG 2
               </a>
@@ -668,7 +647,7 @@ if (!doNotTrack) {
                 
               
               
-              <a class="dropdown-item" href="../../assignments/projects/project_03/"
+              <a class="dropdown-item" href="../../../assignments/projects/project_03/"
               style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  Project_03
               </a>
@@ -678,7 +657,7 @@ if (!doNotTrack) {
                 
               
               
-              <a class="dropdown-item" href="../../assignments/projects/project_04/"
+              <a class="dropdown-item" href="../../../assignments/projects/project_04/"
               style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  Project_04
               </a>
@@ -688,7 +667,7 @@ if (!doNotTrack) {
                 
               
               
-              <a class="dropdown-item" href="../../assignments/projects/project_05/"
+              <a class="dropdown-item" href="../../../assignments/projects/project_05/"
               style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  Project_05
               </a>
@@ -696,7 +675,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../assignments/presentations/"
+              <a class="dropdown-item" href="../../../assignments/presentations/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Presentations
               </a>
@@ -706,7 +685,7 @@ if (!doNotTrack) {
                 
               
               
-              <a class="dropdown-item" href="../../assignments/presentations/paper_presentations/"
+              <a class="dropdown-item" href="../../../assignments/presentations/paper_presentations/"
               style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  Paper Presentations
               </a>
@@ -721,7 +700,7 @@ if (!doNotTrack) {
 				
 				
 				
-          <a class="nav-link dropdown-toggle" href="../../external_resources/" id="navbarDropdown" role="button">
+          <a class="nav-link dropdown-toggle" href="../../../external_resources/" id="navbarDropdown" role="button">
           	Links
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -778,7 +757,7 @@ if (!doNotTrack) {
 				
 				
 				
-					<a class="nav-link" href="../../blog/" ><span>News</span></a>
+					<a class="nav-link" href="../../../blog/" ><span>News</span></a>
 				
 			</li>
 			
@@ -797,8 +776,8 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.d1d3b3a79a46246b3938de355c554a70.json"
-  data-offline-search-base-href="../../"
+  data-offline-search-index-json-src="../../../offline-search-index.d1d3b3a79a46246b3938de355c554a70.json"
+  data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
 
@@ -829,8 +808,8 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.d1d3b3a79a46246b3938de355c554a70.json"
-  data-offline-search-base-href="../../"
+  data-offline-search-index-json-src="../../../offline-search-index.d1d3b3a79a46246b3938de355c554a70.json"
+  data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
 
@@ -851,10 +830,28 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="../../slides/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Slides</a>
+    <a  href="../../../assignments/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Assignments</a>
   </li>
   <ul>
-    <li class="collapse show" id="slides">
+    <li class="collapse show" id="assignments">
+      
+      
+      
+      
+        
+          
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="../../../assignments/homework/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Homework</a>
+  </li>
+  <ul>
+    <li class="collapse " id="assignmentshomework">
       
       
       
@@ -862,7 +859,7 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-slidesslides_01" href="../../slides/slides_01/">Course Introduction</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-assignmentshomeworkhw01hw01" href="../../../assignments/homework/hw01/hw01/">HW1: Intro &amp; GitHub</a>
         
       
       
@@ -870,7 +867,7 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-slidesslides_02" href="../../slides/slides_02/">Genome Basics</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-assignmentshomeworkhw02hw02" href="../../../assignments/homework/hw02/hw02/">HW2: Linux &amp; HPC</a>
         
       
       
@@ -878,7 +875,7 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-slidesslides_03" href="../../slides/slides_03/">Databases and Software</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-assignmentshomeworkhw03hw03" href="../../../assignments/homework/hw03/hw03/">HW3: R Basics</a>
         
       
       
@@ -886,7 +883,7 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-slidesslides_04" href="../../slides/slides_04/">DNA Sequencing</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-assignmentshomeworkhw04hw04" href="../../../assignments/homework/hw04/hw04/">HW4: Alignments</a>
         
       
       
@@ -894,7 +891,40 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page  active" id="m-slidesslides_05" href="../../slides/slides_05/">Introduction to R</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-assignmentshomeworkhw05hw05" href="../../../assignments/homework/hw05/hw05/">HW5: R Programming</a>
+        
+      
+      
+    </li>
+  </ul>
+</ul>
+
+        
+      
+      
+      
+        
+          
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="../../../assignments/projects/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Projects</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="assignmentsprojects">
+      
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-assignmentsprojectsproject_overview" href="../../../assignments/projects/project_overview/">Overview of Projects</a>
         
       
       
@@ -902,7 +932,7 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-slidesslides_06" href="../../slides/slides_06/">Sequence Alignments</a>
+          <a class="td-sidebar-link td-sidebar-link__page  active" id="m-assignmentsprojects01_rnaseq_aligners" href="../../../assignments/projects/01_rnaseq_aligners/">RNA-Seq Aligners</a>
         
       
       
@@ -910,7 +940,7 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-slidesslides_07" href="../../slides/slides_07/">Programming in R</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-assignmentsprojectsrnaseq_deg1" href="../../../assignments/projects/rnaseq_deg1/">RNA-Seq - DEG 1</a>
         
       
       
@@ -918,7 +948,7 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-slidesslides_08" href="../../slides/slides_08/">Multiple Alignments</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-assignmentsprojectsrnaseq_deg2" href="../../../assignments/projects/rnaseq_deg2/">RNA-Seq - DEG 2</a>
         
       
       
@@ -926,7 +956,7 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-slidesslides_09" href="../../slides/slides_09/">Short Read Alignments</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-assignmentsprojectsproject_03" href="../../../assignments/projects/project_03/">Project_03</a>
         
       
       
@@ -934,7 +964,7 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-slidesslides_10" href="../../slides/slides_10/">NGS Analysis Basics</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-assignmentsprojectsproject_04" href="../../../assignments/projects/project_04/">Project_04</a>
         
       
       
@@ -942,71 +972,47 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-slidesslides_11" href="../../slides/slides_11/">Analysis of Gene Expression Data</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-assignmentsprojectsproject_05" href="../../../assignments/projects/project_05/">Project_05</a>
+        
+      
+      
+    </li>
+  </ul>
+</ul>
+
         
       
       
       
         
           
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-slidesslides_12" href="../../slides/slides_12/">Introduction to NGS Workflows</a>
-        
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="../../../assignments/presentations/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Presentations</a>
+  </li>
+  <ul>
+    <li class="collapse " id="assignmentspresentations">
       
-      
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-slidesslides_13" href="../../slides/slides_13/">RNA-Seq Overview</a>
-        
-      
-      
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-slidesslides_14" href="../../slides/slides_14/">scRNA-Seq Overview</a>
-        
       
       
       
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-slidesslides_15" href="../../slides/slides_15/">ChIP-Seq Overview</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-assignmentspresentationspaper_presentations" href="../../../assignments/presentations/paper_presentations/">Paper Presentations</a>
         
       
       
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-slidesslides_16" href="../../slides/slides_16/">VAR-Seq Overview</a>
-        
-      
-      
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-slidesslides_17" href="../../slides/slides_17/">Gene Annotation and Ontologies</a>
-        
-      
-      
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-slidesslides_18" href="../../slides/slides_18/">Sequence Assembly</a>
-        
-      
-      
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-slidesslides_19" href="../../slides/slides_19/">Cluster Analysis</a>
+    </li>
+  </ul>
+</ul>
+
         
       
       
@@ -1054,12 +1060,12 @@ if (!doNotTrack) {
 
     
     
-      <a href="https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/slides/slides_05.md" target="_blank" class="source-link"><i class="fa fa-code fa-fw"></i> View source code</a>
+      <a href="https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/assignments/Projects/01_rnaseq_aligners.md" target="_blank" class="source-link"><i class="fa fa-code fa-fw"></i> View source code</a>
     
 
-    <a href="https://github.com/tgirke/GEN242//edit/main/content/en/slides/slides_05.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-    <a href="https://github.com/tgirke/GEN242//new/main/content/en/slides/slides_05.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" target="_blank"><i class="fa fa-edit fa-fw"></i> Create child page</a>
-    <a href="https://github.com/tgirke/GEN242//issues/new?title=Introduction%20to%20R" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+    <a href="https://github.com/tgirke/GEN242//edit/main/content/en/assignments/Projects/01_rnaseq_aligners.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+    <a href="https://github.com/tgirke/GEN242//new/main/content/en/assignments/Projects/01_rnaseq_aligners.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" target="_blank"><i class="fa fa-edit fa-fw"></i> Create child page</a>
+    <a href="https://github.com/tgirke/GEN242//issues/new?title=RNA-Seq%20-%20NGS%20Aligners" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
     
       
       <a href="https://github.com/tgirke/GEN242/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
@@ -1072,6 +1078,14 @@ if (!doNotTrack) {
 
 
 
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#rna-seq-workflow">RNA-Seq Workflow</a></li>
+    <li><a href="#challenge-project-comparison-of-rna-seq-aligners">Challenge Project: Comparison of RNA-Seq Aligners</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
 
 
 
@@ -1090,15 +1104,25 @@ if (!doNotTrack) {
 
 
 
+
+
+
 <li class="breadcrumb-item" >
-	<a href="../../slides/">Slides</a>
+	<a href="../../../assignments/">Assignments</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../assignments/projects/">Projects</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="../../slides/slides_05/">Introduction to R</a>
+	<a href="../../../assignments/projects/01_rnaseq_aligners/">RNA-Seq Aligners</a>
 </li>
 
 	</ol>
@@ -1106,26 +1130,49 @@ if (!doNotTrack) {
 
                 
 <div class="td-content">
-	<h1>Introduction to R</h1>
+	<h1>RNA-Seq - NGS Aligners</h1>
     
 	
-        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 1 minute read</p>
+        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 2 minute read</p>
            
 	<p><br></br></p>
-<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQfgbZ_9HS8TyPWukLeKfo3DZsk2DScFWAe7733onwzkDQdFlt8Ok-agytLm3deBmj24I0V29-awvPk/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-<p>[ <a href="https://docs.google.com/presentation/d/1tnacYa9APHo1EdMU6NFZbDqmdXN8AinIL3GLeAotVPo/edit?usp=sharing">Download</a> ]</p>
-<p><br></br>
-<br></br>
-<br></br></p>
-<p>This is a test for an HTML slide show. Please ignore&hellip;</p>
-<p>[ <a href="https://girke.bioinformatics.ucr.edu/GEN242/custom/slides/R_for_HPC/R_for_HPC.html" target="_blank">View Slides in Separate Browser Tab</a> ]</p>
-<div style="overflow:auto;">
-<iframe src="https://girke.bioinformatics.ucr.edu/GEN242/custom/slides/R_for_HPC/R_for_HPC.html" scrolling="yes", frameborder="3px solid black" width="1152" height="682" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="width: 1100px"></iframe>
-</div>
+<h2 id="rna-seq-workflow">RNA-Seq Workflow</h2>
+<ol>
+<li>Read quality assessment, filtering and trimming</li>
+<li>Map reads against reference genome</li>
+<li>Perform read counting for required ranges (<em>e.g.</em> exonic gene ranges)</li>
+<li>Normalization of read counts</li>
+<li>Identification of differentially expressed genes (DEGs)</li>
+<li>Clustering of gene expression profiles</li>
+<li>Gene set enrichment analysis</li>
+</ol>
+<h2 id="challenge-project-comparison-of-rna-seq-aligners">Challenge Project: Comparison of RNA-Seq Aligners</h2>
+<ul>
+<li>Run workflow from start to finish (steps 1-7) on RNA-Seq data set from Howard et al. (2013)</li>
+<li>Challenge project tasks
+<ul>
+<li>Compare at least 2 RNA-Seq alignment tools, such as HISAT2 and Kallisto, and evaluate the impact of the aligners on:
+<ul>
+<li>Read counts</li>
+<li>Differentially expressed genes (DEGs)</li>
+<li>Generate plots to compare the results efficiently</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li>Howard, B.E. et al., 2013. High-throughput RNA sequencing of pseudomonas-infected Arabidopsis reveals hidden transcriptome complexity and novel splice variants. PloS one, 8(10), p.e74183. <a href="http://www.ncbi.nlm.nih.gov/pubmed/24098335">PubMed</a></li>
+<li>Kim D, Pertea G, Trapnell C, Pimentel H, Kelley R, Salzberg SL (2013) TopHat2: accurate alignment of transcriptomes in the presence of insertions, deletions and gene fusions. Genome Biol. doi: 10.1186/gb-2013-14-4-r36 <a href="http://www.ncbi.nlm.nih.gov/pubmed/23618408">PubMed</a></li>
+<li>Kim D, Langmead B, Salzberg SL (2015) HISAT: a fast spliced aligner with low memory requirements. Nat Methods 12: 357–360 <a href="http://www.ncbi.nlm.nih.gov/pubmed/25751142">PubMed</a></li>
+<li>Liao Y, Smyth GK, Shi W (2013) The Subread aligner: fast, accurate and scalable read mapping by seed-and-vote. Nucleic Acids Res 41: e108 <a href="http://www.ncbi.nlm.nih.gov/pubmed/23558742">PubMed</a></li>
+<li>Bray NL, Pimentel H, Melsted P, Pachter L (2016) Near-optimal probabilistic RNA-seq quantification. Nat Biotechnol. doi: 10.1038/nbt.3519 <a href="http://www.ncbi.nlm.nih.gov/pubmed/27043002">PubMed</a></li>
+</ul>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-07: <a  href="https://github.com/tgirke/GEN242//commit/54f4f2b15133500482cee3978e86ea38cc154cdd">some edits (54f4f2b1)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 0001-01-01
 </div>
 </div>
 
@@ -1184,7 +1231,7 @@ if (!doNotTrack) {
     }
   })();
 </script>
-<script src="../../js/mathjax3.1.2.js"></script>
+<script src="../../../js/mathjax3.1.2.js"></script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
@@ -1214,11 +1261,11 @@ MathJax.Hub.Config({
 
 
 
-<script src="../../js/main.min.f820bfc507c3ebefe17f8881ec4ee10013f3b89ad9555a50acf9bb1771e6823f.js" integrity="sha256-&#43;CC/xQfD6&#43;/hf4iB7E7hABPzuJrZVVpQrPm7F3Hmgj8=" crossorigin="anonymous"></script>
+<script src="../../../js/main.min.f820bfc507c3ebefe17f8881ec4ee10013f3b89ad9555a50acf9bb1771e6823f.js" integrity="sha256-&#43;CC/xQfD6&#43;/hf4iB7E7hABPzuJrZVVpQrPm7F3Hmgj8=" crossorigin="anonymous"></script>
 
 
 
-<script src='../../js/prism.js'></script>
+<script src='../../../js/prism.js'></script>
 
 
 
