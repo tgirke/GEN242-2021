@@ -541,7 +541,7 @@ enable = true
     [menu.main.params]
       level = 2
   [[menu.main]]
-    name = "RNA-Seq - NGS Aligners"
+    name = "RNA-Seq Aligners"
     url = "/assignments/Projects/01_rnaseq_aligners/"
     parent = "Assignments"
     weight = 402
