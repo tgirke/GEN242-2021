@@ -8,7 +8,7 @@ weight: 401
 
 <br></br>
 
-## RNA-Seq Workflow  
+## 1. RNA-Seq Workflow  
 
 1. Read quality assessment, filtering and trimming 
 2. Map reads against reference genome 

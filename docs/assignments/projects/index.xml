@@ -89,7 +89,7 @@ following files:&lt;/p&gt;
         
         
         &lt;p&gt;&lt;br&gt;&lt;/br&gt;&lt;/p&gt;
-&lt;h2 id=&#34;rna-seq-workflow&#34;&gt;RNA-Seq Workflow&lt;/h2&gt;
+&lt;h2 id=&#34;1-rna-seq-workflow&#34;&gt;1. RNA-Seq Workflow&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Read quality assessment, filtering and trimming&lt;/li&gt;
 &lt;li&gt;Map reads against reference genome&lt;/li&gt;
