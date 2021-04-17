@@ -27,11 +27,16 @@
 &lt;p&gt;This page provides links to password protected resources that are only accessible to the instructor and/or students enrolled in this class.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ul&gt;
-&lt;li&gt;Course Planning Sheet: shared privately&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/personal&#34;&gt;GitHub&lt;/a&gt;: private repositories for course assignments (homework and course projects)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://education.github.com/&#34;&gt;GitHub Education&lt;/a&gt;: provides free extra benefits to students&lt;/li&gt;
+&lt;li&gt;Zoom URLs and course planning sheets are shared via the internal Google Doc named &lt;code&gt;URLs_to_Private_Info&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/personal&#34;&gt;GitHub&lt;/a&gt;: private repositories for course assignments (course projects).&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/personal&#34;&gt;GitHub Classroom&lt;/a&gt;: homework assignments are distributed and autograded via GitHub Classroom.&lt;/li&gt;
+&lt;li&gt;Course communication: depending on student preferences this class uses for group communications Piazza and/or Slack. This year the preference was to use only Piazza.
+&lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://piazza.com/ucr/spring2021/gen242/home&#34;&gt;Piazza&lt;/a&gt;: for communication among students and instructor (please avoid email!)&lt;/li&gt;
-&lt;li&gt;How to set up and maintain this site: see &lt;a href=&#34;../../about/internal/install/&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://slack.com/&#34;&gt;Slack&lt;/a&gt;: not used this year.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Information on how to set up and maintain this site is &lt;a href=&#34;../../about/internal/install/&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
