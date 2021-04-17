@@ -594,13 +594,6 @@ enable = true
     weight = 501
     [menu.main.params]
       level = 2
-  [[menu.main]]
-    name = "Project Presentations"
-    url = "/assignments/Presentations/project_presentations/"
-    parent = "Assignments"
-    weight = 502
-    [menu.main.params]
-      level = 2
 ## 
 [[menu.main]]
   name = "Links"
