@@ -9,7 +9,7 @@ type: docs
 
 > This page provides links to password protected resources that are only accessible to the instructor and/or students enrolled in this class.
 
-- Zoom URLs and course planning sheets are shared via the internal Google Doc named `URLs_to_Private_Info`. 
+- Zoom URLs and course planning sheets: shared via an internal Google Doc named `URLs_to_Private_Info`. 
 - [GitHub](https://github.com/personal): private repositories for course assignments (course projects).
 - [GitHub Classroom](https://github.com/personal): homework assignments are distributed and autograded via GitHub Classroom.
 - Course communication: depending on student preferences this class uses for group communications Piazza and/or Slack. This year the preference was to use only Piazza.
