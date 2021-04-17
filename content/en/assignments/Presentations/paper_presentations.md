@@ -20,10 +20,9 @@ The following lists the assigned papers organized by course project topics.
 
 All references in [Paperpile]()
 
-### RNA-Seq - RNA-Seq Aligners 
+### RNA-Seq Aligners 
 
-+ ...
-+ ...
++ Kim D, Langmead B, Salzberg SL (2015) HISAT: a fast spliced aligner with low memory requirements. Nat Methods 12: 357–360. [PubMed](https://pubmed.ncbi.nlm.nih.gov/25751142/)
 
 ### RNA-Seq - DEG Methods  
 

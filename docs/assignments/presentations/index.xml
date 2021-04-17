@@ -30,10 +30,9 @@ A detailed presentation schedule is available on the internal &lt;a href=&#34;&#
 The following lists the assigned papers organized by course project topics.&lt;/p&gt;
 &lt;h2 id=&#34;publications-organized-by-course-projects&#34;&gt;Publications organized by course projects&lt;/h2&gt;
 &lt;p&gt;All references in &lt;a href=&#34;&#34;&gt;Paperpile&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;rna-seq---rna-seq-aligners&#34;&gt;RNA-Seq - RNA-Seq Aligners&lt;/h3&gt;
+&lt;h3 id=&#34;rna-seq-aligners&#34;&gt;RNA-Seq Aligners&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&amp;hellip;&lt;/li&gt;
-&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;li&gt;Kim D, Langmead B, Salzberg SL (2015) HISAT: a fast spliced aligner with low memory requirements. Nat Methods 12: 357–360. &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/25751142/&#34;&gt;PubMed&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;rna-seq---deg-methods&#34;&gt;RNA-Seq - DEG Methods&lt;/h3&gt;
 &lt;ul&gt;
