@@ -31,7 +31,7 @@ given.
 ## Generate workflow environment with project data
 
 1. Log in to the HPCC cluster and set your working directory to `bigdata` or (`/bigdata/gen242/<user_name>`)
-2. Clone the GitHub repository for your project with `git clone ...` (to be created by each student) and then `cd` into this directory.
+2. Clone the GitHub repository for your project with `git clone ...` (URLs listed [here](https://bit.ly/3n07XFB)) and then `cd` into this directory.
 2. Generate the workflow environment for your project on the HPCC cluster with `genWorkenvir` from `systemPipeRdata`. 
 3. Delete the default `data` and `results` directories and replace them with symbolic links pointing to the above described `data` and `results` directories of your course project. For instance, the project RNA-Seq should create the symbolic links for their `data` and `results` directories like this:
    ```sh 

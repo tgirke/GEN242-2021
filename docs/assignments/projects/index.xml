@@ -517,7 +517,7 @@ given.&lt;/p&gt;
 &lt;h2 id=&#34;generate-workflow-environment-with-project-data&#34;&gt;Generate workflow environment with project data&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Log in to the HPCC cluster and set your working directory to &lt;code&gt;bigdata&lt;/code&gt; or (&lt;code&gt;/bigdata/gen242/&amp;lt;user_name&amp;gt;&lt;/code&gt;)&lt;/li&gt;
-&lt;li&gt;Clone the GitHub repository for your project with &lt;code&gt;git clone ...&lt;/code&gt; (to be created by each student) and then &lt;code&gt;cd&lt;/code&gt; into this directory.&lt;/li&gt;
+&lt;li&gt;Clone the GitHub repository for your project with &lt;code&gt;git clone ...&lt;/code&gt; (URLs listed &lt;a href=&#34;https://bit.ly/3n07XFB&#34;&gt;here&lt;/a&gt;) and then &lt;code&gt;cd&lt;/code&gt; into this directory.&lt;/li&gt;
 &lt;li&gt;Generate the workflow environment for your project on the HPCC cluster with &lt;code&gt;genWorkenvir&lt;/code&gt; from &lt;code&gt;systemPipeRdata&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Delete the default &lt;code&gt;data&lt;/code&gt; and &lt;code&gt;results&lt;/code&gt; directories and replace them with symbolic links pointing to the above described &lt;code&gt;data&lt;/code&gt; and &lt;code&gt;results&lt;/code&gt; directories of your course project. For instance, the project RNA-Seq should create the symbolic links for their &lt;code&gt;data&lt;/code&gt; and &lt;code&gt;results&lt;/code&gt; directories like this:
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;ln -s /bigdata/gen242/shared/RNA-Seq/data data
