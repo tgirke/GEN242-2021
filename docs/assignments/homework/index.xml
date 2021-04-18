@@ -304,7 +304,7 @@ writePairwiseAlignments(p)
 Source code downloads: &amp;nbsp; &lt;a href=&#34;https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/assignments/Homework/HW05/HW05.R&#34; target=&#34;_blank&#34;&gt;[ .R ]&lt;/a&gt;
 &lt;/div&gt;
 &lt;h2 id=&#34;a-reverse-and-complement-of-dna&#34;&gt;A. Reverse and complement of DNA&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Task 1&lt;/strong&gt;: Write a &lt;code&gt;RevComp&lt;/code&gt; function that returns the reverse and complement of a DNA sequence string. Include an argument that will allow to return only (a) the reversed sequence, (b) the complemented sequence, or (c) the reversed and complemented sequence. The following R functions will be useful for the implementation:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Task 1&lt;/strong&gt;: Write a &lt;code&gt;RevComp&lt;/code&gt; function that returns the reverse and complement of a DNA sequence string. Include an argument that will allow to return only (i) the reversed sequence, (ii) the complemented sequence, or (iii) the reversed and complemented sequence. The following R functions will be useful for the implementation:&lt;/p&gt;
 &lt;p&gt;Generate a short test DNA sequence&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;x &amp;lt;- c(&amp;quot;ATGCATTGGACGTTAG&amp;quot;)  
 x
