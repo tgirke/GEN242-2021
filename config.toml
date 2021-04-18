@@ -562,17 +562,10 @@ enable = true
     [menu.main.params]
       level = 2
   [[menu.main]]
-    name = "scRNA-Seq Embedding 1"
-    url = "/assignments/Projects/06_scrnaseq_embedding/"
+    name = "scRNA-Seq Embedding 1-3"
+    url = "/assignments/Projects/04_scrnaseq_embedding/"
     parent = "Assignments"
-    weight = 406
-    [menu.main.params]
-      level = 2
-  [[menu.main]]
-    name = "scRNA-Seq Embedding 2"
-    url = "/assignments/Projects/07_scrnaseq_embedding/"
-    parent = "Assignments"
-    weight = 407
+    weight = 405
     [menu.main.params]
       level = 2
   [[menu.main]]
