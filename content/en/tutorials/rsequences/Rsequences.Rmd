@@ -32,11 +32,12 @@ knitr::opts_chunk$set(
     cache=as.logical(Sys.getenv("KNITR_CACHE", "TRUE")))
 ```
 
-```{r setup, echo=FALSE, messages=FALSE, warnings=FALSE}
-suppressPackageStartupMessages({
-    library(limma) 
-    library(ggplot2) }) 
-```
+<div style="text-align: right"> 
+Source code downloads: &nbsp; &nbsp;
+[ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/rsequences/Rsequences.Rmd) ] &nbsp; &nbsp; 
+[ [.R](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/rsequences/Rsequences.R) ]
+</div>
+
 
 ## Overview
 

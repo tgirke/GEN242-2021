@@ -37,6 +37,14 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
+<div style="text-align: right">
+
+Source code downloads:    
+\[ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/rsequences/Rsequences.Rmd) \]    
+\[ [.R](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/rsequences/Rsequences.R) \]
+
+</div>
+
 ## Overview
 
 ### Sequence Analysis in R and Bioconductor
