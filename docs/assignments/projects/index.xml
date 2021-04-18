@@ -343,10 +343,10 @@ following files:&lt;/p&gt;
     
     <item>
       <title>Assignments: Functional enrichment analysis (FEA)</title>
-      <link>/assignments/projects/06_enrichment_analysis/</link>
+      <link>/assignments/projects/06_functional_enrichment/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/assignments/projects/06_enrichment_analysis/</guid>
+      <guid>/assignments/projects/06_functional_enrichment/</guid>
       <description>
         
         
@@ -362,7 +362,7 @@ following files:&lt;/p&gt;
 &lt;li&gt;Gene set enrichment analysis&lt;/li&gt;
 &lt;li&gt;Motif prediction to identify putative TF binding sites&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;challenge-projects-functional-enrichment-analysis-fea&#34;&gt;Challenge Projects: Functional enrichment analysis (FEA)&lt;/h2&gt;
+&lt;h2 id=&#34;challenge-project-functional-enrichment-analysis-fea&#34;&gt;Challenge Project: Functional enrichment analysis (FEA)&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Run workflow from start to finish (steps 1-8) on ChIP-Seq data set from Kaufman et al. (2010)&lt;/li&gt;
 &lt;li&gt;Challenge project tasks
@@ -385,6 +385,57 @@ following files:&lt;/p&gt;
 &lt;li&gt;Subramanian A, Tamayo P, Mootha VK, Mukherjee S, Ebert BL, Gillette MA, Paulovich A, Pomeroy SL, Golub TR, Lander ES, et al (2005) Gene set enrichment analysis: a knowledge-based approach for interpreting genome-wide expression profiles. Proc Natl Acad Sci U S A 102: 15545–15550. &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/16199517/&#34;&gt;PubMed&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Welch RP, Lee C, Imbriano PM, Patil S, Weymouth TE, Smith RA, Scott LJ, Sartor MA (2014) ChIP-Enrich: gene set enrichment testing for ChIP-seq data. Nucleic Acids Res 42: e105. &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/24878920/&#34;&gt;PubMed&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Young MD, Wakefield MJ, Smyth GK, Oshlack A (2010) Gene ontology analysis for RNA-seq: accounting for selection bias. Genome Biol 11: R14. &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/20132535/&#34;&gt;PubMed&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Assignments: Motif Enrichment Analysis (MEA)</title>
+      <link>/assignments/projects/07_motif_enrichment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/assignments/projects/07_motif_enrichment/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;br&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;chip-seq-workflow&#34;&gt;ChIP-Seq Workflow&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Read quality assessment, filtering and trimming&lt;/li&gt;
+&lt;li&gt;Align reads to reference genome&lt;/li&gt;
+&lt;li&gt;Compute read coverage across genome&lt;/li&gt;
+&lt;li&gt;Peak calling with different methods and consensus peak identification&lt;/li&gt;
+&lt;li&gt;Annotate peaks&lt;/li&gt;
+&lt;li&gt;Differential binding analysis&lt;/li&gt;
+&lt;li&gt;Gene set enrichment analysis&lt;/li&gt;
+&lt;li&gt;Motif prediction to identify putative TF binding sites&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;challenge-projects&#34;&gt;Challenge Projects&lt;/h2&gt;
+&lt;h3 id=&#34;1-functional-enrichment-analysis-fea&#34;&gt;1. Functional enrichment analysis (FEA)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Run workflow from start to finish (steps 1-8) on ChIP-Seq data set from Kaufman et al. (2010)&lt;/li&gt;
+&lt;li&gt;Challenge project tasks
+&lt;ul&gt;
+&lt;li&gt;Prioritize/rank peaks by FDR from differential binding analysis&lt;/li&gt;
+&lt;li&gt;Parse peak sequences from genome&lt;/li&gt;
+&lt;li&gt;Determine which motifs in the Jaspar database (&lt;a href=&#34;http://bioconductor.org/packages/release/bioc/html/MotifDb.html&#34;&gt;motifDB&lt;/a&gt;) show the highest enrichment in the peak sequences. The motif enrichment tests can be performed with the &lt;a href=&#34;http://bioconductor.org/packages/release/bioc/html/PWMEnrich.html&#34;&gt;PWMEnrich&lt;/a&gt; package. Basic starter code for accomplishing these tasks is provided &lt;a href=&#34;https://gist.github.com/tgirke/df6fe20c2e42e71a7ade04941d4a05e9&#34;&gt;here&lt;/a&gt;. The motif mapping can be performed with &lt;a href=&#34;http://bioconductor.org/packages/3.12/bioc/html/Biostrings.html&#34;&gt;matchPWM&lt;/a&gt; or &lt;a href=&#34;http://bioconductor.org/packages/3.12/bioc/html/motifmatchr.html&#34;&gt;motifmatcher&lt;/a&gt;, and motif identification in databases can be performed with &lt;a href=&#34;https://bioconductor.org/packages/3.12/bioc/html/MotIV.html&#34;&gt;MotIV&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;To have distinct challenge project aspects for each of the two students in this project, one could use different peak ranking approaches, e.g. one ranks by FDR of differential binding analysis, and the other by coverage or p-values of peak caller.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-functional-enrichment-analysis-fea&#34;&gt;2. Functional enrichment analysis (FEA)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Similar as above but with different combination of enrichment and/or testing methods.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Frith, Martin C., Yutao Fu, Liqun Yu, Jiang‐fan Chen, Ulla Hansen, and Zhiping Weng. 2004. “Detection of Functional DNA Motifs via Statistical Over‐representation.” Nucleic Acids Research 32 (4): 1372–81. &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/14988425/&#34;&gt;PubMed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Kaufmann, K, F Wellmer, J M Muiño, T Ferrier, S E Wuest, V Kumar, A Serrano-Mislata, et al. 2010. “Orchestration of Floral Initiation by APETALA1.” Science 328 (5974): 85–89. &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/20360106/&#34;&gt;PubMed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Machanick P, Bailey TL (2011) MEME-ChIP: motif analysis of large DNA datasets. Bioinformatics 27: 1696–1697. &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/21486936/&#34;&gt;PubMed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;McLeay, Robert C, and Timothy L Bailey. 2010. “Motif Enrichment Analysis: A Unified Framework and an Evaluation on ChIP Data.” BMC Bioinformatics 11: 165. &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/20356413/&#34;&gt;PubMed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Tompa, M, N Li, T L Bailey, G M Church, B De Moor, E Eskin, A V Favorov, et al. 2005. “Assessing Computational Tools for the Discovery of Transcription Factor Binding Sites.” Nature Biotechnology 23 (1): 137–44. &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/15637633/&#34;&gt;PubMed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Alipanahi B, Delong A, Weirauch MT, Frey BJ (2015) Predicting the sequence specificities of DNA- and RNA-binding proteins by deep learning. Nat Biotechnol 33: 831–838. &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/26213851/&#34;&gt;PubMed&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>

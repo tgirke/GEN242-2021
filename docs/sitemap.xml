@@ -289,7 +289,7 @@
   
   <url>
     <loc>/assignments/projects/02_rnaseq_deg/</loc>
-    <lastmod>2021-04-17T18:21:29-07:00</lastmod>
+    <lastmod>2021-04-17T20:41:22-07:00</lastmod>
   </url>
   
   <url>
@@ -308,8 +308,11 @@
   </url>
   
   <url>
-    <loc>/assignments/projects/06_enrichment_analysis/</loc>
-    <lastmod>2021-04-17T20:39:26-07:00</lastmod>
+    <loc>/assignments/projects/06_functional_enrichment/</loc>
+  </url>
+  
+  <url>
+    <loc>/assignments/projects/07_motif_enrichment/</loc>
   </url>
   
   <url>
