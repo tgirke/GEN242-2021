@@ -548,21 +548,21 @@ enable = true
     [menu.main.params]
       level = 2
   [[menu.main]]
-    name = "RNA-Seq - DEG 1-2"
+    name = "RNA-Seq - DEG"
     url = "/assignments/Projects/02_rnaseq_deg/"
     parent = "Assignments"
     weight = 403
     [menu.main.params]
       level = 2
   [[menu.main]]
-    name = "Cluster Analysis 1-2"
+    name = "Cluster Analysis"
     url = "/assignments/Projects/03_cluster_analysis/"
     parent = "Assignments"
     weight = 404
     [menu.main.params]
       level = 2
   [[menu.main]]
-    name = "scRNA-Seq Embedding 1-3"
+    name = "scRNA-Seq Embedding"
     url = "/assignments/Projects/04_scrnaseq_embedding/"
     parent = "Assignments"
     weight = 405

@@ -1,6 +1,6 @@
 ---
-title: "Cluster and Network Analysis Methods 1-2"
-linkTitle: "Cluster Analysis 1-2"
+title: "Cluster and Network Analysis Methods"
+linkTitle: "Cluster Analysis"
 description: >
 type: docs
 weight: 404
