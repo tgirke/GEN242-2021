@@ -544,11 +544,6 @@ ln -s /bigdata/gen242/shared/RNA-Seq/results results
 &lt;/ul&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;sraidv &amp;lt;- paste(&amp;quot;SRR4460&amp;quot;, 27:44, sep=&amp;quot;&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;ul&gt;
-&lt;li&gt;The FASTQ files for the VAR-Seq project are from SRA study &lt;a href=&#34;http://www.ncbi.nlm.nih.gov/sra?term=SRP008819&#34;&gt;SRP008819&lt;/a&gt; (&lt;a href=&#34;http://www.ncbi.nlm.nih.gov/pubmed/22106370&#34;&gt;Lu et al 2012&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;sraidv &amp;lt;- paste(&amp;quot;SRR1051&amp;quot;, 389:415, sep=&amp;quot;&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
 &lt;h4 id=&#34;load-libraries-and-modules&#34;&gt;Load libraries and modules&lt;/h4&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(systemPipeR)
 moduleload(&amp;quot;sratoolkit/2.8.1&amp;quot;)

@@ -62,11 +62,6 @@ sraidv <- paste("SRR0388", 45:51, sep="")
 sraidv <- paste("SRR4460", 27:44, sep="")
 ```
 
-+ The FASTQ files for the VAR-Seq project are from SRA study [SRP008819](http://www.ncbi.nlm.nih.gov/sra?term=SRP008819) ([Lu et al 2012](http://www.ncbi.nlm.nih.gov/pubmed/22106370))
-```r
-sraidv <- paste("SRR1051", 389:415, sep="")
-```
-
 #### Load libraries and modules
 
 ```r
