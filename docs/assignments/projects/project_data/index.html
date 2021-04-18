@@ -22,12 +22,12 @@
  /bigdata/gen242/shared/RNA-Seq /bigdata/gen242/shared/ChIP-Seq  Within each project subdirectory all input files of a workflow (e.g. FASTQ) will be saved to a data directory and all output files will be written to a results directory." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/assignments/projects/project_data/" />
-<meta property="article:modified_time" content="2021-04-18T13:40:55-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-04-18T13:41:31-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Data Management for Course Projects">
 <meta itemprop="description" content="Shared big data space on HPCC All larger data sets of the coure projects will be organized in a shared big data space under /bigdata/gen242/shared. Within this space, each group will read and write data to a subdirectory named after their project:
  /bigdata/gen242/shared/RNA-Seq /bigdata/gen242/shared/ChIP-Seq  Within each project subdirectory all input files of a workflow (e.g. FASTQ) will be saved to a data directory and all output files will be written to a results directory.">
-<meta itemprop="dateModified" content="2021-04-18T13:40:55-07:00" />
-<meta itemprop="wordCount" content="813">
+<meta itemprop="dateModified" content="2021-04-18T13:41:31-07:00" />
+<meta itemprop="wordCount" content="812">
 
 
 
@@ -801,7 +801,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.ff58fcd35c0c9ad19dedb285d614a7c9.json"
+  data-offline-search-index-json-src="../../../offline-search-index.cbe2cd99f843dd3dba46eb91390d4b50.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -833,7 +833,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.ff58fcd35c0c9ad19dedb285d614a7c9.json"
+  data-offline-search-index-json-src="../../../offline-search-index.cbe2cd99f843dd3dba46eb91390d4b50.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1287,8 +1287,7 @@ important for many analysis routines such as the read counting in the RNA-Seq wo
 	dna &lt;- readDNAStringSet(&quot;./data/tair10.fasta&quot;)
         names(dna) &lt;- paste(rep(&quot;Chr&quot;, 7), c(1:5, &quot;M&quot;, &quot;C&quot;), sep=&quot;&quot;) # Fixes chromomse ids
         writeXStringSet(dna, &quot;./data/tair10.fasta&quot;)
-        download.file(&quot;https://www.arabidopsis.org/download_files/Genes/TAIR10_genome_release/TAIR10_gff3/TAIR10_GFF3_genes.gff
-        &quot;, &quot;./data/tair10.gff&quot;)
+        download.file(&quot;https://www.arabidopsis.org/download_files/Genes/TAIR10_genome_release/TAIR10_gff3/TAIR10_GFF3_genes.gff&quot;, &quot;./data/tair10.gff&quot;)
         download.file(&quot;https://www.arabidopsis.org/download_files/Genes/TAIR10_genome_release/TAIR10_functional_descriptions&quot;, &quot;./data/tair10_functional_descriptions&quot;)
         }
 }
@@ -1299,7 +1298,7 @@ important for many analysis routines such as the read counting in the RNA-Seq wo
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-18: <a  href="https://github.com/tgirke/GEN242//commit/14bdf6c78426f8a665adb120115dafb47ce4f786">some edits (14bdf6c7)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-18: <a  href="https://github.com/tgirke/GEN242//commit/3e4bba452418bbdf98ce78a688609195d3fe5970">some edits (3e4bba45)</a>
 </div>
 </div>
 

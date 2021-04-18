@@ -123,8 +123,7 @@ downloadRefs <- function(rerun=FALSE) {
 	dna <- readDNAStringSet("./data/tair10.fasta")
         names(dna) <- paste(rep("Chr", 7), c(1:5, "M", "C"), sep="") # Fixes chromomse ids
         writeXStringSet(dna, "./data/tair10.fasta")
-        download.file("https://www.arabidopsis.org/download_files/Genes/TAIR10_genome_release/TAIR10_gff3/TAIR10_GFF3_genes.gff
-        ", "./data/tair10.gff")
+        download.file("https://www.arabidopsis.org/download_files/Genes/TAIR10_genome_release/TAIR10_gff3/TAIR10_GFF3_genes.gff", "./data/tair10.gff")
         download.file("https://www.arabidopsis.org/download_files/Genes/TAIR10_genome_release/TAIR10_functional_descriptions", "./data/tair10_functional_descriptions")
         }
 }
