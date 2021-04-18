@@ -1,9 +1,9 @@
 ---
-title: "Embedding Methods for scRNA-Seq 1"
-linkTitle: "Embedding Methods 1"
+title: "Embedding Methods for scRNA-Seq 1-3"
+linkTitle: "Embedding Methods 1-3"
 description: >
 type: docs
-weight: 407
+weight: 405
 ---
 
 <br></br>
@@ -18,7 +18,9 @@ weight: 407
 6. Clustering of gene expression profiles 
 7. Gene set enrichment analysis
 
-## Challenge Project: Embedding Methods for scRNA-Seq 1
+## Challenge Projects
+
+### 1. Embedding Methods for scRNA-Seq 
 
 + Run workflow from start to finish (steps 1-7) on RNA-Seq data set from Howard et al. (2013)
 + Challenge project tasks
@@ -26,6 +28,14 @@ weight: 407
     + To obtain meaningful test results, choose an scRNA-Seq data set (here pre-processed count data) where the correct cell clustering is known (ground truth). For simplicity the data could be obtained from the scRNAseq package (Risso and Cole, 2020) or loaded from GEO (e.g. Shulse et al., 2019). For learning purposes, organize the data in a SingleCellExperiment object.
     + Optional: plot the (partitioning) performance in form of ROC curves and/or record their AUC values.
     + Compare your test results with published performance test results, e.g. Sun et al. (2019) or Duò et al. (2018).
+
+### 2. Embedding Methods for scRNA-Seq 
+
++ Similar as above but with different combination of embedding methods and/or performance testing approach.
+
+### 3. Embedding Methods for scRNA-Seq 
+
++ Similar as above but with different combination of embedding methods and/or performance testing approach.
 
 ## References
 
