@@ -569,6 +569,13 @@ enable = true
     [menu.main.params]
       level = 2
   [[menu.main]]
+    name = "ChIP-Seq Peak Callers"
+    url = "/assignments/Projects/05_chipseq_peakcaller/"
+    parent = "Assignments"
+    weight = 406
+    [menu.main.params]
+      level = 2
+  [[menu.main]]
     name = "Presentations"
     url = "/assignments/Presentations/"
     parent = "Assignments"
