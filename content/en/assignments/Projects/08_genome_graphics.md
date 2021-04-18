@@ -1,5 +1,5 @@
 ---
-title: "Programmable Genome Graphics"
+title: "Genome Summary Graphics"
 linkTitle: "Genome Graphics"
 description: >
 type: docs
