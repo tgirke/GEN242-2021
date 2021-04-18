@@ -283,23 +283,21 @@
   </url>
   
   <url>
+    <loc>/assignments/projects/02_rnaseq_deg/</loc>
+  </url>
+  
+  <url>
     <loc>/assignments/projects/01_rnaseq_aligners/</loc>
     <lastmod>2021-04-17T16:44:00-07:00</lastmod>
   </url>
   
   <url>
-    <loc>/assignments/projects/rnaseq_deg1/</loc>
-    <lastmod>2021-04-10T18:51:56-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/assignments/projects/rnaseq_deg2/</loc>
-    <lastmod>2021-04-10T18:51:56-07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/assignments/projects/project_03/</loc>
     <lastmod>2021-02-19T12:57:08-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/assignments/projects/03_rnaseq_deg/</loc>
   </url>
   
   <url>

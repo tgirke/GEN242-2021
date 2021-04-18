@@ -3,12 +3,12 @@ title: RNA-Seq - NGS Aligners
 linkTitle: "RNA-Seq Aligners"
 description: >
 type: docs
-weight: 401
+weight: 402
 ---
 
 <br></br>
 
-## 1. RNA-Seq Workflow  
+## RNA-Seq Workflow  
 
 1. Read quality assessment, filtering and trimming 
 2. Map reads against reference genome 

@@ -27,6 +27,11 @@ weight: 402
         + Does it affect the results from the downstream gene set enrichment analysis?
         + Plot the performance of the DEG methods in form of an ROC curve. The DEG set from the Howard et al., 2013 paper could be used as benchmark (true result). 
 
++ Compare the DEG analysis method chosen for paper presentation with at least 1-2 additional methods (_e.g._ one student compares _edgeR_ _vs._ _baySeq_, and other student _DESeq2_ _vs._ _limma/voom_). Assess the results as follows:
+    + Analyze the similarities and differences in the DEG lists obtained from the two methods using intersect matrices, venn diagrams and/or upset plots.
+    + Assess the impact of the DEG method on the downstream gene set enrichment analysis?
+    + Plot the performance of the DEG methods in form of ROC curves and/or record their AUC values. A consensus DEG set or the one from the Howard et al. (2013) paper could be used as a ‘pseudo’ ground truth result.
+
 ## References
 
 + Howard, B.E. et al., 2013. High-throughput RNA sequencing of pseudomonas-infected Arabidopsis reveals hidden transcriptome complexity and novel splice variants. PloS one, 8(10), p.e74183. [PubMed](http://www.ncbi.nlm.nih.gov/pubmed/24098335)
