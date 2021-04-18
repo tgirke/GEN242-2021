@@ -576,6 +576,13 @@ enable = true
     [menu.main.params]
       level = 2
   [[menu.main]]
+    name = "Enrichment Analysis"
+    url = "/assignments/Projects/06_enrichment_analysis/"
+    parent = "Assignments"
+    weight = 407
+    [menu.main.params]
+      level = 2
+  [[menu.main]]
     name = "Presentations"
     url = "/assignments/Presentations/"
     parent = "Assignments"

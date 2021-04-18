@@ -341,5 +341,51 @@ following files:&lt;/p&gt;
       </description>
     </item>
     
+    <item>
+      <title>Assignments: Functional enrichment analysis (FEA)</title>
+      <link>/assignments/projects/06_enrichment_analysis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/assignments/projects/06_enrichment_analysis/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;br&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;chip-seq-workflow&#34;&gt;ChIP-Seq Workflow&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Read quality assessment, filtering and trimming&lt;/li&gt;
+&lt;li&gt;Align reads to reference genome&lt;/li&gt;
+&lt;li&gt;Compute read coverage across genome&lt;/li&gt;
+&lt;li&gt;Peak calling with different methods and consensus peak identification&lt;/li&gt;
+&lt;li&gt;Annotate peaks&lt;/li&gt;
+&lt;li&gt;Differential binding analysis&lt;/li&gt;
+&lt;li&gt;Gene set enrichment analysis&lt;/li&gt;
+&lt;li&gt;Motif prediction to identify putative TF binding sites&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;challenge-projects-functional-enrichment-analysis-fea&#34;&gt;Challenge Projects: Functional enrichment analysis (FEA)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Run workflow from start to finish (steps 1-8) on ChIP-Seq data set from Kaufman et al. (2010)&lt;/li&gt;
+&lt;li&gt;Challenge project tasks
+&lt;ul&gt;
+&lt;li&gt;Perform functional enrichment analysis on the genes overlapping or downstream of the peak ranges discovered by the ChIP-Seq workflow.&lt;/li&gt;
+&lt;li&gt;Compare at least 2 functional enrichment methods (e.g. GOCluster_Report, fgsea, chipenrich, goseq, GOstats) using KEGG/Reactome or Gene Ontology as functional annotation systems. Among the FEA methods include one based on  the hypergeometric distribution (ORA) and one on the Gene Set Enrichment Analysis (GSEA) algorithm. Assess the results as follows:&lt;/li&gt;
+&lt;li&gt;Quantify the rank-based similarities of the functional categories among the chosen enrichment methods.&lt;/li&gt;
+&lt;li&gt;Determine whether the enrichment results match the biological expectations of the experiment (e.g. are certain biological processes enriched)?&lt;/li&gt;
+&lt;li&gt;Optional: visualize the results with one of the pathway or GO graph viewing tools.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Kaufmann, K, F Wellmer, J M Muiño, T Ferrier, S E Wuest, V Kumar, A Serrano-Mislata, et al. 2010. “Orchestration of Floral Initiation by APETALA1.” Science 328 (5974): 85–89. &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/20360106/&#34;&gt;PubMed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Sergushichev A (2016) An algorithm for fast preranked gene set enrichment analysis using cumulative statistic calculation. &lt;a href=&#34;https://www.biorxiv.org/content/10.1101/060012v3&#34;&gt;bioRxiv 060012&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Subramanian A, Tamayo P, Mootha VK, Mukherjee S, Ebert BL, Gillette MA, Paulovich A, Pomeroy SL, Golub TR, Lander ES, et al (2005) Gene set enrichment analysis: a knowledge-based approach for interpreting genome-wide expression profiles. Proc Natl Acad Sci U S A 102: 15545–15550. &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/16199517/&#34;&gt;PubMed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Welch RP, Lee C, Imbriano PM, Patil S, Weymouth TE, Smith RA, Scott LJ, Sartor MA (2014) ChIP-Enrich: gene set enrichment testing for ChIP-seq data. Nucleic Acids Res 42: e105. &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/24878920/&#34;&gt;PubMed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Young MD, Wakefield MJ, Smyth GK, Oshlack A (2010) Gene ontology analysis for RNA-seq: accounting for selection bias. Genome Biol 11: R14. &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/20132535/&#34;&gt;PubMed&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
   </channel>
 </rss>
