@@ -1,9 +1,9 @@
 ---
-title: "Cluster and network analysis methods"
-linkTitle: "Cluster Analysis 2"
+title: "Cluster and Network Analysis Methods 1-2"
+linkTitle: "Cluster Analysis 1-2"
 description: >
 type: docs
-weight: 406
+weight: 404
 ---
 
 <br></br>
@@ -18,7 +18,9 @@ weight: 406
 6. Clustering of gene expression profiles 
 7. Gene set enrichment analysis
 
-## Challenge Project: Cluster and network analysis methods
+## Challenge Projects
+
+### 1. Cluster and network analysis methods
 
 + Run workflow from start to finish (steps 1-7) on RNA-Seq data set from Howard et al. (2013)
 + Challenge project tasks
@@ -26,6 +28,10 @@ weight: 406
         + Analyze the similarities and differences in the cluster groupings obtained from the two methods. 
         + Do the differences affect the results of the downstream gene set enrichment analysis?
         + Plot the performance of the clustering methods in form of ROC curves and/or record their AUC values. Functional annotations (e.g. GO, KEGG, Pfam) could be used as a benchmark for defining true results.
+
+### 2. Cluster and network analysis methods
+
++ Similar as above but with different combination of clustering methods and/or performance testing approach.
 
 ## References
 

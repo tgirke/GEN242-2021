@@ -555,17 +555,10 @@ enable = true
     [menu.main.params]
       level = 2
   [[menu.main]]
-    name = "Cluster Analysis 1"
-    url = "/assignments/Projects/04_cluster_analysis/"
+    name = "Cluster Analysis 1-2"
+    url = "/assignments/Projects/03_cluster_analysis/"
     parent = "Assignments"
     weight = 404
-    [menu.main.params]
-      level = 2
-  [[menu.main]]
-    name = "Cluster Analysis 2"
-    url = "/assignments/Projects/05_cluster_analysis/"
-    parent = "Assignments"
-    weight = 405
     [menu.main.params]
       level = 2
   [[menu.main]]

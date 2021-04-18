@@ -3,7 +3,7 @@ title: "RNA-Seq - DEG Analysis Methods 1-2"
 linkTitle: "RNA-Seq - DEG 1-2"
 description: >
 type: docs
-weight: 402
+weight: 403
 ---
 
 <br></br>
