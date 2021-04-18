@@ -1,6 +1,6 @@
 ---
-title: "RNA-Seq - DEG Analysis Methods"
-linkTitle: "RNA-Seq - DEG 1"
+title: "RNA-Seq - DEG Analysis Methods 1-2"
+linkTitle: "RNA-Seq - DEG 1-2"
 description: >
 type: docs
 weight: 402
