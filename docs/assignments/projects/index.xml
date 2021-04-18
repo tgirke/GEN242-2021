@@ -368,10 +368,13 @@ following files:&lt;/p&gt;
 &lt;li&gt;Challenge project tasks
 &lt;ul&gt;
 &lt;li&gt;Perform functional enrichment analysis on the genes overlapping or downstream of the peak ranges discovered by the ChIP-Seq workflow.&lt;/li&gt;
-&lt;li&gt;Compare at least 2 functional enrichment methods (e.g. GOCluster_Report, fgsea, chipenrich, goseq, GOstats) using KEGG/Reactome or Gene Ontology as functional annotation systems. Among the FEA methods include one based on  the hypergeometric distribution (ORA) and one on the Gene Set Enrichment Analysis (GSEA) algorithm. Assess the results as follows:&lt;/li&gt;
+&lt;li&gt;Compare at least 2 functional enrichment methods (&lt;em&gt;e.g.&lt;/em&gt; &lt;a href=&#34;http://bioconductor.org/packages/devel/bioc/html/systemPipeR.html&#34;&gt;GOCluster_Report&lt;/a&gt;, &lt;a href=&#34;https://bioconductor.org/packages/3.12/bioc/html/fgsea.html&#34;&gt;fgsea&lt;/a&gt;, chipenrich, goseq, GOstats) using KEGG/Reactome or Gene Ontology as functional annotation systems. Among the FEA methods include one based on  the hypergeometric distribution (ORA) and one on the Gene Set Enrichment Analysis (GSEA) algorithm. Assess the results as follows:
+&lt;ul&gt;
 &lt;li&gt;Quantify the rank-based similarities of the functional categories among the chosen enrichment methods.&lt;/li&gt;
 &lt;li&gt;Determine whether the enrichment results match the biological expectations of the experiment (e.g. are certain biological processes enriched)?&lt;/li&gt;
 &lt;li&gt;Optional: visualize the results with one of the pathway or GO graph viewing tools.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
