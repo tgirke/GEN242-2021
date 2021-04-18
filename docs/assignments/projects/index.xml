@@ -499,7 +499,7 @@ following files:&lt;/p&gt;
         
         
         &lt;p&gt;&lt;br&gt;&lt;/br&gt;&lt;/p&gt;
-&lt;h2 id=&#34;shared-big-data-space-on-biocluster&#34;&gt;Shared big data space on biocluster&lt;/h2&gt;
+&lt;h2 id=&#34;shared-big-data-space-on-hpcc&#34;&gt;Shared big data space on HPCC&lt;/h2&gt;
 &lt;p&gt;All larger data sets of the coure projects will be organized in a shared big data space under
 &lt;code&gt;/bigdata/gen242/shared&lt;/code&gt;. Within this space, each group will read and write data to a
 subdirectory named after their project:&lt;/p&gt;
@@ -513,11 +513,11 @@ a &lt;code&gt;data&lt;/code&gt; directory and all output files will be written t
 &lt;p&gt;Students will work on the course projects within GitHub repositories, one for each course project.
 These project repositories are private and have been shared by the instructor with all members of each project group.
 To populate a course project with an initial project workflow, please follow the instructions
-given &lt;a href=&#34;http://girke.bioinformatics.ucr.edu/GEN242/mydoc_project_data.html#generate-workflow-environment-with-project-data&#34;&gt;below&lt;/a&gt;.&lt;/p&gt;
+given.&lt;/p&gt;
 &lt;h2 id=&#34;generate-workflow-environment-with-project-data&#34;&gt;Generate workflow environment with project data&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Log in to biocluster and set your working directory to &lt;code&gt;bigdata&lt;/code&gt; or (&lt;code&gt;/bigdata/gen242/&amp;lt;user_name&amp;gt;&lt;/code&gt;)&lt;/li&gt;
-&lt;li&gt;Clone the GitHub repository for your project with &lt;code&gt;git clone ...&lt;/code&gt; (see &lt;a href=&#34;https://docs.google.com/spreadsheets/d/1ULTa2bcfhzzj_6R0Ba1dnXiq2fr0get1V5pwIBCYRIY/edit#gid=1818533395&#34;&gt;here&lt;/a&gt;) and then &lt;code&gt;cd&lt;/code&gt; into this directory.&lt;/li&gt;
+&lt;li&gt;Clone the GitHub repository for your project with &lt;code&gt;git clone ...&lt;/code&gt; (to be created by each student) and then &lt;code&gt;cd&lt;/code&gt; into this directory.&lt;/li&gt;
 &lt;li&gt;Generate the workflow environment for your project on biocluster with &lt;code&gt;genWorkenvir&lt;/code&gt; from &lt;code&gt;systemPipeRdata&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Delete the default &lt;code&gt;data&lt;/code&gt; and &lt;code&gt;results&lt;/code&gt; directories and replace them with symbolic links pointing to the above described &lt;code&gt;data&lt;/code&gt; and &lt;code&gt;results&lt;/code&gt; directories of your course project. For instance, the project RNA-Seq should create the symbolic links for their &lt;code&gt;data&lt;/code&gt; and &lt;code&gt;results&lt;/code&gt; directories like this:
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;ln -s /bigdata/gen242/shared/RNA-Seq/data data

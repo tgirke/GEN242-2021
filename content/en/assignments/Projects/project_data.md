@@ -9,7 +9,7 @@ weight: 410
 <br></br>
 
 
-## Shared big data space on biocluster
+## Shared big data space on HPCC
 
 All larger data sets of the coure projects will be organized in a shared big data space under
 `/bigdata/gen242/shared`. Within this space, each group will read and write data to a 
@@ -26,12 +26,12 @@ a `data` directory and all output files will be written to a `results` directory
 Students will work on the course projects within GitHub repositories, one for each course project.
 These project repositories are private and have been shared by the instructor with all members of each project group.
 To populate a course project with an initial project workflow, please follow the instructions
-given [below](http://girke.bioinformatics.ucr.edu/GEN242/mydoc_project_data.html#generate-workflow-environment-with-project-data). 
+given.
 
 ## Generate workflow environment with project data
 
 1. Log in to biocluster and set your working directory to `bigdata` or (`/bigdata/gen242/<user_name>`)
-2. Clone the GitHub repository for your project with `git clone ...` (see [here](https://docs.google.com/spreadsheets/d/1ULTa2bcfhzzj_6R0Ba1dnXiq2fr0get1V5pwIBCYRIY/edit#gid=1818533395)) and then `cd` into this directory.
+2. Clone the GitHub repository for your project with `git clone ...` (to be created by each student) and then `cd` into this directory.
 2. Generate the workflow environment for your project on biocluster with `genWorkenvir` from `systemPipeRdata`. 
 3. Delete the default `data` and `results` directories and replace them with symbolic links pointing to the above described `data` and `results` directories of your course project. For instance, the project RNA-Seq should create the symbolic links for their `data` and `results` directories like this:
    ```sh 
