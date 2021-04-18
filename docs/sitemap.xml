@@ -284,11 +284,12 @@
   
   <url>
     <loc>/assignments/projects/02_rnaseq_deg/</loc>
+    <lastmod>2021-04-17T17:02:52-07:00</lastmod>
   </url>
   
   <url>
     <loc>/assignments/projects/01_rnaseq_aligners/</loc>
-    <lastmod>2021-04-17T16:44:00-07:00</lastmod>
+    <lastmod>2021-04-17T17:02:52-07:00</lastmod>
   </url>
   
   <url>
@@ -298,6 +299,7 @@
   
   <url>
     <loc>/assignments/projects/03_rnaseq_deg/</loc>
+    <lastmod>2021-04-17T17:02:52-07:00</lastmod>
   </url>
   
   <url>
@@ -306,8 +308,16 @@
   </url>
   
   <url>
+    <loc>/assignments/projects/04_cluster_analysis/</loc>
+  </url>
+  
+  <url>
     <loc>/assignments/projects/project_05/</loc>
     <lastmod>2021-02-19T12:57:08-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/assignments/projects/05_cluster_analysis/</loc>
   </url>
   
   <url>

@@ -541,7 +541,7 @@ enable = true
     [menu.main.params]
       level = 2
   [[menu.main]]
-    name = "1. RNA-Seq Aligners"
+    name = "RNA-Seq Aligners"
     url = "/assignments/Projects/01_rnaseq_aligners/"
     parent = "Assignments"
     weight = 402
@@ -562,15 +562,15 @@ enable = true
     [menu.main.params]
       level = 2
   [[menu.main]]
-    name = "Project_03"
-    url = "/assignments/Projects/Project_03/"
+    name = "Cluster Analysis 1"
+    url = "/assignments/Projects/04_cluster_analysis/"
     parent = "Assignments"
     weight = 405
     [menu.main.params]
       level = 2
   [[menu.main]]
-    name = "Project_04"
-    url = "/assignments/Projects/Project_04/"
+    name = "Cluster Analysis 2"
+    url = "/assignments/Projects/05_cluster_analysis/"
     parent = "Assignments"
     weight = 406
     [menu.main.params]
