@@ -598,7 +598,7 @@ enable = true
       level = 2
   [[menu.main]]
     name = "Project Data"
-    url = "/assignments/Projects/project_data.md/"
+    url = "/assignments/Projects/project_data/"
     parent = "Assignments"
     weight = 409
     [menu.main.params]
