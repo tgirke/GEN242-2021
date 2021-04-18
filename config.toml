@@ -590,6 +590,13 @@ enable = true
     [menu.main.params]
       level = 2
   [[menu.main]]
+    name = "Genome Graphics"
+    url = "/assignments/Projects/08_genome_graphics/"
+    parent = "Assignments"
+    weight = 409
+    [menu.main.params]
+      level = 2
+  [[menu.main]]
     name = "Presentations"
     url = "/assignments/Presentations/"
     parent = "Assignments"

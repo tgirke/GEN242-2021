@@ -441,5 +441,53 @@ following files:&lt;/p&gt;
       </description>
     </item>
     
+    <item>
+      <title>Assignments: Programmable Genome Graphics</title>
+      <link>/assignments/projects/08_genome_graphics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/assignments/projects/08_genome_graphics/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;br&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;chip-seq-workflow&#34;&gt;ChIP-Seq Workflow&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Read quality assessment, filtering and trimming&lt;/li&gt;
+&lt;li&gt;Align reads to reference genome&lt;/li&gt;
+&lt;li&gt;Compute read coverage across genome&lt;/li&gt;
+&lt;li&gt;Peak calling with different methods and consensus peak identification&lt;/li&gt;
+&lt;li&gt;Annotate peaks&lt;/li&gt;
+&lt;li&gt;Differential binding analysis&lt;/li&gt;
+&lt;li&gt;Gene set enrichment analysis&lt;/li&gt;
+&lt;li&gt;Motif prediction to identify putative TF binding sites&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;challenge-project-programmable-graphics-for-visualizing-genomic-features&#34;&gt;Challenge Project: Programmable graphics for visualizing genomic features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Run workflow from start to finish (steps 1-8) on ChIP-Seq data set from Kaufman et al. (2010)&lt;/li&gt;
+&lt;li&gt;Challenge project tasks
+&lt;ul&gt;
+&lt;li&gt;This project focuses on the visualization of patterns in NGS experiments (&lt;em&gt;e.g.&lt;/em&gt; consensus motifs in ChIP-Seq peaks) to discover novel features in genomes. The visualization backend should be based on one of the programmable and extendable R/Bioconductor environments such as &lt;a href=&#34;https://ggplot2.tidyverse.org/&#34;&gt;ggplot2&lt;/a&gt; (&lt;a href=&#34;https://plotly.com/ggplot2/&#34;&gt;ggplotly&lt;/a&gt;), &lt;a href=&#34;https://www.bioconductor.org/packages/release/bioc/html/ggbio.html&#34;&gt;ggbio&lt;/a&gt;, &lt;a href=&#34;https://bioconductor.org/packages/release/bioc/html/Gviz.html&#34;&gt;Gviz&lt;/a&gt;, &lt;a href=&#34;https://cran.r-project.org/web/packages/RCircos/index.html&#34;&gt;RCircos&lt;/a&gt;, etc. For instance, this could include:
+&lt;ul&gt;
+&lt;li&gt;The generation of motif logos (&lt;em&gt;e.g.&lt;/em&gt; for ChIP-Seq peaks) for any number of sequence ranges of interest.&lt;/li&gt;
+&lt;li&gt;Integration of the results with functional annotation information (&lt;em&gt;e.g.&lt;/em&gt; protein families from Pfam, exonic regions coding for disordered structures), pathways and/or GO.&lt;/li&gt;
+&lt;li&gt;Incorporation of quantitative information such as relative or differential abundance information obtained from the corresponding NGS profiling technology.&lt;/li&gt;
+&lt;li&gt;If there is interest, a Shiny App could be included to run the developed R functions interactively from a web browser.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Hahne F, Ivanek R (2016). “Statistical Genomics: Methods and Protocols.” In Mathé E, Davis S (eds.), chapter Visualizing Genomic Data Using Gviz and Bioconductor, 335–351. Springer New York, New York, NY. ISBN 978-1-4939-3578-9, doi: 10.1007/978-1-4939-3578-9_16. &lt;a href=&#34;https://link.springer.com/protocol/10.1007%2F978-1-4939-3578-9_16&#34;&gt;PubMed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Kaufmann, K, F Wellmer, J M Muiño, T Ferrier, S E Wuest, V Kumar, A Serrano-Mislata, et al. 2010. “Orchestration of Floral Initiation by APETALA1.” Science 328 (5974): 85–89. &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/20360106/&#34;&gt;PubMed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Yin T, Cook D, Lawrence M (2012). “ggbio: an R package for extending the grammar of graphics for genomic data.” Genome Biology, 13(8), R77. &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/22937822/&#34;&gt;PubMed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Zhang H, Meltzer P, Davis S (2013) RCircos: an R package for Circos 2D track plots. BMC Bioinformatics 14: 244–244. &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/23937229/&#34;&gt;PubMed&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
   </channel>
 </rss>
