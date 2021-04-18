@@ -22,12 +22,12 @@
  /bigdata/gen242/shared/RNA-Seq /bigdata/gen242/shared/ChIP-Seq  Within each project subdirectory all input files of a workflow (e.g. FASTQ) will be saved to a data directory and all output files will be written to a results directory." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/assignments/projects/project_data/" />
-<meta property="article:modified_time" content="2021-04-18T13:25:44-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-04-18T13:37:57-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Data Management for Course Projects">
 <meta itemprop="description" content="Shared big data space on HPCC All larger data sets of the coure projects will be organized in a shared big data space under /bigdata/gen242/shared. Within this space, each group will read and write data to a subdirectory named after their project:
  /bigdata/gen242/shared/RNA-Seq /bigdata/gen242/shared/ChIP-Seq  Within each project subdirectory all input files of a workflow (e.g. FASTQ) will be saved to a data directory and all output files will be written to a results directory.">
-<meta itemprop="dateModified" content="2021-04-18T13:25:44-07:00" />
-<meta itemprop="wordCount" content="830">
+<meta itemprop="dateModified" content="2021-04-18T13:37:57-07:00" />
+<meta itemprop="wordCount" content="834">
 
 
 
@@ -801,7 +801,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.e0718c00279e9e27cbbc18a8451451e2.json"
+  data-offline-search-index-json-src="../../../offline-search-index.b49407d43bf7a2d50d02295ea786b40f.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -833,7 +833,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.e0718c00279e9e27cbbc18a8451451e2.json"
+  data-offline-search-index-json-src="../../../offline-search-index.b49407d43bf7a2d50d02295ea786b40f.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1216,9 +1216,9 @@ To populate a course project with an initial project workflow, please follow the
 given.</p>
 <h2 id="generate-workflow-environment-with-project-data">Generate workflow environment with project data</h2>
 <ol>
-<li>Log in to biocluster and set your working directory to <code>bigdata</code> or (<code>/bigdata/gen242/&lt;user_name&gt;</code>)</li>
+<li>Log in to the HPCC cluster and set your working directory to <code>bigdata</code> or (<code>/bigdata/gen242/&lt;user_name&gt;</code>)</li>
 <li>Clone the GitHub repository for your project with <code>git clone ...</code> (to be created by each student) and then <code>cd</code> into this directory.</li>
-<li>Generate the workflow environment for your project on biocluster with <code>genWorkenvir</code> from <code>systemPipeRdata</code>.</li>
+<li>Generate the workflow environment for your project on the HPCC cluster with <code>genWorkenvir</code> from <code>systemPipeRdata</code>.</li>
 <li>Delete the default <code>data</code> and <code>results</code> directories and replace them with symbolic links pointing to the above described <code>data</code> and <code>results</code> directories of your course project. For instance, the project RNA-Seq should create the symbolic links for their <code>data</code> and <code>results</code> directories like this:
 <pre><code class="language-sh">ln -s /bigdata/gen242/shared/RNA-Seq/data data
 ln -s /bigdata/gen242/shared/RNA-Seq/results results
@@ -1304,7 +1304,7 @@ important for many analysis routines such as the read counting in the RNA-Seq wo
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-18: <a  href="https://github.com/tgirke/GEN242//commit/3ff3a794c2b48311e511e57d65f8c2f474e01eb5">some edits (3ff3a794)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-18: <a  href="https://github.com/tgirke/GEN242//commit/34fa073243483c5f1fe00427ef5b475ee0121758">some edits (34fa0732)</a>
 </div>
 </div>
 
