@@ -576,8 +576,8 @@ enable = true
     [menu.main.params]
       level = 2
   [[menu.main]]
-    name = "Project_05"
-    url = "/assignments/Projects/Project_05/"
+    name = "scRNA-Seq Embedding 1"
+    url = "/assignments/Projects/06_scrnaseq_embedding.md/"
     parent = "Assignments"
     weight = 407
     [menu.main.params]
