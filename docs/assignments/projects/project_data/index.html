@@ -17,22 +17,25 @@
 <link rel="icon" type="image/png" href="../../../favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="../../../favicons/android-192x192.png" sizes="192x192">
 
-<title>Parallel Evaluations in R | GEN242</title><meta property="og:title" content="Parallel Evaluations in R" />
-<meta property="og:description" content="Overview  R provides a large number of packages for parallel evaluations on multi-core, multi-socket and multi-node systems. The latter are usually referred to as computer clusters. MPI is also supported For an overview of parallelization packages available for R see here One of the most comprehensive parallel computing environments for R is batchtools. Older versions of this package were released under the name BatchJobs (Bischl et al. 2015). batchtools supports both multi-core and multi-node computations with and without schedulers." />
+<title>Data Management for Course Projects | GEN242</title><meta property="og:title" content="Data Management for Course Projects" />
+<meta property="og:description" content="Shared big data space on biocluster All larger data sets of the coure projects will be organized in a shared big data space under /bigdata/gen242/shared. Within this space, each group will read and write data to a subdirectory named after their project:
+ /bigdata/gen242/shared/RNA-Seq /bigdata/gen242/shared/ChIP-Seq  Within each project subdirectory all input files of a workflow (e.g. FASTQ) will be saved to a data directory and all output files will be written to a results directory." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/manuals/rparallel/rparallel/" />
-<meta property="article:modified_time" content="2021-02-19T21:10:05-08:00" /><meta property="og:site_name" content="GEN242" />
-<meta itemprop="name" content="Parallel Evaluations in R">
-<meta itemprop="description" content="Overview  R provides a large number of packages for parallel evaluations on multi-core, multi-socket and multi-node systems. The latter are usually referred to as computer clusters. MPI is also supported For an overview of parallelization packages available for R see here One of the most comprehensive parallel computing environments for R is batchtools. Older versions of this package were released under the name BatchJobs (Bischl et al. 2015). batchtools supports both multi-core and multi-node computations with and without schedulers.">
-<meta itemprop="dateModified" content="2021-02-19T21:10:05-08:00" />
-<meta itemprop="wordCount" content="817">
+<meta property="og:url" content="/assignments/projects/project_data/" />
+<meta property="og:site_name" content="GEN242" />
+<meta itemprop="name" content="Data Management for Course Projects">
+<meta itemprop="description" content="Shared big data space on biocluster All larger data sets of the coure projects will be organized in a shared big data space under /bigdata/gen242/shared. Within this space, each group will read and write data to a subdirectory named after their project:
+ /bigdata/gen242/shared/RNA-Seq /bigdata/gen242/shared/ChIP-Seq  Within each project subdirectory all input files of a workflow (e.g. FASTQ) will be saved to a data directory and all output files will be written to a results directory.">
+
+<meta itemprop="wordCount" content="827">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Parallel Evaluations in R"/>
-<meta name="twitter:description" content="Overview  R provides a large number of packages for parallel evaluations on multi-core, multi-socket and multi-node systems. The latter are usually referred to as computer clusters. MPI is also supported For an overview of parallelization packages available for R see here One of the most comprehensive parallel computing environments for R is batchtools. Older versions of this package were released under the name BatchJobs (Bischl et al. 2015). batchtools supports both multi-core and multi-node computations with and without schedulers."/>
+<meta name="twitter:title" content="Data Management for Course Projects"/>
+<meta name="twitter:description" content="Shared big data space on biocluster All larger data sets of the coure projects will be organized in a shared big data space under /bigdata/gen242/shared. Within this space, each group will read and write data to a subdirectory named after their project:
+ /bigdata/gen242/shared/RNA-Seq /bigdata/gen242/shared/ChIP-Seq  Within each project subdirectory all input files of a workflow (e.g. FASTQ) will be saved to a data directory and all output files will be written to a results directory."/>
 
 
 <script type="application/javascript">
@@ -852,10 +855,28 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="../../../manuals/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Manuals</a>
+    <a  href="../../../assignments/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Assignments</a>
   </li>
   <ul>
-    <li class="collapse show" id="manuals">
+    <li class="collapse show" id="assignments">
+      
+      
+      
+      
+        
+          
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="../../../assignments/homework/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Homework</a>
+  </li>
+  <ul>
+    <li class="collapse " id="assignmentshomework">
       
       
       
@@ -863,7 +884,7 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualsgithubgithub" href="../../../manuals/github/github/">GitHub</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-assignmentshomeworkhw01hw01" href="../../../assignments/homework/hw01/hw01/">HW1: Intro &amp; GitHub</a>
         
       
       
@@ -871,7 +892,7 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualslinuxlinux" href="../../../manuals/linux/linux/">Linux &amp; HPCC Cluster</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-assignmentshomeworkhw02hw02" href="../../../assignments/homework/hw02/hw02/">HW2: Linux &amp; HPC</a>
         
       
       
@@ -879,7 +900,7 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualsrbasicsrbasics" href="../../../manuals/rbasics/rbasics/">Introduction to R</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-assignmentshomeworkhw03hw03" href="../../../assignments/homework/hw03/hw03/">HW3: R Basics</a>
         
       
       
@@ -887,7 +908,7 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualsrbasics_sample" href="../../../manuals/rbasics/_sample/">Sample R Markdown</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-assignmentshomeworkhw04hw04" href="../../../assignments/homework/hw04/hw04/">HW4: Alignments</a>
         
       
       
@@ -895,7 +916,40 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualsrbasicssample" href="../../../manuals/rbasics/sample/">Sample R Markdown</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-assignmentshomeworkhw05hw05" href="../../../assignments/homework/hw05/hw05/">HW5: R Programming</a>
+        
+      
+      
+    </li>
+  </ul>
+</ul>
+
+        
+      
+      
+      
+        
+          
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="../../../assignments/projects/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Projects</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="assignmentsprojects">
+      
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-assignmentsprojectsproject_overview" href="../../../assignments/projects/project_overview/">Overview of Projects</a>
         
       
       
@@ -903,7 +957,7 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualsrprogrammingrprogramming" href="../../../manuals/rprogramming/rprogramming/">Programming in R</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-assignmentsprojects01_rnaseq_aligners" href="../../../assignments/projects/01_rnaseq_aligners/">RNA-Seq Aligners</a>
         
       
       
@@ -911,7 +965,7 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page  active" id="m-manualsrparallelrparallel" href="../../../manuals/rparallel/rparallel/">Parallel Evaluations in R</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-assignmentsprojects02_rnaseq_deg" href="../../../assignments/projects/02_rnaseq_deg/">DEG Methods</a>
         
       
       
@@ -919,7 +973,7 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualsrsequencesrsequences" href="../../../manuals/rsequences/rsequences/">NGS Analysis Basics</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-assignmentsprojects03_cluster_analysis" href="../../../assignments/projects/03_cluster_analysis/">Cluster Analysis</a>
         
       
       
@@ -927,7 +981,7 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualsrgraphicsrgraphics" href="../../../manuals/rgraphics/rgraphics/">Graphics and Data Visualization in R</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-assignmentsprojects04_scrnaseq_embedding" href="../../../assignments/projects/04_scrnaseq_embedding/">scRNA-Seq Embedding</a>
         
       
       
@@ -935,7 +989,79 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualsrclusteringrclustering" href="../../../manuals/rclustering/rclustering/">Cluster Analysis in R</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-assignmentsprojects05_chipseq_peakcaller" href="../../../assignments/projects/05_chipseq_peakcaller/">ChIP-Seq Peak Callers</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-assignmentsprojects06_functional_enrichment" href="../../../assignments/projects/06_functional_enrichment/">Functional Enrichment</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-assignmentsprojects07_motif_enrichment" href="../../../assignments/projects/07_motif_enrichment/">Motif Enrichment</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-assignmentsprojects08_genome_graphics" href="../../../assignments/projects/08_genome_graphics/">Genome Graphics</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page  active" id="m-assignmentsprojectsproject_data" href="../../../assignments/projects/project_data/">Project Data</a>
+        
+      
+      
+    </li>
+  </ul>
+</ul>
+
+        
+      
+      
+      
+        
+          
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="../../../assignments/presentations/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Presentations</a>
+  </li>
+  <ul>
+    <li class="collapse " id="assignmentspresentations">
+      
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-assignmentspresentationspaper_presentations" href="../../../assignments/presentations/paper_presentations/">Paper Presentations</a>
+        
+      
+      
+    </li>
+  </ul>
+</ul>
+
         
       
       
@@ -983,12 +1109,12 @@ if (!doNotTrack) {
 
     
     
-      <a href="https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/manuals/rparallel/rparallel.markdown" target="_blank" class="source-link"><i class="fa fa-code fa-fw"></i> View Rmd source</a>
+      <a href="https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/assignments/Projects/project_data.md" target="_blank" class="source-link"><i class="fa fa-code fa-fw"></i> View source code</a>
     
 
-    <a href="https://github.com/tgirke/GEN242//edit/main/content/en/manuals/rparallel/rparallel.markdown" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-    <a href="https://github.com/tgirke/GEN242//new/main/content/en/manuals/rparallel/rparallel.markdown?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" target="_blank"><i class="fa fa-edit fa-fw"></i> Create child page</a>
-    <a href="https://github.com/tgirke/GEN242//issues/new?title=Parallel%20Evaluations%20in%20R" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+    <a href="https://github.com/tgirke/GEN242//edit/main/content/en/assignments/Projects/project_data.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+    <a href="https://github.com/tgirke/GEN242//new/main/content/en/assignments/Projects/project_data.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" target="_blank"><i class="fa fa-edit fa-fw"></i> Create child page</a>
+    <a href="https://github.com/tgirke/GEN242//issues/new?title=Data%20Management%20for%20Course%20Projects" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
     
       
       <a href="https://github.com/tgirke/GEN242/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
@@ -1004,27 +1130,23 @@ if (!doNotTrack) {
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#overview">Overview</a></li>
-    <li><a href="#reminder-traditional-job-submission-for-r">Reminder: Traditional Job Submission for R</a></li>
-    <li><a href="#parallel-evaluations-on-clusters-with-batchtools">Parallel Evaluations on Clusters with <code>batchtools</code></a></li>
-    <li><a href="#hands-on-demo-of-batchtools">Hands-on Demo of <code>batchtools</code></a>
+    <li><a href="#shared-big-data-space-on-biocluster">Shared big data space on biocluster</a></li>
+    <li><a href="#github-repositories-for-projects">GitHub repositories for projects</a></li>
+    <li><a href="#generate-workflow-environment-with-project-data">Generate workflow environment with project data</a></li>
+    <li><a href="#download-of-project-data">Download of project data</a>
       <ul>
-        <li><a href="#set-up-working-directory-for-slurm">Set up working directory for SLURM</a></li>
-        <li><a href="#load-package-and-define-some-custom-function">Load package and define some custom function</a></li>
-        <li><a href="#submit-jobs-from-r-to-cluster">Submit jobs from R to cluster</a></li>
-        <li><a href="#summarize-job-status">Summarize job status</a></li>
-        <li><a href="#accessassemble-results">Access/assemble results</a></li>
-        <li><a href="#remove-registry-directory-from-file-system">Remove registry directory from file system</a></li>
-        <li><a href="#load-registry-into-r">Load registry into R</a></li>
+        <li><a href="#fastq-files-from-sra">FASTQ files from SRA</a>
+          <ul>
+            <li><a href="#choose-fastq-data-for-your-project">Choose FASTQ data for your project</a></li>
+            <li><a href="#load-libraries-and-modules">Load libraries and modules</a></li>
+            <li><a href="#redirect-cache-output-of-sra-toolkit">Redirect cache output of SRA Toolkit</a></li>
+            <li><a href="#define-download-function">Define download function</a></li>
+            <li><a href="#run-download">Run download</a></li>
+          </ul>
+        </li>
+        <li><a href="#download-reference-genome-and-annotation">Download reference genome and annotation</a></li>
       </ul>
     </li>
-    <li><a href="#conclusions">Conclusions</a>
-      <ul>
-        <li><a href="#advantages-of-batchtools">Advantages of <code>batchtools</code></a></li>
-      </ul>
-    </li>
-    <li><a href="#session-info">Session Info</a></li>
-    <li><a href="#references">References</a></li>
   </ul>
 </nav>
 
@@ -1045,15 +1167,25 @@ if (!doNotTrack) {
 
 
 
+
+
+
 <li class="breadcrumb-item" >
-	<a href="../../../manuals/">Manuals</a>
+	<a href="../../../assignments/">Assignments</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../assignments/projects/">Projects</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="../../../manuals/rparallel/rparallel/">Parallel Evaluations in R</a>
+	<a href="../../../assignments/projects/project_data/">Project Data</a>
 </li>
 
 	</ol>
@@ -1061,173 +1193,118 @@ if (!doNotTrack) {
 
                 
 <div class="td-content">
-	<h1>Parallel Evaluations in R</h1>
+	<h1>Data Management for Course Projects</h1>
     
 	
         <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 4 minute read</p>
            
-	<!--
-- Compile from command-line
-Rscript -e "rmarkdown::render('rparallel.Rmd', c('html_document'), clean=F); knitr::knit('rparallel.Rmd', tangle=TRUE)"
--->
-<h2 id="overview">Overview</h2>
+	<p><br></br></p>
+<h2 id="shared-big-data-space-on-biocluster">Shared big data space on biocluster</h2>
+<p>All larger data sets of the coure projects will be organized in a shared big data space under
+<code>/bigdata/gen242/shared</code>. Within this space, each group will read and write data to a
+subdirectory named after their project:</p>
 <ul>
-<li>R provides a large number of packages for parallel evaluations on multi-core, multi-socket and multi-node systems. The latter are usually referred to as computer clusters.</li>
-<li>MPI is also supported</li>
-<li>For an overview of parallelization packages available for R see <a href="https://cran.r-project.org/web/views/HighPerformanceComputing.html">here</a></li>
-<li>One of the most comprehensive parallel computing environments for R is
-<a href="https://mllg.github.io/batchtools/articles/batchtools.html#migration"><code>batchtools</code></a>. Older versions of this package were released under the name <code>BatchJobs</code> (Bischl et al. 2015).</li>
-<li><code>batchtools</code> supports both multi-core and multi-node computations with and without schedulers. By making use of
-cluster template files, most schedulers and queueing systems are supported (<em>e.g.</em> Torque, Sun Grid Engine, Slurm).</li>
+<li><code>/bigdata/gen242/shared/RNA-Seq</code></li>
+<li><code>/bigdata/gen242/shared/ChIP-Seq</code></li>
 </ul>
-<h2 id="reminder-traditional-job-submission-for-r">Reminder: Traditional Job Submission for R</h2>
-<p>This topic is covered in more detail in other tutorials. The following only provides a very brief overview of this submission method.</p>
-<p><strong>1.</strong> Create Slurm submission script, here called <code>script_name.sh</code> with:</p>
-<pre><code class="language-bash">#!/bin/bash -l
-#SBATCH --nodes=1
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=1
-#SBATCH --mem-per-cpu=1G
-#SBATCH --time=1-00:15:00 # 1 day and 15 minutes
-#SBATCH --mail-user=useremail@address.com
-#SBATCH --mail-type=ALL
-#SBATCH --job-name=&quot;some_test&quot;
-#SBATCH -p short # Choose queue/partition from: intel, batch, highmem, gpu, short
-
-Rscript my_script.R
+<p>Within each project subdirectory all input files of a workflow (<em>e.g.</em> FASTQ) will be saved to
+a <code>data</code> directory and all output files will be written to a <code>results</code> directory.</p>
+<h2 id="github-repositories-for-projects">GitHub repositories for projects</h2>
+<p>Students will work on the course projects within GitHub repositories, one for each course project.
+These project repositories are private and have been shared by the instructor with all members of each project group.
+To populate a course project with an initial project workflow, please follow the instructions
+given <a href="http://girke.bioinformatics.ucr.edu/GEN242/mydoc_project_data.html#generate-workflow-environment-with-project-data">below</a>.</p>
+<h2 id="generate-workflow-environment-with-project-data">Generate workflow environment with project data</h2>
+<ol>
+<li>Log in to biocluster and set your working directory to <code>bigdata</code> or (<code>/bigdata/gen242/&lt;user_name&gt;</code>)</li>
+<li>Clone the GitHub repository for your project with <code>git clone ...</code> (see <a href="https://docs.google.com/spreadsheets/d/1ULTa2bcfhzzj_6R0Ba1dnXiq2fr0get1V5pwIBCYRIY/edit#gid=1818533395">here</a>) and then <code>cd</code> into this directory.</li>
+<li>Generate the workflow environment for your project on biocluster with <code>genWorkenvir</code> from <code>systemPipeRdata</code>.</li>
+<li>Delete the default <code>data</code> and <code>results</code> directories and replace them with symbolic links pointing to the above described <code>data</code> and <code>results</code> directories of your course project. For instance, the project RNA-Seq should create the symbolic links for their <code>data</code> and <code>results</code> directories like this:
+<pre><code class="language-sh">ln -s /bigdata/gen242/shared/RNA-Seq/data data
+ln -s /bigdata/gen242/shared/RNA-Seq/results results
 </code></pre>
-<p><strong>2.</strong> Submit R script (<code>my_script.R</code>) called by above Slurm script with:</p>
-<pre><code class="language-bash">sbatch script_name.sh
-</code></pre>
-<h2 id="parallel-evaluations-on-clusters-with-batchtools">Parallel Evaluations on Clusters with <code>batchtools</code></h2>
+</li>
+<li>Add the workflow directory to the GitHub repository of your project with <code>git add -A</code> and the run <code>commit</code> and <code>push</code> as outlined in the GitHub instructions of this course <a href="http://girke.bioinformatics.ucr.edu/GEN242/mydoc_tutorial_01.html#github-basics-from-command-line">here</a>. Note, steps 1-4 need to be performed only by one student in each project. After committing and pushing the repository to GitHub, it can be cloned by all other students with <code>git clone ...</code>.</li>
+<li>Download the FASTQ files of your project with <code>getSRAfastq</code> (see below) to the <code>data</code> directory of your project.</li>
+<li>Generate a proper <code>targets</code> file for your project where the first column(s) point(s) to the downloaded FASTQ files. In addition, provide sample names matching the experimental design (columns: <code>SampleNames</code> and <code>Factor</code>).</li>
+<li>Inspect and adjust the <code>.param</code> files you will be using. For instance, make sure the software modules you are loading and the path to the reference genome are correct.</li>
+<li>Every time you start working on your project you <code>cd</code> into the directory of the repository and then run <code>git pull</code> to get the latest change. When you are done, you commit and push your changes back to GitHub with <code>git commit -am &quot;some edits&quot;; git push -u origin master</code>.</li>
+</ol>
+<h2 id="download-of-project-data">Download of project data</h2>
+<p>Open R from within the GitHub respository of your project and then run the following code section, but only those that apply to your project.</p>
+<h3 id="fastq-files-from-sra">FASTQ files from SRA</h3>
+<h4 id="choose-fastq-data-for-your-project">Choose FASTQ data for your project</h4>
 <ul>
-<li>The following introduces the usage of <code>batchtools</code> for a computer cluster
-using SLURM as scheduler (workload manager). SLURM is the scheduler used by
-the HPCC.</li>
-<li>Similar instructions are provided in HPCC’s manual section covering
-<code>batchtools</code>
-<a href="https://hpcc.ucr.edu/manuals_linux-cluster_parallelR.html">here</a></li>
-<li>To simplify the evaluation of the R code on the following slides, the
-corresponding text version is available for download from
-<a href="https://raw.githubusercontent.com/ucr-hpcc/ucr-hpcc.github.io/master/presentations/2020-12-18_Workshop/R_for_HPC/demo_files/R_for_HPC_demo.R">here</a>.</li>
+<li>The FASTQ files for the ChIP-Seq project are from SRA study <a href="http://www.ncbi.nlm.nih.gov/sra?term=SRP002174">SRP002174</a> (<a href="http://www.ncbi.nlm.nih.gov/pubmed/20360106">Kaufman et al. 2010</a>)</li>
 </ul>
-<h2 id="hands-on-demo-of-batchtools">Hands-on Demo of <code>batchtools</code></h2>
-<h3 id="set-up-working-directory-for-slurm">Set up working directory for SLURM</h3>
-<p>First login to your cluster account, open R and execute the following lines. This will
-create a test directory (here <code>mytestdir</code>), redirect R into this directory and then download
-the required files:</p>
+<pre><code class="language-r">sraidv &lt;- paste(&quot;SRR0388&quot;, 45:51, sep=&quot;&quot;) 
+</code></pre>
 <ul>
-<li><a href="https://github.com/tgirke/GEN242/blob/main/content/en/manuals/rparallel/demo_files/slurm.tmpl"><code>slurm.tmpl</code></a></li>
-<li><a href="https://github.com/tgirke/GEN242/blob/main/content/en/manuals/rparallel/demo_files/.batchtools.conf.R"><code>.batchtools.conf.R</code></a></li>
+<li>The FASTQ files for the RNA-Seq project are from SRA study <a href="http://www.ncbi.nlm.nih.gov/sra?term=SRP010938">SRP010938</a> (<a href="http://www.ncbi.nlm.nih.gov/pubmed/24098335">Howard et al. 2013</a>)</li>
 </ul>
-<!-- end list -->
-<pre><code class="language-r">dir.create(&quot;mytestdir&quot;)
-setwd(&quot;mytestdir&quot;)
-download.file(&quot;https://bit.ly/3gZJBsy&quot;, &quot;slurm.tmpl&quot;)
-download.file(&quot;https://bit.ly/3nvSNHA&quot;, &quot;.batchtools.conf.R&quot;)
+<pre><code class="language-r">sraidv &lt;- paste(&quot;SRR4460&quot;, 27:44, sep=&quot;&quot;)
 </code></pre>
-<h3 id="load-package-and-define-some-custom-function">Load package and define some custom function</h3>
-<p>The following code defines a test function (here <code>myFct</code>) that will be run on the cluster for demonstration
-purposes.</p>
-<p>The test function (<code>myFct</code>) subsets the <code>iris</code> data frame by rows, and appends the host name and R version of each
-node where the function was executed. The R version to be used on each node can be
-specified in the <code>slurm.tmpl</code> file (under <code>module load</code>).</p>
-<pre><code class="language-r">library('RenvModule')
-module('load','slurm') # Loads slurm among other modules
-library(batchtools)
-myFct &lt;- function(x) {
-    Sys.sleep(10) # to see job in queue, pause for 10 sec
-    result &lt;- cbind(iris[x, 1:4,],
-        Node=system(&quot;hostname&quot;, intern=TRUE),
-        Rversion=paste(R.Version()[6:7], collapse=&quot;.&quot;))
-    }
-</code></pre>
-<h3 id="submit-jobs-from-r-to-cluster">Submit jobs from R to cluster</h3>
-<p>The following creates a <code>batchtools</code> registry, defines the number of jobs and resource requests, and then submits the jobs to the cluster
-via SLURM.</p>
-<pre><code class="language-r">reg &lt;- makeRegistry(file.dir=&quot;myregdir&quot;, conf.file=&quot;.batchtools.conf.R&quot;)
-Njobs &lt;- 1:4 # Define number of jobs (here 4)
-ids &lt;- batchMap(fun=myFct, x=Njobs) 
-done &lt;- submitJobs(ids, reg=reg, resources=list(partition=&quot;short&quot;, walltime=120, ntasks=1, ncpus=1, memory=1024))
-waitForJobs() # Wait until jobs are completed
-</code></pre>
-<h3 id="summarize-job-status">Summarize job status</h3>
-<p>After the jobs are completed one can inspect their status as follows.</p>
-<pre><code class="language-r">getStatus() # Summarize job status
-showLog(Njobs[1])
-# killJobs(Njobs) # # Possible from within R or outside with scancel
-</code></pre>
-<h3 id="accessassemble-results">Access/assemble results</h3>
-<p>The results are stored as <code>.rds</code> files in the registry directory (here <code>myregdir</code>). One
-can access them manually via <code>readRDS</code> or use various convenience utilities provided
-by the <code>batchtools</code> package.</p>
-<pre><code class="language-r">readRDS(&quot;myregdir/results/1.rds&quot;) # reads from rds file first result chunk
-loadResult(1) 
-lapply(Njobs, loadResult)
-reduceResults(rbind) # Assemble result chunks in single data.frame
-do.call(&quot;rbind&quot;, lapply(Njobs, loadResult))
-</code></pre>
-<h3 id="remove-registry-directory-from-file-system">Remove registry directory from file system</h3>
-<p>By default existing registries will not be overwritten. If required one can explicitly
-clean and delete them with the following functions.</p>
-<pre><code class="language-r">clearRegistry() # Clear registry in R session
-removeRegistry(wait=0, reg=reg) # Delete registry directory
-# unlink(&quot;myregdir&quot;, recursive=TRUE) # Same as previous line
-</code></pre>
-<h3 id="load-registry-into-r">Load registry into R</h3>
-<p>Loading a registry can be useful when accessing the results at a later state or
-after moving them to a local system.</p>
-<pre><code class="language-r">from_file &lt;- loadRegistry(&quot;myregdir&quot;, conf.file=&quot;.batchtools.conf.R&quot;)
-reduceResults(rbind)
-</code></pre>
-<h2 id="conclusions">Conclusions</h2>
-<h3 id="advantages-of-batchtools">Advantages of <code>batchtools</code></h3>
 <ul>
-<li>many parallelization methods multiple cores, and across both multiple CPU sockets and nodes</li>
-<li>most schedulers supported</li>
-<li>takes full advantage of a cluster</li>
-<li>robust job management by organizing results in registry file-based database</li>
-<li>simplifies submission, monitoring and restart of jobs</li>
-<li>well supported and maintained package</li>
+<li>The FASTQ files for the VAR-Seq project are from SRA study <a href="http://www.ncbi.nlm.nih.gov/sra?term=SRP008819">SRP008819</a> (<a href="http://www.ncbi.nlm.nih.gov/pubmed/22106370">Lu et al 2012</a>)</li>
 </ul>
-<h2 id="session-info">Session Info</h2>
-<pre><code class="language-r">sessionInfo()
+<pre><code class="language-r">sraidv &lt;- paste(&quot;SRR1051&quot;, 389:415, sep=&quot;&quot;)
 </code></pre>
-<pre><code>## R version 4.0.4 (2021-02-15)
-## Platform: x86_64-pc-linux-gnu (64-bit)
-## Running under: Debian GNU/Linux 10 (buster)
-## 
-## Matrix products: default
-## BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.8.0
-## LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.8.0
-## 
-## locale:
-##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
-##  [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
-##  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
-##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
-##  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
-## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
-## 
-## attached base packages:
-## [1] stats     graphics  grDevices utils     datasets  methods   base     
-## 
-## loaded via a namespace (and not attached):
-##  [1] compiler_4.0.4    magrittr_2.0.1    bookdown_0.21     tools_4.0.4      
-##  [5] htmltools_0.5.1.1 yaml_2.2.1        stringi_1.5.3     rmarkdown_2.5    
-##  [9] blogdown_1.1.7    knitr_1.30        stringr_1.4.0     digest_0.6.27    
-## [13] xfun_0.20         rlang_0.4.8       evaluate_0.14
+<h4 id="load-libraries-and-modules">Load libraries and modules</h4>
+<pre><code class="language-r">library(systemPipeR)
+moduleload(&quot;sratoolkit/2.8.1&quot;)
+system('fastq-dump --help') # prints help to screen
 </code></pre>
-<h2 id="references">References</h2>
-<div id="refs" class="references">
-<div id="ref-Bischl2015-rf">
-<p>Bischl, Bernd, Michel Lang, Olaf Mersmann, Jörg Rahnenführer, and Claus Weihs. 2015. “BatchJobs and BatchExperiments: Abstraction Mechanisms for Using R in Batch Environments.” <em>Journal of Statistical Software</em>. <a href="http://www.jstatsoft.org/v64/i11/">http://www.jstatsoft.org/v64/i11/</a>.</p>
-</div>
-</div>
+<h4 id="redirect-cache-output-of-sra-toolkit">Redirect cache output of SRA Toolkit</h4>
+<p>Newer versions of the SRA Toolkit create a cache directory (named <code>ncbi</code>) in the highest level of a user&rsquo;s home directory.
+To save space in home accounts (limited to 20GB), users need to redirect this output to their project&rsquo;s
+<code>data</code> directory via a symbolic link. The following shows how to do this for the <code>data</code> directory
+of the <code>ChIP-Seq</code> project.</p>
+<pre><code class="language-r">system(&quot;ln -s /bigdata/gen242/shared/ChIP-Seq/data ~/ncbi&quot;)
+</code></pre>
+<h4 id="define-download-function">Define download function</h4>
+<p>The following function downloads and extracts the FASTQ files for each project from SRA.
+Internally, it uses the <code>fastq-dump</code> utility of the SRA Toolkit from NCBI.</p>
+<pre><code class="language-r">getSRAfastq &lt;- function(sraid, targetdir, maxreads=&quot;1000000000&quot;) {
+    system(paste(&quot;fastq-dump --split-files --gzip --maxSpotId&quot;, 
+                  maxreads, sraid, &quot;--outdir&quot;, targetdir))
+}
+</code></pre>
+<h4 id="run-download">Run download</h4>
+<p>Note the following performs the download in serialized mode for the chosen data set and saves the extracted FASTQ files to
+the path specified under <code>targetdir</code>.</p>
+<pre><code class="language-r">mydir &lt;- getwd(); setwd(&quot;data&quot;)
+for(i in sraidv) getSRAfastq(sraid=i, targetdir=&quot;.&quot;)
+setwd(mydir)
+</code></pre>
+<p>Alternatively, the download can be performed in parallelized mode with <code>BiocParallel</code>. Please run this version only on one of the compute nodes.</p>
+<pre><code class="language-r">mydir &lt;- getwd(); setwd(&quot;data&quot;)
+# bplapply(sraidv, getSRAfastq, targetdir=&quot;.&quot;, BPPARAM = MulticoreParam(workers=4))
+setwd(mydir)
+</code></pre>
+<h3 id="download-reference-genome-and-annotation">Download reference genome and annotation</h3>
+<p>The following <code>downloadRefs</code> function downloads the <em>Arabidopsis thaliana</em> genome sequence and GFF file from the <a href="ftp://ftp.arabidopsis.org/home/tair/Genes/TAIR10_genome_release/">TAIR FTP site</a>.
+It also assigns consistent chromosome identifiers to make them the same among both the genome sequence and the GFF file. This is
+important for many analysis routines such as the read counting in the RNA-Seq workflow.</p>
+<pre><code class="language-r">downloadRefs &lt;- function(rerun=FALSE) {
+    if(rerun==TRUE) {
+        library(Biostrings)
+        download.file(&quot;https://www.arabidopsis.org/download_files/Genes/TAIR10_genome_release/TAIR10_chromosome_files/TAIR10_chr_all.fas&quot;, &quot;./data/tair10.fasta&quot;)
+	dna &lt;- readDNAStringSet(&quot;./data/tair10.fasta&quot;)
+        names(dna) &lt;- paste(rep(&quot;Chr&quot;, 7), c(1:5, &quot;M&quot;, &quot;C&quot;), sep=&quot;&quot;) # Fixes chromomse ids
+        writeXStringSet(dna, &quot;./data/tair10.fasta&quot;)
+        download.file(&quot;https://www.arabidopsis.org/download_files/Genes/TAIR10_genome_release/TAIR10_gff3/TAIR10_GFF3_genes.gff
+        &quot;, &quot;./data/tair10.gff&quot;)
+        download.file(&quot;https://www.arabidopsis.org/download_files/Genes/TAIR10_genome_release/TAIR10_functional_descriptions&quot;, &quot;./data/tair10_functional_descriptions&quot;)
+        }
+}
+</code></pre>
+<p>After importing/sourcing the above function, execute it as follows:</p>
+<pre><code class="language-r">downloadRefs(rerun=TRUE) 
+</code></pre>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-02-19: <a  href="https://github.com/tgirke/GEN242//commit/f27c42946191a00c6fdb75c35009d6fc6ef20c03">some edits (f27c4294)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 0001-01-01
 </div>
 </div>
 

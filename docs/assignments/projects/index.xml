@@ -489,5 +489,121 @@ following files:&lt;/p&gt;
       </description>
     </item>
     
+    <item>
+      <title>Assignments: Data Management for Course Projects</title>
+      <link>/assignments/projects/project_data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/assignments/projects/project_data/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;br&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;shared-big-data-space-on-biocluster&#34;&gt;Shared big data space on biocluster&lt;/h2&gt;
+&lt;p&gt;All larger data sets of the coure projects will be organized in a shared big data space under
+&lt;code&gt;/bigdata/gen242/shared&lt;/code&gt;. Within this space, each group will read and write data to a
+subdirectory named after their project:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;/bigdata/gen242/shared/RNA-Seq&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/bigdata/gen242/shared/ChIP-Seq&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Within each project subdirectory all input files of a workflow (&lt;em&gt;e.g.&lt;/em&gt; FASTQ) will be saved to
+a &lt;code&gt;data&lt;/code&gt; directory and all output files will be written to a &lt;code&gt;results&lt;/code&gt; directory.&lt;/p&gt;
+&lt;h2 id=&#34;github-repositories-for-projects&#34;&gt;GitHub repositories for projects&lt;/h2&gt;
+&lt;p&gt;Students will work on the course projects within GitHub repositories, one for each course project.
+These project repositories are private and have been shared by the instructor with all members of each project group.
+To populate a course project with an initial project workflow, please follow the instructions
+given &lt;a href=&#34;http://girke.bioinformatics.ucr.edu/GEN242/mydoc_project_data.html#generate-workflow-environment-with-project-data&#34;&gt;below&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;generate-workflow-environment-with-project-data&#34;&gt;Generate workflow environment with project data&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Log in to biocluster and set your working directory to &lt;code&gt;bigdata&lt;/code&gt; or (&lt;code&gt;/bigdata/gen242/&amp;lt;user_name&amp;gt;&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Clone the GitHub repository for your project with &lt;code&gt;git clone ...&lt;/code&gt; (see &lt;a href=&#34;https://docs.google.com/spreadsheets/d/1ULTa2bcfhzzj_6R0Ba1dnXiq2fr0get1V5pwIBCYRIY/edit#gid=1818533395&#34;&gt;here&lt;/a&gt;) and then &lt;code&gt;cd&lt;/code&gt; into this directory.&lt;/li&gt;
+&lt;li&gt;Generate the workflow environment for your project on biocluster with &lt;code&gt;genWorkenvir&lt;/code&gt; from &lt;code&gt;systemPipeRdata&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Delete the default &lt;code&gt;data&lt;/code&gt; and &lt;code&gt;results&lt;/code&gt; directories and replace them with symbolic links pointing to the above described &lt;code&gt;data&lt;/code&gt; and &lt;code&gt;results&lt;/code&gt; directories of your course project. For instance, the project RNA-Seq should create the symbolic links for their &lt;code&gt;data&lt;/code&gt; and &lt;code&gt;results&lt;/code&gt; directories like this:
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;ln -s /bigdata/gen242/shared/RNA-Seq/data data
+ln -s /bigdata/gen242/shared/RNA-Seq/results results
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;Add the workflow directory to the GitHub repository of your project with &lt;code&gt;git add -A&lt;/code&gt; and the run &lt;code&gt;commit&lt;/code&gt; and &lt;code&gt;push&lt;/code&gt; as outlined in the GitHub instructions of this course &lt;a href=&#34;http://girke.bioinformatics.ucr.edu/GEN242/mydoc_tutorial_01.html#github-basics-from-command-line&#34;&gt;here&lt;/a&gt;. Note, steps 1-4 need to be performed only by one student in each project. After committing and pushing the repository to GitHub, it can be cloned by all other students with &lt;code&gt;git clone ...&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Download the FASTQ files of your project with &lt;code&gt;getSRAfastq&lt;/code&gt; (see below) to the &lt;code&gt;data&lt;/code&gt; directory of your project.&lt;/li&gt;
+&lt;li&gt;Generate a proper &lt;code&gt;targets&lt;/code&gt; file for your project where the first column(s) point(s) to the downloaded FASTQ files. In addition, provide sample names matching the experimental design (columns: &lt;code&gt;SampleNames&lt;/code&gt; and &lt;code&gt;Factor&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;Inspect and adjust the &lt;code&gt;.param&lt;/code&gt; files you will be using. For instance, make sure the software modules you are loading and the path to the reference genome are correct.&lt;/li&gt;
+&lt;li&gt;Every time you start working on your project you &lt;code&gt;cd&lt;/code&gt; into the directory of the repository and then run &lt;code&gt;git pull&lt;/code&gt; to get the latest change. When you are done, you commit and push your changes back to GitHub with &lt;code&gt;git commit -am &amp;quot;some edits&amp;quot;; git push -u origin master&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;download-of-project-data&#34;&gt;Download of project data&lt;/h2&gt;
+&lt;p&gt;Open R from within the GitHub respository of your project and then run the following code section, but only those that apply to your project.&lt;/p&gt;
+&lt;h3 id=&#34;fastq-files-from-sra&#34;&gt;FASTQ files from SRA&lt;/h3&gt;
+&lt;h4 id=&#34;choose-fastq-data-for-your-project&#34;&gt;Choose FASTQ data for your project&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;The FASTQ files for the ChIP-Seq project are from SRA study &lt;a href=&#34;http://www.ncbi.nlm.nih.gov/sra?term=SRP002174&#34;&gt;SRP002174&lt;/a&gt; (&lt;a href=&#34;http://www.ncbi.nlm.nih.gov/pubmed/20360106&#34;&gt;Kaufman et al. 2010&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;sraidv &amp;lt;- paste(&amp;quot;SRR0388&amp;quot;, 45:51, sep=&amp;quot;&amp;quot;) 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;The FASTQ files for the RNA-Seq project are from SRA study &lt;a href=&#34;http://www.ncbi.nlm.nih.gov/sra?term=SRP010938&#34;&gt;SRP010938&lt;/a&gt; (&lt;a href=&#34;http://www.ncbi.nlm.nih.gov/pubmed/24098335&#34;&gt;Howard et al. 2013&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;sraidv &amp;lt;- paste(&amp;quot;SRR4460&amp;quot;, 27:44, sep=&amp;quot;&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;The FASTQ files for the VAR-Seq project are from SRA study &lt;a href=&#34;http://www.ncbi.nlm.nih.gov/sra?term=SRP008819&#34;&gt;SRP008819&lt;/a&gt; (&lt;a href=&#34;http://www.ncbi.nlm.nih.gov/pubmed/22106370&#34;&gt;Lu et al 2012&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;sraidv &amp;lt;- paste(&amp;quot;SRR1051&amp;quot;, 389:415, sep=&amp;quot;&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;load-libraries-and-modules&#34;&gt;Load libraries and modules&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(systemPipeR)
+moduleload(&amp;quot;sratoolkit/2.8.1&amp;quot;)
+system(&#39;fastq-dump --help&#39;) # prints help to screen
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;redirect-cache-output-of-sra-toolkit&#34;&gt;Redirect cache output of SRA Toolkit&lt;/h4&gt;
+&lt;p&gt;Newer versions of the SRA Toolkit create a cache directory (named &lt;code&gt;ncbi&lt;/code&gt;) in the highest level of a user&amp;rsquo;s home directory.
+To save space in home accounts (limited to 20GB), users need to redirect this output to their project&amp;rsquo;s
+&lt;code&gt;data&lt;/code&gt; directory via a symbolic link. The following shows how to do this for the &lt;code&gt;data&lt;/code&gt; directory
+of the &lt;code&gt;ChIP-Seq&lt;/code&gt; project.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;system(&amp;quot;ln -s /bigdata/gen242/shared/ChIP-Seq/data ~/ncbi&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;define-download-function&#34;&gt;Define download function&lt;/h4&gt;
+&lt;p&gt;The following function downloads and extracts the FASTQ files for each project from SRA.
+Internally, it uses the &lt;code&gt;fastq-dump&lt;/code&gt; utility of the SRA Toolkit from NCBI.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;getSRAfastq &amp;lt;- function(sraid, targetdir, maxreads=&amp;quot;1000000000&amp;quot;) {
+    system(paste(&amp;quot;fastq-dump --split-files --gzip --maxSpotId&amp;quot;, 
+                  maxreads, sraid, &amp;quot;--outdir&amp;quot;, targetdir))
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;run-download&#34;&gt;Run download&lt;/h4&gt;
+&lt;p&gt;Note the following performs the download in serialized mode for the chosen data set and saves the extracted FASTQ files to
+the path specified under &lt;code&gt;targetdir&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mydir &amp;lt;- getwd(); setwd(&amp;quot;data&amp;quot;)
+for(i in sraidv) getSRAfastq(sraid=i, targetdir=&amp;quot;.&amp;quot;)
+setwd(mydir)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Alternatively, the download can be performed in parallelized mode with &lt;code&gt;BiocParallel&lt;/code&gt;. Please run this version only on one of the compute nodes.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mydir &amp;lt;- getwd(); setwd(&amp;quot;data&amp;quot;)
+# bplapply(sraidv, getSRAfastq, targetdir=&amp;quot;.&amp;quot;, BPPARAM = MulticoreParam(workers=4))
+setwd(mydir)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;download-reference-genome-and-annotation&#34;&gt;Download reference genome and annotation&lt;/h3&gt;
+&lt;p&gt;The following &lt;code&gt;downloadRefs&lt;/code&gt; function downloads the &lt;em&gt;Arabidopsis thaliana&lt;/em&gt; genome sequence and GFF file from the &lt;a href=&#34;ftp://ftp.arabidopsis.org/home/tair/Genes/TAIR10_genome_release/&#34;&gt;TAIR FTP site&lt;/a&gt;.
+It also assigns consistent chromosome identifiers to make them the same among both the genome sequence and the GFF file. This is
+important for many analysis routines such as the read counting in the RNA-Seq workflow.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;downloadRefs &amp;lt;- function(rerun=FALSE) {
+    if(rerun==TRUE) {
+        library(Biostrings)
+        download.file(&amp;quot;https://www.arabidopsis.org/download_files/Genes/TAIR10_genome_release/TAIR10_chromosome_files/TAIR10_chr_all.fas&amp;quot;, &amp;quot;./data/tair10.fasta&amp;quot;)
+	dna &amp;lt;- readDNAStringSet(&amp;quot;./data/tair10.fasta&amp;quot;)
+        names(dna) &amp;lt;- paste(rep(&amp;quot;Chr&amp;quot;, 7), c(1:5, &amp;quot;M&amp;quot;, &amp;quot;C&amp;quot;), sep=&amp;quot;&amp;quot;) # Fixes chromomse ids
+        writeXStringSet(dna, &amp;quot;./data/tair10.fasta&amp;quot;)
+        download.file(&amp;quot;https://www.arabidopsis.org/download_files/Genes/TAIR10_genome_release/TAIR10_gff3/TAIR10_GFF3_genes.gff
+        &amp;quot;, &amp;quot;./data/tair10.gff&amp;quot;)
+        download.file(&amp;quot;https://www.arabidopsis.org/download_files/Genes/TAIR10_genome_release/TAIR10_functional_descriptions&amp;quot;, &amp;quot;./data/tair10_functional_descriptions&amp;quot;)
+        }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;After importing/sourcing the above function, execute it as follows:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;downloadRefs(rerun=TRUE) 
+&lt;/code&gt;&lt;/pre&gt;
+
+      </description>
+    </item>
+    
   </channel>
 </rss>
