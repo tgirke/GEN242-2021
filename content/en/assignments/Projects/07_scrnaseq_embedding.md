@@ -1,9 +1,9 @@
 ---
-title: "Embedding Methods for scRNA-Seq 1"
-linkTitle: "Embedding Methods 1"
+title: "Embedding Methods for scRNA-Seq 2"
+linkTitle: "Embedding Methods 2"
 description: >
 type: docs
-weight: 407
+weight: 408
 ---
 
 <br></br>
@@ -18,7 +18,7 @@ weight: 407
 6. Clustering of gene expression profiles 
 7. Gene set enrichment analysis
 
-## Challenge Project: Embedding Methods for scRNA-Seq 1
+## Challenge Project: Embedding Methods for scRNA-Seq 2
 
 + Run workflow from start to finish (steps 1-7) on RNA-Seq data set from Howard et al. (2013)
 + Challenge project tasks
