@@ -1,6 +1,6 @@
 ---
 title: "Embedding Methods for scRNA-Seq 1-3"
-linkTitle: "Embedding Methods 1-3"
+linkTitle: "scRNA-Seq Embedding 1-3"
 description: >
 type: docs
 weight: 405
