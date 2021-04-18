@@ -1,5 +1,5 @@
 ---
-title: "RNA-Seq - DEG analysis methods 1"
+title: "RNA-Seq - DEG Analysis Methods"
 linkTitle: "RNA-Seq - DEG 1"
 description: >
 type: docs
@@ -18,19 +18,20 @@ weight: 402
 6. Clustering of gene expression profiles 
 7. Gene set enrichment analysis
 
-## Challenge Project: Comparison of DEG analysis methods
+## Challenge Projects
+
+### 1. Comparison of DEG analysis methods
 
 + Run workflow from start to finish (steps 1-7) on RNA-Seq data set from Howard et al. (2013)
 + Challenge project tasks
-    + Each student compares at least 2 RNA-Seq DEG analysis methods (e.g. edgeR vs baySeq and DESeq2 vs limma/voom) and assesses the results as follows:
-        + Analyze the similarities and differences in the DEG lists obtained from the two methods
-        + Does it affect the results from the downstream gene set enrichment analysis?
-        + Plot the performance of the DEG methods in form of an ROC curve. The DEG set from the Howard et al., 2013 paper could be used as benchmark (true result). 
-
-+ Compare the DEG analysis method chosen for paper presentation with at least 1-2 additional methods (_e.g._ one student compares _edgeR_ _vs._ _baySeq_, and other student _DESeq2_ _vs._ _limma/voom_). Assess the results as follows:
+    + Compare the DEG analysis method chosen for paper presentation with at least 1-2 additional methods (_e.g._ one student compares _edgeR_ _vs._ _baySeq_, and other student _DESeq2_ _vs._ _limma/voom_). Assess the results as follows:
     + Analyze the similarities and differences in the DEG lists obtained from the two methods using intersect matrices, venn diagrams and/or upset plots.
     + Assess the impact of the DEG method on the downstream gene set enrichment analysis?
     + Plot the performance of the DEG methods in form of ROC curves and/or record their AUC values. A consensus DEG set or the one from the Howard et al. (2013) paper could be used as a ‘pseudo’ ground truth result.
+
+### 2. Comparison of DEG analysis methods
+
++ Similar as above but with different combination of DEG methods and/or performance testing approach.
 
 ## References
 
