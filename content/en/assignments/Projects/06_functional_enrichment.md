@@ -1,6 +1,6 @@
 ---
 title: "Functional enrichment analysis (FEA)"
-linkTitle: "Enrichment Analysis"
+linkTitle: "Functional Enrichment"
 description: >
 type: docs
 weight: 407
