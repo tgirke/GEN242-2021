@@ -395,7 +395,7 @@ enable = true
     weight = 204
   [[menu.main]]
     name = "NGS Analysis Basics (T5)"
-    url = "/tutorials/tutorial_05"
+    url = "/tutorials/rsequences/Rsequences/"
     parent = "Tutorials"
     weight = 205
   [[menu.main]]
