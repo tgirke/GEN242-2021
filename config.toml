@@ -324,53 +324,53 @@ enable = true
     parent = "Slides"
     weight = 110
   [[menu.main]]
-    name = "NGS Analysis Basics (S10)"
-    url = "/slides/slides_10"
+    name = "NGS Analysis Basics (S11)"
+    url = "/slides/slides_11"
     parent = "Slides"
     weight = 110
   [[menu.main]]
-    name = "Gene Expression Analysis (S11)"
-    url = "/slides/slides_11"
+    name = "Gene Expression Analysis (S12)"
+    url = "/slides/slides_12"
     parent = "Slides"
     weight = 111
   [[menu.main]]
-    name = "NGS Workflows (S12)"
-    url = "/slides/slides_12"
+    name = "NGS Workflows (S13)"
+    url = "/slides/slides_13"
     parent = "Slides"
     weight = 112
   [[menu.main]]
-    name = "RNA-Seq Overview (S13)"
-    url = "/slides/slides_13/"
+    name = "RNA-Seq Overview (S14)"
+    url = "/slides/slides_14/"
     parent = "Slides"
     weight = 113
   [[menu.main]]
-    name = "scRNA-Seq Overview (S14)"
-    url = "/slides/slides_14/"
+    name = "scRNA-Seq Overview (S15)"
+    url = "/slides/slides_15/"
     parent = "Slides"
     weight = 114
   [[menu.main]]
-    name = "ChIP-Seq Overview (S15)"
-    url = "/slides/slides_15/"
+    name = "ChIP-Seq Overview (S16)"
+    url = "/slides/slides_16/"
     parent = "Slides"
     weight = 115
   [[menu.main]]
-    name = "VAR-Seq Overview (S16)"
-    url = "/slides/slides_16/"
+    name = "VAR-Seq Overview (S17)"
+    url = "/slides/slides_17/"
     parent = "Slides"
     weight = 116
   [[menu.main]]
     name = "Gene Annotation and Ontologies (S17)"
-    url = "/slides/slides_17/"
+    url = "/slides/slides_18/"
     parent = "Slides"
     weight = 117
   [[menu.main]]
-    name = "Sequence Assembly (S18)"
-    url = "/slides/slides_18/"
+    name = "Sequence Assembly (S19)"
+    url = "/slides/slides_19/"
     parent = "Slides"
     weight = 118
   [[menu.main]]
-    name = "Cluster Analysis (S19)"
-    url = "/slides/slides_19/"
+    name = "Cluster Analysis (S20)"
+    url = "/slides/slides_20/"
     parent = "Slides"
     weight = 119
 ##
