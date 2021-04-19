@@ -327,52 +327,52 @@ enable = true
     name = "NGS Analysis Basics (S11)"
     url = "/slides/slides_11"
     parent = "Slides"
-    weight = 110
+    weight = 111
   [[menu.main]]
     name = "Gene Expression Analysis (S12)"
     url = "/slides/slides_12"
     parent = "Slides"
-    weight = 111
+    weight = 112
   [[menu.main]]
     name = "NGS Workflows (S13)"
     url = "/slides/slides_13"
     parent = "Slides"
-    weight = 112
+    weight = 113
   [[menu.main]]
     name = "RNA-Seq Overview (S14)"
     url = "/slides/slides_14/"
     parent = "Slides"
-    weight = 113
+    weight = 114
   [[menu.main]]
     name = "scRNA-Seq Overview (S15)"
     url = "/slides/slides_15/"
     parent = "Slides"
-    weight = 114
+    weight = 115
   [[menu.main]]
     name = "ChIP-Seq Overview (S16)"
     url = "/slides/slides_16/"
     parent = "Slides"
-    weight = 115
+    weight = 116
   [[menu.main]]
     name = "VAR-Seq Overview (S17)"
     url = "/slides/slides_17/"
     parent = "Slides"
-    weight = 116
+    weight = 117
   [[menu.main]]
     name = "Gene Annotation and Ontologies (S17)"
     url = "/slides/slides_18/"
     parent = "Slides"
-    weight = 117
+    weight = 118
   [[menu.main]]
     name = "Sequence Assembly (S19)"
     url = "/slides/slides_19/"
     parent = "Slides"
-    weight = 118
+    weight = 119
   [[menu.main]]
     name = "Cluster Analysis (S20)"
     url = "/slides/slides_20/"
     parent = "Slides"
-    weight = 119
+    weight = 120
 ##
 [[menu.main]]
   name = "Tutorials"
