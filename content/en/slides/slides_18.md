@@ -1,9 +1,9 @@
 ---
-title: "Assembly of Genomes and Transcriptomes"
-linkTitle: "Sequence Assembly"
+title: "Gene Annotation, Ontologies and Enrichment Methods"
+linkTitle: "Gene Annotation and Ontologies"
 description: >
 type: docs
-weight: 118
+weight: 117
 ---
 
 <br></br>

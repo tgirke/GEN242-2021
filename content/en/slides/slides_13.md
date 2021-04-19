@@ -1,9 +1,9 @@
 ---
-title: "RNA-Seq Overview"
-linkTitle: "RNA-Seq Overview"
+title: "Introduction to NGS Workflows"
+linkTitle: "Introduction to NGS Workflows"
 description: >
 type: docs
-weight: 113
+weight: 112
 ---
 
 <br></br>

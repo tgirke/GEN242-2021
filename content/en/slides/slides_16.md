@@ -1,9 +1,9 @@
 ---
-title: "VAR-Seq Overview"
-linkTitle: "VAR-Seq Overview"
+title: "ChIP-Seq Overview"
+linkTitle: "ChIP-Seq Overview"
 description: >
 type: docs
-weight: 116
+weight: 115
 ---
 
 <br></br>

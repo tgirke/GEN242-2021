@@ -1,9 +1,9 @@
 ---
-title: "ChIP-Seq Overview"
-linkTitle: "ChIP-Seq Overview"
+title: "scRNA-Seq Overview"
+linkTitle: "scRNA-Seq Overview"
 description: >
 type: docs
-weight: 115
+weight: 114
 ---
 
 <br></br>

@@ -1,9 +1,9 @@
 ---
-title: "Gene Annotation, Ontologies and Enrichment Methods"
-linkTitle: "Gene Annotation and Ontologies"
+title: "VAR-Seq Overview"
+linkTitle: "VAR-Seq Overview"
 description: >
 type: docs
-weight: 117
+weight: 116
 ---
 
 <br></br>

@@ -1,9 +1,9 @@
 ---
-title: "Introduction to NGS Workflows"
-linkTitle: "Introduction to NGS Workflows"
+title: "Analysis of Gene Expression Data"
+linkTitle: "Analysis of Gene Expression Data"
 description: >
 type: docs
-weight: 112
+weight: 111
 ---
 
 <br></br>

@@ -319,6 +319,11 @@ enable = true
     parent = "Slides"
     weight = 109
   [[menu.main]]
+    name = "R on HPC (S10)"
+    url = "/slides/slides_10"
+    parent = "Slides"
+    weight = 110
+  [[menu.main]]
     name = "NGS Analysis Basics (S10)"
     url = "/slides/slides_10"
     parent = "Slides"
