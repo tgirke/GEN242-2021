@@ -1,9 +1,9 @@
 ---
-title: "Introduction to NGS Workflows"
-linkTitle: "Introduction to NGS Workflows"
+title: "NGS Analysis Basics"
+linkTitle: "NGS Analysis Basics"
 description: >
 type: docs
-weight: 113
+weight: 111
 ---
 
 <br></br>

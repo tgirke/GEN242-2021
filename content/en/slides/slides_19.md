@@ -3,7 +3,7 @@ title: "Assembly of Genomes and Transcriptomes"
 linkTitle: "Sequence Assembly"
 description: >
 type: docs
-weight: 118
+weight: 119
 ---
 
 <br></br>

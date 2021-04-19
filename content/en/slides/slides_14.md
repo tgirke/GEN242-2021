@@ -3,7 +3,7 @@ title: "RNA-Seq Overview"
 linkTitle: "RNA-Seq Overview"
 description: >
 type: docs
-weight: 113
+weight: 114
 ---
 
 <br></br>

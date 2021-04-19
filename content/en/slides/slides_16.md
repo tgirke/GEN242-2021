@@ -3,7 +3,7 @@ title: "ChIP-Seq Overview"
 linkTitle: "ChIP-Seq Overview"
 description: >
 type: docs
-weight: 115
+weight: 116
 ---
 
 <br></br>

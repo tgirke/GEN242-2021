@@ -3,7 +3,7 @@ title: "VAR-Seq Overview"
 linkTitle: "VAR-Seq Overview"
 description: >
 type: docs
-weight: 116
+weight: 117
 ---
 
 <br></br>
