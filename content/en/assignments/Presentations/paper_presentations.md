@@ -12,7 +12,7 @@ weight: 501
 
 Each student has been assigned one journal publication to present in class. The
 expected structure of the paper presentations is outlined in this [Slideshow Template](https://docs.google.com/presentation/d/1XxV5kseWrmPuLzk0x64_sRFDunyg40iMF2qSUCJ2vPE/edit). 
-A detailed presentation schedule is available on the internal [Course Schedule](). 
+A detailed presentation schedule is available on the internal [Course Schedule](https://docs.google.com/spreadsheets/d/11QG7GBIieK7yndQJoQdmDtdu95EtQrHja-rDsN7-pIc/edit#gid=162605681). 
 The following lists the assigned papers organized by course project topics.
 
 
