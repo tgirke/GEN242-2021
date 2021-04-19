@@ -399,17 +399,17 @@ enable = true
     parent = "Tutorials"
     weight = 204
   [[menu.main]]
-    name = "NGS Analysis Basics (T5)"
-    url = "/tutorials/rsequences/Rsequences/"
+    name = "Parallel R (T5)"
+    url = "/tutorials/rparallel/rparallel/"
     parent = "Tutorials"
     weight = 205
   [[menu.main]]
-    name = "RNA-Seq Workflow (T6)"
-    url = "/tutorials/tutorial_06"
+    name = "NGS Analysis Basics (T6)"
+    url = "/tutorials/rsequences/Rsequences/"
     parent = "Tutorials"
     weight = 206
   [[menu.main]]
-    name = "scRNA-Seq Workflow (T7)"
+    name = "RNA-Seq Workflow (T7)"
     url = "/tutorials/tutorial_07"
     parent = "Tutorials"
     weight = 207
