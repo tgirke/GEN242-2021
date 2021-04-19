@@ -1,9 +1,9 @@
 ---
-title: "VAR-Seq Workflow"
-linkTitle: "VAR-Seq Workflow"
+title: "ChIP-Seq Workflow"
+linkTitle: "ChIP-Seq Workflow"
 description: >
 type: docs
-weight: 209
+weight: 208
 ---
 
 <br></br>

@@ -1,9 +1,9 @@
 ---
-title: "Graphics and Visualization"
-linkTitle: "Graphics and Visualization"
+title: "VAR-Seq Workflow"
+linkTitle: "VAR-Seq Workflow"
 description: >
 type: docs
-weight: 210
+weight: 209
 ---
 
 <br></br>

@@ -1,9 +1,9 @@
 ---
-title: "scRNA-Seq Workflow"
-linkTitle: "scRNA-Seq Workflow"
+title: "RNA-Seq Workflow"
+linkTitle: "RNA-Seq Workflow"
 description: >
 type: docs
-weight: 207
+weight: 206
 ---
 
 <br></br>

@@ -1,9 +1,9 @@
 ---
-title: "Cluster Analysis and Data Mining"
-linkTitle: "Cluster Analysis and Data Mining"
+title: "Graphics and Visualization"
+linkTitle: "Graphics and Visualization"
 description: >
 type: docs
-weight: 211
+weight: 210
 ---
 
 <br></br>
