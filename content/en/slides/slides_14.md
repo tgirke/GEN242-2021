@@ -1,6 +1,6 @@
 ---
-title: "RNA-Seq Overview"
-linkTitle: "RNA-Seq Overview"
+title: "ChIP-Seq Overview"
+linkTitle: "ChIP-Seq Overview"
 description: >
 type: docs
 weight: 114

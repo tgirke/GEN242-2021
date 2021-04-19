@@ -1,6 +1,6 @@
 ---
-title: "Assembly of Genomes and Transcriptomes"
-linkTitle: "Sequence Assembly"
+title: "Profile HMMs"
+linkTitle: "Profile HMMs"
 description: >
 type: docs
 weight: 119

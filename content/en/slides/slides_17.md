@@ -1,6 +1,6 @@
 ---
-title: "VAR-Seq Overview"
-linkTitle: "VAR-Seq Overview"
+title: "R packages, R Markdown and tidyverse/dplyr"
+linkTitle: "Packages, R Markdown"
 description: >
 type: docs
 weight: 117

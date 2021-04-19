@@ -1,6 +1,6 @@
 ---
-title: "Cluster Analysis"
-linkTitle: "Cluster Analysis"
+title: "Assembly of Genomes and Transcriptomes"
+linkTitle: "Sequence Assembly"
 description: >
 type: docs
 weight: 120

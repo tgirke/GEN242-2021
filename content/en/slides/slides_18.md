@@ -1,6 +1,6 @@
 ---
-title: "Gene Annotation, Ontologies and Enrichment Methods"
-linkTitle: "Gene Annotation and Ontologies"
+title: "Shiny Apps"
+linkTitle: "Shiny Apps"
 description: >
 type: docs
 weight: 118

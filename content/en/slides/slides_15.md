@@ -1,6 +1,6 @@
 ---
-title: "scRNA-Seq Overview"
-linkTitle: "scRNA-Seq Overview"
+title: "Gene Set Enrichment Analysis"
+linkTitle: "Gene Annotation and Ontologies"
 description: >
 type: docs
 weight: 115
