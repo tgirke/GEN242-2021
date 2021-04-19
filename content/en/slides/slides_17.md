@@ -1,6 +1,6 @@
 ---
-title: "R packages, R Markdown and tidyverse/dplyr"
-linkTitle: "Packages, R Markdown"
+title: "R packages, tidyverse and dplyr"
+linkTitle: "R Packages and dplyr"
 description: >
 type: docs
 weight: 117

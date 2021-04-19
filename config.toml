@@ -354,7 +354,7 @@ enable = true
     parent = "Slides"
     weight = 116
   [[menu.main]]
-    name = "Package and R Markdown (S17)"
+    name = "R Packages and dplyr (S17)"
     url = "/slides/slides_17/"
     parent = "Slides"
     weight = 117
