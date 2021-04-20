@@ -26,8 +26,8 @@ All references in [Paperpile]()
 
 ### DEG Methods  
 
-2. ...
-3. ...
+2. Zhou X, Lindsay H, Robinson MD (2014) Robustly detecting differential expression in RNA sequencing data using observation weights. Nucleic Acids Res 42: e91. [PubMed](https://pubmed.ncbi.nlm.nih.gov/24753412/)
+3. Love MI, Huber W, Anders S (2014) Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. Genome Biol 15: 550. [PubMed](https://pubmed.ncbi.nlm.nih.gov/25516281/)
 
 ### Clustering and Network Analysis
 
@@ -36,9 +36,9 @@ All references in [Paperpile]()
 
 ### Embedding of High-dimensional scRNA-Seq Data
 
-6. ... 
+6. Shulse CN, Cole BJ, Ciobanu D, Lin J, Yoshinaga Y, Gouran M, Turco GM, Zhu Y, O’Malley RC, Brady SM, et al (2019) High-Throughput Single-Cell Transcriptome Profiling of Plant Cell Types. Cell Rep 27: 2241–2247.e4. [PubMed](https://pubmed.ncbi.nlm.nih.gov/31091459/) 
 7. ...
-8. ...
+8. McInnes L, Healy J, Melville J (2018) UMAP: Uniform Manifold Approximation and Projection for Dimension Reduction. [arXiv](https://arxiv.org/abs/1802.03426) 
 
 ### ChIP-Seq Peak Callers
 
