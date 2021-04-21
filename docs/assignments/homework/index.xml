@@ -415,15 +415,15 @@ demultiplex(x=fastq[1], barcode=c(&amp;quot;TT&amp;quot;, &amp;quot;AA&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;b-sequence-parsing&#34;&gt;B. Sequence Parsing&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Download &lt;code&gt;GFF&lt;/code&gt; from &lt;em&gt;Halobacterium sp&lt;/em&gt;  &lt;a href=&#34;ftp://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Bacteria/Halobacterium_sp_uid217/AE004437.gff&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Download genome sequence from &lt;em&gt;Halobacterium sp&lt;/em&gt; &lt;a href=&#34;ftp://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Bacteria/Halobacterium_sp_uid217/AE004437.fna&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Download &lt;code&gt;GFF&lt;/code&gt; from &lt;em&gt;Halobacterium sp&lt;/em&gt;  &lt;a href=&#34;https://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Bacteria/Halobacterium_sp_uid217/AE004437.gff&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Download genome sequence from &lt;em&gt;Halobacterium sp&lt;/em&gt; &lt;a href=&#34;https://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Bacteria/Halobacterium_sp_uid217/AE004437.fna&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Task 1&lt;/strong&gt; Extract gene ranges, parse their sequences from genome and translate them into proteins&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Task 2&lt;/strong&gt; Reduce overlapping genes and parse their sequences from genome&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Task 3&lt;/strong&gt; Generate intergenic ranges and parse their sequences from genome&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Useful commands&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;download.file(&amp;quot;ftp://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Bacteria/Halobacterium_sp_uid217/AE004437.gff&amp;quot;, &amp;quot;data/AE004437.gff&amp;quot;)
-download.file(&amp;quot;ftp://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Bacteria/Halobacterium_sp_uid217/AE004437.fna&amp;quot;, &amp;quot;data/AE004437.fna&amp;quot;)
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;download.file(&amp;quot;https://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Bacteria/Halobacterium_sp_uid217/AE004437.gff&amp;quot;, &amp;quot;data/AE004437.gff&amp;quot;)
+download.file(&amp;quot;https://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Bacteria/Halobacterium_sp_uid217/AE004437.fna&amp;quot;, &amp;quot;data/AE004437.fna&amp;quot;)
 chr &amp;lt;- readDNAStringSet(&amp;quot;data/AE004437.fna&amp;quot;)
 gff &amp;lt;- import(&amp;quot;data/AE004437.gff&amp;quot;)
 gffgene &amp;lt;- gff[values(gff)[,&amp;quot;type&amp;quot;]==&amp;quot;gene&amp;quot;]
