@@ -419,9 +419,10 @@ module list
 
 ## Reminder: Traditional Job Submission for R 
 
-This topic is covered in more detail in other tutorials. The following only provides a very brief overview of this submission method. 
+This topic is covered in more detail in the basic Linux/HPC tutorial [here](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/linux/linux/#queuing-system-slurm). 
+Briefly, the following shows how to submit a script for precessing to the computing nodes. 
 
-__1.__ Create Slurm submission script, here called `script_name.sh` with:
+__1.__ Create Slurm submission script, here called [script_name.sh](https://girke.bioinformatics.ucr.edu/GEN242/custom/slides/R_for_HPC/demo_files/script_name.sh) with:
 
 
 ```bash
@@ -439,7 +440,7 @@ __1.__ Create Slurm submission script, here called `script_name.sh` with:
 Rscript my_script.R
 ```
 
-__2.__ Submit R script (`my_script.R`) called by above Slurm script with:
+__2.__ Submit R script called [my_script.R](https://girke.bioinformatics.ucr.edu/GEN242/custom/slides/R_for_HPC/demo_files/my_script.R) by above Slurm script with:
 
 
 ```bash
@@ -497,8 +498,8 @@ library(batchtools)
 myFct <- function(x) {
     Sys.sleep(10) # to see job in queue, pause for 10 sec
 	result <- cbind(iris[x, 1:4,],
-        Node=system("hostname", intern=TRUE),
-	    Rversion=paste(R.Version()[6:7], collapse="."))
+    Node=system("hostname", intern=TRUE),
+	Rversion=paste(R.Version()[6:7], collapse="."))
 }
 ```
 
