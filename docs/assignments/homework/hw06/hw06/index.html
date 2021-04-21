@@ -22,11 +22,11 @@
 demultiplex &lt;- function(x, barcode, nreads) { f &lt;- FastqStreamer(x, nreads) while(length(fq &lt;- yield(f))) { for(i in barcode) { pattern &lt;- paste(&quot;^&quot;, i, sep=&quot;&quot;) fqsub &lt;- fq[grepl(pattern, sread(fq))] if(length(fqsub) &gt; 0) { writeFastq(fqsub, paste(x, i, sep=&quot;_&quot;), mode=&quot;a&quot;, compress=FALSE) } } } close(f) } demultiplex(x=fastq[1], barcode=c(&quot;TT&quot;, &quot;AA&quot;, &quot;GG&quot;), nreads=50)  B." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/assignments/homework/hw06/hw06/" />
-<meta property="article:modified_time" content="2021-04-20T18:29:37-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-04-20T18:36:51-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="HW6 - NGS Analysis Basics">
 <meta itemprop="description" content="Source code downloads: &nbsp; [ .R ]  A. Demultiplexing Write a demultiplexing function that accepts any number of barcodes and splits a FASTQ file into as many subfiles as there are barcodes. At the same time the function should remove low quality tails from the reads. The following function accomplishes the first step. Expand this function so that it performs the second step as well.
 demultiplex &lt;- function(x, barcode, nreads) { f &lt;- FastqStreamer(x, nreads) while(length(fq &lt;- yield(f))) { for(i in barcode) { pattern &lt;- paste(&quot;^&quot;, i, sep=&quot;&quot;) fqsub &lt;- fq[grepl(pattern, sread(fq))] if(length(fqsub) &gt; 0) { writeFastq(fqsub, paste(x, i, sep=&quot;_&quot;), mode=&quot;a&quot;, compress=FALSE) } } } close(f) } demultiplex(x=fastq[1], barcode=c(&quot;TT&quot;, &quot;AA&quot;, &quot;GG&quot;), nreads=50)  B.">
-<meta itemprop="dateModified" content="2021-04-20T18:29:37-07:00" />
+<meta itemprop="dateModified" content="2021-04-20T18:36:51-07:00" />
 <meta itemprop="wordCount" content="270">
 
 
@@ -595,6 +595,16 @@ if (!doNotTrack) {
               <a class="dropdown-item" href="../../../../assignments/homework/hw05/hw05"
               style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  HW5: R Programming
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../../assignments/homework/hw06/hw06"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 HW6: NGS Analysis Basics
               </a>
           	
           	  
@@ -1260,7 +1270,7 @@ writeXStringSet(c(p1, p2), &quot;./data/mypep.fasta&quot;)
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-20: <a  href="https://github.com/tgirke/GEN242//commit/1da82f1d678815dd70059335cb128cd8eb5ef942">some edits (1da82f1d)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-20: <a  href="https://github.com/tgirke/GEN242//commit/fa42775582971b7c47cae8bec2225ecb55fe1752">some edits (fa427755)</a>
 </div>
 </div>
 

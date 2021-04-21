@@ -534,6 +534,13 @@ enable = true
     [menu.main.params]
       level = 2
   [[menu.main]]
+    name = "HW6: NGS Analysis Basics"
+    url = "/assignments/Homework/HW06/HW06"
+    parent = "Assignments"
+    weight = 306
+    [menu.main.params]
+      level = 2
+  [[menu.main]]
     name = "Projects"
     url = "/assignments/Projects/"
     parent = "Assignments"
