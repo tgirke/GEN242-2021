@@ -33,7 +33,7 @@
 
 ## tmux # starts a new tmux session
 
-## tmux a # attaches to an existing session
+## tmux a # attaches to an existing or preconfigured session
 
 
 ## nvim myscript.R # or *.Rmd file

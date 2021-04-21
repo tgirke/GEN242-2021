@@ -111,8 +111,7 @@ Animated screenshot of Nvim-R (from [here](https://github.com/jalvesaq/Nvim-R))
 
 - Knowledge of command-line interface is essential for working on a computer cluster efficiently 
 - Main advantage: language agnostic approach that works with most computer languages
-- Users of Emacs may want to consider using ESS instead
-
+- Users of Emacs may want to consider using ESS instead 
 
 # Outline
 
@@ -123,9 +122,11 @@ Animated screenshot of Nvim-R (from [here](https://github.com/jalvesaq/Nvim-R))
 
 ## Introduction to Nvim-R-Tmux
 
+- <b><font color="red">Note:</font></b> the content on the following slides is also available in this tutorial section [here](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/linux/linux/#textcode-editors).
+- The examples are assuming that users are logged into their HPCC cluster account, or are working on a system where vim/nvim is accessible via a terminal.
 - The following introduces Nvim-R combined with Tmux. 
 - Similar instructions are available in HPCC's Nvim-R-Tmux tutorial [here](http://hpcc.ucr.edu/manuals_linux-cluster_terminalIDE.html).
-- Note: Nvim-R and Tmux are two independent tools that can be used independently or in combination, and both are useful for remote terminal work. 
+- Note: Nvim-R and Tmux are two separate tools that can be used independently or in combination, and both are useful for remote terminal work. 
 - For simplicity, some of the following examples use Nvim-R without Tmux. Once users know the basics of both then it is trivial to combine them as needed. 
 
 
@@ -203,7 +204,7 @@ Running Nvim from tmux provides reattachment functionality. Skip this step if th
 
 ```bash
 tmux # starts a new tmux session 
-tmux a # attaches to an existing session 
+tmux a # attaches to an existing or preconfigured session 
 ```
 
 __2. Open nvim-connected R session__ 
@@ -407,6 +408,7 @@ module list
 
 ## Parallel Evaluations in R 
 
+- <b><font color="red">Note:</font></b> the content on the following slides is also available in this tutorial section [here](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rparallel/rparallel/).
 - R provides a large number of packages for parallel evaluations on multi-core, multi-socket and multi-node systems. The latter are usually referred to as computer clusters.
 - MPI is also supported
 - For an overview of parallelization packages available for R see [here](https://cran.r-project.org/web/views/HighPerformanceComputing.html)

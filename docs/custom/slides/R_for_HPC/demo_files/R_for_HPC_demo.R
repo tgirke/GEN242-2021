@@ -2,7 +2,7 @@
 ## Nvim-R Demo (R code) ##
 ##########################
 ## Author: Thomas Girke
-## Last update: 17-Dec-2020
+## Last update: 22-Apr-2021
 
 ## Optional: run in interactive session on node with:
 # srun --x11 --partition=short --mem=2gb --cpus-per-task 4 --ntasks 1 --time 1:00:00 --pty bash -l
