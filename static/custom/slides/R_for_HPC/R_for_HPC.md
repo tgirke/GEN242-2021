@@ -341,7 +341,7 @@ Download `R_for_HPC_demo.R` file to you HPCC account as follows.
 
 
 ```bash
-wget https://raw.githubusercontent.com/ucr-hpcc/ucr-hpcc.github.io/master/presentations/2020-12-18_Workshop/R_for_HPC/demo_files/R_for_HPC_demo.R
+wget https://raw.githubusercontent.com/tgirke/GEN242/main/static/custom/slides/R_for_HPC/demo_files/R_for_HPC_demo.R
 ```
 
 <p style='text-align: right;'> __[ Scroll down to continue ]__ </p>
@@ -422,7 +422,7 @@ module list
 This topic is covered in more detail in the basic Linux/HPC tutorial [here](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/linux/linux/#queuing-system-slurm). 
 Briefly, the following shows how to submit a script for precessing to the computing nodes. 
 
-__1.__ Create Slurm submission script, here called [script_name.sh](https://girke.bioinformatics.ucr.edu/GEN242/custom/slides/R_for_HPC/demo_files/script_name.sh) with:
+__1.__ Create Slurm submission script, here called [script_name.sh](https://raw.githubusercontent.com/tgirke/GEN242/main/static/custom/slides/R_for_HPC/demo_files/script_name.sh) with:
 
 
 ```bash
@@ -440,7 +440,7 @@ __1.__ Create Slurm submission script, here called [script_name.sh](https://girk
 Rscript my_script.R
 ```
 
-__2.__ Submit R script called [my_script.R](https://girke.bioinformatics.ucr.edu/GEN242/custom/slides/R_for_HPC/demo_files/my_script.R) by above Slurm script with:
+__2.__ Submit R script called [my_script.R](https://raw.githubusercontent.com/tgirke/GEN242/main/static/custom/slides/R_for_HPC/demo_files/my_script.R) by above Slurm script with:
 
 
 ```bash
@@ -452,12 +452,12 @@ sbatch script_name.sh
 - The following introduces the usage of `batchtools` for a computer cluster
   using SLURM as scheduler (workload manager). SLURM is the scheduler used by
   the HPCC.
-- Similar instructions are provided in HPCC's manual section covering
+- Similar instructions are provided this tutorial section covering
   `batchtools`
-  [here](https://hpcc.ucr.edu/manuals_linux-cluster_parallelR.html)
+  [here](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rparallel/rparallel/)
 - To simplify the evaluation of the R code on the following slides, the
   corresponding text version is available for download from
-  [here](https://raw.githubusercontent.com/ucr-hpcc/ucr-hpcc.github.io/master/presentations/2020-12-18_Workshop/R_for_HPC/demo_files/R_for_HPC_demo.R).
+  [here](https://raw.githubusercontent.com/tgirke/GEN242/main/static/custom/slides/R_for_HPC/demo_files/R_for_HPC_demo.R).
 
 ## Hands-on Demo of `batchtools`
 

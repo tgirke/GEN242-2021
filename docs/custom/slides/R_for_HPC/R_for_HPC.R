@@ -42,7 +42,7 @@
 ## srun --x11 --partition=short --mem=2gb --cpus-per-task 4 --ntasks 1 --time 1:00:00 --pty bash -l
 
 
-## wget https://raw.githubusercontent.com/ucr-hpcc/ucr-hpcc.github.io/master/presentations/2020-12-18_Workshop/R_for_HPC/demo_files/R_for_HPC_demo.R
+## wget https://raw.githubusercontent.com/tgirke/GEN242/main/static/custom/slides/R_for_HPC/demo_files/R_for_HPC_demo.R
 
 
 ## ----nvim-r-tmux-demo_show, eval=FALSE, message=FALSE, warning=FALSE----------
