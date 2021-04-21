@@ -36,7 +36,7 @@ All references in [Paperpile](https://paperpile.com/shared/TUcNkH)
 ### Embedding of High-dimensional scRNA-Seq Data
 
 6. Shulse CN, Cole BJ, Ciobanu D, Lin J, Yoshinaga Y, Gouran M, Turco GM, Zhu Y, O’Malley RC, Brady SM, et al (2019) High-Throughput Single-Cell Transcriptome Profiling of Plant Cell Types. Cell Rep 27: 2241–2247.e4. [PubMed](https://pubmed.ncbi.nlm.nih.gov/31091459/) 
-7. ...
+7. Sun S, Zhu J, Ma Y, Zhou X (2019) Accuracy, robustness and scalability of dimensionality reduction methods for single-cell RNA-seq analysis. Genome Biol 20: 269. [PubMed](https://pubmed.ncbi.nlm.nih.gov/31823809/)
 8. McInnes L, Healy J, Melville J (2018) UMAP: Uniform Manifold Approximation and Projection for Dimension Reduction. [arXiv](https://arxiv.org/abs/1802.03426) 
 
 ### ChIP-Seq Peak Callers
