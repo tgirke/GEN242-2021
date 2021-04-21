@@ -41,18 +41,17 @@ All references in [Paperpile](https://paperpile.com/shared/TUcNkH)
 
 ### ChIP-Seq Peak Callers
 
-9. ...
+9. Wilbanks EG, Facciotti MT (2010) Evaluation of algorithm performance in ChIP-seq peak detection. PLoS One. doi: 10.1371/journal.pone.0011471. [PubMed](https://pubmed.ncbi.nlm.nih.gov/20628599/)
 10. ...
 
 ### Functional Enrichment Analysis
 
-11. ...
+11. Subramanian A, Tamayo P, Mootha VK, Mukherjee S, Ebert BL, Gillette MA, Paulovich A, Pomeroy SL, Golub TR, Lander ES, et al (2005) Gene set enrichment analysis: a knowledge-based approach for interpreting genome-wide expression profiles. Proc Natl Acad Sci U S A 102: 15545–15550. [PubMed](https://pubmed.ncbi.nlm.nih.gov/16199517/)
 
 ### Motif Enrichment Analysis
 
-12. ...
-13. ...
+12. McLeay, Robert C, and Timothy L Bailey. 2010. “Motif Enrichment Analysis: A Unified Framework and an Evaluation on ChIP Data.” BMC Bioinformatics 11: 165. [PubMed](https://pubmed.ncbi.nlm.nih.gov/20356413/)
 
 ### Programmable Genome Summary Graphics
 
-14. ...
+13. Zhang H, Meltzer P, Davis S (2013) RCircos: an R package for Circos 2D track plots. BMC Bioinformatics 14: 244–244. [PubMed](https://pubmed.ncbi.nlm.nih.gov/23937229/)
