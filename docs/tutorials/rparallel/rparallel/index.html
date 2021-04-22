@@ -816,7 +816,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.791f7433fa3b2d59cd09691e4eed9e7a.json"
+  data-offline-search-index-json-src="../../../offline-search-index.287c77619e133ae778e78643c29098bb.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -848,7 +848,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.791f7433fa3b2d59cd09691e4eed9e7a.json"
+  data-offline-search-index-json-src="../../../offline-search-index.287c77619e133ae778e78643c29098bb.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1108,7 +1108,7 @@ cluster template files, most schedulers and queueing systems are supported (<em>
 </ul>
 <h2 id="reminder-traditional-job-submission-for-r">Reminder: Traditional Job Submission for R</h2>
 <p>This topic is covered in more detail in other tutorials. The following only provides a very brief overview of this submission method.</p>
-<p><strong>1.</strong> Create Slurm submission script, here called <code>script_name.sh</code> with:</p>
+<p><strong>1.</strong> Create Slurm submission script, here called <a href="https://raw.githubusercontent.com/tgirke/GEN242/main/static/custom/slides/R_for_HPC/demo_files/script_name.sh">script_name.sh</a> with:</p>
 <pre><code class="language-bash">#!/bin/bash -l
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
@@ -1122,7 +1122,7 @@ cluster template files, most schedulers and queueing systems are supported (<em>
 
 Rscript my_script.R
 </code></pre>
-<p><strong>2.</strong> Submit R script (<code>my_script.R</code>) called by above Slurm script with:</p>
+<p><strong>2.</strong> Submit R script called <a href="https://raw.githubusercontent.com/tgirke/GEN242/main/static/custom/slides/R_for_HPC/demo_files/my_script.R">my_script.R</a> by above Slurm script with:</p>
 <pre><code class="language-bash">sbatch script_name.sh
 </code></pre>
 <h2 id="parallel-evaluations-on-clusters-with-batchtools">Parallel Evaluations on Clusters with <code>batchtools</code></h2>

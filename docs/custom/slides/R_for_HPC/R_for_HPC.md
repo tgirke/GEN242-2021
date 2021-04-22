@@ -333,7 +333,6 @@ srun --x11 --partition=short --mem=2gb --cpus-per-task 4 --ntasks 1 --time 1:00:
 
 - Under `--partition` it is important to assign the name of a partition a user has access to 
     - Most users have access to: `short`, `batch`, `intel` and `highmem` 
-    - Students registered under the statistics department, only have access to: `statsdept`  
     - Users of labs owning computer nodes also can access: `<pi_name>lab` 
 - For more details on argument settings for `srun`, see [here](http://hpcc.ucr.edu/manuals_linux-cluster_jobs.html)
 

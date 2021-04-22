@@ -1,7 +1,7 @@
 ---
 title: "Parallel Evaluations in R"
 author: Thomas Girke
-date: "Last update: 18 April, 2021" 
+date: "Last update: 21 April, 2021" 
 output:
   html_document:
     toc: true
@@ -38,7 +38,7 @@ Rscript -e "rmarkdown::render('rparallel.Rmd', c('html_document'), clean=F); kni
 
 This topic is covered in more detail in other tutorials. The following only provides a very brief overview of this submission method.
 
-**1.** Create Slurm submission script, here called `script_name.sh` with:
+**1.** Create Slurm submission script, here called [script\_name.sh](https://raw.githubusercontent.com/tgirke/GEN242/main/static/custom/slides/R_for_HPC/demo_files/script_name.sh) with:
 
 ``` bash
 #!/bin/bash -l
@@ -55,7 +55,7 @@ This topic is covered in more detail in other tutorials. The following only prov
 Rscript my_script.R
 ```
 
-**2.** Submit R script (`my_script.R`) called by above Slurm script with:
+**2.** Submit R script called [my\_script.R](https://raw.githubusercontent.com/tgirke/GEN242/main/static/custom/slides/R_for_HPC/demo_files/my_script.R) by above Slurm script with:
 
 ``` bash
 sbatch script_name.sh
