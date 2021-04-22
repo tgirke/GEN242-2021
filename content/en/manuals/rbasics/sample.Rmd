@@ -201,7 +201,7 @@ png("myplot.png")
 ggplot(dsmall, aes(color, price/carat)) + geom_jitter(alpha = I(1 / 2), aes(color=color))
 dev.off()
 ```
-<center><img title="some_title" src="myplot.png"/></center>
+<center><img title="some_title" src="../images/myplot.png"/></center>
 
 ### Inline R code
 

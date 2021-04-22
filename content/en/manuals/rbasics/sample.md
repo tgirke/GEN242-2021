@@ -1,7 +1,7 @@
 ---
 title: "Sample R Markdown" 
 author: "Author: Your Name"
-date: "Last update: 12 April, 2021" 
+date: "Last update: 22 April, 2021" 
 output:
   html_document:
     toc: true
@@ -85,7 +85,7 @@ package from Bioconductor.
      ---
     title: "My First R Markdown Document"
     author: "Author: First Last"
-    date: "Last update: 12 April, 2021"
+    date: "Last update: 22 April, 2021"
     output:
       BiocStyle::html_document:
         toc: true
@@ -232,7 +232,7 @@ dev.off()
     ##   2
 
 <center>
-<img title="some_title" src="myplot.png"/>
+<img title="some_title" src="../images/myplot.png"/>
 </center>
 
 ### Inline R code
@@ -291,11 +291,11 @@ sessionInfo()
 
     ## R version 4.0.5 (2021-03-31)
     ## Platform: x86_64-pc-linux-gnu (64-bit)
-    ## Running under: Ubuntu 18.04.5 LTS
+    ## Running under: Debian GNU/Linux 10 (buster)
     ## 
     ## Matrix products: default
-    ## BLAS:   /usr/lib/x86_64-linux-gnu/openblas/libblas.so.3
-    ## LAPACK: /usr/lib/x86_64-linux-gnu/libopenblasp-r0.2.20.so
+    ## BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.8.0
+    ## LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.8.0
     ## 
     ## locale:
     ##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
@@ -309,21 +309,20 @@ sessionInfo()
     ## [1] stats     graphics  grDevices utils     datasets  methods   base     
     ## 
     ## other attached packages:
-    ## [1] ggplot2_3.3.3 DT_0.17       knitr_1.31   
+    ## [1] ggplot2_3.3.2 DT_0.16       knitr_1.30   
     ## 
     ## loaded via a namespace (and not attached):
-    ##  [1] bslib_0.2.4       compiler_4.0.5    pillar_1.5.0      jquerylib_0.1.3  
+    ##  [1] bslib_0.2.4       compiler_4.0.5    pillar_1.4.7      jquerylib_0.1.3  
     ##  [5] highr_0.8         tools_4.0.5       digest_0.6.27     viridisLite_0.3.0
-    ##  [9] jsonlite_1.7.2    evaluate_0.14     lifecycle_1.0.0   tibble_3.1.0     
-    ## [13] gtable_0.3.0      pkgconfig_2.0.3   rlang_0.4.10      DBI_1.1.1        
-    ## [17] crosstalk_1.1.1   yaml_2.2.1        blogdown_1.2      xfun_0.21        
-    ## [21] withr_2.4.1       dplyr_1.0.4       stringr_1.4.0     generics_0.1.0   
-    ## [25] htmlwidgets_1.5.3 sass_0.3.1        vctrs_0.3.6       tidyselect_1.1.0 
-    ## [29] grid_4.0.5        glue_1.4.2        R6_2.5.0          fansi_0.4.2      
-    ## [33] rmarkdown_2.7     bookdown_0.21     farver_2.1.0      purrr_0.3.4      
-    ## [37] magrittr_2.0.1    scales_1.1.1      htmltools_0.5.1.1 ellipsis_0.3.1   
-    ## [41] assertthat_0.2.1  colorspace_2.0-0  labeling_0.4.2    utf8_1.1.4       
-    ## [45] stringi_1.5.3     munsell_0.5.0     crayon_1.4.1
+    ##  [9] jsonlite_1.7.1    evaluate_0.14     lifecycle_0.2.0   tibble_3.0.4     
+    ## [13] gtable_0.3.0      pkgconfig_2.0.3   rlang_0.4.8       crosstalk_1.1.0.1
+    ## [17] yaml_2.2.1        blogdown_1.2      xfun_0.22         withr_2.3.0      
+    ## [21] stringr_1.4.0     dplyr_1.0.2       generics_0.1.0    htmlwidgets_1.5.2
+    ## [25] sass_0.3.1        vctrs_0.3.5       tidyselect_1.1.0  grid_4.0.5       
+    ## [29] glue_1.4.2        R6_2.5.0          rmarkdown_2.7     bookdown_0.21    
+    ## [33] farver_2.0.3      purrr_0.3.4       magrittr_2.0.1    scales_1.1.1     
+    ## [37] htmltools_0.5.1.1 ellipsis_0.3.1    colorspace_2.0-0  labeling_0.4.2   
+    ## [41] stringi_1.5.3     munsell_0.5.0     crayon_1.3.4
 
 # References
 
