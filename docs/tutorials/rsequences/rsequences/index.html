@@ -24,14 +24,14 @@
 Bioconductor packages provide much more sophisticated string handling utilities for sequence analysis (Lawrence et al." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rsequences/rsequences/" />
-<meta property="article:modified_time" content="2021-04-18T16:13:10-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-04-21T17:36:02-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="NGS Analysis Basics">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
  Overview Sequence Analysis in R and Bioconductor R Base
  Some basic string handling utilities. Wide spectrum of numeric data analysis tools.  Bioconductor
 Bioconductor packages provide much more sophisticated string handling utilities for sequence analysis (Lawrence et al.">
-<meta itemprop="dateModified" content="2021-04-18T16:13:10-07:00" />
-<meta itemprop="wordCount" content="7230">
+<meta itemprop="dateModified" content="2021-04-21T17:36:02-07:00" />
+<meta itemprop="wordCount" content="6985">
 
 
 
@@ -825,7 +825,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.ce8eadcfc17dcd91bf4fc00b5c20d6a4.json"
+  data-offline-search-index-json-src="../../../offline-search-index.084584dec1bee19feba44f5d55196bae.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -857,7 +857,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.ce8eadcfc17dcd91bf4fc00b5c20d6a4.json"
+  data-offline-search-index-json-src="../../../offline-search-index.084584dec1bee19feba44f5d55196bae.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1148,15 +1148,7 @@ if (!doNotTrack) {
         </li>
       </ul>
     </li>
-    <li><a href="#homework-6">Homework 6</a>
-      <ul>
-        <li><a href="#hw6a---demultiplexing">HW6a - Demultiplexing</a></li>
-        <li><a href="#hw6b---sequence-parsing">HW6b - Sequence Parsing</a></li>
-        <li><a href="#homework-submission">Homework submission</a></li>
-        <li><a href="#due-date">Due date</a></li>
-        <li><a href="#homework-solutions">Homework Solutions</a></li>
-      </ul>
-    </li>
+    <li><a href="#homework-6">Homework 6</a></li>
     <li><a href="#session-info">Session Info</a></li>
     <li><a href="#references">References</a></li>
   </ul>
@@ -1198,7 +1190,7 @@ if (!doNotTrack) {
 	<h1>NGS Analysis Basics</h1>
     
 	
-        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 34 minute read</p>
+        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 33 minute read</p>
            
 	<!--
 - Compile from command-line
@@ -1564,7 +1556,7 @@ myvpos # The results are stored as MIndex object.
 ##   [3]   928 933     6 [ATGACT]
 </code></pre>
 <p>Return all matches</p>
-<pre><code class="language-r">sapply(seq(along=myseq1), function(x) 
+<pre><code class="language-r">sapply(names(myseq1), function(x) 
        as.character(Views(myseq1[[x]], start(myvpos[[x]]), end(myvpos[[x]]))))[1:4] 
 </code></pre>
 <h4 id="pattern-matching-with-regular-expression-support">Pattern matching with regular expression support</h4>
@@ -1698,11 +1690,11 @@ dsetq1[1:2]
 ## [2]    20 6D:31,,&lt;A&amp;%3%:9H2I'E
 </code></pre>
 <h3 id="processing-fastq-files-with-shortread">Processing FASTQ Files with ShortRead</h3>
-<p>The following expains the basic usage of <code>ShortReadQ</code> objects. To make the sample code work,
+<p>The following explains the basic usage of <code>ShortReadQ</code> objects. To make the sample code work,
 download and unzip this <a href="http://cluster.hpcc.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_6_10_2012/Rsequences/data.zip">file</a> to your current working directory.
 The following code performs the download for you.</p>
 <pre><code class="language-r">library(ShortRead)
-download.file(&quot;http://cluster.hpcc.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_6_10_2012/Rsequences/data.zip&quot;, &quot;data.zip&quot;)
+download.file(&quot;http://cluster.hpcc.ucr.edu/~tgirke/HTML_Presentations/Manuals/testdata/samplefastq/data.zip&quot;, &quot;data.zip&quot;)
 unzip(&quot;data.zip&quot;)
 </code></pre>
 <p>Important utilities for accessing FASTQ files</p>
@@ -1826,7 +1818,7 @@ fq[qcount == 0] # Number of reads where all Phred scores &gt;= 20
 </code></pre>
 <h4 id="removal-of-reads-with-x-ns-andor-low-complexity-segments">Removal of reads with x Ns and/or low complexity segments</h4>
 <pre><code class="language-r">filter1 &lt;- nFilter(threshold=1) # Keeps only reads without Ns
-filter2 &lt;- polynFilter(threshold=20, nuc=c(&quot;A&quot;,&quot;T&quot;,&quot;G&quot;,&quot;C&quot;)) # Removes reads with &gt;=20 of one nucleotide
+filter2 &lt;- polynFilter(threshold=20, nuc=c(&quot;A&quot;,&quot;T&quot;,&quot;G&quot;,&quot;C&quot;)) # Removes reads with nucleotide bias, &gt;=20 of any base
 filter &lt;- compose(filter1, filter2)
 fq[filter(fq)]
 </code></pre>
@@ -2514,7 +2506,7 @@ txdb &lt;- makeTxDbFromBiomart(biomart = &quot;plants_mart&quot;, dataset = &quo
 <p>The following steps are useful to find out what is availble in BioMart.</p>
 <pre><code class="language-r">listMarts() # Lists BioMart databases
 listMarts(host=&quot;plants.ensembl.org&quot;)
-mymart &lt;- useMart(&quot;plants_mart&quot;, host=&quot;plants.ensembl.org&quot;) # Select one, here plants_mart_25
+mymart &lt;- useMart(&quot;plants_mart&quot;, host=&quot;plants.ensembl.org&quot;) # Select one, here plants_mart
 listDatasets(mymart) # List datasets available in the selected BioMart database
 mymart &lt;- useMart(&quot;plants_mart&quot;, dataset=&quot;athaliana_eg_gene&quot;, host=&quot;plants.ensembl.org&quot;)
 listAttributes(mymart) # List available features 
@@ -2544,64 +2536,18 @@ getSeq(FaFile(&quot;./data/test&quot;), gff)
 </code></pre>
 <h4 id="extracttranscriptseqs"><code>extractTranscriptSeqs</code></h4>
 <p>Sequences composed of several ranges, such as transcripts (or CDSs) with several exons, can be parsed with <code>extractTranscriptSeqs</code>.
-Note: the following expects the genome sequence in a file called <code>mygenome.fasta</code> and a valid <code>txdb</code> defining the ranges for that
+Note: the following expects the genome sequence in a file with path <code>data/test</code> and a valid <code>txdb</code> defining the ranges for that
 genome.</p>
 <pre><code class="language-r">library(GenomicFeatures); library(Biostrings); library(Rsamtools)
-indexFa(&quot;mygenome.fasta&quot;) # Creates index for genome fasta
-txseq &lt;- extractTranscriptSeqs(FaFile(&quot;mygenome.fasta&quot;), txdb, use.names=TRUE) 
+txdb &lt;- loadDb(&quot;./data/TAIR10.sqlite&quot;)
+indexFa(&quot;data/test&quot;) # Creates index for genome fasta
+</code></pre>
+<pre><code>## [1] &quot;data/test.fai&quot;
+</code></pre>
+<pre><code class="language-r">txseq &lt;- extractTranscriptSeqs(FaFile(&quot;data/test&quot;), txdb, use.names=TRUE) 
 </code></pre>
 <h2 id="homework-6">Homework 6</h2>
-<h3 id="hw6a---demultiplexing">HW6a - Demultiplexing</h3>
-<p>Write a demultiplexing function that accepts any number of
-barcodes and splits a FASTQ file into as many subfiles as there are barcodes.
-At the same time the function should remove low quality tails from the reads.
-The following function accomplishes the first step. Expand this function so
-that it performs the second step as well.</p>
-<pre><code class="language-r">demultiplex &lt;- function(x, barcode, nreads) {
-    f &lt;- FastqStreamer(x, nreads) 
-    while(length(fq &lt;- yield(f))) {
-        for(i in barcode) {
-            pattern &lt;- paste(&quot;^&quot;, i, sep=&quot;&quot;)
-            fqsub &lt;- fq[grepl(pattern, sread(fq))] 
-            if(length(fqsub) &gt; 0) {
-                writeFastq(fqsub, paste(x, i, sep=&quot;_&quot;), mode=&quot;a&quot;, compress=FALSE)
-            }
-        }
-    }
-    close(f)
-}
-demultiplex(x=fastq[1], barcode=c(&quot;TT&quot;, &quot;AA&quot;, &quot;GG&quot;), nreads=50)
-</code></pre>
-<h3 id="hw6b---sequence-parsing">HW6b - Sequence Parsing</h3>
-<ul>
-<li>Download <code>GFF</code> from <em>Halobacterium sp</em> <a href="ftp://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Bacteria/Halobacterium_sp_uid217/AE004437.gff">here</a></li>
-<li>Download genome sequence from <em>Halobacterium sp</em> <a href="ftp://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Bacteria/Halobacterium_sp_uid217/AE004437.fna">here</a></li>
-<li><strong>Task 1</strong> Extract gene ranges, parse their sequences from genome and translate them into proteins</li>
-<li><strong>Task 2</strong> Reduce overlapping genes and parse their sequences from genome</li>
-<li><strong>Task 3</strong> Generate intergenic ranges and parse their sequences from genome</li>
-</ul>
-<p><strong>Useful commands</strong></p>
-<pre><code class="language-r">download.file(&quot;ftp://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Bacteria/Halobacterium_sp_uid217/AE004437.gff&quot;, &quot;data/AE004437.gff&quot;)
-download.file(&quot;ftp://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Bacteria/Halobacterium_sp_uid217/AE004437.fna&quot;, &quot;data/AE004437.fna&quot;)
-chr &lt;- readDNAStringSet(&quot;data/AE004437.fna&quot;)
-gff &lt;- import(&quot;data/AE004437.gff&quot;)
-gffgene &lt;- gff[values(gff)[,&quot;type&quot;]==&quot;gene&quot;]
-gene &lt;- DNAStringSet(Views(chr[[1]], IRanges(start(gffgene), end(gffgene))))
-names(gene) &lt;- values(gffgene)[,&quot;locus_tag&quot;]
-pos &lt;- values(gffgene[strand(gffgene) == &quot;+&quot;])[,&quot;locus_tag&quot;]
-p1 &lt;- translate(gene[names(gene) %in% pos])
-names(p1) &lt;- names(gene[names(gene) %in% pos])
-neg &lt;- values(gffgene[strand(gffgene) == &quot;-&quot;])[,&quot;locus_tag&quot;]
-p2 &lt;- translate(reverseComplement(gene[names(gene) %in% neg]))
-names(p2) &lt;- names(gene[names(gene) %in% neg])
-writeXStringSet(c(p1, p2), &quot;./data/mypep.fasta&quot;)
-</code></pre>
-<h3 id="homework-submission">Homework submission</h3>
-<p>Submit the homework results in one well structured and annotated R script to the instructor. The script should include instructions on how to use the functions.</p>
-<h3 id="due-date">Due date</h3>
-<p>This homework is due on …</p>
-<h3 id="homework-solutions">Homework Solutions</h3>
-<p>See <a href="">here</a></p>
+<p>See <a href="https://girke.bioinformatics.ucr.edu/GEN242/assignments/homework/hw06/hw06/">here</a>.</p>
 <h2 id="session-info">Session Info</h2>
 <pre><code class="language-r">sessionInfo()
 </code></pre>
@@ -2680,7 +2626,7 @@ writeXStringSet(c(p1, p2), &quot;./data/mypep.fasta&quot;)
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-18: <a  href="https://github.com/tgirke/GEN242//commit/c8dffd1a2ab78c50b8fe61bce883022bd4f1c5d8">some edits (c8dffd1a)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-21: <a  href="https://github.com/tgirke/GEN242//commit/27428950d77d56aa9c1dbad3140630a7db5d6c10">some edits (27428950)</a>
 </div>
 </div>
 
