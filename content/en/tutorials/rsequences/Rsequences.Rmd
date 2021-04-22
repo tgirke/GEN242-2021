@@ -717,6 +717,7 @@ library(GenomicFeatures); library(Biostrings); library(Rsamtools)
 txdb <- loadDb("./data/TAIR10.sqlite")
 indexFa("data/test") # Creates index for genome fasta
 txseq <- extractTranscriptSeqs(FaFile("data/test"), txdb, use.names=TRUE) 
+txseq
 ```
 
 ## Homework 6
