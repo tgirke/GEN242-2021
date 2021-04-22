@@ -107,8 +107,8 @@ library(batchtools)
 myFct <- function(x) {
     Sys.sleep(10) # to see job in queue, pause for 10 sec
     result <- cbind(iris[x, 1:4,],
-        Node=system("hostname", intern=TRUE),
-        Rversion=paste(R.Version()[6:7], collapse="."))
+                    Node=system("hostname", intern=TRUE),
+                    Rversion=paste(R.Version()[6:7], collapse="."))
     }
 ```
 

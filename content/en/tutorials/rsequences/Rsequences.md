@@ -1,7 +1,7 @@
 ---
 title: NGS Analysis Basics
 author: "Author: Thomas Girke"
-date: "Last update: 18 April, 2021" 
+date: "Last update: 21 April, 2021" 
 output:
   html_document:
     toc: true
@@ -157,11 +157,11 @@ substring(myseq, c(1,4,7), c(2,6,10)) # Positional parsing of many strings
 #### Random DNA sequences of any length
 
 ``` r
-rand <- sapply(1:100, function(x) paste(sample(c("A","T","G","C"), sample(10:20), replace=T), collapse=""))
+rand <- sapply(1:100, function(x) paste(sample(c("A","T","G","C"), sample(10:20), replace=TRUE), collapse=""))
 rand[1:3]
 ```
 
-    ## [1] "CACGATCACGTCCGCTA" "AGTATTCTAGGCGATGG" "GAGAACTTCTCGAG"
+    ## [1] "TAGACCGGCTGCTAAATG" "ACTGCGTGCAATGCACAA" "ATGGGGCTCACACAG"
 
 #### Count identical sequences
 
@@ -217,12 +217,12 @@ unlist(rand_set)
 ### Sequence Import and Export
 
 Download the following sequences to your current working directory and then import them into R:
-<ftp://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Bacteria/Halobacterium_sp_uid217/AE004437.ffn>
+<https://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Bacteria/Halobacterium_sp_uid217/AE004437.ffn>
 
 ``` r
 dir.create("data", showWarnings = FALSE)
-# system("wget ftp://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Bacteria/Halobacterium_sp_uid217/AE004437.ffn")
-download.file("ftp://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Bacteria/Halobacterium_sp_uid217/AE004437.ffn", "data/AE004437.ffn")
+# system("wget https://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Bacteria/Halobacterium_sp_uid217/AE004437.ffn")
+download.file("https://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Bacteria/Halobacterium_sp_uid217/AE004437.ffn", "data/AE004437.ffn")
 ```
 
 Import FASTA file with `readDNAStringSet`

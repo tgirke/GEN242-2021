@@ -825,7 +825,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.287c77619e133ae778e78643c29098bb.json"
+  data-offline-search-index-json-src="../../../offline-search-index.ce8eadcfc17dcd91bf4fc00b5c20d6a4.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -857,7 +857,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.287c77619e133ae778e78643c29098bb.json"
+  data-offline-search-index-json-src="../../../offline-search-index.ce8eadcfc17dcd91bf4fc00b5c20d6a4.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1299,10 +1299,10 @@ as.numeric(pos2[[1]]); attributes(pos2[[1]])$match.length # Returns positions of
 </code></pre>
 <h3 id="random-sequence-generation">Random Sequence Generation</h3>
 <h4 id="random-dna-sequences-of-any-length">Random DNA sequences of any length</h4>
-<pre><code class="language-r">rand &lt;- sapply(1:100, function(x) paste(sample(c(&quot;A&quot;,&quot;T&quot;,&quot;G&quot;,&quot;C&quot;), sample(10:20), replace=T), collapse=&quot;&quot;))
+<pre><code class="language-r">rand &lt;- sapply(1:100, function(x) paste(sample(c(&quot;A&quot;,&quot;T&quot;,&quot;G&quot;,&quot;C&quot;), sample(10:20), replace=TRUE), collapse=&quot;&quot;))
 rand[1:3]
 </code></pre>
-<pre><code>## [1] &quot;CACGATCACGTCCGCTA&quot; &quot;AGTATTCTAGGCGATGG&quot; &quot;GAGAACTTCTCGAG&quot;
+<pre><code>## [1] &quot;TAGACCGGCTGCTAAATG&quot; &quot;ACTGCGTGCAATGCACAA&quot; &quot;ATGGGGCTCACACAG&quot;
 </code></pre>
 <h4 id="count-identical-sequences">Count identical sequences</h4>
 <pre><code class="language-r">table(c(rand[1:4], rand[1]))
@@ -1348,10 +1348,10 @@ unlist(rand_set)
 </ul>
 <h3 id="sequence-import-and-export">Sequence Import and Export</h3>
 <p>Download the following sequences to your current working directory and then import them into R:
-<a href="ftp://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Bacteria/Halobacterium_sp_uid217/AE004437.ffn">ftp://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Bacteria/Halobacterium_sp_uid217/AE004437.ffn</a></p>
+<a href="https://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Bacteria/Halobacterium_sp_uid217/AE004437.ffn">https://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Bacteria/Halobacterium_sp_uid217/AE004437.ffn</a></p>
 <pre><code class="language-r">dir.create(&quot;data&quot;, showWarnings = FALSE)
-# system(&quot;wget ftp://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Bacteria/Halobacterium_sp_uid217/AE004437.ffn&quot;)
-download.file(&quot;ftp://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Bacteria/Halobacterium_sp_uid217/AE004437.ffn&quot;, &quot;data/AE004437.ffn&quot;)
+# system(&quot;wget https://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Bacteria/Halobacterium_sp_uid217/AE004437.ffn&quot;)
+download.file(&quot;https://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Bacteria/Halobacterium_sp_uid217/AE004437.ffn&quot;, &quot;data/AE004437.ffn&quot;)
 </code></pre>
 <p>Import FASTA file with <code>readDNAStringSet</code></p>
 <pre><code class="language-r">myseq &lt;- readDNAStringSet(&quot;data/AE004437.ffn&quot;)

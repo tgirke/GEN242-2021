@@ -320,7 +320,7 @@ of each user group. The path of `bigdata` and `bigdata-shared` is as follows:
 All lab members share the same bigdata pool. The course number `gen242` is used as `labname`
 for user accounts adminstered under GEN242 (here /bigdata/gen242/shared).
 
-The disk usage of `home` and `bigdata` can be monitored on the [HPCC Cluster Dashboard](https://dashboard.bioinfo.ucr.edu/).
+The disk usage of `home` and `bigdata` can be monitored on the [HPCC Cluster Dashboard](https://dashboard.hpcc.ucr.edu/).
 
 
 ## Queuing system: `Slurm` 
