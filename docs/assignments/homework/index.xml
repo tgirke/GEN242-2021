@@ -38,11 +38,11 @@ Rscript -e &#34;rmarkdown::render(&#39;HW4_key.Rmd&#39;, c(&#39;html_document&#3
 &lt;h1 id=&#34;rendering-instructions&#34;&gt;Rendering Instructions&lt;/h1&gt;
 &lt;p&gt;To render this R Markdown document, one needs to download the following files to the same directory.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;[ &lt;a href=&#34;https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/HW4_key.Rmd&#34;&gt;.Rmd&lt;/a&gt; ]    &lt;/li&gt;
-&lt;li&gt;[ &lt;a href=&#34;https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/pairwiseAlign_Fct.R&#34;&gt;Fct.R&lt;/a&gt; ]&lt;/li&gt;
-&lt;li&gt;[ &lt;a href=&#34;https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/bibtex.bib&#34;&gt;bibtex.bib&lt;/a&gt; ]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/HW4_key.Rmd&#34;&gt;HW4_key.Rmd&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/pairwiseAlign_Fct.R&#34;&gt;pairwiseAlign_Fct.R&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/bibtex.bib&#34;&gt;bibtex.bib&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;After this the HTML report can be rendered the corresponding directory with &lt;code&gt;rmarkdown::render()&lt;/code&gt; as follows.&lt;/p&gt;
+&lt;p&gt;After this the HTML report can be rendered from the corresponding directory with &lt;code&gt;rmarkdown::render()&lt;/code&gt; as follows.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;rmarkdown::render(&#39;HW4_key.Rmd&#39;) # From R
 Rscript -e &amp;quot;rmarkdown::render(&#39;HW4_key.Rmd&#39;)&amp;quot; # From command-line
 &lt;/code&gt;&lt;/pre&gt;

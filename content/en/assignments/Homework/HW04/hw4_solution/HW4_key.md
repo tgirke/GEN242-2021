@@ -41,11 +41,11 @@ Source code downloads:    
 
 To render this R Markdown document, one needs to download the following files to the same directory.
 
--   \[ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/HW4_key.Rmd) \]    
--   \[ [Fct.R](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/pairwiseAlign_Fct.R) \]
--   \[ [bibtex.bib](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/bibtex.bib) \]
+-   [HW4\_key.Rmd](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/HW4_key.Rmd)
+-   [pairwiseAlign\_Fct.R](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/pairwiseAlign_Fct.R)
+-   [bibtex.bib](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/bibtex.bib)
 
-After this the HTML report can be rendered the corresponding directory with `rmarkdown::render()` as follows.
+After this the HTML report can be rendered from the corresponding directory with `rmarkdown::render()` as follows.
 
 ``` r
 rmarkdown::render('HW4_key.Rmd') # From R
