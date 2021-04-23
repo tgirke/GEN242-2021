@@ -139,7 +139,7 @@ if(TRUE) {
 }
 ```
 
-In the `else` component, avoid inserting newlines between ‘} else.’
+In the `else` component, avoid inserting newlines between `} else`.
 
 **Example**
 
