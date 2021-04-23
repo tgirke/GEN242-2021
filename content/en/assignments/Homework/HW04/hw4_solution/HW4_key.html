@@ -288,7 +288,19 @@ div.tocify {
 Rscript -e "rmarkdown::render('HW4_key.Rmd', c('html_document'), clean=FALSE)"
 -->
 <div style="text-align: right">
-<p>Source code downloads:     [ <a href="https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/HW4_key.Rmd">.Rmd</a> ]     [ <a href="https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/pairwiseAlign_Fct.R">Fct.R</a> ]</p>
+<p>Source code downloads:     [ <a href="https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/HW4_key.Rmd">.Rmd</a> ]     [ <a href="https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/pairwiseAlign_Fct.R">pairwiseAlign_Fct.R</a> ]</p>
+</div>
+<div id="rendering-instructions" class="section level1">
+<h1>Rendering Instructions</h1>
+<p>To render this R Markdown document, one needs to download the following files to the same directory.</p>
+<ul>
+<li>[ <a href="https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/HW4_key.Rmd">.Rmd</a> ]    </li>
+<li>[ <a href="https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/pairwiseAlign_Fct.R">Fct.R</a> ]</li>
+<li>[ <a href="https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/bibtex.bib">bibtex.bib</a> ]</li>
+</ul>
+<p>After this the HTML report can be rendered the corresponding directory with <code>rmarkdown::render()</code> as follows.</p>
+<pre class="r"><code>rmarkdown::render(&#39;HW4_key.Rmd&#39;) # From R
+Rscript -e &quot;rmarkdown::render(&#39;HW4_key.Rmd&#39;)&quot; # From command-line</code></pre>
 </div>
 <div id="a.-choice-of-sequence-type" class="section level1">
 <h1>A. Choice of Sequence Type</h1>
@@ -302,6 +314,7 @@ Rscript -e "rmarkdown::render('HW4_key.Rmd', c('html_document'), clean=FALSE)"
 P98187: FIPFSAGPRNCIGQK</code></pre>
 <div id="source-functions" class="section level2">
 <h2>Source functions</h2>
+<p>All alignment functions used in the following sections are defined in the downloaded R script file that is named <code>pairwiseAlign_Fct.R</code>. These functions are loaded with the <code>source()</code> command below.</p>
 <pre class="r"><code>source(&quot;pairwiseAlign_Fct.R&quot;)</code></pre>
 </div>
 <div id="input-sequences" class="section level2">

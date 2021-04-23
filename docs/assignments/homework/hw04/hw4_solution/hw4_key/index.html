@@ -18,27 +18,30 @@
 <link rel="icon" type="image/png" href="../../../../../favicons/android-192x192.png" sizes="192x192">
 
 <title>HW4: Pairwise Alignments | GEN242</title><meta property="og:title" content="HW4: Pairwise Alignments" />
-<meta property="og:description" content="Source code downloads: [ .Rmd ] [ Fct.R ]
- A. Choice of Sequence Type Task 1: Which sequence type - amino acid or nucleotide - is more appropriate to search databases for remotely related sequences? Provide at least three reasons for your decision.
-Answer: When coding sequences are expected to have weak similarities then one should use protein sequences rather than DNA sequences for database searching, because of (1) their higher information content (20 versus 4 letter alphabet), as well as (2) the better scoring and (3) functional classification systems available for amino acids." />
+<meta property="og:description" content="Source code downloads: [ .Rmd ] [ pairwiseAlign_Fct.R ]
+ Rendering Instructions To render this R Markdown document, one needs to download the following files to the same directory.
+ [ .Rmd ]  [ Fct.R ] [ bibtex.bib ]  After this the HTML report can be rendered the corresponding directory with rmarkdown::render() as follows.
+rmarkdown::render(&#39;HW4_key.Rmd&#39;) # From R Rscript -e &quot;rmarkdown::render(&#39;HW4_key.Rmd&#39;)&quot; # From command-line  A. Choice of Sequence Type Task 1: Which sequence type - amino acid or nucleotide - is more appropriate to search databases for remotely related sequences?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/assignments/homework/hw04/hw4_solution/hw4_key/" />
-<meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-04-22T21:17:45-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="HW4: Pairwise Alignments">
-<meta itemprop="description" content="Source code downloads: [ .Rmd ] [ Fct.R ]
- A. Choice of Sequence Type Task 1: Which sequence type - amino acid or nucleotide - is more appropriate to search databases for remotely related sequences? Provide at least three reasons for your decision.
-Answer: When coding sequences are expected to have weak similarities then one should use protein sequences rather than DNA sequences for database searching, because of (1) their higher information content (20 versus 4 letter alphabet), as well as (2) the better scoring and (3) functional classification systems available for amino acids.">
-
-<meta itemprop="wordCount" content="2673">
+<meta itemprop="description" content="Source code downloads: [ .Rmd ] [ pairwiseAlign_Fct.R ]
+ Rendering Instructions To render this R Markdown document, one needs to download the following files to the same directory.
+ [ .Rmd ]  [ Fct.R ] [ bibtex.bib ]  After this the HTML report can be rendered the corresponding directory with rmarkdown::render() as follows.
+rmarkdown::render(&#39;HW4_key.Rmd&#39;) # From R Rscript -e &quot;rmarkdown::render(&#39;HW4_key.Rmd&#39;)&quot; # From command-line  A. Choice of Sequence Type Task 1: Which sequence type - amino acid or nucleotide - is more appropriate to search databases for remotely related sequences?">
+<meta itemprop="dateModified" content="2021-04-22T21:17:45-07:00" />
+<meta itemprop="wordCount" content="2755">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="HW4: Pairwise Alignments"/>
-<meta name="twitter:description" content="Source code downloads: [ .Rmd ] [ Fct.R ]
- A. Choice of Sequence Type Task 1: Which sequence type - amino acid or nucleotide - is more appropriate to search databases for remotely related sequences? Provide at least three reasons for your decision.
-Answer: When coding sequences are expected to have weak similarities then one should use protein sequences rather than DNA sequences for database searching, because of (1) their higher information content (20 versus 4 letter alphabet), as well as (2) the better scoring and (3) functional classification systems available for amino acids."/>
+<meta name="twitter:description" content="Source code downloads: [ .Rmd ] [ pairwiseAlign_Fct.R ]
+ Rendering Instructions To render this R Markdown document, one needs to download the following files to the same directory.
+ [ .Rmd ]  [ Fct.R ] [ bibtex.bib ]  After this the HTML report can be rendered the corresponding directory with rmarkdown::render() as follows.
+rmarkdown::render(&#39;HW4_key.Rmd&#39;) # From R Rscript -e &quot;rmarkdown::render(&#39;HW4_key.Rmd&#39;)&quot; # From command-line  A. Choice of Sequence Type Task 1: Which sequence type - amino acid or nucleotide - is more appropriate to search databases for remotely related sequences?"/>
 
 
 <script type="application/javascript">
@@ -822,7 +825,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../../offline-search-index.ba369ab8a69b2aba503842d3f6107309.json"
+  data-offline-search-index-json-src="../../../../../offline-search-index.23860fc5c22409d56c5deb43cd8591e2.json"
   data-offline-search-base-href="../../../../../"
   data-offline-search-max-results="10"
 >
@@ -854,7 +857,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../../offline-search-index.ba369ab8a69b2aba503842d3f6107309.json"
+  data-offline-search-index-json-src="../../../../../offline-search-index.23860fc5c22409d56c5deb43cd8591e2.json"
   data-offline-search-base-href="../../../../../"
   data-offline-search-max-results="10"
 >
@@ -1255,8 +1258,19 @@ Rscript -e "rmarkdown::render('HW4_key.Rmd', c('html_document'), clean=FALSE)"
 <div style="text-align: right">
 <p>Source code downloads:    
 [ <a href="https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/HW4_key.Rmd">.Rmd</a> ]    
-[ <a href="https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/pairwiseAlign_Fct.R">Fct.R</a> ]</p>
+[ <a href="https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/pairwiseAlign_Fct.R">pairwiseAlign_Fct.R</a> ]</p>
 </div>
+<h1 id="rendering-instructions">Rendering Instructions</h1>
+<p>To render this R Markdown document, one needs to download the following files to the same directory.</p>
+<ul>
+<li>[ <a href="https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/HW4_key.Rmd">.Rmd</a> ]    </li>
+<li>[ <a href="https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/pairwiseAlign_Fct.R">Fct.R</a> ]</li>
+<li>[ <a href="https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/bibtex.bib">bibtex.bib</a> ]</li>
+</ul>
+<p>After this the HTML report can be rendered the corresponding directory with <code>rmarkdown::render()</code> as follows.</p>
+<pre><code class="language-r">rmarkdown::render('HW4_key.Rmd') # From R
+Rscript -e &quot;rmarkdown::render('HW4_key.Rmd')&quot; # From command-line
+</code></pre>
 <h1 id="a-choice-of-sequence-type">A. Choice of Sequence Type</h1>
 <p>Task 1: Which sequence type - amino acid or nucleotide - is more appropriate to search databases
 for remotely related sequences? Provide at least three reasons for your decision.</p>
@@ -1273,6 +1287,8 @@ Smith-Waterman algorithms, respectively (Smith and Waterman 1981; Needleman and 
 P98187: FIPFSAGPRNCIGQK
 </code></pre>
 <h2 id="source-functions">Source functions</h2>
+<p>All alignment functions used in the following sections are defined in the downloaded R script file
+that is named <code>pairwiseAlign_Fct.R</code>. These functions are loaded with the <code>source()</code> command below.</p>
 <pre><code class="language-r">source(&quot;pairwiseAlign_Fct.R&quot;)
 </code></pre>
 <h2 id="input-sequences">Input sequences</h2>
@@ -3328,7 +3344,7 @@ sequences (<em>e.g.</em> BLOSOM 80).</p>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 0001-01-01
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-22: <a  href="https://github.com/tgirke/GEN242//commit/84fef8150b54d1edeb029d9638cf5dfa61c26d20">some edits (84fef815)</a>
 </div>
 </div>
 

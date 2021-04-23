@@ -33,9 +33,24 @@ Rscript -e "rmarkdown::render('HW4_key.Rmd', c('html_document'), clean=FALSE)"
 
 Source code downloads:    
 \[ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/HW4_key.Rmd) \]    
-\[ [Fct.R](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/pairwiseAlign_Fct.R) \]
+\[ [pairwiseAlign\_Fct.R](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/pairwiseAlign_Fct.R) \]
 
 </div>
+
+# Rendering Instructions
+
+To render this R Markdown document, one needs to download the following files to the same directory.
+
+-   \[ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/HW4_key.Rmd) \]    
+-   \[ [Fct.R](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/pairwiseAlign_Fct.R) \]
+-   \[ [bibtex.bib](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/bibtex.bib) \]
+
+After this the HTML report can be rendered the corresponding directory with `rmarkdown::render()` as follows.
+
+``` r
+rmarkdown::render('HW4_key.Rmd') # From R
+Rscript -e "rmarkdown::render('HW4_key.Rmd')" # From command-line
+```
 
 # A. Choice of Sequence Type
 
@@ -60,6 +75,9 @@ P98187: FIPFSAGPRNCIGQK
 ```
 
 ## Source functions
+
+All alignment functions used in the following sections are defined in the downloaded R script file
+that is named `pairwiseAlign_Fct.R`. These functions are loaded with the `source()` command below.
 
 ``` r
 source("pairwiseAlign_Fct.R")
