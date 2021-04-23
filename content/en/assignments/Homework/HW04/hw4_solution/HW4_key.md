@@ -52,7 +52,7 @@ rmarkdown::render('HW4_key.Rmd') # From R
 Rscript -e "rmarkdown::render('HW4_key.Rmd')" # From command-line
 ```
 
-To render a PDF instead of an HTML document, then one can instruct the rendering function to do so like this: `rmarkdown::render('HW4_key.Rmd', c('pdf_document')`.
+To render a PDF file instead of HTML, one can instruct the rendering function to do so like this: `rmarkdown::render('HW4_key.Rmd', c('pdf_document')`.
 
 # A. Choice of Sequence Type
 
