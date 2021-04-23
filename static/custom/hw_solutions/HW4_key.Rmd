@@ -1,0 +1,211 @@
+---
+title: "HW4: Pairwise Alignments" 
+author: "Author: Your Name"
+date: "Last update: `r format(Sys.time(), '%d %B, %Y')`" 
+output:
+  html_document:
+    toc: true
+    toc_float:
+        collapsed: true
+        smooth_scroll: true
+    toc_depth: 3
+    fig_caption: yes
+    code_folding: show
+    number_sections: false
+fontsize: 14pt
+bibliography: bibtex.bib
+type: docs
+weight: 5
+---
+
+<!---
+- Compile from command-line
+Rscript -e "rmarkdown::render('HW4_key.Rmd', c('html_document'), clean=FALSE)"
+-->
+
+# A. Choice of Sequence Type
+Task 1: Which sequence type - amino acid or nucleotide - is more appropriate to search databases 
+for remotely related sequences? Provide at least three reasons for your decision.
+
+Answer: When coding sequences are expected to have weak similarities then one
+should use protein sequences rather than DNA sequences for database searching, 
+because of (1) their higher information content (20 versus 4 letter alphabet), 
+as well as (2) the better scoring and (3) functional classification systems available 
+for amino acids.
+
+# B. Dynamic Programming for Pairwise Alignments
+
+Task 2: Create manually (or write an R script for it) one global and one local
+alignment for the following two protein sequences using the Needleman-Wusch and
+Smith-Waterman algorithms, respectively [@Smith1981-ax; @Needleman1970-md].
+
+```sh
+O15528: PFGFGKRSCMGRRLA
+P98187: FIPFSAGPRNCIGQK
+```
+
+## Source functions 
+
+```{r source_pairalign_fct, eval=TRUE, message=FALSE}
+source("pairwiseAlign_Fct.R")
+```
+
+## Input sequences
+
+Define within R or import them (here former).
+
+```{r input_seq1, eval=TRUE}
+S1 <- "PFGFGKRSCMGRRLA"
+S2 <- "FIPFSAGPRNCIGQK"
+```
+
+Additional test sequences
+
+```{r input_seq2, eval=FALSE}
+# S1 <- "HEAGAWGHEE"
+# S2 <- "PAWHEAE"
+```
+
+## Global alignment 
+
+The alignment type choice is passed on to all following functions.
+
+```{r align_type, eval=TRUE, message=FALSE}
+align_type <- "global"
+# align_type <- "local"
+```
+
+### Dynamic programming matrices 
+
+```{r gen_dynProgMatrix, eval=TRUE, message=FALSE}
+dynMA <- dynProgMatrix(S1, S2, align_method=align_type, gap_penalty=8, substitutionMA="BLOSUM50")
+```
+
+The matrices are stored in a list and returned below.
+
+```{r print_dynProgMatrix, eval=TRUE, message=FALSE}
+dynMA
+```
+
+### Compute alignment
+
+The following `alignList` stores all relevant results in a list, including dynamic 
+programming matrices, as well as the coordinates (named `path_coor`) to highlight path in 
+dynamic progamming matrix (see below). 
+
+```{r gen_alignmentTraceback, eval=TRUE, message=FALSE}
+alignList <- alignmentTraceback(ma=dynMA[[1]], ma_path=dynMA[[2]], align_method=align_type) 
+names(alignList)
+# alignList$ma # dyn ma with scores
+# alignList$ma_path # dyn ma with path
+# alignList$path_coor # coordinates for path to auto highlight path in HTML/PDF table
+```
+
+### Return results
+
+#### Traceback in matrix 
+
+The following prints the fully populated dynamic programming matrix where the traceback 
+path is highlighted in color.
+
+```{r gen_alignmentTraceback_Matrix, eval=TRUE, message=FALSE}
+printColMa(alignList)
+```
+
+#### Alignment and score
+
+```{r gen_alignment, eval=TRUE, message=FALSE}
+printAlign(x=alignList)
+```
+
+## Local alignment 
+
+The alignment type choice is passed on to all following functions.
+
+```{r align_type_loc, eval=TRUE, message=FALSE}
+# align_type <- "global"
+align_type <- "local"
+```
+
+### Dynamic programming matrices 
+
+```{r gen_dynProgMatrix_loc, eval=TRUE, message=FALSE}
+dynMA <- dynProgMatrix(S1, S2, align_method=align_type, gap_penalty=8, substitutionMA="BLOSUM50")
+```
+
+The matrices are stored in a list and returned below.
+
+```{r print_dynProgMatrix_loc, eval=TRUE, message=FALSE}
+dynMA
+```
+
+### Compute alignment
+
+Note: `alignList` stores all relevant results in a list, including dynamic 
+programming matrices, as well as the coordinates (named `path_coor`) to highlight path in 
+dynamic progamming matrix. This way on can easily show single dynamic programming matrix
+with path highlighted in color or arrows in an HTML or PDF document.
+
+```{r gen_alignmentTraceback_loc, eval=TRUE, message=FALSE}
+alignList <- alignmentTraceback(ma=dynMA[[1]], ma_path=dynMA[[2]], align_method=align_type) 
+names(alignList)
+# alignList$ma # dyn ma with scores
+# alignList$ma_path # dyn ma with path
+# alignList$path_coor # coordinates for path to auto highlight path in HTML/PDF table
+```
+
+### Return results
+
+#### Traceback in matrix 
+
+The following prints the fully populated dynamic programming matrix where the traceback 
+path is highlighted in color.
+
+```{r gen_alignmentTraceback_Matrix_loc, eval=TRUE, message=FALSE}
+printColMa(alignList)
+```
+
+#### Alignment and score
+
+```{r gen_alignment_loc, eval=TRUE, message=FALSE}
+printAlign(x=alignList)
+```
+
+# C. Different Substitution Matrices
+Task 1: Load the Biostrings package in R, import the following two cytochrome
+P450 sequences O15528 and P98187 from NCBI (save as myseq.fasta), and create a
+global alignment with the pairwiseAlignment function from Biostrings as
+follows.
+
+```{r alignment_scores_biostrings, eval=FALSE, message=FALSE}
+library(Biostrings)
+myseq <- readAAStringSet("myseq.fasta", "fasta")
+(p <- pairwiseAlignment(myseq[[1]], myseq[[2]], type="global", substitutionMatrix="BLOSUM50"))
+writePairwiseAlignments(p)
+```
+
+Your answers should address the following items:
+
+Record the scores for the scoring matrices BLOSUM50, BLOSUM62 and BLOSUM80.
+How and why do the scores differ for the three scoring matrices?
+
+Answer 1: The scores for the three BLOSUM substitutions matrices are:
+
++ BLOSUM50: 227 
++ BLOSUM62: 54
++ BLOSUM80: -52
+
+Answer 2: Since the two sequences are relatively dissimilar (as determined by alignment view from
+`writePairwiseAlignments(p)`) it is expected that the BLOSUM matrices trained on more dissimilar
+sequences (_e.g._ BLSOSOM50) will result in higher scores than those trained on less similar 
+sequences (_e.g._ BLOSOM 80).
+
+
+# Session Info
+
+```{r sessionInfo}
+sessionInfo()
+```
+
+# References
+
