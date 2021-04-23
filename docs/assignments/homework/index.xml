@@ -84,7 +84,13 @@ S2 &amp;lt;- &amp;quot;FIPFSAGPRNCIGQK&amp;quot;
 &lt;h3 id=&#34;dynamic-programming-matrices&#34;&gt;Dynamic programming matrices&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;dynMA &amp;lt;- dynProgMatrix(S1, S2, align_method=align_type, gap_penalty=8, substitutionMA=&amp;quot;BLOSUM50&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The matrices are stored in a list and returned below.&lt;/p&gt;
+&lt;p&gt;The matrices are stored in a list and returned below. The path is indicated by three numbers in the &lt;code&gt;glob_ma_path&lt;/code&gt; matrix.
+Their meaning is:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1: diagonal&lt;/li&gt;
+&lt;li&gt;2: vertical (up)&lt;/li&gt;
+&lt;li&gt;3: horizontal (left)&lt;/li&gt;
+&lt;/ul&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;dynMA
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## $glob_ma

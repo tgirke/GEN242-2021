@@ -107,7 +107,12 @@ align_type <- "global"
 dynMA <- dynProgMatrix(S1, S2, align_method=align_type, gap_penalty=8, substitutionMA="BLOSUM50")
 ```
 
-The matrices are stored in a list and returned below.
+The matrices are stored in a list and returned below. The path is indicated by three numbers in the `glob_ma_path` matrix.
+Their meaning is: 
+
++ 1: diagonal
++ 2: vertical (up)
++ 3: horizontal (left)
 
 ```{r print_dynProgMatrix, eval=TRUE, message=FALSE}
 dynMA
