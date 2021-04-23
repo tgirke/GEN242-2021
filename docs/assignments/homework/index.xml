@@ -1118,9 +1118,9 @@ align_type &amp;lt;- &amp;quot;local&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;compute-alignment-1&#34;&gt;Compute alignment&lt;/h3&gt;
 &lt;p&gt;Note: &lt;code&gt;alignList&lt;/code&gt; stores all relevant results in a list, including dynamic
-programming matrices, as well as the coordinates (named &lt;code&gt;path_coor&lt;/code&gt;) to highlight path in
-dynamic progamming matrix. This way on can easily show single dynamic programming matrix
-with path highlighted in color or arrows in an HTML or PDF document.&lt;/p&gt;
+programming matrices, as well as the coordinates (named &lt;code&gt;path_coor&lt;/code&gt;) to highlight the path in
+the dynamic progamming matrix. This way one can easily generate a single dynamic programming matrix
+with the traceback path highlighted by colors or arrows in an HTML or PDF document (see below).&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;alignList &amp;lt;- alignmentTraceback(ma=dynMA[[1]], ma_path=dynMA[[2]], align_method=align_type) 
 names(alignList)
 &lt;/code&gt;&lt;/pre&gt;

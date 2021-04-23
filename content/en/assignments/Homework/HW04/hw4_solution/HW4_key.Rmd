@@ -173,9 +173,9 @@ dynMA
 ### Compute alignment
 
 Note: `alignList` stores all relevant results in a list, including dynamic 
-programming matrices, as well as the coordinates (named `path_coor`) to highlight path in 
-dynamic progamming matrix. This way on can easily show single dynamic programming matrix
-with path highlighted in color or arrows in an HTML or PDF document.
+programming matrices, as well as the coordinates (named `path_coor`) to highlight the path in 
+the dynamic progamming matrix. This way one can easily generate a single dynamic programming matrix
+with the traceback path highlighted by colors or arrows in an HTML or PDF document (see below).
 
 ```{r gen_alignmentTraceback_loc, eval=TRUE, message=FALSE}
 alignList <- alignmentTraceback(ma=dynMA[[1]], ma_path=dynMA[[2]], align_method=align_type) 

@@ -1366,7 +1366,7 @@ align_type &lt;- &quot;local&quot;</code></pre>
 </div>
 <div id="compute-alignment-1" class="section level3">
 <h3>Compute alignment</h3>
-<p>Note: <code>alignList</code> stores all relevant results in a list, including dynamic programming matrices, as well as the coordinates (named <code>path_coor</code>) to highlight path in dynamic progamming matrix. This way on can easily show single dynamic programming matrix with path highlighted in color or arrows in an HTML or PDF document.</p>
+<p>Note: <code>alignList</code> stores all relevant results in a list, including dynamic programming matrices, as well as the coordinates (named <code>path_coor</code>) to highlight the path in the dynamic progamming matrix. This way one can easily generate a single dynamic programming matrix with the traceback path highlighted by colors or arrows in an HTML or PDF document (see below).</p>
 <pre class="r"><code>alignList &lt;- alignmentTraceback(ma=dynMA[[1]], ma_path=dynMA[[2]], align_method=align_type) 
 names(alignList)</code></pre>
 <pre><code>## [1] &quot;ma&quot;        &quot;ma_path&quot;   &quot;path_coor&quot; &quot;as1&quot;       &quot;consensus&quot; &quot;as2&quot;      
