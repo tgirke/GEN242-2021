@@ -27,7 +27,7 @@ demultiplex &lt;- function(x, barcode, nreads) { f &lt;- FastqStreamer(x, nreads
 <meta itemprop="description" content="Source code downloads: &nbsp; [ .R ]  A. Demultiplexing Write a demultiplexing function that accepts any number of barcodes and splits a FASTQ file into as many subfiles as there are barcodes. At the same time the function should remove low quality tails from the reads. The following function accomplishes the first step. Expand this function so that it performs the second step as well.
 demultiplex &lt;- function(x, barcode, nreads) { f &lt;- FastqStreamer(x, nreads) while(length(fq &lt;- yield(f))) { for(i in barcode) { pattern &lt;- paste(&quot;^&quot;, i, sep=&quot;&quot;) fqsub &lt;- fq[grepl(pattern, sread(fq))] if(length(fqsub) &gt; 0) { writeFastq(fqsub, paste(x, i, sep=&quot;_&quot;), mode=&quot;a&quot;, compress=FALSE) } } } close(f) } demultiplex(x=fastq[1], barcode=c(&quot;TT&quot;, &quot;AA&quot;, &quot;GG&quot;), nreads=50)  B.">
 <meta itemprop="dateModified" content="2021-04-20T18:36:51-07:00" />
-<meta itemprop="wordCount" content="270">
+<meta itemprop="wordCount" content="285">
 
 
 
@@ -819,7 +819,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.13d5f589e56852e23b3ace8f7330250c.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.e74cdee7a89c80c30d884bafe3404edb.json"
   data-offline-search-base-href="../../../../"
   data-offline-search-max-results="10"
 >
@@ -851,7 +851,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.13d5f589e56852e23b3ace8f7330250c.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.e74cdee7a89c80c30d884bafe3404edb.json"
   data-offline-search-base-href="../../../../"
   data-offline-search-max-results="10"
 >
@@ -1270,7 +1270,8 @@ names(p2) &lt;- names(gene[names(gene) %in% neg])
 writeXStringSet(c(p1, p2), &quot;./data/mypep.fasta&quot;)
 </code></pre>
 <h2 id="homework-submission">Homework submission</h2>
-<p>Submit the homework results in one well structured and annotated R script to GitHub classroom. The script should include instructions on how to use the functions.</p>
+<p>Accept the homework on <a href="https://classroom.github.com/a/VD7BHDxW">Github Classroom</a>, and follow the instructions in the <code>README.md</code> file.</p>
+<p>Please submit the homework results in one well structured and annotated R script to GitHub classroom. The script should include instructions on how to use the functions.</p>
 <h2 id="due-date">Due date</h2>
 <p>This homework is due on Thu, April 29 at 6:00 PM.</p>
 <h2 id="homework-solutions">Homework Solutions</h2>

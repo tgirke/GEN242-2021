@@ -2552,7 +2552,8 @@ names(p2) &amp;lt;- names(gene[names(gene) %in% neg])
 writeXStringSet(c(p1, p2), &amp;quot;./data/mypep.fasta&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;homework-submission&#34;&gt;Homework submission&lt;/h2&gt;
-&lt;p&gt;Submit the homework results in one well structured and annotated R script to GitHub classroom. The script should include instructions on how to use the functions.&lt;/p&gt;
+&lt;p&gt;Accept the homework on &lt;a href=&#34;https://classroom.github.com/a/VD7BHDxW&#34;&gt;Github Classroom&lt;/a&gt;, and follow the instructions in the &lt;code&gt;README.md&lt;/code&gt; file.&lt;/p&gt;
+&lt;p&gt;Please submit the homework results in one well structured and annotated R script to GitHub classroom. The script should include instructions on how to use the functions.&lt;/p&gt;
 &lt;h2 id=&#34;due-date&#34;&gt;Due date&lt;/h2&gt;
 &lt;p&gt;This homework is due on Thu, April 29 at 6:00 PM.&lt;/p&gt;
 &lt;h2 id=&#34;homework-solutions&#34;&gt;Homework Solutions&lt;/h2&gt;
