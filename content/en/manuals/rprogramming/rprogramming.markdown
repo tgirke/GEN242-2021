@@ -1,7 +1,7 @@
 ---
 title: "Programming in R" 
 author: "Author: Thomas Girke"
-date: "Last update: 14 April, 2021" 
+date: "Last update: 23 April, 2021" 
 output:
   html_document:
     toc: true
@@ -138,6 +138,8 @@ if(TRUE) {
     statements_2 
 }
 ```
+
+In the `else` component, avoid inserting newlines between ‘} else.’
 
 **Example**
 

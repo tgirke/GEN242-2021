@@ -135,6 +135,8 @@ if(TRUE) {
 }
 ```
 
+In the `else` component, avoid inserting newlines between '} else'.
+
 __Example__
 ```{r if_statement_example, eval=TRUE}
 if(1==0) { 
