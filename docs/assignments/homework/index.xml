@@ -2074,8 +2074,8 @@ How and why do the scores differ for the three scoring matrices?&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;Answer 2: Since the two sequences are relatively dissimilar (as determined by alignment view from
 &lt;code&gt;writePairwiseAlignments(p)&lt;/code&gt;) it is expected that the BLOSUM matrices trained on more dissimilar
-sequences (&lt;em&gt;e.g.&lt;/em&gt; BLSOSOM50) result in higher scores than those trained on less similar
-sequences (&lt;em&gt;e.g.&lt;/em&gt; BLOSOM80).&lt;/p&gt;
+sequences (&lt;em&gt;e.g.&lt;/em&gt; BLOSUM50) result in higher scores than those trained on less similar
+sequences (&lt;em&gt;e.g.&lt;/em&gt; BLOSUM80).&lt;/p&gt;
 &lt;h1 id=&#34;session-info&#34;&gt;Session Info&lt;/h1&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;sessionInfo()
 &lt;/code&gt;&lt;/pre&gt;

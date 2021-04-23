@@ -2154,8 +2154,8 @@ Answer 1: The scores for the three BLOSUM substitutions matrices are:
 
 Answer 2: Since the two sequences are relatively dissimilar (as determined by alignment view from
 `writePairwiseAlignments(p)`) it is expected that the BLOSUM matrices trained on more dissimilar
-sequences (*e.g.* BLSOSOM50) result in higher scores than those trained on less similar
-sequences (*e.g.* BLOSOM80).
+sequences (*e.g.* BLOSUM50) result in higher scores than those trained on less similar
+sequences (*e.g.* BLOSUM80).
 
 # Session Info
 
