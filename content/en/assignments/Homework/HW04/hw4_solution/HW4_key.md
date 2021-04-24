@@ -1,7 +1,7 @@
 ---
 title: "HW4: Pairwise Alignments" 
 author: "Author: Your Name"
-date: "Last update: 22 April, 2021" 
+date: "Last update: 24 April, 2021" 
 output:
   html_document:
     toc: true
@@ -41,9 +41,9 @@ Source code downloads:    
 
 To render this R Markdown document, one needs to download the following files to the same directory.
 
--   [HW4\_key.Rmd](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/HW4_key.Rmd)
--   [pairwiseAlign\_Fct.R](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/pairwiseAlign_Fct.R)
--   [bibtex.bib](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/bibtex.bib)
+-   [HW4\_key.Rmd](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/HW4_key.Rmd): Rmd source file for this document
+-   [pairwiseAlign\_Fct.R](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/pairwiseAlign_Fct.R): R script defining pairwise alignment functions
+-   [bibtex.bib](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/bibtex.bib): references cited in the text in BibTeX format
 
 After this the HTML report can be rendered from the corresponding directory with `rmarkdown::render()` as follows.
 
