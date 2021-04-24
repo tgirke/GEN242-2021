@@ -57,8 +57,7 @@ rmarkdown::render('HW4_key.Rmd') # From R
 Rscript -e "rmarkdown::render('HW4_key.Rmd')" # From command-line
 ```
 
-To render a PDF file instead of HTML, one can instruct the rendering function to do so like this: `rmarkdown::render('HW4_key.Rmd', c('pdf_document')`. The corresponding
-PDF file of this HTML report is [here](https://girke.bioinformatics.ucr.edu/GEN242/assignments/Homework/HW04/hw4_solution/HW4_key.pdf). To render to several formats with
+To render a PDF file instead of HTML, one can instruct the rendering function to do so like this: `rmarkdown::render('HW4_key.Rmd', c('pdf_document')`. To render to several formats with
 a single command, one can concatenate the formatting values with `c('html_document', 'pdf_document')`.
 
 # A. Choice of Sequence Type
