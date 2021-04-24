@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2020.9.29)  24 APR 2021 11:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2020.9.29)  24 APR 2021 11:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -693,18 +693,18 @@ File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 382.
+(Font)              <10> on input line 380.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 382.
+(Font)              <7> on input line 380.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 382.
+(Font)              <5> on input line 380.
 [3] [4] [5] [6]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 720.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 718.
 [7]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 720.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 718.
 (./HW4_key.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 720.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 720.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 718.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 718.
  ) 
 Here is how much of TeX's memory you used:
  13629 strings out of 492615
@@ -721,10 +721,10 @@ m/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf
 /fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10
 .pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts
 /type1/public/lm/lmtti10.pfb>
-Output written on HW4_key.pdf (7 pages, 219913 bytes).
+Output written on HW4_key.pdf (7 pages, 219787 bytes).
 PDF statistics:
- 192 PDF objects out of 1000 (max. 8388607)
- 173 compressed objects within 2 object streams
+ 191 PDF objects out of 1000 (max. 8388607)
+ 172 compressed objects within 2 object streams
  51 named destinations out of 1000 (max. 500000)
  12417 words of extra memory for PDF output out of 14400 (max. 10000000)
 
