@@ -285,7 +285,7 @@ div.tocify {
 
 <!---
 - Compile from command-line
-Rscript -e "rmarkdown::render('HW4_key.Rmd', c('html_document'), clean=FALSE)"
+Rscript -e "rmarkdown::render('HW4_key.Rmd', c('html_document', 'pdf_document'), clean=FALSE)"
 -->
 <div style="text-align: right">
 <p>Source code downloads:     [ <a href="https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/HW4_key.Rmd">.Rmd</a> ]     [ <a href="https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/pairwiseAlign_Fct.R">pairwiseAlign_Fct.R</a> ]</p>
@@ -293,15 +293,23 @@ Rscript -e "rmarkdown::render('HW4_key.Rmd', c('html_document'), clean=FALSE)"
 <div id="rendering-instructions" class="section level1">
 <h1>Rendering Instructions</h1>
 <p>To render this R Markdown document, one needs to download the following files to the same directory.</p>
+<ol style="list-style-type: decimal">
+<li>Source Files__
 <ul>
 <li><a href="https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/HW4_key.Rmd">HW4_key.Rmd</a>: Rmd source file for this document</li>
 <li><a href="https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/pairwiseAlign_Fct.R">pairwiseAlign_Fct.R</a>: R script defining pairwise alignment functions</li>
 <li><a href="https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/bibtex.bib">bibtex.bib</a>: references cited in the text in BibTeX format</li>
-</ul>
+</ul></li>
+<li>Rendered Report
+<ul>
+<li><a href="https://girke.bioinformatics.ucr.edu/GEN242/assignments/Homework/HW04/hw4_solution/HW4_key.html">HTML</a>: this report in HTML format</li>
+<li><a href="https://girke.bioinformatics.ucr.edu/GEN242/assignments/Homework/HW04/hw4_solution/HW4_key.pdf">PDF</a>: corresponding PDF version</li>
+</ul></li>
+</ol>
 <p>After this the HTML report can be rendered from the corresponding directory with <code>rmarkdown::render()</code> as follows.</p>
 <pre class="r"><code>rmarkdown::render(&#39;HW4_key.Rmd&#39;) # From R
 Rscript -e &quot;rmarkdown::render(&#39;HW4_key.Rmd&#39;)&quot; # From command-line</code></pre>
-<p>To render a PDF file instead of HTML, one can instruct the rendering function to do so like this: <code>rmarkdown::render(&#39;HW4_key.Rmd&#39;, c(&#39;pdf_document&#39;)</code>.</p>
+<p>To render a PDF file instead of HTML, one can instruct the rendering function to do so like this: <code>rmarkdown::render(&#39;HW4_key.Rmd&#39;, c(&#39;pdf_document&#39;)</code>. The corresponding PDF file of this HTML report is <a href="https://girke.bioinformatics.ucr.edu/GEN242/assignments/Homework/HW04/hw4_solution/HW4_key.pdf">here</a>. To render to several formats with a single command, one can concatenate the formatting values with <code>c(&#39;html_document&#39;, &#39;pdf_document&#39;)</code>.</p>
 </div>
 <div id="a.-choice-of-sequence-type" class="section level1">
 <h1>A. Choice of Sequence Type</h1>

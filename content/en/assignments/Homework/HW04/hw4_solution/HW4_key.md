@@ -41,9 +41,13 @@ Source code downloads:    
 
 To render this R Markdown document, one needs to download the following files to the same directory.
 
--   [HW4\_key.Rmd](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/HW4_key.Rmd): Rmd source file for this document
--   [pairwiseAlign\_Fct.R](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/pairwiseAlign_Fct.R): R script defining pairwise alignment functions
--   [bibtex.bib](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/bibtex.bib): references cited in the text in BibTeX format
+1.  Source Files\_\_
+    -   [HW4\_key.Rmd](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/HW4_key.Rmd): Rmd source file for this document
+    -   [pairwiseAlign\_Fct.R](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/pairwiseAlign_Fct.R): R script defining pairwise alignment functions
+    -   [bibtex.bib](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/bibtex.bib): references cited in the text in BibTeX format
+2.  Rendered Report
+    -   [HTML](https://girke.bioinformatics.ucr.edu/GEN242/assignments/Homework/HW04/hw4_solution/HW4_key.html): this report in HTML format
+    -   [PDF](https://girke.bioinformatics.ucr.edu/GEN242/assignments/Homework/HW04/hw4_solution/HW4_key.pdf): corresponding PDF version
 
 After this the HTML report can be rendered from the corresponding directory with `rmarkdown::render()` as follows.
 
@@ -53,7 +57,8 @@ Rscript -e "rmarkdown::render('HW4_key.Rmd')" # From command-line
 ```
 
 To render a PDF file instead of HTML, one can instruct the rendering function to do so like this: `rmarkdown::render('HW4_key.Rmd', c('pdf_document')`. The corresponding
-PDF file of this HTML report is [here](https://girke.bioinformatics.ucr.edu/GEN242/assignments/Homework/HW04/hw4_solution/HW4_key.pdf).
+PDF file of this HTML report is [here](https://girke.bioinformatics.ucr.edu/GEN242/assignments/Homework/HW04/hw4_solution/HW4_key.pdf). To render to several formats with
+a single command, one can concatenate the formatting values with `c('html_document', 'pdf_document')`.
 
 # A. Choice of Sequence Type
 
