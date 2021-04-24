@@ -38,14 +38,14 @@ Rscript -e &#34;rmarkdown::render(&#39;HW4_key.Rmd&#39;, c(&#39;html_document&#3
 &lt;h1 id=&#34;rendering-instructions&#34;&gt;Rendering Instructions&lt;/h1&gt;
 &lt;p&gt;To render this R Markdown document, one needs to download the following files to the same directory.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Source Files__
+&lt;li&gt;_Source Files__
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/HW4_key.Rmd&#34;&gt;HW4_key.Rmd&lt;/a&gt;: Rmd source file for this document&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/pairwiseAlign_Fct.R&#34;&gt;pairwiseAlign_Fct.R&lt;/a&gt;: R script defining pairwise alignment functions&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/bibtex.bib&#34;&gt;bibtex.bib&lt;/a&gt;: references cited in the text in BibTeX format&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Rendered Report
+&lt;li&gt;_Rendered Report__
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://girke.bioinformatics.ucr.edu/GEN242/assignments/Homework/HW04/hw4_solution/HW4_key.html&#34;&gt;HTML&lt;/a&gt;: this report in HTML format&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://girke.bioinformatics.ucr.edu/GEN242/assignments/Homework/HW04/hw4_solution/HW4_key.pdf&#34;&gt;PDF&lt;/a&gt;: corresponding PDF version&lt;/li&gt;
