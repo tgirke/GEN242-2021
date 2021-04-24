@@ -135,21 +135,22 @@ An `if` statement operates on length-one logical vectors.
 
 __Syntax__
 ```{r if_statement, eval=FALSE}
-if(TRUE) { 
-	statements_1 
+if (TRUE) { 
+    statements_1 
 } else { 
-	statements_2 
+    statements_2 
 }
 ```
 
-In the `else` component, avoid inserting newlines between `} else`.
+In the `else` component, avoid inserting newlines between `} else`. For details on how to best and consistently format R code, 
+this [style guide](http://adv-r.had.co.nz/Style.html) is a good start. In addition, the [`formatR`](https://yihui.org/formatr/) package can be helpful.
 
 __Example__
 ```{r if_statement_example, eval=TRUE}
-if(1==0) { 
-	print(1) 
+if (1==0) { 
+    print(1) 
 } else { 
-	print(2) 
+    print(2) 
 }
 ```
 
@@ -209,7 +210,7 @@ __Example__
 x <- 1:10
 z <- NULL
 for(i in seq(along=x)) { 
-	if(x[i] < 5) { 
+	if (x[i] < 5) { 
 		z <- c(z, x[i]-1)  
 	} else { 
 		stop("values need to be < 5") 

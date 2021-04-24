@@ -1,7 +1,7 @@
 ---
 title: "Programming in R" 
 author: "Author: Thomas Girke"
-date: "Last update: 23 April, 2021" 
+date: "Last update: 24 April, 2021" 
 output:
   html_document:
     toc: true
@@ -132,19 +132,20 @@ An `if` statement operates on length-one logical vectors.
 **Syntax**
 
 ``` r
-if(TRUE) { 
+if (TRUE) { 
     statements_1 
 } else { 
     statements_2 
 }
 ```
 
-In the `else` component, avoid inserting newlines between `} else`.
+In the `else` component, avoid inserting newlines between `} else`. For details on how to best and consistently format R code,
+this [style guide](http://adv-r.had.co.nz/Style.html) is a good start. In addition, the [`formatR`](https://yihui.org/formatr/) package can be helpful.
 
 **Example**
 
 ``` r
-if(1==0) { 
+if (1==0) { 
     print(1) 
 } else { 
     print(2) 

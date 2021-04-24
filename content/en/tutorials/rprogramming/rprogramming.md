@@ -1,7 +1,7 @@
 ---
 title: "Programming in R" 
 author: "Author: Thomas Girke"
-date: "Last update: 23 April, 2021" 
+date: "Last update: 24 April, 2021" 
 output:
   html_document:
     toc: true
@@ -146,19 +146,20 @@ An `if` statement operates on length-one logical vectors.
 **Syntax**
 
 ``` r
-if(TRUE) { 
+if (TRUE) { 
     statements_1 
 } else { 
     statements_2 
 }
 ```
 
-In the `else` component, avoid inserting newlines between `} else`.
+In the `else` component, avoid inserting newlines between `} else`. For details on how to best and consistently format R code,
+this [style guide](http://adv-r.had.co.nz/Style.html) is a good start. In addition, the [`formatR`](https://yihui.org/formatr/) package can be helpful.
 
 **Example**
 
 ``` r
-if(1==0) { 
+if (1==0) { 
     print(1) 
 } else { 
     print(2) 
@@ -237,7 +238,7 @@ The `stop` function can be used to break out of a loop (or a function) when a co
 x <- 1:10
 z <- NULL
 for(i in seq(along=x)) { 
-    if(x[i] < 5) { 
+    if (x[i] < 5) { 
         z <- c(z, x[i]-1)  
     } else { 
         stop("values need to be < 5") 

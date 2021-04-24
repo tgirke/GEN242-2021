@@ -25,7 +25,7 @@
 <meta itemprop="name" content="Programming in R">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Overview One of the main attractions of using the R (http://cran.at.r-project.org) environment is the ease with which users can write their own programs and custom functions. The R programming syntax is extremely easy to learn, even for users with no previous programming experience. Once the basic R programming control structures are understood, users can use the R language as a powerful environment to perform complex custom analyses of almost any type of data (Gentleman 2008).">
 <meta itemprop="dateModified" content="2021-04-23T07:40:12-07:00" />
-<meta itemprop="wordCount" content="3672">
+<meta itemprop="wordCount" content="3700">
 
 
 
@@ -816,7 +816,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.7b0041e5c497d04b057c28fe76fc01d8.json"
+  data-offline-search-index-json-src="../../../offline-search-index.216c2d3de24d90c78f721d77f6291cfd.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -848,7 +848,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.7b0041e5c497d04b057c28fe76fc01d8.json"
+  data-offline-search-index-json-src="../../../offline-search-index.216c2d3de24d90c78f721d77f6291cfd.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1272,15 +1272,16 @@ Programming in R using Vim or Emacs
 <h3 id="conditional-executions-if-statements">Conditional Executions: <code>if</code> Statements</h3>
 <p>An <code>if</code> statement operates on length-one logical vectors.</p>
 <p><strong>Syntax</strong></p>
-<pre><code class="language-r">if(TRUE) { 
+<pre><code class="language-r">if (TRUE) { 
     statements_1 
 } else { 
     statements_2 
 }
 </code></pre>
-<p>In the <code>else</code> component, avoid inserting newlines between <code>} else</code>.</p>
+<p>In the <code>else</code> component, avoid inserting newlines between <code>} else</code>. For details on how to best and consistently format R code,
+this <a href="http://adv-r.had.co.nz/Style.html">style guide</a> is a good start. In addition, the <a href="https://yihui.org/formatr/"><code>formatR</code></a> package can be helpful.</p>
 <p><strong>Example</strong></p>
-<pre><code class="language-r">if(1==0) { 
+<pre><code class="language-r">if (1==0) { 
     print(1) 
 } else { 
     print(2) 
