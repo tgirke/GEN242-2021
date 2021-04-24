@@ -47,7 +47,7 @@ Rscript -e &#34;rmarkdown::render(&#39;HW4_key.Rmd&#39;, c(&#39;html_document&#3
 &lt;li&gt;&lt;a href=&#34;https://girke.bioinformatics.ucr.edu/GEN242/assignments/Homework/HW04/hw4_solution/HW4_key.html&#34;&gt;HTML&lt;/a&gt;: this report in HTML format&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://girke.bioinformatics.ucr.edu/GEN242/assignments/Homework/HW04/hw4_solution/HW4_key.pdf&#34;&gt;PDF&lt;/a&gt;: corresponding PDF version&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;After this the HTML report can be rendered from the corresponding directory with &lt;code&gt;rmarkdown::render()&lt;/code&gt; as follows.&lt;/p&gt;
+&lt;p&gt;The HTML report can be rendered with &lt;code&gt;rmarkdown::render()&lt;/code&gt; as follows.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;rmarkdown::render(&#39;HW4_key.Rmd&#39;) # From R
 Rscript -e &amp;quot;rmarkdown::render(&#39;HW4_key.Rmd&#39;)&amp;quot; # From command-line
 &lt;/code&gt;&lt;/pre&gt;

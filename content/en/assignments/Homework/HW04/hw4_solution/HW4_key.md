@@ -50,7 +50,7 @@ Next, one can render the report to HTML, PDF and other formats following the ins
 -   [HTML](https://girke.bioinformatics.ucr.edu/GEN242/assignments/Homework/HW04/hw4_solution/HW4_key.html): this report in HTML format
 -   [PDF](https://girke.bioinformatics.ucr.edu/GEN242/assignments/Homework/HW04/hw4_solution/HW4_key.pdf): corresponding PDF version
 
-After this the HTML report can be rendered from the corresponding directory with `rmarkdown::render()` as follows.
+The HTML report can be rendered with `rmarkdown::render()` as follows.
 
 ``` r
 rmarkdown::render('HW4_key.Rmd') # From R
