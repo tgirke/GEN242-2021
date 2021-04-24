@@ -41,13 +41,13 @@ Source code downloads:    
 
 To render this R Markdown document, one needs to download the following files to the same directory.
 
-1.  **Source Files**
-    -   [HW4\_key.Rmd](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/HW4_key.Rmd): Rmd source file for this document
-    -   [pairwiseAlign\_Fct.R](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/pairwiseAlign_Fct.R): R script defining pairwise alignment functions
-    -   [bibtex.bib](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/bibtex.bib): references cited in the text in BibTeX format
-2.  **Rendered Report**
-    -   [HTML](https://girke.bioinformatics.ucr.edu/GEN242/assignments/Homework/HW04/hw4_solution/HW4_key.html): this report in HTML format
-    -   [PDF](https://girke.bioinformatics.ucr.edu/GEN242/assignments/Homework/HW04/hw4_solution/HW4_key.pdf): corresponding PDF version
+-   [HW4\_key.Rmd](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/HW4_key.Rmd): Rmd source file for this document
+-   [pairwiseAlign\_Fct.R](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/pairwiseAlign_Fct.R): R script defining pairwise alignment functions
+-   [bibtex.bib](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/assignments/Homework/HW04/hw4_solution/bibtex.bib): references cited in the text in BibTeX format
+
+Next, one can render the report to HTML, PDF and other formats following the instructions below. Both the HTML and PDF versions are linked here:
++ [HTML](https://girke.bioinformatics.ucr.edu/GEN242/assignments/Homework/HW04/hw4_solution/HW4_key.html): this report in HTML format
++ [PDF](https://girke.bioinformatics.ucr.edu/GEN242/assignments/Homework/HW04/hw4_solution/HW4_key.pdf): corresponding PDF version
 
 After this the HTML report can be rendered from the corresponding directory with `rmarkdown::render()` as follows.
 
