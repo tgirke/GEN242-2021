@@ -20,7 +20,7 @@ dynProgMatrix <- function(S1, S2, align_method="global", gap_penalty=8, substitu
     library(Biostrings)
     ssMA <- data(list=substitutionMA)
 
-    ## BLOSUM50 matrix subsetted to sequences
+    ## Subset ssMA to sequences
     s_ma <- get(ssMA)[y, x]
 
     ## Gap penality
