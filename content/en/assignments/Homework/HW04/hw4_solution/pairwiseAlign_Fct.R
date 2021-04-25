@@ -75,22 +75,22 @@ dynProgMatrix <- function(S1, S2, align_method="global", gap_penalty=8, substitu
         ## Local dyn programming matrix
         for(j in 2:length(loc_ma[1,])) {
             for(i in 2:length(loc_ma[,1])) {
-                diagonal = s_ma[i-1,j-1] + loc_ma[i-1,j-1]
-                left = loc_ma[i,j-1]-gp
-                up = loc_ma[i-1,j]-gp
-                loc_ma[i,j] = max(diagonal, up, left, 0)
+                diagonal <- s_ma[i-1,j-1] + loc_ma[i-1,j-1]
+                left <- loc_ma[i,j-1]-gp
+                up <- loc_ma[i-1,j]-gp
+                loc_ma[i,j] <- max(diagonal, up, left, 0)
                 if(max(diagonal, up, left) == diagonal) {
-                    loc_ma_path[i,j] = 1
+                    loc_ma_path[i,j] <- 1
                 } else {
                     if(max(diagonal, up, left) == up) {
-                        loc_ma_path[i,j] = 2
+                        loc_ma_path[i,j] <- 2
                     } else {
-                        loc_ma_path[i,j] = 3
+                        loc_ma_path[i,j] <- 3
                     }
                 }
-                i=i+1
+                i <- i+1
             }  
-            j=j+1
+            j <- j+1
         }
 
         ## Return results in list
