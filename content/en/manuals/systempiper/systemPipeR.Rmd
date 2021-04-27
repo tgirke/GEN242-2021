@@ -440,7 +440,7 @@ software %>%
   dplyr::arrange(Tool) %>% 
   kableExtra::kable(escape = FALSE, align = "c", col.names = c("Tool Name",	"Description", "Step")) %>%
   kableExtra::kable_styling(c("striped", "hover", "condensed"), full_width = TRUE) %>%
-  kableExtra::scroll_box(width = "80%", height = "500px")
+  kableExtra::scroll_box(width = "100%", height = "500px")
 ```
 
 Remember, if you desire to run any of these tools, make sure to have the respective software installed on your system and configure in the PATH. You can check as follows: 
