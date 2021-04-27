@@ -16,6 +16,8 @@ fontsize: 14pt
 bibliography: bibtex.bib
 editor_options: 
   chunk_output_type: console
+weight: 6
+type: docs
 ---
 
 ```{css, echo=FALSE}
