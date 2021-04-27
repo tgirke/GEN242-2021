@@ -835,7 +835,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.3f65f33d4041c1a25c033229379a2de5.json"
+  data-offline-search-index-json-src="../../../offline-search-index.ddbdcee1f8fedac6b4458df2ef06cf26.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -867,7 +867,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.3f65f33d4041c1a25c033229379a2de5.json"
+  data-offline-search-index-json-src="../../../offline-search-index.ddbdcee1f8fedac6b4458df2ef06cf26.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1049,42 +1049,56 @@ if (!doNotTrack) {
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#environment-settings-and-input-data">Environment settings and input data</a></li>
-    <li><a href="#required-packages-and-resources">Required packages and resources</a></li>
-    <li><a href="#experiment-definition-provided-by-targets-file">Experiment definition provided by <code>targets</code> file</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#read-quality-filtering-and-trimming">Read quality filtering and trimming</a></li>
-    <li><a href="#fastq-quality-report">FASTQ quality report</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#read-mapping-with-hisat2">Read mapping with <code>HISAT2</code></a>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#samples-and-environment-settings">Samples and environment settings</a>
       <ul>
-        <li><a href="#interactive-job-submissions-in-a-single-machine">Interactive job submissions in a single machine</a></li>
-        <li><a href="#parallelization-on-clusters">Parallelization on clusters</a></li>
+        <li><a href="#environment-settings-and-input-data">Environment settings and input data</a></li>
+        <li><a href="#required-packages-and-resources">Required packages and resources</a></li>
+        <li><a href="#experiment-definition-provided-by-targets-file">Experiment definition provided by <code>targets</code> file</a></li>
       </ul>
     </li>
-    <li><a href="#read-and-alignment-stats">Read and alignment stats</a></li>
-    <li><a href="#create-symbolic-links-for-viewing-bam-files-in-igv">Create symbolic links for viewing BAM files in IGV</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#read-counting-with-summarizeoverlaps-in-parallel-mode-using-multiple-cores">Read counting with <code>summarizeOverlaps</code> in parallel mode using multiple cores</a></li>
-    <li><a href="#sample-wise-correlation-analysis">Sample-wise correlation analysis</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#run-edger">Run <code>edgeR</code></a></li>
-    <li><a href="#plot-deg-results">Plot DEG results</a></li>
-    <li><a href="#venn-diagrams-of-deg-sets">Venn diagrams of DEG sets</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#obtain-gene-to-go-mappings">Obtain gene-to-GO mappings</a></li>
-    <li><a href="#batch-go-term-enrichment-analysis">Batch GO term enrichment analysis</a></li>
-    <li><a href="#plot-batch-go-term-results">Plot batch GO term results</a></li>
+    <li><a href="#read-preprocessing">Read preprocessing</a>
+      <ul>
+        <li><a href="#read-quality-filtering-and-trimming">Read quality filtering and trimming</a></li>
+        <li><a href="#fastq-quality-report">FASTQ quality report</a></li>
+      </ul>
+    </li>
+    <li><a href="#alignments">Alignments</a>
+      <ul>
+        <li><a href="#read-mapping-with-hisat2">Read mapping with <code>HISAT2</code></a>
+          <ul>
+            <li><a href="#interactive-job-submissions-in-a-single-machine">Interactive job submissions in a single machine</a></li>
+            <li><a href="#parallelization-on-clusters">Parallelization on clusters</a></li>
+          </ul>
+        </li>
+        <li><a href="#read-and-alignment-stats">Read and alignment stats</a></li>
+        <li><a href="#create-symbolic-links-for-viewing-bam-files-in-igv">Create symbolic links for viewing BAM files in IGV</a></li>
+      </ul>
+    </li>
+    <li><a href="#read-quantification">Read quantification</a>
+      <ul>
+        <li><a href="#read-counting-with-summarizeoverlaps-in-parallel-mode-using-multiple-cores">Read counting with <code>summarizeOverlaps</code> in parallel mode using multiple cores</a></li>
+        <li><a href="#sample-wise-correlation-analysis">Sample-wise correlation analysis</a></li>
+      </ul>
+    </li>
+    <li><a href="#analysis-of-degs">Analysis of DEGs</a>
+      <ul>
+        <li><a href="#run-edger">Run <code>edgeR</code></a></li>
+        <li><a href="#plot-deg-results">Plot DEG results</a></li>
+        <li><a href="#venn-diagrams-of-deg-sets">Venn diagrams of DEG sets</a></li>
+      </ul>
+    </li>
+    <li><a href="#go-term-enrichment-analysis">GO term enrichment analysis</a>
+      <ul>
+        <li><a href="#obtain-gene-to-go-mappings">Obtain gene-to-GO mappings</a></li>
+        <li><a href="#batch-go-term-enrichment-analysis">Batch GO term enrichment analysis</a></li>
+        <li><a href="#plot-batch-go-term-results">Plot batch GO term results</a></li>
+      </ul>
+    </li>
+    <li><a href="#clustering-and-heat-maps">Clustering and heat maps</a></li>
+    <li><a href="#version-information">Version Information</a></li>
+    <li><a href="#funding">Funding</a></li>
+    <li><a href="#references">References</a></li>
   </ul>
 </nav>
 
@@ -1150,10 +1164,10 @@ document.addEventListener("DOMContentLoaded", function() {
       links[i].target = '_blank';
 });
 </script>
-<h1 id="introduction">Introduction</h1>
+<h2 id="introduction">Introduction</h2>
 <p>Users want to provide here background information about the design of their RNA-Seq project.</p>
-<h1 id="samples-and-environment-settings">Samples and environment settings</h1>
-<h2 id="environment-settings-and-input-data">Environment settings and input data</h2>
+<h2 id="samples-and-environment-settings">Samples and environment settings</h2>
+<h3 id="environment-settings-and-input-data">Environment settings and input data</h3>
 <p>Typically, the user wants to record here the sources and versions of the
 reference genome sequence along with the corresponding annotations. In
 the provided sample data set all data inputs are stored in a <code>data</code>
@@ -1175,7 +1189,7 @@ its GFF annotation files have been truncated accordingly. This way the entire
 test sample data set is less than 200MB in storage space. A PE read set has been
 chosen for this test data set for flexibility, because it can be used for testing both types
 of analysis routines requiring either SE (single end) reads or PE reads.</p>
-<h2 id="required-packages-and-resources">Required packages and resources</h2>
+<h3 id="required-packages-and-resources">Required packages and resources</h3>
 <p>The <code>systemPipeR</code> package needs to be loaded to perform the analysis steps shown in
 this report (H Backman and Girke 2016).</p>
 <pre><code class="language-r">library(systemPipeR)
@@ -1187,7 +1201,7 @@ of each workflow template. They are also viewable in the GitHub repository of <e
 here</a>).
 For more information of the structure of the <em>targets</em> file, please consult the documentation
 <a href="http://www.bioconductor.org/packages/release/bioc/vignettes/systemPipeR/inst/doc/systemPipeR.html#25_structure_of_targets_file">here</a>. More details about the new parameter files from systemPipeR can be found <a href="http://www.bioconductor.org/packages/release/bioc/vignettes/systemPipeR/inst/doc/systemPipeR.html#26_structure_of_the_new_param_files_and_construct_sysargs2_container">here</a>.</p>
-<h2 id="experiment-definition-provided-by-targets-file">Experiment definition provided by <code>targets</code> file</h2>
+<h3 id="experiment-definition-provided-by-targets-file">Experiment definition provided by <code>targets</code> file</h3>
 <p>The <code>targets</code> file defines all FASTQ files and sample
 comparisons of the analysis workflow.</p>
 <pre><code class="language-r">targetspath &lt;- system.file(&quot;extdata&quot;, &quot;targetsPE.txt&quot;, package = &quot;systemPipeR&quot;)
@@ -1233,8 +1247,8 @@ targets
 ## 17       V12A    V12
 ## 18       V12B    V12
 </code></pre>
-<h1 id="read-preprocessing">Read preprocessing</h1>
-<h2 id="read-quality-filtering-and-trimming">Read quality filtering and trimming</h2>
+<h2 id="read-preprocessing">Read preprocessing</h2>
+<h3 id="read-quality-filtering-and-trimming">Read quality filtering and trimming</h3>
 <p>The function <code>preprocessReads</code> allows to apply predefined or custom
 read preprocessing functions to all FASTQ files referenced in a
 <code>SYSargs2</code> container, such as quality filtering or adapter trimming
@@ -1263,7 +1277,7 @@ writeTargetsout(x = trim, file = &quot;targets_trim.txt&quot;, step = 1,
     new_col = c(&quot;FileName1&quot;, &quot;FileName2&quot;), new_col_output_index = c(1, 
         2), overwrite = TRUE)
 </code></pre>
-<h2 id="fastq-quality-report">FASTQ quality report</h2>
+<h3 id="fastq-quality-report">FASTQ quality report</h3>
 <p>The following <code>seeFastq</code> and <code>seeFastqPlot</code> functions generate and plot a series of useful
 quality statistics for a set of FASTQ files including per cycle quality box
 plots, base proportions, base-level quality trends, relative k-mer
@@ -1281,8 +1295,8 @@ dev.off()
 <p>Figure 1: FASTQ quality report for 18 samples</p>
 </div>
 </br>
-<h1 id="alignments">Alignments</h1>
-<h2 id="read-mapping-with-hisat2">Read mapping with <code>HISAT2</code></h2>
+<h2 id="alignments">Alignments</h2>
+<h3 id="read-mapping-with-hisat2">Read mapping with <code>HISAT2</code></h3>
 <p>The following steps will demonstrate how to use the short read aligner <code>Hisat2</code>
 (Kim, Langmead, and Salzberg 2015) in both interactive job submissions and batch submissions to
 queuing systems of clusters using the <em><code>systemPipeR's</code></em> new CWL command-line interface.</p>
@@ -1294,7 +1308,7 @@ idx &lt;- renderWF(idx)
 idx
 cmdlist(idx)
 
-## Run
+### Run
 runCommandline(idx, make_bam = FALSE)
 </code></pre>
 <p>The parameter settings of the aligner are defined in the <code>hisat2-mapping-se.cwl</code>
@@ -1339,7 +1353,7 @@ args
 ## $M1B$`hisat2-mapping-pe`
 ## [1] &quot;./results/M1B.sam&quot;
 </code></pre>
-<h3 id="interactive-job-submissions-in-a-single-machine">Interactive job submissions in a single machine</h3>
+<h4 id="interactive-job-submissions-in-a-single-machine">Interactive job submissions in a single machine</h4>
 <p>To simplify the short read alignment execution for the user, the command-line
 can be run with the <em><code>runCommandline</code></em> function.
 The execution will be on a single machine without submitting to a queuing system
@@ -1350,10 +1364,10 @@ results folder for each workflow and a sub-folder for each sample
 defined in the <em>targets</em> file. This includes all the output and log files for each
 step. When these options are used, the output location will be updated by default
 and can be assigned to the same object.</p>
-<pre><code class="language-r">## Run single Machine
+<pre><code class="language-r">### Run single Machine
 args &lt;- runCommandline(args)
 </code></pre>
-<h3 id="parallelization-on-clusters">Parallelization on clusters</h3>
+<h4 id="parallelization-on-clusters">Parallelization on clusters</h4>
 <p>Alternatively, the computation can be greatly accelerated by processing many files
 in parallel using several compute nodes of a cluster, where a scheduling/queuing
 system is used for load balancing. For this the <em><code>clusterRun</code></em> function submits
@@ -1389,7 +1403,7 @@ output(args)
 <pre><code class="language-r">outpaths &lt;- subsetWF(args, slot = &quot;output&quot;, subset = 1, index = 1)
 file.exists(outpaths)
 </code></pre>
-<h2 id="read-and-alignment-stats">Read and alignment stats</h2>
+<h3 id="read-and-alignment-stats">Read and alignment stats</h3>
 <p>The following provides an overview of the number of reads in each sample
 and how many of them aligned to the reference.</p>
 <pre><code class="language-r">read_statsDF &lt;- alignStats(args = args)
@@ -1411,15 +1425,15 @@ write.table(read_statsDF, &quot;results/alignStats.xls&quot;, row.names = FALSE,
 ## 3             92.72397
 ## 4             78.24457
 </code></pre>
-<h2 id="create-symbolic-links-for-viewing-bam-files-in-igv">Create symbolic links for viewing BAM files in IGV</h2>
+<h3 id="create-symbolic-links-for-viewing-bam-files-in-igv">Create symbolic links for viewing BAM files in IGV</h3>
 <p>The <code>symLink2bam</code> function creates symbolic links to view the BAM alignment files in a
 genome browser such as IGV. The corresponding URLs are written to a file
 with a path specified under <code>urlfile</code> in the <code>results</code> directory.</p>
 <pre><code class="language-r">symLink2bam(sysargs = args, htmldir = c(&quot;~/.html/&quot;, &quot;somedir/&quot;), 
     urlbase = &quot;http://cluster.hpcc.ucr.edu/~tgirke/&quot;, urlfile = &quot;./results/IGVurl.txt&quot;)
 </code></pre>
-<h1 id="read-quantification">Read quantification</h1>
-<h2 id="read-counting-with-summarizeoverlaps-in-parallel-mode-using-multiple-cores">Read counting with <code>summarizeOverlaps</code> in parallel mode using multiple cores</h2>
+<h2 id="read-quantification">Read quantification</h2>
+<h3 id="read-counting-with-summarizeoverlaps-in-parallel-mode-using-multiple-cores">Read counting with <code>summarizeOverlaps</code> in parallel mode using multiple cores</h3>
 <p>Reads overlapping with annotation ranges of interest are counted for
 each sample using the <code>summarizeOverlaps</code> function (Lawrence et al. 2013). The read counting is
 preformed for exonic gene regions in a non-strand-specific manner while
@@ -1466,7 +1480,7 @@ methods, such as <code>edgeR</code> or <code>DESeq2</code>, the raw count values
 usage of RPKM values should be restricted to specialty applications
 required by some users, <em>e.g.</em> manually comparing the expression levels
 among different genes or features.</p>
-<h2 id="sample-wise-correlation-analysis">Sample-wise correlation analysis</h2>
+<h3 id="sample-wise-correlation-analysis">Sample-wise correlation analysis</h3>
 <p>The following computes the sample-wise Spearman correlation coefficients from
 the <code>rlog</code> transformed expression values generated with the <code>DESeq2</code> package. After
 transformation to a distance matrix, hierarchical clustering is performed with
@@ -1491,12 +1505,12 @@ dev.off()
 <p>Figure 2: Correlation dendrogram of samples</p>
 </div>
 </br>
-<h1 id="analysis-of-degs">Analysis of DEGs</h1>
+<h2 id="analysis-of-degs">Analysis of DEGs</h2>
 <p>The analysis of differentially expressed genes (DEGs) is performed with
 the glm method of the <code>edgeR</code> package (Robinson, McCarthy, and Smyth 2010). The sample
 comparisons used by this analysis are defined in the header lines of the
 <code>targets.txt</code> file starting with <code>&lt;CMP&gt;</code>.</p>
-<h2 id="run-edger">Run <code>edgeR</code></h2>
+<h3 id="run-edger">Run <code>edgeR</code></h3>
 <pre><code class="language-r">library(edgeR)
 countDF &lt;- read.delim(&quot;results/countDFeByg.xls&quot;, row.names = 1, 
     check.names = FALSE)
@@ -1517,7 +1531,7 @@ edgeDF &lt;- data.frame(edgeDF, Desc = descv[rownames(edgeDF)],
 write.table(edgeDF, &quot;./results/edgeRglm_allcomp.xls&quot;, quote = FALSE, 
     sep = &quot;\t&quot;, col.names = NA)
 </code></pre>
-<h2 id="plot-deg-results">Plot DEG results</h2>
+<h3 id="plot-deg-results">Plot DEG results</h3>
 <p>Filter and plot DEG results for up and down regulated genes. The
 definition of <em>up</em> and <em>down</em> is given in the corresponding help
 file. To open it, type <code>?filterDEGs</code> in the R console.</p>
@@ -1534,7 +1548,7 @@ write.table(DEG_list$Summary, &quot;./results/DEGcounts.xls&quot;, quote = FALSE
 <p>Figure 3: Up and down regulated DEGs with FDR of 1%</p>
 </div>
 </br>
-<h2 id="venn-diagrams-of-deg-sets">Venn diagrams of DEG sets</h2>
+<h3 id="venn-diagrams-of-deg-sets">Venn diagrams of DEG sets</h3>
 <p>The <code>overLapper</code> function can compute Venn intersects for large numbers of sample
 sets (up to 20 or more) and plots 2-5 way Venn diagrams. A useful
 feature is the possibility to combine the counts from several Venn
@@ -1552,8 +1566,8 @@ dev.off()
 <p>Figure 4: Venn Diagram for 4 Up and Down DEG Sets</p>
 </div>
 </br>
-<h1 id="go-term-enrichment-analysis">GO term enrichment analysis</h1>
-<h2 id="obtain-gene-to-go-mappings">Obtain gene-to-GO mappings</h2>
+<h2 id="go-term-enrichment-analysis">GO term enrichment analysis</h2>
+<h3 id="obtain-gene-to-go-mappings">Obtain gene-to-GO mappings</h3>
 <p>The following shows how to obtain gene-to-GO mappings from <code>biomaRt</code> (here for <em>A.
 thaliana</em>) and how to organize them for the downstream GO term
 enrichment analysis. Alternatively, the gene-to-GO mappings can be
@@ -1584,7 +1598,7 @@ catdb &lt;- makeCATdb(myfile = &quot;data/GO/GOannotationsBiomart_mod.txt&quot;,
     lib = NULL, org = &quot;&quot;, colno = c(1, 2, 3), idconv = NULL)
 save(catdb, file = &quot;data/GO/catdb.RData&quot;)
 </code></pre>
-<h2 id="batch-go-term-enrichment-analysis">Batch GO term enrichment analysis</h2>
+<h3 id="batch-go-term-enrichment-analysis">Batch GO term enrichment analysis</h3>
 <p>Apply the enrichment analysis to the DEG sets obtained the above differential
 expression analysis. Note, in the following example the <code>FDR</code> filter is set
 here to an unreasonably high value, simply because of the small size of the toy
@@ -1617,7 +1631,7 @@ BatchResultslim &lt;- GOCluster_Report(catdb = catdb, setlist = DEGlist,
     method = &quot;slim&quot;, id_type = &quot;gene&quot;, myslimv = goslimvec, CLSZ = 10, 
     cutoff = 0.01, gocats = c(&quot;MF&quot;, &quot;BP&quot;, &quot;CC&quot;), recordSpecGO = NULL)
 </code></pre>
-<h2 id="plot-batch-go-term-results">Plot batch GO term results</h2>
+<h3 id="plot-batch-go-term-results">Plot batch GO term results</h3>
 <p>The <code>data.frame</code> generated by <code>GOCluster</code> can be plotted with the <code>goBarplot</code> function. Because of the
 variable size of the sample sets, it may not always be desirable to show
 the results from different DEG sets in the same bar plot. Plotting
@@ -1637,7 +1651,7 @@ goBarplot(gos, gocat = &quot;CC&quot;)
 <p>Figure 5: GO Slim Barplot for MF Ontology</p>
 </div>
 </br>
-<h1 id="clustering-and-heat-maps">Clustering and heat maps</h1>
+<h2 id="clustering-and-heat-maps">Clustering and heat maps</h2>
 <p>The following example performs hierarchical clustering on the <code>rlog</code>
 transformed expression matrix subsetted by the DEGs identified in the above
 differential expression analysis. It uses a Pearson correlation-based distance
@@ -1655,7 +1669,7 @@ dev.off()
 <p>Figure 6: Heat Map with Hierarchical Clustering Dendrograms of DEGs</p>
 </div>
 </br>
-<h1 id="version-information">Version Information</h1>
+<h2 id="version-information">Version Information</h2>
 <pre><code class="language-r">sessionInfo()
 </code></pre>
 <pre><code>## R version 4.0.5 (2021-03-31)
@@ -1745,9 +1759,9 @@ dev.off()
 ## [103] openssl_1.4.3            munsell_0.5.0           
 ## [105] bslib_0.2.4              askpass_1.1
 </code></pre>
-<h1 id="funding">Funding</h1>
+<h2 id="funding">Funding</h2>
 <p>This project was supported by funds from the National Institutes of Health (NIH).</p>
-<h1 id="references">References</h1>
+<h2 id="references">References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-H_Backman2016-bt" class="csl-entry">
 <p>H Backman, Tyler W, and Thomas Girke. 2016. “<span class="nocase">systemPipeR: NGS workflow and report generation environment</span>.” <em>BMC Bioinformatics</em> 17 (1): 388. <a href="https://doi.org/10.1186/s12859-016-1241-0">https://doi.org/10.1186/s12859-016-1241-0</a>.</p>

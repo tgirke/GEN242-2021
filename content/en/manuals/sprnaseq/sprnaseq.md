@@ -1,7 +1,7 @@
 ---
 title: "RNA-Seq Workflow Template" 
 author: "Author: Daniela Cassol, Le Zhang and Thomas Girke"
-date: "Last update: 26 April, 2021" 
+date: "Last update: 27 April, 2021" 
 output:
   BiocStyle::html_document:
     toc_float: true
@@ -42,13 +42,13 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
-# Introduction
+## Introduction
 
 Users want to provide here background information about the design of their RNA-Seq project.
 
-# Samples and environment settings
+## Samples and environment settings
 
-## Environment settings and input data
+### Environment settings and input data
 
 Typically, the user wants to record here the sources and versions of the
 reference genome sequence along with the corresponding annotations. In
@@ -74,7 +74,7 @@ test sample data set is less than 200MB in storage space. A PE read set has been
 chosen for this test data set for flexibility, because it can be used for testing both types
 of analysis routines requiring either SE (single end) reads or PE reads.
 
-## Required packages and resources
+### Required packages and resources
 
 The `systemPipeR` package needs to be loaded to perform the analysis steps shown in
 this report (H Backman and Girke 2016).
@@ -91,7 +91,7 @@ here](https://github.com/tgirke/systemPipeRdata/tree/master/inst/extdata/param/c
 For more information of the structure of the *targets* file, please consult the documentation
 [here](http://www.bioconductor.org/packages/release/bioc/vignettes/systemPipeR/inst/doc/systemPipeR.html#25_structure_of_targets_file). More details about the new parameter files from systemPipeR can be found [here](http://www.bioconductor.org/packages/release/bioc/vignettes/systemPipeR/inst/doc/systemPipeR.html#26_structure_of_the_new_param_files_and_construct_sysargs2_container).
 
-## Experiment definition provided by `targets` file
+### Experiment definition provided by `targets` file
 
 The `targets` file defines all FASTQ files and sample
 comparisons of the analysis workflow.
@@ -141,9 +141,9 @@ targets
     ## 17       V12A    V12
     ## 18       V12B    V12
 
-# Read preprocessing
+## Read preprocessing
 
-## Read quality filtering and trimming
+### Read quality filtering and trimming
 
 The function `preprocessReads` allows to apply predefined or custom
 read preprocessing functions to all FASTQ files referenced in a
@@ -179,7 +179,7 @@ writeTargetsout(x = trim, file = "targets_trim.txt", step = 1,
         2), overwrite = TRUE)
 ```
 
-## FASTQ quality report
+### FASTQ quality report
 
 The following `seeFastq` and `seeFastqPlot` functions generate and plot a series of useful
 quality statistics for a set of FASTQ files including per cycle quality box
@@ -206,9 +206,9 @@ Figure 1: FASTQ quality report for 18 samples
 
 </br>
 
-# Alignments
+## Alignments
 
-## Read mapping with `HISAT2`
+### Read mapping with `HISAT2`
 
 The following steps will demonstrate how to use the short read aligner `Hisat2`
 (Kim, Langmead, and Salzberg 2015) in both interactive job submissions and batch submissions to
@@ -224,7 +224,7 @@ idx <- renderWF(idx)
 idx
 cmdlist(idx)
 
-## Run
+### Run
 runCommandline(idx, make_bam = FALSE)
 ```
 
@@ -277,7 +277,7 @@ output(args)[1:2]
     ## $M1B$`hisat2-mapping-pe`
     ## [1] "./results/M1B.sam"
 
-### Interactive job submissions in a single machine
+#### Interactive job submissions in a single machine
 
 To simplify the short read alignment execution for the user, the command-line
 can be run with the *`runCommandline`* function.
@@ -291,11 +291,11 @@ step. When these options are used, the output location will be updated by defaul
 and can be assigned to the same object.
 
 ``` r
-## Run single Machine
+### Run single Machine
 args <- runCommandline(args)
 ```
 
-### Parallelization on clusters
+#### Parallelization on clusters
 
 Alternatively, the computation can be greatly accelerated by processing many files
 in parallel using several compute nodes of a cluster, where a scheduling/queuing
@@ -339,7 +339,7 @@ outpaths <- subsetWF(args, slot = "output", subset = 1, index = 1)
 file.exists(outpaths)
 ```
 
-## Read and alignment stats
+### Read and alignment stats
 
 The following provides an overview of the number of reads in each sample
 and how many of them aligned to the reference.
@@ -368,7 +368,7 @@ read.table(system.file("extdata", "alignStats.xls", package = "systemPipeR"),
     ## 3             92.72397
     ## 4             78.24457
 
-## Create symbolic links for viewing BAM files in IGV
+### Create symbolic links for viewing BAM files in IGV
 
 The `symLink2bam` function creates symbolic links to view the BAM alignment files in a
 genome browser such as IGV. The corresponding URLs are written to a file
@@ -379,9 +379,9 @@ symLink2bam(sysargs = args, htmldir = c("~/.html/", "somedir/"),
     urlbase = "http://cluster.hpcc.ucr.edu/~tgirke/", urlfile = "./results/IGVurl.txt")
 ```
 
-# Read quantification
+## Read quantification
 
-## Read counting with `summarizeOverlaps` in parallel mode using multiple cores
+### Read counting with `summarizeOverlaps` in parallel mode using multiple cores
 
 Reads overlapping with annotation ranges of interest are counted for
 each sample using the `summarizeOverlaps` function (Lawrence et al. 2013). The read counting is
@@ -439,7 +439,7 @@ usage of RPKM values should be restricted to specialty applications
 required by some users, *e.g.* manually comparing the expression levels
 among different genes or features.
 
-## Sample-wise correlation analysis
+### Sample-wise correlation analysis
 
 The following computes the sample-wise Spearman correlation coefficients from
 the `rlog` transformed expression values generated with the `DESeq2` package. After
@@ -473,14 +473,14 @@ Figure 2: Correlation dendrogram of samples
 
 </br>
 
-# Analysis of DEGs
+## Analysis of DEGs
 
 The analysis of differentially expressed genes (DEGs) is performed with
 the glm method of the `edgeR` package (Robinson, McCarthy, and Smyth 2010). The sample
 comparisons used by this analysis are defined in the header lines of the
 `targets.txt` file starting with `<CMP>`.
 
-## Run `edgeR`
+### Run `edgeR`
 
 ``` r
 library(edgeR)
@@ -507,7 +507,7 @@ write.table(edgeDF, "./results/edgeRglm_allcomp.xls", quote = FALSE,
     sep = "\t", col.names = NA)
 ```
 
-## Plot DEG results
+### Plot DEG results
 
 Filter and plot DEG results for up and down regulated genes. The
 definition of *up* and *down* is given in the corresponding help
@@ -533,7 +533,7 @@ Figure 3: Up and down regulated DEGs with FDR of 1%
 
 </br>
 
-## Venn diagrams of DEG sets
+### Venn diagrams of DEG sets
 
 The `overLapper` function can compute Venn intersects for large numbers of sample
 sets (up to 20 or more) and plots 2-5 way Venn diagrams. A useful
@@ -560,9 +560,9 @@ Figure 4: Venn Diagram for 4 Up and Down DEG Sets
 
 </br>
 
-# GO term enrichment analysis
+## GO term enrichment analysis
 
-## Obtain gene-to-GO mappings
+### Obtain gene-to-GO mappings
 
 The following shows how to obtain gene-to-GO mappings from `biomaRt` (here for *A.
 thaliana*) and how to organize them for the downstream GO term
@@ -597,7 +597,7 @@ catdb <- makeCATdb(myfile = "data/GO/GOannotationsBiomart_mod.txt",
 save(catdb, file = "data/GO/catdb.RData")
 ```
 
-## Batch GO term enrichment analysis
+### Batch GO term enrichment analysis
 
 Apply the enrichment analysis to the DEG sets obtained the above differential
 expression analysis. Note, in the following example the `FDR` filter is set
@@ -634,7 +634,7 @@ BatchResultslim <- GOCluster_Report(catdb = catdb, setlist = DEGlist,
     cutoff = 0.01, gocats = c("MF", "BP", "CC"), recordSpecGO = NULL)
 ```
 
-## Plot batch GO term results
+### Plot batch GO term results
 
 The `data.frame` generated by `GOCluster` can be plotted with the `goBarplot` function. Because of the
 variable size of the sample sets, it may not always be desirable to show
@@ -663,7 +663,7 @@ Figure 5: GO Slim Barplot for MF Ontology
 
 </br>
 
-# Clustering and heat maps
+## Clustering and heat maps
 
 The following example performs hierarchical clustering on the `rlog`
 transformed expression matrix subsetted by the DEGs identified in the above
@@ -690,7 +690,7 @@ Figure 6: Heat Map with Hierarchical Clustering Dendrograms of DEGs
 
 </br>
 
-# Version Information
+## Version Information
 
 ``` r
 sessionInfo()
@@ -783,11 +783,11 @@ sessionInfo()
     ## [103] openssl_1.4.3            munsell_0.5.0           
     ## [105] bslib_0.2.4              askpass_1.1
 
-# Funding
+## Funding
 
 This project was supported by funds from the National Institutes of Health (NIH).
 
-# References
+## References
 
 <div id="refs" class="references csl-bib-body hanging-indent">
 
