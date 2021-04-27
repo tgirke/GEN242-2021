@@ -432,7 +432,7 @@ Current, *systemPipeR* provides the _`param`_ file templates for third-party sof
 library(dplyr)
 library(kableExtra)
 #SYS_software <- system.file("extdata", "SYS_software.csv", package="systemPipeR")
-SYS_software <- "../SYS_software.csv"
+SYS_software <- "SYS_software.csv"
 software <- read.delim(SYS_software, sep=",", comment.char = "#")
 colors <- colorRampPalette((c("darkseagreen", "indianred1")))(length(unique(software$Category)))
 id <- as.numeric(c((unique(software$Category))))
