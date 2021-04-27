@@ -68,7 +68,7 @@ The main motivation and advantages of using *`systemPipeR`* for complex data ana
 7.  Improves reproducibility by automating analyses and generation of analysis reports
 
 <center>
-<img src="utilities.png">
+<img src="../utilities.png">
 </center>
 
 **Figure 1:** Relevant features in *`systemPipeR`*.
@@ -132,7 +132,7 @@ design enhances the *`systemPipeR`* workflow framework with a generalized,
 flexible, and robust design.
 
 <center>
-<img src="SYS_WF.png">
+<img src="../SYS_WF.png">
 </center>
 
 **Figure 2:** Workflow steps with input/output file operations are controlled by
@@ -147,7 +147,7 @@ or many *`SYSargs2`* objects are organized in an *`SYSargs2Pipe`* container.
 **systemPipeR** allows creation (multi-step analyses) and execution of workflow entirely for R, with control, flexibility, and scalability of the all process. The execution of the workflow can be sent to a HPC, can be parallelizes, accelerating results acquisition. A workflow management system provides an infrastructure for the set-up, performance and monitoring of a defined sequence of tasks, arranged as a workflow application.
 
 <center>
-<img src="sysargslist.png">
+<img src="../sysargslist.png">
 </center>
 
 **Figure 3:** Workflow Management using *`SYSargsList`*.
@@ -172,7 +172,7 @@ construct complex workflows involving many sample-level input/output file
 operations with any combination of command-line or R-based software.
 
 <center>
-<img src="SystemPipeR_Workflow.png">
+<img src="../SystemPipeR_Workflow.png">
 </center>
 
 **Figure 4:** Workflow design structure of *`systemPipeR`* using *`SYSargs`*.
@@ -275,7 +275,7 @@ accordingly.
             -   Note, the user has the option to organize results files for a given sample and analysis step in a separate subdirectory.
 
 <center>
-<img src="SYSdir.png">
+<img src="../SYSdir.png">
 </center>
 
 **Figure 5:** *systemPipeR’s* preconfigured directory structure.
@@ -1190,7 +1190,7 @@ dev.off()
 ```
 
 <center>
-<img src="fastqReport.png">
+<img src="../fastqReport.png">
 </center>
 
 <div align="center">
@@ -2071,7 +2071,7 @@ goBarplot(gos, gocat = "BP")
 goBarplot(gos, gocat = "CC")
 ```
 
-![](GOslimbarplotMF.png)
+![](../GOslimbarplotMF.png)
 
 <div align="center">
 
@@ -2096,7 +2096,7 @@ dev.off()
 ```
 
 <center>
-<img src="heatmap1.png">
+<img src="../heatmap1.png">
 </center>
 
 <div align="center">

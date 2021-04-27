@@ -21,10 +21,10 @@
 <meta property="og:description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Note: if you use systemPipeR in published research, please cite: Backman, T.W.H and Girke, T. (2016). systemPipeR: NGS Workflow and Report Generation Environment. BMC Bioinformatics, 17: 388. 10.1186/s12859-016-1241-0." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/manuals/systempiper/systempiper/" />
-<meta property="article:modified_time" content="2021-04-26T19:49:24-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-04-26T19:51:58-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="systemPipeR: Workflow design and reporting generation environment">
 <meta itemprop="description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Note: if you use systemPipeR in published research, please cite: Backman, T.W.H and Girke, T. (2016). systemPipeR: NGS Workflow and Report Generation Environment. BMC Bioinformatics, 17: 388. 10.1186/s12859-016-1241-0.">
-<meta itemprop="dateModified" content="2021-04-26T19:49:24-07:00" />
+<meta itemprop="dateModified" content="2021-04-26T19:51:58-07:00" />
 <meta itemprop="wordCount" content="11230">
 
 
@@ -1231,7 +1231,7 @@ Backman, T.W.H and Girke, T. (2016). <em><code>systemPipeR</code></em>: NGS Work
 <li>Improves reproducibility by automating analyses and generation of analysis reports</li>
 </ol>
 <center>
-<img src="utilities.png">
+<img src="../utilities.png">
 </center>
 <p><strong>Figure 1:</strong> Relevant features in <em><code>systemPipeR</code></em>.
 Workflow design concepts are illustrated under (A &amp; B). Examples of
@@ -1287,7 +1287,7 @@ required to run, control and monitor complex workflows from start to finish. Thi
 design enhances the <em><code>systemPipeR</code></em> workflow framework with a generalized,
 flexible, and robust design.</p>
 <center>
-<img src="SYS_WF.png">
+<img src="../SYS_WF.png">
 </center>
 <p><strong>Figure 2:</strong> Workflow steps with input/output file operations are controlled by
 <em><code>SYSargs2</code></em> objects. Each <em><code>SYSargs2</code></em> instance is constructed from one <em>targets</em>
@@ -1298,7 +1298,7 @@ or many <em><code>SYSargs2</code></em> objects are organized in an <em><code>SYS
 <h2 id="workflow-management-using-sysargslist">Workflow Management using <em><code>SYSargsList</code></em></h2>
 <p><strong>systemPipeR</strong> allows creation (multi-step analyses) and execution of workflow entirely for R, with control, flexibility, and scalability of the all process. The execution of the workflow can be sent to a HPC, can be parallelizes, accelerating results acquisition. A workflow management system provides an infrastructure for the set-up, performance and monitoring of a defined sequence of tasks, arranged as a workflow application.</p>
 <center>
-<img src="sysargslist.png">
+<img src="../sysargslist.png">
 </center>
 <p><strong>Figure 3:</strong> Workflow Management using <em><code>SYSargsList</code></em>.</p>
 <h2 id="workflow-design-structure-using-sysargs-previous-version">Workflow design structure using <em><code>SYSargs</code></em>: Previous version</h2>
@@ -1319,7 +1319,7 @@ generated automatically. By chaining several <em><code>SYSargs</code></em> steps
 construct complex workflows involving many sample-level input/output file
 operations with any combination of command-line or R-based software.</p>
 <center>
-<img src="SystemPipeR_Workflow.png">
+<img src="../SystemPipeR_Workflow.png">
 </center>
 <p><strong>Figure 4:</strong> Workflow design structure of <em><code>systemPipeR</code></em> using <em><code>SYSargs</code></em>.</p>
 <h1 id="getting-started">Getting Started</h1>
@@ -1411,7 +1411,7 @@ accordingly.</p>
 </li>
 </ul>
 <center>
-<img src="SYSdir.png">
+<img src="../SYSdir.png">
 </center>
 <p><strong>Figure 5:</strong> <em>systemPipeR’s</em> preconfigured directory structure.</p>
 <p>The following parameter files are included in each workflow template:</p>
@@ -2188,7 +2188,7 @@ seeFastqPlot(fqlist)
 dev.off()
 </code></pre>
 <center>
-<img src="fastqReport.png">
+<img src="../fastqReport.png">
 </center>
 <div align="center">
 <p><strong>Figure 5:</strong> FASTQ quality report</p>
@@ -2856,7 +2856,7 @@ dev.off()
 goBarplot(gos, gocat = &quot;BP&quot;)
 goBarplot(gos, gocat = &quot;CC&quot;)
 </code></pre>
-<p><img src="GOslimbarplotMF.png" alt=""></p>
+<p><img src="../GOslimbarplotMF.png" alt=""></p>
 <div align="center">
 <p><strong>Figure 10:</strong> GO Slim Barplot for MF Ontology.</p>
 </div>
@@ -2872,7 +2872,7 @@ pheatmap(y, scale = &quot;row&quot;, clustering_distance_rows = &quot;correlatio
 dev.off()
 </code></pre>
 <center>
-<img src="heatmap1.png">
+<img src="../heatmap1.png">
 </center>
 <div align="center">
 <p><strong>Figure 11:</strong> Heat map with hierarchical clustering dendrograms of DEGs.</p>
@@ -3117,7 +3117,7 @@ setwd(&quot;riboseq&quot;)
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-26: <a  href="https://github.com/tgirke/GEN242//commit/2caefa6a1f1b1bffc3a0a700e6d6d85ac82c5c5b">some edits (2caefa6a)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-26: <a  href="https://github.com/tgirke/GEN242//commit/685ab96d78b8b28a327f7be887775917d8e52760">some edits (685ab96d)</a>
 </div>
 </div>
 

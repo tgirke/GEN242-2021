@@ -76,7 +76,7 @@ The main motivation and advantages of using _`systemPipeR`_ for complex data ana
 6. Accelerates runtime of workflows via parallelization on computer systems with multiple CPU cores and/or multiple compute nodes
 6. Improves reproducibility by automating analyses and generation of analysis reports 
 
-<center><img src="utilities.png"></center>
+<center><img src="../utilities.png"></center>
 
 **Figure 1:** Relevant features in _`systemPipeR`_.
 Workflow design concepts are illustrated under (A & B). Examples of
@@ -138,7 +138,7 @@ required to run, control and monitor complex workflows from start to finish. Thi
 design enhances the *`systemPipeR`* workflow framework with a generalized,
 flexible, and robust design.
 
-<center><img src="SYS_WF.png"></center>
+<center><img src="../SYS_WF.png"></center>
 
 **Figure 2:** Workflow steps with input/output file operations are controlled by 
 _`SYSargs2`_ objects. Each _`SYSargs2`_ instance is constructed from one *targets* 
@@ -151,7 +151,7 @@ or many _`SYSargs2`_ objects are organized in an *`SYSargs2Pipe`* container.
 
 **systemPipeR** allows creation (multi-step analyses) and execution of workflow entirely for R, with control, flexibility, and scalability of the all process. The execution of the workflow can be sent to a HPC, can be parallelizes, accelerating results acquisition. A workflow management system provides an infrastructure for the set-up, performance and monitoring of a defined sequence of tasks, arranged as a workflow application.
 
-<center><img src="sysargslist.png"></center>
+<center><img src="../sysargslist.png"></center>
 **Figure 3:** Workflow Management using _`SYSargsList`_.
 
 ## Workflow design structure using _`SYSargs`_: Previous version
@@ -173,7 +173,7 @@ generated automatically. By chaining several _`SYSargs`_ steps together one can
 construct complex workflows involving many sample-level input/output file 
 operations with any combination of command-line or R-based software. 
 
-<center><img src="SystemPipeR_Workflow.png"></center>
+<center><img src="../SystemPipeR_Workflow.png"></center>
 
 **Figure 4:** Workflow design structure of _`systemPipeR`_ using _`SYSargs`_. 
 
@@ -272,7 +272,7 @@ accordingly.
         + Analysis results are usually written to this directory, including: alignment, variant and peak files (BAM, VCF, BED); tabular result files; and image/plot files
         + Note, the user has the option to organize results files for a given sample and analysis step in a separate subdirectory.
 
-<center><img src="SYSdir.png"></center>
+<center><img src="../SYSdir.png"></center>
 
 **Figure 5:** *systemPipeR's* preconfigured directory structure.
 
@@ -774,7 +774,7 @@ seeFastqPlot(fqlist)
 dev.off()
 ```
 
-<center><img src="fastqReport.png"></center>
+<center><img src="../fastqReport.png"></center>
 <div align="center">**Figure 5:** FASTQ quality report </div></br>
 
 Parallelization of FASTQ quality report on a single machine with multiple cores.
@@ -1466,7 +1466,7 @@ goBarplot(gos, gocat="BP")
 goBarplot(gos, gocat="CC")
 ```
 
-![](GOslimbarplotMF.png)
+![](../GOslimbarplotMF.png)
 <div align="center">**Figure 10:** GO Slim Barplot for MF Ontology.</div></br>
 
 
@@ -1484,7 +1484,7 @@ pheatmap(y, scale="row", clustering_distance_rows="correlation", clustering_dist
 dev.off()
 ```
 
-<center><img src="heatmap1.png"></center>
+<center><img src="../heatmap1.png"></center>
 <div align="center">**Figure 11:** Heat map with hierarchical clustering dendrograms of DEGs.</div></br>
 
 # Workflow templates
