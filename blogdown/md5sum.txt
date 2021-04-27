@@ -10,7 +10,7 @@
 "content/en/manuals/rparallel/rparallel.Rmarkdown" "4dd434501166cfadb8bd9d3715dea1c7"
 "content/en/manuals/rprogramming/rprogramming.Rmarkdown" "e34f8f73ce94290539cf042f7101f615"
 "content/en/manuals/rsequences/Rsequences.Rmarkdown" "17194b6f646eda181a1a0cc250549b16"
-"content/en/manuals/sprnaseq/sprnaseq.Rmd" "a7185e136510948ab852397612283444"
+"content/en/manuals/sprnaseq/sprnaseq.Rmd" "21236aad36732192f9d8bc367d9ca816"
 "content/en/manuals/systempiper/systemPipeR.Rmd" "7e6ca68d56d8a92cc85cdeaddca12687"
 "content/en/rmarkdown/examples/example_rmd.Rmarkdown" "f742c6cb51209c0348f4db7c606042ad"
 "content/en/rmarkdown/new_features/new_features.Rmarkdown" "d61278972d234700692dfabb044542ff"
