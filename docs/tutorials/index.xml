@@ -13,5 +13,140 @@
       
     
     
+    <item>
+      <title>Tutorials: </title>
+      <link>/tutorials/systempiper/systempiper/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tutorials/systempiper/systempiper/</guid>
+      <description>
+        
+        
+        &lt;p&gt;#######################################################################&lt;/p&gt;
+&lt;h2 id=&#34;systempiper-workflow-design-and-reporting-generation-environment&#34;&gt;systemPipeR: Workflow design and reporting generation environment&lt;/h2&gt;
+&lt;p&gt;#######################################################################&lt;/p&gt;
+&lt;h2 id=&#34;loading-package-and-documentation&#34;&gt;Loading package and documentation&lt;/h2&gt;
+&lt;p&gt;library(&amp;ldquo;systemPipeR&amp;rdquo;) # Loads the package
+library(help=&amp;ldquo;systemPipeR&amp;rdquo;) # Lists package info
+vignette(&amp;ldquo;systemPipeR&amp;rdquo;) # Opens vignette&lt;/p&gt;
+&lt;h2 id=&#34;structure-of-targets-file-for-single-end-se-samples&#34;&gt;Structure of targets file for single-end (SE) samples&lt;/h2&gt;
+&lt;p&gt;library(systemPipeR)
+targetspath &amp;lt;- system.file(&amp;ldquo;extdata&amp;rdquo;, &amp;ldquo;targets.txt&amp;rdquo;, package=&amp;ldquo;systemPipeR&amp;rdquo;)
+read.delim(targetspath, comment.char = &amp;ldquo;#&amp;quot;)[1:4,]&lt;/p&gt;
+&lt;h2 id=&#34;structure-of-targets-file-for-paired-end-pe-samples&#34;&gt;Structure of targets file for paired-end (PE) samples&lt;/h2&gt;
+&lt;p&gt;targetspath &amp;lt;- system.file(&amp;ldquo;extdata&amp;rdquo;, &amp;ldquo;targetsPE.txt&amp;rdquo;, package=&amp;ldquo;systemPipeR&amp;rdquo;)
+read.delim(targetspath, comment.char = &amp;ldquo;#&amp;quot;)[1:2,1:6]&lt;/p&gt;
+&lt;h2 id=&#34;sample-comparisons&#34;&gt;Sample comparisons&lt;/h2&gt;
+&lt;h2 id=&#34;sample-comparisons-are-defined-in-the-header-lines-of-the-_targets_-file&#34;&gt;Sample comparisons are defined in the header lines of the &lt;em&gt;&lt;code&gt;targets&lt;/code&gt;&lt;/em&gt; file&lt;/h2&gt;
+&lt;h2 id=&#34;starting-with--cmp&#34;&gt;starting with &amp;lsquo;# &lt;CMP&gt;&amp;rsquo;.&lt;/h2&gt;
+&lt;p&gt;readLines(targetspath)[1:4]&lt;/p&gt;
+&lt;p&gt;The function readComp imports the comparison information and stores it in a
+list.&lt;/p&gt;
+&lt;p&gt;readComp(file=targetspath, format=&amp;ldquo;vector&amp;rdquo;, delim=&amp;quot;-&amp;quot;)&lt;/p&gt;
+&lt;h2 id=&#34;structure-and-initialization-of-sysargs2&#34;&gt;Structure and initialization of SYSargs2&lt;/h2&gt;
+&lt;h2 id=&#34;sysargs2-stores-all-the-information-and-instructions-needed-for-processing&#34;&gt;SYSargs2 stores all the information and instructions needed for processing&lt;/h2&gt;
+&lt;h2 id=&#34;a-set-of-input-files-with-a-single-or-many-command-line-steps-within-a-workflow&#34;&gt;a set of input files with a single or many command-line steps within a workflow&lt;/h2&gt;
+&lt;h2 id=&#34;eg-several-components-of-the-software-or-several-independent-software-tools&#34;&gt;(e.g. several components of the software or several independent software tools).&lt;/h2&gt;
+&lt;h2 id=&#34;the-sysargs2-object-is-created-and-fully-populated-with-the-loadwf&#34;&gt;The SYSargs2 object is created and fully populated with the loadWF&lt;/h2&gt;
+&lt;h2 id=&#34;and-renderwf-functions-respectively&#34;&gt;and renderWF functions, respectively.&lt;/h2&gt;
+&lt;h2 id=&#34;in-cwl-files-with-the-extension-cwl-define-the-parameters-of-a-chosen&#34;&gt;In CWL, files with the extension *.cwl define the parameters of a chosen&lt;/h2&gt;
+&lt;h2 id=&#34;command-line-step-or-workflow-while-files-with-the-extension-yml-define&#34;&gt;command-line step or workflow, while files with the extension *.yml define&lt;/h2&gt;
+&lt;h2 id=&#34;the-input-variables-of-command-line-steps-note-input-variables-provided&#34;&gt;the input variables of command-line steps. Note, input variables provided&lt;/h2&gt;
+&lt;h2 id=&#34;by-a-targets-file-can-be-passed-on-to-a-sysargs2-instance-via-the-inputvars&#34;&gt;by a targets file can be passed on to a SYSargs2 instance via the inputvars&lt;/h2&gt;
+&lt;h2 id=&#34;argument-of-the-renderwf-function&#34;&gt;argument of the renderWF function.&lt;/h2&gt;
+&lt;p&gt;hisat2.cwl &amp;lt;- system.file(&amp;ldquo;extdata&amp;rdquo;, &amp;ldquo;cwl/hisat2/hisat2-se/hisat2-mapping-se.cwl&amp;rdquo;, package=&amp;ldquo;systemPipeR&amp;rdquo;)
+yaml::read_yaml(hisat2.cwl)
+hisat2.yml &amp;lt;- system.file(&amp;ldquo;extdata&amp;rdquo;, &amp;ldquo;cwl/hisat2/hisat2-se/hisat2-mapping-se.yml&amp;rdquo;, package=&amp;ldquo;systemPipeR&amp;rdquo;)
+yaml::read_yaml(hisat2.yml)&lt;/p&gt;
+&lt;h2 id=&#34;the-following-imports-a-cwl-file-here-hisat2-mapping-secwl-for-running&#34;&gt;The following imports a *.cwl file (here hisat2-mapping-se.cwl) for running&lt;/h2&gt;
+&lt;h2 id=&#34;the-short-read-aligner-hisat2-the-loadwf-and-renderwf&#34;&gt;the short read aligner HISAT2. The loadWF and renderWF&lt;/h2&gt;
+&lt;h2 id=&#34;functions-render-the-proper-command-line-strings-for-each-sample-and-software-tool&#34;&gt;functions render the proper command-line strings for each sample and software tool.&lt;/h2&gt;
+&lt;p&gt;library(systemPipeR)
+targets &amp;lt;- system.file(&amp;ldquo;extdata&amp;rdquo;, &amp;ldquo;targets.txt&amp;rdquo;, package=&amp;ldquo;systemPipeR&amp;rdquo;)
+dir_path &amp;lt;- system.file(&amp;ldquo;extdata/cwl/hisat2/hisat2-se&amp;rdquo;, package=&amp;ldquo;systemPipeR&amp;rdquo;)
+WF &amp;lt;- loadWF(targets=targets, wf_file=&amp;ldquo;hisat2-mapping-se.cwl&amp;rdquo;,
+input_file=&amp;ldquo;hisat2-mapping-se.yml&amp;rdquo;,
+dir_path=dir_path)&lt;/p&gt;
+&lt;p&gt;WF &amp;lt;- renderWF(WF, inputvars=c(FileName=&amp;quot;&lt;em&gt;FASTQ_PATH1&lt;/em&gt;&amp;rdquo;, SampleName=&amp;quot;&lt;em&gt;SampleName&lt;/em&gt;&amp;quot;))&lt;/p&gt;
+&lt;h2 id=&#34;several-accessor-methods-are-available-that-are-named-after-the-slot-names-of-the-_sysargs2_-object&#34;&gt;Several accessor methods are available that are named after the slot names of the &lt;em&gt;&lt;code&gt;SYSargs2&lt;/code&gt;&lt;/em&gt; object.&lt;/h2&gt;
+&lt;p&gt;names(WF)&lt;/p&gt;
+&lt;h2 id=&#34;of-particular-interest-is-the-cmdlist-method-it-constructs-the-system&#34;&gt;Of particular interest is the cmdlist() method. It constructs the system&lt;/h2&gt;
+&lt;h2 id=&#34;commands-for-running-command-line-software-as-specified-by-a-given-cwl&#34;&gt;commands for running command-line software as specified by a given *.cwl&lt;/h2&gt;
+&lt;h2 id=&#34;file-combined-with-the-paths-to-the-input-samples-eg-fastq-files-provided&#34;&gt;file combined with the paths to the input samples (e.g. FASTQ files) provided&lt;/h2&gt;
+&lt;h2 id=&#34;by-a-targets-file-the-example-below-shows-the-cmdlist-output-for&#34;&gt;by a targets file. The example below shows the cmdlist() output for&lt;/h2&gt;
+&lt;h2 id=&#34;running-hisat2-on-the-first-se-read-sample-evaluating-the-output-of&#34;&gt;running HISAT2 on the first SE read sample. Evaluating the output of&lt;/h2&gt;
+&lt;h2 id=&#34;cmdlist-can-be-very-helpful-for-designing-and-debugging-cwl-files&#34;&gt;cmdlist() can be very helpful for designing and debugging *.cwl files&lt;/h2&gt;
+&lt;h2 id=&#34;of-new-command-line-software-or-changing-the-parameter-settings-of-existing&#34;&gt;of new command-line software or changing the parameter settings of existing&lt;/h2&gt;
+&lt;h2 id=&#34;ones&#34;&gt;ones.&lt;/h2&gt;
+&lt;p&gt;cmdlist(WF)[1]&lt;/p&gt;
+&lt;h2 id=&#34;the-output-components-of-sysargs2-define-the-expected-output-files-for&#34;&gt;The output components of SYSargs2 define the expected output files for&lt;/h2&gt;
+&lt;h2 id=&#34;each-step-in-the-workflow-some-of-which-are-the-input-for-the-next-workflow-step&#34;&gt;each step in the workflow; some of which are the input for the next workflow step,&lt;/h2&gt;
+&lt;h2 id=&#34;here-next-sysargs2-instance&#34;&gt;here next SYSargs2 instance.&lt;/h2&gt;
+&lt;p&gt;output(WF)[1]
+modules(WF)
+targets(WF)[1]
+targets.as.df(targets(WF))[1:4,1:4]
+output(WF)[1]
+cwlfiles(WF)
+inputvars(WF)&lt;/p&gt;
+&lt;h2 id=&#34;how-to-run-the-workflow-on-a-cluster&#34;&gt;How to run the workflow on a cluster&lt;/h2&gt;
+&lt;h2 id=&#34;this-section-of-the-tutorial-provides-an-introduction-to-the-usage-of-the&#34;&gt;This section of the tutorial provides an introduction to the usage of the&lt;/h2&gt;
+&lt;h2 id=&#34;systempiper-features-on-a-cluster&#34;&gt;systemPipeR features on a cluster.&lt;/h2&gt;
+&lt;h2 id=&#34;now-open-the-r-markdown-script-rmdin-your-r-ide-_eg_vim-r-or-rstudio&#34;&gt;Now open the R markdown script &lt;code&gt;*.Rmd&lt;/code&gt;in your R IDE (_e.g._vim-r or RStudio)&lt;/h2&gt;
+&lt;h2 id=&#34;and-run-the-workflow-as-outlined-below-if-you-work-under-vim-r-tmux-the&#34;&gt;and run the workflow as outlined below. If you work under Vim-R-Tmux, the&lt;/h2&gt;
+&lt;h2 id=&#34;following-command-sequence-will-connect-the-user-in-an-interactive-session-with&#34;&gt;following command sequence will connect the user in an interactive session with&lt;/h2&gt;
+&lt;h2 id=&#34;a-node-on-the-cluster-the-code-of-the-rmd&#34;&gt;a node on the cluster. The code of the &lt;code&gt;Rmd&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;script-can-then-be-sent-from-vim-on-the-login-head-node-to-an-open-r-session-running&#34;&gt;script can then be sent from Vim on the login (head) node to an open R session running&lt;/h2&gt;
+&lt;h2 id=&#34;on-the-corresponding-computer-node-this-is-important-since-tmux-sessions&#34;&gt;on the corresponding computer node. This is important since Tmux sessions&lt;/h2&gt;
+&lt;h2 id=&#34;should-not-be-run-on-the-computer-nodes&#34;&gt;should not be run on the computer nodes.&lt;/h2&gt;
+&lt;p&gt;q(&amp;ldquo;no&amp;rdquo;) # closes R session on head node
+srun &amp;ndash;x11 &amp;ndash;partition=short &amp;ndash;mem=2gb &amp;ndash;cpus-per-task 4 &amp;ndash;ntasks 1 &amp;ndash;time 2:00:00 &amp;ndash;pty bash -l
+module load R/4.0.3
+R&lt;/p&gt;
+&lt;h2 id=&#34;now-check-whether-your-r-session-is-running-on-a-computer-node-of-the&#34;&gt;Now check whether your R session is running on a computer node of the&lt;/h2&gt;
+&lt;h2 id=&#34;cluster-and-not-on-a-head-node&#34;&gt;cluster and not on a head node.&lt;/h2&gt;
+&lt;p&gt;system(&amp;ldquo;hostname&amp;rdquo;) # should return name of a compute node starting with i or c
+getwd() # checks current working directory of R session
+dir() # returns content of current working directory&lt;/p&gt;
+&lt;h2 id=&#34;parallelization-on-clusters&#34;&gt;Parallelization on clusters&lt;/h2&gt;
+&lt;h2 id=&#34;alternatively-the-computation-can-be-greatly-accelerated-by-processing-many-files&#34;&gt;Alternatively, the computation can be greatly accelerated by processing many files&lt;/h2&gt;
+&lt;h2 id=&#34;in-parallel-using-several-compute-nodes-of-a-cluster-where-a-schedulingqueuing&#34;&gt;in parallel using several compute nodes of a cluster, where a scheduling/queuing&lt;/h2&gt;
+&lt;h2 id=&#34;system-is-used-for-load-balancing-for-this-the-clusterrun-function-submits&#34;&gt;system is used for load balancing. For this the clusterRun function submits&lt;/h2&gt;
+&lt;h2 id=&#34;the-computing-requests-to-the-scheduler-using-the-run-specifications&#34;&gt;the computing requests to the scheduler using the run specifications&lt;/h2&gt;
+&lt;h2 id=&#34;defined-by-runcommandline&#34;&gt;defined by runCommandline.&lt;/h2&gt;
+&lt;h2 id=&#34;the-following-example-will-run-18-processes-in-parallel-using-for-each-4-cpu&#34;&gt;The following example will run 18 processes in parallel using for each 4 CPU&lt;/h2&gt;
+&lt;h2 id=&#34;cores-if-the-resources-available-on-a-cluster-allow-running-all-18-processes&#34;&gt;cores. If the resources available on a cluster allow running all 18 processes&lt;/h2&gt;
+&lt;h2 id=&#34;at-the-same-time-then-the-shown-sample-submission-will-utilize-in-total-72-cpu&#34;&gt;at the same time then the shown sample submission will utilize in total 72 CPU&lt;/h2&gt;
+&lt;h2 id=&#34;cores-note-clusterrun-can-be-used-with-most-queueing-systems-as-it-is-based&#34;&gt;cores. Note, clusterRun can be used with most queueing systems as it is based&lt;/h2&gt;
+&lt;h2 id=&#34;on-utilities-from-the-batchtools-package-which-supports-the-use-of-template&#34;&gt;on utilities from the batchtools package which supports the use of template&lt;/h2&gt;
+&lt;h2 id=&#34;files-tmpl-for-defining-the-run-parameters-of-different-schedulers-the&#34;&gt;files (*.tmpl) for defining the run parameters of different schedulers. The&lt;/h2&gt;
+&lt;h2 id=&#34;following-example-uses-the-sample-conf-and-template-files-for-the-slurm&#34;&gt;following example uses the sample conf and template files for the Slurm&lt;/h2&gt;
+&lt;h2 id=&#34;scheduler-provided-by-this-package&#34;&gt;scheduler provided by this package.&lt;/h2&gt;
+&lt;p&gt;library(batchtools)
+targetspath &amp;lt;- system.file(&amp;ldquo;extdata&amp;rdquo;, &amp;ldquo;targetsPE.txt&amp;rdquo;, package=&amp;ldquo;systemPipeR&amp;rdquo;)
+dir_path &amp;lt;- system.file(&amp;ldquo;extdata/cwl/hisat2/hisat2-pe&amp;rdquo;, package=&amp;ldquo;systemPipeR&amp;rdquo;)
+args &amp;lt;- loadWorkflow(targets=targetspath, wf_file=&amp;ldquo;hisat2-mapping-pe.cwl&amp;rdquo;,
+input_file=&amp;ldquo;hisat2-mapping-pe.yml&amp;rdquo;, dir_path=dir_path)
+args &amp;lt;- renderWF(args, inputvars=c(FileName1=&amp;quot;&lt;em&gt;FASTQ_PATH1&lt;/em&gt;&amp;rdquo;, FileName2=&amp;quot;&lt;em&gt;FASTQ_PATH2&lt;/em&gt;&amp;quot;, SampleName=&amp;quot;&lt;em&gt;SampleName&lt;/em&gt;&amp;quot;))
+resources &amp;lt;- list(walltime=120, ntasks=1, ncpus=4, memory=1024)
+reg &amp;lt;- clusterRun(args, FUN = runCommandline, more.args = list(args=args, make_bam=TRUE, dir=FALSE),
+conffile = &amp;ldquo;.batchtools.conf.R&amp;rdquo;, template = &amp;ldquo;batchtools.slurm.tmpl&amp;rdquo;,
+Njobs=18, runid=&amp;ldquo;01&amp;rdquo;, resourceList=resources)
+getStatus(reg=reg)
+waitForJobs(reg=reg)&lt;/p&gt;
+&lt;h2 id=&#34;workflow-templates&#34;&gt;Workflow templates&lt;/h2&gt;
+&lt;h2 id=&#34;sample-workflow-templates-are-provided-via-systempiperdata-and-github-instances-of-these&#34;&gt;Sample workflow templates are provided via systemPipeRdata and GitHub. Instances of these&lt;/h2&gt;
+&lt;h2 id=&#34;workflows-can-be-created-with-a-single-command&#34;&gt;workflows can be created with a single command.&lt;/h2&gt;
+&lt;h3 id=&#34;rna-seq-sample&#34;&gt;RNA-Seq sample&lt;/h3&gt;
+&lt;h2 id=&#34;load-the-rna-seq-sample-workflow-into-your-current-working-directory&#34;&gt;Load the RNA-Seq sample workflow into your current working directory.&lt;/h2&gt;
+&lt;p&gt;library(systemPipeRdata)
+genWorkenvir(workflow=&amp;ldquo;rnaseq&amp;rdquo;)
+setwd(&amp;ldquo;rnaseq&amp;rdquo;)&lt;/p&gt;
+&lt;h2 id=&#34;run-rna-seq-workflow-interactively&#34;&gt;Run RNA-Seq workflow interactively&lt;/h2&gt;
+&lt;h2 id=&#34;open-under-workflow-directory-here-rnaseq-systempipernaseqrmd-and-continue-there&#34;&gt;Open under workflow directory (here &amp;lsquo;rnaseq&amp;rsquo;) systemPipeRNAseq.Rmd and continue there&lt;/h2&gt;
+
+      </description>
+    </item>
+    
   </channel>
 </rss>
