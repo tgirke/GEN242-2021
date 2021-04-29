@@ -18,21 +18,24 @@
 <link rel="icon" type="image/png" href="../../../favicons/android-192x192.png" sizes="192x192">
 
 <title>systemPipeR: Workflow design and reporting generation environment | GEN242</title><meta property="og:title" content="systemPipeR: Workflow design and reporting generation environment" />
-<meta property="og:description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Introduction systemPipeR is provides flexible utilities for building and running automated end-to-end analysis workflows for a wide range of research applications, including next-generation sequencing (NGS) experiments, such as RNA-Seq, ChIP-Seq, VAR-Seq and Ribo-Seq (H Backman and Girke 2016)." />
+<meta property="og:description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
+ Introduction systemPipeR is provides flexible utilities for building and running automated end-to-end analysis workflows for a wide range of research applications, including next-generation sequencing (NGS) experiments, such as RNA-Seq, ChIP-Seq, VAR-Seq and Ribo-Seq (H Backman and Girke 2016)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/systempiper/systempiper/" />
-<meta property="article:modified_time" content="2021-04-28T19:44:57-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-04-28T20:08:27-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="systemPipeR: Workflow design and reporting generation environment">
-<meta itemprop="description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Introduction systemPipeR is provides flexible utilities for building and running automated end-to-end analysis workflows for a wide range of research applications, including next-generation sequencing (NGS) experiments, such as RNA-Seq, ChIP-Seq, VAR-Seq and Ribo-Seq (H Backman and Girke 2016).">
-<meta itemprop="dateModified" content="2021-04-28T19:44:57-07:00" />
-<meta itemprop="wordCount" content="4990">
+<meta itemprop="description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
+ Introduction systemPipeR is provides flexible utilities for building and running automated end-to-end analysis workflows for a wide range of research applications, including next-generation sequencing (NGS) experiments, such as RNA-Seq, ChIP-Seq, VAR-Seq and Ribo-Seq (H Backman and Girke 2016).">
+<meta itemprop="dateModified" content="2021-04-28T20:08:27-07:00" />
+<meta itemprop="wordCount" content="4999">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="systemPipeR: Workflow design and reporting generation environment"/>
-<meta name="twitter:description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Introduction systemPipeR is provides flexible utilities for building and running automated end-to-end analysis workflows for a wide range of research applications, including next-generation sequencing (NGS) experiments, such as RNA-Seq, ChIP-Seq, VAR-Seq and Ribo-Seq (H Backman and Girke 2016)."/>
+<meta name="twitter:description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
+ Introduction systemPipeR is provides flexible utilities for building and running automated end-to-end analysis workflows for a wide range of research applications, including next-generation sequencing (NGS) experiments, such as RNA-Seq, ChIP-Seq, VAR-Seq and Ribo-Seq (H Backman and Girke 2016)."/>
 
 
 <script type="application/javascript">
@@ -840,7 +843,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.1b7af939c552ecb493407d9c32d691a8.json"
+  data-offline-search-index-json-src="../../../offline-search-index.256645027c272a2d9866ac0fa20ffca6.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -872,7 +875,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.1b7af939c552ecb493407d9c32d691a8.json"
+  data-offline-search-index-json-src="../../../offline-search-index.256645027c272a2d9866ac0fa20ffca6.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1199,6 +1202,11 @@ document.addEventListener("DOMContentLoaded", function() {
       links[i].target = '_blank';
 });
 </script>
+<div style="text-align: right">
+<p>Source code downloads:    
+[ <a href="https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/systempiper/systemPipeR.Rmd">.Rmd</a> ]    
+[ <a href="https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/systempiper/systemPipeR.R">.R</a> ]</p>
+</div>
 <h3 id="introduction">Introduction</h3>
 <p><a href="http://www.bioconductor.org/packages/devel/bioc/html/systemPipeR.html"><em><code>systemPipeR</code></em></a>
 is provides flexible utilities for building and running automated end-to-end
@@ -1301,7 +1309,16 @@ from R or the command-line using local systems, HPC cluster or cloud platforms.<
 <p><strong>Figure 3:</strong> Workflow Management using <em><code>SYSargsList</code></em>.</p>
 <h2 id="getting-started">Getting Started</h2>
 <h3 id="installation">Installation</h3>
-<p>The R software for running <a href="http://www.bioconductor.org/packages/devel/bioc/html/systemPipeR.html"><em><code>systemPipeR</code></em></a> can be downloaded from <a href="http://cran.at.r-project.org/"><em>CRAN</em></a>. The <em><code>systemPipeR</code>* environment can be installed from the R console using the </em><code>BiocManager::install</code>*<a href="https://cran.r-project.org/web/packages/BiocManager/index.html"></a> command. The associated data package <a href="http://www.bioconductor.org/packages/devel/data/experiment/html/systemPipeRdata.html"><em><code>systemPipeRdata</code></em></a> can be installed the same way. The latter is a helper package for generating <em><code>systemPipeR</code></em> workflow environments with a single command containing all parameter files and sample data required to quickly test and run workflows.</p>
+<p>The R software for running
+<a href="http://www.bioconductor.org/packages/devel/bioc/html/systemPipeR.html"><em><code>systemPipeR</code></em></a>
+can be downloaded from <a href="http://cran.at.r-project.org/"><em>CRAN</em></a>. The
+<code>systemPipeR</code> environment can be installed from the R console using the
+<a href="https://cran.r-project.org/web/packages/BiocManager/index.html"><em><code>BiocManager::install</code></em></a>
+command. The associated data package
+<a href="http://www.bioconductor.org/packages/devel/data/experiment/html/systemPipeRdata.html"><em><code>systemPipeRdata</code></em></a>
+can be installed the same way. The latter is a helper package for generating
+<code>systemPipeR</code> workflow environments with a single command containing all
+parameter files and sample data required to quickly test and run workflows.</p>
 <pre><code class="language-r">if (!requireNamespace(&quot;BiocManager&quot;, quietly = TRUE)) install.packages(&quot;BiocManager&quot;)
 BiocManager::install(&quot;systemPipeR&quot;)
 BiocManager::install(&quot;systemPipeRdata&quot;)
@@ -2191,7 +2208,7 @@ setwd(&quot;riboseq&quot;)
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-28: <a  href="https://github.com/tgirke/GEN242//commit/bd0174ba2a57dfb3dd18e864f9fbe998feca1e39">some edits (bd0174ba)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-28: <a  href="https://github.com/tgirke/GEN242//commit/dada361138b5e7e328dc516ced9dd62d3a46934a">some edits (dada3611)</a>
 </div>
 </div>
 

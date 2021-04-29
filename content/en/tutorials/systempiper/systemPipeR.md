@@ -50,6 +50,14 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
+<div style="text-align: right">
+
+Source code downloads:    
+\[ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/systempiper/systemPipeR.Rmd) \]    
+\[ [.R](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/systempiper/systemPipeR.R) \]
+
+</div>
+
 ### Introduction
 
 [*`systemPipeR`*](http://www.bioconductor.org/packages/devel/bioc/html/systemPipeR.html)
@@ -170,7 +178,16 @@ from R or the command-line using local systems, HPC cluster or cloud platforms.
 
 ### Installation
 
-The R software for running [*`systemPipeR`*](http://www.bioconductor.org/packages/devel/bioc/html/systemPipeR.html) can be downloaded from [*CRAN*](http://cran.at.r-project.org/). The *`systemPipeR`* environment can be installed from the R console using the [*`BiocManager::install`*](https://cran.r-project.org/web/packages/BiocManager/index.html) command. The associated data package [*`systemPipeRdata`*](http://www.bioconductor.org/packages/devel/data/experiment/html/systemPipeRdata.html) can be installed the same way. The latter is a helper package for generating *`systemPipeR`* workflow environments with a single command containing all parameter files and sample data required to quickly test and run workflows.
+The R software for running
+[*`systemPipeR`*](http://www.bioconductor.org/packages/devel/bioc/html/systemPipeR.html)
+can be downloaded from [*CRAN*](http://cran.at.r-project.org/). The
+`systemPipeR` environment can be installed from the R console using the
+[*`BiocManager::install`*](https://cran.r-project.org/web/packages/BiocManager/index.html)
+command. The associated data package
+[*`systemPipeRdata`*](http://www.bioconductor.org/packages/devel/data/experiment/html/systemPipeRdata.html)
+can be installed the same way. The latter is a helper package for generating
+`systemPipeR` workflow environments with a single command containing all
+parameter files and sample data required to quickly test and run workflows.
 
 ``` r
 if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
