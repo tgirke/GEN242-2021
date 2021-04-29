@@ -431,7 +431,7 @@ vennPlot(list(vennsetup, vennsetdown), mymain="", mysub="", colmode=2, ccol=c("b
 dev.off()
 ```
 
-![](results/vennplot.png)
+![](../results/vennplot.png)
 <div align="center">Figure 4: Venn Diagram for 4 Up and Down DEG Sets</div></br>
 
 ## GO term enrichment analysis

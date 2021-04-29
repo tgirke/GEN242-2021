@@ -1,7 +1,7 @@
 ---
 title: "RNA-Seq Workflow Template" 
 author: "Author: Daniela Cassol, Le Zhang and Thomas Girke"
-date: "Last update: 28 April, 2021" 
+date: "Last update: 29 April, 2021" 
 output:
   BiocStyle::html_document:
     toc_float: true
@@ -558,7 +558,7 @@ vennPlot(list(vennsetup, vennsetdown), mymain = "", mysub = "",
 dev.off()
 ```
 
-![](results/vennplot.png)
+![](../results/vennplot.png)
 
 <div align="center">
 
