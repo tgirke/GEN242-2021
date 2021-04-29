@@ -1,0 +1,31 @@
+No input_steps is given, list all sections and exit
+This file contains following sections
+1  Introduction
+2  Samples and environment settings
+    2.1  Environment settings and input data
+    2.2  Required packages and resources
+    2.3  Experiment definition provided by `targets` file
+3  Read preprocessing
+    3.1  Read quality filtering and trimming
+    3.2  FASTQ quality report
+4  Alignments
+    4.1  Read mapping with `HISAT2`
+        4.1.1  Interactive job submissions in a single machine
+        4.1.2  Parallelization on clusters
+    4.2  Read and alignment stats
+    4.3  Create symbolic links for viewing BAM files in IGV
+5  Read quantification
+    5.1  Read counting with `summarizeOverlaps` in parallel mode using multiple cores
+    5.2  Sample-wise correlation analysis
+6  Analysis of DEGs
+    6.1  Run `edgeR`
+    6.2  Plot DEG results
+    6.3  Venn diagrams of DEG sets
+7  GO term enrichment analysis
+    7.1  Obtain gene-to-GO mappings
+    7.2  Batch GO term enrichment analysis
+    7.3  Plot batch GO term results
+8  Clustering and heat maps
+9  Version Information
+10  Funding
+11  References

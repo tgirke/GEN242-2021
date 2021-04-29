@@ -409,30 +409,35 @@ enable = true
     parent = "Tutorials"
     weight = 206
   [[menu.main]]
-    name = "RNA-Seq Workflow (T7)"
-    url = "/tutorials/tutorial_07"
+    name = "Workflows (T7)"
+    url = "/tutorials/systempiper/systempiper/"
     parent = "Tutorials"
     weight = 207
   [[menu.main]]
-    name = "ChIP-Seq Workflow (T8)"
-    url = "/tutorials/tutorial_08"
+    name = "RNA-Seq Workflow (T8)"
+    url = "/tutorials/sprnaseq/sprnaseq/"
     parent = "Tutorials"
     weight = 208
   [[menu.main]]
-    name = "VAR-Seq Workflow (T9)"
-    url = "/tutorials/tutorial_09"
+    name = "ChIP-Seq Workflow (T9)"
+    url = "/tutorials/tutorial_08"
     parent = "Tutorials"
     weight = 209
   [[menu.main]]
-    name = "Graphics and Visualization (T10)"
-    url = "/tutorials/tutorial_10"
+    name = "VAR-Seq Workflow (T10)"
+    url = "/tutorials/tutorial_09"
     parent = "Tutorials"
     weight = 210
   [[menu.main]]
-    name = "Cluster Analysis and Data Mining (T11)"
-    url = "/tutorials/tutorial_11"
+    name = "Graphics and Visualization (T11)"
+    url = "/tutorials/tutorial_10"
     parent = "Tutorials"
     weight = 211
+  [[menu.main]]
+    name = "Cluster Analysis and Data Mining (T11)"
+    url = "/tutorials/tutorial_12"
+    parent = "Tutorials"
+    weight = 212
 ##
 [[menu.main]]
   name = "Manuals"
