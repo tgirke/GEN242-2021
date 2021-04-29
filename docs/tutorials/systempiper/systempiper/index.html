@@ -22,12 +22,12 @@
  Introduction systemPipeR is provides flexible utilities for building and running automated end-to-end analysis workflows for a wide range of research applications, including next-generation sequencing (NGS) experiments, such as RNA-Seq, ChIP-Seq, VAR-Seq and Ribo-Seq (H Backman and Girke 2016)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/systempiper/systempiper/" />
-<meta property="article:modified_time" content="2021-04-28T20:08:27-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-04-28T20:20:15-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="systemPipeR: Workflow design and reporting generation environment">
 <meta itemprop="description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
  Introduction systemPipeR is provides flexible utilities for building and running automated end-to-end analysis workflows for a wide range of research applications, including next-generation sequencing (NGS) experiments, such as RNA-Seq, ChIP-Seq, VAR-Seq and Ribo-Seq (H Backman and Girke 2016).">
-<meta itemprop="dateModified" content="2021-04-28T20:08:27-07:00" />
-<meta itemprop="wordCount" content="4999">
+<meta itemprop="dateModified" content="2021-04-28T20:20:15-07:00" />
+<meta itemprop="wordCount" content="4962">
 
 
 
@@ -843,7 +843,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.256645027c272a2d9866ac0fa20ffca6.json"
+  data-offline-search-index-json-src="../../../offline-search-index.a40e1d56483dcf6c0a57acfe0005bf86.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -875,7 +875,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.256645027c272a2d9866ac0fa20ffca6.json"
+  data-offline-search-index-json-src="../../../offline-search-index.a40e1d56483dcf6c0a57acfe0005bf86.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1972,6 +1972,12 @@ and a template file (see <em><code>*.tmpl</code></em> samples <a href="https://g
 for the queueing available on a system. The following example uses the sample
 conf and template files for the Slurm scheduler provided by this package.</p>
 <pre><code class="language-r">library(batchtools)
+targetspath &lt;- system.file(&quot;extdata&quot;, &quot;targetsPE.txt&quot;, package = &quot;systemPipeR&quot;)
+dir_path &lt;- system.file(&quot;extdata/cwl/hisat2/hisat2-pe&quot;, package = &quot;systemPipeR&quot;)
+args &lt;- loadWorkflow(targets = targetspath, wf_file = &quot;hisat2-mapping-pe.cwl&quot;, input_file = &quot;hisat2-mapping-pe.yml&quot;, 
+    dir_path = dir_path)
+args &lt;- renderWF(args, inputvars = c(FileName1 = &quot;_FASTQ_PATH1_&quot;, FileName2 = &quot;_FASTQ_PATH2_&quot;, 
+    SampleName = &quot;_SampleName_&quot;))
 resources &lt;- list(walltime = 120, ntasks = 1, ncpus = 4, memory = 1024)
 reg &lt;- clusterRun(args, FUN = runCommandline, more.args = list(args = args, make_bam = TRUE, 
     dir = FALSE), conffile = &quot;.batchtools.conf.R&quot;, template = &quot;batchtools.slurm.tmpl&quot;, 
@@ -1980,15 +1986,6 @@ getStatus(reg = reg)
 waitForJobs(reg = reg)
 </code></pre>
 <h2 id="workflow-initialization-with-templates">Workflow initialization with templates</h2>
-<p>The intended way of running <em><code>systemPipeR</code></em> workflows is via <em><code>*.Rmd</code></em> files, which
-can be executed either line-wise in interactive mode or with a single command from
-R or the command-line. This way comprehensive and reproducible analysis reports
-can be generated in PDF or HTML format in a fully automated manner by making use
-of the highly functional reporting utilities available for R.
-The following shows how to execute a workflow (<em>e.g.</em>, systemPipeRNAseq.Rmd)
-from the command-line.</p>
-<pre><code class="language-bash">Rscript -e &quot;rmarkdown::render('systemPipeRNAseq.Rmd')&quot;
-</code></pre>
 <p>Templates for setting up custom project reports are provided as *<code>*.Rmd</code>* files by the helper package *<code>systemPipeRdata</code>* and in the vignettes subdirectory of <em><code>systemPipeR</code><em>. The corresponding HTML of these report templates are available here: </em><code>systemPipeRNAseq</code></em><a href="http://www.bioconductor.org/packages/devel/data/experiment/vignettes/systemPipeRdata/inst/doc/systemPipeRNAseq.html"></a>, <a href="http://www.bioconductor.org/packages/devel/data/experiment/vignettes/systemPipeRdata/inst/doc/systemPipeRIBOseq.html"><em><code>systemPipeRIBOseq</code></em></a>, <a href="http://www.bioconductor.org/packages/devel/data/experiment/vignettes/systemPipeRdata/inst/doc/systemPipeChIPseq.html"><em><code>systemPipeChIPseq</code></em></a> and <a href="http://www.bioconductor.org/packages/devel/data/experiment/vignettes/systemPipeRdata/inst/doc/systemPipeVARseq.html"><em><code>systemPipeVARseq</code></em></a>. To work with <em><code>*.Rnw</code>* or <em><code>*.Rmd</code>* files efficiently, basic knowledge of </em><code>Sweave</code></em><a href="https://www.stat.uni-muenchen.de/~leisch/Sweave/"></a> or <a href="http://yihui.name/knitr/"><em><code>knitr</code></em></a> and <a href="http://www.latex-project.org/"><em><code>Latex</code></em></a> or <a href="http://rmarkdown.rstudio.com/"><em><code>R Markdown v2</code></em></a> is required.</p>
 <h3 id="rna-seq-sample">RNA-Seq sample</h3>
 <p>Load the RNA-Seq sample workflow into your current working directory.</p>
@@ -2208,7 +2205,7 @@ setwd(&quot;riboseq&quot;)
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-28: <a  href="https://github.com/tgirke/GEN242//commit/dada361138b5e7e328dc516ced9dd62d3a46934a">some edits (dada3611)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-28: <a  href="https://github.com/tgirke/GEN242//commit/44e95c7534da9af3119455a2738e67eff699c886">some edits (44e95c75)</a>
 </div>
 </div>
 

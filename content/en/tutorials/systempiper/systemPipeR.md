@@ -921,6 +921,12 @@ conf and template files for the Slurm scheduler provided by this package.
 
 ``` r
 library(batchtools)
+targetspath <- system.file("extdata", "targetsPE.txt", package = "systemPipeR")
+dir_path <- system.file("extdata/cwl/hisat2/hisat2-pe", package = "systemPipeR")
+args <- loadWorkflow(targets = targetspath, wf_file = "hisat2-mapping-pe.cwl", input_file = "hisat2-mapping-pe.yml", 
+    dir_path = dir_path)
+args <- renderWF(args, inputvars = c(FileName1 = "_FASTQ_PATH1_", FileName2 = "_FASTQ_PATH2_", 
+    SampleName = "_SampleName_"))
 resources <- list(walltime = 120, ntasks = 1, ncpus = 4, memory = 1024)
 reg <- clusterRun(args, FUN = runCommandline, more.args = list(args = args, make_bam = TRUE, 
     dir = FALSE), conffile = ".batchtools.conf.R", template = "batchtools.slurm.tmpl", 
@@ -930,18 +936,6 @@ waitForJobs(reg = reg)
 ```
 
 ## Workflow initialization with templates
-
-The intended way of running *`systemPipeR`* workflows is via *`*.Rmd`* files, which
-can be executed either line-wise in interactive mode or with a single command from
-R or the command-line. This way comprehensive and reproducible analysis reports
-can be generated in PDF or HTML format in a fully automated manner by making use
-of the highly functional reporting utilities available for R.
-The following shows how to execute a workflow (*e.g.*, systemPipeRNAseq.Rmd)
-from the command-line.
-
-``` bash
-Rscript -e "rmarkdown::render('systemPipeRNAseq.Rmd')"
-```
 
 Templates for setting up custom project reports are provided as *`*.Rmd`* files by the helper package *`systemPipeRdata`* and in the vignettes subdirectory of *`systemPipeR`*. The corresponding HTML of these report templates are available here: [*`systemPipeRNAseq`*](http://www.bioconductor.org/packages/devel/data/experiment/vignettes/systemPipeRdata/inst/doc/systemPipeRNAseq.html), [*`systemPipeRIBOseq`*](http://www.bioconductor.org/packages/devel/data/experiment/vignettes/systemPipeRdata/inst/doc/systemPipeRIBOseq.html), [*`systemPipeChIPseq`*](http://www.bioconductor.org/packages/devel/data/experiment/vignettes/systemPipeRdata/inst/doc/systemPipeChIPseq.html) and [*`systemPipeVARseq`*](http://www.bioconductor.org/packages/devel/data/experiment/vignettes/systemPipeRdata/inst/doc/systemPipeVARseq.html). To work with *`*.Rnw`* or *`*.Rmd`* files efficiently, basic knowledge of [*`Sweave`*](https://www.stat.uni-muenchen.de/~leisch/Sweave/) or [*`knitr`*](http://yihui.name/knitr/) and [*`Latex`*](http://www.latex-project.org/) or [*`R Markdown v2`*](http://rmarkdown.rstudio.com/) is required.
 
