@@ -18,21 +18,21 @@
 <link rel="icon" type="image/png" href="../../../favicons/android-192x192.png" sizes="192x192">
 
 <title>systemPipeR: Workflow design and reporting generation environment | GEN242</title><meta property="og:title" content="systemPipeR: Workflow design and reporting generation environment" />
-<meta property="og:description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Introduction systemPipeR provides flexible utilities for building and running automated end-to-end analysis workflows for a wide range of research applications, including next-generation sequencing (NGS) experiments, such as RNA-Seq, ChIP-Seq, VAR-Seq and Ribo-Seq (H Backman and Girke 2016)." />
+<meta property="og:description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Introduction systemPipeR is provides flexible utilities for building and running automated end-to-end analysis workflows for a wide range of research applications, including next-generation sequencing (NGS) experiments, such as RNA-Seq, ChIP-Seq, VAR-Seq and Ribo-Seq (H Backman and Girke 2016)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/systempiper/systempiper/" />
 <meta property="article:modified_time" content="2021-04-28T19:44:57-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="systemPipeR: Workflow design and reporting generation environment">
-<meta itemprop="description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Introduction systemPipeR provides flexible utilities for building and running automated end-to-end analysis workflows for a wide range of research applications, including next-generation sequencing (NGS) experiments, such as RNA-Seq, ChIP-Seq, VAR-Seq and Ribo-Seq (H Backman and Girke 2016).">
+<meta itemprop="description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Introduction systemPipeR is provides flexible utilities for building and running automated end-to-end analysis workflows for a wide range of research applications, including next-generation sequencing (NGS) experiments, such as RNA-Seq, ChIP-Seq, VAR-Seq and Ribo-Seq (H Backman and Girke 2016).">
 <meta itemprop="dateModified" content="2021-04-28T19:44:57-07:00" />
-<meta itemprop="wordCount" content="11178">
+<meta itemprop="wordCount" content="4990">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="systemPipeR: Workflow design and reporting generation environment"/>
-<meta name="twitter:description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Introduction systemPipeR provides flexible utilities for building and running automated end-to-end analysis workflows for a wide range of research applications, including next-generation sequencing (NGS) experiments, such as RNA-Seq, ChIP-Seq, VAR-Seq and Ribo-Seq (H Backman and Girke 2016)."/>
+<meta name="twitter:description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Introduction systemPipeR is provides flexible utilities for building and running automated end-to-end analysis workflows for a wide range of research applications, including next-generation sequencing (NGS) experiments, such as RNA-Seq, ChIP-Seq, VAR-Seq and Ribo-Seq (H Backman and Girke 2016)."/>
 
 
 <script type="application/javascript">
@@ -840,7 +840,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.2c21ce4d4cdb1b858bd08ca8a22a3935.json"
+  data-offline-search-index-json-src="../../../offline-search-index.1b7af939c552ecb493407d9c32d691a8.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -872,7 +872,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.2c21ce4d4cdb1b858bd08ca8a22a3935.json"
+  data-offline-search-index-json-src="../../../offline-search-index.1b7af939c552ecb493407d9c32d691a8.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1066,20 +1066,15 @@ if (!doNotTrack) {
       <ul>
         <li><a href="#introduction">Introduction</a></li>
         <li><a href="#workflow-design-structure-using-sysargs2">Workflow design structure using <em><code>SYSargs2</code></em></a></li>
-        <li><a href="#workflow-management-using-sysargslist">Workflow Management using <em><code>SYSargsList</code></em></a></li>
-        <li><a href="#workflow-design-structure-using-sysargs-previous-version">Workflow design structure using <em><code>SYSargs</code></em>: Previous version</a></li>
+        <li><a href="#workflow-management-with-sysargslist">Workflow Management with <em><code>SYSargsList</code></em></a></li>
       </ul>
     </li>
     <li><a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#installation">Installation</a></li>
         <li><a href="#loading-package-and-documentation">Loading package and documentation</a></li>
-        <li><a href="#load-sample-data-and-workflow-templates">Load sample data and workflow templates</a>
-          <ul>
-            <li><a href="#workflow-template-from-an-individuals-package">Workflow template from an individual’s package</a></li>
-          </ul>
-        </li>
-        <li><a href="#directory-structure">Directory Structure</a></li>
+        <li><a href="#load-sample-data-and-workflow-templates">Load sample data and workflow templates</a></li>
+        <li><a href="#directory-structure">Directory structure</a></li>
         <li><a href="#structure-of-targets-file">Structure of <em><code>targets</code></em> file</a>
           <ul>
             <li><a href="#structure-of-targets-file-for-single-end-se-samples">Structure of <em><code>targets</code></em> file for single-end (SE) samples</a></li>
@@ -1087,22 +1082,19 @@ if (!doNotTrack) {
             <li><a href="#sample-comparisons">Sample comparisons</a></li>
           </ul>
         </li>
-        <li><a href="#structure-of-the-new-param-files-and-construct-sysargs2-container">Structure of the new <em><code>param</code></em> files and construct <em><code>SYSargs2</code></em> container</a>
+        <li><a href="#structure-and-initialization-of-sysargs2">Structure and initialization of <em><code>SYSargs2</code></em></a>
           <ul>
             <li><a href="#third-party-software-tools">Third-party software tools</a></li>
           </ul>
         </li>
-        <li><a href="#structure-of-param-file-and-sysargs-container-previous-version">Structure of <em><code>param</code></em> file and <em><code>SYSargs</code></em> container (Previous version)</a></li>
       </ul>
     </li>
     <li><a href="#how-to-run-a-workflow">How to run a Workflow</a>
       <ul>
         <li><a href="#load-sample-data-and-workflow-templates-1">Load sample data and workflow templates</a></li>
         <li><a href="#setup-and-requirements">Setup and Requirements</a></li>
-        <li><a href="#project-initialization">Project Initialization</a></li>
-        <li><a href="#project-initialization-in-a-temporary-directory">Project Initialization in a Temporary Directory</a></li>
-        <li><a href="#configuration-and-run-of-the-project">Configuration and run of the project</a></li>
-        <li><a href="#how-to-use-pipes-with-systempiper">How to Use Pipes with <em>systemPipeR</em></a></li>
+        <li><a href="#project-initialization">Project initialization</a></li>
+        <li><a href="#workflow-execution">Workflow execution</a></li>
         <li><a href="#how-to-run-the-workflow-on-a-cluster">How to run the workflow on a cluster</a>
           <ul>
             <li><a href="#parallelization-on-clusters">Parallelization on clusters</a></li>
@@ -1110,60 +1102,7 @@ if (!doNotTrack) {
         </li>
       </ul>
     </li>
-    <li><a href="#workflow-steps-overview">Workflow steps overview</a>
-      <ul>
-        <li><a href="#define-environment-settings-and-samples">Define environment settings and samples</a></li>
-        <li><a href="#read-preprocessing">Read Preprocessing</a>
-          <ul>
-            <li><a href="#preprocessing-with-preprocessreads-function">Preprocessing with <em><code>preprocessReads</code></em> function</a></li>
-            <li><a href="#preprocessing-with-trimgalore">Preprocessing with TrimGalore!</a></li>
-            <li><a href="#preprocessing-with-trimmomatic">Preprocessing with Trimmomatic</a></li>
-          </ul>
-        </li>
-        <li><a href="#fastq-quality-report">FASTQ quality report</a></li>
-        <li><a href="#ngs-alignment-software">NGS Alignment software</a>
-          <ul>
-            <li><a href="#alignment-with-hisat2-using-sysargs2">Alignment with <code>HISAT2</code> using <em><code>SYSargs2</code></em></a>
-              <ul>
-                <li><a href="#interactive-job-submissions-in-a-single-machine">Interactive job submissions in a single machine</a></li>
-                <li><a href="#parallelization-on-clusters-1">Parallelization on clusters</a></li>
-                <li><a href="#create-new-targets-file">Create new targets file</a></li>
-                <li><a href="#alignment-with-hisat2-and-samtools">Alignment with <code>HISAT2</code> and <code>SAMtools</code></a></li>
-              </ul>
-            </li>
-            <li><a href="#alignment-with-tophat2">Alignment with <em><code>Tophat2</code></em></a></li>
-            <li><a href="#alignment-with-bowtie2-eg-for-mirna-profiling">Alignment with <em><code>Bowtie2</code></em> (<em>e.g.</em> for miRNA profiling)</a></li>
-            <li><a href="#alignment-with-bwa-mem-eg-for-var-seq">Alignment with <em><code>BWA-MEM</code></em> (<em>e.g.</em> for VAR-Seq)</a></li>
-            <li><a href="#alignment-with-rsubread-eg-for-rna-seq">Alignment with <em><code>Rsubread</code></em> (<em>e.g.</em> for RNA-Seq)</a></li>
-            <li><a href="#alignment-with-gsnap-eg-for-var-seq-and-rna-seq">Alignment with <em><code>gsnap</code></em> (<em>e.g.</em> for VAR-Seq and RNA-Seq)</a></li>
-          </ul>
-        </li>
-        <li><a href="#create-symbolic-links-for-viewing-bam-files-in-igv">Create symbolic links for viewing BAM files in IGV</a></li>
-        <li><a href="#read-counting-for-mrna-profiling-experiments">Read counting for mRNA profiling experiments</a>
-          <ul>
-            <li>
-              <ul>
-                <li><a href="#read-and-alignment-count-stats">Read and alignment count stats</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li><a href="#read-counting-for-mirna-profiling-experiments">Read counting for miRNA profiling experiments</a></li>
-        <li><a href="#correlation-analysis-of-samples">Correlation analysis of samples</a></li>
-        <li><a href="#deg-analysis-with-edger">DEG analysis with <em><code>edgeR</code></em></a></li>
-        <li><a href="#deg-analysis-with-deseq2">DEG analysis with <em><code>DESeq2</code></em></a></li>
-        <li><a href="#venn-diagrams">Venn Diagrams</a></li>
-        <li><a href="#go-term-enrichment-analysis-of-degs">GO term enrichment analysis of DEGs</a>
-          <ul>
-            <li><a href="#obtain-gene-to-go-mappings">Obtain gene-to-GO mappings</a></li>
-            <li><a href="#batch-go-term-enrichment-analysis">Batch GO term enrichment analysis</a></li>
-            <li><a href="#plot-batch-go-term-results">Plot batch GO term results</a></li>
-          </ul>
-        </li>
-        <li><a href="#clustering-and-heat-maps">Clustering and heat maps</a></li>
-      </ul>
-    </li>
-    <li><a href="#workflow-templates">Workflow templates</a>
+    <li><a href="#workflow-initialization-with-templates">Workflow initialization with templates</a>
       <ul>
         <li><a href="#rna-seq-sample">RNA-Seq sample</a>
           <ul>
@@ -1231,7 +1170,7 @@ if (!doNotTrack) {
 	<h1>systemPipeR: Workflow design and reporting generation environment</h1>
     
 	
-        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 53 minute read</p>
+        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 24 minute read</p>
            
 	<script src="../../../rmarkdown-libs/kePrint/kePrint.js"></script>
 <link href="../../../rmarkdown-libs/lightable/lightable.css" rel="stylesheet" />
@@ -1261,11 +1200,29 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 <h3 id="introduction">Introduction</h3>
-<p><a href="http://www.bioconductor.org/packages/devel/bioc/html/systemPipeR.html"><em><code>systemPipeR</code></em></a> provides flexible utilities for building and running automated end-to-end analysis workflows for a wide range of research applications, including next-generation sequencing (NGS) experiments, such as RNA-Seq, ChIP-Seq, VAR-Seq and Ribo-Seq (H Backman and Girke 2016). Important features include a uniform workflow interface across different data analysis applications, automated report generation, and support for running both R and command-line software, such as NGS aligners or peak/variant callers, on local computers or compute clusters (Figure 1). The latter supports interactive job submissions and batch submissions to queuing systems of clusters. For instance, <em><code>systemPipeR</code>* can be used with most command-line aligners such as <code>BWA</code> (Heng Li 2013; H. Li and Durbin 2009), <code>HISAT2</code> (Kim, Langmead, and Salzberg 2015), <code>TopHat2</code> (Kim et al. 2013) and <code>Bowtie2</code> (Langmead and Salzberg 2012), as well as the R-based NGS aligners </em><code>Rsubread</code>*<a href="http://www.bioconductor.org/packages/devel/bioc/html/Rsubread.html"></a> (Liao, Smyth, and Shi 2013) and <a href="http://www.bioconductor.org/packages/devel/bioc/html/gmapR.html"><em><code>gsnap (gmapR)</code></em></a> (Wu and Nacu 2010). Efficient handling of complex sample sets (<em>e.g.</em> FASTQ/BAM files) and experimental designs are facilitated by a well-defined sample annotation infrastructure which improves reproducibility and user-friendliness of many typical analysis workflows in the NGS area (Lawrence et al. 2013).</p>
+<p><a href="http://www.bioconductor.org/packages/devel/bioc/html/systemPipeR.html"><em><code>systemPipeR</code></em></a>
+is provides flexible utilities for building and running automated end-to-end
+analysis workflows for a wide range of research applications, including
+next-generation sequencing (NGS) experiments, such as RNA-Seq, ChIP-Seq,
+VAR-Seq and Ribo-Seq (H Backman and Girke 2016). Important features include a uniform
+workflow interface across different data analysis applications, automated
+report generation, and support for running both R and command-line software,
+such as NGS aligners or peak/variant callers, on local computers or compute
+clusters (Figure 1). The latter supports interactive job submissions and batch
+submissions to queuing systems of clusters. For instance, <code>systemPipeR</code> can
+be used with any command-line aligners such as <code>BWA</code> (Heng Li 2013; H. Li and Durbin 2009),
+<code>HISAT2</code> (Kim, Langmead, and Salzberg 2015), <code>TopHat2</code> (Kim et al. 2013) and <code>Bowtie2</code>
+(Langmead and Salzberg 2012), as well as the R-based NGS aligners
+<a href="http://www.bioconductor.org/packages/devel/bioc/html/Rsubread.html"><em><code>Rsubread</code></em></a>
+(Liao, Smyth, and Shi 2013) and <a href="http://www.bioconductor.org/packages/devel/bioc/html/gmapR.html"><em><code>gsnap (gmapR)</code></em></a>
+(Wu and Nacu 2010). Efficient handling of complex sample sets (<em>e.g.</em> FASTQ/BAM
+files) and experimental designs are facilitated by a well-defined sample
+annotation infrastructure which improves reproducibility and user-friendliness
+of many typical analysis workflows in the NGS area (Lawrence et al. 2013).</p>
 <p>The main motivation and advantages of using <em><code>systemPipeR</code></em> for complex data analysis tasks are:</p>
 <ol>
-<li>Facilitates the design of complex NGS workflows involving multiple R/Bioconductor packages</li>
-<li>Common workflow interface for different NGS applications</li>
+<li>Facilitates the design of complex data analysis workflows</li>
+<li>Consistent workflow interface for different large-scale data types</li>
 <li>Makes NGS analysis with Bioconductor utilities more accessible to new users</li>
 <li>Simplifies usage of command-line software from within R</li>
 <li>Reduces the complexity of using compute clusters for R and command-line software</li>
@@ -1278,20 +1235,19 @@ document.addEventListener("DOMContentLoaded", function() {
 <p><strong>Figure 1:</strong> Relevant features in <em><code>systemPipeR</code></em>.
 Workflow design concepts are illustrated under (A &amp; B). Examples of
 <em>systemPipeR’s</em> visualization functionalities are given under (C). </br></p>
-<p>A central concept for designing workflows within the <em><code>systemPipeR</code></em> environment
-is the use of workflow management containers. In previous versions, <em><code>systemPipeR</code></em>
-used a custom command-line interface called <em><code>SYSargs</code></em> (see Figure 3) and for
-this purpose will continue to be supported for some time. With the latest <a href="http://www.bioconductor.org/packages/release/bioc/html/systemPipeR.html">Bioconductor Release 3.9</a>,
-we are adopting for this functionality the widely used community standard
-<a href="https://www.commonwl.org/">Common Workflow Language</a> (CWL) for describing
-analysis workflows in a generic and reproducible manner, introducing <em><code>SYSargs2</code></em>
-workflow control class (see Figure 2). Using this community standard in <em><code>systemPipeR</code></em>
-has many advantages. For instance, the integration of CWL allows running <em><code>systemPipeR</code></em>
-workflows from a single specification instance either entirely from within R, from various command-line
-wrappers (e.g., <em>cwl-runner</em>) or from other languages (<em>, e.g.,</em> Bash or Python).
-<em><code>systemPipeR</code></em> includes support for both command-line and R/Bioconductor software
-as well as resources for containerization, parallel evaluations on computer clusters
-along with the automated generation of interactive analysis reports.</p>
+<p>A central concept for designing workflows within the <em><code>systemPipeR</code></em>
+environment is the use of workflow management containers. They support
+the widely used community standard <a href="https://www.commonwl.org/">Common Workflow Language</a>
+(CWL) for describing analysis workflows in a generic and reproducible manner, introducing
+<em><code>SYSargs2</code></em> workflow control class (see Figure 2). Using this community
+standard in <em><code>systemPipeR</code></em> has many advantages. For instance, the integration
+of CWL allows running <em><code>systemPipeR</code></em> workflows from a single specification
+instance either entirely from within R, from various command-line wrappers
+(e.g., <em>cwl-runner</em>) or from other languages (<em>, e.g.,</em> Bash or Python).
+<em><code>systemPipeR</code></em> includes support for both command-line and R/Bioconductor
+software as well as resources for containerization, parallel evaluations on
+computer clusters along with the automated generation of interactive analysis
+reports.</p>
 <p>An important feature of <em><code>systemPipeR's</code></em> CWL interface is that it provides two
 options to run command-line tools and workflows based on CWL. First, one can
 run CWL in its native way via an R-based wrapper utility for <em>cwl-runner</em> or
@@ -1300,7 +1256,7 @@ command-line and workflow instructions from within R (R-based approach). In the
 latter case the same CWL workflow definition files (<em>e.g.</em> <code>*.cwl</code> and <code>*.yml</code>)
 are used but rendered and executed entirely with R functions defined by
 <em><code>systemPipeR</code></em>, and thus use CWL mainly as a command-line and workflow
-definition format rather than software to run workflows. In this regard
+definition format rather than execution software to run workflows. In this regard
 <em><code>systemPipeR</code></em> also provides several convenience functions that are useful for
 designing and debugging workflows, such as a command-line rendering function to
 retrieve the exact command-line strings for each data set and processing step
@@ -1309,25 +1265,24 @@ prior to running a command-line.</p>
 as well as the custom command-line interface, combined with the overview of all
 the common analysis steps of NGS experiments.</p>
 <h3 id="workflow-design-structure-using-sysargs2">Workflow design structure using <em><code>SYSargs2</code></em></h3>
-<p>The flexibility of <em><code>systemPipeR's</code></em> new interface workflow control class is the driving factor behind
-the use of as many steps necessary for the analysis, as well as the connection
-between command-line- or R-based software. The connectivity among all
-workflow steps is achieved by the <em><code>SYSargs2</code></em> workflow control class (see Figure 3).
-This S4 class is a list-like container where each instance stores all the
-input/output paths and parameter components required for a particular data
-analysis step. <em><code>SYSargs2</code></em> instances are generated by two constructor
-functions, <em>loadWorkflow</em> and <em>renderWF</em>, using as data input <em>targets</em> or
-<em>yaml</em> files as well as two <em>cwl</em> parameter files (for details see below). When
-running preconfigured workflows, the only input the user needs to provide is
-the initial <em>targets</em> file containing the paths to the input files (<em>e.g.</em>
-FASTQ) along with unique sample labels. Subsequent targets instances are
-created automatically. The parameters required for running command-line
-software is provided by the parameter (<em>.cwl</em>) files described below.</p>
-<p>We also introduce the <em><code>SYSargsList</code></em> class that organizes one or many
-SYSargs2 containers in a single compound object capturing all information
-required to run, control and monitor complex workflows from start to finish. This
-design enhances the <em><code>systemPipeR</code></em> workflow framework with a generalized,
-flexible, and robust design.</p>
+<p>The flexibility of <em><code>systemPipeR's</code></em> workflow control class scales to any
+number of analysis steps necessary in a workflow. This can include
+variable combinations of steps requiring command-line or R-based software executions.
+The connectivity among all workflow steps is achieved by the <em><code>SYSargs2</code></em> workflow
+control class (see Figure 3). This S4 class is a list-like container where
+each instance stores all the input/output paths and parameter components
+required for a particular data analysis step. <em><code>SYSargs2</code></em> instances are
+generated by two constructor functions, <em>loadWorkflow</em> and <em>renderWF</em>, using as
+data input so called <em>targets</em> or <em>yaml</em> files as well as two <em>cwl</em> parameter files (for
+details see below). When running preconfigured workflows, the only input the
+user needs to provide is the initial <em>targets</em> file containing the paths to the
+input files (<em>e.g.</em> FASTQ) along with unique sample labels. Subsequent targets
+instances are created automatically. The parameters required for running
+command-line software is provided by the parameter (<em>.cwl</em>) files described
+below.</p>
+<p>To support one or many workflow steps in a single container the <em><code>SYSargsList</code></em> class
+capturing all information required to run, control and monitor complex workflows from
+start to finish.</p>
 <center>
 <img src="../SYS_WF.png">
 </center>
@@ -1337,33 +1292,13 @@ and two <em>param</em> files. The only input provided by the user is the initial
 file. Subsequent <em>targets</em> instances are created automatically, from the previous
 output files. Any number of predefined or custom workflow steps are supported. One
 or many <em><code>SYSargs2</code></em> objects are organized in an <em><code>SYSargsList</code></em> container.</p>
-<h3 id="workflow-management-using-sysargslist">Workflow Management using <em><code>SYSargsList</code></em></h3>
-<p><strong>systemPipeR</strong> allows creation (multi-step analyses) and workflow execution entirely for R, with control, flexibility, and scalability of all processes. The workflow execution can be sent to an HPC, can be parallelized, accelerating results acquisition. <strong>systemPipeR</strong> workflow management system provides an infrastructure for organizing all steps, execution, and monitoring all tasks.</p>
+<h3 id="workflow-management-with-sysargslist">Workflow Management with <em><code>SYSargsList</code></em></h3>
+<p>In <strong>systemPipeR</strong> allows to create (multi-step analyses) and run workflows directly
+from R or the command-line using local systems, HPC cluster or cloud platforms.</p>
 <center>
 <img src="../sysargslist.png">
 </center>
 <p><strong>Figure 3:</strong> Workflow Management using <em><code>SYSargsList</code></em>.</p>
-<h3 id="workflow-design-structure-using-sysargs-previous-version">Workflow design structure using <em><code>SYSargs</code></em>: Previous version</h3>
-<p>Instances of this S4 object class are constructed by the <em><code>systemArgs</code></em> function
-from two simple tabular files: a <em><code>targets</code></em> file and a <em><code>param</code></em> file. The latter
-is optional for workflow steps lacking command-line software. Typically, a
-<em><code>SYSargs</code></em> instance stores all sample-level inputs as well as the paths to the
-corresponding outputs generated by command-line- or R-based software generating
-sample-level output files, such as read preprocessors (trimmed/filtered FASTQ
-files), aligners (SAM/BAM files), variant callers (VCF/BCF files) or peak callers
-(BED/WIG files). Each sample level input/output operation uses its own <em><code>SYSargs</code></em>
-instance. The outpaths of <em><code>SYSargs</code></em> usually define the sample inputs for the
-next <em><code>SYSargs</code></em> instance. This connectivity is established by writing the
-outpaths with the <em><code>writeTargetsout</code></em> function to a new <em><code>targets</code></em> file that
-serves as input to the next <em><code>systemArgs</code></em> call. Typically, the user has to
-provide only the initial <em><code>targets</code></em> file. All downstream <em><code>targets</code></em> files are
-generated automatically. By chaining several <em><code>SYSargs</code></em> steps together one can
-construct complex workflows involving many sample-level input/output file
-operations with any combination of command-line or R-based software.</p>
-<center>
-<img src="../SystemPipeR_Workflow.png">
-</center>
-<p><strong>Figure 4:</strong> Workflow design structure of <em><code>systemPipeR</code></em> using <em><code>SYSargs</code></em>.</p>
 <h2 id="getting-started">Getting Started</h2>
 <h3 id="installation">Installation</h3>
 <p>The R software for running <a href="http://www.bioconductor.org/packages/devel/bioc/html/systemPipeR.html"><em><code>systemPipeR</code></em></a> can be downloaded from <a href="http://cran.at.r-project.org/"><em>CRAN</em></a>. The <em><code>systemPipeR</code>* environment can be installed from the R console using the </em><code>BiocManager::install</code>*<a href="https://cran.r-project.org/web/packages/BiocManager/index.html"></a> command. The associated data package <a href="http://www.bioconductor.org/packages/devel/data/experiment/html/systemPipeRdata.html"><em><code>systemPipeRdata</code></em></a> can be installed the same way. The latter is a helper package for generating <em><code>systemPipeR</code></em> workflow environments with a single command containing all parameter files and sample data required to quickly test and run workflows.</p>
@@ -1371,7 +1306,9 @@ operations with any combination of command-line or R-based software.</p>
 BiocManager::install(&quot;systemPipeR&quot;)
 BiocManager::install(&quot;systemPipeRdata&quot;)
 </code></pre>
-<p>Please note that if you desire to use a third-party command line tool, the particular tool and dependencies need to be installed and exported in your PATH. See <a href="#tools">details</a>.</p>
+<p>Please note that if you desire to use a third-party command line tool, the
+particular tool and dependencies need to be installed and executable.
+See <a href="#tools">details</a>.</p>
 <h3 id="loading-package-and-documentation">Loading package and documentation</h3>
 <pre><code class="language-r">library(&quot;systemPipeR&quot;)  # Loads the package
 library(help = &quot;systemPipeR&quot;)  # Lists package info
@@ -1379,38 +1316,24 @@ vignette(&quot;systemPipeR&quot;)  # Opens vignette
 </code></pre>
 <h3 id="load-sample-data-and-workflow-templates">Load sample data and workflow templates</h3>
 <p>The mini sample FASTQ files used by this overview vignette as well as the
-associated workflow reporting vignettes can be loaded via the <em><code>systemPipeRdata</code></em>
-package as shown below. The chosen data set <a href="http://www.ncbi.nlm.nih.gov/sra/?term=SRP010938"><code>SRP010938</code></a>
-obtains 18 paired-end (PE) read sets from <em>Arabidposis thaliana</em> (Howard et al. 2013).
-To minimize processing time during testing, each FASTQ file has been subsetted to
-90,000-100,000 randomly sampled PE reads that map to the first 100,000 nucleotides
-of each chromosome of the <em>A. thalina</em> genome. The corresponding reference genome
-sequence (FASTA) and its GFF annotation files (provided in the same download) have
-been truncated accordingly. This way the entire test sample data set requires
-less than 200MB disk storage space. A PE read set has been chosen for this test
-data set for flexibility, because it can be used for testing both types of analysis
-routines requiring either SE (single-end) reads or PE reads.</p>
+associated workflow reporting vignettes can be loaded via the
+<em><code>systemPipeRdata</code></em> package as shown below. The chosen data set
+<a href="http://www.ncbi.nlm.nih.gov/sra/?term=SRP010938"><code>SRP010938</code></a> obtains 18
+paired-end (PE) read sets from <em>Arabidposis thaliana</em> (Howard et al. 2013). To
+minimize processing time during testing, each FASTQ file has been subsetted to
+90,000-100,000 randomly sampled PE reads that map to the first 100,000
+nucleotides of each chromosome of the <em>A. thalina</em> genome. The corresponding
+reference genome sequence (FASTA) and its GFF annotation files (provided in the
+same download) have been truncated accordingly. This way the entire test sample
+data set requires less than 200MB disk storage space. A PE read set has been
+chosen for this test data set for flexibility, because it can be used for
+testing both types of analysis routines requiring either SE (single-end) reads
+or PE reads.</p>
 <p>The following generates a fully populated <em><code>systemPipeR</code></em> workflow environment
 (here for RNA-Seq) in the current working directory of an R session. At this time
 the package includes workflow templates for RNA-Seq, ChIP-Seq, VAR-Seq, and Ribo-Seq.
 Templates for additional NGS applications will be provided in the future.</p>
-<p>If you desire run this tutorial with your data set, please follow the instruction here:</p>
-<pre><code class="language-r">library(systemPipeRdata)
-genWorkenvir(workflow = &quot;rnaseq&quot;)
-setwd(&quot;rnaseq&quot;)
-</code></pre>
-<h4 id="workflow-template-from-an-individuals-package">Workflow template from an individual’s package</h4>
-<p>The package provides pre-configured workflows and reporting templates for a wide range of NGS applications that are listed <a href="https://github.com/tgirke/systemPipeR/tree/devel#workflow">here</a>. Additional workflow templates will be provided in the future.
-If you desire to use an individual package and version, follow the instruction below:</p>
-<pre><code class="language-r">library(systemPipeRdata)
-genWorkenvir(workflow = NULL, package_repo = &quot;systemPipeR/SPriboseq&quot;, ref = &quot;master&quot;, 
-    subdir = NULL)
-</code></pre>
-<pre><code class="language-r">library(systemPipeRdata)
-genWorkenvir(workflow = NULL, package_repo = &quot;systemPipeR/SPrnaseq&quot;, ref = &quot;singleMachine&quot;, 
-    subdir = NULL)
-</code></pre>
-<h3 id="directory-structure">Directory Structure</h3>
+<h3 id="directory-structure">Directory structure</h3>
 <p>The working environment of the sample data loaded in the previous step contains
 the following pre-configured directory structure (Figure 4). Directory names are indicated
 in <span style="color:grey"><em><strong>green</strong></em></span>. Users can change this
@@ -1546,7 +1469,7 @@ genes in RNA-Seq experiments based on simple pair-wise comparisons.</p>
 ## [29] &quot;A6-A12&quot;  &quot;A6-V12&quot;  &quot;V6-M12&quot;  &quot;V6-A12&quot;  &quot;V6-V12&quot;  &quot;M12-A12&quot; &quot;M12-V12&quot;
 ## [36] &quot;A12-V12&quot;
 </code></pre>
-<h3 id="structure-of-the-new-param-files-and-construct-sysargs2-container">Structure of the new <em><code>param</code></em> files and construct <em><code>SYSargs2</code></em> container</h3>
+<h3 id="structure-and-initialization-of-sysargs2">Structure and initialization of <em><code>SYSargs2</code></em></h3>
 <p><em><code>SYSargs2</code></em> stores all the information and instructions needed for processing
 a set of input files with a single or many command-line steps within a workflow
 (<em>i.e.</em> several components of the software or several independent software tools).
@@ -1667,7 +1590,8 @@ software. Alternatively, a CWL-centric workflow design can be used that defines
 all/most workflow steps with CWL workflow and parameter files. Due to time and
 space restrictions, the CWL-centric approach is not covered by this tutorial.</p>
 <h4 id="third-party-software-tools">Third-party software tools</h4>
-<p>Current, <em>systemPipeR</em> provides the <em><code>param</code></em> file templates for third-party software tools. Please check the listed software tools.</p>
+<p>Current, <em>systemPipeR</em> provides the <em><code>param</code></em> file templates for third-party software tools.
+A list is provided in the following table.</p>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; overflow-x: scroll; width:100%; ">
 <table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -1954,82 +1878,6 @@ BLAST finds regions of similarity between biological sequences.
 <p>Remember, if you desire to run any of these tools, make sure to have the respective software installed on your system and configure in the PATH. You can check as follows:</p>
 <pre><code class="language-r">tryCL(command = &quot;grep&quot;)
 </code></pre>
-<h3 id="structure-of-param-file-and-sysargs-container-previous-version">Structure of <em><code>param</code></em> file and <em><code>SYSargs</code></em> container (Previous version)</h3>
-<p>The <em><code>param</code></em> file defines the parameters of a chosen command-line software.
-The following shows the format of a sample <em><code>param</code></em> file provided by this package.</p>
-<pre><code class="language-r">parampath &lt;- system.file(&quot;extdata&quot;, &quot;tophat.param&quot;, package = &quot;systemPipeR&quot;)
-read.delim(parampath, comment.char = &quot;#&quot;)
-</code></pre>
-<pre><code>##      PairSet         Name                                  Value
-## 1    modules         &lt;NA&gt;                          bowtie2/2.2.5
-## 2    modules         &lt;NA&gt;                          tophat/2.0.14
-## 3   software         &lt;NA&gt;                                 tophat
-## 4      cores           -p                                      4
-## 5      other         &lt;NA&gt; -g 1 --segment-length 25 -i 30 -I 3000
-## 6   outfile1           -o                            &lt;FileName1&gt;
-## 7   outfile1         path                             ./results/
-## 8   outfile1       remove                                   &lt;NA&gt;
-## 9   outfile1       append                                .tophat
-## 10  outfile1 outextension              .tophat/accepted_hits.bam
-## 11 reference         &lt;NA&gt;                    ./data/tair10.fasta
-## 12   infile1         &lt;NA&gt;                            &lt;FileName1&gt;
-## 13   infile1         path                                   &lt;NA&gt;
-## 14   infile2         &lt;NA&gt;                            &lt;FileName2&gt;
-## 15   infile2         path                                   &lt;NA&gt;
-</code></pre>
-<p>The <em><code>systemArgs</code></em> function imports the definitions of both the <em><code>param</code></em> file
-and the <em><code>targets</code></em> file, and stores all relevant information in a <em><code>SYSargs</code></em>
-object (S4 class). To run the pipeline without command-line software, one can
-assign <em><code>NULL</code></em> to <em><code>sysma</code></em> instead of a <em><code>param</code></em> file. In addition, one can
-start <em><code>systemPipeR</code></em> workflows with pre-generated BAM files by providing a
-targets file where the <em><code>FileName</code></em> column provides the paths to the BAM files.
-Note, in the following example the usage of <em><code>suppressWarnings()</code></em> is only relevant for
-building this vignette. In typical workflows it should be removed.</p>
-<pre><code class="language-r">targetspath &lt;- system.file(&quot;extdata&quot;, &quot;targets.txt&quot;, package = &quot;systemPipeR&quot;)
-args &lt;- suppressWarnings(systemArgs(sysma = parampath, mytargets = targetspath))
-args
-</code></pre>
-<pre><code>## An instance of 'SYSargs' for running 'tophat' on 18 samples
-</code></pre>
-<p>Several accessor methods are available that are named after the slot names of the <em><code>SYSargs</code></em> object.</p>
-<pre><code class="language-r">names(args)
-</code></pre>
-<pre><code>##  [1] &quot;targetsin&quot;     &quot;targetsout&quot;    &quot;targetsheader&quot; &quot;modules&quot;      
-##  [5] &quot;software&quot;      &quot;cores&quot;         &quot;other&quot;         &quot;reference&quot;    
-##  [9] &quot;results&quot;       &quot;infile1&quot;       &quot;infile2&quot;       &quot;outfile1&quot;     
-## [13] &quot;sysargs&quot;       &quot;outpaths&quot;
-</code></pre>
-<p>Of particular interest is the <em><code>sysargs()</code></em> method. It constructs the system
-commands for running command-lined software as specified by a given <em><code>param</code></em>
-file combined with the paths to the input samples (<em>e.g.</em> FASTQ files) provided
-by a <em><code>targets</code></em> file. The example below shows the <em><code>sysargs()</code></em> output for
-running TopHat2 on the first PE read sample. Evaluating the output of
-<em><code>sysargs()</code></em> can be very helpful for designing and debugging <em><code>param</code></em> files
-of new command-line software or changing the parameter settings of existing
-ones.</p>
-<pre><code class="language-r">sysargs(args)[1]
-</code></pre>
-<pre><code>##                                                                                                                                                                                                                                                      M1A 
-## &quot;tophat -p 4 -g 1 --segment-length 25 -i 30 -I 3000 -o /home/tgirke/tmp/GEN242/content/en/manuals/systempiper/results/SRR446027_1.fastq.gz.tophat /home/tgirke/tmp/GEN242/content/en/manuals/systempiper/data/tair10.fasta ./data/SRR446027_1.fastq.gz &quot;
-</code></pre>
-<pre><code class="language-r">modules(args)
-</code></pre>
-<pre><code>## [1] &quot;bowtie2/2.2.5&quot; &quot;tophat/2.0.14&quot;
-</code></pre>
-<pre><code class="language-r">cores(args)
-</code></pre>
-<pre><code>## [1] 4
-</code></pre>
-<pre><code class="language-r">outpaths(args)[1]
-</code></pre>
-<pre><code>##                                                                                                            M1A 
-## &quot;/home/tgirke/tmp/GEN242/content/en/manuals/systempiper/results/SRR446027_1.fastq.gz.tophat/accepted_hits.bam&quot;
-</code></pre>
-<p>The content of the <em><code>param</code></em> file can also be returned as JSON object as follows (requires <em><code>rjson</code></em> package).</p>
-<pre><code class="language-r">systemArgs(sysma = parampath, mytargets = targetspath, type = &quot;json&quot;)
-</code></pre>
-<pre><code>## [1] &quot;{\&quot;modules\&quot;:{\&quot;n1\&quot;:\&quot;\&quot;,\&quot;v2\&quot;:\&quot;bowtie2/2.2.5\&quot;,\&quot;n1\&quot;:\&quot;\&quot;,\&quot;v2\&quot;:\&quot;tophat/2.0.14\&quot;},\&quot;software\&quot;:{\&quot;n1\&quot;:\&quot;\&quot;,\&quot;v1\&quot;:\&quot;tophat\&quot;},\&quot;cores\&quot;:{\&quot;n1\&quot;:\&quot;-p\&quot;,\&quot;v1\&quot;:\&quot;4\&quot;},\&quot;other\&quot;:{\&quot;n1\&quot;:\&quot;\&quot;,\&quot;v1\&quot;:\&quot;-g 1 --segment-length 25 -i 30 -I 3000\&quot;},\&quot;outfile1\&quot;:{\&quot;n1\&quot;:\&quot;-o\&quot;,\&quot;v2\&quot;:\&quot;&lt;FileName1&gt;\&quot;,\&quot;n3\&quot;:\&quot;path\&quot;,\&quot;v4\&quot;:\&quot;./results/\&quot;,\&quot;n5\&quot;:\&quot;remove\&quot;,\&quot;v1\&quot;:\&quot;\&quot;,\&quot;n2\&quot;:\&quot;append\&quot;,\&quot;v3\&quot;:\&quot;.tophat\&quot;,\&quot;n4\&quot;:\&quot;outextension\&quot;,\&quot;v5\&quot;:\&quot;.tophat/accepted_hits.bam\&quot;},\&quot;reference\&quot;:{\&quot;n1\&quot;:\&quot;\&quot;,\&quot;v1\&quot;:\&quot;./data/tair10.fasta\&quot;},\&quot;infile1\&quot;:{\&quot;n1\&quot;:\&quot;\&quot;,\&quot;v2\&quot;:\&quot;&lt;FileName1&gt;\&quot;,\&quot;n1\&quot;:\&quot;path\&quot;,\&quot;v2\&quot;:\&quot;\&quot;},\&quot;infile2\&quot;:{\&quot;n1\&quot;:\&quot;\&quot;,\&quot;v2\&quot;:\&quot;&lt;FileName2&gt;\&quot;,\&quot;n1\&quot;:\&quot;path\&quot;,\&quot;v2\&quot;:\&quot;\&quot;}}&quot;
-</code></pre>
 <h2 id="how-to-run-a-workflow">How to run a Workflow</h2>
 <p>This tutorial introduces the basic ideas and tools needed to build a specific workflow from preconfigured templates.</p>
 <h3 id="load-sample-data-and-workflow-templates-1">Load sample data and workflow templates</h3>
@@ -2040,38 +1888,32 @@ setwd(&quot;rnaseq&quot;)
 <h3 id="setup-and-requirements">Setup and Requirements</h3>
 <p>To go through this tutorial, you need the following software installed:</p>
 <ul>
-<li>R/&gt;=3.6.2</li>
-<li>systemPipeR R package (version 1.22)</li>
-<li>Hisat2/2.1.0</li>
+<li>R (version &gt;=3.6.2)</li>
+<li>systemPipeR package (version &gt;=1.22)</li>
+<li>Hisat2 (version &gt;= 2.1.0)</li>
 </ul>
-<p>If you desire to build your pipeline with any different software, make sure to have the respective software installed and configured in your PATH. To make sure if the configuration is right, you always can test as follow:</p>
+<p>If you desire to build your pipeline with any different software, make sure to
+have the respective software installed and available in your PATH. To make
+sure if the configuration is correct, on test it with:</p>
 <pre><code class="language-r">tryCL(command = &quot;hisat2&quot;)  ## 'All set up, proceed!'
 </code></pre>
-<h3 id="project-initialization">Project Initialization</h3>
-<p>The Project management structure is essential, especially for reproducibility and efficiency in the analysis. Here we show how to construct an instance of this S4 object class by the <em><code>initWF</code></em> function. The object of class <em><code>SYSarsgsList</code></em> storing all the configuration information for the project and allows management and control at a high level.</p>
+<h3 id="project-initialization">Project initialization</h3>
+<p>A <code>SYSargsList</code> object containing all relevant information for running a workflow
+(here RNA-Seq example) can be constructed as follows.</p>
 <pre><code class="language-r">getwd()  ## rnaseq
 script &lt;- &quot;systemPipeRNAseq.Rmd&quot;
 targetspath &lt;- &quot;targets.txt&quot;
 sysargslist &lt;- initWF(script = script, targets = targetspath)
 </code></pre>
-<h3 id="project-initialization-in-a-temporary-directory">Project Initialization in a Temporary Directory</h3>
-<pre><code class="language-r">library(systemPipeRdata)
-script &lt;- system.file(&quot;extdata/workflows/rnaseq&quot;, &quot;systemPipeRNAseq.Rmd&quot;, package = &quot;systemPipeRdata&quot;)
-targets &lt;- system.file(&quot;extdata&quot;, &quot;targets.txt&quot;, package = &quot;systemPipeR&quot;)
-dir_path &lt;- tempdir()
-SYSconfig &lt;- initProject(projPath = dir_path, targets = targets, script = script, 
-    overwrite = TRUE)
-sysargslist_temp &lt;- initWF(sysconfig = &quot;SYSconfig.yml&quot;)
-</code></pre>
-<h3 id="configuration-and-run-of-the-project">Configuration and run of the project</h3>
+<h3 id="workflow-execution">Workflow execution</h3>
+<p>To run workflows from R, there are several possibilities. First, one can run
+each line in an <code>Rmd</code> or <code>R</code> interactively, or use the <code>runWF</code> functions that
+allows to run workflows step-wise or from start to finish.</p>
 <pre><code class="language-r">sysargslist &lt;- configWF(x = sysargslist, input_steps = &quot;1:3&quot;)
 sysargslist &lt;- runWF(sysargslist = sysargslist, steps = &quot;1:2&quot;)
 </code></pre>
-<h3 id="how-to-use-pipes-with-systempiper">How to Use Pipes with <em>systemPipeR</em></h3>
-<p>At first encounter, you may wonder whether an operator such as <em>%&gt;%</em> can really be all that beneficial; but as you may notice, it semantically changes your code in a way that makes it more intuitive to both read and write.</p>
-<p>Consider the following example, in which the steps are the initialization, configuration and running the entire workflow.</p>
-<pre><code class="language-r">library(systemPipeR)
-sysargslist &lt;- initWF(script = &quot;systemPipeRNAseq.Rmd&quot;, overwrite = TRUE) %&gt;% configWF(input_steps = &quot;1:3&quot;) %&gt;% 
+<p>Alternatively, R pipes (<em>%&gt;%</em>) are supported to run individual workflow steps.</p>
+<pre><code class="language-r">sysargslist &lt;- initWF(script = &quot;systemPipeRNAseq.Rmd&quot;, overwrite = TRUE) %&gt;% configWF(input_steps = &quot;1:3&quot;) %&gt;% 
     runWF(steps = &quot;1:2&quot;)
 </code></pre>
 <h3 id="how-to-run-the-workflow-on-a-cluster">How to run the workflow on a cluster</h3>
@@ -2120,804 +1962,7 @@ reg &lt;- clusterRun(args, FUN = runCommandline, more.args = list(args = args, m
 getStatus(reg = reg)
 waitForJobs(reg = reg)
 </code></pre>
-<h2 id="workflow-steps-overview">Workflow steps overview</h2>
-<h3 id="define-environment-settings-and-samples">Define environment settings and samples</h3>
-<p>A typical workflow starts with generating the expected working environment
-containing the proper directory structure, input files, and parameter settings.
-To simplify this task, one can load one of the existing NGS workflows templates
-provided by <em><code>systemPipeRdata</code></em> into the current working directory. The
-following does this for the <em><code>rnaseq</code></em> template. The name of the resulting
-workflow directory can be specified under the <em><code>mydirname</code></em> argument. The
-default <em><code>NULL</code></em> uses the name of the chosen workflow. An error is issued if a
-directory of the same name and path exists already. On Linux and OS X systems
-one can also create new workflow instances from the command-line of a terminal as shown
-<a href="http://bioconductor.org/packages/devel/data/experiment/vignettes/systemPipeRdata/inst/doc/systemPipeRdata.html#generate-workflow-template">here</a>.
-To apply workflows to custom data, the user needs to modify the <em><code>targets</code></em> file and if
-necessary update the corresponding <em><code>.cwl</code></em> and <em><code>.yml</code></em> files. A collection of pre-generated <em><code>.cwl</code></em> and <em><code>.yml</code></em> files are provided in the <em><code>param/cwl</code></em> subdirectory of each workflow template. They
-are also viewable in the GitHub repository of <em><code>systemPipeRdata</code></em> (<a href="https://github.com/tgirke/systemPipeRdata/tree/master/inst/extdata/param">see
-here</a>).</p>
-<pre><code class="language-r">library(systemPipeR)
-library(systemPipeRdata)
-genWorkenvir(workflow = &quot;rnaseq&quot;, mydirname = NULL)
-setwd(&quot;rnaseq&quot;)
-</code></pre>
-<h3 id="read-preprocessing">Read Preprocessing</h3>
-<h4 id="preprocessing-with-preprocessreads-function">Preprocessing with <em><code>preprocessReads</code></em> function</h4>
-<p>The function <em><code>preprocessReads</code></em> allows to apply predefined or custom
-read preprocessing functions to all FASTQ files referenced in a
-<em><code>SYSargs2</code></em> container, such as quality filtering or adaptor trimming
-routines. The paths to the resulting output FASTQ files are stored in the
-<em><code>output</code></em> slot of the <em><code>SYSargs2</code></em> object. Internally,
-<em><code>preprocessReads</code></em> uses the <em><code>FastqStreamer</code></em> function from
-the <em><code>ShortRead</code></em> package to stream through large FASTQ files in a
-memory-efficient manner. The following example performs adaptor trimming with
-the <em><code>trimLRPatterns</code></em> function from the <em><code>Biostrings</code></em> package.
-After the trimming step a new targets file is generated (here
-<em><code>targets_trimPE.txt</code></em>) containing the paths to the trimmed FASTQ files.
-The new targets file can be used for the next workflow step with an updated
-<em><code>SYSargs2</code></em> instance, <em>e.g.</em> running the NGS alignments with the
-trimmed FASTQ files.</p>
-<p>Construct <em><code>SYSargs2</code></em> object from <em><code>cwl</code></em> and <em><code>yml</code></em> param and <em><code>targets</code></em> files.</p>
-<pre><code class="language-r">targetsPE &lt;- system.file(&quot;extdata&quot;, &quot;targetsPE.txt&quot;, package = &quot;systemPipeR&quot;)
-dir_path &lt;- system.file(&quot;extdata/cwl/preprocessReads/trim-pe&quot;, package = &quot;systemPipeR&quot;)
-trim &lt;- loadWorkflow(targets = targetsPE, wf_file = &quot;trim-pe.cwl&quot;, input_file = &quot;trim-pe.yml&quot;, 
-    dir_path = dir_path)
-trim &lt;- renderWF(trim, inputvars = c(FileName1 = &quot;_FASTQ_PATH1_&quot;, FileName2 = &quot;_FASTQ_PATH2_&quot;, 
-    SampleName = &quot;_SampleName_&quot;))
-trim
-output(trim)[1:2]
-</code></pre>
-<pre><code class="language-r">preprocessReads(args = trim, Fct = &quot;trimLRPatterns(Rpattern='GCCCGGGTAA', 
-                subject=fq)&quot;, 
-    batchsize = 1e+05, overwrite = TRUE, compress = TRUE)
-</code></pre>
-<p>The following example shows how one can design a custom read preprocessing function
-using utilities provided by the <em><code>ShortRead</code></em> package, and then run it
-in batch mode with the <em>‘preprocessReads’</em> function (here on paired-end reads).</p>
-<pre><code class="language-r">filterFct &lt;- function(fq, cutoff = 20, Nexceptions = 0) {
-    qcount &lt;- rowSums(as(quality(fq), &quot;matrix&quot;) &lt;= cutoff, na.rm = TRUE)
-    # Retains reads where Phred scores are &gt;= cutoff with N exceptions
-    fq[qcount &lt;= Nexceptions]
-}
-preprocessReads(args = trim, Fct = &quot;filterFct(fq, cutoff=20, Nexceptions=0)&quot;, batchsize = 1e+05)
-</code></pre>
-<h4 id="preprocessing-with-trimgalore">Preprocessing with TrimGalore!</h4>
-<p><a href="http://www.bioinformatics.babraham.ac.uk/projects/trim_galore/">TrimGalore!</a> is
-a wrapper tool to consistently apply quality and adapter trimming to fastq files,
-with some extra functionality for removing Reduced Representation Bisulfite-Seq
-(RRBS) libraries.</p>
-<pre><code class="language-r">targets &lt;- system.file(&quot;extdata&quot;, &quot;targets.txt&quot;, package = &quot;systemPipeR&quot;)
-dir_path &lt;- system.file(&quot;extdata/cwl/trim_galore/trim_galore-se&quot;, package = &quot;systemPipeR&quot;)
-trimG &lt;- loadWorkflow(targets = targets, wf_file = &quot;trim_galore-se.cwl&quot;, input_file = &quot;trim_galore-se.yml&quot;, 
-    dir_path = dir_path)
-trimG &lt;- renderWF(trimG, inputvars = c(FileName = &quot;_FASTQ_PATH1_&quot;, SampleName = &quot;_SampleName_&quot;))
-trimG
-cmdlist(trimG)[1:2]
-output(trimG)[1:2]
-### Run Single Machine Option
-trimG &lt;- runCommandline(trimG[1], make_bam = FALSE)
-</code></pre>
-<h4 id="preprocessing-with-trimmomatic">Preprocessing with Trimmomatic</h4>
-<pre><code class="language-r">targetsPE &lt;- system.file(&quot;extdata&quot;, &quot;targetsPE.txt&quot;, package = &quot;systemPipeR&quot;)
-dir_path &lt;- system.file(&quot;extdata/cwl/trimmomatic/trimmomatic-pe&quot;, package = &quot;systemPipeR&quot;)
-trimM &lt;- loadWorkflow(targets = targetsPE, wf_file = &quot;trimmomatic-pe.cwl&quot;, input_file = &quot;trimmomatic-pe.yml&quot;, 
-    dir_path = dir_path)
-trimM &lt;- renderWF(trimM, inputvars = c(FileName1 = &quot;_FASTQ_PATH1_&quot;, FileName2 = &quot;_FASTQ_PATH2_&quot;, 
-    SampleName = &quot;_SampleName_&quot;))
-trimM
-cmdlist(trimM)[1:2]
-output(trimM)[1:2]
-### Run Single Machine Option
-trimM &lt;- runCommandline(trimM[1], make_bam = FALSE)
-</code></pre>
-<h3 id="fastq-quality-report">FASTQ quality report</h3>
-<p>The following <em><code>seeFastq</code></em> and <em><code>seeFastqPlot</code></em> functions generate and plot a series of
-useful quality statistics for a set of FASTQ files including per cycle quality
-box plots, base proportions, base-level quality trends, relative k-mer
-diversity, length and occurrence distribution of reads, number of reads above
-quality cutoffs and mean quality distribution.<br>
-The function <em><code>seeFastq</code></em> computes the quality statistics and stores the results in a
-relatively small list object that can be saved to disk with <em><code>save()</code></em> and
-reloaded with <em><code>load()</code></em> for later plotting. The argument <em><code>klength</code></em> specifies the
-k-mer length and <em><code>batchsize</code></em> the number of reads to a random sample from each
-FASTQ file.</p>
-<pre><code class="language-r">fqlist &lt;- seeFastq(fastq = infile1(trim), batchsize = 10000, klength = 8)
-pdf(&quot;./results/fastqReport.pdf&quot;, height = 18, width = 4 * length(fqlist))
-seeFastqPlot(fqlist)
-dev.off()
-</code></pre>
-<center>
-<img src="../fastqReport.png">
-</center>
-<div align="center">
-<p><strong>Figure 5:</strong> FASTQ quality report</p>
-</div>
-</br>
-<p>Parallelization of FASTQ quality report on a single machine with multiple cores.</p>
-<pre><code class="language-r">f &lt;- function(x) seeFastq(fastq = infile1(trim)[x], batchsize = 1e+05, klength = 8)
-fqlist &lt;- bplapply(seq(along = trim), f, BPPARAM = MulticoreParam(workers = 4))
-seeFastqPlot(unlist(fqlist, recursive = FALSE))
-</code></pre>
-<p>Parallelization of FASTQ quality report via scheduler (<em>e.g.</em> Slurm) across several compute nodes.</p>
-<pre><code class="language-r">library(BiocParallel)
-library(batchtools)
-f &lt;- function(x) {
-    library(systemPipeR)
-    targetsPE &lt;- system.file(&quot;extdata&quot;, &quot;targetsPE.txt&quot;, package = &quot;systemPipeR&quot;)
-    dir_path &lt;- system.file(&quot;extdata/cwl/preprocessReads/trim-pe&quot;, package = &quot;systemPipeR&quot;)
-    trim &lt;- loadWorkflow(targets = targetsPE, wf_file = &quot;trim-pe.cwl&quot;, input_file = &quot;trim-pe.yml&quot;, 
-        dir_path = dir_path)
-    trim &lt;- renderWF(trim, inputvars = c(FileName1 = &quot;_FASTQ_PATH1_&quot;, FileName2 = &quot;_FASTQ_PATH2_&quot;, 
-        SampleName = &quot;_SampleName_&quot;))
-    seeFastq(fastq = infile1(trim)[x], batchsize = 1e+05, klength = 8)
-}
-resources &lt;- list(walltime = 120, ntasks = 1, ncpus = 4, memory = 1024)
-param &lt;- BatchtoolsParam(workers = 4, cluster = &quot;slurm&quot;, template = &quot;batchtools.slurm.tmpl&quot;, 
-    resources = resources)
-fqlist &lt;- bplapply(seq(along = trim), f, BPPARAM = param)
-seeFastqPlot(unlist(fqlist, recursive = FALSE))
-</code></pre>
-<h3 id="ngs-alignment-software">NGS Alignment software</h3>
-<p>After quality control, the sequence reads can be aligned to a reference genome or
-transcriptome database. The following sessions present some NGS sequence alignment
-software. Select the most accurate aligner and determining the optimal parameter
-for your custom data set project.</p>
-<p>For all the following examples, it is necessary to install the respective software
-and export the <code>PATH</code> accordingly. If it is available <a href="http://modules.sourceforge.net/">Environment Module</a>
-in the system, you can load all the request software with <em><code>moduleload(args)</code></em> function.</p>
-<h4 id="alignment-with-hisat2-using-sysargs2">Alignment with <code>HISAT2</code> using <em><code>SYSargs2</code></em></h4>
-<p>The following steps will demonstrate how to use the short read aligner <code>Hisat2</code>
-(Kim, Langmead, and Salzberg 2015) in both interactive job submissions and batch submissions to
-queuing systems of clusters using the <em><code>systemPipeR's</code></em> new CWL command-line interface.</p>
-<p>The parameter settings of the aligner are defined in the <code>hisat2-mapping-se.cwl</code>
-and <code>hisat2-mapping-se.yml</code> files. The following shows how to construct the
-corresponding <em>SYSargs2</em> object, here <em>args</em>.</p>
-<pre><code class="language-r">targets &lt;- system.file(&quot;extdata&quot;, &quot;targets.txt&quot;, package = &quot;systemPipeR&quot;)
-dir_path &lt;- system.file(&quot;extdata/cwl/hisat2/hisat2-se&quot;, package = &quot;systemPipeR&quot;)
-args &lt;- loadWorkflow(targets = targets, wf_file = &quot;hisat2-mapping-se.cwl&quot;, input_file = &quot;hisat2-mapping-se.yml&quot;, 
-    dir_path = dir_path)
-args &lt;- renderWF(args, inputvars = c(FileName = &quot;_FASTQ_PATH1_&quot;, SampleName = &quot;_SampleName_&quot;))
-args
-</code></pre>
-<pre><code>## Instance of 'SYSargs2':
-##    Slot names/accessors: 
-##       targets: 18 (M1A...V12B), targetsheader: 4 (lines)
-##       modules: 1
-##       wf: 0, clt: 1, yamlinput: 7 (components)
-##       input: 18, output: 18
-##       cmdlist: 18
-##    WF Steps:
-##       1. hisat2-mapping-se (rendered: TRUE)
-</code></pre>
-<pre><code class="language-r">cmdlist(args)[1:2]
-</code></pre>
-<pre><code>## $M1A
-## $M1A$`hisat2-mapping-se`
-## [1] &quot;hisat2 -S ./results/M1A.sam  -x ./data/tair10.fasta  -k 1  --min-intronlen 30  --max-intronlen 3000  -U ./data/SRR446027_1.fastq.gz --threads 4&quot;
-## 
-## 
-## $M1B
-## $M1B$`hisat2-mapping-se`
-## [1] &quot;hisat2 -S ./results/M1B.sam  -x ./data/tair10.fasta  -k 1  --min-intronlen 30  --max-intronlen 3000  -U ./data/SRR446028_1.fastq.gz --threads 4&quot;
-</code></pre>
-<pre><code class="language-r">output(args)[1:2]
-</code></pre>
-<pre><code>## $M1A
-## $M1A$`hisat2-mapping-se`
-## [1] &quot;./results/M1A.sam&quot;
-## 
-## 
-## $M1B
-## $M1B$`hisat2-mapping-se`
-## [1] &quot;./results/M1B.sam&quot;
-</code></pre>
-<p>Subsetting <em><code>SYSargs2</code></em> class slots for each workflow step.</p>
-<pre><code class="language-r">subsetWF(args, slot = &quot;input&quot;, subset = &quot;FileName&quot;)[1:2]  ## Subsetting the input files for this particular workflow 
-</code></pre>
-<pre><code>##                           M1A                           M1B 
-## &quot;./data/SRR446027_1.fastq.gz&quot; &quot;./data/SRR446028_1.fastq.gz&quot;
-</code></pre>
-<pre><code class="language-r">subsetWF(args, slot = &quot;output&quot;, subset = 1, index = 1)[1:2]  ## Subsetting the output files for one particular step in the workflow 
-</code></pre>
-<pre><code>##                 M1A                 M1B 
-## &quot;./results/M1A.sam&quot; &quot;./results/M1B.sam&quot;
-</code></pre>
-<pre><code class="language-r">subsetWF(args, slot = &quot;step&quot;, subset = 1)[1]  ## Subsetting the command-lines for one particular step in the workflow 
-</code></pre>
-<pre><code>##                                                                                                                                               M1A 
-## &quot;hisat2 -S ./results/M1A.sam  -x ./data/tair10.fasta  -k 1  --min-intronlen 30  --max-intronlen 3000  -U ./data/SRR446027_1.fastq.gz --threads 4&quot;
-</code></pre>
-<pre><code class="language-r">subsetWF(args, slot = &quot;output&quot;, subset = 1, index = 1, delete = TRUE)[1]  ## DELETING specific output files
-</code></pre>
-<pre><code>## The subset cannot be deleted: no such file
-
-##                 M1A 
-## &quot;./results/M1A.sam&quot;
-</code></pre>
-<p>Build <code>Hisat2</code> index.</p>
-<pre><code class="language-r">dir_path &lt;- system.file(&quot;extdata/cwl/hisat2/hisat2-idx&quot;, package = &quot;systemPipeR&quot;)
-idx &lt;- loadWorkflow(targets = NULL, wf_file = &quot;hisat2-index.cwl&quot;, input_file = &quot;hisat2-index.yml&quot;, 
-    dir_path = dir_path)
-idx &lt;- renderWF(idx)
-idx
-cmdlist(idx)
-
-### Run
-runCommandline(idx, make_bam = FALSE)
-</code></pre>
-<h5 id="interactive-job-submissions-in-a-single-machine">Interactive job submissions in a single machine</h5>
-<p>To simplify the short read alignment execution for the user, the command-line
-can be run with the <em><code>runCommandline</code></em> function.
-The execution will be on a single machine without submitting to a queuing system
-of a computer cluster. This way, the input FASTQ files will be processed sequentially.
-By default <em><code>runCommandline</code></em> auto detects SAM file outputs and converts them
-to sorted and indexed BAM files, using internally the <code>Rsamtools</code> package
-(Morgan et al. 2019). Besides, <em><code>runCommandline</code></em> allows the user to create a dedicated
-results folder for each workflow and a sub-folder for each sample
-defined in the <em>targets</em> file. This includes all the output and log files for each
-step. When these options are used, the output location will be updated by default
-and can be assigned to the same object.</p>
-<pre><code class="language-r">runCommandline(args, make_bam = FALSE)  ## generates alignments and writes *.sam files to ./results folder 
-args &lt;- runCommandline(args, make_bam = TRUE)  ## same as above but writes files and converts *.sam files to sorted and indexed BAM files. Assigning the new extention of the output files to the object args.
-</code></pre>
-<p>If available, multiple CPU cores can be used for processing each file. The number
-of CPU cores (here 4) to use for each process is defined in the <em><code>*.yml</code></em> file.
-With <em><code>yamlinput(args)['thread']</code></em> one can return this value from the <em><code>SYSargs2</code></em> object.</p>
-<h5 id="parallelization-on-clusters-1">Parallelization on clusters</h5>
-<p>Alternatively, the computation can be greatly accelerated by processing many files
-in parallel using several compute nodes of a cluster, where a scheduling/queuing
-system is used for load balancing. For this the <em><code>clusterRun</code></em> function submits
-the computing requests to the scheduler using the run specifications
-defined by <em><code>runCommandline</code></em>.</p>
-<p>To avoid over-subscription of CPU cores on the compute nodes, the value from
-<em><code>yamlinput(args)['thread']</code></em> is passed on to the submission command, here <em><code>ncpus</code></em>
-in the <em><code>resources</code></em> list object. The number of independent parallel cluster
-processes is defined under the <em><code>Njobs</code></em> argument. The following example will run
-18 processes in parallel using for each 4 CPU cores. If the resources available
-on a cluster allow running all 18 processes at the same time then the shown sample
-submission will utilize in total 72 CPU cores. Note, <em><code>clusterRun</code></em> can be used
-with most queueing systems as it is based on utilities from the <em><code>batchtools</code></em>
-package which supports the use of template files (<em><code>*.tmpl</code></em>) for defining the
-run parameters of different schedulers. To run the following code, one needs to
-have both a conf file (see <em><code>.batchtools.conf.R</code></em> samples <a href="https://mllg.github.io/batchtools/">here</a>)
-and a template file (see <em><code>*.tmpl</code></em> samples <a href="https://github.com/mllg/batchtools/tree/master/inst/templates">here</a>)
-for the queueing available on a system. The following example uses the sample
-conf and template files for the Slurm scheduler provided by this package.</p>
-<pre><code class="language-r">library(batchtools)
-resources &lt;- list(walltime = 120, ntasks = 1, ncpus = 4, memory = 1024)
-reg &lt;- clusterRun(args, FUN = runCommandline, more.args = list(args = args, make_bam = TRUE, 
-    dir = FALSE), conffile = &quot;.batchtools.conf.R&quot;, template = &quot;batchtools.slurm.tmpl&quot;, 
-    Njobs = 18, runid = &quot;01&quot;, resourceList = resources)
-getStatus(reg = reg)
-waitForJobs(reg = reg)
-</code></pre>
-<p>Check and update the output location if necessary.</p>
-<pre><code class="language-r">args &lt;- output_update(args, dir = FALSE, replace = TRUE, extension = c(&quot;.sam&quot;, &quot;.bam&quot;))  ## Updates the output(args) to the right location in the subfolders
-output(args)
-</code></pre>
-<h5 id="create-new-targets-file">Create new targets file</h5>
-<p>To establish the connectivity to the next workflow step, one can write a new
-<em>targets</em> file with the <em><code>writeTargetsout</code></em> function. The new <em>targets</em> file
-serves as input to the next <em><code>loadWorkflow</code></em> and <em><code>renderWF</code></em> call.</p>
-<pre><code class="language-r">names(clt(args))
-writeTargetsout(x = args, file = &quot;default&quot;, step = 1, new_col = &quot;FileName&quot;, new_col_output_index = 1, 
-    overwrite = TRUE)
-</code></pre>
-<h5 id="alignment-with-hisat2-and-samtools">Alignment with <code>HISAT2</code> and <code>SAMtools</code></h5>
-<p>Alternatively, it possible to build an workflow with <code>HISAT2</code> and <code>SAMtools</code>.</p>
-<pre><code class="language-r">targets &lt;- system.file(&quot;extdata&quot;, &quot;targets.txt&quot;, package = &quot;systemPipeR&quot;)
-dir_path &lt;- system.file(&quot;extdata/cwl/workflow-hisat2/workflow-hisat2-se&quot;, package = &quot;systemPipeR&quot;)
-WF &lt;- loadWorkflow(targets = targets, wf_file = &quot;workflow_hisat2-se.cwl&quot;, input_file = &quot;workflow_hisat2-se.yml&quot;, 
-    dir_path = dir_path)
-WF &lt;- renderWF(WF, inputvars = c(FileName = &quot;_FASTQ_PATH1_&quot;, SampleName = &quot;_SampleName_&quot;))
-WF
-cmdlist(WF)[1:2]
-output(WF)[1:2]
-</code></pre>
-<h4 id="alignment-with-tophat2">Alignment with <em><code>Tophat2</code></em></h4>
-<p>The NGS reads of this project can also be aligned against the reference genome
-sequence using <code>Bowtie2/TopHat2</code> (Kim et al. 2013; Langmead and Salzberg 2012).</p>
-<p>Build <em><code>Bowtie2</code></em> index.</p>
-<pre><code class="language-r">dir_path &lt;- system.file(&quot;extdata/cwl/bowtie2/bowtie2-idx&quot;, package = &quot;systemPipeR&quot;)
-idx &lt;- loadWorkflow(targets = NULL, wf_file = &quot;bowtie2-index.cwl&quot;, input_file = &quot;bowtie2-index.yml&quot;, 
-    dir_path = dir_path)
-idx &lt;- renderWF(idx)
-idx
-cmdlist(idx)
-
-### Run in single machine
-runCommandline(idx, make_bam = FALSE)
-</code></pre>
-<p>The parameter settings of the aligner are defined in the <code>tophat2-mapping-pe.cwl</code>
-and <code>tophat2-mapping-pe.yml</code> files. The following shows how to construct the
-corresponding <em>SYSargs2</em> object, here <em>tophat2PE</em>.</p>
-<pre><code class="language-r">targetsPE &lt;- system.file(&quot;extdata&quot;, &quot;targetsPE.txt&quot;, package = &quot;systemPipeR&quot;)
-dir_path &lt;- system.file(&quot;extdata/cwl/tophat2/tophat2-pe&quot;, package = &quot;systemPipeR&quot;)
-tophat2PE &lt;- loadWorkflow(targets = targetsPE, wf_file = &quot;tophat2-mapping-pe.cwl&quot;, 
-    input_file = &quot;tophat2-mapping-pe.yml&quot;, dir_path = dir_path)
-tophat2PE &lt;- renderWF(tophat2PE, inputvars = c(FileName1 = &quot;_FASTQ_PATH1_&quot;, FileName2 = &quot;_FASTQ_PATH2_&quot;, 
-    SampleName = &quot;_SampleName_&quot;))
-tophat2PE
-cmdlist(tophat2PE)[1:2]
-output(tophat2PE)[1:2]
-
-### Run in single machine
-tophat2PE &lt;- runCommandline(tophat2PE[1], make_bam = TRUE)
-</code></pre>
-<p>Parallelization on clusters.</p>
-<pre><code class="language-r">resources &lt;- list(walltime = 120, ntasks = 1, ncpus = 4, memory = 1024)
-reg &lt;- clusterRun(tophat2PE, FUN = runCommandline, more.args = list(args = tophat2PE, 
-    make_bam = TRUE, dir = FALSE), conffile = &quot;.batchtools.conf.R&quot;, template = &quot;batchtools.slurm.tmpl&quot;, 
-    Njobs = 18, runid = &quot;01&quot;, resourceList = resources)
-waitForJobs(reg = reg)
-</code></pre>
-<p>Create new targets file</p>
-<pre><code class="language-r">names(clt(tophat2PE))
-writeTargetsout(x = tophat2PE, file = &quot;default&quot;, step = 1, new_col = &quot;tophat2PE&quot;, 
-    new_col_output_index = 1, overwrite = TRUE)
-</code></pre>
-<h4 id="alignment-with-bowtie2-eg-for-mirna-profiling">Alignment with <em><code>Bowtie2</code></em> (<em>e.g.</em> for miRNA profiling)</h4>
-<p>The following example runs <em><code>Bowtie2</code></em> as a single process without submitting it to a cluster.</p>
-<p>Building the index:</p>
-<pre><code class="language-r">dir_path &lt;- system.file(&quot;extdata/cwl/bowtie2/bowtie2-idx&quot;, package = &quot;systemPipeR&quot;)
-idx &lt;- loadWorkflow(targets = NULL, wf_file = &quot;bowtie2-index.cwl&quot;, input_file = &quot;bowtie2-index.yml&quot;, 
-    dir_path = dir_path)
-idx &lt;- renderWF(idx)
-idx
-cmdlist(idx)
-
-### Run in single machine
-runCommandline(idx, make_bam = FALSE)
-</code></pre>
-<p>Building all the command-line:</p>
-<pre><code class="language-r">targetsPE &lt;- system.file(&quot;extdata&quot;, &quot;targetsPE.txt&quot;, package = &quot;systemPipeR&quot;)
-dir_path &lt;- system.file(&quot;extdata/cwl/bowtie2/bowtie2-pe&quot;, package = &quot;systemPipeR&quot;)
-bowtiePE &lt;- loadWorkflow(targets = targetsPE, wf_file = &quot;bowtie2-mapping-pe.cwl&quot;, 
-    input_file = &quot;bowtie2-mapping-pe.yml&quot;, dir_path = dir_path)
-bowtiePE &lt;- renderWF(bowtiePE, inputvars = c(FileName1 = &quot;_FASTQ_PATH1_&quot;, FileName2 = &quot;_FASTQ_PATH2_&quot;, 
-    SampleName = &quot;_SampleName_&quot;))
-bowtiePE
-cmdlist(bowtiePE)[1:2]
-output(bowtiePE)[1:2]
-</code></pre>
-<p>Running all the jobs to computing nodes.</p>
-<pre><code class="language-r">resources &lt;- list(walltime = 120, ntasks = 1, ncpus = 4, memory = 1024)
-reg &lt;- clusterRun(bowtiePE, FUN = runCommandline, more.args = list(args = bowtiePE, 
-    dir = FALSE), conffile = &quot;.batchtools.conf.R&quot;, template = &quot;batchtools.slurm.tmpl&quot;, 
-    Njobs = 18, runid = &quot;01&quot;, resourceList = resources)
-getStatus(reg = reg)
-</code></pre>
-<p>Alternatively, it possible to run all the jobs in a single machine.</p>
-<pre><code class="language-r">bowtiePE &lt;- runCommandline(bowtiePE)
-</code></pre>
-<p>Create new targets file.</p>
-<pre><code class="language-r">names(clt(bowtiePE))
-writeTargetsout(x = bowtiePE, file = &quot;default&quot;, step = 1, new_col = &quot;bowtiePE&quot;, new_col_output_index = 1, 
-    overwrite = TRUE)
-</code></pre>
-<h4 id="alignment-with-bwa-mem-eg-for-var-seq">Alignment with <em><code>BWA-MEM</code></em> (<em>e.g.</em> for VAR-Seq)</h4>
-<p>The following example runs BWA-MEM as a single process without submitting it to a cluster. ##TODO: add reference</p>
-<p>Build the index:</p>
-<pre><code class="language-r">dir_path &lt;- system.file(&quot;extdata/cwl/bwa/bwa-idx&quot;, package = &quot;systemPipeR&quot;)
-idx &lt;- loadWorkflow(targets = NULL, wf_file = &quot;bwa-index.cwl&quot;, input_file = &quot;bwa-index.yml&quot;, 
-    dir_path = dir_path)
-idx &lt;- renderWF(idx)
-idx
-cmdlist(idx)  # Indexes reference genome
-
-### Run
-runCommandline(idx, make_bam = FALSE)
-</code></pre>
-<p>Running the alignment:</p>
-<pre><code class="language-r">targetsPE &lt;- system.file(&quot;extdata&quot;, &quot;targetsPE.txt&quot;, package = &quot;systemPipeR&quot;)
-dir_path &lt;- system.file(&quot;extdata/cwl/bwa/bwa-pe&quot;, package = &quot;systemPipeR&quot;)
-bwaPE &lt;- loadWorkflow(targets = targetsPE, wf_file = &quot;bwa-pe.cwl&quot;, input_file = &quot;bwa-pe.yml&quot;, 
-    dir_path = dir_path)
-bwaPE &lt;- renderWF(bwaPE, inputvars = c(FileName1 = &quot;_FASTQ_PATH1_&quot;, FileName2 = &quot;_FASTQ_PATH2_&quot;, 
-    SampleName = &quot;_SampleName_&quot;))
-bwaPE
-cmdlist(bwaPE)[1:2]
-output(bwaPE)[1:2]
-### Single Machine
-bwaPE &lt;- runCommandline(args = bwaPE, make_bam = FALSE)
-
-### Cluster
-library(batchtools)
-resources &lt;- list(walltime = 120, ntasks = 1, ncpus = 4, memory = 1024)
-reg &lt;- clusterRun(bwaPE, FUN = runCommandline, more.args = list(args = bwaPE, dir = FALSE), 
-    conffile = &quot;.batchtools.conf.R&quot;, template = &quot;batchtools.slurm.tmpl&quot;, Njobs = 18, 
-    runid = &quot;01&quot;, resourceList = resources)
-getStatus(reg = reg)
-</code></pre>
-<p>Create new targets file.</p>
-<pre><code class="language-r">names(clt(bwaPE))
-writeTargetsout(x = bwaPE, file = &quot;default&quot;, step = 1, new_col = &quot;bwaPE&quot;, new_col_output_index = 1, 
-    overwrite = TRUE)
-</code></pre>
-<h4 id="alignment-with-rsubread-eg-for-rna-seq">Alignment with <em><code>Rsubread</code></em> (<em>e.g.</em> for RNA-Seq)</h4>
-<p>The following example shows how one can use within the environment the R-based aligner , allowing running from R or command-line.</p>
-<pre><code class="language-r">### Build the index:
-dir_path &lt;- system.file(&quot;extdata/cwl/rsubread/rsubread-idx&quot;, package = &quot;systemPipeR&quot;)
-idx &lt;- loadWorkflow(targets = NULL, wf_file = &quot;rsubread-index.cwl&quot;, input_file = &quot;rsubread-index.yml&quot;, 
-    dir_path = dir_path)
-idx &lt;- renderWF(idx)
-idx
-cmdlist(idx)
-runCommandline(args = idx, make_bam = FALSE)
-
-### Running the alignment:
-targets &lt;- system.file(&quot;extdata&quot;, &quot;targets.txt&quot;, package = &quot;systemPipeR&quot;)
-dir_path &lt;- system.file(&quot;extdata/cwl/rsubread/rsubread-se&quot;, package = &quot;systemPipeR&quot;)
-rsubread &lt;- loadWorkflow(targets = targets, wf_file = &quot;rsubread-mapping-se.cwl&quot;, 
-    input_file = &quot;rsubread-mapping-se.yml&quot;, dir_path = dir_path)
-rsubread &lt;- renderWF(rsubread, inputvars = c(FileName = &quot;_FASTQ_PATH1_&quot;, SampleName = &quot;_SampleName_&quot;))
-rsubread
-cmdlist(rsubread)[1]
-
-### Single Machine
-rsubread &lt;- runCommandline(args = rsubread[1])
-</code></pre>
-<p>Create new targets file.</p>
-<pre><code class="language-r">names(clt(rsubread))
-writeTargetsout(x = rsubread, file = &quot;default&quot;, step = 1, new_col = &quot;rsubread&quot;, new_col_output_index = 1, 
-    overwrite = TRUE)
-</code></pre>
-<h4 id="alignment-with-gsnap-eg-for-var-seq-and-rna-seq">Alignment with <em><code>gsnap</code></em> (<em>e.g.</em> for VAR-Seq and RNA-Seq)</h4>
-<p>Another R-based short read aligner is <em><code>gsnap</code></em> from the <em><code>gmapR</code></em> package (Wu and Nacu 2010).
-The code sample below introduces how to run this aligner on multiple nodes of a compute cluster.</p>
-<pre><code class="language-r">### Build the index:
-dir_path &lt;- system.file(&quot;extdata/cwl/gsnap/gsnap-idx&quot;, package = &quot;systemPipeR&quot;)
-idx &lt;- loadWorkflow(targets = NULL, wf_file = &quot;gsnap-index.cwl&quot;, input_file = &quot;gsnap-index.yml&quot;, 
-    dir_path = dir_path)
-idx &lt;- renderWF(idx)
-idx
-cmdlist(idx)
-runCommandline(args = idx, make_bam = FALSE)
-
-### Running the alignment:
-targetsPE &lt;- system.file(&quot;extdata&quot;, &quot;targetsPE.txt&quot;, package = &quot;systemPipeR&quot;)
-dir_path &lt;- system.file(&quot;extdata/cwl/gsnap/gsnap-pe&quot;, package = &quot;systemPipeR&quot;)
-gsnap &lt;- loadWorkflow(targets = targetsPE, wf_file = &quot;gsnap-mapping-pe.cwl&quot;, input_file = &quot;gsnap-mapping-pe.yml&quot;, 
-    dir_path = dir_path)
-gsnap &lt;- renderWF(gsnap, inputvars = c(FileName1 = &quot;_FASTQ_PATH1_&quot;, FileName2 = &quot;_FASTQ_PATH2_&quot;, 
-    SampleName = &quot;_SampleName_&quot;))
-gsnap
-cmdlist(gsnap)[1]
-output(gsnap)[1]
-
-### Cluster
-library(batchtools)
-resources &lt;- list(walltime = 120, ntasks = 1, ncpus = 4, memory = 1024)
-reg &lt;- clusterRun(gsnap, FUN = runCommandline, more.args = list(args = gsnap, make_bam = FALSE), 
-    conffile = &quot;.batchtools.conf.R&quot;, template = &quot;batchtools.slurm.tmpl&quot;, Njobs = 18, 
-    runid = &quot;01&quot;, resourceList = resources)
-getStatus(reg = reg)
-gsnap &lt;- output_update(gsnap, dir = FALSE, replace = TRUE, extension = c(&quot;.sam&quot;, 
-    &quot;.bam&quot;))
-</code></pre>
-<p>Create new targets file.</p>
-<pre><code class="language-r">names(clt(gsnap))
-writeTargetsout(x = gsnap, file = &quot;default&quot;, step = 1, new_col = &quot;gsnap&quot;, new_col_output_index = 1, 
-    overwrite = TRUE)
-</code></pre>
-<h3 id="create-symbolic-links-for-viewing-bam-files-in-igv">Create symbolic links for viewing BAM files in IGV</h3>
-<p>The genome browser IGV supports reading of indexed/sorted BAM files via web URLs. This way it can be avoided to create unnecessary copies of these large files. To enable this approach, an HTML directory with Http access needs to be available in the user account (<em>e.g.</em> <em><code>home/publichtml</code></em>) of a system. If this is not the case then the BAM files need to be moved or copied to the system where IGV runs. In the following, <em><code>htmldir</code></em> defines the path to the HTML directory with http access where the symbolic links to the BAM files will be stored. The corresponding URLs will be written to a text file specified under the <code>_urlfile</code>_ argument.</p>
-<pre><code class="language-r">symLink2bam(sysargs = args, htmldir = c(&quot;~/.html/&quot;, &quot;somedir/&quot;), urlbase = &quot;http://myserver.edu/~username/&quot;, 
-    urlfile = &quot;IGVurl.txt&quot;)
-</code></pre>
-<h3 id="read-counting-for-mrna-profiling-experiments">Read counting for mRNA profiling experiments</h3>
-<p>Create <em><code>txdb</code></em> (needs to be done only once).</p>
-<pre><code class="language-r">library(GenomicFeatures)
-txdb &lt;- makeTxDbFromGFF(file = &quot;data/tair10.gff&quot;, format = &quot;gff&quot;, dataSource = &quot;TAIR&quot;, 
-    organism = &quot;Arabidopsis thaliana&quot;)
-saveDb(txdb, file = &quot;./data/tair10.sqlite&quot;)
-</code></pre>
-<p>The following performs read counting with <em><code>summarizeOverlaps</code></em> in parallel mode with multiple cores.</p>
-<pre><code class="language-r">library(BiocParallel)
-txdb &lt;- loadDb(&quot;./data/tair10.sqlite&quot;)
-eByg &lt;- exonsBy(txdb, by = &quot;gene&quot;)
-outpaths &lt;- subsetWF(args, slot = &quot;output&quot;, subset = 1, index = 1)
-bfl &lt;- BamFileList(outpaths, yieldSize = 50000, index = character())
-multicoreParam &lt;- MulticoreParam(workers = 4)
-register(multicoreParam)
-registered()
-counteByg &lt;- bplapply(bfl, function(x) summarizeOverlaps(eByg, x, mode = &quot;Union&quot;, 
-    ignore.strand = TRUE, inter.feature = TRUE, singleEnd = TRUE))
-
-## Note: for strand-specific RNA-Seq set 'ignore.strand=FALSE' and for PE data set
-## 'singleEnd=FALSE'
-countDFeByg &lt;- sapply(seq(along = counteByg), function(x) assays(counteByg[[x]])$counts)
-rownames(countDFeByg) &lt;- names(rowRanges(counteByg[[1]]))
-colnames(countDFeByg) &lt;- names(bfl)
-rpkmDFeByg &lt;- apply(countDFeByg, 2, function(x) returnRPKM(counts = x, ranges = eByg))
-write.table(countDFeByg, &quot;results/countDFeByg.xls&quot;, col.names = NA, quote = FALSE, 
-    sep = &quot;\t&quot;)
-write.table(rpkmDFeByg, &quot;results/rpkmDFeByg.xls&quot;, col.names = NA, quote = FALSE, 
-    sep = &quot;\t&quot;)
-</code></pre>
-<p>Please note, in addition to read counts this step generates RPKM normalized expression values. For most statistical differential expression or abundance analysis methods, such as <em><code>edgeR</code></em> or <em><code>DESeq2</code></em>, the raw count values should be used as input. The usage of RPKM values should be restricted to specialty applications required by some users, <em>e.g.</em> manually comparing the expression levels of different genes or features.</p>
-<p>Read counting with <em><code>summarizeOverlaps</code></em> using multiple nodes of a cluster.</p>
-<pre><code class="language-r">library(BiocParallel)
-f &lt;- function(x) {
-    library(systemPipeR)
-    library(BiocParallel)
-    library(GenomicFeatures)
-    txdb &lt;- loadDb(&quot;./data/tair10.sqlite&quot;)
-    eByg &lt;- exonsBy(txdb, by = &quot;gene&quot;)
-    args &lt;- systemArgs(sysma = &quot;param/tophat.param&quot;, mytargets = &quot;targets.txt&quot;)
-    outpaths &lt;- subsetWF(args, slot = &quot;output&quot;, subset = 1, index = 1)
-    bfl &lt;- BamFileList(outpaths, yieldSize = 50000, index = character())
-    summarizeOverlaps(eByg, bfl[x], mode = &quot;Union&quot;, ignore.strand = TRUE, inter.feature = TRUE, 
-        singleEnd = TRUE)
-}
-resources &lt;- list(walltime = 120, ntasks = 1, ncpus = 4, memory = 1024)
-param &lt;- BatchtoolsParam(workers = 4, cluster = &quot;slurm&quot;, template = &quot;batchtools.slurm.tmpl&quot;, 
-    resources = resources)
-counteByg &lt;- bplapply(seq(along = args), f, BPPARAM = param)
-countDFeByg &lt;- sapply(seq(along = counteByg), function(x) assays(counteByg[[x]])$counts)
-rownames(countDFeByg) &lt;- names(rowRanges(counteByg[[1]]))
-colnames(countDFeByg) &lt;- names(outpaths)
-</code></pre>
-<p>Useful commands for monitoring the progress of submitted jobs</p>
-<pre><code class="language-r">getStatus(reg = reg)
-outpaths &lt;- subsetWF(args, slot = &quot;output&quot;, subset = 1, index = 1)
-file.exists(outpaths)
-sapply(1:length(outpaths), function(x) loadResult(reg, id = x))  # Works after job completion
-</code></pre>
-<h5 id="read-and-alignment-count-stats">Read and alignment count stats</h5>
-<p>Generate a table of read and alignment counts for all samples.</p>
-<pre><code class="language-r">read_statsDF &lt;- alignStats(args)
-write.table(read_statsDF, &quot;results/alignStats.xls&quot;, row.names = FALSE, quote = FALSE, 
-    sep = &quot;\t&quot;)
-</code></pre>
-<p>The following shows the first four lines of the sample alignment stats file
-provided by the <em><code>systemPipeR</code></em> package. For simplicity the number of PE reads
-is multiplied here by 2 to approximate proper alignment frequencies where each
-read in a pair is counted.</p>
-<pre><code class="language-r">read.table(system.file(&quot;extdata&quot;, &quot;alignStats.xls&quot;, package = &quot;systemPipeR&quot;), header = TRUE)[1:4, 
-    ]
-</code></pre>
-<pre><code>##   FileName Nreads2x Nalign Perc_Aligned Nalign_Primary Perc_Aligned_Primary
-## 1      M1A   192918 177961     92.24697         177961             92.24697
-## 2      M1B   197484 159378     80.70426         159378             80.70426
-## 3      A1A   189870 176055     92.72397         176055             92.72397
-## 4      A1B   188854 147768     78.24457         147768             78.24457
-</code></pre>
-<p>Parallelization of read/alignment stats on single machine with multiple cores.</p>
-<pre><code class="language-r">f &lt;- function(x) alignStats(args[x])
-read_statsList &lt;- bplapply(seq(along = args), f, BPPARAM = MulticoreParam(workers = 8))
-read_statsDF &lt;- do.call(&quot;rbind&quot;, read_statsList)
-</code></pre>
-<p>Parallelization of read/alignment stats via scheduler (<em>e.g.</em> Slurm) across several compute nodes.</p>
-<pre><code class="language-r">library(BiocParallel)
-library(batchtools)
-f &lt;- function(x) {
-    library(systemPipeR)
-    targets &lt;- system.file(&quot;extdata&quot;, &quot;targets.txt&quot;, package = &quot;systemPipeR&quot;)
-    dir_path &lt;- &quot;param/cwl/hisat2/hisat2-se&quot;  ## TODO: replace path to system.file 
-    args &lt;- loadWorkflow(targets = targets, wf_file = &quot;hisat2-mapping-se.cwl&quot;, input_file = &quot;hisat2-mapping-se.yml&quot;, 
-        dir_path = dir_path)
-    args &lt;- renderWF(args, inputvars = c(FileName = &quot;_FASTQ_PATH1_&quot;, SampleName = &quot;_SampleName_&quot;))
-    args &lt;- output_update(args, dir = FALSE, replace = TRUE, extension = c(&quot;.sam&quot;, 
-        &quot;.bam&quot;))
-    alignStats(args[x])
-}
-resources &lt;- list(walltime = 120, ntasks = 1, ncpus = 4, memory = 1024)
-param &lt;- BatchtoolsParam(workers = 4, cluster = &quot;slurm&quot;, template = &quot;batchtools.slurm.tmpl&quot;, 
-    resources = resources)
-read_statsList &lt;- bplapply(seq(along = args), f, BPPARAM = param)
-read_statsDF &lt;- do.call(&quot;rbind&quot;, read_statsList)
-</code></pre>
-<h3 id="read-counting-for-mirna-profiling-experiments">Read counting for miRNA profiling experiments</h3>
-<p>Download miRNA genes from miRBase.</p>
-<pre><code class="language-r">system(&quot;wget ftp://mirbase.org/pub/mirbase/19/genomes/My_species.gff3 -P ./data/&quot;)
-gff &lt;- import.gff(&quot;./data/My_species.gff3&quot;)
-gff &lt;- split(gff, elementMetadata(gff)$ID)
-bams &lt;- names(bampaths)
-names(bams) &lt;- targets$SampleName
-bfl &lt;- BamFileList(bams, yieldSize = 50000, index = character())
-countDFmiR &lt;- summarizeOverlaps(gff, bfl, mode = &quot;Union&quot;, ignore.strand = FALSE, 
-    inter.feature = FALSE)  # Note: inter.feature=FALSE important since pre and mature miRNA ranges overlap
-rpkmDFmiR &lt;- apply(countDFmiR, 2, function(x) returnRPKM(counts = x, gffsub = gff))
-write.table(assays(countDFmiR)$counts, &quot;results/countDFmiR.xls&quot;, col.names = NA, 
-    quote = FALSE, sep = &quot;\t&quot;)
-write.table(rpkmDFmiR, &quot;results/rpkmDFmiR.xls&quot;, col.names = NA, quote = FALSE, sep = &quot;\t&quot;)
-</code></pre>
-<h3 id="correlation-analysis-of-samples">Correlation analysis of samples</h3>
-<p>The following computes the sample-wise Spearman correlation coefficients from the <em><code>rlog</code></em> (regularized-logarithm) transformed expression values generated with the <em><code>DESeq2</code></em> package. After transformation to a distance matrix, hierarchical clustering is performed with the <em><code>hclust</code></em> function and the result is plotted as a dendrogram (<a href="./results/sample_tree.pdf">sample_tree.pdf</a>).</p>
-<pre><code class="language-r">library(DESeq2, warn.conflicts = FALSE, quietly = TRUE)
-library(ape, warn.conflicts = FALSE)
-countDFpath &lt;- system.file(&quot;extdata&quot;, &quot;countDFeByg.xls&quot;, package = &quot;systemPipeR&quot;)
-countDF &lt;- as.matrix(read.table(countDFpath))
-colData &lt;- data.frame(row.names = targets.as.df(targets(args))$SampleName, condition = targets.as.df(targets(args))$Factor)
-dds &lt;- DESeqDataSetFromMatrix(countData = countDF, colData = colData, design = ~condition)
-</code></pre>
-<pre><code>## Warning in DESeqDataSet(se, design = design, ignoreRank): some variables in
-## design formula are characters, converting to factors
-</code></pre>
-<pre><code class="language-r">d &lt;- cor(assay(rlog(dds)), method = &quot;spearman&quot;)
-hc &lt;- hclust(dist(1 - d))
-plot.phylo(as.phylo(hc), type = &quot;p&quot;, edge.col = 4, edge.width = 3, show.node.label = TRUE, 
-    no.margin = TRUE)
-</code></pre>
-<p><img src="../../../en/manuals/systempiper/systemPipeR_files/figure-html/sample_tree_rlog-1.png" width="672" /></p>
-<div align="center">
-<p><strong>Figure 6:</strong> Correlation dendrogram of samples for <em><code>rlog</code></em> values.</p>
-</div>
-</br>
-<p>Alternatively, the clustering can be performed with <em><code>RPKM</code></em> normalized expression values. In combination with Spearman correlation the results of the two clustering methods are often relatively similar.</p>
-<pre><code class="language-r">rpkmDFeBygpath &lt;- system.file(&quot;extdata&quot;, &quot;rpkmDFeByg.xls&quot;, package = &quot;systemPipeR&quot;)
-rpkmDFeByg &lt;- read.table(rpkmDFeBygpath, check.names = FALSE)
-rpkmDFeByg &lt;- rpkmDFeByg[rowMeans(rpkmDFeByg) &gt; 50, ]
-d &lt;- cor(rpkmDFeByg, method = &quot;spearman&quot;)
-hc &lt;- hclust(as.dist(1 - d))
-plot.phylo(as.phylo(hc), type = &quot;p&quot;, edge.col = &quot;blue&quot;, edge.width = 2, show.node.label = TRUE, 
-    no.margin = TRUE)
-</code></pre>
-<h3 id="deg-analysis-with-edger">DEG analysis with <em><code>edgeR</code></em></h3>
-<p>The following *<code>run_edgeR</code>* function is a convenience wrapper for
-identifying differentially expressed genes (DEGs) in batch mode with
-*<code>edgeR</code><em>’s GML method (Robinson, McCarthy, and Smyth 2010) for any number of
-pairwise sample comparisons specified under the <em><code>cmp</code>* argument. Users
-are strongly encouraged to consult the
-</em><code>edgeR</code></em><a href="%5Chref%7Bhttp://www.bioconductor.org/packages/devel/bioc/vignettes/edgeR/inst/doc/edgeRUsersGuide.pdf"></a> vignette
-for more detailed information on this topic and how to properly run <em><code>edgeR</code></em>
-on data sets with more complex experimental designs.</p>
-<pre><code class="language-r">targets &lt;- read.delim(targetspath, comment = &quot;#&quot;)
-cmp &lt;- readComp(file = targetspath, format = &quot;matrix&quot;, delim = &quot;-&quot;)
-cmp[[1]]
-</code></pre>
-<pre><code>##       [,1]  [,2] 
-##  [1,] &quot;M1&quot;  &quot;A1&quot; 
-##  [2,] &quot;M1&quot;  &quot;V1&quot; 
-##  [3,] &quot;A1&quot;  &quot;V1&quot; 
-##  [4,] &quot;M6&quot;  &quot;A6&quot; 
-##  [5,] &quot;M6&quot;  &quot;V6&quot; 
-##  [6,] &quot;A6&quot;  &quot;V6&quot; 
-##  [7,] &quot;M12&quot; &quot;A12&quot;
-##  [8,] &quot;M12&quot; &quot;V12&quot;
-##  [9,] &quot;A12&quot; &quot;V12&quot;
-</code></pre>
-<pre><code class="language-r">countDFeBygpath &lt;- system.file(&quot;extdata&quot;, &quot;countDFeByg.xls&quot;, package = &quot;systemPipeR&quot;)
-countDFeByg &lt;- read.delim(countDFeBygpath, row.names = 1)
-edgeDF &lt;- run_edgeR(countDF = countDFeByg, targets = targets, cmp = cmp[[1]], independent = FALSE, 
-    mdsplot = &quot;&quot;)
-</code></pre>
-<pre><code>## Disp = 0.21829 , BCV = 0.4672
-</code></pre>
-<p>Filter and plot DEG results for up and down-regulated genes. Because of the small size of the toy data set used by this vignette, the <em>FDR</em> value has been set to a relatively high threshold (here 10%). More commonly used <em>FDR</em> cutoffs are 1% or 5%. The definition of ‘<em>up</em>’ and ‘<em>down</em>’ is given in the corresponding help file. To open it, type <em><code>?filterDEGs</code></em> in the R console.</p>
-<pre><code class="language-r">DEG_list &lt;- filterDEGs(degDF = edgeDF, filter = c(Fold = 2, FDR = 10))
-</code></pre>
-<p><img src="../../../en/manuals/systempiper/systemPipeR_files/figure-html/edger_deg_counts-1.png" width="672" /></p>
-<div align="center">
-<p><strong>Figure 7:</strong> Up and down regulated DEGs identified by <em><code>edgeR</code></em>.</p>
-</div>
-</br>
-<pre><code class="language-r">names(DEG_list)
-</code></pre>
-<pre><code>## [1] &quot;UporDown&quot; &quot;Up&quot;       &quot;Down&quot;     &quot;Summary&quot;
-</code></pre>
-<pre><code class="language-r">DEG_list$Summary[1:4, ]
-</code></pre>
-<pre><code>##       Comparisons Counts_Up_or_Down Counts_Up Counts_Down
-## M1-A1       M1-A1                 0         0           0
-## M1-V1       M1-V1                 1         1           0
-## A1-V1       A1-V1                 1         1           0
-## M6-A6       M6-A6                 0         0           0
-</code></pre>
-<h3 id="deg-analysis-with-deseq2">DEG analysis with <em><code>DESeq2</code></em></h3>
-<p>The following *<code>run_DESeq2</code>* function is a convenience wrapper for
-identifying DEGs in batch mode with <em><code>DESeq2</code>* (Love, Huber, and Anders 2014) for any number of
-pairwise sample comparisons specified under the <em><code>cmp</code>* argument. Users
-are strongly encouraged to consult the
-</em><code>DESeq2</code></em><a href="http://www.bioconductor.org/packages/devel/bioc/vignettes/DESeq2/inst/doc/DESeq2.pdf"></a> vignette
-for more detailed information on this topic and how to properly run <em><code>DESeq2</code></em>
-on data sets with more complex experimental designs.</p>
-<pre><code class="language-r">degseqDF &lt;- run_DESeq2(countDF = countDFeByg, targets = targets, cmp = cmp[[1]], 
-    independent = FALSE)
-</code></pre>
-<pre><code>## Warning in DESeqDataSet(se, design = design, ignoreRank): some variables in
-## design formula are characters, converting to factors
-</code></pre>
-<p>Filter and plot DEG results for up and down-regulated genes.</p>
-<pre><code class="language-r">DEG_list2 &lt;- filterDEGs(degDF = degseqDF, filter = c(Fold = 2, FDR = 10))
-</code></pre>
-<p><img src="../../../en/manuals/systempiper/systemPipeR_files/figure-html/deseq2_deg_counts-1.png" width="672" /></p>
-<div align="center">
-<p><strong>Figure 8:</strong> Up and down regulated DEGs identified by <em><code>DESeq2</code></em>.</p>
-</div>
-</br>
-<h3 id="venn-diagrams">Venn Diagrams</h3>
-<p>The function <em><code>overLapper</code></em> can compute Venn intersects for large numbers of sample sets (up to 20 or more) and <em><code>vennPlot</code></em> can plot 2-5 way Venn diagrams. A useful feature is the possibility to combine the counts from several Venn comparisons with the same number of sample sets in a single Venn diagram (here for 4 up and down DEG sets).</p>
-<pre><code class="language-r">vennsetup &lt;- overLapper(DEG_list$Up[6:9], type = &quot;vennsets&quot;)
-vennsetdown &lt;- overLapper(DEG_list$Down[6:9], type = &quot;vennsets&quot;)
-vennPlot(list(vennsetup, vennsetdown), mymain = &quot;&quot;, mysub = &quot;&quot;, colmode = 2, ccol = c(&quot;blue&quot;, 
-    &quot;red&quot;))
-</code></pre>
-<p><img src="../../../en/manuals/systempiper/systemPipeR_files/figure-html/vennplot-1.png" width="672" /></p>
-<div align="center">
-<p><strong>Figure 9:</strong> Venn Diagram for 4 Up and Down DEG Sets.</p>
-</div>
-</br>
-<h3 id="go-term-enrichment-analysis-of-degs">GO term enrichment analysis of DEGs</h3>
-<h4 id="obtain-gene-to-go-mappings">Obtain gene-to-GO mappings</h4>
-<p>The following shows how to obtain gene-to-GO mappings from <em><code>biomaRt</code></em> (here for <em>A. thaliana</em>) and how to organize them for the downstream GO term enrichment analysis. Alternatively, the gene-to-GO mappings can be obtained for many organisms from Bioconductor’s <em><code>*.db</code></em> genome annotation packages or GO annotation files provided by various genome databases. For each annotation, this relatively slow preprocessing step needs to be performed only once. Subsequently, the preprocessed data can be loaded with the <em><code>load</code></em> function as shown in the next subsection.</p>
-<pre><code class="language-r">library(&quot;biomaRt&quot;)
-listMarts()  # To choose BioMart database
-listMarts(host = &quot;plants.ensembl.org&quot;)
-m &lt;- useMart(&quot;plants_mart&quot;, host = &quot;plants.ensembl.org&quot;)
-listDatasets(m)
-m &lt;- useMart(&quot;plants_mart&quot;, dataset = &quot;athaliana_eg_gene&quot;, host = &quot;plants.ensembl.org&quot;)
-listAttributes(m)  # Choose data types you want to download
-go &lt;- getBM(attributes = c(&quot;go_id&quot;, &quot;tair_locus&quot;, &quot;namespace_1003&quot;), mart = m)
-go &lt;- go[go[, 3] != &quot;&quot;, ]
-go[, 3] &lt;- as.character(go[, 3])
-go[go[, 3] == &quot;molecular_function&quot;, 3] &lt;- &quot;F&quot;
-go[go[, 3] == &quot;biological_process&quot;, 3] &lt;- &quot;P&quot;
-go[go[, 3] == &quot;cellular_component&quot;, 3] &lt;- &quot;C&quot;
-go[1:4, ]
-dir.create(&quot;./data/GO&quot;)
-write.table(go, &quot;data/GO/GOannotationsBiomart_mod.txt&quot;, quote = FALSE, row.names = FALSE, 
-    col.names = FALSE, sep = &quot;\t&quot;)
-catdb &lt;- makeCATdb(myfile = &quot;data/GO/GOannotationsBiomart_mod.txt&quot;, lib = NULL, org = &quot;&quot;, 
-    colno = c(1, 2, 3), idconv = NULL)
-save(catdb, file = &quot;data/GO/catdb.RData&quot;)
-</code></pre>
-<h4 id="batch-go-term-enrichment-analysis">Batch GO term enrichment analysis</h4>
-<p>Apply the enrichment analysis to the DEG sets obtained in the above differential expression analysis. Note, in the following example the <em>FDR</em> filter is set here to an unreasonably high value, simply because of the small size of the toy data set used in this vignette. Batch enrichment analysis of many gene sets is performed with the <em><code>GOCluster_Report</code></em> function. When <em><code>method=&quot;all&quot;</code></em>, it returns all GO terms passing the p-value cutoff specified under the <em><code>cutoff</code></em> arguments. When <em><code>method=&quot;slim&quot;</code></em>, it returns only the GO terms specified under the <em><code>myslimv</code></em> argument. The given example shows how one can obtain such a GO slim vector from BioMart for a specific organism.</p>
-<pre><code class="language-r">load(&quot;data/GO/catdb.RData&quot;)
-DEG_list &lt;- filterDEGs(degDF = edgeDF, filter = c(Fold = 2, FDR = 50), plot = FALSE)
-up_down &lt;- DEG_list$UporDown
-names(up_down) &lt;- paste(names(up_down), &quot;_up_down&quot;, sep = &quot;&quot;)
-up &lt;- DEG_list$Up
-names(up) &lt;- paste(names(up), &quot;_up&quot;, sep = &quot;&quot;)
-down &lt;- DEG_list$Down
-names(down) &lt;- paste(names(down), &quot;_down&quot;, sep = &quot;&quot;)
-DEGlist &lt;- c(up_down, up, down)
-DEGlist &lt;- DEGlist[sapply(DEGlist, length) &gt; 0]
-BatchResult &lt;- GOCluster_Report(catdb = catdb, setlist = DEGlist, method = &quot;all&quot;, 
-    id_type = &quot;gene&quot;, CLSZ = 2, cutoff = 0.9, gocats = c(&quot;MF&quot;, &quot;BP&quot;, &quot;CC&quot;), recordSpecGO = NULL)
-library(&quot;biomaRt&quot;)
-m &lt;- useMart(&quot;plants_mart&quot;, dataset = &quot;athaliana_eg_gene&quot;, host = &quot;plants.ensembl.org&quot;)
-goslimvec &lt;- as.character(getBM(attributes = c(&quot;goslim_goa_accession&quot;), mart = m)[, 
-    1])
-BatchResultslim &lt;- GOCluster_Report(catdb = catdb, setlist = DEGlist, method = &quot;slim&quot;, 
-    id_type = &quot;gene&quot;, myslimv = goslimvec, CLSZ = 10, cutoff = 0.01, gocats = c(&quot;MF&quot;, 
-        &quot;BP&quot;, &quot;CC&quot;), recordSpecGO = NULL)
-</code></pre>
-<h4 id="plot-batch-go-term-results">Plot batch GO term results</h4>
-<p>The <em><code>data.frame</code></em> generated by <em><code>GOCluster_Report</code></em> can be plotted with the <em><code>goBarplot</code></em> function. Because of the variable size of the sample sets, it may not always be desirable to show the results from different DEG sets in the same bar plot. Plotting single sample sets is achieved by subsetting the input data frame as shown in the first line of the following example.</p>
-<pre><code class="language-r">gos &lt;- BatchResultslim[grep(&quot;M6-V6_up_down&quot;, BatchResultslim$CLID), ]
-gos &lt;- BatchResultslim
-pdf(&quot;GOslimbarplotMF.pdf&quot;, height = 8, width = 10)
-goBarplot(gos, gocat = &quot;MF&quot;)
-dev.off()
-goBarplot(gos, gocat = &quot;BP&quot;)
-goBarplot(gos, gocat = &quot;CC&quot;)
-</code></pre>
-<p><img src="../GOslimbarplotMF.png" alt=""></p>
-<div align="center">
-<p><strong>Figure 10:</strong> GO Slim Barplot for MF Ontology.</p>
-</div>
-</br>
-<h3 id="clustering-and-heat-maps">Clustering and heat maps</h3>
-<p>The following example performs hierarchical clustering on the <em><code>rlog</code></em> transformed expression matrix subsetted by the DEGs identified in the
-above differential expression analysis. It uses a Pearson correlation-based distance measure and complete linkage for cluster join.</p>
-<pre><code class="language-r">library(pheatmap)
-geneids &lt;- unique(as.character(unlist(DEG_list[[1]])))
-y &lt;- assay(rlog(dds))[geneids, ]
-pdf(&quot;heatmap1.pdf&quot;)
-pheatmap(y, scale = &quot;row&quot;, clustering_distance_rows = &quot;correlation&quot;, clustering_distance_cols = &quot;correlation&quot;)
-dev.off()
-</code></pre>
-<center>
-<img src="../heatmap1.png">
-</center>
-<div align="center">
-<p><strong>Figure 11:</strong> Heat map with hierarchical clustering dendrograms of DEGs.</p>
-</div>
-</br>
-<h2 id="workflow-templates">Workflow templates</h2>
+<h2 id="workflow-initialization-with-templates">Workflow initialization with templates</h2>
 <p>The intended way of running <em><code>systemPipeR</code></em> workflows is via <em><code>*.Rmd</code></em> files, which
 can be executed either line-wise in interactive mode or with a single command from
 R or the command-line. This way comprehensive and reproducible analysis reports
@@ -3056,58 +2101,57 @@ setwd(&quot;riboseq&quot;)
 ## [8] methods   base     
 ## 
 ## other attached packages:
-##  [1] DESeq2_1.30.0               kableExtra_1.3.4           
-##  [3] dplyr_1.0.2                 magrittr_2.0.1             
-##  [5] batchtools_0.9.14           ape_5.4-1                  
-##  [7] ggplot2_3.3.2               systemPipeR_1.24.2         
-##  [9] ShortRead_1.48.0            GenomicAlignments_1.26.0   
-## [11] SummarizedExperiment_1.20.0 Biobase_2.50.0             
-## [13] MatrixGenerics_1.2.0        matrixStats_0.57.0         
-## [15] BiocParallel_1.24.1         Rsamtools_2.6.0            
-## [17] Biostrings_2.58.0           XVector_0.30.0             
-## [19] GenomicRanges_1.42.0        GenomeInfoDb_1.26.1        
-## [21] IRanges_2.24.0              S4Vectors_0.28.0           
-## [23] BiocGenerics_0.36.0         BiocStyle_2.18.0           
+##  [1] magrittr_2.0.1              batchtools_0.9.14          
+##  [3] ape_5.4-1                   ggplot2_3.3.2              
+##  [5] systemPipeR_1.24.5          ShortRead_1.48.0           
+##  [7] GenomicAlignments_1.26.0    SummarizedExperiment_1.20.0
+##  [9] Biobase_2.50.0              MatrixGenerics_1.2.0       
+## [11] matrixStats_0.57.0          BiocParallel_1.24.1        
+## [13] Rsamtools_2.6.0             Biostrings_2.58.0          
+## [15] XVector_0.30.0              GenomicRanges_1.42.0       
+## [17] GenomeInfoDb_1.26.1         IRanges_2.24.0             
+## [19] S4Vectors_0.28.0            BiocGenerics_0.36.0        
+## [21] BiocStyle_2.18.0           
 ## 
 ## loaded via a namespace (and not attached):
-##   [1] GOstats_2.56.0           backports_1.2.0          BiocFileCache_1.14.0    
-##   [4] systemfonts_1.0.1        GSEABase_1.52.0          splines_4.0.5           
-##   [7] digest_0.6.27            htmltools_0.5.1.1        GO.db_3.12.1            
-##  [10] checkmate_2.0.0          memoise_1.1.0            BSgenome_1.58.0         
-##  [13] base64url_1.4            limma_3.46.0             annotate_1.68.0         
-##  [16] svglite_2.0.0            askpass_1.1              prettyunits_1.1.1       
-##  [19] jpeg_0.1-8.1             colorspace_2.0-0         blob_1.2.1              
-##  [22] rvest_0.3.6              rappdirs_0.3.1           xfun_0.22               
-##  [25] crayon_1.3.4             RCurl_1.98-1.2           jsonlite_1.7.1          
-##  [28] graph_1.68.0             genefilter_1.72.0        brew_1.0-6              
-##  [31] survival_3.2-10          VariantAnnotation_1.36.0 glue_1.4.2              
-##  [34] gtable_0.3.0             zlibbioc_1.36.0          webshot_0.5.2           
-##  [37] DelayedArray_0.16.0      V8_3.4.0                 Rgraphviz_2.34.0        
-##  [40] scales_1.1.1             pheatmap_1.0.12          DBI_1.1.0               
-##  [43] edgeR_3.32.0             Rcpp_1.0.5               viridisLite_0.3.0       
-##  [46] xtable_1.8-4             progress_1.2.2           bit_4.0.4               
-##  [49] rsvg_2.1                 AnnotationForge_1.32.0   httr_1.4.2              
-##  [52] RColorBrewer_1.1-2       ellipsis_0.3.1           farver_2.0.3            
-##  [55] pkgconfig_2.0.3          XML_3.99-0.5             sass_0.3.1              
-##  [58] dbplyr_2.0.0             locfit_1.5-9.4           labeling_0.4.2          
-##  [61] tidyselect_1.1.0         rlang_0.4.8              AnnotationDbi_1.52.0    
-##  [64] munsell_0.5.0            tools_4.0.5              generics_0.1.0          
-##  [67] RSQLite_2.2.1            evaluate_0.14            stringr_1.4.0           
-##  [70] yaml_2.2.1               knitr_1.30               bit64_4.0.5             
-##  [73] purrr_0.3.4              RBGL_1.66.0              nlme_3.1-149            
-##  [76] formatR_1.7              xml2_1.3.2               biomaRt_2.46.0          
-##  [79] compiler_4.0.5           rstudioapi_0.13          curl_4.3                
-##  [82] png_0.1-7                tibble_3.0.4             geneplotter_1.68.0      
-##  [85] bslib_0.2.4              stringi_1.5.3            blogdown_1.2            
-##  [88] GenomicFeatures_1.42.1   lattice_0.20-41          Matrix_1.3-2            
-##  [91] vctrs_0.3.5              pillar_1.4.7             lifecycle_0.2.0         
-##  [94] BiocManager_1.30.10      jquerylib_0.1.3          data.table_1.13.2       
-##  [97] bitops_1.0-6             rtracklayer_1.50.0       R6_2.5.0                
-## [100] latticeExtra_0.6-29      hwriter_1.3.2            bookdown_0.21           
-## [103] codetools_0.2-18         assertthat_0.2.1         openssl_1.4.3           
-## [106] Category_2.56.0          rjson_0.2.20             withr_2.3.0             
-## [109] GenomeInfoDbData_1.2.4   hms_0.5.3                grid_4.0.5              
-## [112] DOT_0.1                  rmarkdown_2.7
+##   [1] colorspace_2.0-0         rjson_0.2.20             hwriter_1.3.2           
+##   [4] ellipsis_0.3.1           rstudioapi_0.13          bit64_4.0.5             
+##   [7] AnnotationDbi_1.52.0     xml2_1.3.2               codetools_0.2-18        
+##  [10] splines_4.0.5            knitr_1.30               jsonlite_1.7.1          
+##  [13] annotate_1.68.0          GO.db_3.12.1             dbplyr_2.0.0            
+##  [16] png_0.1-7                pheatmap_1.0.12          graph_1.68.0            
+##  [19] BiocManager_1.30.10      compiler_4.0.5           httr_1.4.2              
+##  [22] backports_1.2.0          GOstats_2.56.0           assertthat_0.2.1        
+##  [25] Matrix_1.3-2             limma_3.46.0             formatR_1.7             
+##  [28] htmltools_0.5.1.1        prettyunits_1.1.1        tools_4.0.5             
+##  [31] gtable_0.3.0             glue_1.4.2               GenomeInfoDbData_1.2.4  
+##  [34] Category_2.56.0          dplyr_1.0.2              rsvg_2.1                
+##  [37] rappdirs_0.3.1           V8_3.4.0                 Rcpp_1.0.5              
+##  [40] jquerylib_0.1.3          vctrs_0.3.5              svglite_2.0.0           
+##  [43] nlme_3.1-149             blogdown_1.2             rtracklayer_1.50.0      
+##  [46] xfun_0.22                stringr_1.4.0            rvest_0.3.6             
+##  [49] lifecycle_0.2.0          XML_3.99-0.5             edgeR_3.32.0            
+##  [52] zlibbioc_1.36.0          scales_1.1.1             BSgenome_1.58.0         
+##  [55] VariantAnnotation_1.36.0 hms_0.5.3                RBGL_1.66.0             
+##  [58] RColorBrewer_1.1-2       yaml_2.2.1               curl_4.3                
+##  [61] memoise_1.1.0            sass_0.3.1               biomaRt_2.46.0          
+##  [64] latticeExtra_0.6-29      stringi_1.5.3            RSQLite_2.2.1           
+##  [67] genefilter_1.72.0        checkmate_2.0.0          GenomicFeatures_1.42.1  
+##  [70] DOT_0.1                  systemfonts_1.0.1        rlang_0.4.8             
+##  [73] pkgconfig_2.0.3          bitops_1.0-6             evaluate_0.14           
+##  [76] lattice_0.20-41          purrr_0.3.4              bit_4.0.4               
+##  [79] tidyselect_1.1.0         GSEABase_1.52.0          AnnotationForge_1.32.0  
+##  [82] bookdown_0.21            R6_2.5.0                 generics_0.1.0          
+##  [85] base64url_1.4            DelayedArray_0.16.0      DBI_1.1.0               
+##  [88] withr_2.3.0              pillar_1.4.7             survival_3.2-10         
+##  [91] RCurl_1.98-1.2           tibble_3.0.4             crayon_1.3.4            
+##  [94] BiocFileCache_1.14.0     rmarkdown_2.7            jpeg_0.1-8.1            
+##  [97] progress_1.2.2           locfit_1.5-9.4           grid_4.0.5              
+## [100] data.table_1.13.2        blob_1.2.1               Rgraphviz_2.34.0        
+## [103] webshot_0.5.2            digest_0.6.27            xtable_1.8-4            
+## [106] brew_1.0-6               openssl_1.4.3            munsell_0.5.0           
+## [109] viridisLite_0.3.0        kableExtra_1.3.4         bslib_0.2.4             
+## [112] askpass_1.1
 </code></pre>
 <h2 id="funding">Funding</h2>
 <p>This project is funded by NSF award <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1661152">ABI-1661152</a>.</p>
@@ -3139,15 +2183,6 @@ setwd(&quot;riboseq&quot;)
 </div>
 <div id="ref-Liao2013-bn" class="csl-entry">
 <p>Liao, Yang, Gordon K Smyth, and Wei Shi. 2013. “The Subread Aligner: Fast, Accurate and Scalable Read Mapping by Seed-and-Vote.” <em>Nucleic Acids Res.</em> 41 (10): e108. <a href="https://doi.org/10.1093/nar/gkt214">https://doi.org/10.1093/nar/gkt214</a>.</p>
-</div>
-<div id="ref-Love2014-sh" class="csl-entry">
-<p>Love, Michael, Wolfgang Huber, and Simon Anders. 2014. “Moderated Estimation of Fold Change and Dispersion for <span class="nocase">RNA-seq</span> Data with DESeq2.” <em>Genome Biol.</em> 15 (12): 550. <a href="https://doi.org/10.1186/s13059-014-0550-8">https://doi.org/10.1186/s13059-014-0550-8</a>.</p>
-</div>
-<div id="ref-Rsamtools" class="csl-entry">
-<p>Morgan, Martin, Hervé Pagès, Valerie Obenchain, and Nathaniel Hayden. 2019. <em>Rsamtools: Binary Alignment (BAM), FASTA, Variant Call (BCF), and Tabix File Import</em>. <a href="http://bioconductor.org/packages/Rsamtools">http://bioconductor.org/packages/Rsamtools</a>.</p>
-</div>
-<div id="ref-Robinson2010-uk" class="csl-entry">
-<p>Robinson, M D, D J McCarthy, and G K Smyth. 2010. “edgeR: A Bioconductor Package for Differential Expression Analysis of Digital Gene Expression Data.” <em>Bioinformatics</em> 26 (1): 139–40. <a href="https://doi.org/10.1093/bioinformatics/btp616">https://doi.org/10.1093/bioinformatics/btp616</a>.</p>
 </div>
 <div id="ref-Wu2010-iq" class="csl-entry">
 <p>Wu, T D, and S Nacu. 2010. “Fast and <span class="nocase">SNP-tolerant</span> Detection of Complex Variants and Splicing in Short Reads.” <em>Bioinformatics</em> 26 (7): 873–81. <a href="https://doi.org/10.1093/bioinformatics/btq057">https://doi.org/10.1093/bioinformatics/btq057</a>.</p>
