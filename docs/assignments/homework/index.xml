@@ -2668,31 +2668,31 @@ the code may be stored on HPC, so it will be &lt;strong&gt;fine if your &lt;code
 &lt;ul&gt;
 &lt;li&gt;Task1
 &lt;ul&gt;
-&lt;li&gt;Unstranded 1&lt;/li&gt;
-&lt;li&gt;Positive 1&lt;/li&gt;
-&lt;li&gt;Negative 1&lt;/li&gt;
+&lt;li&gt;Unstranded: 1&lt;/li&gt;
+&lt;li&gt;Positive: 1&lt;/li&gt;
+&lt;li&gt;Negative: 1&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Task2 1&lt;/li&gt;
-&lt;li&gt;Task3 1&lt;/li&gt;
+&lt;li&gt;Task2: 1&lt;/li&gt;
+&lt;li&gt;Task3: 1&lt;/li&gt;
 &lt;li&gt;Task4
 &lt;ul&gt;
-&lt;li&gt;Genes 0.5&lt;/li&gt;
-&lt;li&gt;Exons 0.5&lt;/li&gt;
-&lt;li&gt;Exons by genes 0.5&lt;/li&gt;
-&lt;li&gt;Introns by transcripts 0.5&lt;/li&gt;
-&lt;li&gt;5&#39;-UTRs by transcripts 0.5&lt;/li&gt;
+&lt;li&gt;Genes: 0.5&lt;/li&gt;
+&lt;li&gt;Exons: 0.5&lt;/li&gt;
+&lt;li&gt;Exons by genes: 0.5&lt;/li&gt;
+&lt;li&gt;Introns by transcripts: 0.5&lt;/li&gt;
+&lt;li&gt;5&#39;-UTRs by transcripts: 0.5&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Task5
 &lt;ul&gt;
-&lt;li&gt;DEG 1&lt;/li&gt;
-&lt;li&gt;Venn1 1&lt;/li&gt;
-&lt;li&gt;Venn2 1&lt;/li&gt;
+&lt;li&gt;DEG: 1&lt;/li&gt;
+&lt;li&gt;Venn1: 1&lt;/li&gt;
+&lt;li&gt;Venn2: 1&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Total 10.5&lt;/p&gt;
+&lt;p&gt;Total: 10.5&lt;/p&gt;
 &lt;h3 id=&#34;due-date&#34;&gt;Due date&lt;/h3&gt;
 &lt;p&gt;This homework is due in one week on Thu, May 6th at 6:00 PM.&lt;/p&gt;
 &lt;h2 id=&#34;homework-solutions&#34;&gt;Homework Solutions&lt;/h2&gt;
