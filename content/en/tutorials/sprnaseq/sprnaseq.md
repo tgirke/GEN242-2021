@@ -42,6 +42,14 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
+<div style="text-align: right">
+
+Source code downloads:    
+\[ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/sprnaseq/sprnaseq.Rmd) \]    
+\[ [.R](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/sprnaseq/sprnaseq.R) \]
+
+</div>
+
 ## Introduction
 
 Users want to provide here background information about the design of their RNA-Seq project.
