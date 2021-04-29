@@ -17,37 +17,25 @@
 <link rel="icon" type="image/png" href="../../../favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="../../../favicons/android-192x192.png" sizes="192x192">
 
-<title>GEN242</title><meta property="og:title" content="" />
-<meta property="og:description" content="#######################################################################
-systemPipeR: Workflow design and reporting generation environment #######################################################################
-Loading package and documentation library(&ldquo;systemPipeR&rdquo;) # Loads the package library(help=&ldquo;systemPipeR&rdquo;) # Lists package info vignette(&ldquo;systemPipeR&rdquo;) # Opens vignette
-Structure of targets file for single-end (SE) samples library(systemPipeR) targetspath &lt;- system.file(&ldquo;extdata&rdquo;, &ldquo;targets.txt&rdquo;, package=&ldquo;systemPipeR&rdquo;) read.delim(targetspath, comment.char = &ldquo;#&quot;)[1:4,]
-Structure of targets file for paired-end (PE) samples targetspath &lt;- system.file(&ldquo;extdata&rdquo;, &ldquo;targetsPE.txt&rdquo;, package=&ldquo;systemPipeR&rdquo;) read.delim(targetspath, comment.char = &ldquo;#&quot;)[1:2,1:6]
-Sample comparisons Sample comparisons are defined in the header lines of the targets file starting with &lsquo;# &rsquo;." />
+<title>systemPipeR: Workflow design and reporting generation environment | GEN242</title><meta property="og:title" content="systemPipeR: Workflow design and reporting generation environment" />
+<meta property="og:description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
+ Introduction systemPipeR is provides flexible utilities for building and running automated end-to-end analysis workflows for a wide range of research applications, including next-generation sequencing (NGS) experiments, such as RNA-Seq, ChIP-Seq, VAR-Seq and Ribo-Seq (H Backman and Girke 2016)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/systempiper/systempiper/" />
 <meta property="article:modified_time" content="2021-04-29T13:09:25-07:00" /><meta property="og:site_name" content="GEN242" />
-<meta itemprop="name" content="">
-<meta itemprop="description" content="#######################################################################
-systemPipeR: Workflow design and reporting generation environment #######################################################################
-Loading package and documentation library(&ldquo;systemPipeR&rdquo;) # Loads the package library(help=&ldquo;systemPipeR&rdquo;) # Lists package info vignette(&ldquo;systemPipeR&rdquo;) # Opens vignette
-Structure of targets file for single-end (SE) samples library(systemPipeR) targetspath &lt;- system.file(&ldquo;extdata&rdquo;, &ldquo;targets.txt&rdquo;, package=&ldquo;systemPipeR&rdquo;) read.delim(targetspath, comment.char = &ldquo;#&quot;)[1:4,]
-Structure of targets file for paired-end (PE) samples targetspath &lt;- system.file(&ldquo;extdata&rdquo;, &ldquo;targetsPE.txt&rdquo;, package=&ldquo;systemPipeR&rdquo;) read.delim(targetspath, comment.char = &ldquo;#&quot;)[1:2,1:6]
-Sample comparisons Sample comparisons are defined in the header lines of the targets file starting with &lsquo;# &rsquo;.">
+<meta itemprop="name" content="systemPipeR: Workflow design and reporting generation environment">
+<meta itemprop="description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
+ Introduction systemPipeR is provides flexible utilities for building and running automated end-to-end analysis workflows for a wide range of research applications, including next-generation sequencing (NGS) experiments, such as RNA-Seq, ChIP-Seq, VAR-Seq and Ribo-Seq (H Backman and Girke 2016).">
 <meta itemprop="dateModified" content="2021-04-29T13:09:25-07:00" />
-<meta itemprop="wordCount" content="845">
+<meta itemprop="wordCount" content="4920">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="#######################################################################
-systemPipeR: Workflow design and reporting generation environment #######################################################################
-Loading package and documentation library(&ldquo;systemPipeR&rdquo;) # Loads the package library(help=&ldquo;systemPipeR&rdquo;) # Lists package info vignette(&ldquo;systemPipeR&rdquo;) # Opens vignette
-Structure of targets file for single-end (SE) samples library(systemPipeR) targetspath &lt;- system.file(&ldquo;extdata&rdquo;, &ldquo;targets.txt&rdquo;, package=&ldquo;systemPipeR&rdquo;) read.delim(targetspath, comment.char = &ldquo;#&quot;)[1:4,]
-Structure of targets file for paired-end (PE) samples targetspath &lt;- system.file(&ldquo;extdata&rdquo;, &ldquo;targetsPE.txt&rdquo;, package=&ldquo;systemPipeR&rdquo;) read.delim(targetspath, comment.char = &ldquo;#&quot;)[1:2,1:6]
-Sample comparisons Sample comparisons are defined in the header lines of the targets file starting with &lsquo;# &rsquo;."/>
+<meta name="twitter:title" content="systemPipeR: Workflow design and reporting generation environment"/>
+<meta name="twitter:description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
+ Introduction systemPipeR is provides flexible utilities for building and running automated end-to-end analysis workflows for a wide range of research applications, including next-generation sequencing (NGS) experiments, such as RNA-Seq, ChIP-Seq, VAR-Seq and Ribo-Seq (H Backman and Girke 2016)."/>
 
 
 <script type="application/javascript">
@@ -95,13 +83,23 @@ if (!doNotTrack) {
 
 
   </head>
-  <body class="td-page">
+  <body class="td-page line-numbers">
     <header>
-      
+     
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
-        <a class="navbar-brand" href="../../../">
-		<span class="navbar-logo"><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500" style="enable-background:new 0 0 500 500"><g><path style="fill:#fff" d="M116.8525 421.9722c-5.7041.0-10.3442-4.3127-10.3442-9.6129V88.183c0-5.3002 4.6401-9.6117 10.3442-9.6117H320.858c3.0347.0 9.3959.5498 11.7506 2.6302l.3545.3442 58.905 63.2912c2.3101 2.491 2.9202 8.4928 2.9202 11.3184v256.2039c0 5.3002-4.6407 9.6129-10.3436 9.6129H116.8525z"/><g><g><g><path style="fill:#767676" d="M384.4445 423.2066H116.852c-6.3839.0-11.5786-4.8658-11.5786-10.8474V88.1831c0-5.9804 5.1947-10.8461 11.5786-10.8461h204.0062c.377.0 9.2786.0329 12.568 2.9389l.3947.3833 58.9508 63.337c3.2135 3.4652 3.2514 11.7924 3.2514 12.1593v256.2036C396.0231 418.3408 390.8284 423.2066 384.4445 423.2066zM116.5079 411.9189c.0848.0278.1999.0531.3441.0531h267.5925c.1442.0.2581-.0253.3441-.0531V156.1556c-.0076-.9033-.3593-3.7347-.7034-5.0037l-57.6527-61.9416c-1.4651-.3176-4.4533-.6389-5.5742-.6389H116.852c-.143.0-.2594.024-.3441.0531V411.9189zm267.4533-261.149zM327.0321 89.371v.0013V89.371z"/></g></g></g><g><g><path style="fill:#5b7fc0" d="M189.0874 210.1754l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.025 2.454-11.4897 6.4116-15.4473C177.5953 212.627 183.0601 210.1742 189.0874 210.1754zM197.0804 232.033c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 234.1722 197.0804 232.033z"/><path style="opacity:.3;fill:#fff" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zM197.0839 232.0372c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/><g><defs><path id="SVGID_1_" d="M194.7376 237.6875c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 234.2399 196.1861 236.239 194.7376 237.6875z"/></defs><clipPath id="SVGID_2_"><use xlink:href="#SVGID_1_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_2_);fill:#fff" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/><path style="opacity:.13;clip-path:url(#SVGID_2_);fill:#020202" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/></g><g><defs><path id="SVGID_3_" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zM197.0839 232.0372c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/></defs><clipPath id="SVGID_4_"><use xlink:href="#SVGID_3_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_4_);fill:#5b7fc0" d="M172.6595 215.6045c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8475-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 209.1953 176.6171 211.647 172.6595 215.6045z"/></g></g><rect x="198.8952" y="225.1043" style="fill:#5b7fc0" width="122.6266" height="13.8671"/></g><g><path style="fill:#d95140" d="M189.0874 155.7611l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.0249 2.454-11.4897 6.4116-15.4473C177.5953 158.2128 183.0601 155.7599 189.0874 155.7611zM197.0804 177.6188c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.2508 181.7667 197.0816 179.758 197.0804 177.6188z"/><path style="opacity:.3;fill:#fff" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zM197.0839 177.623c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/><g><defs><path id="SVGID_5_" d="M194.7376 183.2733c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 179.8256 196.1861 181.8248 194.7376 183.2733z"/></defs><clipPath id="SVGID_6_"><use xlink:href="#SVGID_5_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_6_);fill:#fff" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/><path style="opacity:.13;clip-path:url(#SVGID_6_);fill:#020202" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/></g><g><defs><path id="SVGID_7_" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zM197.0839 177.623c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/></defs><clipPath id="SVGID_8_"><use xlink:href="#SVGID_7_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_8_);fill:#d95140" d="M172.6595 161.1903c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 154.7811 176.6171 157.2327 172.6595 161.1903z"/></g><rect x="198.8952" y="170.69" style="fill:#d95140" width="122.6266" height="13.8671"/></g><g><g><path style="fill:#56a55c" d="M189.5379 264.6147l.0012-.0012c7.7751.0012 15.0294 4.1862 18.932 10.9235 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032-5.8394.0-11.3281-2.2733-15.458-6.4032-4.13-4.13-6.4032-9.6186-6.4056-15.4628.0012-6.0249 2.454-11.4897 6.4116-15.4472C178.0458 267.0663 183.5105 264.6135 189.5379 264.6147zM197.5309 286.4723c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6538 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.7013 290.6202 197.5321 288.6115 197.5309 286.4723z"/><path style="opacity:.3;fill:#fff" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zM197.5344 286.4765c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/><g><defs><path id="SVGID_9_" d="M195.1881 292.1268c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9941 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.5344 288.6792 196.6366 290.6783 195.1881 292.1268z"/></defs><clipPath id="SVGID_10_"><use xlink:href="#SVGID_9_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_10_);fill:#fff" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/><path style="opacity:.13;clip-path:url(#SVGID_10_);fill:#020202" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/></g><g><defs><path id="SVGID_11_" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zM197.5344 286.4765c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/></defs><clipPath id="SVGID_12_"><use xlink:href="#SVGID_11_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_12_);fill:#56a55c" d="M173.11 270.0439c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7325-11.1497-10.9151-18.926-10.9151C182.5311 263.6346 177.0676 266.0863 173.11 270.0439z"/></g></g><rect x="199.3456" y="279.5436" style="fill:#56a55c" width="122.6266" height="13.8671"/></g><g><g><path style="fill:#f1bc42" d="M189.0874 318.7208l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3305-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.025 2.454-11.4897 6.4116-15.4472C177.5953 321.1724 183.0601 318.7196 189.0874 318.7208zM197.0804 340.5784c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 342.7176 197.0804 340.5784z"/><path style="opacity:.3;fill:#fff" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zM197.0839 340.5826c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/><g><defs><path id="SVGID_13_" d="M194.7376 346.2329c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 342.7853 196.1861 344.7844 194.7376 346.2329z"/></defs><clipPath id="SVGID_14_"><use xlink:href="#SVGID_13_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_14_);fill:#fff" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/><path style="opacity:.13;clip-path:url(#SVGID_14_);fill:#020202" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/></g><g><defs><path id="SVGID_15_" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zM197.0839 340.5826c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/></defs><clipPath id="SVGID_16_"><use xlink:href="#SVGID_15_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_16_);fill:#f1bc42" d="M172.6595 324.15c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8474-1.0151-7.6327-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 317.7407 176.6171 320.1924 172.6595 324.15z"/></g></g><rect x="198.8952" y="333.6497" style="fill:#f1bc42" width="122.6266" height="13.8671"/></g></g></svg></span><span class="font-weight-bold">GEN242</span>
+  <a class="navbar-brand" href="../../../">
+		<span class="font-weight-bold">GEN242</span>
 	</a>
+	<row class="header-switch">
+	  	<div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="sidebarSwitch" checked=true>
+        <label class="custom-control-label" for="sidebarSwitch">sidebar</label>
+      </div>
+    	<div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="tocSwitch" checked=true>
+        <label class="custom-control-label" for="tocSwitch">toc</label>
+      </div>
+	</row>
 	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
 		<ul class="navbar-nav mt-2 mt-lg-0">
 			
@@ -121,7 +119,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../about/introduction/"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Introduction
               </a>
           	
@@ -129,7 +127,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../about/syllabus/"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Syllabus
               </a>
           	
@@ -137,7 +135,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../about/schedule/"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Schedule
               </a>
           	
@@ -145,7 +143,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../about/internal/"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Internal
               </a>
           	
@@ -155,7 +153,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../about/internal/internal_resources/"
-                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  Resources
               </a>
           	
@@ -165,7 +163,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../about/internal/install/"
-                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  Installation
               </a>
           	
@@ -188,7 +186,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../slides/slides_01"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Course Introduction (S1)
               </a>
           	
@@ -196,7 +194,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../slides/slides_02"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Genome Basics (S2)
               </a>
           	
@@ -204,7 +202,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../slides/slides_03"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Databases and Software (S3)
               </a>
           	
@@ -212,7 +210,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../slides/slides_04"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  DNA Sequencing (S4)
               </a>
           	
@@ -220,7 +218,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../slides/slides_05"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Introduction to R (S5)
               </a>
           	
@@ -228,7 +226,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../slides/slides_06"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Sequence Alignments (S6)
               </a>
           	
@@ -236,7 +234,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../slides/slides_07"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Programming in R (S7)
               </a>
           	
@@ -244,7 +242,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../slides/slides_08"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Multiple Alignments (S8)
               </a>
           	
@@ -252,7 +250,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../slides/slides_09"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Short Read Alignments (S9)
               </a>
           	
@@ -260,7 +258,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../slides/slides_10"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  R on HPC (S10)
               </a>
           	
@@ -268,7 +266,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../slides/slides_11"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  NGS Analysis Basics (S11)
               </a>
           	
@@ -276,7 +274,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../slides/slides_12"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Gene Expression Analysis (S12)
               </a>
           	
@@ -284,7 +282,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../slides/slides_13"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  NGS Workflows (S13)
               </a>
           	
@@ -292,7 +290,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../slides/slides_14/"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  ChIP-Seq Overview (S14)
               </a>
           	
@@ -300,7 +298,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../slides/slides_15/"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Enrichment Analysis (S15)
               </a>
           	
@@ -308,7 +306,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../slides/slides_16/"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Cluster Analysis (S16)
               </a>
           	
@@ -316,7 +314,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../slides/slides_17/"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  R Packages and dplyr (S17)
               </a>
           	
@@ -324,7 +322,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../slides/slides_18/"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Shiny Apps (S18)
               </a>
           	
@@ -332,7 +330,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../slides/slides_19/"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Profile HMMs (S19)
               </a>
           	
@@ -340,7 +338,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../slides/slides_20/"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Sequence Assembly (S20)
               </a>
           	
@@ -363,7 +361,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../tutorials/github/github/"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  GitHub Introduction (T1)
               </a>
           	
@@ -371,7 +369,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../tutorials/linux/linux/"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Linux and HPCC Cluster (T2)
               </a>
           	
@@ -379,7 +377,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../tutorials/rbasics/rbasics/"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Introduction to R (T3)
               </a>
           	
@@ -387,7 +385,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../tutorials/rprogramming/rprogramming/"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Programming in R (T4)
               </a>
           	
@@ -395,7 +393,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../tutorials/rparallel/rparallel/"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Parallel R (T5)
               </a>
           	
@@ -403,7 +401,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../tutorials/rsequences/rsequences/"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  NGS Analysis Basics (T6)
               </a>
           	
@@ -411,7 +409,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../tutorials/systempiper/systempiper/"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Workflows (T7)
               </a>
           	
@@ -419,7 +417,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../tutorials/sprnaseq/sprnaseq/"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  RNA-Seq Workflow (T8)
               </a>
           	
@@ -427,7 +425,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../tutorials/tutorial_08"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  ChIP-Seq Workflow (T9)
               </a>
           	
@@ -435,7 +433,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../tutorials/tutorial_09"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  VAR-Seq Workflow (T10)
               </a>
           	
@@ -443,7 +441,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../tutorials/tutorial_10"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Graphics and Visualization (T11)
               </a>
           	
@@ -451,7 +449,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../tutorials/tutorial_12"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Cluster Analysis and Data Mining (T11)
               </a>
           	
@@ -474,7 +472,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../manuals/github/github/"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  GitHub
               </a>
           	
@@ -482,7 +480,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../manuals/linux/linux/"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Linux &amp; HPCC Cluster
               </a>
           	
@@ -490,7 +488,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../manuals/rbasics/rbasics/"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Introduction to R
               </a>
           	
@@ -498,7 +496,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../manuals/rbasics/sample/"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Sample R Markdown
               </a>
           	
@@ -506,7 +504,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../manuals/rprogramming/rprogramming/"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Programming in R
               </a>
           	
@@ -514,7 +512,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../manuals/rparallel/rparallel/"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Parallel Evaluations in R
               </a>
           	
@@ -522,7 +520,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../manuals/rsequences/rsequences/"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  NGS Analysis Basics
               </a>
           	
@@ -530,7 +528,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../manuals/systempiper/systempiper/"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  NGS Workflow Overview
               </a>
           	
@@ -538,7 +536,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../manuals/sprnaseq/sprnaseq/"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  RNA-Seq Workflow
               </a>
           	
@@ -546,7 +544,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../manuals/rgraphics/rgraphics/"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Graphics and Visualization
               </a>
           	
@@ -569,7 +567,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../assignments/homework/"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Homework
               </a>
           	
@@ -579,7 +577,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../assignments/homework/hw01/hw01/"
-                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  HW1: Intro &amp; GitHub
               </a>
           	
@@ -589,7 +587,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../assignments/homework/hw02/hw02/"
-                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  HW2: Linux &amp; HPC
               </a>
           	
@@ -599,7 +597,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../assignments/homework/hw03/hw03/"
-                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  HW3: R Basics
               </a>
           	
@@ -609,7 +607,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../assignments/homework/hw04/hw04/"
-                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  HW4: Alignments
               </a>
           	
@@ -619,7 +617,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../assignments/homework/hw05/hw05"
-                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  HW5: R Programming
               </a>
           	
@@ -629,7 +627,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../assignments/homework/hw06/hw06"
-                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  HW6: NGS Analysis Basics
               </a>
           	
@@ -639,7 +637,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../assignments/homework/hw07/hw07"
-                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  HW7: RNA-Seq Analysis
               </a>
           	
@@ -647,7 +645,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../assignments/projects/"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Projects
               </a>
           	
@@ -657,7 +655,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../assignments/projects/project_overview/"
-                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  Overview of Projects
               </a>
           	
@@ -667,7 +665,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../assignments/projects/01_rnaseq_aligners/"
-                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  RNA-Seq Aligners
               </a>
           	
@@ -677,7 +675,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../assignments/projects/02_rnaseq_deg/"
-                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  DEG Methods
               </a>
           	
@@ -687,7 +685,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../assignments/projects/03_cluster_analysis/"
-                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  Cluster Analysis
               </a>
           	
@@ -697,7 +695,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../assignments/projects/04_scrnaseq_embedding/"
-                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  scRNA-Seq Embedding
               </a>
           	
@@ -707,7 +705,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../assignments/projects/05_chipseq_peakcaller/"
-                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  ChIP-Seq Peak Callers
               </a>
           	
@@ -717,7 +715,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../assignments/projects/06_functional_enrichment/"
-                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  Functional Enrichment
               </a>
           	
@@ -727,7 +725,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../assignments/projects/07_motif_enrichment/"
-                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  Motif Enrichment
               </a>
           	
@@ -737,7 +735,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../assignments/projects/08_genome_graphics/"
-                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  Genome Graphics
               </a>
           	
@@ -747,7 +745,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../assignments/projects/project_data/"
-                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  Project Data
               </a>
           	
@@ -755,7 +753,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../assignments/presentations/"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Presentations
               </a>
           	
@@ -765,7 +763,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="../../../assignments/presentations/paper_presentations/"
-                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  Paper Presentations
               </a>
           	
@@ -788,7 +786,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="https://piazza.com/ucr/spring2021/gen242/home"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Piazza
               </a>
           	
@@ -796,7 +794,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="https://classroom.github.com/classrooms/"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  GitHub Classroom
               </a>
           	
@@ -804,7 +802,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="https://github.com/tgirke/GEN242"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  GitHub Repo
               </a>
           	
@@ -812,7 +810,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="https://bioconductor.org/"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Bioconductor
               </a>
           	
@@ -820,7 +818,7 @@ if (!doNotTrack) {
               
               
               <a class="dropdown-item" href="https://www.dcassol.com/docsy_Rmarkdown/rmarkdown/install/"
-                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Hugo, Docsy &amp; R
               </a>
           	
@@ -855,7 +853,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.244cd88f09b788adfc6ad94388772da0.json"
+  data-offline-search-index-json-src="../../../offline-search-index.36fd948841a0691f355f3d5519f0aa90.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -864,136 +862,1371 @@ if (!doNotTrack) {
 </nav>
 
     </header>
-    <div class="container-fluid td-default td-outer">
-      <main role="main" class="td-main">
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="../../../offline-search-index.36fd948841a0691f355f3d5519f0aa90.json"
+  data-offline-search-base-href="../../../"
+  data-offline-search-max-results="10"
+>
+
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav" id="td-section-nav">
+    
+    
+    
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="../../../tutorials/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Tutorials</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="tutorials">
+      
+      
+      
+      
         
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-tutorialsgithubgithub" href="../../../tutorials/github/github/">GitHub</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-tutorialslinuxlinux" href="../../../tutorials/linux/linux/">Linux &amp; HPCC Cluster</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-tutorialsrbasicsrbasics" href="../../../tutorials/rbasics/rbasics/">Introduction to R</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-tutorialsrprogrammingrprogramming" href="../../../tutorials/rprogramming/rprogramming/">Programming in R</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-tutorialssprnaseqsprnaseq" href="../../../tutorials/sprnaseq/sprnaseq/">RNA-Seq Workflow Template</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page  active" id="m-tutorialssystempipersystempiper" href="../../../tutorials/systempiper/systempiper/">systemPipeR: Workflow design and reporting generation environment</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-tutorialsrparallelrparallel" href="../../../tutorials/rparallel/rparallel/">Parallel Evaluations in R</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-tutorialsrsequencesrsequences" href="../../../tutorials/rsequences/rsequences/">NGS Analysis Basics</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-tutorialstutorial_09" href="../../../tutorials/tutorial_09/">ChIP-Seq Workflow</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-tutorialstutorial_10" href="../../../tutorials/tutorial_10/">VAR-Seq Workflow</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-tutorialstutorial_11" href="../../../tutorials/tutorial_11/">Graphics and Visualization</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-tutorialstutorial_12" href="../../../tutorials/tutorial_12/">Cluster Analysis and Data Mining</a>
+        
+      
+      
+    </li>
+  </ul>
+</ul>
 
-<p>#######################################################################</p>
-<h2 id="systempiper-workflow-design-and-reporting-generation-environment">systemPipeR: Workflow design and reporting generation environment</h2>
-<p>#######################################################################</p>
-<h2 id="loading-package-and-documentation">Loading package and documentation</h2>
-<p>library(&ldquo;systemPipeR&rdquo;) # Loads the package
-library(help=&ldquo;systemPipeR&rdquo;) # Lists package info
-vignette(&ldquo;systemPipeR&rdquo;) # Opens vignette</p>
-<h2 id="structure-of-targets-file-for-single-end-se-samples">Structure of targets file for single-end (SE) samples</h2>
-<p>library(systemPipeR)
-targetspath &lt;- system.file(&ldquo;extdata&rdquo;, &ldquo;targets.txt&rdquo;, package=&ldquo;systemPipeR&rdquo;)
-read.delim(targetspath, comment.char = &ldquo;#&quot;)[1:4,]</p>
-<h2 id="structure-of-targets-file-for-paired-end-pe-samples">Structure of targets file for paired-end (PE) samples</h2>
-<p>targetspath &lt;- system.file(&ldquo;extdata&rdquo;, &ldquo;targetsPE.txt&rdquo;, package=&ldquo;systemPipeR&rdquo;)
-read.delim(targetspath, comment.char = &ldquo;#&quot;)[1:2,1:6]</p>
-<h2 id="sample-comparisons">Sample comparisons</h2>
-<h2 id="sample-comparisons-are-defined-in-the-header-lines-of-the-_targets_-file">Sample comparisons are defined in the header lines of the <em><code>targets</code></em> file</h2>
-<h2 id="starting-with--cmp">starting with &lsquo;# <CMP>&rsquo;.</h2>
-<p>readLines(targetspath)[1:4]</p>
-<p>The function readComp imports the comparison information and stores it in a
-list.</p>
-<p>readComp(file=targetspath, format=&ldquo;vector&rdquo;, delim=&quot;-&quot;)</p>
-<h2 id="structure-and-initialization-of-sysargs2">Structure and initialization of SYSargs2</h2>
-<h2 id="sysargs2-stores-all-the-information-and-instructions-needed-for-processing">SYSargs2 stores all the information and instructions needed for processing</h2>
-<h2 id="a-set-of-input-files-with-a-single-or-many-command-line-steps-within-a-workflow">a set of input files with a single or many command-line steps within a workflow</h2>
-<h2 id="eg-several-components-of-the-software-or-several-independent-software-tools">(e.g. several components of the software or several independent software tools).</h2>
-<h2 id="the-sysargs2-object-is-created-and-fully-populated-with-the-loadwf">The SYSargs2 object is created and fully populated with the loadWF</h2>
-<h2 id="and-renderwf-functions-respectively">and renderWF functions, respectively.</h2>
-<h2 id="in-cwl-files-with-the-extension-cwl-define-the-parameters-of-a-chosen">In CWL, files with the extension *.cwl define the parameters of a chosen</h2>
-<h2 id="command-line-step-or-workflow-while-files-with-the-extension-yml-define">command-line step or workflow, while files with the extension *.yml define</h2>
-<h2 id="the-input-variables-of-command-line-steps-note-input-variables-provided">the input variables of command-line steps. Note, input variables provided</h2>
-<h2 id="by-a-targets-file-can-be-passed-on-to-a-sysargs2-instance-via-the-inputvars">by a targets file can be passed on to a SYSargs2 instance via the inputvars</h2>
-<h2 id="argument-of-the-renderwf-function">argument of the renderWF function.</h2>
-<p>hisat2.cwl &lt;- system.file(&ldquo;extdata&rdquo;, &ldquo;cwl/hisat2/hisat2-se/hisat2-mapping-se.cwl&rdquo;, package=&ldquo;systemPipeR&rdquo;)
-yaml::read_yaml(hisat2.cwl)
-hisat2.yml &lt;- system.file(&ldquo;extdata&rdquo;, &ldquo;cwl/hisat2/hisat2-se/hisat2-mapping-se.yml&rdquo;, package=&ldquo;systemPipeR&rdquo;)
-yaml::read_yaml(hisat2.yml)</p>
-<h2 id="the-following-imports-a-cwl-file-here-hisat2-mapping-secwl-for-running">The following imports a *.cwl file (here hisat2-mapping-se.cwl) for running</h2>
-<h2 id="the-short-read-aligner-hisat2-the-loadwf-and-renderwf">the short read aligner HISAT2. The loadWF and renderWF</h2>
-<h2 id="functions-render-the-proper-command-line-strings-for-each-sample-and-software-tool">functions render the proper command-line strings for each sample and software tool.</h2>
-<p>library(systemPipeR)
-targets &lt;- system.file(&ldquo;extdata&rdquo;, &ldquo;targets.txt&rdquo;, package=&ldquo;systemPipeR&rdquo;)
-dir_path &lt;- system.file(&ldquo;extdata/cwl/hisat2/hisat2-se&rdquo;, package=&ldquo;systemPipeR&rdquo;)
-WF &lt;- loadWF(targets=targets, wf_file=&ldquo;hisat2-mapping-se.cwl&rdquo;,
-input_file=&ldquo;hisat2-mapping-se.yml&rdquo;,
-dir_path=dir_path)</p>
-<p>WF &lt;- renderWF(WF, inputvars=c(FileName=&quot;<em>FASTQ_PATH1</em>&rdquo;, SampleName=&quot;<em>SampleName</em>&quot;))</p>
-<h2 id="several-accessor-methods-are-available-that-are-named-after-the-slot-names-of-the-_sysargs2_-object">Several accessor methods are available that are named after the slot names of the <em><code>SYSargs2</code></em> object.</h2>
-<p>names(WF)</p>
-<h2 id="of-particular-interest-is-the-cmdlist-method-it-constructs-the-system">Of particular interest is the cmdlist() method. It constructs the system</h2>
-<h2 id="commands-for-running-command-line-software-as-specified-by-a-given-cwl">commands for running command-line software as specified by a given *.cwl</h2>
-<h2 id="file-combined-with-the-paths-to-the-input-samples-eg-fastq-files-provided">file combined with the paths to the input samples (e.g. FASTQ files) provided</h2>
-<h2 id="by-a-targets-file-the-example-below-shows-the-cmdlist-output-for">by a targets file. The example below shows the cmdlist() output for</h2>
-<h2 id="running-hisat2-on-the-first-se-read-sample-evaluating-the-output-of">running HISAT2 on the first SE read sample. Evaluating the output of</h2>
-<h2 id="cmdlist-can-be-very-helpful-for-designing-and-debugging-cwl-files">cmdlist() can be very helpful for designing and debugging *.cwl files</h2>
-<h2 id="of-new-command-line-software-or-changing-the-parameter-settings-of-existing">of new command-line software or changing the parameter settings of existing</h2>
-<h2 id="ones">ones.</h2>
-<p>cmdlist(WF)[1]</p>
-<h2 id="the-output-components-of-sysargs2-define-the-expected-output-files-for">The output components of SYSargs2 define the expected output files for</h2>
-<h2 id="each-step-in-the-workflow-some-of-which-are-the-input-for-the-next-workflow-step">each step in the workflow; some of which are the input for the next workflow step,</h2>
-<h2 id="here-next-sysargs2-instance">here next SYSargs2 instance.</h2>
-<p>output(WF)[1]
-modules(WF)
-targets(WF)[1]
-targets.as.df(targets(WF))[1:4,1:4]
-output(WF)[1]
-cwlfiles(WF)
-inputvars(WF)</p>
-<h2 id="how-to-run-the-workflow-on-a-cluster">How to run the workflow on a cluster</h2>
-<h2 id="this-section-of-the-tutorial-provides-an-introduction-to-the-usage-of-the">This section of the tutorial provides an introduction to the usage of the</h2>
-<h2 id="systempiper-features-on-a-cluster">systemPipeR features on a cluster.</h2>
-<h2 id="now-open-the-r-markdown-script-rmdin-your-r-ide-_eg_vim-r-or-rstudio">Now open the R markdown script <code>*.Rmd</code>in your R IDE (_e.g._vim-r or RStudio)</h2>
-<h2 id="and-run-the-workflow-as-outlined-below-if-you-work-under-vim-r-tmux-the">and run the workflow as outlined below. If you work under Vim-R-Tmux, the</h2>
-<h2 id="following-command-sequence-will-connect-the-user-in-an-interactive-session-with">following command sequence will connect the user in an interactive session with</h2>
-<h2 id="a-node-on-the-cluster-the-code-of-the-rmd">a node on the cluster. The code of the <code>Rmd</code></h2>
-<h2 id="script-can-then-be-sent-from-vim-on-the-login-head-node-to-an-open-r-session-running">script can then be sent from Vim on the login (head) node to an open R session running</h2>
-<h2 id="on-the-corresponding-computer-node-this-is-important-since-tmux-sessions">on the corresponding computer node. This is important since Tmux sessions</h2>
-<h2 id="should-not-be-run-on-the-computer-nodes">should not be run on the computer nodes.</h2>
-<p>q(&ldquo;no&rdquo;) # closes R session on head node
-srun &ndash;x11 &ndash;partition=short &ndash;mem=2gb &ndash;cpus-per-task 4 &ndash;ntasks 1 &ndash;time 2:00:00 &ndash;pty bash -l
+  </nav>
+</div>
+
+
+
+
+          </div>
+          
+          
+
+          
+            
+          
+
+          
+          
+              <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+                
+  
+  
+  
+  
+  
+  <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+  
+    
+    
+      
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+    
+    
+      <a href="https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/systempiper/systemPipeR.Rmd" target="_blank" class="source-link"><i class="fa fa-code fa-fw"></i> View Rmd source</a>
+    
+
+    <a href="https://github.com/tgirke/GEN242//edit/main/content/en/tutorials/systempiper/systemPipeR.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+    <a href="https://github.com/tgirke/GEN242//new/main/content/en/tutorials/systempiper/systemPipeR.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" target="_blank"><i class="fa fa-edit fa-fw"></i> Create child page</a>
+    <a href="https://github.com/tgirke/GEN242//issues/new?title=systemPipeR:%20Workflow%20design%20and%20reporting%20generation%20environment" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+    
+      
+      <a href="https://github.com/tgirke/GEN242/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
+    
+
+  
+  
+  </div>
+
+
+
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#workflow-design-structure-using-sysargs2">Workflow design structure using <em><code>SYSargs2</code></em></a></li>
+        <li><a href="#workflow-management-with-sysargslist">Workflow Management with <em><code>SYSargsList</code></em></a></li>
+      </ul>
+    </li>
+    <li><a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#loading-package-and-documentation">Loading package and documentation</a></li>
+        <li><a href="#load-sample-data-and-workflow-templates">Load sample data and workflow templates</a></li>
+        <li><a href="#directory-structure">Directory structure</a></li>
+        <li><a href="#structure-of-targets-file">Structure of <em><code>targets</code></em> file</a>
+          <ul>
+            <li><a href="#structure-of-targets-file-for-single-end-se-samples">Structure of <em><code>targets</code></em> file for single-end (SE) samples</a></li>
+            <li><a href="#structure-of-targets-file-for-paired-end-pe-samples">Structure of <em><code>targets</code></em> file for paired-end (PE) samples</a></li>
+            <li><a href="#sample-comparisons">Sample comparisons</a></li>
+          </ul>
+        </li>
+        <li><a href="#structure-and-initialization-of-sysargs2">Structure and initialization of <em><code>SYSargs2</code></em></a>
+          <ul>
+            <li><a href="#third-party-software-tools">Third-party software tools</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#how-to-run-a-workflow">How to run a Workflow</a>
+      <ul>
+        <li><a href="#load-sample-data-and-workflow-templates-1">Load sample data and workflow templates</a></li>
+        <li><a href="#setup-and-requirements">Setup and Requirements</a></li>
+        <li><a href="#project-initialization">Project initialization</a></li>
+        <li><a href="#workflow-execution">Workflow execution</a></li>
+        <li><a href="#how-to-run-the-workflow-on-a-cluster">How to run the workflow on a cluster</a>
+          <ul>
+            <li><a href="#parallelization-on-clusters">Parallelization on clusters</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#workflow-initialization-with-templates">Workflow initialization with templates</a>
+      <ul>
+        <li><a href="#rna-seq-sample">RNA-Seq sample</a>
+          <ul>
+            <li><a href="#run-workflow">Run workflow</a></li>
+          </ul>
+        </li>
+        <li><a href="#chip-seq-sample">ChIP-Seq sample</a>
+          <ul>
+            <li><a href="#run-workflow-1">Run workflow</a></li>
+          </ul>
+        </li>
+        <li><a href="#var-seq-sample">VAR-Seq sample</a>
+          <ul>
+            <li><a href="#var-seq-workflow-for-the-single-machine">VAR-Seq workflow for the single machine</a></li>
+            <li><a href="#run-workflow-2">Run workflow</a></li>
+            <li><a href="#var-seq-workflow-for-computer-cluster">VAR-Seq workflow for computer cluster</a></li>
+          </ul>
+        </li>
+        <li><a href="#ribo-seq-sample">Ribo-Seq sample</a>
+          <ul>
+            <li><a href="#run-workflow-3">Run workflow</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#version-information">Version information</a></li>
+    <li><a href="#funding">Funding</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+
+
+
+              </div>
+              <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+                
+  
+
+                <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../tutorials/">Tutorials</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="../../../tutorials/systempiper/systempiper/">systemPipeR: Workflow design and reporting generation environment</a>
+</li>
+
+	</ol>
+</nav	>
+
+                
+<div class="td-content">
+	<h1>systemPipeR: Workflow design and reporting generation environment</h1>
+    
+	
+        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 24 minute read</p>
+           
+	<script src="../../../rmarkdown-libs/kePrint/kePrint.js"></script>
+<link href="../../../rmarkdown-libs/lightable/lightable.css" rel="stylesheet" />
+<style type="text/css">
+pre code {
+white-space: pre !important;
+overflow-x: scroll !important;
+word-break: keep-all !important;
+word-wrap: initial !important;
+}
+</style>
+<!--
+- Compile from command-line
+Rscript -e "rmarkdown::render('systemPipeR.Rmd', c('BiocStyle::html_document'), clean=F); knitr::knit('systemPipeR.Rmd', tangle=TRUE)"; Rscript ../md2jekyll.R systemPipeR.knit.md 2; Rscript -e "rmarkdown::render('systemPipeR.Rmd', c('BiocStyle::pdf_document'))"
+-->
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelector("h1").className = "title";
+});
+</script>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+  var links = document.links;  
+  for (var i = 0, linksLength = links.length; i < linksLength; i++)
+    if (links[i].hostname != window.location.hostname)
+      links[i].target = '_blank';
+});
+</script>
+<div style="text-align: right">
+<p>Source code downloads:    
+[ <a href="https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/systempiper/systemPipeR.Rmd">.Rmd</a> ]    
+[ <a href="https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/systempiper/systemPipeR.R">.R</a> ]</p>
+</div>
+<h3 id="introduction">Introduction</h3>
+<p><a href="http://www.bioconductor.org/packages/devel/bioc/html/systemPipeR.html"><em><code>systemPipeR</code></em></a>
+is provides flexible utilities for building and running automated end-to-end
+analysis workflows for a wide range of research applications, including
+next-generation sequencing (NGS) experiments, such as RNA-Seq, ChIP-Seq,
+VAR-Seq and Ribo-Seq (H Backman and Girke 2016). Important features include a uniform
+workflow interface across different data analysis applications, automated
+report generation, and support for running both R and command-line software,
+such as NGS aligners or peak/variant callers, on local computers or compute
+clusters (Figure 1). The latter supports interactive job submissions and batch
+submissions to queuing systems of clusters. For instance, <code>systemPipeR</code> can
+be used with any command-line aligners such as <code>BWA</code> (Heng Li 2013; H. Li and Durbin 2009),
+<code>HISAT2</code> (Kim, Langmead, and Salzberg 2015), <code>TopHat2</code> (Kim et al. 2013) and <code>Bowtie2</code>
+(Langmead and Salzberg 2012), as well as the R-based NGS aligners
+<a href="http://www.bioconductor.org/packages/devel/bioc/html/Rsubread.html"><em><code>Rsubread</code></em></a>
+(Liao, Smyth, and Shi 2013) and <a href="http://www.bioconductor.org/packages/devel/bioc/html/gmapR.html"><em><code>gsnap (gmapR)</code></em></a>
+(Wu and Nacu 2010). Efficient handling of complex sample sets (<em>e.g.</em> FASTQ/BAM
+files) and experimental designs are facilitated by a well-defined sample
+annotation infrastructure which improves reproducibility and user-friendliness
+of many typical analysis workflows in the NGS area (Lawrence et al. 2013).</p>
+<p>The main motivation and advantages of using <em><code>systemPipeR</code></em> for complex data analysis tasks are:</p>
+<ol>
+<li>Facilitates the design of complex data analysis workflows</li>
+<li>Consistent workflow interface for different large-scale data types</li>
+<li>Makes NGS analysis with Bioconductor utilities more accessible to new users</li>
+<li>Simplifies usage of command-line software from within R</li>
+<li>Reduces the complexity of using compute clusters for R and command-line software</li>
+<li>Accelerates runtime of workflows via parallelization on computer systems with multiple CPU cores and/or multiple compute nodes</li>
+<li>Improves reproducibility by automating analyses and generation of analysis reports</li>
+</ol>
+<center>
+<img src="../utilities.png">
+</center>
+<p><strong>Figure 1:</strong> Relevant features in <em><code>systemPipeR</code></em>.
+Workflow design concepts are illustrated under (A &amp; B). Examples of
+<em>systemPipeR’s</em> visualization functionalities are given under (C). </br></p>
+<p>A central concept for designing workflows within the <em><code>systemPipeR</code></em>
+environment is the use of workflow management containers. They support
+the widely used community standard <a href="https://www.commonwl.org/">Common Workflow Language</a>
+(CWL) for describing analysis workflows in a generic and reproducible manner, introducing
+<em><code>SYSargs2</code></em> workflow control class (see Figure 2). Using this community
+standard in <em><code>systemPipeR</code></em> has many advantages. For instance, the integration
+of CWL allows running <em><code>systemPipeR</code></em> workflows from a single specification
+instance either entirely from within R, from various command-line wrappers
+(e.g., <em>cwl-runner</em>) or from other languages (<em>, e.g.,</em> Bash or Python).
+<em><code>systemPipeR</code></em> includes support for both command-line and R/Bioconductor
+software as well as resources for containerization, parallel evaluations on
+computer clusters along with the automated generation of interactive analysis
+reports.</p>
+<p>An important feature of <em><code>systemPipeR's</code></em> CWL interface is that it provides two
+options to run command-line tools and workflows based on CWL. First, one can
+run CWL in its native way via an R-based wrapper utility for <em>cwl-runner</em> or
+<em>cwl-tools</em> (CWL-based approach). Second, one can run workflows using CWL’s
+command-line and workflow instructions from within R (R-based approach). In the
+latter case the same CWL workflow definition files (<em>e.g.</em> <code>*.cwl</code> and <code>*.yml</code>)
+are used but rendered and executed entirely with R functions defined by
+<em><code>systemPipeR</code></em>, and thus use CWL mainly as a command-line and workflow
+definition format rather than execution software to run workflows. In this regard
+<em><code>systemPipeR</code></em> also provides several convenience functions that are useful for
+designing and debugging workflows, such as a command-line rendering function to
+retrieve the exact command-line strings for each data set and processing step
+prior to running a command-line.</p>
+<p>This overview introduces the design of a new CWL S4 class in <em><code>systemPipeR</code></em>,
+as well as the custom command-line interface, combined with the overview of all
+the common analysis steps of NGS experiments.</p>
+<h3 id="workflow-design-structure-using-sysargs2">Workflow design structure using <em><code>SYSargs2</code></em></h3>
+<p>The flexibility of <em><code>systemPipeR's</code></em> workflow control class scales to any
+number of analysis steps necessary in a workflow. This can include
+variable combinations of steps requiring command-line or R-based software executions.
+The connectivity among all workflow steps is achieved by the <em><code>SYSargs2</code></em> workflow
+control class (see Figure 3). This S4 class is a list-like container where
+each instance stores all the input/output paths and parameter components
+required for a particular data analysis step. <em><code>SYSargs2</code></em> instances are
+generated by two constructor functions, <em>loadWorkflow</em> and <em>renderWF</em>, using as
+data input so called <em>targets</em> or <em>yaml</em> files as well as two <em>cwl</em> parameter files (for
+details see below). When running preconfigured workflows, the only input the
+user needs to provide is the initial <em>targets</em> file containing the paths to the
+input files (<em>e.g.</em> FASTQ) along with unique sample labels. Subsequent targets
+instances are created automatically. The parameters required for running
+command-line software is provided by the parameter (<em>.cwl</em>) files described
+below.</p>
+<p>To support one or many workflow steps in a single container the <em><code>SYSargsList</code></em> class
+capturing all information required to run, control and monitor complex workflows from
+start to finish.</p>
+<center>
+<img src="../SYS_WF.png">
+</center>
+<p><strong>Figure 2:</strong> Workflow steps with input/output file operations are controlled by
+<em><code>SYSargs2</code></em> objects. Each <em><code>SYSargs2</code></em> instance is constructed from one <em>targets</em>
+and two <em>param</em> files. The only input provided by the user is the initial <em>targets</em>
+file. Subsequent <em>targets</em> instances are created automatically, from the previous
+output files. Any number of predefined or custom workflow steps are supported. One
+or many <em><code>SYSargs2</code></em> objects are organized in an <em><code>SYSargsList</code></em> container.</p>
+<h3 id="workflow-management-with-sysargslist">Workflow Management with <em><code>SYSargsList</code></em></h3>
+<p>In <strong>systemPipeR</strong> allows to create (multi-step analyses) and run workflows directly
+from R or the command-line using local systems, HPC cluster or cloud platforms.</p>
+<center>
+<img src="../sysargslist.png">
+</center>
+<p><strong>Figure 3:</strong> Workflow Management using <em><code>SYSargsList</code></em>.</p>
+<h2 id="getting-started">Getting Started</h2>
+<h3 id="installation">Installation</h3>
+<p>The R software for running
+<a href="http://www.bioconductor.org/packages/devel/bioc/html/systemPipeR.html"><em><code>systemPipeR</code></em></a>
+can be downloaded from <a href="http://cran.at.r-project.org/"><em>CRAN</em></a>. The
+<code>systemPipeR</code> environment can be installed from the R console using the
+<a href="https://cran.r-project.org/web/packages/BiocManager/index.html"><em><code>BiocManager::install</code></em></a>
+command. The associated data package
+<a href="http://www.bioconductor.org/packages/devel/data/experiment/html/systemPipeRdata.html"><em><code>systemPipeRdata</code></em></a>
+can be installed the same way. The latter is a helper package for generating
+<code>systemPipeR</code> workflow environments with a single command containing all
+parameter files and sample data required to quickly test and run workflows.</p>
+<pre><code class="language-r">if (!requireNamespace(&quot;BiocManager&quot;, quietly = TRUE)) install.packages(&quot;BiocManager&quot;)
+BiocManager::install(&quot;systemPipeR&quot;)
+BiocManager::install(&quot;systemPipeRdata&quot;)
+</code></pre>
+<p>Please note that if you desire to use a third-party command line tool, the
+particular tool and dependencies need to be installed and executable.
+See <a href="#tools">details</a>.</p>
+<h3 id="loading-package-and-documentation">Loading package and documentation</h3>
+<pre><code class="language-r">library(&quot;systemPipeR&quot;)  # Loads the package
+library(help = &quot;systemPipeR&quot;)  # Lists package info
+vignette(&quot;systemPipeR&quot;)  # Opens vignette
+</code></pre>
+<h3 id="load-sample-data-and-workflow-templates">Load sample data and workflow templates</h3>
+<p>The mini sample FASTQ files used by this overview vignette as well as the
+associated workflow reporting vignettes can be loaded via the
+<em><code>systemPipeRdata</code></em> package as shown below. The chosen data set
+<a href="http://www.ncbi.nlm.nih.gov/sra/?term=SRP010938"><code>SRP010938</code></a> obtains 18
+paired-end (PE) read sets from <em>Arabidposis thaliana</em> (Howard et al. 2013). To
+minimize processing time during testing, each FASTQ file has been subsetted to
+90,000-100,000 randomly sampled PE reads that map to the first 100,000
+nucleotides of each chromosome of the <em>A. thalina</em> genome. The corresponding
+reference genome sequence (FASTA) and its GFF annotation files (provided in the
+same download) have been truncated accordingly. This way the entire test sample
+data set requires less than 200MB disk storage space. A PE read set has been
+chosen for this test data set for flexibility, because it can be used for
+testing both types of analysis routines requiring either SE (single-end) reads
+or PE reads.</p>
+<p>The following generates a fully populated <em><code>systemPipeR</code></em> workflow environment
+(here for RNA-Seq) in the current working directory of an R session. At this time
+the package includes workflow templates for RNA-Seq, ChIP-Seq, VAR-Seq, and Ribo-Seq.
+Templates for additional NGS applications will be provided in the future.</p>
+<h3 id="directory-structure">Directory structure</h3>
+<p>The working environment of the sample data loaded in the previous step contains
+the following pre-configured directory structure (Figure 4). Directory names are indicated
+in <span style="color:grey"><em><strong>green</strong></em></span>. Users can change this
+structure as needed, but need to adjust the code in their workflows
+accordingly.</p>
+<ul>
+<li><span style="color:green"><em><strong>workflow/</strong></em></span> (<em>e.g.</em> <em>rnaseq/</em>)
+<ul>
+<li>This is the root directory of the R session running the workflow.</li>
+<li>Run script ( <em>*.Rmd</em>) and sample annotation (<em>targets.txt</em>) files are located here.</li>
+<li>Note, this directory can have any name (<em>e.g.</em> <span style="color:green"><em><strong>rnaseq</strong></em></span>, <span style="color:green"><em><strong>varseq</strong></em></span>). Changing its name does not require any modifications in the run script(s).</li>
+<li><strong>Important subdirectories</strong>:
+<ul>
+<li><span style="color:green"><em><strong>param/</strong></em></span>
+<ul>
+<li>Stores non-CWL parameter files such as: <em>*.param</em>, <em>*.tmpl</em> and <em>*.run.sh</em>. These files are only required for backwards compatibility to run old workflows using the previous custom command-line interface.</li>
+<li><span style="color:green"><em><strong>param/cwl/</strong></em></span>: This subdirectory stores all the CWL parameter files. To organize workflows, each can have its own subdirectory, where all <code>CWL param</code> and <code>input.yml</code> files need to be in the same subdirectory.</li>
+</ul>
+</li>
+<li><span style="color:green"><em><strong>data/</strong></em> </span>
+<ul>
+<li>FASTQ files</li>
+<li>FASTA file of reference (<em>e.g.</em> reference genome)</li>
+<li>Annotation files</li>
+<li>etc.</li>
+</ul>
+</li>
+<li><span style="color:green"><em><strong>results/</strong></em></span>
+<ul>
+<li>Analysis results are usually written to this directory, including: alignment, variant and peak files (BAM, VCF, BED); tabular result files; and image/plot files</li>
+<li>Note, the user has the option to organize results files for a given sample and analysis step in a separate subdirectory.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<center>
+<img src="../SYSdir.png">
+</center>
+<p><strong>Figure 5:</strong> <em>systemPipeR’s</em> preconfigured directory structure.</p>
+<p>The following parameter files are included in each workflow template:</p>
+<ol>
+<li><em><code>targets.txt</code></em>: initial one provided by user; downstream <em><code>targets_*.txt</code></em> files are generated automatically</li>
+<li><em><code>*.param/cwl</code></em>: defines parameter for input/output file operations, <em>e.g.</em>:
+<ul>
+<li><em><code>hisat2-se/hisat2-mapping-se.cwl</code></em></li>
+<li><em><code>hisat2-se/hisat2-mapping-se.yml</code></em></li>
+</ul>
+</li>
+<li><em><code>*_run.sh</code></em>: optional bash scripts</li>
+<li>Configuration files for computer cluster environments (skip on single machines):
+<ul>
+<li><em><code>.batchtools.conf.R</code></em>: defines the type of scheduler for <em><code>batchtools</code></em> pointing to template file of cluster, and located in user’s home directory</li>
+<li><em><code>*.tmpl</code></em>: specifies parameters of scheduler used by a system, <em>e.g.</em> Torque, SGE, Slurm, etc.</li>
+</ul>
+</li>
+</ol>
+<h3 id="structure-of-targets-file">Structure of <em><code>targets</code></em> file</h3>
+<p>The <em><code>targets</code></em> file defines all input files (<em>e.g.</em> FASTQ, BAM, BCF) and sample
+comparisons of an analysis workflow. The following shows the format of a sample
+<em><code>targets</code></em> file included in the package. It also can be viewed and downloaded
+from <em><code>systemPipeR</code></em>’s GitHub repository <a href="https://github.com/tgirke/systemPipeR/blob/master/inst/extdata/targets.txt">here</a>.
+In a target file with a single type of input files, here FASTQ files of single-end (SE) reads, the first three columns are mandatory including their column
+names, while it is four mandatory columns for FASTQ files of PE reads. All
+subsequent columns are optional and any number of additional columns can be added as needed.</p>
+<p>Users should note here, the usage of targets files is optional when using
+<em>systemPipeR’s</em> new CWL interface. They can be replaced by a standard YAML
+input file used by CWL. Since for organizing experimental variables targets
+files are extremely useful and user-friendly. Thus, we encourage users to keep using
+them.</p>
+<h4 id="structure-of-targets-file-for-single-end-se-samples">Structure of <em><code>targets</code></em> file for single-end (SE) samples</h4>
+<pre><code class="language-r">library(systemPipeR)
+targetspath &lt;- system.file(&quot;extdata&quot;, &quot;targets.txt&quot;, package = &quot;systemPipeR&quot;)
+read.delim(targetspath, comment.char = &quot;#&quot;)[1:4, ]
+</code></pre>
+<pre><code>##                      FileName SampleName Factor SampleLong Experiment
+## 1 ./data/SRR446027_1.fastq.gz        M1A     M1  Mock.1h.A          1
+## 2 ./data/SRR446028_1.fastq.gz        M1B     M1  Mock.1h.B          1
+## 3 ./data/SRR446029_1.fastq.gz        A1A     A1   Avr.1h.A          1
+## 4 ./data/SRR446030_1.fastq.gz        A1B     A1   Avr.1h.B          1
+##          Date
+## 1 23-Mar-2012
+## 2 23-Mar-2012
+## 3 23-Mar-2012
+## 4 23-Mar-2012
+</code></pre>
+<p>To work with custom data, users need to generate a <em><code>targets</code></em> file containing
+the paths to their own FASTQ files and then provide under <em><code>targetspath</code></em> the
+path to the corresponding <em><code>targets</code></em> file.</p>
+<h4 id="structure-of-targets-file-for-paired-end-pe-samples">Structure of <em><code>targets</code></em> file for paired-end (PE) samples</h4>
+<p>For paired-end (PE) samples, the structure of the targets file is similar, where
+users need to provide two FASTQ path columns: <em><code>FileName1</code></em> and <em><code>FileName2</code></em>
+with the paths to the PE FASTQ files.</p>
+<pre><code class="language-r">targetspath &lt;- system.file(&quot;extdata&quot;, &quot;targetsPE.txt&quot;, package = &quot;systemPipeR&quot;)
+read.delim(targetspath, comment.char = &quot;#&quot;)[1:2, 1:6]
+</code></pre>
+<pre><code>##                     FileName1                   FileName2 SampleName Factor
+## 1 ./data/SRR446027_1.fastq.gz ./data/SRR446027_2.fastq.gz        M1A     M1
+## 2 ./data/SRR446028_1.fastq.gz ./data/SRR446028_2.fastq.gz        M1B     M1
+##   SampleLong Experiment
+## 1  Mock.1h.A          1
+## 2  Mock.1h.B          1
+</code></pre>
+<h4 id="sample-comparisons">Sample comparisons</h4>
+<p>Sample comparisons are defined in the header lines of the <em><code>targets</code></em> file
+starting with ‘<code># &lt;CMP&gt;</code>.’</p>
+<pre><code class="language-r">readLines(targetspath)[1:4]
+</code></pre>
+<pre><code>## [1] &quot;# Project ID: Arabidopsis - Pseudomonas alternative splicing study (SRA: SRP010938; PMID: 24098335)&quot;                                                                              
+## [2] &quot;# The following line(s) allow to specify the contrasts needed for comparative analyses, such as DEG identification. All possible comparisons can be specified with 'CMPset: ALL'.&quot;
+## [3] &quot;# &lt;CMP&gt; CMPset1: M1-A1, M1-V1, A1-V1, M6-A6, M6-V6, A6-V6, M12-A12, M12-V12, A12-V12&quot;                                                                                             
+## [4] &quot;# &lt;CMP&gt; CMPset2: ALL&quot;
+</code></pre>
+<p>The function <em><code>readComp</code></em> imports the comparison information and stores it in a
+<em><code>list</code></em>. Alternatively, <em><code>readComp</code></em> can obtain the comparison information from
+the corresponding <em><code>SYSargs</code></em> object (see below). Note, these header lines are
+optional. They are mainly useful for controlling comparative analyses according
+to certain biological expectations, such as identifying differentially expressed
+genes in RNA-Seq experiments based on simple pair-wise comparisons.</p>
+<pre><code class="language-r">readComp(file = targetspath, format = &quot;vector&quot;, delim = &quot;-&quot;)
+</code></pre>
+<pre><code>## $CMPset1
+## [1] &quot;M1-A1&quot;   &quot;M1-V1&quot;   &quot;A1-V1&quot;   &quot;M6-A6&quot;   &quot;M6-V6&quot;   &quot;A6-V6&quot;   &quot;M12-A12&quot;
+## [8] &quot;M12-V12&quot; &quot;A12-V12&quot;
+## 
+## $CMPset2
+##  [1] &quot;M1-A1&quot;   &quot;M1-V1&quot;   &quot;M1-M6&quot;   &quot;M1-A6&quot;   &quot;M1-V6&quot;   &quot;M1-M12&quot;  &quot;M1-A12&quot; 
+##  [8] &quot;M1-V12&quot;  &quot;A1-V1&quot;   &quot;A1-M6&quot;   &quot;A1-A6&quot;   &quot;A1-V6&quot;   &quot;A1-M12&quot;  &quot;A1-A12&quot; 
+## [15] &quot;A1-V12&quot;  &quot;V1-M6&quot;   &quot;V1-A6&quot;   &quot;V1-V6&quot;   &quot;V1-M12&quot;  &quot;V1-A12&quot;  &quot;V1-V12&quot; 
+## [22] &quot;M6-A6&quot;   &quot;M6-V6&quot;   &quot;M6-M12&quot;  &quot;M6-A12&quot;  &quot;M6-V12&quot;  &quot;A6-V6&quot;   &quot;A6-M12&quot; 
+## [29] &quot;A6-A12&quot;  &quot;A6-V12&quot;  &quot;V6-M12&quot;  &quot;V6-A12&quot;  &quot;V6-V12&quot;  &quot;M12-A12&quot; &quot;M12-V12&quot;
+## [36] &quot;A12-V12&quot;
+</code></pre>
+<h3 id="structure-and-initialization-of-sysargs2">Structure and initialization of <em><code>SYSargs2</code></em></h3>
+<p><em><code>SYSargs2</code></em> stores all the information and instructions needed for processing
+a set of input files with a single or many command-line steps within a workflow
+(<em>i.e.</em> several components of the software or several independent software tools).
+The <em><code>SYSargs2</code></em> object is created and fully populated with the <em>loadWF</em>
+and <em>renderWF</em> functions, respectively.</p>
+<p>In CWL, files with the extension <em><code>.cwl</code></em> define the parameters of a chosen
+command-line step or workflow, while files with the extension <em><code>.yml</code></em> define
+the input variables of command-line steps. Note, input variables provided
+by a <em>targets</em> file can be passed on to a <em><code>SYSargs2</code></em> instance via the <em>inputvars</em>
+argument of the <em>renderWF</em> function.</p>
+<p>The following imports a <em><code>.cwl</code></em> file (here <em><code>hisat2-mapping-se.cwl</code></em>) for running
+the short read aligner HISAT2 (Kim, Langmead, and Salzberg 2015). The <em>loadWF</em> and <em>renderWF</em>
+functions render the proper command-line strings for each sample and software tool.</p>
+<pre><code class="language-r">library(systemPipeR)
+targets &lt;- system.file(&quot;extdata&quot;, &quot;targets.txt&quot;, package = &quot;systemPipeR&quot;)
+dir_path &lt;- system.file(&quot;extdata/cwl/hisat2/hisat2-se&quot;, package = &quot;systemPipeR&quot;)
+WF &lt;- loadWF(targets = targets, wf_file = &quot;hisat2-mapping-se.cwl&quot;, input_file = &quot;hisat2-mapping-se.yml&quot;, 
+    dir_path = dir_path)
+
+WF &lt;- renderWF(WF, inputvars = c(FileName = &quot;_FASTQ_PATH1_&quot;, SampleName = &quot;_SampleName_&quot;))
+</code></pre>
+<p>Several accessor methods are available that are named after the slot names of the <em><code>SYSargs2</code></em> object.</p>
+<pre><code class="language-r">names(WF)
+</code></pre>
+<pre><code>##  [1] &quot;targets&quot;       &quot;targetsheader&quot; &quot;modules&quot;       &quot;wf&quot;           
+##  [5] &quot;clt&quot;           &quot;yamlinput&quot;     &quot;cmdlist&quot;       &quot;input&quot;        
+##  [9] &quot;output&quot;        &quot;cwlfiles&quot;      &quot;inputvars&quot;
+</code></pre>
+<p>Of particular interest is the <em><code>cmdlist()</code></em> method. It constructs the system
+commands for running command-line software as specified by a given <em><code>.cwl</code></em>
+file combined with the paths to the input samples (<em>e.g.</em> FASTQ files) provided
+by a <em><code>targets</code></em> file. The example below shows the <em><code>cmdlist()</code></em> output for
+running HISAT2 on the first SE read sample. Evaluating the output of
+<em><code>cmdlist()</code></em> can be very helpful for designing and debugging <em><code>.cwl</code></em> files
+of new command-line software or changing the parameter settings of existing
+ones.</p>
+<pre><code class="language-r">cmdlist(WF)[1]
+</code></pre>
+<pre><code>## $M1A
+## $M1A$`hisat2-mapping-se`
+## [1] &quot;hisat2 -S ./results/M1A.sam  -x ./data/tair10.fasta  -k 1  --min-intronlen 30  --max-intronlen 3000  -U ./data/SRR446027_1.fastq.gz --threads 4&quot;
+</code></pre>
+<p>The output components of <em><code>SYSargs2</code></em> define the expected output files for
+each step in the workflow; some of which are the input for the next workflow step,
+here next <em><code>SYSargs2</code></em> instance (see Figure 2).</p>
+<pre><code class="language-r">output(WF)[1]
+</code></pre>
+<pre><code>## $M1A
+## $M1A$`hisat2-mapping-se`
+## [1] &quot;./results/M1A.sam&quot;
+</code></pre>
+<pre><code class="language-r">modules(WF)
+</code></pre>
+<pre><code>##        module1 
+## &quot;hisat2/2.1.0&quot;
+</code></pre>
+<pre><code class="language-r">targets(WF)[1]
+</code></pre>
+<pre><code>## $M1A
+## $M1A$FileName
+## [1] &quot;./data/SRR446027_1.fastq.gz&quot;
+## 
+## $M1A$SampleName
+## [1] &quot;M1A&quot;
+## 
+## $M1A$Factor
+## [1] &quot;M1&quot;
+## 
+## $M1A$SampleLong
+## [1] &quot;Mock.1h.A&quot;
+## 
+## $M1A$Experiment
+## [1] 1
+## 
+## $M1A$Date
+## [1] &quot;23-Mar-2012&quot;
+</code></pre>
+<pre><code class="language-r">targets.as.df(targets(WF))[1:4, 1:4]
+</code></pre>
+<pre><code>##                      FileName SampleName Factor SampleLong
+## 1 ./data/SRR446027_1.fastq.gz        M1A     M1  Mock.1h.A
+## 2 ./data/SRR446028_1.fastq.gz        M1B     M1  Mock.1h.B
+## 3 ./data/SRR446029_1.fastq.gz        A1A     A1   Avr.1h.A
+## 4 ./data/SRR446030_1.fastq.gz        A1B     A1   Avr.1h.B
+</code></pre>
+<pre><code class="language-r">output(WF)[1]
+</code></pre>
+<pre><code>## $M1A
+## $M1A$`hisat2-mapping-se`
+## [1] &quot;./results/M1A.sam&quot;
+</code></pre>
+<pre><code class="language-r">cwlfiles(WF)
+</code></pre>
+<pre><code>## $cwl
+## [1] &quot;/home/tgirke/R/x86_64-pc-linux-gnu-library/4.0/systemPipeR/extdata/cwl/hisat2/hisat2-se/hisat2-mapping-se.cwl&quot;
+## 
+## $yml
+## [1] &quot;/home/tgirke/R/x86_64-pc-linux-gnu-library/4.0/systemPipeR/extdata/cwl/hisat2/hisat2-se/hisat2-mapping-se.yml&quot;
+## 
+## $steps
+## [1] &quot;hisat2-mapping-se&quot;
+</code></pre>
+<pre><code class="language-r">inputvars(WF)
+</code></pre>
+<pre><code>## $FileName
+## [1] &quot;_FASTQ_PATH1_&quot;
+## 
+## $SampleName
+## [1] &quot;_SampleName_&quot;
+</code></pre>
+<p>In an ‘R-centric’ rather than a ‘CWL-centric’ workflow design the connectivity
+among workflow steps is established by writing all relevant output with the
+<em>writeTargetsout</em> function to a new targets file that serves as input to the
+next <em>loadWorkflow</em> and <em>renderWF</em> call. By chaining several <em><code>SYSargs2</code></em> steps
+together one can construct complex workflows involving many sample-level
+input/output file operations with any combination of command-line or R-based
+software. Alternatively, a CWL-centric workflow design can be used that defines
+all/most workflow steps with CWL workflow and parameter files. Due to time and
+space restrictions, the CWL-centric approach is not covered by this tutorial.</p>
+<h4 id="third-party-software-tools">Third-party software tools</h4>
+<p>Current, <em>systemPipeR</em> provides the <em><code>param</code></em> file templates for third-party software tools.
+A list is provided in the following table.</p>
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; overflow-x: scroll; width:100%; ">
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;">
+Tool Name
+</th>
+<th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;">
+Description
+</th>
+<th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;">
+Step
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+<a href="http://bio-bwa.sourceforge.net/bwa.shtml">bwa</a>
+</td>
+<td style="text-align:center;">
+BWA is a software package for mapping low-divergent sequences against a large reference genome, such as the human genome. 
+</td>
+<td style="text-align:center;">
+<span style=" font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #8FBC8F !important;">Alignment</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<a href="http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml">Bowtie2</a>
+</td>
+<td style="text-align:center;">
+Bowtie 2 is an ultrafast and memory-efficient tool for aligning sequencing reads to long reference sequences.
+</td>
+<td style="text-align:center;">
+<span style=" font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #8FBC8F !important;">Alignment</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<a href="http://hannonlab.cshl.edu/fastx_toolkit/commandline.html">FASTX-Toolkit</a>
+</td>
+<td style="text-align:center;">
+FASTX-Toolkit is a collection of command line tools for Short-Reads FASTA/FASTQ files preprocessing.
+</td>
+<td style="text-align:center;">
+<span style=" font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #EC7770 !important;">Read Preprocessing</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<a href="http://hibberdlab.com/transrate/">TransRate</a>
+</td>
+<td style="text-align:center;">
+Transrate is software for de-novo transcriptome assembly quality analysis.
+</td>
+<td style="text-align:center;">
+<span style=" font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #D98576 !important;">Quality</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<a href="http://research-pub.gene.com/gmap/">Gsnap</a>
+</td>
+<td style="text-align:center;">
+GSNAP is a genomic short-read nucleotide alignment program.
+</td>
+<td style="text-align:center;">
+<span style=" font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #8FBC8F !important;">Alignment</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<a href="http://www.htslib.org/doc/samtools-1.2.html">Samtools</a>
+</td>
+<td style="text-align:center;">
+Samtools is a suite of programs for interacting with high-throughput sequencing data.
+</td>
+<td style="text-align:center;">
+<span style=" font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #D08C79 !important;">Post-processing</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<a href="http://www.usadellab.org/cms/?page=trimmomatic">Trimmomatic</a>
+</td>
+<td style="text-align:center;">
+Trimmomatic is a flexible read trimming tool for Illumina NGS data.
+</td>
+<td style="text-align:center;">
+<span style=" font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #EC7770 !important;">Read Preprocessing</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<a href="https://bioconductor.org/packages/release/bioc/vignettes/Rsubread/inst/doc/SubreadUsersGuide.pdf">Rsubread</a>
+</td>
+<td style="text-align:center;">
+Rsubread is a Bioconductor software package that provides high-performance alignment and read counting functions for RNA-seq reads.
+</td>
+<td style="text-align:center;">
+<span style=" font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #8FBC8F !important;">Alignment</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<a href="https://broadinstitute.github.io/picard/">Picard</a>
+</td>
+<td style="text-align:center;">
+Picard is a set of command line tools for manipulating high-throughput sequencing (HTS) data and formats such as SAM/BAM/CRAM and VCF.
+</td>
+<td style="text-align:center;">
+<span style=" font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #B4A082 !important;">Manipulating HTS data</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<a href="https://busco.ezlab.org/">Busco</a>
+</td>
+<td style="text-align:center;">
+BUSCO assesses genome assembly and annotation completeness with Benchmarking Universal Single-Copy Orthologs.
+</td>
+<td style="text-align:center;">
+<span style=" font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #D98576 !important;">Quality</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<a href="https://ccb.jhu.edu/software/hisat2/manual.shtml">Hisat2</a>
+</td>
+<td style="text-align:center;">
+HISAT2 is a fast and sensitive alignment program for mapping NGS reads (both DNA and RNA) to reference genomes.
+</td>
+<td style="text-align:center;">
+<span style=" font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #8FBC8F !important;">Alignment</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<a href="https://ccb.jhu.edu/software/tophat/manual.shtml">Tophat2</a>
+</td>
+<td style="text-align:center;">
+TopHat is a fast splice junction mapper for RNA-Seq reads.
+</td>
+<td style="text-align:center;">
+<span style=" font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #8FBC8F !important;">Alignment</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<a href="https://gatk.broadinstitute.org/hc/en-us">GATK</a>
+</td>
+<td style="text-align:center;">
+Variant Discovery in High-Throughput Sequencing Data.
+</td>
+<td style="text-align:center;">
+<span style=" font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #FF6A6A !important;">Variant Discovery</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<a href="https://github.com/alexdobin/STAR">STAR</a>
+</td>
+<td style="text-align:center;">
+STAR is an ultrafast universal RNA-seq aligner.
+</td>
+<td style="text-align:center;">
+<span style=" font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #8FBC8F !important;">Alignment</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<a href="https://github.com/FelixKrueger/TrimGalore">Trim\_galore</a>
+</td>
+<td style="text-align:center;">
+Trim Galore is a wrapper around Cutadapt and FastQC to consistently apply adapter and quality trimming to FastQ files.
+</td>
+<td style="text-align:center;">
+<span style=" font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #EC7770 !important;">Read Preprocessing</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<a href="https://github.com/TransDecoder/TransDecoder/wiki">TransDecoder</a>
+</td>
+<td style="text-align:center;">
+TransDecoder identifies candidate coding regions within transcript sequences.
+</td>
+<td style="text-align:center;">
+<span style=" font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #ABA785 !important;">Find Coding Regions</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<a href="https://github.com/trinityrnaseq/trinityrnaseq/wiki">Trinity</a>
+</td>
+<td style="text-align:center;">
+Trinity assembles transcript sequences from Illumina RNA-Seq data.
+</td>
+<td style="text-align:center;">
+<span style=" font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #A1AE88 !important;">denovo Transcriptome Assembly</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<a href="https://github.com/Trinotate/Trinotate.github.io/wiki">Trinotate</a>
+</td>
+<td style="text-align:center;">
+Trinotate is a comprehensive annotation suite designed for automatic functional annotation of transcriptomes.
+</td>
+<td style="text-align:center;">
+<span style=" font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #F5706D !important;">Transcriptome Functional Annotation</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<a href="https://macs3-project.github.io/MACS/">MACS2</a>
+</td>
+<td style="text-align:center;">
+MACS2 identifies transcription factor binding sites in ChIP-seq data.
+</td>
+<td style="text-align:center;">
+<span style=" font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #C7937C !important;">Peak calling</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<a href="https://pachterlab.github.io/kallisto/manual">Kallisto</a>
+</td>
+<td style="text-align:center;">
+kallisto is a program for quantifying abundances of transcripts from RNA-Seq data.
+</td>
+<td style="text-align:center;">
+<span style=" font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #E37E73 !important;">Read counting</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<a href="https://samtools.github.io/bcftools/howtos/index.html">BCFtools</a>
+</td>
+<td style="text-align:center;">
+BCFtools is a program for variant calling and manipulating files in the Variant Call Format (VCF) and its binary counterpart BCF.
+</td>
+<td style="text-align:center;">
+<span style=" font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #FF6A6A !important;">Variant Discovery</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<a href="https://www.bioinformatics.babraham.ac.uk/projects/bismark/">Bismark</a>
+</td>
+<td style="text-align:center;">
+Bismark is a program to map bisulfite treated sequencing reads to a genome of interest and perform methylation calls in a single step.
+</td>
+<td style="text-align:center;">
+<span style=" font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #98B58B !important;">Bisulfite mapping</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">Fastqc</a>
+</td>
+<td style="text-align:center;">
+FastQC is a quality control tool for high throughput sequence data.
+</td>
+<td style="text-align:center;">
+<span style=" font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #D98576 !important;">Quality</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<a href="https://www.ncbi.nlm.nih.gov/books/NBK279690/">Blast</a>
+</td>
+<td style="text-align:center;">
+BLAST finds regions of similarity between biological sequences.
+</td>
+<td style="text-align:center;">
+<span style=" font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #BD997F !important;">Blast</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Remember, if you desire to run any of these tools, make sure to have the respective software installed on your system and configure in the PATH. You can check as follows:</p>
+<pre><code class="language-r">tryCL(command = &quot;grep&quot;)
+</code></pre>
+<h2 id="how-to-run-a-workflow">How to run a Workflow</h2>
+<p>This tutorial introduces the basic ideas and tools needed to build a specific workflow from preconfigured templates.</p>
+<h3 id="load-sample-data-and-workflow-templates-1">Load sample data and workflow templates</h3>
+<pre><code class="language-r">library(systemPipeRdata)
+genWorkenvir(workflow = &quot;rnaseq&quot;)
+setwd(&quot;rnaseq&quot;)
+</code></pre>
+<h3 id="setup-and-requirements">Setup and Requirements</h3>
+<p>To go through this tutorial, you need the following software installed:</p>
+<ul>
+<li>R (version &gt;=3.6.2)</li>
+<li>systemPipeR package (version &gt;=1.22)</li>
+<li>Hisat2 (version &gt;= 2.1.0)</li>
+</ul>
+<p>If you desire to build your pipeline with any different software, make sure to
+have the respective software installed and available in your PATH. To make
+sure if the configuration is correct, on test it with:</p>
+<pre><code class="language-r">tryCL(command = &quot;hisat2&quot;)  ## 'All set up, proceed!'
+</code></pre>
+<h3 id="project-initialization">Project initialization</h3>
+<p>A <code>SYSargsList</code> object containing all relevant information for running a workflow
+(here RNA-Seq example) can be constructed as follows.</p>
+<pre><code class="language-r">getwd()  ## rnaseq
+script &lt;- &quot;systemPipeRNAseq.Rmd&quot;
+targetspath &lt;- &quot;targets.txt&quot;
+sysargslist &lt;- initWF(script = script, targets = targetspath)
+</code></pre>
+<h3 id="workflow-execution">Workflow execution</h3>
+<p>To run workflows from R, there are several possibilities. First, one can run
+each line in an <code>Rmd</code> or <code>R</code> interactively, or use the <code>runWF</code> functions that
+allows to run workflows step-wise or from start to finish.</p>
+<pre><code class="language-r">sysargslist &lt;- configWF(x = sysargslist, input_steps = &quot;1:3&quot;)
+sysargslist &lt;- runWF(sysargslist = sysargslist, steps = &quot;1:2&quot;)
+</code></pre>
+<p>Alternatively, R pipes (<em>%&gt;%</em>) are supported to run individual workflow steps.</p>
+<pre><code class="language-r">sysargslist &lt;- initWF(script = &quot;systemPipeRNAseq.Rmd&quot;, overwrite = TRUE) %&gt;% configWF(input_steps = &quot;1:3&quot;) %&gt;% 
+    runWF(steps = &quot;1:2&quot;)
+</code></pre>
+<h3 id="how-to-run-the-workflow-on-a-cluster">How to run the workflow on a cluster</h3>
+<p>This section of the tutorial provides an introduction to the usage of the <em>systemPipeR</em> features on a cluster.</p>
+<p>Now open the R markdown script <code>*.Rmd</code>in your R IDE (_e.g._vim-r or RStudio) and run the workflow as outlined below. If you work under Vim-R-Tmux, the following command sequence will connect the user in an
+interactive session with a node on the cluster. The code of the <code>Rmd</code>
+script can then be sent from Vim on the login (head) node to an open R session running
+on the corresponding computer node. This is important since Tmux sessions
+should not be run on the computer nodes.</p>
+<pre><code class="language-r">q(&quot;no&quot;)  # closes R session on head node
+</code></pre>
+<pre><code class="language-bash">srun --x11 --partition=short --mem=2gb --cpus-per-task 4 --ntasks 1 --time 2:00:00 --pty bash -l
 module load R/4.0.3
-R</p>
-<h2 id="now-check-whether-your-r-session-is-running-on-a-computer-node-of-the">Now check whether your R session is running on a computer node of the</h2>
-<h2 id="cluster-and-not-on-a-head-node">cluster and not on a head node.</h2>
-<p>system(&ldquo;hostname&rdquo;) # should return name of a compute node starting with i or c
-getwd() # checks current working directory of R session
-dir() # returns content of current working directory</p>
-<h2 id="parallelization-on-clusters">Parallelization on clusters</h2>
-<h2 id="alternatively-the-computation-can-be-greatly-accelerated-by-processing-many-files">Alternatively, the computation can be greatly accelerated by processing many files</h2>
-<h2 id="in-parallel-using-several-compute-nodes-of-a-cluster-where-a-schedulingqueuing">in parallel using several compute nodes of a cluster, where a scheduling/queuing</h2>
-<h2 id="system-is-used-for-load-balancing-for-this-the-clusterrun-function-submits">system is used for load balancing. For this the clusterRun function submits</h2>
-<h2 id="the-computing-requests-to-the-scheduler-using-the-run-specifications">the computing requests to the scheduler using the run specifications</h2>
-<h2 id="defined-by-runcommandline">defined by runCommandline.</h2>
-<h2 id="the-following-example-will-run-18-processes-in-parallel-using-for-each-4-cpu">The following example will run 18 processes in parallel using for each 4 CPU</h2>
-<h2 id="cores-if-the-resources-available-on-a-cluster-allow-running-all-18-processes">cores. If the resources available on a cluster allow running all 18 processes</h2>
-<h2 id="at-the-same-time-then-the-shown-sample-submission-will-utilize-in-total-72-cpu">at the same time then the shown sample submission will utilize in total 72 CPU</h2>
-<h2 id="cores-note-clusterrun-can-be-used-with-most-queueing-systems-as-it-is-based">cores. Note, clusterRun can be used with most queueing systems as it is based</h2>
-<h2 id="on-utilities-from-the-batchtools-package-which-supports-the-use-of-template">on utilities from the batchtools package which supports the use of template</h2>
-<h2 id="files-tmpl-for-defining-the-run-parameters-of-different-schedulers-the">files (*.tmpl) for defining the run parameters of different schedulers. The</h2>
-<h2 id="following-example-uses-the-sample-conf-and-template-files-for-the-slurm">following example uses the sample conf and template files for the Slurm</h2>
-<h2 id="scheduler-provided-by-this-package">scheduler provided by this package.</h2>
-<p>library(batchtools)
-targetspath &lt;- system.file(&ldquo;extdata&rdquo;, &ldquo;targetsPE.txt&rdquo;, package=&ldquo;systemPipeR&rdquo;)
-dir_path &lt;- system.file(&ldquo;extdata/cwl/hisat2/hisat2-pe&rdquo;, package=&ldquo;systemPipeR&rdquo;)
-args &lt;- loadWorkflow(targets=targetspath, wf_file=&ldquo;hisat2-mapping-pe.cwl&rdquo;,
-input_file=&ldquo;hisat2-mapping-pe.yml&rdquo;, dir_path=dir_path)
-args &lt;- renderWF(args, inputvars=c(FileName1=&quot;<em>FASTQ_PATH1</em>&rdquo;, FileName2=&quot;<em>FASTQ_PATH2</em>&quot;, SampleName=&quot;<em>SampleName</em>&quot;))
-resources &lt;- list(walltime=120, ntasks=1, ncpus=4, memory=1024)
-reg &lt;- clusterRun(args, FUN = runCommandline, more.args = list(args=args, make_bam=TRUE, dir=FALSE),
-conffile = &ldquo;.batchtools.conf.R&rdquo;, template = &ldquo;batchtools.slurm.tmpl&rdquo;,
-Njobs=18, runid=&ldquo;01&rdquo;, resourceList=resources)
-getStatus(reg=reg)
-waitForJobs(reg=reg)</p>
-<h2 id="workflow-templates">Workflow templates</h2>
-<h2 id="sample-workflow-templates-are-provided-via-systempiperdata-and-github-instances-of-these">Sample workflow templates are provided via systemPipeRdata and GitHub. Instances of these</h2>
-<h2 id="workflows-can-be-created-with-a-single-command">workflows can be created with a single command.</h2>
+R
+</code></pre>
+<p>Now check whether your R session is running on a computer node of the cluster and not on a head node.</p>
+<pre><code class="language-r">system(&quot;hostname&quot;)  # should return name of a compute node starting with i or c 
+getwd()  # checks current working directory of R session
+dir()  # returns content of current working directory
+</code></pre>
+<h4 id="parallelization-on-clusters">Parallelization on clusters</h4>
+<p>Alternatively, the computation can be greatly accelerated by processing many files
+in parallel using several compute nodes of a cluster, where a scheduling/queuing
+system is used for load balancing. For this the <em><code>clusterRun</code></em> function submits
+the computing requests to the scheduler using the run specifications
+defined by <em><code>runCommandline</code></em>.</p>
+<p>To avoid over-subscription of CPU cores on the compute nodes, the value from
+<em><code>yamlinput(args)['thread']</code></em> is passed on to the submission command, here <em><code>ncpus</code></em>
+in the <em><code>resources</code></em> list object. The number of independent parallel cluster
+processes is defined under the <em><code>Njobs</code></em> argument. The following example will run
+18 processes in parallel using for each 4 CPU cores. If the resources available
+on a cluster allow running all 18 processes at the same time then the shown sample
+submission will utilize in total 72 CPU cores. Note, <em><code>clusterRun</code></em> can be used
+with most queueing systems as it is based on utilities from the <em><code>batchtools</code></em>
+package which supports the use of template files (<em><code>*.tmpl</code></em>) for defining the
+run parameters of different schedulers. To run the following code, one needs to
+have both a conf file (see <em><code>.batchtools.conf.R</code></em> samples <a href="https://mllg.github.io/batchtools/">here</a>)
+and a template file (see <em><code>*.tmpl</code></em> samples <a href="https://github.com/mllg/batchtools/tree/master/inst/templates">here</a>)
+for the queueing available on a system. The following example uses the sample
+conf and template files for the Slurm scheduler provided by this package.</p>
+<pre><code class="language-r">library(batchtools)
+targetspath &lt;- system.file(&quot;extdata&quot;, &quot;targetsPE.txt&quot;, package = &quot;systemPipeR&quot;)
+dir_path &lt;- system.file(&quot;extdata/cwl/hisat2/hisat2-pe&quot;, package = &quot;systemPipeR&quot;)
+args &lt;- loadWorkflow(targets = targetspath, wf_file = &quot;hisat2-mapping-pe.cwl&quot;, input_file = &quot;hisat2-mapping-pe.yml&quot;, 
+    dir_path = dir_path)
+args &lt;- renderWF(args, inputvars = c(FileName1 = &quot;_FASTQ_PATH1_&quot;, FileName2 = &quot;_FASTQ_PATH2_&quot;, 
+    SampleName = &quot;_SampleName_&quot;))
+resources &lt;- list(walltime = 120, ntasks = 1, ncpus = 4, memory = 1024)
+reg &lt;- clusterRun(args, FUN = runCommandline, more.args = list(args = args, make_bam = TRUE, 
+    dir = FALSE), conffile = &quot;.batchtools.conf.R&quot;, template = &quot;batchtools.slurm.tmpl&quot;, 
+    Njobs = 18, runid = &quot;01&quot;, resourceList = resources)
+getStatus(reg = reg)
+waitForJobs(reg = reg)
+</code></pre>
+<h2 id="workflow-initialization-with-templates">Workflow initialization with templates</h2>
+<p>Workflow templates are provided via <code>systemPipeRdata</code> and GitHub. Instances of these
+workflows can be created with a single command.</p>
 <h3 id="rna-seq-sample">RNA-Seq sample</h3>
-<h2 id="load-the-rna-seq-sample-workflow-into-your-current-working-directory">Load the RNA-Seq sample workflow into your current working directory.</h2>
-<p>library(systemPipeRdata)
-genWorkenvir(workflow=&ldquo;rnaseq&rdquo;)
-setwd(&ldquo;rnaseq&rdquo;)</p>
-<h2 id="run-rna-seq-workflow-interactively">Run RNA-Seq workflow interactively</h2>
-<h2 id="open-under-workflow-directory-here-rnaseq-systempipernaseqrmd-and-continue-there">Open under workflow directory (here &lsquo;rnaseq&rsquo;) systemPipeRNAseq.Rmd and continue there</h2>
+<p>Load the RNA-Seq sample workflow into your current working directory.</p>
+<pre><code class="language-r">library(systemPipeRdata)
+genWorkenvir(workflow = &quot;rnaseq&quot;)
+setwd(&quot;rnaseq&quot;)
+</code></pre>
+<h4 id="run-workflow">Run workflow</h4>
+<p>Next, run the chosen sample workflow <em><code>systemPipeRNAseq</code></em> (<a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/rnaseq/systemPipeRNAseq.pdf?raw=true">PDF</a>, <a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/rnaseq/systemPipeRNAseq.Rmd">Rmd</a>) by executing from the command-line <em><code>make -B</code></em> within the <em><code>rnaseq</code></em> directory. Alternatively, one can run the code from the provided <em><code>*.Rmd</code></em> template file from within R interactively.</p>
+<p>The workflow includes following steps:</p>
+<ol>
+<li>Read preprocessing
+<ul>
+<li>Quality filtering (trimming)</li>
+<li>FASTQ quality report</li>
+</ul>
+</li>
+<li>Alignments: <em><code>Tophat2</code></em> (or any other RNA-Seq aligner)</li>
+<li>Alignment stats</li>
+<li>Read counting</li>
+<li>Sample-wise correlation analysis</li>
+<li>Analysis of differentially expressed genes (DEGs)</li>
+<li>GO term enrichment analysis</li>
+<li>Gene-wise clustering</li>
+</ol>
+<h3 id="chip-seq-sample">ChIP-Seq sample</h3>
+<p>Load the ChIP-Seq sample workflow into your current working directory.</p>
+<pre><code class="language-r">library(systemPipeRdata)
+genWorkenvir(workflow = &quot;chipseq&quot;)
+setwd(&quot;chipseq&quot;)
+</code></pre>
+<h4 id="run-workflow-1">Run workflow</h4>
+<p>Next, run the chosen sample workflow <em><code>systemPipeChIPseq_single</code></em> (<a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/chipseq/systemPipeChIPseq.pdf?raw=true">PDF</a>, <a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/chipseq/systemPipeChIPseq.Rmd">Rmd</a>) by executing from the command-line <em><code>make -B</code></em> within the <em><code>chipseq</code></em> directory. Alternatively, one can run the code from the provided <em><code>*.Rmd</code></em> template file from within R interactively.</p>
+<p>The workflow includes the following steps:</p>
+<ol>
+<li>Read preprocessing
+<ul>
+<li>Quality filtering (trimming)</li>
+<li>FASTQ quality report</li>
+</ul>
+</li>
+<li>Alignments: <em><code>Bowtie2</code></em> or <em><code>rsubread</code></em></li>
+<li>Alignment stats</li>
+<li>Peak calling: <em><code>MACS2</code></em>, <em><code>BayesPeak</code></em></li>
+<li>Peak annotation with genomic context</li>
+<li>Differential binding analysis</li>
+<li>GO term enrichment analysis</li>
+<li>Motif analysis</li>
+</ol>
+<h3 id="var-seq-sample">VAR-Seq sample</h3>
+<h4 id="var-seq-workflow-for-the-single-machine">VAR-Seq workflow for the single machine</h4>
+<p>Load the VAR-Seq sample workflow into your current working directory.</p>
+<pre><code class="language-r">library(systemPipeRdata)
+genWorkenvir(workflow = &quot;varseq&quot;)
+setwd(&quot;varseq&quot;)
+</code></pre>
+<h4 id="run-workflow-2">Run workflow</h4>
+<p>Next, run the chosen sample workflow <em><code>systemPipeVARseq_single</code></em> (<a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/varseq/systemPipeVARseq_single.pdf?raw=true">PDF</a>, <a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/varseq/systemPipeVARseq_single.Rmd">Rmd</a>) by executing from the command-line <em><code>make -B</code></em> within the <em><code>varseq</code></em> directory. Alternatively, one can run the code from the provided <em><code>*.Rmd</code></em> template file from within R interactively.</p>
+<p>The workflow includes following steps:</p>
+<ol>
+<li>Read preprocessing
+<ul>
+<li>Quality filtering (trimming)</li>
+<li>FASTQ quality report</li>
+</ul>
+</li>
+<li>Alignments: <em><code>gsnap</code></em>, <em><code>bwa</code></em></li>
+<li>Variant calling: <em><code>VariantTools</code></em>, <em><code>GATK</code></em>, <em><code>BCFtools</code></em></li>
+<li>Variant filtering: <em><code>VariantTools</code></em> and <em><code>VariantAnnotation</code></em></li>
+<li>Variant annotation: <em><code>VariantAnnotation</code></em></li>
+<li>Combine results from many samples</li>
+<li>Summary statistics of samples</li>
+</ol>
+<h4 id="var-seq-workflow-for-computer-cluster">VAR-Seq workflow for computer cluster</h4>
+<p>The workflow template provided for this step is called <em><code>systemPipeVARseq.Rmd</code></em> (<a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/varseq/systemPipeVARseq.pdf?raw=true">PDF</a>, <a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/varseq/systemPipeVARseq.Rmd">Rmd</a>).
+It runs the above VAR-Seq workflow in parallel on multiple compute nodes of an HPC system using Slurm as the scheduler.</p>
+<h3 id="ribo-seq-sample">Ribo-Seq sample</h3>
+<p>Load the Ribo-Seq sample workflow into your current working directory.</p>
+<pre><code class="language-r">library(systemPipeRdata)
+genWorkenvir(workflow = &quot;riboseq&quot;)
+setwd(&quot;riboseq&quot;)
+</code></pre>
+<h4 id="run-workflow-3">Run workflow</h4>
+<p>Next, run the chosen sample workflow <em><code>systemPipeRIBOseq</code></em> (<a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/riboseq/systemPipeRIBOseq.pdf?raw=true">PDF</a>, <a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/ribseq/systemPipeRIBOseq.Rmd">Rmd</a>) by executing from the command-line <em><code>make -B</code></em> within the <em><code>ribseq</code></em> directory. Alternatively, one can run the code from the provided <em><code>*.Rmd</code></em> template file from within R interactively.</p>
+<p>The workflow includes following steps:</p>
+<ol>
+<li>Read preprocessing
+<ul>
+<li>Adaptor trimming and quality filtering</li>
+<li>FASTQ quality report</li>
+</ul>
+</li>
+<li>Alignments: <em><code>Tophat2</code></em> (or any other RNA-Seq aligner)</li>
+<li>Alignment stats</li>
+<li>Compute read distribution across genomic features</li>
+<li>Adding custom features to the workflow (e.g. uORFs)</li>
+<li>Genomic read coverage along with transcripts</li>
+<li>Read counting</li>
+<li>Sample-wise correlation analysis</li>
+<li>Analysis of differentially expressed genes (DEGs)</li>
+<li>GO term enrichment analysis</li>
+<li>Gene-wise clustering</li>
+<li>Differential ribosome binding (translational efficiency)</li>
+</ol>
+<h2 id="version-information">Version information</h2>
+<p><strong>Note:</strong> the most recent version of this tutorial can be found <a href="http://www.bioconductor.org/packages/devel/bioc/vignettes/systemPipeR/inst/doc/systemPipeR.html">here</a>.</p>
+<pre><code class="language-r">sessionInfo()
+</code></pre>
+<pre><code>## R version 4.0.5 (2021-03-31)
+## Platform: x86_64-pc-linux-gnu (64-bit)
+## Running under: Debian GNU/Linux 10 (buster)
+## 
+## Matrix products: default
+## BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.8.0
+## LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.8.0
+## 
+## locale:
+##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+##  [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+##  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+##  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+## 
+## attached base packages:
+## [1] stats4    parallel  stats     graphics  grDevices utils     datasets 
+## [8] methods   base     
+## 
+## other attached packages:
+##  [1] magrittr_2.0.1              batchtools_0.9.14          
+##  [3] ape_5.4-1                   ggplot2_3.3.2              
+##  [5] systemPipeR_1.24.5          ShortRead_1.48.0           
+##  [7] GenomicAlignments_1.26.0    SummarizedExperiment_1.20.0
+##  [9] Biobase_2.50.0              MatrixGenerics_1.2.0       
+## [11] matrixStats_0.57.0          BiocParallel_1.24.1        
+## [13] Rsamtools_2.6.0             Biostrings_2.58.0          
+## [15] XVector_0.30.0              GenomicRanges_1.42.0       
+## [17] GenomeInfoDb_1.26.1         IRanges_2.24.0             
+## [19] S4Vectors_0.28.0            BiocGenerics_0.36.0        
+## [21] BiocStyle_2.18.0           
+## 
+## loaded via a namespace (and not attached):
+##   [1] colorspace_2.0-0         rjson_0.2.20             hwriter_1.3.2           
+##   [4] ellipsis_0.3.1           rstudioapi_0.13          bit64_4.0.5             
+##   [7] AnnotationDbi_1.52.0     xml2_1.3.2               codetools_0.2-18        
+##  [10] splines_4.0.5            knitr_1.30               jsonlite_1.7.1          
+##  [13] annotate_1.68.0          GO.db_3.12.1             dbplyr_2.0.0            
+##  [16] png_0.1-7                pheatmap_1.0.12          graph_1.68.0            
+##  [19] BiocManager_1.30.10      compiler_4.0.5           httr_1.4.2              
+##  [22] backports_1.2.0          GOstats_2.56.0           assertthat_0.2.1        
+##  [25] Matrix_1.3-2             limma_3.46.0             formatR_1.7             
+##  [28] htmltools_0.5.1.1        prettyunits_1.1.1        tools_4.0.5             
+##  [31] gtable_0.3.0             glue_1.4.2               GenomeInfoDbData_1.2.4  
+##  [34] Category_2.56.0          dplyr_1.0.2              rsvg_2.1                
+##  [37] rappdirs_0.3.1           V8_3.4.0                 Rcpp_1.0.5              
+##  [40] jquerylib_0.1.3          vctrs_0.3.5              svglite_2.0.0           
+##  [43] nlme_3.1-149             blogdown_1.2             rtracklayer_1.50.0      
+##  [46] xfun_0.22                stringr_1.4.0            rvest_0.3.6             
+##  [49] lifecycle_0.2.0          XML_3.99-0.5             edgeR_3.32.0            
+##  [52] zlibbioc_1.36.0          scales_1.1.1             BSgenome_1.58.0         
+##  [55] VariantAnnotation_1.36.0 hms_0.5.3                RBGL_1.66.0             
+##  [58] RColorBrewer_1.1-2       yaml_2.2.1               curl_4.3                
+##  [61] memoise_1.1.0            sass_0.3.1               biomaRt_2.46.0          
+##  [64] latticeExtra_0.6-29      stringi_1.5.3            RSQLite_2.2.1           
+##  [67] genefilter_1.72.0        checkmate_2.0.0          GenomicFeatures_1.42.1  
+##  [70] DOT_0.1                  systemfonts_1.0.1        rlang_0.4.8             
+##  [73] pkgconfig_2.0.3          bitops_1.0-6             evaluate_0.14           
+##  [76] lattice_0.20-41          purrr_0.3.4              bit_4.0.4               
+##  [79] tidyselect_1.1.0         GSEABase_1.52.0          AnnotationForge_1.32.0  
+##  [82] bookdown_0.21            R6_2.5.0                 generics_0.1.0          
+##  [85] base64url_1.4            DelayedArray_0.16.0      DBI_1.1.0               
+##  [88] withr_2.3.0              pillar_1.4.7             survival_3.2-10         
+##  [91] RCurl_1.98-1.2           tibble_3.0.4             crayon_1.3.4            
+##  [94] BiocFileCache_1.14.0     rmarkdown_2.7            jpeg_0.1-8.1            
+##  [97] progress_1.2.2           locfit_1.5-9.4           grid_4.0.5              
+## [100] data.table_1.13.2        blob_1.2.1               Rgraphviz_2.34.0        
+## [103] webshot_0.5.2            digest_0.6.27            xtable_1.8-4            
+## [106] brew_1.0-6               openssl_1.4.3            munsell_0.5.0           
+## [109] viridisLite_0.3.0        kableExtra_1.3.4         bslib_0.2.4             
+## [112] askpass_1.1
+</code></pre>
+<h2 id="funding">Funding</h2>
+<p>This project is funded by NSF award <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1661152">ABI-1661152</a>.</p>
+<h2 id="references">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-H_Backman2016-bt" class="csl-entry">
+<p>H Backman, Tyler W, and Thomas Girke. 2016. “<span class="nocase">systemPipeR: NGS workflow and report generation environment</span>.” <em>BMC Bioinformatics</em> 17 (1): 388. <a href="https://doi.org/10.1186/s12859-016-1241-0">https://doi.org/10.1186/s12859-016-1241-0</a>.</p>
+</div>
+<div id="ref-Howard2013-fq" class="csl-entry">
+<p>Howard, Brian E, Qiwen Hu, Ahmet Can Babaoglu, Manan Chandra, Monica Borghi, Xiaoping Tan, Luyan He, et al. 2013. “High-Throughput RNA Sequencing of Pseudomonas-Infected Arabidopsis Reveals Hidden Transcriptome Complexity and Novel Splice Variants.” <em>PLoS One</em> 8 (10): e74183. <a href="https://doi.org/10.1371/journal.pone.0074183">https://doi.org/10.1371/journal.pone.0074183</a>.</p>
+</div>
+<div id="ref-Kim2015-ve" class="csl-entry">
+<p>Kim, Daehwan, Ben Langmead, and Steven L Salzberg. 2015. “HISAT: A Fast Spliced Aligner with Low Memory Requirements.” <em>Nat. Methods</em> 12 (4): 357–60.</p>
+</div>
+<div id="ref-Kim2013-vg" class="csl-entry">
+<p>Kim, Daehwan, Geo Pertea, Cole Trapnell, Harold Pimentel, Ryan Kelley, and Steven L Salzberg. 2013. “TopHat2: Accurate Alignment of Transcriptomes in the Presence of Insertions, Deletions and Gene Fusions.” <em>Genome Biol.</em> 14 (4): R36. <a href="https://doi.org/10.1186/gb-2013-14-4-r36">https://doi.org/10.1186/gb-2013-14-4-r36</a>.</p>
+</div>
+<div id="ref-Langmead2012-bs" class="csl-entry">
+<p>Langmead, Ben, and Steven L Salzberg. 2012. “Fast Gapped-Read Alignment with Bowtie 2.” <em>Nat. Methods</em> 9 (4): 357–59. <a href="https://doi.org/10.1038/nmeth.1923">https://doi.org/10.1038/nmeth.1923</a>.</p>
+</div>
+<div id="ref-Lawrence2013-kt" class="csl-entry">
+<p>Lawrence, Michael, Wolfgang Huber, Hervé Pagès, Patrick Aboyoun, Marc Carlson, Robert Gentleman, Martin T Morgan, and Vincent J Carey. 2013. “Software for Computing and Annotating Genomic Ranges.” <em>PLoS Comput. Biol.</em> 9 (8): e1003118. <a href="https://doi.org/10.1371/journal.pcbi.1003118">https://doi.org/10.1371/journal.pcbi.1003118</a>.</p>
+</div>
+<div id="ref-Li2009-oc" class="csl-entry">
+<p>Li, H, and R Durbin. 2009. “Fast and Accurate Short Read Alignment with Burrows-Wheeler Transform.” <em>Bioinformatics</em> 25 (14): 1754–60. <a href="https://doi.org/10.1093/bioinformatics/btp324">https://doi.org/10.1093/bioinformatics/btp324</a>.</p>
+</div>
+<div id="ref-Li2013-oy" class="csl-entry">
+<p>Li, Heng. 2013. “Aligning Sequence Reads, Clone Sequences and Assembly Contigs with BWA-MEM.” <em>arXiv [q-Bio.GN]</em>, March. <a href="http://arxiv.org/abs/1303.3997">http://arxiv.org/abs/1303.3997</a>.</p>
+</div>
+<div id="ref-Liao2013-bn" class="csl-entry">
+<p>Liao, Yang, Gordon K Smyth, and Wei Shi. 2013. “The Subread Aligner: Fast, Accurate and Scalable Read Mapping by Seed-and-Vote.” <em>Nucleic Acids Res.</em> 41 (10): e108. <a href="https://doi.org/10.1093/nar/gkt214">https://doi.org/10.1093/nar/gkt214</a>.</p>
+</div>
+<div id="ref-Wu2010-iq" class="csl-entry">
+<p>Wu, T D, and S Nacu. 2010. “Fast and <span class="nocase">SNP-tolerant</span> Detection of Complex Variants and Splicing in Short Reads.” <em>Bioinformatics</em> 26 (7): 873–81. <a href="https://doi.org/10.1093/bioinformatics/btq057">https://doi.org/10.1093/bioinformatics/btq057</a>.</p>
+</div>
+</div>
+
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-29: <a  href="https://github.com/tgirke/GEN242//commit/c8a52fd5da05aaa9514b46d5d641611e3cc0a77f">some edits (c8a52fd5)</a>
+</div>
+</div>
 
 
+              </main>
+          
 
-      </main>
+
+        </div>
+      </div>
       
 <footer class="bg-dark py-5 row d-print-none">
   <div class="container-fluid mx-sm-5">
