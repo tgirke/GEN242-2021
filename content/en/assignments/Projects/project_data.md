@@ -34,8 +34,8 @@ given.
 2. Generate the workflow environment for your project on the HPCC cluster with `genWorkenvir` from `systemPipeRdata`. 
 3. Delete the default `data` and `results` directories and replace them with symbolic links pointing to the above described `data` and `results` directories of your course project. For instance, the project RNA-Seq should create the symbolic links for their `data` and `results` directories like this:
    ```sh 
-   ln -s /bigdata/gen242/shared/<user_name>/data data
-   ln -s /bigdata/gen242/shared/RNA-Seq/<user_name> results
+   ln -s /bigdata/gen242/shared/<user_name>/<myproj>/data data
+   ln -s /bigdata/gen242/shared/<user_name>/<myproj>/results results
    ```
 4. Add the workflow directory to the GitHub repository of your project with `git add -A` and the run `commit` and `push` as outlined in the GitHub instructions of this course [here](http://girke.bioinformatics.ucr.edu/GEN242/mydoc_tutorial_01.html#github-basics-from-command-line). Note, steps 1-4 need to be performed only by one student in each project. After committing and pushing the repository to GitHub, it can be cloned by all other students with `git clone ...`.
 5. Download the FASTQ files of your project with `getSRAfastq` (see below) to the `data` directory of your project. 

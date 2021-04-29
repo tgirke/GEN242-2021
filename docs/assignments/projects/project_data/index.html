@@ -853,7 +853,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.36fd948841a0691f355f3d5519f0aa90.json"
+  data-offline-search-index-json-src="../../../offline-search-index.96f450d9bd638a669cd994bb23ec3ee6.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -885,7 +885,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.36fd948841a0691f355f3d5519f0aa90.json"
+  data-offline-search-index-json-src="../../../offline-search-index.96f450d9bd638a669cd994bb23ec3ee6.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1295,8 +1295,8 @@ given.</p>
 <li>Clone the GitHub repository for your project with <code>git clone ...</code> (URLs listed <a href="https://bit.ly/3n07XFB">here</a>) and then <code>cd</code> into this directory.</li>
 <li>Generate the workflow environment for your project on the HPCC cluster with <code>genWorkenvir</code> from <code>systemPipeRdata</code>.</li>
 <li>Delete the default <code>data</code> and <code>results</code> directories and replace them with symbolic links pointing to the above described <code>data</code> and <code>results</code> directories of your course project. For instance, the project RNA-Seq should create the symbolic links for their <code>data</code> and <code>results</code> directories like this:
-<pre><code class="language-sh">ln -s /bigdata/gen242/shared/&lt;user_name&gt;/data data
-ln -s /bigdata/gen242/shared/RNA-Seq/&lt;user_name&gt; results
+<pre><code class="language-sh">ln -s /bigdata/gen242/shared/&lt;user_name&gt;/&lt;myproj&gt;/data data
+ln -s /bigdata/gen242/shared/&lt;user_name&gt;/&lt;myproj&gt;/results results
 </code></pre>
 </li>
 <li>Add the workflow directory to the GitHub repository of your project with <code>git add -A</code> and the run <code>commit</code> and <code>push</code> as outlined in the GitHub instructions of this course <a href="http://girke.bioinformatics.ucr.edu/GEN242/mydoc_tutorial_01.html#github-basics-from-command-line">here</a>. Note, steps 1-4 need to be performed only by one student in each project. After committing and pushing the repository to GitHub, it can be cloned by all other students with <code>git clone ...</code>.</li>
