@@ -19,15 +19,15 @@
 
 <title>Data Management for Course Projects | GEN242</title><meta property="og:title" content="Data Management for Course Projects" />
 <meta property="og:description" content="Shared big data space on HPCC All larger data sets of the coure projects will be organized in a shared big data space under /bigdata/gen242/shared. Within this space, each group will read and write data to a subdirectory named after their project:
- /bigdata/gen242/shared/RNA-Seq /bigdata/gen242/shared/ChIP-Seq  Within each project subdirectory all input files of a workflow (e.g. FASTQ) will be saved to a data directory and all output files will be written to a results directory." />
+ /bigdata/gen242/shared/&lt;user_name&gt;  Within each project subdirectory all input files of a workflow (e.g. FASTQ) will be saved to a data directory and all output files will be written to a results directory." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/assignments/projects/project_data/" />
 <meta property="article:modified_time" content="2021-04-18T14:58:28-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Data Management for Course Projects">
 <meta itemprop="description" content="Shared big data space on HPCC All larger data sets of the coure projects will be organized in a shared big data space under /bigdata/gen242/shared. Within this space, each group will read and write data to a subdirectory named after their project:
- /bigdata/gen242/shared/RNA-Seq /bigdata/gen242/shared/ChIP-Seq  Within each project subdirectory all input files of a workflow (e.g. FASTQ) will be saved to a data directory and all output files will be written to a results directory.">
+ /bigdata/gen242/shared/&lt;user_name&gt;  Within each project subdirectory all input files of a workflow (e.g. FASTQ) will be saved to a data directory and all output files will be written to a results directory.">
 <meta itemprop="dateModified" content="2021-04-18T14:58:28-07:00" />
-<meta itemprop="wordCount" content="809">
+<meta itemprop="wordCount" content="808">
 
 
 
@@ -35,7 +35,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Data Management for Course Projects"/>
 <meta name="twitter:description" content="Shared big data space on HPCC All larger data sets of the coure projects will be organized in a shared big data space under /bigdata/gen242/shared. Within this space, each group will read and write data to a subdirectory named after their project:
- /bigdata/gen242/shared/RNA-Seq /bigdata/gen242/shared/ChIP-Seq  Within each project subdirectory all input files of a workflow (e.g. FASTQ) will be saved to a data directory and all output files will be written to a results directory."/>
+ /bigdata/gen242/shared/&lt;user_name&gt;  Within each project subdirectory all input files of a workflow (e.g. FASTQ) will be saved to a data directory and all output files will be written to a results directory."/>
 
 
 <script type="application/javascript">
@@ -853,7 +853,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.1a951b171e58086681f605231bf16327.json"
+  data-offline-search-index-json-src="../../../offline-search-index.46b3aca6a7b61e6b0b311f22cf6d0a7a.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -885,7 +885,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.1a951b171e58086681f605231bf16327.json"
+  data-offline-search-index-json-src="../../../offline-search-index.46b3aca6a7b61e6b0b311f22cf6d0a7a.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1280,8 +1280,7 @@ if (!doNotTrack) {
 <code>/bigdata/gen242/shared</code>. Within this space, each group will read and write data to a
 subdirectory named after their project:</p>
 <ul>
-<li><code>/bigdata/gen242/shared/RNA-Seq</code></li>
-<li><code>/bigdata/gen242/shared/ChIP-Seq</code></li>
+<li><code>/bigdata/gen242/shared/&lt;user_name&gt;</code></li>
 </ul>
 <p>Within each project subdirectory all input files of a workflow (<em>e.g.</em> FASTQ) will be saved to
 a <code>data</code> directory and all output files will be written to a <code>results</code> directory.</p>
@@ -1296,8 +1295,8 @@ given.</p>
 <li>Clone the GitHub repository for your project with <code>git clone ...</code> (URLs listed <a href="https://bit.ly/3n07XFB">here</a>) and then <code>cd</code> into this directory.</li>
 <li>Generate the workflow environment for your project on the HPCC cluster with <code>genWorkenvir</code> from <code>systemPipeRdata</code>.</li>
 <li>Delete the default <code>data</code> and <code>results</code> directories and replace them with symbolic links pointing to the above described <code>data</code> and <code>results</code> directories of your course project. For instance, the project RNA-Seq should create the symbolic links for their <code>data</code> and <code>results</code> directories like this:
-<pre><code class="language-sh">ln -s /bigdata/gen242/shared/RNA-Seq/data data
-ln -s /bigdata/gen242/shared/RNA-Seq/results results
+<pre><code class="language-sh">ln -s /bigdata/gen242/shared/&lt;user_name&gt;/data data
+ln -s /bigdata/gen242/shared/RNA-Seq/&lt;user_name&gt; results
 </code></pre>
 </li>
 <li>Add the workflow directory to the GitHub repository of your project with <code>git add -A</code> and the run <code>commit</code> and <code>push</code> as outlined in the GitHub instructions of this course <a href="http://girke.bioinformatics.ucr.edu/GEN242/mydoc_tutorial_01.html#github-basics-from-command-line">here</a>. Note, steps 1-4 need to be performed only by one student in each project. After committing and pushing the repository to GitHub, it can be cloned by all other students with <code>git clone ...</code>.</li>
@@ -1330,7 +1329,7 @@ system('fastq-dump --help') # prints help to screen
 To save space in home accounts (limited to 20GB), users need to redirect this output to their project&rsquo;s
 <code>data</code> directory via a symbolic link. The following shows how to do this for the <code>data</code> directory
 of the <code>ChIP-Seq</code> project.</p>
-<pre><code class="language-r">system(&quot;ln -s /bigdata/gen242/shared/ChIP-Seq/data ~/ncbi&quot;)
+<pre><code class="language-r">system(&quot;ln -s /bigdata/gen242/shared/&lt;user_name&gt;/data ~/ncbi&quot;)
 </code></pre>
 <h4 id="define-download-function">Define download function</h4>
 <p>The following function downloads and extracts the FASTQ files for each project from SRA.
