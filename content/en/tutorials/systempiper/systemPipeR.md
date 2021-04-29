@@ -937,7 +937,8 @@ waitForJobs(reg = reg)
 
 ## Workflow initialization with templates
 
-Templates for setting up custom project reports are provided via `systemPipeRdata` and GitHub.
+Workflow templates are provided via `systemPipeRdata` and GitHub. Instances of these
+workflows can be created with a single command.
 
 ### RNA-Seq sample
 

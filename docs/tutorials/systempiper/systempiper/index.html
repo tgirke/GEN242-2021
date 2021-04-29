@@ -27,7 +27,7 @@
 <meta itemprop="description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
  Introduction systemPipeR is provides flexible utilities for building and running automated end-to-end analysis workflows for a wide range of research applications, including next-generation sequencing (NGS) experiments, such as RNA-Seq, ChIP-Seq, VAR-Seq and Ribo-Seq (H Backman and Girke 2016).">
 <meta itemprop="dateModified" content="2021-04-28T22:56:19-07:00" />
-<meta itemprop="wordCount" content="4914">
+<meta itemprop="wordCount" content="4920">
 
 
 
@@ -633,6 +633,16 @@ if (!doNotTrack) {
           	
           	  
               
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/homework/hw07/hw07"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 HW7: RNA-Seq Analysis
+              </a>
+          	
+          	  
+              
               
               <a class="dropdown-item" href="../../../assignments/projects/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
@@ -843,7 +853,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.44ec066d74c4396384266bbfb3466416.json"
+  data-offline-search-index-json-src="../../../offline-search-index.3a3cd781b4efa1a76181336a18c3ca40.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -875,7 +885,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.44ec066d74c4396384266bbfb3466416.json"
+  data-offline-search-index-json-src="../../../offline-search-index.3a3cd781b4efa1a76181336a18c3ca40.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1986,7 +1996,8 @@ getStatus(reg = reg)
 waitForJobs(reg = reg)
 </code></pre>
 <h2 id="workflow-initialization-with-templates">Workflow initialization with templates</h2>
-<p>Templates for setting up custom project reports are provided via <code>systemPipeRdata</code> and GitHub.</p>
+<p>Workflow templates are provided via <code>systemPipeRdata</code> and GitHub. Instances of these
+workflows can be created with a single command.</p>
 <h3 id="rna-seq-sample">RNA-Seq sample</h3>
 <p>Load the RNA-Seq sample workflow into your current working directory.</p>
 <pre><code class="language-r">library(systemPipeRdata)

@@ -556,6 +556,13 @@ enable = true
     [menu.main.params]
       level = 2
   [[menu.main]]
+    name = "HW7: RNA-Seq Analysis"
+    url = "/assignments/Homework/HW07/HW07"
+    parent = "Assignments"
+    weight = 307
+    [menu.main.params]
+      level = 2
+  [[menu.main]]
     name = "Projects"
     url = "/assignments/Projects/"
     parent = "Assignments"
