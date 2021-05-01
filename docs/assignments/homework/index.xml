@@ -2517,7 +2517,8 @@ Source code downloads: &amp;nbsp; &lt;a href=&#34;https://raw.githubusercontent.
 barcodes and splits a FASTQ file into as many subfiles as there are barcodes.
 At the same time the function should remove low quality tails from the reads.
 The following function accomplishes the first step. Expand this function so
-that it performs the second step as well.&lt;/p&gt;
+that it performs the second step as well. As test data set one can use the FASTQ
+test files downloaded in the corresponding tutorial section &lt;a href=&#34;https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rsequences/rsequences/#processing-fastq-files-with-shortread&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;demultiplex &amp;lt;- function(x, barcode, nreads) {
 	f &amp;lt;- FastqStreamer(x, nreads) 
 	while(length(fq &amp;lt;- yield(f))) {
