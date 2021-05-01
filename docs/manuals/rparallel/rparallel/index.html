@@ -25,7 +25,7 @@
 <meta itemprop="name" content="Parallel Evaluations in R">
 <meta itemprop="description" content="Overview  R provides a large number of packages for parallel evaluations on multi-core, multi-socket and multi-node systems. The latter are usually referred to as computer clusters. MPI is also supported For an overview of parallelization packages available for R see here One of the most comprehensive parallel computing environments for R is batchtools. Older versions of this package were released under the name BatchJobs (Bischl et al. 2015). batchtools supports both multi-core and multi-node computations with and without schedulers.">
 <meta itemprop="dateModified" content="2021-02-19T21:10:05-08:00" />
-<meta itemprop="wordCount" content="817">
+<meta itemprop="wordCount" content="824">
 
 
 
@@ -858,7 +858,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.1d38670e1081eeddad3167e5094dfd20.json"
+  data-offline-search-index-json-src="../../../offline-search-index.6b8c347c43c93c00b1245c91f31641a0.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -890,7 +890,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.1d38670e1081eeddad3167e5094dfd20.json"
+  data-offline-search-index-json-src="../../../offline-search-index.6b8c347c43c93c00b1245c91f31641a0.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -963,15 +963,15 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualsrsequencesrsequences" href="../../../manuals/rsequences/rsequences/">NGS Analysis Basics</a>
-        
-      
-      
-      
-        
-          
-          
           <a class="td-sidebar-link td-sidebar-link__page  active" id="m-manualsrparallelrparallel" href="../../../manuals/rparallel/rparallel/">Parallel Evaluations in R</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualsrsequencesrsequences" href="../../../manuals/rsequences/rsequences/">NGS Analysis Basics</a>
         
       
       
@@ -1196,7 +1196,6 @@ the required files:</p>
 <li><a href="https://github.com/tgirke/GEN242/blob/main/content/en/manuals/rparallel/demo_files/slurm.tmpl"><code>slurm.tmpl</code></a></li>
 <li><a href="https://github.com/tgirke/GEN242/blob/main/content/en/manuals/rparallel/demo_files/.batchtools.conf.R"><code>.batchtools.conf.R</code></a></li>
 </ul>
-<!-- end list -->
 <pre><code class="language-r">dir.create(&quot;mytestdir&quot;)
 setwd(&quot;mytestdir&quot;)
 download.file(&quot;https://bit.ly/3gZJBsy&quot;, &quot;slurm.tmpl&quot;)
@@ -1269,7 +1268,7 @@ reduceResults(rbind)
 <h2 id="session-info">Session Info</h2>
 <pre><code class="language-r">sessionInfo()
 </code></pre>
-<pre><code>## R version 4.0.4 (2021-02-15)
+<pre><code>## R version 4.0.5 (2021-03-31)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
 ## Running under: Debian GNU/Linux 10 (buster)
 ## 
@@ -1289,15 +1288,16 @@ reduceResults(rbind)
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] compiler_4.0.4    magrittr_2.0.1    bookdown_0.21     tools_4.0.4      
-##  [5] htmltools_0.5.1.1 yaml_2.2.1        stringi_1.5.3     rmarkdown_2.5    
-##  [9] blogdown_1.1.7    knitr_1.30        stringr_1.4.0     digest_0.6.27    
-## [13] xfun_0.20         rlang_0.4.8       evaluate_0.14
+##  [1] bookdown_0.21     digest_0.6.27     R6_2.5.0          jsonlite_1.7.1   
+##  [5] magrittr_2.0.1    evaluate_0.14     blogdown_1.2      stringi_1.5.3    
+##  [9] rlang_0.4.8       jquerylib_0.1.3   bslib_0.2.4       rmarkdown_2.7    
+## [13] tools_4.0.5       stringr_1.4.0     xfun_0.22         yaml_2.2.1       
+## [17] compiler_4.0.5    htmltools_0.5.1.1 knitr_1.30        sass_0.3.1
 </code></pre>
 <h2 id="references">References</h2>
-<div id="refs" class="references">
-<div id="ref-Bischl2015-rf">
-<p>Bischl, Bernd, Michel Lang, Olaf Mersmann, Jörg Rahnenführer, and Claus Weihs. 2015. “BatchJobs and BatchExperiments: Abstraction Mechanisms for Using R in Batch Environments.” <em>Journal of Statistical Software</em>. <a href="http://www.jstatsoft.org/v64/i11/">http://www.jstatsoft.org/v64/i11/</a>.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Bischl2015-rf" class="csl-entry">
+<p>Bischl, Bernd, Michel Lang, Olaf Mersmann, Jörg Rahnenführer, and Claus Weihs. 2015. “<span class="nocase">BatchJobs and BatchExperiments: Abstraction Mechanisms for Using R in Batch Environments</span>.” <em>Journal of Statistical Software</em>. <a href="http://www.jstatsoft.org/v64/i11/">http://www.jstatsoft.org/v64/i11/</a>.</p>
 </div>
 </div>
 
