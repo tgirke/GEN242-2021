@@ -430,7 +430,7 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../../tutorials/tutorial_08"
+              <a class="dropdown-item" href="../../../tutorials/spchipseq/spchipseq/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  ChIP-Seq Workflow (T9)
               </a>
@@ -544,6 +544,14 @@ if (!doNotTrack) {
               <a class="dropdown-item" href="../../../manuals/sprnaseq/sprnaseq/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  RNA-Seq Workflow
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../manuals/spchipseq/spchipseq/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 ChIP-Seq Workflow
               </a>
           	
           	  
@@ -859,7 +867,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.2dc1f42e5f446039b81ea1bdf59d2ea9.json"
+  data-offline-search-index-json-src="../../../offline-search-index.1d38670e1081eeddad3167e5094dfd20.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -891,7 +899,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.2dc1f42e5f446039b81ea1bdf59d2ea9.json"
+  data-offline-search-index-json-src="../../../offline-search-index.1d38670e1081eeddad3167e5094dfd20.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -948,14 +956,6 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualsrbasicssample" href="../../../manuals/rbasics/sample/">Sample R Markdown</a>
-        
-      
-      
-      
-        
-          
-          
           <a class="td-sidebar-link td-sidebar-link__page " id="m-manualsrprogrammingrprogramming" href="../../../manuals/rprogramming/rprogramming/">Programming in R</a>
         
       
@@ -964,7 +964,7 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualssprnaseqsprnaseq" href="../../../manuals/sprnaseq/sprnaseq/">RNA-Seq Workflow Template</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualsrbasicssample" href="../../../manuals/rbasics/sample/">Sample R Markdown</a>
         
       
       
@@ -972,7 +972,7 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualssystempipersystempiper" href="../../../manuals/systempiper/systempiper/">systemPipeR: Workflow design and reporting generation environment</a>
+          <a class="td-sidebar-link td-sidebar-link__page  active" id="m-manualsrsequencesrsequences" href="../../../manuals/rsequences/rsequences/">NGS Analysis Basics</a>
         
       
       
@@ -988,7 +988,23 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page  active" id="m-manualsrsequencesrsequences" href="../../../manuals/rsequences/rsequences/">NGS Analysis Basics</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualssystempipersystempiper" href="../../../manuals/systempiper/systempiper/">systemPipeR: Workflow design and reporting generation environment</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualssprnaseqsprnaseq" href="../../../manuals/sprnaseq/sprnaseq/">RNA-Seq Workflow Template</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualsspchipseqspchipseq" href="../../../manuals/spchipseq/spchipseq/">ChIP-Seq Workflow Template</a>
         
       
       
@@ -2548,7 +2564,7 @@ getBM(attributes=c(&quot;ensembl_gene_id&quot;, &quot;description&quot;), mart=m
 </code></pre>
 <h3 id="efficient-sequence-parsing">Efficient Sequence Parsing</h3>
 <h3 id="getseq"><code>getSeq</code></h3>
-<p>The following parses all annotation ranges provided by a <code>GRanges</code> object (e.g. <code>gff</code>) from a genome sequence stored in a local file.</p>
+<p>The following parses all annotation ranges provided by a <code>GRanges</code> object (e.g. <code>gff</code>) from a genome sequence stored in a local file.</p>
 <pre><code class="language-r">gff &lt;- gff[values(gff)$type != &quot;chromosome&quot;] # Remove chromosome ranges
 rand &lt;- DNAStringSet(sapply(unique(as.character(seqnames(gff))), function(x) paste(sample(c(&quot;A&quot;,&quot;T&quot;,&quot;G&quot;,&quot;C&quot;), 200000, replace=T), collapse=&quot;&quot;)))
 writeXStringSet(DNAStringSet(rand), &quot;./data/test&quot;)
@@ -2696,11 +2712,11 @@ writeXStringSet(c(p1, p2), &quot;./data/mypep.fasta&quot;)
 ## [100] askpass_1.1
 </code></pre>
 <h2 id="references">References</h2>
-<div id="refs" class="references">
-<div id="ref-Huber2015-ag">
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Huber2015-ag" class="csl-entry">
 <p>Huber, Wolfgang, Vincent J Carey, Robert Gentleman, Simon Anders, Marc Carlson, Benilton S Carvalho, Hector Corrada Bravo, et al. 2015. “Orchestrating High-Throughput Genomic Analysis with Bioconductor.” <em>Nat. Methods</em> 12 (2): 115–21. <a href="https://doi.org/10.1038/nmeth.3252">https://doi.org/10.1038/nmeth.3252</a>.</p>
 </div>
-<div id="ref-Lawrence2013-kt">
+<div id="ref-Lawrence2013-kt" class="csl-entry">
 <p>Lawrence, Michael, Wolfgang Huber, Hervé Pagès, Patrick Aboyoun, Marc Carlson, Robert Gentleman, Martin T Morgan, and Vincent J Carey. 2013. “Software for Computing and Annotating Genomic Ranges.” <em>PLoS Comput. Biol.</em> 9 (8): e1003118. <a href="https://doi.org/10.1371/journal.pcbi.1003118">https://doi.org/10.1371/journal.pcbi.1003118</a>.</p>
 </div>
 </div>

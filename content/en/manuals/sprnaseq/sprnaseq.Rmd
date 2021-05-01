@@ -13,7 +13,7 @@ vignette: |
   %\VignetteEngine{knitr::rmarkdown}
 fontsize: 14pt
 bibliography: bibtex.bib
-weight: 6
+weight: 8
 type: docs
 ---
 

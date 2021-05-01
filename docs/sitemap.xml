@@ -53,6 +53,11 @@
   </url>
   
   <url>
+    <loc>/manuals/rprogramming/rprogramming/</loc>
+    <lastmod>2021-04-24T12:06:51-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/about/internal/internal_resources/</loc>
     <lastmod>2021-04-17T11:30:58-07:00</lastmod>
   </url>
@@ -68,8 +73,8 @@
   </url>
   
   <url>
-    <loc>/manuals/rprogramming/rprogramming/</loc>
-    <lastmod>2021-04-24T12:06:51-07:00</lastmod>
+    <loc>/manuals/rsequences/rsequences/</loc>
+    <lastmod>2021-03-15T15:00:20-07:00</lastmod>
   </url>
   
   <url>
@@ -78,18 +83,8 @@
   </url>
   
   <url>
-    <loc>/manuals/sprnaseq/sprnaseq/</loc>
-    <lastmod>2021-04-27T07:56:55-07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tutorials/sprnaseq/sprnaseq/</loc>
     <lastmod>2021-04-29T00:08:21-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/manuals/systempiper/systempiper/</loc>
-    <lastmod>2021-04-28T19:44:57-07:00</lastmod>
   </url>
   
   <url>
@@ -108,13 +103,26 @@
   </url>
   
   <url>
-    <loc>/manuals/rsequences/rsequences/</loc>
-    <lastmod>2021-03-15T15:00:20-07:00</lastmod>
+    <loc>/manuals/systempiper/systempiper/</loc>
+    <lastmod>2021-04-28T19:44:57-07:00</lastmod>
   </url>
   
   <url>
     <loc>/tutorials/rsequences/rsequences/</loc>
     <lastmod>2021-04-22T12:36:38-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/manuals/sprnaseq/sprnaseq/</loc>
+    <lastmod>2021-04-27T07:56:55-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/manuals/spchipseq/spchipseq/</loc>
+  </url>
+  
+  <url>
+    <loc>/tutorials/spchipseq/spchipseq/</loc>
   </url>
   
   <url>
@@ -289,7 +297,7 @@
   
   <url>
     <loc>/assignments/homework/hw06/hw06/</loc>
-    <lastmod>2021-05-01T13:10:37-07:00</lastmod>
+    <lastmod>2021-05-01T13:13:34-07:00</lastmod>
   </url>
   
   <url>

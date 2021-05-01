@@ -1,7 +1,7 @@
 ---
 title: "systemPipeR: Workflow design and reporting generation environment" 
 author: "Author: Daniela Cassol, Le Zhang and Thomas Girke"
-date: "Last update: 28 April, 2021" 
+date: "Last update: 01 May, 2021" 
 output:
   BiocStyle::html_document:
     toc_float: true
@@ -16,7 +16,7 @@ fontsize: 14pt
 bibliography: bibtex.bib
 editor_options: 
   chunk_output_type: console
-weight: 6
+weight: 7
 type: docs
 ---
 

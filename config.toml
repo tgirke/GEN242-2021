@@ -420,7 +420,7 @@ enable = true
     weight = 208
   [[menu.main]]
     name = "ChIP-Seq Workflow (T9)"
-    url = "/tutorials/tutorial_08"
+    url = "/tutorials/spchipseq/spchipseq/"
     parent = "Tutorials"
     weight = 209
   [[menu.main]]
@@ -494,15 +494,20 @@ enable = true
     parent = "Manuals"
     weight = 10
   [[menu.main]]
+    name = "ChIP-Seq Workflow"
+    url = "/manuals/spchipseq/spchipseq/"
+    parent = "Manuals"
+    weight = 11
+  [[menu.main]]
     name = "Graphics and Visualization"
     url = "/manuals/rgraphics/rgraphics/"
     parent = "Manuals"
-    weight = 11
+    weight = 12
   [[menu.main]]
     name = "Cluster Analysis"
     url = "/manuals/rclustering/rclustering/"
     parent = "Manuals"
-    weight = 12
+    weight = 13
 ##
 [[menu.main]]
   name = "Assignments"
