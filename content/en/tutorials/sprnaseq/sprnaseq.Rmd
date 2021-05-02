@@ -54,6 +54,12 @@ suppressPackageStartupMessages({
 })
 ```
 
+<div style="text-align: right"> 
+Source code downloads: &nbsp; &nbsp;
+[ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/sprnaseq/sprnaseq.Rmd) ] &nbsp; &nbsp; 
+[ [.R](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/sprnaseq/sprnaseq.R) ]
+</div>
+
 ## Introduction
 
 Users want to provide here background information about the design of their RNA-Seq project.
@@ -425,7 +431,7 @@ vennPlot(list(vennsetup, vennsetdown), mymain="", mysub="", colmode=2, ccol=c("b
 dev.off()
 ```
 
-![](results/vennplot.png)
+![](../results/vennplot.png)
 <div align="center">Figure 4: Venn Diagram for 4 Up and Down DEG Sets</div></br>
 
 ## GO term enrichment analysis
