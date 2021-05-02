@@ -29,7 +29,7 @@ Background and objectives This report describes the analysis of several ChIP-Seq
  Introduction Users want to provide here background information about the design of their ChIP-Seq project.
 Background and objectives This report describes the analysis of several ChIP-Seq experiments studying the DNA binding patterns of the transcriptions factors … from organism ….">
 <meta itemprop="dateModified" content="2021-05-02T15:22:04-07:00" />
-<meta itemprop="wordCount" content="3950">
+<meta itemprop="wordCount" content="3957">
 
 
 
@@ -882,7 +882,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.eafa7e534536d99ea320980d2f914637.json"
+  data-offline-search-index-json-src="../../../offline-search-index.2e79100b8271340b0bc98903d7c5e2ab.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -914,7 +914,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.eafa7e534536d99ea320980d2f914637.json"
+  data-offline-search-index-json-src="../../../offline-search-index.2e79100b8271340b0bc98903d7c5e2ab.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1189,7 +1189,7 @@ if (!doNotTrack) {
         <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 19 minute read</p>
            
 	<!--
-Rscript -e "rmarkdown::render('systemPipeRNAseq.Rmd', c('BiocStyle::html_document'), clean=F); knitr::knit('systemPipeRNAseq.Rmd', tangle=TRUE)"; Rscript -e "rmarkdown::render('systemPipeRNAseq.Rmd', c('BiocStyle::pdf_document'))"
+Rscript -e "rmarkdown::render('sprnaseq.Rmd', c('BiocStyle::html_document'), clean=F); knitr::knit('sprnaseq.Rmd', tangle=TRUE)"
 -->
 <style type="text/css">
 pre code {
@@ -1227,8 +1227,8 @@ studying the DNA binding patterns of the transcriptions factors … from <em>org
 analysis of their NGS study. This includes detailed descriptions of
 FASTQ files, experimental design, reference genome, gene annotations,
 etc.</p>
-<p>Note: the mini sample FASTQ files used by this report as well as the associated reference genome files
-can be loaded via the <em>systemPipeRdata</em> package.
+<p>Note: the mini sample FASTQ files (toy data set) used by this report as well as the associated reference genome files
+are loaded below via the <code>genWorkenvir</code> function from the <code>systemPipeRdata</code> package.
 The chosen data set <a href="http://www.ncbi.nlm.nih.gov/sra/?term=SRP010938">SRP010938</a>
 contains 18 paired-end (PE) read sets from <em>Arabidposis thaliana</em>
 (Howard et al. 2013). To minimize processing time during testing, each FASTQ

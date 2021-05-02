@@ -18,7 +18,7 @@ type: docs
 ---
 
 <!--
-Rscript -e "rmarkdown::render('systemPipeRNAseq.Rmd', c('BiocStyle::html_document'), clean=F); knitr::knit('systemPipeRNAseq.Rmd', tangle=TRUE)"; Rscript -e "rmarkdown::render('systemPipeRNAseq.Rmd', c('BiocStyle::pdf_document'))"
+Rscript -e "rmarkdown::render('sprnaseq.Rmd', c('BiocStyle::html_document'), clean=F); knitr::knit('sprnaseq.Rmd', tangle=TRUE)"
 -->
 <style type="text/css">
 pre code {
@@ -66,8 +66,8 @@ analysis of their NGS study. This includes detailed descriptions of
 FASTQ files, experimental design, reference genome, gene annotations,
 etc.
 
-Note: the mini sample FASTQ files used by this report as well as the associated reference genome files
-can be loaded via the *systemPipeRdata* package.
+Note: the mini sample FASTQ files (toy data set) used by this report as well as the associated reference genome files
+are loaded below via the `genWorkenvir` function from the `systemPipeRdata` package.
 The chosen data set [SRP010938](http://www.ncbi.nlm.nih.gov/sra/?term=SRP010938)
 contains 18 paired-end (PE) read sets from *Arabidposis thaliana*
 (Howard et al. 2013). To minimize processing time during testing, each FASTQ
