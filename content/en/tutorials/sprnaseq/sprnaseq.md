@@ -121,7 +121,7 @@ genWorkenvir(workflow = "chipseq")
 setwd("chipseq")
 ```
 
-3.  Optional: if the user wishes to use another `Rmd` file than the template instance provided by the `genWorkenvir` function, then it can simply copied or downloaded
+3.  Optional: if the user wishes to use another `Rmd` file than the template instance provided by the `genWorkenvir` function, then it can be copied or downloaded
     into the root directory of the workflow environment (*e.g.* with `cp` or `wget`).
 
 4.  Now one can open from the root directory of the workflow the corresponding R Markdown script (*e.g.* systemPipeChIPseq.Rmd) using an R IDE, such as *nvim-r*, *ESS* or RStudio.

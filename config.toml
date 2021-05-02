@@ -568,6 +568,13 @@ enable = true
     [menu.main.params]
       level = 2
   [[menu.main]]
+    name = "HW8: R Markdown"
+    url = "/assignments/Homework/HW08/HW08"
+    parent = "Assignments"
+    weight = 308
+    [menu.main.params]
+      level = 2
+  [[menu.main]]
     name = "Projects"
     url = "/assignments/Projects/"
     parent = "Assignments"
