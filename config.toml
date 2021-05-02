@@ -434,7 +434,7 @@ enable = true
     parent = "Tutorials"
     weight = 211
   [[menu.main]]
-    name = "Graphics and Visualization (T11)"
+    name = "Graphics and Visualization (T12)"
     url = "/tutorials/tutorial_10"
     parent = "Tutorials"
     weight = 212
