@@ -19,17 +19,17 @@
 
 <title>RNA-Seq Workflow Template | GEN242</title><meta property="og:title" content="RNA-Seq Workflow Template" />
 <meta property="og:description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
- Introduction Users want to provide here background information about the design of their RNA-Seq project.
-Samples and environment settings Environment settings and input data Typically, the user wants to record here the sources and versions of the reference genome sequence along with the corresponding annotations." />
+ Introduction Users want to provide here background information about the design of their ChIP-Seq project.
+Background and objectives This report describes the analysis of several ChIP-Seq experiments studying the DNA binding patterns of the transcriptions factors … from organism …." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/sprnaseq/sprnaseq/" />
 <meta property="article:modified_time" content="2021-04-29T00:08:21-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="RNA-Seq Workflow Template">
 <meta itemprop="description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
- Introduction Users want to provide here background information about the design of their RNA-Seq project.
-Samples and environment settings Environment settings and input data Typically, the user wants to record here the sources and versions of the reference genome sequence along with the corresponding annotations.">
+ Introduction Users want to provide here background information about the design of their ChIP-Seq project.
+Background and objectives This report describes the analysis of several ChIP-Seq experiments studying the DNA binding patterns of the transcriptions factors … from organism ….">
 <meta itemprop="dateModified" content="2021-04-29T00:08:21-07:00" />
-<meta itemprop="wordCount" content="3675">
+<meta itemprop="wordCount" content="3950">
 
 
 
@@ -37,8 +37,8 @@ Samples and environment settings Environment settings and input data Typically, 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="RNA-Seq Workflow Template"/>
 <meta name="twitter:description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
- Introduction Users want to provide here background information about the design of their RNA-Seq project.
-Samples and environment settings Environment settings and input data Typically, the user wants to record here the sources and versions of the reference genome sequence along with the corresponding annotations."/>
+ Introduction Users want to provide here background information about the design of their ChIP-Seq project.
+Background and objectives This report describes the analysis of several ChIP-Seq experiments studying the DNA binding patterns of the transcriptions factors … from organism …."/>
 
 
 <script type="application/javascript">
@@ -864,7 +864,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.1cd2edcf478f923ee778efe3fac402ce.json"
+  data-offline-search-index-json-src="../../../offline-search-index.924988d0a84def7169833be1a3831325.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -896,7 +896,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.1cd2edcf478f923ee778efe3fac402ce.json"
+  data-offline-search-index-json-src="../../../offline-search-index.924988d0a84def7169833be1a3831325.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -961,15 +961,7 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page  active" id="m-tutorialssprnaseqsprnaseq" href="../../../tutorials/sprnaseq/sprnaseq/">RNA-Seq Workflow Template</a>
-        
-      
-      
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-tutorialssystempipersystempiper" href="../../../tutorials/systempiper/systempiper/">systemPipeR: Workflow design and reporting generation environment</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-tutorialsrparallelrparallel" href="../../../tutorials/rparallel/rparallel/">Parallel Evaluations in R</a>
         
       
       
@@ -985,7 +977,15 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-tutorialsrparallelrparallel" href="../../../tutorials/rparallel/rparallel/">Parallel Evaluations in R</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-tutorialssystempipersystempiper" href="../../../tutorials/systempiper/systempiper/">systemPipeR: Workflow design and reporting generation environment</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page  active" id="m-tutorialssprnaseqsprnaseq" href="../../../tutorials/sprnaseq/sprnaseq/">RNA-Seq Workflow Template</a>
         
       
       
@@ -1086,10 +1086,11 @@ if (!doNotTrack) {
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
-    <li><a href="#samples-and-environment-settings">Samples and environment settings</a>
+    <li><a href="#introduction">Introduction</a>
       <ul>
-        <li><a href="#environment-settings-and-input-data">Environment settings and input data</a></li>
+        <li><a href="#background-and-objectives">Background and objectives</a></li>
+        <li><a href="#experimental-design">Experimental design</a></li>
+        <li><a href="#workflow-environment">Workflow environment</a></li>
         <li><a href="#required-packages-and-resources">Required packages and resources</a></li>
         <li><a href="#experiment-definition-provided-by-targets-file">Experiment definition provided by <code>targets</code> file</a></li>
       </ul>
@@ -1175,7 +1176,7 @@ if (!doNotTrack) {
 	<h1>RNA-Seq Workflow Template</h1>
     
 	
-        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 18 minute read</p>
+        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 19 minute read</p>
            
 	<!--
 Rscript -e "rmarkdown::render('systemPipeRNAseq.Rmd', c('BiocStyle::html_document'), clean=F); knitr::knit('systemPipeRNAseq.Rmd', tangle=TRUE)"; Rscript -e "rmarkdown::render('systemPipeRNAseq.Rmd', c('BiocStyle::pdf_document'))"
@@ -1207,19 +1208,16 @@ document.addEventListener("DOMContentLoaded", function() {
 [ <a href="https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/sprnaseq/sprnaseq.R">.R</a> ]</p>
 </div>
 <h2 id="introduction">Introduction</h2>
-<p>Users want to provide here background information about the design of their RNA-Seq project.</p>
-<h2 id="samples-and-environment-settings">Samples and environment settings</h2>
-<h3 id="environment-settings-and-input-data">Environment settings and input data</h3>
-<p>Typically, the user wants to record here the sources and versions of the
-reference genome sequence along with the corresponding annotations. In
-the provided sample data set all data inputs are stored in a <code>data</code>
-subdirectory and all results will be written to a separate <code>results</code> directory,
-while the <code>systemPipeRNAseq.Rmd</code> script and the <code>targets</code> file are expected to be
-located in the parent directory. The R session is expected to run from this parent directory.</p>
-<p><a href="http://bioconductor.org/packages/release/data/experiment/html/systemPipeRdata.html"><em>systemPipeRdata</em></a> package is a helper package to generate a fully populated <a href="http://bioconductor.org/packages/release/bioc/html/systemPipeR.html"><em>systemPipeR</em></a>
-workflow environment in the current working directory with a single command.
-All the instruction for generating the workflow are provide in the <em>systemPipeRdata</em> vignette <a href="http://www.bioconductor.org/packages/devel/data/experiment/vignettes/systemPipeRdata/inst/doc/systemPipeRdata.html#1_Introduction">here</a>.</p>
-<p>The mini sample FASTQ files used by this report as well as the associated reference genome files
+<p>Users want to provide here background information about the design of their ChIP-Seq project.</p>
+<h3 id="background-and-objectives">Background and objectives</h3>
+<p>This report describes the analysis of several ChIP-Seq experiments
+studying the DNA binding patterns of the transcriptions factors … from <em>organism</em> ….</p>
+<h3 id="experimental-design">Experimental design</h3>
+<p>Typically, users want to specify here all information relevant for the
+analysis of their NGS study. This includes detailed descriptions of
+FASTQ files, experimental design, reference genome, gene annotations,
+etc.</p>
+<p>Note: the mini sample FASTQ files used by this report as well as the associated reference genome files
 can be loaded via the <em>systemPipeRdata</em> package.
 The chosen data set <a href="http://www.ncbi.nlm.nih.gov/sra/?term=SRP010938">SRP010938</a>
 contains 18 paired-end (PE) read sets from <em>Arabidposis thaliana</em>
@@ -1231,6 +1229,52 @@ its GFF annotation files have been truncated accordingly. This way the entire
 test sample data set is less than 200MB in storage space. A PE read set has been
 chosen for this test data set for flexibility, because it can be used for testing both types
 of analysis routines requiring either SE (single end) reads or PE reads.</p>
+<h3 id="workflow-environment">Workflow environment</h3>
+<p><font color="red">NOTE: this section</font> describes how to set up the proper environment (directory structure) for running
+<code>systemPipeR</code> workflows. After mastering this task the workflow run instructions <font color="red">can be deleted</font> since they are not expected
+to be included in a final HTML/PDF report of a workflow.</p>
+<ol>
+<li>
+<p>If a remote system or cluster is used, then users need to log in to the
+remote system first. The following applies to an HPC cluster (<em>e.g.</em> HPCC
+cluster).</p>
+<p>A terminal application needs to be used to log in to a user’s cluster account. Next, one
+can open an interactive session on a computer node with <code>srun</code>. More details about
+argument settings for <code>srun</code> are available in this <a href="http://hpcc.ucr.edu/manuals_linux-cluster_jobs.html#partitions">HPCC
+manual</a> or
+the HPCC section of this website
+<a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/linux/linux/#job-submission-with-sbatch">here</a>.
+Next, load the R version required for running the workflow with <code>module load</code>. Sometimes it may be necessary to
+first unload an active software version before loading another version, <em>e.g.</em> <code>module unload R</code>.</p>
+</li>
+</ol>
+<pre><code class="language-sh">srun --x11 --partition=short --mem=2gb --cpus-per-task 4 --ntasks 1 --time 2:00:00 --pty bash -l
+module load R/4.0.3
+</code></pre>
+<ol start="2">
+<li>Load a workflow template with the <code>genWorkenvir</code> function. This can be done from the command-line or from within R.
+However, only one of the two options needs to be used.</li>
+</ol>
+<p>From command-line</p>
+<pre><code class="language-sh">$ Rscript -e &quot;systemPipeRdata::genWorkenvir(workflow='chipseq')&quot;
+$ cd chipseq
+</code></pre>
+<p>From R</p>
+<pre><code class="language-r">library(systemPipeRdata)
+genWorkenvir(workflow = &quot;chipseq&quot;)
+setwd(&quot;chipseq&quot;)
+</code></pre>
+<ol start="3">
+<li>
+<p>Optional: if the user wishes to use another <code>Rmd</code> file than the template instance provided by the <code>genWorkenvir</code> function, then it can simply copied or downloaded
+into the root directory of the workflow environment (<em>e.g.</em> with <code>cp</code> or <code>wget</code>).</p>
+</li>
+<li>
+<p>Now one can open from the root directory of the workflow the corresponding R Markdown script (<em>e.g.</em> systemPipeChIPseq.Rmd) using an R IDE, such as <em>nvim-r</em>, <em>ESS</em> or RStudio.
+Subsequently, the workflow can be run as outlined below. For learning purposes it is recommended to run workflows for the first time interactively. Once all workflow steps are
+understood and possibly modified to custom needs, one can run the workflow from start to finish with a single command using <code>rmarkdown::render()</code> or <code>runWF()</code>.</p>
+</li>
+</ol>
 <h3 id="required-packages-and-resources">Required packages and resources</h3>
 <p>The <code>systemPipeR</code> package needs to be loaded to perform the analysis steps shown in
 this report (H Backman and Girke 2016).</p>

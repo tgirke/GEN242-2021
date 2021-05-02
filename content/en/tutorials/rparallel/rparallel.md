@@ -1,7 +1,7 @@
 ---
 title: "Parallel Evaluations in R"
 author: Thomas Girke
-date: "Last update: 01 May, 2021" 
+date: "Last update: 02 May, 2021" 
 output:
   html_document:
     toc: true
@@ -15,7 +15,7 @@ output:
 
 fontsize: 14pt
 bibliography: bibtex.bib
-weight: 8
+weight: 5
 type: docs
 ---
 

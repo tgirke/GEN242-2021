@@ -1,7 +1,7 @@
 ---
 title: "RNA-Seq Workflow Template" 
 author: "Author: Daniela Cassol, Le Zhang and Thomas Girke"
-date: "Last update: 29 April, 2021" 
+date: "Last update: 02 May, 2021" 
 output:
   BiocStyle::html_document:
     toc_float: true
@@ -13,7 +13,7 @@ vignette: |
   %\VignetteEngine{knitr::rmarkdown}
 fontsize: 14pt
 bibliography: bibtex.bib
-weight: 6
+weight: 8
 type: docs
 ---
 
@@ -52,24 +52,21 @@ Source code downloads:    
 
 ## Introduction
 
-Users want to provide here background information about the design of their RNA-Seq project.
+Users want to provide here background information about the design of their ChIP-Seq project.
 
-## Samples and environment settings
+### Background and objectives
 
-### Environment settings and input data
+This report describes the analysis of several ChIP-Seq experiments
+studying the DNA binding patterns of the transcriptions factors … from *organism* ….
 
-Typically, the user wants to record here the sources and versions of the
-reference genome sequence along with the corresponding annotations. In
-the provided sample data set all data inputs are stored in a `data`
-subdirectory and all results will be written to a separate `results` directory,
-while the `systemPipeRNAseq.Rmd` script and the `targets` file are expected to be
-located in the parent directory. The R session is expected to run from this parent directory.
+### Experimental design
 
-[*systemPipeRdata*](http://bioconductor.org/packages/release/data/experiment/html/systemPipeRdata.html) package is a helper package to generate a fully populated [*systemPipeR*](http://bioconductor.org/packages/release/bioc/html/systemPipeR.html)
-workflow environment in the current working directory with a single command.
-All the instruction for generating the workflow are provide in the *systemPipeRdata* vignette [here](http://www.bioconductor.org/packages/devel/data/experiment/vignettes/systemPipeRdata/inst/doc/systemPipeRdata.html#1_Introduction).
+Typically, users want to specify here all information relevant for the
+analysis of their NGS study. This includes detailed descriptions of
+FASTQ files, experimental design, reference genome, gene annotations,
+etc.
 
-The mini sample FASTQ files used by this report as well as the associated reference genome files
+Note: the mini sample FASTQ files used by this report as well as the associated reference genome files
 can be loaded via the *systemPipeRdata* package.
 The chosen data set [SRP010938](http://www.ncbi.nlm.nih.gov/sra/?term=SRP010938)
 contains 18 paired-end (PE) read sets from *Arabidposis thaliana*
@@ -81,6 +78,55 @@ its GFF annotation files have been truncated accordingly. This way the entire
 test sample data set is less than 200MB in storage space. A PE read set has been
 chosen for this test data set for flexibility, because it can be used for testing both types
 of analysis routines requiring either SE (single end) reads or PE reads.
+
+### Workflow environment
+
+<font color="red">NOTE: this section</font> describes how to set up the proper environment (directory structure) for running
+`systemPipeR` workflows. After mastering this task the workflow run instructions <font color="red">can be deleted</font> since they are not expected
+to be included in a final HTML/PDF report of a workflow.
+
+1.  If a remote system or cluster is used, then users need to log in to the
+    remote system first. The following applies to an HPC cluster (*e.g.* HPCC
+    cluster).
+
+    A terminal application needs to be used to log in to a user’s cluster account. Next, one
+    can open an interactive session on a computer node with `srun`. More details about
+    argument settings for `srun` are available in this [HPCC
+    manual](http://hpcc.ucr.edu/manuals_linux-cluster_jobs.html#partitions) or
+    the HPCC section of this website
+    [here](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/linux/linux/#job-submission-with-sbatch).
+    Next, load the R version required for running the workflow with `module load`. Sometimes it may be necessary to
+    first unload an active software version before loading another version, *e.g.* `module unload R`.
+
+``` sh
+srun --x11 --partition=short --mem=2gb --cpus-per-task 4 --ntasks 1 --time 2:00:00 --pty bash -l
+module load R/4.0.3
+```
+
+2.  Load a workflow template with the `genWorkenvir` function. This can be done from the command-line or from within R.
+    However, only one of the two options needs to be used.
+
+From command-line
+
+``` sh
+$ Rscript -e "systemPipeRdata::genWorkenvir(workflow='chipseq')"
+$ cd chipseq
+```
+
+From R
+
+``` r
+library(systemPipeRdata)
+genWorkenvir(workflow = "chipseq")
+setwd("chipseq")
+```
+
+3.  Optional: if the user wishes to use another `Rmd` file than the template instance provided by the `genWorkenvir` function, then it can simply copied or downloaded
+    into the root directory of the workflow environment (*e.g.* with `cp` or `wget`).
+
+4.  Now one can open from the root directory of the workflow the corresponding R Markdown script (*e.g.* systemPipeChIPseq.Rmd) using an R IDE, such as *nvim-r*, *ESS* or RStudio.
+    Subsequently, the workflow can be run as outlined below. For learning purposes it is recommended to run workflows for the first time interactively. Once all workflow steps are
+    understood and possibly modified to custom needs, one can run the workflow from start to finish with a single command using `rmarkdown::render()` or `runWF()`.
 
 ### Required packages and resources
 

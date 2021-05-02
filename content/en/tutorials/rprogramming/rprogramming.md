@@ -1,7 +1,7 @@
 ---
 title: "Programming in R" 
 author: "Author: Thomas Girke"
-date: "Last update: 24 April, 2021" 
+date: "Last update: 02 May, 2021" 
 output:
   html_document:
     toc: true
@@ -15,7 +15,7 @@ output:
 
 fontsize: 14pt
 bibliography: bibtex.bib
-weight: 6
+weight: 4
 type: docs
 ---
 

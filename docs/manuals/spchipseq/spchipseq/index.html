@@ -27,7 +27,7 @@ Background and objectives This report describes the analysis of several ChIP-Seq
 <meta itemprop="description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Introduction Users want to provide here background information about the design of their ChIP-Seq project.
 Background and objectives This report describes the analysis of several ChIP-Seq experiments studying the DNA binding patterns of the transcriptions factors … from organism ….">
 <meta itemprop="dateModified" content="2021-05-01T17:33:22-07:00" />
-<meta itemprop="wordCount" content="3640">
+<meta itemprop="wordCount" content="3715">
 
 
 
@@ -861,7 +861,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.1cd2edcf478f923ee778efe3fac402ce.json"
+  data-offline-search-index-json-src="../../../offline-search-index.924988d0a84def7169833be1a3831325.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -893,7 +893,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.1cd2edcf478f923ee778efe3fac402ce.json"
+  data-offline-search-index-json-src="../../../offline-search-index.924988d0a84def7169833be1a3831325.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1087,13 +1087,8 @@ if (!doNotTrack) {
       <ul>
         <li><a href="#background-and-objectives">Background and objectives</a></li>
         <li><a href="#experimental-design">Experimental design</a></li>
-      </ul>
-    </li>
-    <li><a href="#workflow-environment">Workflow environment</a>
-      <ul>
+        <li><a href="#workflow-environment">Workflow environment</a></li>
         <li><a href="#load-packages">Load packages</a></li>
-        <li><a href="#generate-workflow-environment">Generate workflow environment</a></li>
-        <li><a href="#run-workflow">Run workflow</a></li>
       </ul>
     </li>
     <li><a href="#read-preprocessing">Read preprocessing</a>
@@ -1220,7 +1215,52 @@ studying the DNA binding patterns of the transcriptions factors … from <em>org
 analysis of their NGS study. This includes detailed descriptions of
 FASTQ files, experimental design, reference genome, gene annotations,
 etc.</p>
-<h2 id="workflow-environment">Workflow environment</h2>
+<h3 id="workflow-environment">Workflow environment</h3>
+<p><font color="red">NOTE: this section</font> describes how to set up the proper environment (directory structure) for running
+<code>systemPipeR</code> workflows. After mastering this task the workflow run instructions <font color="red">can be deleted</font> since they are not expected
+to be included in a final HTML/PDF report of a workflow.</p>
+<ol>
+<li>
+<p>If a remote system or cluster is used, then users need to log in to the
+remote system first. The following applies to an HPC cluster (<em>e.g.</em> HPCC
+cluster).</p>
+<p>A terminal application needs to be used to log in to a user’s cluster account. Next, one
+can open an interactive session on a computer node with <code>srun</code>. More details about
+argument settings for <code>srun</code> are available in this <a href="http://hpcc.ucr.edu/manuals_linux-cluster_jobs.html#partitions">HPCC
+manual</a> or
+the HPCC section of this website
+<a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/linux/linux/#job-submission-with-sbatch">here</a>.
+Next, load the R version required for running the workflow with <code>module load</code>. Sometimes it may be necessary to
+first unload an active software version before loading another version, <em>e.g.</em> <code>module unload R</code>.</p>
+</li>
+</ol>
+<pre><code class="language-sh">srun --x11 --partition=short --mem=2gb --cpus-per-task 4 --ntasks 1 --time 2:00:00 --pty bash -l
+module load R/4.0.3
+</code></pre>
+<ol start="2">
+<li>Load a workflow template with the <code>genWorkenvir</code> function. This can be done from the command-line or from within R.
+However, only one of the two options needs to be used.</li>
+</ol>
+<p>From command-line</p>
+<pre><code class="language-sh">$ Rscript -e &quot;systemPipeRdata::genWorkenvir(workflow='chipseq')&quot;
+$ cd chipseq
+</code></pre>
+<p>From R</p>
+<pre><code class="language-r">library(systemPipeRdata)
+genWorkenvir(workflow = &quot;chipseq&quot;)
+setwd(&quot;chipseq&quot;)
+</code></pre>
+<ol start="3">
+<li>
+<p>Optional: if the user wishes to use another <code>Rmd</code> file than the template instance provided by the <code>genWorkenvir</code> function, then it can simply copied or downloaded
+into the root directory of the workflow environment (<em>e.g.</em> with <code>cp</code> or <code>wget</code>).</p>
+</li>
+<li>
+<p>Now one can open from the root directory of the workflow the corresponding R Markdown script (<em>e.g.</em> systemPipeChIPseq.Rmd) using an R IDE, such as <em>nvim-r</em>, <em>ESS</em> or RStudio.
+Subsequently, the workflow can be run as outlined below. For learning purposes it is recommended to run workflows for the first time interactively. Once all workflow steps are
+understood and possibly modified to custom needs, one can run the workflow from start to finish with a single command using <code>rmarkdown::render()</code> or <code>runWF()</code>.</p>
+</li>
+</ol>
 <h3 id="load-packages">Load packages</h3>
 <p>The <code>systemPipeR</code> package needs to be loaded to perform the analysis
 steps shown in this report (H Backman and Girke 2016). The package allows users
@@ -1229,29 +1269,6 @@ while also generating the corresponding analysis report. For details
 see <code>systemPipeR's</code> main <a href="http://www.bioconductor.org/packages/devel/bioc/vignettes/systemPipeR/inst/doc/systemPipeR.html">vignette</a>.</p>
 <pre><code class="language-r">library(systemPipeR)
 </code></pre>
-<h3 id="generate-workflow-environment">Generate workflow environment</h3>
-<p><a href="http://bioconductor.org/packages/release/data/experiment/html/systemPipeRdata.html"><em>systemPipeRdata</em></a> package is a helper package to generate a fully populated <a href="http://bioconductor.org/packages/release/bioc/html/systemPipeR.html"><em>systemPipeR</em></a>
-workflow environment in the current working directory with a single command.
-All the instruction for generating the workflow template are provide in the <em>systemPipeRdata</em> vignette <a href="http://www.bioconductor.org/packages/devel/data/experiment/vignettes/systemPipeRdata/inst/doc/systemPipeRdata.html#1_Introduction">here</a>.</p>
-<p>After building and loading the workflow environment generated by <code>genWorkenvir</code>
-from <em>systemPipeRdata</em> all data inputs are stored in
-a <code>data/</code> directory and all analysis results will be written to a separate
-<code>results/</code> directory, while the <code>systemPipeChIPseq.Rmd</code> script and the <code>targets</code> file are expected to be located in the parent directory. The R session is expected to run from this parent
-directory. Additional parameter files are stored under <code>param/</code>.</p>
-<p>To work with real data, users want to organize their own data similarly
-and substitute all test data for their own data. To rerun an established
-workflow on new data, the initial <code>targets</code> file along with the corresponding
-FASTQ files are usually the only inputs the user needs to provide.</p>
-<p>For more details, please consult the documentation
-<a href="http://www.bioconductor.org/packages/release/bioc/vignettes/systemPipeR/inst/doc/systemPipeR.html">here</a>. More information about the <code>targets</code> files from <em>systemPipeR</em> can be found <a href="http://www.bioconductor.org/packages/release/bioc/vignettes/systemPipeR/inst/doc/systemPipeR.html#25_structure_of_targets_file">here</a>.</p>
-<h3 id="run-workflow">Run workflow</h3>
-<p>Now open the R markdown script <code>systemPipeRIBOseq.Rmd</code>in your R IDE (<em>e.g.</em> vim-r or RStudio) and
-run the workflow as outlined below.</p>
-<p>Here pair-end workflow example is provided. Please refer to the main vignette
-<code>systemPipeR.Rmd</code> for running the workflow with single-end data.</p>
-<p>If you are running on a single machine, use following code as an example to check
-if some tools used in this workflow are in your environment <strong>PATH</strong>. No warning
-message should be shown if all tools are installed.</p>
 <h2 id="read-preprocessing">Read preprocessing</h2>
 <h3 id="experiment-definition-provided-by-targets-file">Experiment definition provided by <code>targets</code> file</h3>
 <p>The <code>targets</code> file defines all FASTQ files and sample comparisons of the analysis workflow.</p>
