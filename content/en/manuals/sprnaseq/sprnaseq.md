@@ -1,7 +1,7 @@
 ---
 title: "RNA-Seq Workflow Template" 
 author: "Author: Daniela Cassol, Le Zhang and Thomas Girke"
-date: "Last update: 27 April, 2021" 
+date: "Last update: 01 May, 2021" 
 output:
   BiocStyle::html_document:
     toc_float: true
@@ -13,7 +13,7 @@ vignette: |
   %\VignetteEngine{knitr::rmarkdown}
 fontsize: 14pt
 bibliography: bibtex.bib
-weight: 6
+weight: 8
 type: docs
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Parallel Evaluations in R"
 author: Thomas Girke
-date: "Last update: 19 February, 2021" 
+date: "Last update: 01 May, 2021" 
 output:
   html_document:
     toc: true
@@ -15,7 +15,7 @@ output:
 
 fontsize: 14pt
 bibliography: bibtex.bib
-weight: 7
+weight: 6
 type: docs
 ---
 
@@ -26,12 +26,12 @@ Rscript -e "rmarkdown::render('rparallel.Rmd', c('html_document'), clean=F); kni
 
 ## Overview
 
-  - R provides a large number of packages for parallel evaluations on multi-core, multi-socket and multi-node systems. The latter are usually referred to as computer clusters.
-  - MPI is also supported
-  - For an overview of parallelization packages available for R see [here](https://cran.r-project.org/web/views/HighPerformanceComputing.html)
-  - One of the most comprehensive parallel computing environments for R is
+-   R provides a large number of packages for parallel evaluations on multi-core, multi-socket and multi-node systems. The latter are usually referred to as computer clusters.
+-   MPI is also supported
+-   For an overview of parallelization packages available for R see [here](https://cran.r-project.org/web/views/HighPerformanceComputing.html)
+-   One of the most comprehensive parallel computing environments for R is
     [`batchtools`](https://mllg.github.io/batchtools/articles/batchtools.html#migration). Older versions of this package were released under the name `BatchJobs` (Bischl et al. 2015).
-  - `batchtools` supports both multi-core and multi-node computations with and without schedulers. By making use of
+-   `batchtools` supports both multi-core and multi-node computations with and without schedulers. By making use of
     cluster template files, most schedulers and queueing systems are supported (*e.g.* Torque, Sun Grid Engine, Slurm).
 
 ## Reminder: Traditional Job Submission for R
@@ -63,13 +63,13 @@ sbatch script_name.sh
 
 ## Parallel Evaluations on Clusters with `batchtools`
 
-  - The following introduces the usage of `batchtools` for a computer cluster
+-   The following introduces the usage of `batchtools` for a computer cluster
     using SLURM as scheduler (workload manager). SLURM is the scheduler used by
     the HPCC.
-  - Similar instructions are provided in HPCC’s manual section covering
+-   Similar instructions are provided in HPCC’s manual section covering
     `batchtools`
     [here](https://hpcc.ucr.edu/manuals_linux-cluster_parallelR.html)
-  - To simplify the evaluation of the R code on the following slides, the
+-   To simplify the evaluation of the R code on the following slides, the
     corresponding text version is available for download from
     [here](https://raw.githubusercontent.com/ucr-hpcc/ucr-hpcc.github.io/master/presentations/2020-12-18_Workshop/R_for_HPC/demo_files/R_for_HPC_demo.R).
 
@@ -81,10 +81,8 @@ First login to your cluster account, open R and execute the following lines. Thi
 create a test directory (here `mytestdir`), redirect R into this directory and then download
 the required files:
 
-  - [`slurm.tmpl`](https://github.com/tgirke/GEN242/blob/main/content/en/manuals/rparallel/demo_files/slurm.tmpl)
-  - [`.batchtools.conf.R`](https://github.com/tgirke/GEN242/blob/main/content/en/manuals/rparallel/demo_files/.batchtools.conf.R)
-
-<!-- end list -->
+-   [`slurm.tmpl`](https://github.com/tgirke/GEN242/blob/main/content/en/manuals/rparallel/demo_files/slurm.tmpl)
+-   [`.batchtools.conf.R`](https://github.com/tgirke/GEN242/blob/main/content/en/manuals/rparallel/demo_files/.batchtools.conf.R)
 
 ``` r
 dir.create("mytestdir")
@@ -176,12 +174,12 @@ reduceResults(rbind)
 
 ### Advantages of `batchtools`
 
-  - many parallelization methods multiple cores, and across both multiple CPU sockets and nodes
-  - most schedulers supported
-  - takes full advantage of a cluster
-  - robust job management by organizing results in registry file-based database
-  - simplifies submission, monitoring and restart of jobs
-  - well supported and maintained package
+-   many parallelization methods multiple cores, and across both multiple CPU sockets and nodes
+-   most schedulers supported
+-   takes full advantage of a cluster
+-   robust job management by organizing results in registry file-based database
+-   simplifies submission, monitoring and restart of jobs
+-   well supported and maintained package
 
 ## Session Info
 
@@ -189,7 +187,7 @@ reduceResults(rbind)
 sessionInfo()
 ```
 
-    ## R version 4.0.4 (2021-02-15)
+    ## R version 4.0.5 (2021-03-31)
     ## Platform: x86_64-pc-linux-gnu (64-bit)
     ## Running under: Debian GNU/Linux 10 (buster)
     ## 
@@ -209,18 +207,19 @@ sessionInfo()
     ## [1] stats     graphics  grDevices utils     datasets  methods   base     
     ## 
     ## loaded via a namespace (and not attached):
-    ##  [1] compiler_4.0.4    magrittr_2.0.1    bookdown_0.21     tools_4.0.4      
-    ##  [5] htmltools_0.5.1.1 yaml_2.2.1        stringi_1.5.3     rmarkdown_2.5    
-    ##  [9] blogdown_1.1.7    knitr_1.30        stringr_1.4.0     digest_0.6.27    
-    ## [13] xfun_0.20         rlang_0.4.8       evaluate_0.14
+    ##  [1] bookdown_0.21     digest_0.6.27     R6_2.5.0          jsonlite_1.7.1   
+    ##  [5] magrittr_2.0.1    evaluate_0.14     blogdown_1.2      stringi_1.5.3    
+    ##  [9] rlang_0.4.8       jquerylib_0.1.3   bslib_0.2.4       rmarkdown_2.7    
+    ## [13] tools_4.0.5       stringr_1.4.0     xfun_0.22         yaml_2.2.1       
+    ## [17] compiler_4.0.5    htmltools_0.5.1.1 knitr_1.30        sass_0.3.1
 
 ## References
 
-<div id="refs" class="references">
+<div id="refs" class="references csl-bib-body hanging-indent">
 
-<div id="ref-Bischl2015-rf">
+<div id="ref-Bischl2015-rf" class="csl-entry">
 
-Bischl, Bernd, Michel Lang, Olaf Mersmann, Jörg Rahnenführer, and Claus Weihs. 2015. “BatchJobs and BatchExperiments: Abstraction Mechanisms for Using R in Batch Environments.” *Journal of Statistical Software*. <http://www.jstatsoft.org/v64/i11/>.
+Bischl, Bernd, Michel Lang, Olaf Mersmann, Jörg Rahnenführer, and Claus Weihs. 2015. “<span class="nocase">BatchJobs and BatchExperiments: Abstraction Mechanisms for Using R in Batch Environments</span>.” *Journal of Statistical Software*. <http://www.jstatsoft.org/v64/i11/>.
 
 </div>
 

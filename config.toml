@@ -409,30 +409,35 @@ enable = true
     parent = "Tutorials"
     weight = 206
   [[menu.main]]
-    name = "RNA-Seq Workflow (T7)"
-    url = "/tutorials/tutorial_07"
+    name = "Workflows (T7)"
+    url = "/tutorials/systempiper/systempiper/"
     parent = "Tutorials"
     weight = 207
   [[menu.main]]
-    name = "ChIP-Seq Workflow (T8)"
-    url = "/tutorials/tutorial_08"
+    name = "RNA-Seq Workflow (T8)"
+    url = "/tutorials/sprnaseq/sprnaseq/"
     parent = "Tutorials"
     weight = 208
   [[menu.main]]
-    name = "VAR-Seq Workflow (T9)"
-    url = "/tutorials/tutorial_09"
+    name = "ChIP-Seq Workflow (T9)"
+    url = "/tutorials/spchipseq/spchipseq/"
     parent = "Tutorials"
     weight = 209
   [[menu.main]]
-    name = "Graphics and Visualization (T10)"
-    url = "/tutorials/tutorial_10"
+    name = "VAR-Seq Workflow (T10)"
+    url = "/tutorials/tutorial_09"
     parent = "Tutorials"
     weight = 210
   [[menu.main]]
-    name = "Cluster Analysis and Data Mining (T11)"
-    url = "/tutorials/tutorial_11"
+    name = "Graphics and Visualization (T11)"
+    url = "/tutorials/tutorial_10"
     parent = "Tutorials"
     weight = 211
+  [[menu.main]]
+    name = "Cluster Analysis and Data Mining (T11)"
+    url = "/tutorials/tutorial_12"
+    parent = "Tutorials"
+    weight = 212
 ##
 [[menu.main]]
   name = "Manuals"
@@ -489,15 +494,20 @@ enable = true
     parent = "Manuals"
     weight = 10
   [[menu.main]]
+    name = "ChIP-Seq Workflow"
+    url = "/manuals/spchipseq/spchipseq/"
+    parent = "Manuals"
+    weight = 11
+  [[menu.main]]
     name = "Graphics and Visualization"
     url = "/manuals/rgraphics/rgraphics/"
     parent = "Manuals"
-    weight = 11
+    weight = 12
   [[menu.main]]
     name = "Cluster Analysis"
     url = "/manuals/rclustering/rclustering/"
     parent = "Manuals"
-    weight = 12
+    weight = 13
 ##
 [[menu.main]]
   name = "Assignments"
@@ -548,6 +558,13 @@ enable = true
     url = "/assignments/Homework/HW06/HW06"
     parent = "Assignments"
     weight = 306
+    [menu.main.params]
+      level = 2
+  [[menu.main]]
+    name = "HW7: RNA-Seq Analysis"
+    url = "/assignments/Homework/HW07/HW07"
+    parent = "Assignments"
+    weight = 307
     [menu.main.params]
       level = 2
   [[menu.main]]

@@ -18,24 +18,21 @@
 <link rel="icon" type="image/png" href="../../../../favicons/android-192x192.png" sizes="192x192">
 
 <title>HW6 - NGS Analysis Basics | GEN242</title><meta property="og:title" content="HW6 - NGS Analysis Basics" />
-<meta property="og:description" content="Source code downloads: &nbsp; [ .R ]  A. Demultiplexing Write a demultiplexing function that accepts any number of barcodes and splits a FASTQ file into as many subfiles as there are barcodes. At the same time the function should remove low quality tails from the reads. The following function accomplishes the first step. Expand this function so that it performs the second step as well.
-demultiplex &lt;- function(x, barcode, nreads) { f &lt;- FastqStreamer(x, nreads) while(length(fq &lt;- yield(f))) { for(i in barcode) { pattern &lt;- paste(&quot;^&quot;, i, sep=&quot;&quot;) fqsub &lt;- fq[grepl(pattern, sread(fq))] if(length(fqsub) &gt; 0) { writeFastq(fqsub, paste(x, i, sep=&quot;_&quot;), mode=&quot;a&quot;, compress=FALSE) } } } close(f) } demultiplex(x=fastq[1], barcode=c(&quot;TT&quot;, &quot;AA&quot;, &quot;GG&quot;), nreads=50)  B." />
+<meta property="og:description" content="Source code downloads: &nbsp; [ .R ]  A. Demultiplexing Write a demultiplexing function that accepts any number of barcodes and splits a FASTQ file into as many subfiles as there are barcodes. At the same time the function should remove low quality tails from the reads. The following function accomplishes the first step. Expand this function so that it performs the second step as well. As test data set one can use the FASTQ test files downloaded in the corresponding tutorial section here." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/assignments/homework/hw06/hw06/" />
-<meta property="article:modified_time" content="2021-04-23T10:06:26-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-05-01T13:13:34-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="HW6 - NGS Analysis Basics">
-<meta itemprop="description" content="Source code downloads: &nbsp; [ .R ]  A. Demultiplexing Write a demultiplexing function that accepts any number of barcodes and splits a FASTQ file into as many subfiles as there are barcodes. At the same time the function should remove low quality tails from the reads. The following function accomplishes the first step. Expand this function so that it performs the second step as well.
-demultiplex &lt;- function(x, barcode, nreads) { f &lt;- FastqStreamer(x, nreads) while(length(fq &lt;- yield(f))) { for(i in barcode) { pattern &lt;- paste(&quot;^&quot;, i, sep=&quot;&quot;) fqsub &lt;- fq[grepl(pattern, sread(fq))] if(length(fqsub) &gt; 0) { writeFastq(fqsub, paste(x, i, sep=&quot;_&quot;), mode=&quot;a&quot;, compress=FALSE) } } } close(f) } demultiplex(x=fastq[1], barcode=c(&quot;TT&quot;, &quot;AA&quot;, &quot;GG&quot;), nreads=50)  B.">
-<meta itemprop="dateModified" content="2021-04-23T10:06:26-07:00" />
-<meta itemprop="wordCount" content="285">
+<meta itemprop="description" content="Source code downloads: &nbsp; [ .R ]  A. Demultiplexing Write a demultiplexing function that accepts any number of barcodes and splits a FASTQ file into as many subfiles as there are barcodes. At the same time the function should remove low quality tails from the reads. The following function accomplishes the first step. Expand this function so that it performs the second step as well. As test data set one can use the FASTQ test files downloaded in the corresponding tutorial section here.">
+<meta itemprop="dateModified" content="2021-05-01T13:13:34-07:00" />
+<meta itemprop="wordCount" content="299">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="HW6 - NGS Analysis Basics"/>
-<meta name="twitter:description" content="Source code downloads: &nbsp; [ .R ]  A. Demultiplexing Write a demultiplexing function that accepts any number of barcodes and splits a FASTQ file into as many subfiles as there are barcodes. At the same time the function should remove low quality tails from the reads. The following function accomplishes the first step. Expand this function so that it performs the second step as well.
-demultiplex &lt;- function(x, barcode, nreads) { f &lt;- FastqStreamer(x, nreads) while(length(fq &lt;- yield(f))) { for(i in barcode) { pattern &lt;- paste(&quot;^&quot;, i, sep=&quot;&quot;) fqsub &lt;- fq[grepl(pattern, sread(fq))] if(length(fqsub) &gt; 0) { writeFastq(fqsub, paste(x, i, sep=&quot;_&quot;), mode=&quot;a&quot;, compress=FALSE) } } } close(f) } demultiplex(x=fastq[1], barcode=c(&quot;TT&quot;, &quot;AA&quot;, &quot;GG&quot;), nreads=50)  B."/>
+<meta name="twitter:description" content="Source code downloads: &nbsp; [ .R ]  A. Demultiplexing Write a demultiplexing function that accepts any number of barcodes and splits a FASTQ file into as many subfiles as there are barcodes. At the same time the function should remove low quality tails from the reads. The following function accomplishes the first step. Expand this function so that it performs the second step as well. As test data set one can use the FASTQ test files downloaded in the corresponding tutorial section here."/>
 
 
 <script type="application/javascript">
@@ -408,17 +405,25 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../../../tutorials/tutorial_07"
+              <a class="dropdown-item" href="../../../../tutorials/systempiper/systempiper/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
-                 RNA-Seq Workflow (T7)
+                 Workflows (T7)
               </a>
           	
           	  
               
               
-              <a class="dropdown-item" href="../../../../tutorials/tutorial_08"
+              <a class="dropdown-item" href="../../../../tutorials/sprnaseq/sprnaseq/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
-                 ChIP-Seq Workflow (T8)
+                 RNA-Seq Workflow (T8)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../../tutorials/spchipseq/spchipseq/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 ChIP-Seq Workflow (T9)
               </a>
           	
           	  
@@ -426,7 +431,7 @@ if (!doNotTrack) {
               
               <a class="dropdown-item" href="../../../../tutorials/tutorial_09"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
-                 VAR-Seq Workflow (T9)
+                 VAR-Seq Workflow (T10)
               </a>
           	
           	  
@@ -434,13 +439,13 @@ if (!doNotTrack) {
               
               <a class="dropdown-item" href="../../../../tutorials/tutorial_10"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
-                 Graphics and Visualization (T10)
+                 Graphics and Visualization (T11)
               </a>
           	
           	  
               
               
-              <a class="dropdown-item" href="../../../../tutorials/tutorial_11"
+              <a class="dropdown-item" href="../../../../tutorials/tutorial_12"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Cluster Analysis and Data Mining (T11)
               </a>
@@ -535,6 +540,14 @@ if (!doNotTrack) {
           	  
               
               
+              <a class="dropdown-item" href="../../../../manuals/spchipseq/spchipseq/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 ChIP-Seq Workflow
+              </a>
+          	
+          	  
+              
+              
               <a class="dropdown-item" href="../../../../manuals/rgraphics/rgraphics/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Graphics and Visualization
@@ -621,6 +634,16 @@ if (!doNotTrack) {
               <a class="dropdown-item" href="../../../../assignments/homework/hw06/hw06"
               style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  HW6: NGS Analysis Basics
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../../assignments/homework/hw07/hw07"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 HW7: RNA-Seq Analysis
               </a>
           	
           	  
@@ -835,7 +858,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.ddbdcee1f8fedac6b4458df2ef06cf26.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.6b8c347c43c93c00b1245c91f31641a0.json"
   data-offline-search-base-href="../../../../"
   data-offline-search-max-results="10"
 >
@@ -867,7 +890,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.ddbdcee1f8fedac6b4458df2ef06cf26.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.6b8c347c43c93c00b1245c91f31641a0.json"
   data-offline-search-base-href="../../../../"
   data-offline-search-max-results="10"
 >
@@ -967,6 +990,14 @@ if (!doNotTrack) {
           
           
           <a class="td-sidebar-link td-sidebar-link__page  active" id="m-assignmentshomeworkhw06hw06" href="../../../../assignments/homework/hw06/hw06/">HW6: NGS Analysis Basics</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-assignmentshomeworkhw07hw07" href="../../../../assignments/homework/hw07/hw07/">HW6: RNA-Seq Analysis</a>
         
       
       
@@ -1245,7 +1276,8 @@ Source code downloads: &nbsp; <a href="https://raw.githubusercontent.com/tgirke/
 barcodes and splits a FASTQ file into as many subfiles as there are barcodes.
 At the same time the function should remove low quality tails from the reads.
 The following function accomplishes the first step. Expand this function so
-that it performs the second step as well.</p>
+that it performs the second step as well. As test data set one can use the FASTQ
+test files downloaded in the corresponding tutorial section <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rsequences/rsequences/#processing-fastq-files-with-shortread">here</a>.</p>
 <pre><code class="language-r">demultiplex &lt;- function(x, barcode, nreads) {
 	f &lt;- FastqStreamer(x, nreads) 
 	while(length(fq &lt;- yield(f))) {
@@ -1291,11 +1323,11 @@ writeXStringSet(c(p1, p2), &quot;./data/mypep.fasta&quot;)
 <h2 id="due-date">Due date</h2>
 <p>This homework is due on Thu, April 29 at 6:00 PM.</p>
 <h2 id="homework-solutions">Homework Solutions</h2>
-<p>Will be posted after due date.</p>
+<p>See <a href="https://raw.githubusercontent.com/tgirke/GEN242/main/static/custom/hw_solutions/hw6_solution.R">here</a>.</p>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-23: <a  href="https://github.com/tgirke/GEN242//commit/46ac1a75315c089ef94fbec827dc708f2b6281a8">some edits (46ac1a75)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-01: <a  href="https://github.com/tgirke/GEN242//commit/c6ff36cc3081cff141fea4d52b17e8fe133eef71">some edits (c6ff36cc)</a>
 </div>
 </div>
 

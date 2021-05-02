@@ -15,8 +15,7 @@ All larger data sets of the coure projects will be organized in a shared big dat
 `/bigdata/gen242/shared`. Within this space, each group will read and write data to a 
 subdirectory named after their project:
 
-+ `/bigdata/gen242/shared/RNA-Seq`
-+ `/bigdata/gen242/shared/ChIP-Seq`
++ `/bigdata/gen242/shared/<user_name>`
 
 Within each project subdirectory all input files of a workflow (_e.g._ FASTQ) will be saved to 
 a `data` directory and all output files will be written to a `results` directory. 
@@ -35,8 +34,8 @@ given.
 2. Generate the workflow environment for your project on the HPCC cluster with `genWorkenvir` from `systemPipeRdata`. 
 3. Delete the default `data` and `results` directories and replace them with symbolic links pointing to the above described `data` and `results` directories of your course project. For instance, the project RNA-Seq should create the symbolic links for their `data` and `results` directories like this:
    ```sh 
-   ln -s /bigdata/gen242/shared/RNA-Seq/data data
-   ln -s /bigdata/gen242/shared/RNA-Seq/results results
+   ln -s /bigdata/gen242/shared/<user_name>/<myproj>/data data
+   ln -s /bigdata/gen242/shared/<user_name>/<myproj>/results results
    ```
 4. Add the workflow directory to the GitHub repository of your project with `git add -A` and the run `commit` and `push` as outlined in the GitHub instructions of this course [here](http://girke.bioinformatics.ucr.edu/GEN242/mydoc_tutorial_01.html#github-basics-from-command-line). Note, steps 1-4 need to be performed only by one student in each project. After committing and pushing the repository to GitHub, it can be cloned by all other students with `git clone ...`.
 5. Download the FASTQ files of your project with `getSRAfastq` (see below) to the `data` directory of your project. 
@@ -78,7 +77,7 @@ To save space in home accounts (limited to 20GB), users need to redirect this ou
 of the `ChIP-Seq` project.
 
 ```r
-system("ln -s /bigdata/gen242/shared/ChIP-Seq/data ~/ncbi")
+system("ln -s /bigdata/gen242/shared/<user_name>/data ~/ncbi")
 ```
 
 #### Define download function

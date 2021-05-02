@@ -1,7 +1,7 @@
 ---
 title: NGS Analysis Basics
 author: "Author: Thomas Girke"
-date: "Last update: 15 March, 2021" 
+date: "Last update: 01 May, 2021" 
 output:
   html_document:
     toc: true
@@ -15,7 +15,7 @@ output:
 
 fontsize: 14pt
 bibliography: bibtex.bib
-weight: 8
+weight: 7
 type: docs
 ---
 
@@ -23,13 +23,11 @@ type: docs
 - Compile from command-line
 Rscript -e "rmarkdown::render('Rsequences.Rmd', c('html_document'), clean=F); knitr::knit('Rsequences.Rmd', tangle=TRUE)"; Rscript ../md2jekyll.R Rsequences.knit.md 10; Rscript -e "rmarkdown::render('Rsequences.Rmd', c('pdf_document'))"
 -->
-
 <script type="text/javascript">
 document.addEventListener("DOMContentLoaded", function() {
   document.querySelector("h1").className = "title";
 });
 </script>
-
 <script type="text/javascript">
 document.addEventListener("DOMContentLoaded", function() {
   var links = document.links;  
@@ -45,23 +43,23 @@ document.addEventListener("DOMContentLoaded", function() {
 
 **R Base**
 
-  - Some basic string handling utilities. Wide spectrum of numeric data analysis tools.
+-   Some basic string handling utilities. Wide spectrum of numeric data analysis tools.
 
 **Bioconductor**
 
 Bioconductor packages provide much more sophisticated string handling utilities for sequence analysis (Lawrence et al. 2013; Huber et al. 2015).
 
-  - [Biostrings](http://bioconductor.org/packages/release/bioc/html/Biostrings.html): general sequence analysis environment
-  - [ShortRead](http://bioconductor.org/packages/release/bioc/html/ShortRead.html): pipeline for short read data
-  - [IRanges](http://bioconductor.org/packages/release/bioc/html/IRanges.html): low-level infrastructure for range data
-  - [GenomicRanges](http://bioconductor.org/packages/release/bioc/html/GenomicRanges.html): high-level infrastructure for range data
-  - [GenomicFeatures](http://bioconductor.org/packages/release/bioc/html/GenomicFeatures.html): managing transcript centric annotations
-  - [GenomicAlignments](http://bioconductor.org/packages/release/bioc/html/GenomicAlignments.html): handling short genomic alignments
-  - [Rsamtools](http://bioconductor.org/packages/release/bioc/html/Rsamtools.html): interface to `samtools`, `bcftools` and `tabix`
-  - [BSgenome](http://bioconductor.org/packages/release/bioc/html/BSgenome.html): genome annotation data
-  - [biomaRt](http://bioconductor.org/packages/release/bioc/html/biomaRt.html): interface to BioMart annotations
-  - [rtracklayer](http://bioconductor.org/packages/release/bioc/html/rtracklayer.html): Annotation imports, interface to online genome browsers
-  - [HelloRanges](http://bioconductor.org/packages/release/bioc/html/HelloRanges.html): Bedtools semantics in Bioc’s Ranges infrastructure
+-   [Biostrings](http://bioconductor.org/packages/release/bioc/html/Biostrings.html): general sequence analysis environment
+-   [ShortRead](http://bioconductor.org/packages/release/bioc/html/ShortRead.html): pipeline for short read data
+-   [IRanges](http://bioconductor.org/packages/release/bioc/html/IRanges.html): low-level infrastructure for range data
+-   [GenomicRanges](http://bioconductor.org/packages/release/bioc/html/GenomicRanges.html): high-level infrastructure for range data
+-   [GenomicFeatures](http://bioconductor.org/packages/release/bioc/html/GenomicFeatures.html): managing transcript centric annotations
+-   [GenomicAlignments](http://bioconductor.org/packages/release/bioc/html/GenomicAlignments.html): handling short genomic alignments
+-   [Rsamtools](http://bioconductor.org/packages/release/bioc/html/Rsamtools.html): interface to `samtools`, `bcftools` and `tabix`
+-   [BSgenome](http://bioconductor.org/packages/release/bioc/html/BSgenome.html): genome annotation data
+-   [biomaRt](http://bioconductor.org/packages/release/bioc/html/biomaRt.html): interface to BioMart annotations
+-   [rtracklayer](http://bioconductor.org/packages/release/bioc/html/rtracklayer.html): Annotation imports, interface to online genome browsers
+-   [HelloRanges](http://bioconductor.org/packages/release/bioc/html/HelloRanges.html): Bedtools semantics in Bioc’s Ranges infrastructure
 
 ## Package Requirements
 
@@ -189,24 +187,24 @@ unlist(rand_set)
 
 #### `XString` for single sequence
 
-  - `DNAString`: for DNA
-  - `RNAString`: for RNA
-  - `AAString`: for amino acid
-  - `BString`: for any string
+-   `DNAString`: for DNA
+-   `RNAString`: for RNA
+-   `AAString`: for amino acid
+-   `BString`: for any string
 
 #### `XStringSet` for many sequences
 
-  - \`DNAStringSet\`\`: for DNA
-  - `RNAStringSet`: for RNA
-  - `AAStringSet`: for amino acid
-  - `BStringSet`: for any string
+-   \`DNAStringSet\`\`: for DNA
+-   `RNAStringSet`: for RNA
+-   `AAStringSet`: for amino acid
+-   `BStringSet`: for any string
 
 #### `QualityScaleXStringSet` for sequences with quality data
 
-  - `QualityScaledDNAStringSet`: for DNA
-  - `QualityScaledRNAStringSet`: for RNA
-  - `QualityScaledAAStringSet`: for amino acid
-  - `QualityScaledBStringSet`: for any string
+-   `QualityScaledDNAStringSet`: for DNA
+-   `QualityScaledRNAStringSet`: for RNA
+-   `QualityScaledAAStringSet`: for amino acid
+-   `QualityScaledBStringSet`: for any string
 
 ### Sequence Import and Export
 
@@ -889,9 +887,9 @@ close(f)
 
 ### Important Data Objects for Range Operations
 
-  - `IRanges`: stores range data only (IRanges library)
-  - `GRanges`: stores ranges and annotations (GenomicRanges library)
-  - `GRangesList`: list version of GRanges container (GenomicRanges library)
+-   `IRanges`: stores range data only (IRanges library)
+-   `GRanges`: stores ranges and annotations (GenomicRanges library)
+-   `GRangesList`: list version of GRanges container (GenomicRanges library)
 
 ### Range Data Are Stored in `IRanges` and `GRanges` Containers
 
@@ -1666,7 +1664,7 @@ getBM(attributes=c("ensembl_gene_id", "description"), mart=mymart)[1:4,]
 
 ### `getSeq`
 
-The following parses all annotation ranges provided by a `GRanges` object (e.g. `gff`) from a genome sequence stored in a local file.
+The following parses all annotation ranges provided by a `GRanges` object (e.g. `gff`) from a genome sequence stored in a local file.
 
 ``` r
 gff <- gff[values(gff)$type != "chromosome"] # Remove chromosome ranges
@@ -1730,11 +1728,11 @@ demultiplex(x=fastq[1], barcode=c("TT", "AA", "GG"), nreads=50)
 
 ### HW6b - Sequence Parsing
 
-  - Download `GFF` from *Halobacterium sp* [here](ftp://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Bacteria/Halobacterium_sp_uid217/AE004437.gff)
-  - Download genome sequence from *Halobacterium sp* [here](ftp://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Bacteria/Halobacterium_sp_uid217/AE004437.fna)
-  - **Task 1** Extract gene ranges, parse their sequences from genome and translate them into proteins
-  - **Task 2** Reduce overlapping genes and parse their sequences from genome
-  - **Task 3** Generate intergenic ranges and parse their sequences from genome
+-   Download `GFF` from *Halobacterium sp* [here](ftp://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Bacteria/Halobacterium_sp_uid217/AE004437.gff)
+-   Download genome sequence from *Halobacterium sp* [here](ftp://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Bacteria/Halobacterium_sp_uid217/AE004437.fna)
+-   **Task 1** Extract gene ranges, parse their sequences from genome and translate them into proteins
+-   **Task 2** Reduce overlapping genes and parse their sequences from genome
+-   **Task 3** Generate intergenic ranges and parse their sequences from genome
 
 **Useful commands**
 
@@ -1839,15 +1837,15 @@ sessionInfo()
 
 ## References
 
-<div id="refs" class="references">
+<div id="refs" class="references csl-bib-body hanging-indent">
 
-<div id="ref-Huber2015-ag">
+<div id="ref-Huber2015-ag" class="csl-entry">
 
 Huber, Wolfgang, Vincent J Carey, Robert Gentleman, Simon Anders, Marc Carlson, Benilton S Carvalho, Hector Corrada Bravo, et al. 2015. “Orchestrating High-Throughput Genomic Analysis with Bioconductor.” *Nat. Methods* 12 (2): 115–21. <https://doi.org/10.1038/nmeth.3252>.
 
 </div>
 
-<div id="ref-Lawrence2013-kt">
+<div id="ref-Lawrence2013-kt" class="csl-entry">
 
 Lawrence, Michael, Wolfgang Huber, Hervé Pagès, Patrick Aboyoun, Marc Carlson, Robert Gentleman, Martin T Morgan, and Vincent J Carey. 2013. “Software for Computing and Annotating Genomic Ranges.” *PLoS Comput. Biol.* 9 (8): e1003118. <https://doi.org/10.1371/journal.pcbi.1003118>.
 

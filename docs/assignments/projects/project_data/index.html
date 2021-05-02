@@ -19,15 +19,15 @@
 
 <title>Data Management for Course Projects | GEN242</title><meta property="og:title" content="Data Management for Course Projects" />
 <meta property="og:description" content="Shared big data space on HPCC All larger data sets of the coure projects will be organized in a shared big data space under /bigdata/gen242/shared. Within this space, each group will read and write data to a subdirectory named after their project:
- /bigdata/gen242/shared/RNA-Seq /bigdata/gen242/shared/ChIP-Seq  Within each project subdirectory all input files of a workflow (e.g. FASTQ) will be saved to a data directory and all output files will be written to a results directory." />
+ /bigdata/gen242/shared/&lt;user_name&gt;  Within each project subdirectory all input files of a workflow (e.g. FASTQ) will be saved to a data directory and all output files will be written to a results directory." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/assignments/projects/project_data/" />
-<meta property="article:modified_time" content="2021-04-18T14:58:28-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-04-29T13:22:56-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Data Management for Course Projects">
 <meta itemprop="description" content="Shared big data space on HPCC All larger data sets of the coure projects will be organized in a shared big data space under /bigdata/gen242/shared. Within this space, each group will read and write data to a subdirectory named after their project:
- /bigdata/gen242/shared/RNA-Seq /bigdata/gen242/shared/ChIP-Seq  Within each project subdirectory all input files of a workflow (e.g. FASTQ) will be saved to a data directory and all output files will be written to a results directory.">
-<meta itemprop="dateModified" content="2021-04-18T14:58:28-07:00" />
-<meta itemprop="wordCount" content="809">
+ /bigdata/gen242/shared/&lt;user_name&gt;  Within each project subdirectory all input files of a workflow (e.g. FASTQ) will be saved to a data directory and all output files will be written to a results directory.">
+<meta itemprop="dateModified" content="2021-04-29T13:22:56-07:00" />
+<meta itemprop="wordCount" content="808">
 
 
 
@@ -35,7 +35,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Data Management for Course Projects"/>
 <meta name="twitter:description" content="Shared big data space on HPCC All larger data sets of the coure projects will be organized in a shared big data space under /bigdata/gen242/shared. Within this space, each group will read and write data to a subdirectory named after their project:
- /bigdata/gen242/shared/RNA-Seq /bigdata/gen242/shared/ChIP-Seq  Within each project subdirectory all input files of a workflow (e.g. FASTQ) will be saved to a data directory and all output files will be written to a results directory."/>
+ /bigdata/gen242/shared/&lt;user_name&gt;  Within each project subdirectory all input files of a workflow (e.g. FASTQ) will be saved to a data directory and all output files will be written to a results directory."/>
 
 
 <script type="application/javascript">
@@ -408,17 +408,25 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../../tutorials/tutorial_07"
+              <a class="dropdown-item" href="../../../tutorials/systempiper/systempiper/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
-                 RNA-Seq Workflow (T7)
+                 Workflows (T7)
               </a>
           	
           	  
               
               
-              <a class="dropdown-item" href="../../../tutorials/tutorial_08"
+              <a class="dropdown-item" href="../../../tutorials/sprnaseq/sprnaseq/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
-                 ChIP-Seq Workflow (T8)
+                 RNA-Seq Workflow (T8)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/spchipseq/spchipseq/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 ChIP-Seq Workflow (T9)
               </a>
           	
           	  
@@ -426,7 +434,7 @@ if (!doNotTrack) {
               
               <a class="dropdown-item" href="../../../tutorials/tutorial_09"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
-                 VAR-Seq Workflow (T9)
+                 VAR-Seq Workflow (T10)
               </a>
           	
           	  
@@ -434,13 +442,13 @@ if (!doNotTrack) {
               
               <a class="dropdown-item" href="../../../tutorials/tutorial_10"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
-                 Graphics and Visualization (T10)
+                 Graphics and Visualization (T11)
               </a>
           	
           	  
               
               
-              <a class="dropdown-item" href="../../../tutorials/tutorial_11"
+              <a class="dropdown-item" href="../../../tutorials/tutorial_12"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Cluster Analysis and Data Mining (T11)
               </a>
@@ -535,6 +543,14 @@ if (!doNotTrack) {
           	  
               
               
+              <a class="dropdown-item" href="../../../manuals/spchipseq/spchipseq/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 ChIP-Seq Workflow
+              </a>
+          	
+          	  
+              
+              
               <a class="dropdown-item" href="../../../manuals/rgraphics/rgraphics/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Graphics and Visualization
@@ -621,6 +637,16 @@ if (!doNotTrack) {
               <a class="dropdown-item" href="../../../assignments/homework/hw06/hw06"
               style="padding-left: 2rem; font-weight: calc(3/4*500)">
                  HW6: NGS Analysis Basics
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/homework/hw07/hw07"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 HW7: RNA-Seq Analysis
               </a>
           	
           	  
@@ -835,7 +861,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.ddbdcee1f8fedac6b4458df2ef06cf26.json"
+  data-offline-search-index-json-src="../../../offline-search-index.6b8c347c43c93c00b1245c91f31641a0.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -867,7 +893,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.ddbdcee1f8fedac6b4458df2ef06cf26.json"
+  data-offline-search-index-json-src="../../../offline-search-index.6b8c347c43c93c00b1245c91f31641a0.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -967,6 +993,14 @@ if (!doNotTrack) {
           
           
           <a class="td-sidebar-link td-sidebar-link__page " id="m-assignmentshomeworkhw06hw06" href="../../../assignments/homework/hw06/hw06/">HW6: NGS Analysis Basics</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-assignmentshomeworkhw07hw07" href="../../../assignments/homework/hw07/hw07/">HW6: RNA-Seq Analysis</a>
         
       
       
@@ -1254,8 +1288,7 @@ if (!doNotTrack) {
 <code>/bigdata/gen242/shared</code>. Within this space, each group will read and write data to a
 subdirectory named after their project:</p>
 <ul>
-<li><code>/bigdata/gen242/shared/RNA-Seq</code></li>
-<li><code>/bigdata/gen242/shared/ChIP-Seq</code></li>
+<li><code>/bigdata/gen242/shared/&lt;user_name&gt;</code></li>
 </ul>
 <p>Within each project subdirectory all input files of a workflow (<em>e.g.</em> FASTQ) will be saved to
 a <code>data</code> directory and all output files will be written to a <code>results</code> directory.</p>
@@ -1270,8 +1303,8 @@ given.</p>
 <li>Clone the GitHub repository for your project with <code>git clone ...</code> (URLs listed <a href="https://bit.ly/3n07XFB">here</a>) and then <code>cd</code> into this directory.</li>
 <li>Generate the workflow environment for your project on the HPCC cluster with <code>genWorkenvir</code> from <code>systemPipeRdata</code>.</li>
 <li>Delete the default <code>data</code> and <code>results</code> directories and replace them with symbolic links pointing to the above described <code>data</code> and <code>results</code> directories of your course project. For instance, the project RNA-Seq should create the symbolic links for their <code>data</code> and <code>results</code> directories like this:
-<pre><code class="language-sh">ln -s /bigdata/gen242/shared/RNA-Seq/data data
-ln -s /bigdata/gen242/shared/RNA-Seq/results results
+<pre><code class="language-sh">ln -s /bigdata/gen242/shared/&lt;user_name&gt;/&lt;myproj&gt;/data data
+ln -s /bigdata/gen242/shared/&lt;user_name&gt;/&lt;myproj&gt;/results results
 </code></pre>
 </li>
 <li>Add the workflow directory to the GitHub repository of your project with <code>git add -A</code> and the run <code>commit</code> and <code>push</code> as outlined in the GitHub instructions of this course <a href="http://girke.bioinformatics.ucr.edu/GEN242/mydoc_tutorial_01.html#github-basics-from-command-line">here</a>. Note, steps 1-4 need to be performed only by one student in each project. After committing and pushing the repository to GitHub, it can be cloned by all other students with <code>git clone ...</code>.</li>
@@ -1304,7 +1337,7 @@ system('fastq-dump --help') # prints help to screen
 To save space in home accounts (limited to 20GB), users need to redirect this output to their project&rsquo;s
 <code>data</code> directory via a symbolic link. The following shows how to do this for the <code>data</code> directory
 of the <code>ChIP-Seq</code> project.</p>
-<pre><code class="language-r">system(&quot;ln -s /bigdata/gen242/shared/ChIP-Seq/data ~/ncbi&quot;)
+<pre><code class="language-r">system(&quot;ln -s /bigdata/gen242/shared/&lt;user_name&gt;/data ~/ncbi&quot;)
 </code></pre>
 <h4 id="define-download-function">Define download function</h4>
 <p>The following function downloads and extracts the FASTQ files for each project from SRA.
@@ -1348,7 +1381,7 @@ important for many analysis routines such as the read counting in the RNA-Seq wo
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-18: <a  href="https://github.com/tgirke/GEN242//commit/417d6694ca0d587f44ac496f7b9705de0f850b08">some edits (417d6694)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-04-29: <a  href="https://github.com/tgirke/GEN242//commit/e944fe50a8f435e09fe770c81d0430698335b688">some edits (e944fe50)</a>
 </div>
 </div>
 

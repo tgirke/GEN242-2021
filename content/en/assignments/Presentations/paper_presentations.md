@@ -42,7 +42,7 @@ All references in [Paperpile](https://paperpile.com/shared/TUcNkH)
 ### ChIP-Seq Peak Callers
 
 9. Wilbanks EG, Facciotti MT (2010) Evaluation of algorithm performance in ChIP-seq peak detection. PLoS One. doi: 10.1371/journal.pone.0011471. [PubMed](https://pubmed.ncbi.nlm.nih.gov/20628599/)
-10. ...
+10. Feng J, Liu T, Qin B, Zhang Y, Liu XS (2012) Identifying ChIP-seq enrichment using MACS. Nat Protoc 7: 1728–1740. [PubMed](https://pubmed.ncbi.nlm.nih.gov/22936215/)
 
 ### Functional Enrichment Analysis
 
