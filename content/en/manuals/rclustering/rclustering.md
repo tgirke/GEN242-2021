@@ -1,7 +1,7 @@
 ---
 title: Cluster Analysis in R 
 author: "First/last name (first.last@ucr.edu)"
-date: "Last update: 15 March, 2021" 
+date: "Last update: 02 May, 2021" 
 output:
   html_document:
     toc: true
@@ -21,15 +21,13 @@ type: docs
 
 <!--
 - Compile from command-line
-Rscript -e "rmarkdown::render('Rclustering.Rmd', c('html_document'), clean=F); knitr::knit('Rclustering.Rmd', tangle=TRUE)"; Rscript ../md2jekyll.R Rclustering.knit.md 16; Rscript -e "rmarkdown::render('Rclustering.Rmd', c('pdf_document'))"
+Rscript -e "rmarkdown::render('rclustering.Rmd', c('html_document'), clean=F); knitr::knit('rclustering.Rmd', tangle=TRUE)"
 -->
-
 <script type="text/javascript">
 document.addEventListener("DOMContentLoaded", function() {
   document.querySelector("h1").className = "title";
 });
 </script>
-
 <script type="text/javascript">
 document.addEventListener("DOMContentLoaded", function() {
   var links = document.links;  
@@ -41,68 +39,66 @@ document.addEventListener("DOMContentLoaded", function() {
 
 ## Introduction
 
-  - What is Clustering?
-      - Clustering is the classification of data objects into similarity groups (clusters) according to a defined distance measure.
-      - It is used in many fields, such as machine learning, data mining, pattern recognition, image analysis, genomics, systems biology, etc.
-      - Machine learning typically regards data clustering as a form of unsupervised learning.
-  - Why Clustering and Data Mining in R?}
-      - Efficient data structures and functions for clustering
-      - Reproducible and programmable
-      - Comprehensive set of clustering and machine learning libraries
-      - Integration with many other data analysis tools
-  - Useful Links
-      - [Cluster Task Views](http://cran.cnr.berkeley.edu/web/views/Cluster.html)
-      - [Machine Learning Task Views](http://cran.cnr.berkeley.edu/web/views/MachineLearning.html)
-      - [UCR Manual](http://manuals.bioinformatics.ucr.edu/home/R_BioCondManual#TOC-Clustering-and-Data-Mining-in-R)
+-   What is Clustering?
+    -   Clustering is the classification of data objects into similarity groups (clusters) according to a defined distance measure.
+    -   It is used in many fields, such as machine learning, data mining, pattern recognition, image analysis, genomics, systems biology, etc.
+    -   Machine learning typically regards data clustering as a form of unsupervised learning.
+-   Why Clustering and Data Mining in R?}
+    -   Efficient data structures and functions for clustering
+    -   Reproducible and programmable
+    -   Comprehensive set of clustering and machine learning libraries
+    -   Integration with many other data analysis tools
+-   Useful Links
+    -   [Cluster Task Views](https://cran.r-project.org/web/views/Cluster.html)
+    -   [Machine Learning Task Views](https://cran.r-project.org/web/views/MachineLearning.html)
+    -   [UCR Manual](http://manuals.bioinformatics.ucr.edu/home/R_BioCondManual#TOC-Clustering-and-Data-Mining-in-R)
 
 ## Data Preprocessing
 
 ### Data Transformations
 
-Choice depends on data set\!
+Choice depends on data set!
 
-  - Center and standardize
+-   Center and standardize
     1.  Center: subtract from each value the mean of the corresponding vector
     2.  Standardize: devide by standard deviation
-    <!-- end list -->
-      - Result: *Mean = 0* and *STDEV = 1*
-  - Center and scale with the `scale()` function
+
+    -   Result: *Mean = 0* and *STDEV = 1*
+-   Center and scale with the `scale()` function
     1.  Center: subtract from each value the mean of the corresponding vector
     2.  Scale: divide centered vector by their *root mean square* (*rms*):
-        \[ x_{rms} = \sqrt[]{\frac{1}{n-1}\sum_{i=1}^{n}{x_{i}{^2}}} \]
-    <!-- end list -->
-      - Result: *Mean = 0* and *STDEV = 1*
-  - Log transformation
-  - Rank transformation: replace measured values by ranks
-  - No transformation
+        $$ x_{rms} = \sqrt[]{\frac{1}{n-1}\sum_{i=1}^{n}{x_{i}{^2}}} $$
+
+    -   Result: *Mean = 0* and *STDEV = 1*
+-   Log transformation
+-   Rank transformation: replace measured values by ranks
+-   No transformation
 
 ### Distance Methods
 
-List of most common ones\!
+List of most common ones!
 
-  - Euclidean distance for two profiles *X* and *Y*:
-    \[ d(X,Y) = \sqrt[]{ \sum_{i=1}^{n}{(x_{i}-y_{i})^2} }\]
-      - **Disadvantages**: not scale invariant, not for negative correlations
-  - Maximum, Manhattan, Canberra, binary, Minowski, …
-  - Correlation-based distance: *1-r*
-      - Pearson correlation coefficient (PCC):
+-   Euclidean distance for two profiles *X* and *Y*:
+    $$ d(X,Y) = \sqrt[]{ \sum_{i=1}^{n}{(x_{i}-y_{i})^2} }$$
+    -   **Disadvantages**: not scale invariant, not for negative correlations
+-   Maximum, Manhattan, Canberra, binary, Minowski, …
+-   Correlation-based distance: *1-r*
+    -   Pearson correlation coefficient (PCC):
         `$$r = \frac{n\sum_{i=1}^{n}{x_{i}y_{i}} - \sum_{i=1}^{n}{x_{i}} \sum_{i=1}^{n}{y_{i}}}{ \sqrt[]{(\sum_{i=1}^{n}{x_{i}^2} - (\sum_{i=1}^{n}{x_{i})^2}) (\sum_{i=1}^{n}{y_{i}^2} - (\sum_{i=1}^{n}{y_{i})^2})} }$$`
-          - **Disadvantage**: outlier sensitive
-      - Spearman correlation coefficient (SCC)
-          - Same calculation as PCC but with ranked values\!
+        -   **Disadvantage**: outlier sensitive
+    -   Spearman correlation coefficient (SCC)
+        -   Same calculation as PCC but with ranked values!
 
 There are many more distance measures
 
-  - If the distances among items are quantifiable, then clustering is possible.
-  - Choose the most accurate and meaningful distance measure for a given field of application.
-  - If uncertain then choose several distance measures and compare the results.
+-   If the distances among items are quantifiable, then clustering is possible.
+-   Choose the most accurate and meaningful distance measure for a given field of application.
+-   If uncertain then choose several distance measures and compare the results.
 
 ### Cluster Linkage
 
 <center>
-
 <img title="cluster linkage" src="../images/linkage.png" >
-
 </center>
 
 ## Clustering Algorithms
@@ -119,28 +115,24 @@ There are many more distance measures
 ##### Hierarchical clustering: agglomerative Approach
 
 <center>
-
 <img title="hierarchical clustering" src="../images/hierarchical.png" >
-
 </center>
 
 ##### Hierarchical Clustering with Heatmap
 
 <center>
-
 <img title="heatmap" src="../images/heatmap.png" >
-
 </center>
 
-  - A heatmap is a color coded table. To visually identify patterns, the rows and columns of a heatmap are often sorted by hierarchical clustering trees.  
-  - In case of gene expression data, the row tree usually represents the genes, the column tree the treatments and the colors in the heat table represent the intensities or ratios of the underlying gene expression data set.
+-   A heatmap is a color coded table. To visually identify patterns, the rows and columns of a heatmap are often sorted by hierarchical clustering trees.  
+-   In case of gene expression data, the row tree usually represents the genes, the column tree the treatments and the colors in the heat table represent the intensities or ratios of the underlying gene expression data set.
 
 #### Hierarchical Clustering Approaches
 
 1.  Agglomerative approach (bottom-up)
-      - R functions: `hclust()` and `agnes()`
+    -   R functions: `hclust()` and `agnes()`
 2.  Divisive approach (top-down)
-      - R function: `diana()`
+    -   R function: `diana()`
 
 #### Tree Cutting to Obtain Discrete Clusters
 
@@ -158,7 +150,7 @@ y <- matrix(rnorm(500), 100, 5, dimnames=list(paste("g", 1:100, sep=""), paste("
 heatmap.2(y) # Shortcut to final result
 ```
 
-<img src="/en/manuals/rclustering/Rclustering_files/figure-html/hclust_heatmap_example-1.png" width="672" />
+<img src="/en/manuals/rclustering/rclustering_files/figure-html/hclust_heatmap_example-1.png" width="672" />
 
 ##### Stepwise Approach with Tree Cutting
 
@@ -173,7 +165,7 @@ mycol <- colorpanel(40, "darkblue", "yellow", "white") # or try redgreen(75)
 heatmap.2(y, Rowv=as.dendrogram(hr), Colv=as.dendrogram(hc), col=mycol, scale="row", density.info="none", trace="none", RowSideColors=mycolhc) 
 ```
 
-<img src="/en/manuals/rclustering/Rclustering_files/figure-html/hclust_heatmap_example_setpwise-1.png" width="672" />
+<img src="/en/manuals/rclustering/rclustering_files/figure-html/hclust_heatmap_example_setpwise-1.png" width="672" />
 
 ### K-Means Clustering
 
@@ -187,9 +179,7 @@ heatmap.2(y, Rowv=as.dendrogram(hr), Colv=as.dendrogram(hc), col=mycol, scale="r
 6.  Repeat until clusters assignments are stable
 
 <center>
-
 <img title="kmeans" src="../images/kmeans.png" >
-
 </center>
 
 #### Examples
@@ -200,22 +190,22 @@ km$cluster
 ```
 
     ##   g1   g2   g3   g4   g5   g6   g7   g8   g9  g10  g11  g12  g13  g14  g15  g16  g17  g18  g19  g20 
-    ##    2    3    1    1    1    1    1    3    3    3    3    1    1    2    3    3    3    2    1    3 
+    ##    3    3    1    1    3    1    1    2    3    2    2    1    2    3    1    3    3    3    3    2 
     ##  g21  g22  g23  g24  g25  g26  g27  g28  g29  g30  g31  g32  g33  g34  g35  g36  g37  g38  g39  g40 
-    ##    1    3    3    2    1    3    1    2    3    1    3    3    3    1    3    2    2    1    2    3 
+    ##    3    2    3    2    2    3    2    1    1    1    2    2    3    3    1    1    3    3    2    3 
     ##  g41  g42  g43  g44  g45  g46  g47  g48  g49  g50  g51  g52  g53  g54  g55  g56  g57  g58  g59  g60 
-    ##    1    1    3    3    3    3    1    1    2    1    2    2    3    1    3    2    1    1    2    3 
+    ##    1    2    2    3    1    1    3    3    3    2    1    2    2    3    3    3    3    2    2    2 
     ##  g61  g62  g63  g64  g65  g66  g67  g68  g69  g70  g71  g72  g73  g74  g75  g76  g77  g78  g79  g80 
-    ##    1    3    3    3    2    2    2    3    3    3    3    3    2    3    3    1    1    2    1    1 
+    ##    3    1    1    1    3    1    3    2    2    2    3    2    3    2    1    3    2    2    2    3 
     ##  g81  g82  g83  g84  g85  g86  g87  g88  g89  g90  g91  g92  g93  g94  g95  g96  g97  g98  g99 g100 
-    ##    1    2    1    2    1    1    3    3    1    3    1    3    3    2    2    1    3    2    2    2
+    ##    1    1    1    2    2    3    3    1    1    3    2    3    2    3    1    3    2    3    1    3
 
 ### Fuzzy C-Means Clustering
 
-  - In contrast to strict (hard) clustering approaches, fuzzy (soft) clustering methods allow multiple cluster memberships of the clustered items (Hathaway, Bezdek, and Pal 1996).
-  - This is commonly achieved by assigning to each item a weight of belonging to each cluster.
-  - Thus, items at the edge of a cluster, may be in a cluster to a lesser degree than items at the center of a cluster.
-  - Typically, each item has as many coefficients (weights) as there are clusters that sum up for each item to one.
+-   In contrast to strict (hard) clustering approaches, fuzzy (soft) clustering methods allow multiple cluster memberships of the clustered items (Hathaway, Bezdek, and Pal 1996).
+-   This is commonly achieved by assigning to each item a weight of belonging to each cluster.
+-   Thus, items at the edge of a cluster, may be in a cluster to a lesser degree than items at the center of a cluster.
+-   Typically, each item has as many coefficients (weights) as there are clusters that sum up for each item to one.
 
 #### Examples
 
@@ -228,25 +218,25 @@ round(fannyy$membership, 2)[1:4,]
 ```
 
     ##    [,1] [,2] [,3] [,4]
-    ## g1 0.57 0.08 0.14 0.21
-    ## g2 0.06 0.80 0.08 0.06
-    ## g3 0.08 0.39 0.15 0.38
-    ## g4 0.03 0.02 0.83 0.13
+    ## g1 0.81 0.03 0.15 0.01
+    ## g2 0.84 0.03 0.11 0.02
+    ## g3 0.02 0.71 0.19 0.07
+    ## g4 0.09 0.04 0.80 0.06
 
 ``` r
 fannyy$clustering 
 ```
 
     ##   g1   g2   g3   g4   g5   g6   g7   g8   g9  g10  g11  g12  g13  g14  g15  g16  g17  g18  g19  g20 
-    ##    1    2    2    3    4    2    4    2    1    2    1    4    4    1    2    3    2    3    4    2 
+    ##    1    1    2    3    1    3    3    2    1    1    2    3    2    4    4    1    1    1    4    2 
     ##  g21  g22  g23  g24  g25  g26  g27  g28  g29  g30  g31  g32  g33  g34  g35  g36  g37  g38  g39  g40 
-    ##    4    2    2    4    4    3    3    1    2    4    1    1    2    2    2    1    1    4    4    2 
+    ##    4    4    1    4    4    1    1    3    4    2    2    2    1    4    4    2    4    4    2    3 
     ##  g41  g42  g43  g44  g45  g46  g47  g48  g49  g50  g51  g52  g53  g54  g55  g56  g57  g58  g59  g60 
-    ##    3    4    3    2    2    2    3    4    4    2    1    4    1    2    3    1    2    4    1    2 
+    ##    3    2    4    3    3    2    1    3    4    2    4    1    2    1    1    4    4    4    4    2 
     ##  g61  g62  g63  g64  g65  g66  g67  g68  g69  g70  g71  g72  g73  g74  g75  g76  g77  g78  g79  g80 
-    ##    3    3    3    1    1    4    4    2    2    2    1    3    1    2    3    4    2    1    3    3 
+    ##    3    3    4    3    3    3    3    2    2    4    4    4    3    1    3    1    1    2    2    4 
     ##  g81  g82  g83  g84  g85  g86  g87  g88  g89  g90  g91  g92  g93  g94  g95  g96  g97  g98  g99 g100 
-    ##    4    4    4    1    4    2    2    2    3    2    4    2    2    4    1    3    3    3    1    1
+    ##    3    3    3    2    4    4    1    4    3    3    1    1    1    1    4    1    2    1    3    1
 
 ### Principal Component Analysis (PCA)
 
@@ -254,20 +244,18 @@ Principal components analysis (PCA) is a data reduction technique that allows to
 
 #### Basic Steps
 
-  - Center (and standardize) data
-  - First principal component axis
-      - Across centroid of data cloud
-      - Distance of each point to that line is minimized, so that it crosses the maximum variation of the data cloud
-  - Second principal component axis
-      - Orthogonal to first principal component
-      - Along maximum variation in the data
-  - First PCA axis becomes x-axis and second PCA axis y-axis
-  - Continue process until the necessary number of principal components is obtained
+-   Center (and standardize) data
+-   First principal component axis
+    -   Across centroid of data cloud
+    -   Distance of each point to that line is minimized, so that it crosses the maximum variation of the data cloud
+-   Second principal component axis
+    -   Orthogonal to first principal component
+    -   Along maximum variation in the data
+-   First PCA axis becomes x-axis and second PCA axis y-axis
+-   Continue process until the necessary number of principal components is obtained
 
 <center>
-
 <img title="pca" src="../images/pca.png" >
-
 </center>
 
 #### Example
@@ -279,23 +267,23 @@ summary(pca) # Prints variance summary for all principal components
 
     ## Importance of components:
     ##                           PC1    PC2    PC3    PC4    PC5
-    ## Standard deviation     1.1151 1.0232 1.0133 0.9760 0.8545
-    ## Proportion of Variance 0.2487 0.2094 0.2054 0.1905 0.1460
-    ## Cumulative Proportion  0.2487 0.4581 0.6634 0.8540 1.0000
+    ## Standard deviation     1.1557 1.1185 1.0100 0.8769 0.7901
+    ## Proportion of Variance 0.2671 0.2502 0.2040 0.1538 0.1249
+    ## Cumulative Proportion  0.2671 0.5173 0.7213 0.8751 1.0000
 
 ``` r
 plot(pca$x, pch=20, col="blue", type="n") # To plot dots, drop type="n"
 text(pca$x, rownames(pca$x), cex=0.8)
 ```
 
-<img src="/en/manuals/rclustering/Rclustering_files/figure-html/pca_example-1.png" width="672" />
+<img src="/en/manuals/rclustering/rclustering_files/figure-html/pca_example-1.png" width="672" />
 1st and 2nd principal components explain x% of variance in data.
 
 ### Multidimensional Scaling (MDS)
 
-  - Alternative dimensionality reduction approach
-  - Represents distances in 2D or 3D space
-  - Starts from distance matrix (PCA uses data points)
+-   Alternative dimensionality reduction approach
+-   Represents distances in 2D or 3D space
+-   Starts from distance matrix (PCA uses data points)
 
 #### Example
 
@@ -307,31 +295,26 @@ plot(loc[,1], -loc[,2], type="n", xlab="", ylab="", main="cmdscale(eurodist)")
 text(loc[,1], -loc[,2], rownames(loc), cex=0.8) 
 ```
 
-<img src="/en/manuals/rclustering/Rclustering_files/figure-html/mds_example-1.png" width="672" />
+<img src="/en/manuals/rclustering/rclustering_files/figure-html/mds_example-1.png" width="672" />
 
 ### Biclustering
 
 Finds in matrix subgroups of rows and columns which are as similar as possible to each other and as different as possible to the remaining data points.
 
 <center>
-
 <img title="pca" src="../images/biclust.png"  >
-
 </center>
-
 <center>
-
-Unclustered ————————–\> Clustered
-
+Unclustered ————————–&gt; Clustered
 </center>
 
 ### Similarity Measures for Clusters
 
-  - Compare the numbers of identical and unique item pairs appearing in cluster sets
-  - Achieved by counting the number of item pairs found in both clustering sets *(a)* as well as the pairs appearing only in the first *(b)* or the second *(c)* set.
-  - With this a similarity coefficient, such as the Jaccard index, can be computed. The latter is defined as the size of the intersect divided by the size of the union of two sample sets: *a/(a+b+c)*.
-  - In case of partitioning results, the Jaccard Index measures how frequently pairs of items are joined together in two clustering data sets and how often pairs are observed only in one set.
-  - Related coefficient are the Rand Index and the Adjusted Rand Index. These indices also consider the number of pairs *(d)* that are not joined together in any of the clusters in both sets.
+-   Compare the numbers of identical and unique item pairs appearing in cluster sets
+-   Achieved by counting the number of item pairs found in both clustering sets *(a)* as well as the pairs appearing only in the first *(b)* or the second *(c)* set.
+-   With this a similarity coefficient, such as the Jaccard index, can be computed. The latter is defined as the size of the intersect divided by the size of the union of two sample sets: *a/(a+b+c)*.
+-   In case of partitioning results, the Jaccard Index measures how frequently pairs of items are joined together in two clustering data sets and how often pairs are observed only in one set.
+-   Related coefficient are the Rand Index and the Adjusted Rand Index. These indices also consider the number of pairs *(d)* that are not joined together in any of the clusters in both sets.
 
 #### Example:
 
@@ -348,10 +331,10 @@ ci[2:3] # Returns Jaccard index and variables used to compute it
 
     ## $variables
     ##    a    b    c 
-    ## 8793 5814 5296 
+    ## 4982 8034 8594 
     ## 
     ## $Jaccard_Index
-    ## [1] 0.4417927
+    ## [1] 0.2305414
 
 ##### Clustering cluster sets with Jaccard index
 
@@ -364,10 +347,10 @@ hv <- hclust(as.dist(1-d))
 plot(as.dendrogram(hv), edgePar=list(col=3, lwd=4), horiz=T, main="Similarities of 10 Clara Clustering Results for k: 3-12") 
 ```
 
-<img src="/en/manuals/rclustering/Rclustering_files/figure-html/jaccard_index_clustering-1.png" width="672" />
+<img src="/en/manuals/rclustering/rclustering_files/figure-html/jaccard_index_clustering-1.png" width="672" />
 
-  - Remember: there are many additional clustering algorithms.
-  - Additional details can be found in the Clustering Section of the [R/Bioconductor Manual](http://manuals.bioinformatics.ucr.edu/home/R_BioCondManual#TOC-Clustering-and-Data-Mining-in-R).
+-   Remember: there are many additional clustering algorithms.
+-   Additional details can be found in the Clustering Section of the [R/Bioconductor Manual](http://manuals.bioinformatics.ucr.edu/home/R_BioCondManual#TOC-Clustering-and-Data-Mining-in-R).
 
 ## Clustering Exercises
 
@@ -451,7 +434,7 @@ names(hr)
 par(mfrow = c(1, 2)); plot(hr, hang = 0.1); plot(hr, hang = -1) 
 ```
 
-<img src="/en/manuals/rclustering/Rclustering_files/figure-html/hclust1-1.png" width="672" />
+<img src="/en/manuals/rclustering/rclustering_files/figure-html/hclust1-1.png" width="672" />
 
 #### Tree plotting I
 
@@ -459,7 +442,7 @@ par(mfrow = c(1, 2)); plot(hr, hang = 0.1); plot(hr, hang = -1)
 plot(as.dendrogram(hr), edgePar=list(col=3, lwd=4), horiz=T) 
 ```
 
-<img src="/en/manuals/rclustering/Rclustering_files/figure-html/hclust_plot_tree1-1.png" width="672" />
+<img src="/en/manuals/rclustering/rclustering_files/figure-html/hclust_plot_tree1-1.png" width="672" />
 
 #### Tree plotting II
 
@@ -471,7 +454,7 @@ plot.phylo(as.phylo(hr), type="p", edge.col=4, edge.width=2,
            show.node.label=TRUE, no.margin=TRUE)
 ```
 
-<img src="/en/manuals/rclustering/Rclustering_files/figure-html/hclust_plot_tree2-1.png" width="672" />
+<img src="/en/manuals/rclustering/rclustering_files/figure-html/hclust_plot_tree2-1.png" width="672" />
 
 ### Tree Cutting
 
@@ -516,7 +499,7 @@ library(gplots)
 heatmap.2(y, col=redgreen(75))
 ```
 
-<img src="/en/manuals/rclustering/Rclustering_files/figure-html/heatmap2a-1.png" width="672" />
+<img src="/en/manuals/rclustering/rclustering_files/figure-html/heatmap2a-1.png" width="672" />
 
 #### With `pheatmap`
 
@@ -527,7 +510,7 @@ library(pheatmap); library("RColorBrewer")
 pheatmap(y, color=brewer.pal(9,"Blues"))
 ```
 
-<img src="/en/manuals/rclustering/Rclustering_files/figure-html/pheatmap-1.png" width="672" />
+<img src="/en/manuals/rclustering/rclustering_files/figure-html/pheatmap-1.png" width="672" />
 
 #### Customizing heatmaps
 
@@ -541,7 +524,7 @@ heatmap.2(y, Rowv=as.dendrogram(hr), Colv=as.dendrogram(hc), col=mycol,
           RowSideColors=as.character(mycl))
 ```
 
-<img src="/en/manuals/rclustering/Rclustering_files/figure-html/heatmap2_custom-1.png" width="672" />
+<img src="/en/manuals/rclustering/rclustering_files/figure-html/heatmap2_custom-1.png" width="672" />
 
 ### K-Means Clustering with PAM
 
@@ -562,7 +545,7 @@ heatmap.2(y, Rowv=as.dendrogram(hr), Colv=as.dendrogram(hc), col=mycol,
           RowSideColors=as.character(kmcol))
 ```
 
-<img src="/en/manuals/rclustering/Rclustering_files/figure-html/kmeans2-1.png" width="672" />
+<img src="/en/manuals/rclustering/rclustering_files/figure-html/kmeans2-1.png" width="672" />
 
 ### K-Means Fuzzy Clustering
 
@@ -609,7 +592,7 @@ plot(loc[,1], -loc[,2], type="n", xlab="", ylab="", main="cmdscale(eurodist)")
 text(loc[,1], -loc[,2], rownames(loc), cex=0.8) 
 ```
 
-<img src="/en/manuals/rclustering/Rclustering_files/figure-html/cmdscale2-1.png" width="672" />
+<img src="/en/manuals/rclustering/rclustering_files/figure-html/cmdscale2-1.png" width="672" />
 
 ### Principal Component Analysis (PCA)
 
@@ -637,7 +620,7 @@ summary(pca) # Prints variance summary for all principal components.
 scatterplot3d(pca$x[,1:3], pch=20, color="blue") 
 ```
 
-<img src="/en/manuals/rclustering/Rclustering_files/figure-html/pca2-1.png" width="672" />
+<img src="/en/manuals/rclustering/rclustering_files/figure-html/pca2-1.png" width="672" />
 
 ### Additional Exercises
 
@@ -649,7 +632,7 @@ See [here](http://manuals.bioinformatics.ucr.edu/home/R_BioCondManual#TOC-Cluste
 sessionInfo()
 ```
 
-    ## R version 4.0.4 (2021-02-15)
+    ## R version 4.0.5 (2021-03-31)
     ## Platform: x86_64-pc-linux-gnu (64-bit)
     ## Running under: Debian GNU/Linux 10 (buster)
     ## 
@@ -671,23 +654,24 @@ sessionInfo()
     ## [5] gplots_3.1.1         ape_5.4-1            ggplot2_3.3.2        BiocStyle_2.18.0    
     ## 
     ## loaded via a namespace (and not attached):
-    ##  [1] Rcpp_1.0.5          pillar_1.4.7        compiler_4.0.4      BiocManager_1.30.10
-    ##  [5] bitops_1.0-6        tools_4.0.4         digest_0.6.27       evaluate_0.14      
-    ##  [9] lifecycle_0.2.0     tibble_3.0.4        gtable_0.3.0        nlme_3.1-149       
-    ## [13] lattice_0.20-41     pkgconfig_2.0.3     rlang_0.4.8         yaml_2.2.1         
-    ## [17] parallel_4.0.4      blogdown_1.1.7      xfun_0.20           withr_2.3.0        
-    ## [21] stringr_1.4.0       dplyr_1.0.2         knitr_1.30          caTools_1.18.1     
-    ## [25] gtools_3.8.2        generics_0.1.0      vctrs_0.3.5         grid_4.0.4         
-    ## [29] tidyselect_1.1.0    glue_1.4.2          R6_2.5.0            rmarkdown_2.5      
-    ## [33] bookdown_0.21       purrr_0.3.4         magrittr_2.0.1      codetools_0.2-18   
-    ## [37] scales_1.1.1        ellipsis_0.3.1      htmltools_0.5.1.1   colorspace_2.0-0   
-    ## [41] KernSmooth_2.23-18  stringi_1.5.3       munsell_0.5.0       crayon_1.3.4
+    ##  [1] Rcpp_1.0.5          bslib_0.2.4         compiler_4.0.5      pillar_1.4.7       
+    ##  [5] BiocManager_1.30.10 jquerylib_0.1.3     bitops_1.0-6        tools_4.0.5        
+    ##  [9] digest_0.6.27       nlme_3.1-149        lattice_0.20-41     jsonlite_1.7.1     
+    ## [13] evaluate_0.14       lifecycle_0.2.0     tibble_3.0.4        gtable_0.3.0       
+    ## [17] pkgconfig_2.0.3     rlang_0.4.8         parallel_4.0.5      yaml_2.2.1         
+    ## [21] blogdown_1.2        xfun_0.22           withr_2.3.0         stringr_1.4.0      
+    ## [25] dplyr_1.0.2         knitr_1.30          caTools_1.18.1      gtools_3.8.2       
+    ## [29] generics_0.1.0      sass_0.3.1          vctrs_0.3.5         grid_4.0.5         
+    ## [33] tidyselect_1.1.0    glue_1.4.2          R6_2.5.0            rmarkdown_2.7      
+    ## [37] bookdown_0.21       purrr_0.3.4         magrittr_2.0.1      codetools_0.2-18   
+    ## [41] scales_1.1.1        htmltools_0.5.1.1   ellipsis_0.3.1      colorspace_2.0-0   
+    ## [45] KernSmooth_2.23-18  stringi_1.5.3       munsell_0.5.0       crayon_1.3.4
 
 ## References
 
-<div id="refs" class="references">
+<div id="refs" class="references csl-bib-body hanging-indent">
 
-<div id="ref-Hathaway1996-hu">
+<div id="ref-Hathaway1996-hu" class="csl-entry">
 
 Hathaway, R J, J C Bezdek, and N R Pal. 1996. “Sequential Competitive Learning and the Fuzzy c-Means Clustering Algorithms.” *Neural Netw.* 9 (5): 787–96. <http://www.hubmed.org/display.cgi?uids=12662563>.
 

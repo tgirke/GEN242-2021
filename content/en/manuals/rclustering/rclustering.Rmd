@@ -21,7 +21,7 @@ type: docs
 
 <!--
 - Compile from command-line
-Rscript -e "rmarkdown::render('Rclustering.Rmd', c('html_document'), clean=F); knitr::knit('Rclustering.Rmd', tangle=TRUE)"; Rscript ../md2jekyll.R Rclustering.knit.md 16; Rscript -e "rmarkdown::render('Rclustering.Rmd', c('pdf_document'))"
+Rscript -e "rmarkdown::render('rclustering.Rmd', c('html_document'), clean=F); knitr::knit('rclustering.Rmd', tangle=TRUE)"
 -->
 
 ```{r style, echo = FALSE, results = 'asis'}
@@ -54,8 +54,8 @@ suppressPackageStartupMessages({
     - Integration with many other data analysis tools
 
 - Useful Links
-    - [Cluster Task Views](http://cran.cnr.berkeley.edu/web/views/Cluster.html)
-    - [Machine Learning Task Views](http://cran.cnr.berkeley.edu/web/views/MachineLearning.html)
+    - [Cluster Task Views](https://cran.r-project.org/web/views/Cluster.html)
+    - [Machine Learning Task Views](https://cran.r-project.org/web/views/MachineLearning.html)
     - [UCR Manual](http://manuals.bioinformatics.ucr.edu/home/R_BioCondManual#TOC-Clustering-and-Data-Mining-in-R)
 
 ## Data Preprocessing

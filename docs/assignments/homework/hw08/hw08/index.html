@@ -22,12 +22,12 @@
 To get started with the following homework tasks, log in to your HPCC account and create under the course project path /bigdata/gen242/shared/&lt;user_name&gt; assigned to you the corresponding workflow template using the genWorkenvir function." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/assignments/homework/hw08/hw08/" />
-<meta property="article:modified_time" content="2021-05-02T15:32:27-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-05-02T15:36:13-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="HW8 - R Markdown Template of Course Project">
 <meta itemprop="description" content="Render R Markdown (Rmd) of your project Students will choose for this assignment the Rmd template of the workflow they are expected to complete for their challenge project, meaning either the RNA-Seq or the ChIP-Seq workflow that were both covered in class.
 To get started with the following homework tasks, log in to your HPCC account and create under the course project path /bigdata/gen242/shared/&lt;user_name&gt; assigned to you the corresponding workflow template using the genWorkenvir function.">
-<meta itemprop="dateModified" content="2021-05-02T15:32:27-07:00" />
-<meta itemprop="wordCount" content="402">
+<meta itemprop="dateModified" content="2021-05-02T15:36:13-07:00" />
+<meta itemprop="wordCount" content="405">
 
 
 
@@ -432,9 +432,17 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../../../tutorials/tutorial_09"
+              <a class="dropdown-item" href="../../../../tutorials/gsea/gesa/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
-                 VAR-Seq Workflow (T10)
+                 Gene Set Enrichment (T10)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../../tutorials/rclustering/rclustering/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Cluster Analysis and Data Mining (T11)
               </a>
           	
           	  
@@ -443,14 +451,6 @@ if (!doNotTrack) {
               <a class="dropdown-item" href="../../../../tutorials/tutorial_10"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Graphics and Visualization (T11)
-              </a>
-          	
-          	  
-              
-              
-              <a class="dropdown-item" href="../../../../tutorials/tutorial_12"
-              style="padding-left: 1rem; font-weight: calc(3/3*500)">
-                 Cluster Analysis and Data Mining (T11)
               </a>
           	
           </div>
@@ -546,6 +546,14 @@ if (!doNotTrack) {
               <a class="dropdown-item" href="../../../../manuals/spchipseq/spchipseq/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  ChIP-Seq Workflow
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../../manuals/rclustering/rclustering/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Cluster Analysis and Data Mining
               </a>
           	
           	  
@@ -871,7 +879,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.e042a75988d36bdcfe30bde4909a0701.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.1e74dca96d6cc9f9395fa0bff72dbac2.json"
   data-offline-search-base-href="../../../../"
   data-offline-search-max-results="10"
 >
@@ -903,7 +911,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.e042a75988d36bdcfe30bde4909a0701.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.1e74dca96d6cc9f9395fa0bff72dbac2.json"
   data-offline-search-base-href="../../../../"
   data-offline-search-max-results="10"
 >
@@ -1308,12 +1316,12 @@ Classroom as instructed below. The changes to include in the R Markdown are:</p>
 then cite it in the Rmd file so that the proper citation shows up in the text and the corresponding reference is added to the reference list. Note, references in BibTeX
 format can be obtained from Google Scholar, Paperpile or most other reference management software.</li>
 <li>Add a mathematical equation to the challenge project section.</li>
-<li>Evaluate an R expression in the text of your challenge project, <em>e.g.</em> mathematical or number from an existing R ojeckt such as mean value of the first column of
+<li>Evaluate an R expression in the text of your challenge project, <em>e.g.</em> mathematical or number from an existing R oject such as mean value of the first column of
 the iris <code>data.frame</code>.</li>
 <li>Add a code chunk that auto-generates the barplot for HW3C. This barplot should be embedded in the rendered report without saving it intermediately to a file.</li>
 <li>Add an interactive table with the the <code>DT</code> package that includes the iris <code>data.frame</code> in the report</li>
-<li>Use the <code>rmarkdown::render()</code> function to render the report to HTML and PDF format. Important, for this assignment it is not relevant to evaluate the code chunks for the
-actual analysis steps. Only the ones for the above tasks are important.</li>
+<li>Use the <code>rmarkdown::render()</code> function to render the report to HTML and PDF format. Important: for this assignment it is not relevant to evaluate the code chunks for the
+actual analysis steps of the workflow. Only the ones for the above tasks are required.</li>
 <li>Submit the Rmd, PDF and HTML file for the report to the corresponding repos on GitHub Classroom (see below).</li>
 </ol>
 <h2 id="homework-submission">Homework submission</h2>
@@ -1325,7 +1333,7 @@ actual analysis steps. Only the ones for the above tasks are important.</li>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-02: <a  href="https://github.com/tgirke/GEN242//commit/113661bfb4128db747c9d00a08b90081772616f3">some edits (113661bfb)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-02: <a  href="https://github.com/tgirke/GEN242//commit/c74751e52d510b5081b6b5c4d797cbc1c2a6d9e6">some edits (c74751e52)</a>
 </div>
 </div>
 

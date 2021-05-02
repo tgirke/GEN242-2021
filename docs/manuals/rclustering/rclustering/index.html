@@ -21,11 +21,11 @@
 <meta property="og:description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Introduction  What is Clustering?  Clustering is the classification of data objects into similarity groups (clusters) according to a defined distance measure. It is used in many fields, such as machine learning, data mining, pattern recognition, image analysis, genomics, systems biology, etc. Machine learning typically regards data clustering as a form of unsupervised learning." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/manuals/rclustering/rclustering/" />
-<meta property="article:modified_time" content="2021-03-15T15:42:42-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Cluster Analysis in R">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Introduction  What is Clustering?  Clustering is the classification of data objects into similarity groups (clusters) according to a defined distance measure. It is used in many fields, such as machine learning, data mining, pattern recognition, image analysis, genomics, systems biology, etc. Machine learning typically regards data clustering as a form of unsupervised learning.">
-<meta itemprop="dateModified" content="2021-03-15T15:42:42-07:00" />
-<meta itemprop="wordCount" content="2689">
+
+<meta itemprop="wordCount" content="2695">
 
 
 
@@ -429,9 +429,17 @@ if (!doNotTrack) {
           	  
               
               
-              <a class="dropdown-item" href="../../../tutorials/tutorial_09"
+              <a class="dropdown-item" href="../../../tutorials/gsea/gesa/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
-                 VAR-Seq Workflow (T10)
+                 Gene Set Enrichment (T10)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/rclustering/rclustering/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Cluster Analysis and Data Mining (T11)
               </a>
           	
           	  
@@ -440,14 +448,6 @@ if (!doNotTrack) {
               <a class="dropdown-item" href="../../../tutorials/tutorial_10"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  Graphics and Visualization (T11)
-              </a>
-          	
-          	  
-              
-              
-              <a class="dropdown-item" href="../../../tutorials/tutorial_12"
-              style="padding-left: 1rem; font-weight: calc(3/3*500)">
-                 Cluster Analysis and Data Mining (T11)
               </a>
           	
           </div>
@@ -543,6 +543,14 @@ if (!doNotTrack) {
               <a class="dropdown-item" href="../../../manuals/spchipseq/spchipseq/"
               style="padding-left: 1rem; font-weight: calc(3/3*500)">
                  ChIP-Seq Workflow
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../manuals/rclustering/rclustering/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Cluster Analysis and Data Mining
               </a>
           	
           	  
@@ -868,7 +876,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.e042a75988d36bdcfe30bde4909a0701.json"
+  data-offline-search-index-json-src="../../../offline-search-index.1e74dca96d6cc9f9395fa0bff72dbac2.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -900,7 +908,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.e042a75988d36bdcfe30bde4909a0701.json"
+  data-offline-search-index-json-src="../../../offline-search-index.1e74dca96d6cc9f9395fa0bff72dbac2.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1069,11 +1077,11 @@ if (!doNotTrack) {
 
     
     
-      <a href="https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/manuals/rclustering/Rclustering.markdown" target="_blank" class="source-link"><i class="fa fa-code fa-fw"></i> View Rmd source</a>
+      <a href="https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/manuals/rclustering/rclustering.Rmd" target="_blank" class="source-link"><i class="fa fa-code fa-fw"></i> View Rmd source</a>
     
 
-    <a href="https://github.com/tgirke/GEN242//edit/main/content/en/manuals/rclustering/Rclustering.markdown" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-    <a href="https://github.com/tgirke/GEN242//new/main/content/en/manuals/rclustering/Rclustering.markdown?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" target="_blank"><i class="fa fa-edit fa-fw"></i> Create child page</a>
+    <a href="https://github.com/tgirke/GEN242//edit/main/content/en/manuals/rclustering/rclustering.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+    <a href="https://github.com/tgirke/GEN242//new/main/content/en/manuals/rclustering/rclustering.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" target="_blank"><i class="fa fa-edit fa-fw"></i> Create child page</a>
     <a href="https://github.com/tgirke/GEN242//issues/new?title=Cluster%20Analysis%20in%20R" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
     
       
@@ -1236,7 +1244,7 @@ if (!doNotTrack) {
            
 	<!--
 - Compile from command-line
-Rscript -e "rmarkdown::render('Rclustering.Rmd', c('html_document'), clean=F); knitr::knit('Rclustering.Rmd', tangle=TRUE)"; Rscript ../md2jekyll.R Rclustering.knit.md 16; Rscript -e "rmarkdown::render('Rclustering.Rmd', c('pdf_document'))"
+Rscript -e "rmarkdown::render('rclustering.Rmd', c('html_document'), clean=F); knitr::knit('rclustering.Rmd', tangle=TRUE)"
 -->
 <script type="text/javascript">
 document.addEventListener("DOMContentLoaded", function() {
@@ -1270,8 +1278,8 @@ document.addEventListener("DOMContentLoaded", function() {
 </li>
 <li>Useful Links
 <ul>
-<li><a href="http://cran.cnr.berkeley.edu/web/views/Cluster.html">Cluster Task Views</a></li>
-<li><a href="http://cran.cnr.berkeley.edu/web/views/MachineLearning.html">Machine Learning Task Views</a></li>
+<li><a href="https://cran.r-project.org/web/views/Cluster.html">Cluster Task Views</a></li>
+<li><a href="https://cran.r-project.org/web/views/MachineLearning.html">Machine Learning Task Views</a></li>
 <li><a href="http://manuals.bioinformatics.ucr.edu/home/R_BioCondManual#TOC-Clustering-and-Data-Mining-in-R">UCR Manual</a></li>
 </ul>
 </li>
@@ -1280,36 +1288,42 @@ document.addEventListener("DOMContentLoaded", function() {
 <h3 id="data-transformations">Data Transformations</h3>
 <p>Choice depends on data set!</p>
 <ul>
-<li>Center and standardize
+<li>
+<p>Center and standardize</p>
 <ol>
 <li>Center: subtract from each value the mean of the corresponding vector</li>
 <li>Standardize: devide by standard deviation</li>
 </ol>
-<!-- end list -->
 <ul>
 <li>Result: <em>Mean = 0</em> and <em>STDEV = 1</em></li>
 </ul>
 </li>
-<li>Center and scale with the <code>scale()</code> function
+<li>
+<p>Center and scale with the <code>scale()</code> function</p>
 <ol>
 <li>Center: subtract from each value the mean of the corresponding vector</li>
 <li>Scale: divide centered vector by their <em>root mean square</em> (<em>rms</em>):
-[ x_{rms} = \sqrt[]{\frac{1}{n-1}\sum_{i=1}^{n}{x_{i}{^2}}} ]</li>
+$$ x_{rms} = \sqrt[]{\frac{1}{n-1}\sum_{i=1}^{n}{x_{i}{^2}}} $$</li>
 </ol>
-<!-- end list -->
 <ul>
 <li>Result: <em>Mean = 0</em> and <em>STDEV = 1</em></li>
 </ul>
 </li>
-<li>Log transformation</li>
-<li>Rank transformation: replace measured values by ranks</li>
-<li>No transformation</li>
+<li>
+<p>Log transformation</p>
+</li>
+<li>
+<p>Rank transformation: replace measured values by ranks</p>
+</li>
+<li>
+<p>No transformation</p>
+</li>
 </ul>
 <h3 id="distance-methods">Distance Methods</h3>
 <p>List of most common ones!</p>
 <ul>
 <li>Euclidean distance for two profiles <em>X</em> and <em>Y</em>:
-[ d(X,Y) = \sqrt[]{ \sum_{i=1}^{n}{(x_{i}-y_{i})^2} }]
+$$ d(X,Y) = \sqrt[]{ \sum_{i=1}^{n}{(x_{i}-y_{i})^2} }$$
 <ul>
 <li><strong>Disadvantages</strong>: not scale invariant, not for negative correlations</li>
 </ul>
@@ -1339,7 +1353,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </ul>
 <h3 id="cluster-linkage">Cluster Linkage</h3>
 <center>
-<p><img title="cluster linkage" src="../images/linkage.png" ></p>
+<img title="cluster linkage" src="../images/linkage.png" >
 </center>
 <h2 id="clustering-algorithms">Clustering Algorithms</h2>
 <h3 id="hierarchical-clustering">Hierarchical Clustering</h3>
@@ -1352,11 +1366,11 @@ document.addEventListener("DOMContentLoaded", function() {
 </ol>
 <h5 id="hierarchical-clustering-agglomerative-approach">Hierarchical clustering: agglomerative Approach</h5>
 <center>
-<p><img title="hierarchical clustering" src="../images/hierarchical.png" ></p>
+<img title="hierarchical clustering" src="../images/hierarchical.png" >
 </center>
 <h5 id="hierarchical-clustering-with-heatmap">Hierarchical Clustering with Heatmap</h5>
 <center>
-<p><img title="heatmap" src="../images/heatmap.png" ></p>
+<img title="heatmap" src="../images/heatmap.png" >
 </center>
 <ul>
 <li>A heatmap is a color coded table. To visually identify patterns, the rows and columns of a heatmap are often sorted by hierarchical clustering trees.</li>
@@ -1387,7 +1401,7 @@ document.addEventListener("DOMContentLoaded", function() {
 y &lt;- matrix(rnorm(500), 100, 5, dimnames=list(paste(&quot;g&quot;, 1:100, sep=&quot;&quot;), paste(&quot;t&quot;, 1:5, sep=&quot;&quot;))) 
 heatmap.2(y) # Shortcut to final result
 </code></pre>
-<p><img src="../../../en/manuals/rclustering/Rclustering_files/figure-html/hclust_heatmap_example-1.png" width="672" /></p>
+<p><img src="../../../en/manuals/rclustering/rclustering_files/figure-html/hclust_heatmap_example-1.png" width="672" /></p>
 <h5 id="stepwise-approach-with-tree-cutting">Stepwise Approach with Tree Cutting</h5>
 <pre><code class="language-r">## Row- and column-wise clustering 
 hr &lt;- hclust(as.dist(1-cor(t(y), method=&quot;pearson&quot;)), method=&quot;complete&quot;)
@@ -1398,7 +1412,7 @@ mycl &lt;- cutree(hr, h=max(hr$height)/1.5); mycolhc &lt;- rainbow(length(unique
 mycol &lt;- colorpanel(40, &quot;darkblue&quot;, &quot;yellow&quot;, &quot;white&quot;) # or try redgreen(75)
 heatmap.2(y, Rowv=as.dendrogram(hr), Colv=as.dendrogram(hc), col=mycol, scale=&quot;row&quot;, density.info=&quot;none&quot;, trace=&quot;none&quot;, RowSideColors=mycolhc) 
 </code></pre>
-<p><img src="../../../en/manuals/rclustering/Rclustering_files/figure-html/hclust_heatmap_example_setpwise-1.png" width="672" /></p>
+<p><img src="../../../en/manuals/rclustering/rclustering_files/figure-html/hclust_heatmap_example_setpwise-1.png" width="672" /></p>
 <h3 id="k-means-clustering">K-Means Clustering</h3>
 <h4 id="overview-of-algorithm-1">Overview of algorithm</h4>
 <ol>
@@ -1410,22 +1424,22 @@ heatmap.2(y, Rowv=as.dendrogram(hr), Colv=as.dendrogram(hc), col=mycol, scale=&q
 <li>Repeat until clusters assignments are stable</li>
 </ol>
 <center>
-<p><img title="kmeans" src="../images/kmeans.png" ></p>
+<img title="kmeans" src="../images/kmeans.png" >
 </center>
 <h4 id="examples-1">Examples</h4>
 <pre><code class="language-r">km &lt;- kmeans(t(scale(t(y))), 3)
 km$cluster 
 </code></pre>
 <pre><code>##   g1   g2   g3   g4   g5   g6   g7   g8   g9  g10  g11  g12  g13  g14  g15  g16  g17  g18  g19  g20 
-##    2    3    1    1    1    1    1    3    3    3    3    1    1    2    3    3    3    2    1    3 
+##    3    3    1    1    3    1    1    2    3    2    2    1    2    3    1    3    3    3    3    2 
 ##  g21  g22  g23  g24  g25  g26  g27  g28  g29  g30  g31  g32  g33  g34  g35  g36  g37  g38  g39  g40 
-##    1    3    3    2    1    3    1    2    3    1    3    3    3    1    3    2    2    1    2    3 
+##    3    2    3    2    2    3    2    1    1    1    2    2    3    3    1    1    3    3    2    3 
 ##  g41  g42  g43  g44  g45  g46  g47  g48  g49  g50  g51  g52  g53  g54  g55  g56  g57  g58  g59  g60 
-##    1    1    3    3    3    3    1    1    2    1    2    2    3    1    3    2    1    1    2    3 
+##    1    2    2    3    1    1    3    3    3    2    1    2    2    3    3    3    3    2    2    2 
 ##  g61  g62  g63  g64  g65  g66  g67  g68  g69  g70  g71  g72  g73  g74  g75  g76  g77  g78  g79  g80 
-##    1    3    3    3    2    2    2    3    3    3    3    3    2    3    3    1    1    2    1    1 
+##    3    1    1    1    3    1    3    2    2    2    3    2    3    2    1    3    2    2    2    3 
 ##  g81  g82  g83  g84  g85  g86  g87  g88  g89  g90  g91  g92  g93  g94  g95  g96  g97  g98  g99 g100 
-##    1    2    1    2    1    1    3    3    1    3    1    3    3    2    2    1    3    2    2    2
+##    1    1    1    2    2    3    3    1    1    3    2    3    2    3    1    3    2    3    1    3
 </code></pre>
 <h3 id="fuzzy-c-means-clustering">Fuzzy C-Means Clustering</h3>
 <ul>
@@ -1441,23 +1455,23 @@ fannyy &lt;- fanny(y, k=4, metric = &quot;euclidean&quot;, memb.exp = 1.2)
 round(fannyy$membership, 2)[1:4,]
 </code></pre>
 <pre><code>##    [,1] [,2] [,3] [,4]
-## g1 0.57 0.08 0.14 0.21
-## g2 0.06 0.80 0.08 0.06
-## g3 0.08 0.39 0.15 0.38
-## g4 0.03 0.02 0.83 0.13
+## g1 0.81 0.03 0.15 0.01
+## g2 0.84 0.03 0.11 0.02
+## g3 0.02 0.71 0.19 0.07
+## g4 0.09 0.04 0.80 0.06
 </code></pre>
 <pre><code class="language-r">fannyy$clustering 
 </code></pre>
 <pre><code>##   g1   g2   g3   g4   g5   g6   g7   g8   g9  g10  g11  g12  g13  g14  g15  g16  g17  g18  g19  g20 
-##    1    2    2    3    4    2    4    2    1    2    1    4    4    1    2    3    2    3    4    2 
+##    1    1    2    3    1    3    3    2    1    1    2    3    2    4    4    1    1    1    4    2 
 ##  g21  g22  g23  g24  g25  g26  g27  g28  g29  g30  g31  g32  g33  g34  g35  g36  g37  g38  g39  g40 
-##    4    2    2    4    4    3    3    1    2    4    1    1    2    2    2    1    1    4    4    2 
+##    4    4    1    4    4    1    1    3    4    2    2    2    1    4    4    2    4    4    2    3 
 ##  g41  g42  g43  g44  g45  g46  g47  g48  g49  g50  g51  g52  g53  g54  g55  g56  g57  g58  g59  g60 
-##    3    4    3    2    2    2    3    4    4    2    1    4    1    2    3    1    2    4    1    2 
+##    3    2    4    3    3    2    1    3    4    2    4    1    2    1    1    4    4    4    4    2 
 ##  g61  g62  g63  g64  g65  g66  g67  g68  g69  g70  g71  g72  g73  g74  g75  g76  g77  g78  g79  g80 
-##    3    3    3    1    1    4    4    2    2    2    1    3    1    2    3    4    2    1    3    3 
+##    3    3    4    3    3    3    3    2    2    4    4    4    3    1    3    1    1    2    2    4 
 ##  g81  g82  g83  g84  g85  g86  g87  g88  g89  g90  g91  g92  g93  g94  g95  g96  g97  g98  g99 g100 
-##    4    4    4    1    4    2    2    2    3    2    4    2    2    4    1    3    3    3    1    1
+##    3    3    3    2    4    4    1    4    3    3    1    1    1    1    4    1    2    1    3    1
 </code></pre>
 <h3 id="principal-component-analysis-pca">Principal Component Analysis (PCA)</h3>
 <p>Principal components analysis (PCA) is a data reduction technique that allows to simplify multidimensional data sets to 2 or 3 dimensions for plotting purposes and visual variance analysis.</p>
@@ -1480,7 +1494,7 @@ round(fannyy$membership, 2)[1:4,]
 <li>Continue process until the necessary number of principal components is obtained</li>
 </ul>
 <center>
-<p><img title="pca" src="../images/pca.png" ></p>
+<img title="pca" src="../images/pca.png" >
 </center>
 <h4 id="example">Example</h4>
 <pre><code class="language-r">pca &lt;- prcomp(y, scale=T)
@@ -1488,14 +1502,14 @@ summary(pca) # Prints variance summary for all principal components
 </code></pre>
 <pre><code>## Importance of components:
 ##                           PC1    PC2    PC3    PC4    PC5
-## Standard deviation     1.1151 1.0232 1.0133 0.9760 0.8545
-## Proportion of Variance 0.2487 0.2094 0.2054 0.1905 0.1460
-## Cumulative Proportion  0.2487 0.4581 0.6634 0.8540 1.0000
+## Standard deviation     1.1557 1.1185 1.0100 0.8769 0.7901
+## Proportion of Variance 0.2671 0.2502 0.2040 0.1538 0.1249
+## Cumulative Proportion  0.2671 0.5173 0.7213 0.8751 1.0000
 </code></pre>
 <pre><code class="language-r">plot(pca$x, pch=20, col=&quot;blue&quot;, type=&quot;n&quot;) # To plot dots, drop type=&quot;n&quot;
 text(pca$x, rownames(pca$x), cex=0.8)
 </code></pre>
-<p><img src="../../../en/manuals/rclustering/Rclustering_files/figure-html/pca_example-1.png" width="672" />
+<p><img src="../../../en/manuals/rclustering/rclustering_files/figure-html/pca_example-1.png" width="672" />
 1st and 2nd principal components explain x% of variance in data.</p>
 <h3 id="multidimensional-scaling-mds">Multidimensional Scaling (MDS)</h3>
 <ul>
@@ -1509,14 +1523,14 @@ text(pca$x, rownames(pca$x), cex=0.8)
 plot(loc[,1], -loc[,2], type=&quot;n&quot;, xlab=&quot;&quot;, ylab=&quot;&quot;, main=&quot;cmdscale(eurodist)&quot;)
 text(loc[,1], -loc[,2], rownames(loc), cex=0.8) 
 </code></pre>
-<p><img src="../../../en/manuals/rclustering/Rclustering_files/figure-html/mds_example-1.png" width="672" /></p>
+<p><img src="../../../en/manuals/rclustering/rclustering_files/figure-html/mds_example-1.png" width="672" /></p>
 <h3 id="biclustering">Biclustering</h3>
 <p>Finds in matrix subgroups of rows and columns which are as similar as possible to each other and as different as possible to the remaining data points.</p>
 <center>
-<p><img title="pca" src="../images/biclust.png"  ></p>
+<img title="pca" src="../images/biclust.png"  >
 </center>
 <center>
-<p>Unclustered ————————–&gt; Clustered</p>
+Unclustered ————————–&gt; Clustered
 </center>
 <h3 id="similarity-measures-for-clusters">Similarity Measures for Clusters</h3>
 <ul>
@@ -1536,10 +1550,10 @@ ci[2:3] # Returns Jaccard index and variables used to compute it
 </code></pre>
 <pre><code>## $variables
 ##    a    b    c 
-## 8793 5814 5296 
+## 4982 8034 8594 
 ## 
 ## $Jaccard_Index
-## [1] 0.4417927
+## [1] 0.2305414
 </code></pre>
 <h5 id="clustering-cluster-sets-with-jaccard-index">Clustering cluster sets with Jaccard index</h5>
 <p>The following example shows how one can cluster entire cluster result sets. First, 10 sample cluster results are created with Clara using k-values from 3 to 12. The results are stored as named clustering vectors in a list object. Then a nested sapply loop is used to generate a similarity matrix of Jaccard Indices for the clustering results. After converting the result into a distance matrix, hierarchical clustering is performed with <code>hclust</code>.}</p>
@@ -1548,7 +1562,7 @@ d &lt;- sapply(names(clVlist), function(x) sapply(names(clVlist), function(y) ci
 hv &lt;- hclust(as.dist(1-d))
 plot(as.dendrogram(hv), edgePar=list(col=3, lwd=4), horiz=T, main=&quot;Similarities of 10 Clara Clustering Results for k: 3-12&quot;) 
 </code></pre>
-<p><img src="../../../en/manuals/rclustering/Rclustering_files/figure-html/jaccard_index_clustering-1.png" width="672" /></p>
+<p><img src="../../../en/manuals/rclustering/rclustering_files/figure-html/jaccard_index_clustering-1.png" width="672" /></p>
 <ul>
 <li>Remember: there are many additional clustering algorithms.</li>
 <li>Additional details can be found in the Clustering Section of the <a href="http://manuals.bioinformatics.ucr.edu/home/R_BioCondManual#TOC-Clustering-and-Data-Mining-in-R">R/Bioconductor Manual</a>.</li>
@@ -1611,18 +1625,18 @@ names(hr)
 </code></pre>
 <pre><code class="language-r">par(mfrow = c(1, 2)); plot(hr, hang = 0.1); plot(hr, hang = -1) 
 </code></pre>
-<p><img src="../../../en/manuals/rclustering/Rclustering_files/figure-html/hclust1-1.png" width="672" /></p>
+<p><img src="../../../en/manuals/rclustering/rclustering_files/figure-html/hclust1-1.png" width="672" /></p>
 <h4 id="tree-plotting-i">Tree plotting I</h4>
 <pre><code class="language-r">plot(as.dendrogram(hr), edgePar=list(col=3, lwd=4), horiz=T) 
 </code></pre>
-<p><img src="../../../en/manuals/rclustering/Rclustering_files/figure-html/hclust_plot_tree1-1.png" width="672" /></p>
+<p><img src="../../../en/manuals/rclustering/rclustering_files/figure-html/hclust_plot_tree1-1.png" width="672" /></p>
 <h4 id="tree-plotting-ii">Tree plotting II</h4>
 <p>The <code>ape</code> library provides more advanced features for tree plotting</p>
 <pre><code class="language-r">library(ape) 
 plot.phylo(as.phylo(hr), type=&quot;p&quot;, edge.col=4, edge.width=2, 
            show.node.label=TRUE, no.margin=TRUE)
 </code></pre>
-<p><img src="../../../en/manuals/rclustering/Rclustering_files/figure-html/hclust_plot_tree2-1.png" width="672" /></p>
+<p><img src="../../../en/manuals/rclustering/rclustering_files/figure-html/hclust_plot_tree2-1.png" width="672" /></p>
 <h3 id="tree-cutting">Tree Cutting</h3>
 <p>Accessing information in <em>hclust</em> objects</p>
 <pre><code class="language-r">hr
@@ -1652,13 +1666,13 @@ mycl[hr$labels[hr$order]]
 <pre><code class="language-r">library(gplots)
 heatmap.2(y, col=redgreen(75))
 </code></pre>
-<p><img src="../../../en/manuals/rclustering/Rclustering_files/figure-html/heatmap2a-1.png" width="672" /></p>
+<p><img src="../../../en/manuals/rclustering/rclustering_files/figure-html/heatmap2a-1.png" width="672" /></p>
 <h4 id="with-pheatmap">With <code>pheatmap</code></h4>
 <p>All in one step: clustering and heatmap plotting</p>
 <pre><code class="language-r">library(pheatmap); library(&quot;RColorBrewer&quot;)
 pheatmap(y, color=brewer.pal(9,&quot;Blues&quot;))
 </code></pre>
-<p><img src="../../../en/manuals/rclustering/Rclustering_files/figure-html/pheatmap-1.png" width="672" /></p>
+<p><img src="../../../en/manuals/rclustering/rclustering_files/figure-html/pheatmap-1.png" width="672" /></p>
 <h4 id="customizing-heatmaps">Customizing heatmaps</h4>
 <p>Customizes row and column clustering and shows tree cutting result in row color bar. Additional color schemes can be found <a href="http://manuals.bioinformatics.ucr.edu/home/R_BioCondManual#clustering_hc_submap">here</a>.</p>
 <pre><code class="language-r">hc &lt;- hclust(as.dist(1-cor(y, method=&quot;spearman&quot;)), method=&quot;complete&quot;)
@@ -1667,7 +1681,7 @@ heatmap.2(y, Rowv=as.dendrogram(hr), Colv=as.dendrogram(hc), col=mycol,
           scale=&quot;row&quot;, density.info=&quot;none&quot;, trace=&quot;none&quot;, 
           RowSideColors=as.character(mycl))
 </code></pre>
-<p><img src="../../../en/manuals/rclustering/Rclustering_files/figure-html/heatmap2_custom-1.png" width="672" /></p>
+<p><img src="../../../en/manuals/rclustering/rclustering_files/figure-html/heatmap2_custom-1.png" width="672" /></p>
 <h3 id="k-means-clustering-with-pam">K-Means Clustering with PAM</h3>
 <p>Runs K-means clustering with PAM (partitioning around medoids) algorithm and shows result in color bar of hierarchical clustering result from before.</p>
 <pre><code class="language-r">library(cluster)
@@ -1681,7 +1695,7 @@ pamy &lt;- pam(d, 4)
           scale=&quot;row&quot;, density.info=&quot;none&quot;, trace=&quot;none&quot;, 
           RowSideColors=as.character(kmcol))
 </code></pre>
-<p><img src="../../../en/manuals/rclustering/Rclustering_files/figure-html/kmeans2-1.png" width="672" /></p>
+<p><img src="../../../en/manuals/rclustering/rclustering_files/figure-html/kmeans2-1.png" width="672" /></p>
 <h3 id="k-means-fuzzy-clustering">K-Means Fuzzy Clustering</h3>
 <p>Performs k-means fuzzy clustering</p>
 <pre><code class="language-r">library(cluster)
@@ -1715,7 +1729,7 @@ apply(fannyyMA, 1, function(x) paste(which(x), collapse=&quot;_&quot;))
 plot(loc[,1], -loc[,2], type=&quot;n&quot;, xlab=&quot;&quot;, ylab=&quot;&quot;, main=&quot;cmdscale(eurodist)&quot;)
 text(loc[,1], -loc[,2], rownames(loc), cex=0.8) 
 </code></pre>
-<p><img src="../../../en/manuals/rclustering/Rclustering_files/figure-html/cmdscale2-1.png" width="672" /></p>
+<p><img src="../../../en/manuals/rclustering/rclustering_files/figure-html/cmdscale2-1.png" width="672" /></p>
 <h3 id="principal-component-analysis-pca-1">Principal Component Analysis (PCA)</h3>
 <p>Performs PCA analysis after scaling the data. It returns a list with class <code>prcomp</code> that contains five components: (1) the standard deviations (sdev) of the principal components, (2) the matrix of eigenvectors (rotation), (3) the principal component data (x), (4) the centering (center) and (5) scaling (scale) used.</p>
 <pre><code class="language-r">library(scatterplot3d)
@@ -1734,13 +1748,13 @@ names(pca)
 </code></pre>
 <pre><code class="language-r">scatterplot3d(pca$x[,1:3], pch=20, color=&quot;blue&quot;) 
 </code></pre>
-<p><img src="../../../en/manuals/rclustering/Rclustering_files/figure-html/pca2-1.png" width="672" /></p>
+<p><img src="../../../en/manuals/rclustering/rclustering_files/figure-html/pca2-1.png" width="672" /></p>
 <h3 id="additional-exercises">Additional Exercises</h3>
 <p>See <a href="http://manuals.bioinformatics.ucr.edu/home/R_BioCondManual#TOC-Clustering-Exercises">here</a></p>
 <h2 id="version-information">Version Information</h2>
 <pre><code class="language-r">sessionInfo()
 </code></pre>
-<pre><code>## R version 4.0.4 (2021-02-15)
+<pre><code>## R version 4.0.5 (2021-03-31)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
 ## Running under: Debian GNU/Linux 10 (buster)
 ## 
@@ -1762,28 +1776,29 @@ names(pca)
 ## [5] gplots_3.1.1         ape_5.4-1            ggplot2_3.3.2        BiocStyle_2.18.0    
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] Rcpp_1.0.5          pillar_1.4.7        compiler_4.0.4      BiocManager_1.30.10
-##  [5] bitops_1.0-6        tools_4.0.4         digest_0.6.27       evaluate_0.14      
-##  [9] lifecycle_0.2.0     tibble_3.0.4        gtable_0.3.0        nlme_3.1-149       
-## [13] lattice_0.20-41     pkgconfig_2.0.3     rlang_0.4.8         yaml_2.2.1         
-## [17] parallel_4.0.4      blogdown_1.1.7      xfun_0.20           withr_2.3.0        
-## [21] stringr_1.4.0       dplyr_1.0.2         knitr_1.30          caTools_1.18.1     
-## [25] gtools_3.8.2        generics_0.1.0      vctrs_0.3.5         grid_4.0.4         
-## [29] tidyselect_1.1.0    glue_1.4.2          R6_2.5.0            rmarkdown_2.5      
-## [33] bookdown_0.21       purrr_0.3.4         magrittr_2.0.1      codetools_0.2-18   
-## [37] scales_1.1.1        ellipsis_0.3.1      htmltools_0.5.1.1   colorspace_2.0-0   
-## [41] KernSmooth_2.23-18  stringi_1.5.3       munsell_0.5.0       crayon_1.3.4
+##  [1] Rcpp_1.0.5          bslib_0.2.4         compiler_4.0.5      pillar_1.4.7       
+##  [5] BiocManager_1.30.10 jquerylib_0.1.3     bitops_1.0-6        tools_4.0.5        
+##  [9] digest_0.6.27       nlme_3.1-149        lattice_0.20-41     jsonlite_1.7.1     
+## [13] evaluate_0.14       lifecycle_0.2.0     tibble_3.0.4        gtable_0.3.0       
+## [17] pkgconfig_2.0.3     rlang_0.4.8         parallel_4.0.5      yaml_2.2.1         
+## [21] blogdown_1.2        xfun_0.22           withr_2.3.0         stringr_1.4.0      
+## [25] dplyr_1.0.2         knitr_1.30          caTools_1.18.1      gtools_3.8.2       
+## [29] generics_0.1.0      sass_0.3.1          vctrs_0.3.5         grid_4.0.5         
+## [33] tidyselect_1.1.0    glue_1.4.2          R6_2.5.0            rmarkdown_2.7      
+## [37] bookdown_0.21       purrr_0.3.4         magrittr_2.0.1      codetools_0.2-18   
+## [41] scales_1.1.1        htmltools_0.5.1.1   ellipsis_0.3.1      colorspace_2.0-0   
+## [45] KernSmooth_2.23-18  stringi_1.5.3       munsell_0.5.0       crayon_1.3.4
 </code></pre>
 <h2 id="references">References</h2>
-<div id="refs" class="references">
-<div id="ref-Hathaway1996-hu">
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Hathaway1996-hu" class="csl-entry">
 <p>Hathaway, R J, J C Bezdek, and N R Pal. 1996. “Sequential Competitive Learning and the Fuzzy c-Means Clustering Algorithms.” <em>Neural Netw.</em> 9 (5): 787–96. <a href="http://www.hubmed.org/display.cgi?uids=12662563">http://www.hubmed.org/display.cgi?uids=12662563</a>.</p>
 </div>
 </div>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-03-15: <a  href="https://github.com/tgirke/GEN242//commit/5356e726b685f2b99c969622bf4e1d54790634ef">some edits (5356e726b)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 0001-01-01
 </div>
 </div>
 

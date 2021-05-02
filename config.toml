@@ -424,18 +424,18 @@ enable = true
     parent = "Tutorials"
     weight = 209
   [[menu.main]]
-    name = "VAR-Seq Workflow (T10)"
-    url = "/tutorials/tutorial_09"
+    name = "Gene Set Enrichment (T10)"
+    url = "/tutorials/gsea/gesa/"
     parent = "Tutorials"
     weight = 210
   [[menu.main]]
-    name = "Graphics and Visualization (T11)"
-    url = "/tutorials/tutorial_10"
+    name = "Cluster Analysis and Data Mining (T11)"
+    url = "/tutorials/rclustering/rclustering/"
     parent = "Tutorials"
     weight = 211
   [[menu.main]]
-    name = "Cluster Analysis and Data Mining (T11)"
-    url = "/tutorials/tutorial_12"
+    name = "Graphics and Visualization (T11)"
+    url = "/tutorials/tutorial_10"
     parent = "Tutorials"
     weight = 212
 ##
@@ -499,13 +499,13 @@ enable = true
     parent = "Manuals"
     weight = 11
   [[menu.main]]
-    name = "Graphics and Visualization"
-    url = "/manuals/rgraphics/rgraphics/"
+    name = "Cluster Analysis and Data Mining"
+    url = "/manuals/rclustering/rclustering/"
     parent = "Manuals"
     weight = 12
   [[menu.main]]
-    name = "Cluster Analysis"
-    url = "/manuals/rclustering/rclustering/"
+    name = "Graphics and Visualization"
+    url = "/manuals/rgraphics/rgraphics/"
     parent = "Manuals"
     weight = 13
 ##
