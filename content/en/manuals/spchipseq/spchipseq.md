@@ -272,7 +272,8 @@ Check whether all BAM files have been created and write out the new targets file
 
 ``` r
 writeTargetsout(x = args, file = "targets_bam.txt", step = 1, 
-    new_col = "FileName", new_col_output_index = 1, overwrite = TRUE)
+    new_col = "FileName", new_col_output_index = 1, overwrite = TRUE, 
+    remove = TRUE)
 outpaths <- subsetWF(args, slot = "output", subset = 1, index = 1)
 file.exists(outpaths)
 ```
@@ -432,7 +433,7 @@ files with extensions used by MACS2.
 The following example shows how one can identify consensus preaks among two peak sets sharing either a minimum absolute overlap and/or minimum relative overlap using the `subsetByOverlaps` or `olRanges` functions, respectively. Note, the latter is a custom function imported below by sourcing it.
 
 ``` r
-## source('http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/My_R_Scripts/rangeoverlapper.R')
+# source('http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/My_R_Scripts/rangeoverlapper.R')
 outpaths <- subsetWF(args, slot = "output", subset = 1, index = 1)  ## escolher um dos outputs index
 peak_M1A <- outpaths["M1A"]
 peak_M1A <- as(read.delim(peak_M1A, comment = "#")[, 1:3], "GRanges")
