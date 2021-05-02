@@ -1,6 +1,6 @@
 ---
 title: "ChIP-Seq Workflow Template" 
-author: "Author: Daniela Cassol (danielac@ucr.edu) and Thomas Girke (thomas.girke@ucr.edu)"
+author: "Author: Daniela Cassol, Le Zhang and Thomas Girke"
 date: "Last update: `r format(Sys.time(), '%d %B, %Y')`" 
 output:
   BiocStyle::html_document:
@@ -252,7 +252,7 @@ Check whether all BAM files have been created and write out the new targets file
 
 ```{r check_files_exist, eval=FALSE}
 writeTargetsout(x=args, file="targets_bam.txt", step = 1, 
-                new_col = "FileName", new_col_output_index = 1, overwrite = TRUE)
+                new_col = "FileName", new_col_output_index = 1, overwrite = TRUE, remove=TRUE)
 outpaths <- subsetWF(args , slot="output", subset=1, index=1)
 file.exists(outpaths)
 ```
@@ -340,14 +340,7 @@ args <- renderWF(args, inputvars = c(FileName = "_BAM_PATH_", SampleName = "_Sam
 
 args_merge <- mergeBamByFactor(args=args, overwrite=TRUE)
 writeTargetsout(x=args_merge, file="targets_mergeBamByFactor.txt", step = 1, 
-                new_col = "FileName", new_col_output_index = 1, overwrite = TRUE )
-```
-
-```{r call_peaks_macs_envVar_settings, eval=FALSE}
-## Skip if a module system is not used
-module("list")
-module("unload", "miniconda2")
-module("load", "python/2.7.14") # Make sure to set up your enviroment variable for MACS2 
+                new_col = "FileName", new_col_output_index = 1, overwrite = TRUE, remove=TRUE)
 ```
 
 ### Peak calling without input/reference sample
@@ -369,7 +362,7 @@ runCommandline(args, make_bam = FALSE, force=T)
 outpaths <- subsetWF(args, slot="output", subset=1, index=1)
 file.exists(outpaths)
 writeTargetsout(x=args, file="targets_macs.txt", step = 1, 
-                new_col = "FileName", new_col_output_index = 1, overwrite = TRUE )
+                new_col = "FileName", new_col_output_index = 1, overwrite = TRUE)
 ```
 
 ### Peak calling with input/reference sample
@@ -392,7 +385,7 @@ args_input <- runCommandline(args_input, make_bam = FALSE, force=T)
 outpaths_input <- subsetWF(args_input , slot="output", subset=1, index=1)
 file.exists(outpaths_input)
 writeTargetsout(x=args_input, file="targets_macs_input.txt", step = 1, 
-                new_col = "FileName", new_col_output_index = 1, overwrite = TRUE )
+                new_col = "FileName", new_col_output_index = 1, overwrite = TRUE)
 ```
 
 The peak calling results from MACS2 are written for each sample to
@@ -404,7 +397,6 @@ files with extensions used by MACS2.
 The following example shows how one can identify consensus preaks among two peak sets sharing either a minimum absolute overlap and/or minimum relative overlap using the `subsetByOverlaps` or `olRanges` functions, respectively. Note, the latter is a custom function imported below by sourcing it.
 
 ```{r consensus_peaks, eval=FALSE}
-## source("http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/My_R_Scripts/rangeoverlapper.R")
 outpaths <- subsetWF(args , slot="output", subset=1, index=1) ## escolher um dos outputs index
 peak_M1A <- outpaths["M1A"]
 peak_M1A <- as(read.delim(peak_M1A, comment="#")[,1:3], "GRanges")
@@ -511,7 +503,7 @@ targets <- system.file("extdata", "targetsPE_chip.txt", package="systemPipeR")
 dir_path <- system.file("extdata/cwl/bowtie2/bowtie2-pe", package="systemPipeR")
 args_bam <- loadWF(targets = targets, wf_file = "bowtie2-mapping-pe.cwl", 
     input_file = "bowtie2-mapping-pe.yml", dir_path = dir_path)
-args_bam <- renderWF(args_bam, inputvars = c(FileName = "_FASTQ_PATH1_", SampleName = "_SampleName_"))
+args_bam <- renderWF(args_bam, inputvars = c(FileName1 = "_FASTQ_PATH1_", SampleName = "_SampleName_"))
 args_bam <- output_update(args_bam, dir=FALSE, replace=TRUE, extension=c(".sam", ".bam"))
 outpaths <- subsetWF(args_bam, slot="output", subset=1, index=1)
 
