@@ -15,7 +15,7 @@ output:
 
 fontsize: 14pt
 bibliography: bibtex.bib
-weight: 9
+weight: 10
 type: docs
 ---
 

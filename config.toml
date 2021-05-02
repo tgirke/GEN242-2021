@@ -435,7 +435,7 @@ enable = true
     weight = 211
   [[menu.main]]
     name = "Graphics and Visualization (T12)"
-    url = "/tutorials/tutorial_10"
+    url = "/tutorials/rgraphics/rgraphics/"
     parent = "Tutorials"
     weight = 212
 ##
