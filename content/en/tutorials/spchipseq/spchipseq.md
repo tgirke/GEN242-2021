@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 Source code downloads:    
 \[ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/spchipseq/spchipseq.Rmd) \]    
-\[ [.R](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/sprnaseq/spchipseq.R) \]
+\[ [.R](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/spchipseq/spchipseq.R) \]
 
 </div>
 
