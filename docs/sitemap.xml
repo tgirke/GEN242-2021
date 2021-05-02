@@ -129,15 +129,20 @@
   
   <url>
     <loc>/manuals/rgraphics/rgraphics/</loc>
-    <lastmod>2021-03-15T15:48:59-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tutorials/rgraphics/rgraphics/</loc>
   </url>
   
   <url>
     <loc>/manuals/rclustering/rclustering/</loc>
+    <lastmod>2021-05-02T16:19:46-07:00</lastmod>
   </url>
   
   <url>
     <loc>/tutorials/rclustering/rclustering/</loc>
+    <lastmod>2021-05-02T16:19:46-07:00</lastmod>
   </url>
   
   <url>
@@ -251,21 +256,6 @@
   </url>
   
   <url>
-    <loc>/tutorials/tutorial_10/</loc>
-    <lastmod>2021-04-18T17:25:55-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tutorials/tutorial_11/</loc>
-    <lastmod>2021-04-18T17:25:55-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tutorials/tutorial_12/</loc>
-    <lastmod>2021-04-18T17:25:55-07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/assignments/homework/</loc>
     <lastmod>2021-02-19T12:14:32-08:00</lastmod>
   </url>
@@ -307,7 +297,7 @@
   
   <url>
     <loc>/assignments/homework/hw08/hw08/</loc>
-    <lastmod>2021-05-02T15:36:13-07:00</lastmod>
+    <lastmod>2021-05-02T16:19:46-07:00</lastmod>
   </url>
   
   <url>
