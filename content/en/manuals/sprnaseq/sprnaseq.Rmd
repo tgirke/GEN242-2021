@@ -13,7 +13,7 @@ vignette: |
   %\VignetteEngine{knitr::rmarkdown}
 fontsize: 14pt
 bibliography: bibtex.bib
-weight: 6
+weight: 8
 type: docs
 ---
 
@@ -53,12 +53,6 @@ suppressPackageStartupMessages({
     library(batchtools)
 })
 ```
-
-<div style="text-align: right"> 
-Source code downloads: &nbsp; &nbsp;
-[ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/sprnaseq/sprnaseq.Rmd) ] &nbsp; &nbsp; 
-[ [.R](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/sprnaseq/sprnaseq.R) ]
-</div>
 
 ## Introduction
 
@@ -431,7 +425,7 @@ vennPlot(list(vennsetup, vennsetdown), mymain="", mysub="", colmode=2, ccol=c("b
 dev.off()
 ```
 
-![](../results/vennplot.png)
+![](results/vennplot.png)
 <div align="center">Figure 4: Venn Diagram for 4 Up and Down DEG Sets</div></br>
 
 ## GO term enrichment analysis
