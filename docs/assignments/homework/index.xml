@@ -2721,12 +2721,13 @@ that were both covered in class.&lt;/p&gt;
 &lt;p&gt;To get started with the following homework tasks, log in to your HPCC account and create under the course project path &lt;code&gt;/bigdata/gen242/shared/&amp;lt;user_name&amp;gt;&lt;/code&gt; assigned
 to you the corresponding workflow template using the &lt;code&gt;genWorkenvir&lt;/code&gt; function. Open in the root directory the Rmd file of your workflow with vim/nvim. Next make the
 following changes to the R Markdown file, render it to HTML and PDF format, and then submit the rendered report along with the corresponding Rmd source file to GitHub
-classroom as instructed below. The changes to include in the R Markdown are:&lt;/p&gt;
+Classroom as instructed below. The changes to include in the R Markdown are:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Tasks&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Add a short section describing the analysis steps you have chosen to perform as part of your challenge project.&lt;/li&gt;
 &lt;li&gt;In the challenge project section, add the reference of the paper you have chosen to present in class as part of your course project to the &lt;code&gt;bibtex.tex&lt;/code&gt; file and
-then cite it in the Rmd file so that the proper citation shows up in the text and the corresponding reference is added to the reference list.&lt;/li&gt;
+then cite it in the Rmd file so that the proper citation shows up in the text and the corresponding reference is added to the reference list. Note, references in BibTeX
+format can be obtained from Google Scholar, Paperpile or most other reference management software.&lt;/li&gt;
 &lt;li&gt;Add a mathematical equation to the challenge project section.&lt;/li&gt;
 &lt;li&gt;Evaluate an R expression in the text of your challenge project, &lt;em&gt;e.g.&lt;/em&gt; mathematical or number from an existing R ojeckt such as mean value of the first column of
 the iris &lt;code&gt;data.frame&lt;/code&gt;.&lt;/li&gt;
