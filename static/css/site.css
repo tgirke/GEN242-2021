@@ -83,6 +83,6 @@ div#driver-highlighted-element-stage, div#driver-page-overlay {
 /*define max-height to the height you want to start scrolling*/
 .td-navbar-nav-scroll .nav-item .dropdown-menu {
     max-height: 80vh;
-    overflow: hidden scroll;
+    overflow: visible scroll;
 }
 
