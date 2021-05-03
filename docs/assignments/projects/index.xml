@@ -506,12 +506,17 @@ subdirectory named after their project:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;/bigdata/gen242/&amp;lt;user_name&amp;gt;/projdata&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Within each project subdirectory all input files of a workflow (&lt;em&gt;e.g.&lt;/em&gt; FASTQ) will be saved to
+&lt;p&gt;Within each &lt;code&gt;projdata&lt;/code&gt; directory all input files of a workflow (&lt;em&gt;e.g.&lt;/em&gt; FASTQ) will be saved to
 a &lt;code&gt;data&lt;/code&gt; directory and all output files will be written to a &lt;code&gt;results&lt;/code&gt; directory. To set up the proper
-directory structure first &lt;code&gt;cd&lt;/code&gt; into &lt;code&gt;/bigdata/gen242/&amp;lt;user_name&amp;gt;, then create the directory &lt;/code&gt;projdata&lt;code&gt;with and then within this directory the &lt;/code&gt;data&lt;code&gt;and&lt;/code&gt;results` directories.&lt;/p&gt;
+directory structure &lt;code&gt;cd&lt;/code&gt; into &lt;code&gt;/bigdata/gen242/&amp;lt;user_name&amp;gt;, then create the &lt;/code&gt;projdata&lt;code&gt;directory and then within this directory creat the&lt;/code&gt;data&lt;code&gt;and&lt;/code&gt;results` subdirectories. The full path to these
+directories should look like this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;/bigdata/gen242/&amp;lt;user_name&amp;gt;/projdata/data&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/bigdata/gen242/&amp;lt;user_name&amp;gt;/projdata/results&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;github-repositories-for-projects&#34;&gt;GitHub repositories for projects&lt;/h2&gt;
 &lt;p&gt;Students will work on the course projects within GitHub repositories, one for each course project.
-These project repositories are private and have been shared by the instructor with all members of each project group.
+These project repositories are private and have been shared with each student via GitHub Classroom.
 To populate a course project with an initial project workflow, please follow the instructions
 given.&lt;/p&gt;
 &lt;h2 id=&#34;generate-workflow-environment-with-project-data&#34;&gt;Generate workflow environment with project data&lt;/h2&gt;
@@ -525,8 +530,8 @@ of your course project. For instance, the project RNA-Seq should create the symb
 ln -s /bigdata/gen242/&amp;lt;user_name&amp;gt;/projdata/results results
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;Add the workflow directory to the GitHub repository of your project with &lt;code&gt;git add -A&lt;/code&gt; and the run &lt;code&gt;commit&lt;/code&gt; and &lt;code&gt;push&lt;/code&gt; as outlined in the GitHub instructions of this course &lt;a href=&#34;http://girke.bioinformatics.ucr.edu/GEN242/mydoc_tutorial_01.html#github-basics-from-command-line&#34;&gt;here&lt;/a&gt;. Note, steps 1-4 need to be performed only by one student in each project. After committing and pushing the repository to GitHub, it can be cloned by all other students with &lt;code&gt;git clone ...&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Download the FASTQ files of your project with &lt;code&gt;getSRAfastq&lt;/code&gt; (see below) to the &lt;code&gt;data&lt;/code&gt; directory of your project.&lt;/li&gt;
+&lt;li&gt;Add the workflow directory to the GitHub repository of your project with &lt;code&gt;git add -A&lt;/code&gt; and the run &lt;code&gt;commit&lt;/code&gt; and &lt;code&gt;push&lt;/code&gt; as outlined in the GitHub instructions of this course &lt;a href=&#34;https://girke.bioinformatics.ucr.edu/GEN242/tutorials/github/github/#github-basics-from-command-line&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Download the FASTQ files of your project with &lt;code&gt;getSRAfastq&lt;/code&gt; (see below) to the &lt;code&gt;data&lt;/code&gt; directory of your project, here &amp;lsquo;/bigdata/gen242/&amp;lt;user_name&amp;gt;/projdata/data&amp;rsquo;.&lt;/li&gt;
 &lt;li&gt;Generate a proper &lt;code&gt;targets&lt;/code&gt; file for your project where the first column(s) point(s) to the downloaded FASTQ files. In addition, provide sample names matching the experimental design (columns: &lt;code&gt;SampleNames&lt;/code&gt; and &lt;code&gt;Factor&lt;/code&gt;).&lt;/li&gt;
 &lt;li&gt;Inspect and adjust the &lt;code&gt;.param&lt;/code&gt; files you will be using. For instance, make sure the software modules you are loading and the path to the reference genome are correct.&lt;/li&gt;
 &lt;li&gt;Every time you start working on your project you &lt;code&gt;cd&lt;/code&gt; into the directory of the repository and then run &lt;code&gt;git pull&lt;/code&gt; to get the latest change. When you are done, you commit and push your changes back to GitHub with &lt;code&gt;git commit -am &amp;quot;some edits&amp;quot;; git push -u origin master&lt;/code&gt;.&lt;/li&gt;

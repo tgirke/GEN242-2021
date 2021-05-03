@@ -17,15 +17,19 @@ subdirectory named after their project:
 
 + `/bigdata/gen242/<user_name>/projdata`
 
-Within each project subdirectory all input files of a workflow (_e.g._ FASTQ) will be saved to 
+Within each `projdata` directory all input files of a workflow (_e.g._ FASTQ) will be saved to 
 a `data` directory and all output files will be written to a `results` directory. To set up the proper
-directory structure first `cd` into `/bigdata/gen242/<user_name>, then create the directory `projdata`
-with and then within this directory the `data` and `results` directories.
+directory structure `cd` into `/bigdata/gen242/<user_name>, then create the `projdata` directory
+and then within this directory creat the `data` and `results` subdirectories. The full path to these 
+directories should look like this:
+
++ `/bigdata/gen242/<user_name>/projdata/data`
++ `/bigdata/gen242/<user_name>/projdata/results`
 
 ## GitHub repositories for projects
 
 Students will work on the course projects within GitHub repositories, one for each course project.
-These project repositories are private and have been shared by the instructor with all members of each project group.
+These project repositories are private and have been shared with each student via GitHub Classroom.
 To populate a course project with an initial project workflow, please follow the instructions
 given.
 
@@ -40,8 +44,8 @@ of your course project. For instance, the project RNA-Seq should create the symb
    ln -s /bigdata/gen242/<user_name>/projdata/data data
    ln -s /bigdata/gen242/<user_name>/projdata/results results
    ```
-4. Add the workflow directory to the GitHub repository of your project with `git add -A` and the run `commit` and `push` as outlined in the GitHub instructions of this course [here](http://girke.bioinformatics.ucr.edu/GEN242/mydoc_tutorial_01.html#github-basics-from-command-line). Note, steps 1-4 need to be performed only by one student in each project. After committing and pushing the repository to GitHub, it can be cloned by all other students with `git clone ...`.
-5. Download the FASTQ files of your project with `getSRAfastq` (see below) to the `data` directory of your project. 
+4. Add the workflow directory to the GitHub repository of your project with `git add -A` and the run `commit` and `push` as outlined in the GitHub instructions of this course [here](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/github/github/#github-basics-from-command-line). 
+5. Download the FASTQ files of your project with `getSRAfastq` (see below) to the `data` directory of your project, here '/bigdata/gen242/<user_name>/projdata/data'. 
 6. Generate a proper `targets` file for your project where the first column(s) point(s) to the downloaded FASTQ files. In addition, provide sample names matching the experimental design (columns: `SampleNames` and `Factor`).
 7. Inspect and adjust the `.param` files you will be using. For instance, make sure the software modules you are loading and the path to the reference genome are correct. 
 8. Every time you start working on your project you `cd` into the directory of the repository and then run `git pull` to get the latest change. When you are done, you commit and push your changes back to GitHub with `git commit -am "some edits"; git push -u origin master`.

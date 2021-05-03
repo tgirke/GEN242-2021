@@ -19,15 +19,15 @@
 
 <title>Data Management for Course Projects | GEN242</title><meta property="og:title" content="Data Management for Course Projects" />
 <meta property="og:description" content="Shared big data space on HPCC All larger data sets of the coure projects will be organized in a big data space under /bigdata/gen242/&lt;user_name&gt;. Within this space, each student will read and write data to a subdirectory named after their project:
- /bigdata/gen242/&lt;user_name&gt;/projdata  Within each project subdirectory all input files of a workflow (e.g. FASTQ) will be saved to a data directory and all output files will be written to a results directory." />
+ /bigdata/gen242/&lt;user_name&gt;/projdata  Within each projdata directory all input files of a workflow (e.g. FASTQ) will be saved to a data directory and all output files will be written to a results directory." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/assignments/projects/project_data/" />
-<meta property="article:modified_time" content="2021-05-03T14:51:37-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-05-03T15:06:12-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Data Management for Course Projects">
 <meta itemprop="description" content="Shared big data space on HPCC All larger data sets of the coure projects will be organized in a big data space under /bigdata/gen242/&lt;user_name&gt;. Within this space, each student will read and write data to a subdirectory named after their project:
- /bigdata/gen242/&lt;user_name&gt;/projdata  Within each project subdirectory all input files of a workflow (e.g. FASTQ) will be saved to a data directory and all output files will be written to a results directory.">
-<meta itemprop="dateModified" content="2021-05-03T14:51:37-07:00" />
-<meta itemprop="wordCount" content="831">
+ /bigdata/gen242/&lt;user_name&gt;/projdata  Within each projdata directory all input files of a workflow (e.g. FASTQ) will be saved to a data directory and all output files will be written to a results directory.">
+<meta itemprop="dateModified" content="2021-05-03T15:06:12-07:00" />
+<meta itemprop="wordCount" content="805">
 
 
 
@@ -35,7 +35,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Data Management for Course Projects"/>
 <meta name="twitter:description" content="Shared big data space on HPCC All larger data sets of the coure projects will be organized in a big data space under /bigdata/gen242/&lt;user_name&gt;. Within this space, each student will read and write data to a subdirectory named after their project:
- /bigdata/gen242/&lt;user_name&gt;/projdata  Within each project subdirectory all input files of a workflow (e.g. FASTQ) will be saved to a data directory and all output files will be written to a results directory."/>
+ /bigdata/gen242/&lt;user_name&gt;/projdata  Within each projdata directory all input files of a workflow (e.g. FASTQ) will be saved to a data directory and all output files will be written to a results directory."/>
 
 
 <script type="application/javascript">
@@ -887,7 +887,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.4120e9a8cbb4d8b8b06444574fc11d4a.json"
+  data-offline-search-index-json-src="../../../offline-search-index.83a3008d915243a003d8dcd053940cd0.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -919,7 +919,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.4120e9a8cbb4d8b8b06444574fc11d4a.json"
+  data-offline-search-index-json-src="../../../offline-search-index.83a3008d915243a003d8dcd053940cd0.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1324,12 +1324,17 @@ subdirectory named after their project:</p>
 <ul>
 <li><code>/bigdata/gen242/&lt;user_name&gt;/projdata</code></li>
 </ul>
-<p>Within each project subdirectory all input files of a workflow (<em>e.g.</em> FASTQ) will be saved to
+<p>Within each <code>projdata</code> directory all input files of a workflow (<em>e.g.</em> FASTQ) will be saved to
 a <code>data</code> directory and all output files will be written to a <code>results</code> directory. To set up the proper
-directory structure first <code>cd</code> into <code>/bigdata/gen242/&lt;user_name&gt;, then create the directory </code>projdata<code>with and then within this directory the </code>data<code>and</code>results` directories.</p>
+directory structure <code>cd</code> into <code>/bigdata/gen242/&lt;user_name&gt;, then create the </code>projdata<code>directory and then within this directory creat the</code>data<code>and</code>results` subdirectories. The full path to these
+directories should look like this:</p>
+<ul>
+<li><code>/bigdata/gen242/&lt;user_name&gt;/projdata/data</code></li>
+<li><code>/bigdata/gen242/&lt;user_name&gt;/projdata/results</code></li>
+</ul>
 <h2 id="github-repositories-for-projects">GitHub repositories for projects</h2>
 <p>Students will work on the course projects within GitHub repositories, one for each course project.
-These project repositories are private and have been shared by the instructor with all members of each project group.
+These project repositories are private and have been shared with each student via GitHub Classroom.
 To populate a course project with an initial project workflow, please follow the instructions
 given.</p>
 <h2 id="generate-workflow-environment-with-project-data">Generate workflow environment with project data</h2>
@@ -1343,8 +1348,8 @@ of your course project. For instance, the project RNA-Seq should create the symb
 ln -s /bigdata/gen242/&lt;user_name&gt;/projdata/results results
 </code></pre>
 </li>
-<li>Add the workflow directory to the GitHub repository of your project with <code>git add -A</code> and the run <code>commit</code> and <code>push</code> as outlined in the GitHub instructions of this course <a href="http://girke.bioinformatics.ucr.edu/GEN242/mydoc_tutorial_01.html#github-basics-from-command-line">here</a>. Note, steps 1-4 need to be performed only by one student in each project. After committing and pushing the repository to GitHub, it can be cloned by all other students with <code>git clone ...</code>.</li>
-<li>Download the FASTQ files of your project with <code>getSRAfastq</code> (see below) to the <code>data</code> directory of your project.</li>
+<li>Add the workflow directory to the GitHub repository of your project with <code>git add -A</code> and the run <code>commit</code> and <code>push</code> as outlined in the GitHub instructions of this course <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/github/github/#github-basics-from-command-line">here</a>.</li>
+<li>Download the FASTQ files of your project with <code>getSRAfastq</code> (see below) to the <code>data</code> directory of your project, here &lsquo;/bigdata/gen242/&lt;user_name&gt;/projdata/data&rsquo;.</li>
 <li>Generate a proper <code>targets</code> file for your project where the first column(s) point(s) to the downloaded FASTQ files. In addition, provide sample names matching the experimental design (columns: <code>SampleNames</code> and <code>Factor</code>).</li>
 <li>Inspect and adjust the <code>.param</code> files you will be using. For instance, make sure the software modules you are loading and the path to the reference genome are correct.</li>
 <li>Every time you start working on your project you <code>cd</code> into the directory of the repository and then run <code>git pull</code> to get the latest change. When you are done, you commit and push your changes back to GitHub with <code>git commit -am &quot;some edits&quot;; git push -u origin master</code>.</li>
@@ -1417,7 +1422,7 @@ important for many analysis routines such as the read counting in the RNA-Seq wo
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-03: <a  href="https://github.com/tgirke/GEN242//commit/8917b42330b840f110a80e2fd78c143ef8460d34">some edits (8917b4233)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-03: <a  href="https://github.com/tgirke/GEN242//commit/ecac8f936a68c6a3275c558e141c11551b4b6e6c">some edits (ecac8f936)</a>
 </div>
 </div>
 
