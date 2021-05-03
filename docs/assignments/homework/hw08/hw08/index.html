@@ -19,15 +19,15 @@
 
 <title>HW8 - R Markdown Template of Course Project | GEN242</title><meta property="og:title" content="HW8 - R Markdown Template of Course Project" />
 <meta property="og:description" content="Render R Markdown (Rmd) of your project Students will choose for this assignment the Rmd template of the workflow they are expected to complete for their challenge project, meaning either the RNA-Seq or the ChIP-Seq workflow that were both covered in class.
-To get started with the following homework tasks, log in to your HPCC account and create under the course project path /bigdata/gen242/shared/&lt;user_name&gt; assigned to you the corresponding workflow template using the genWorkenvir function." />
+To get started with the following homework tasks, log in to your HPCC account and create under the course project path /bigdata/gen242/&lt;user_name&gt; assigned to you the corresponding workflow template using the genWorkenvir function." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/assignments/homework/hw08/hw08/" />
 <meta property="article:modified_time" content="2021-05-03T10:35:02-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="HW8 - R Markdown Template of Course Project">
 <meta itemprop="description" content="Render R Markdown (Rmd) of your project Students will choose for this assignment the Rmd template of the workflow they are expected to complete for their challenge project, meaning either the RNA-Seq or the ChIP-Seq workflow that were both covered in class.
-To get started with the following homework tasks, log in to your HPCC account and create under the course project path /bigdata/gen242/shared/&lt;user_name&gt; assigned to you the corresponding workflow template using the genWorkenvir function.">
+To get started with the following homework tasks, log in to your HPCC account and create under the course project path /bigdata/gen242/&lt;user_name&gt; assigned to you the corresponding workflow template using the genWorkenvir function.">
 <meta itemprop="dateModified" content="2021-05-03T10:35:02-07:00" />
-<meta itemprop="wordCount" content="474">
+<meta itemprop="wordCount" content="537">
 
 
 
@@ -35,7 +35,7 @@ To get started with the following homework tasks, log in to your HPCC account an
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="HW8 - R Markdown Template of Course Project"/>
 <meta name="twitter:description" content="Render R Markdown (Rmd) of your project Students will choose for this assignment the Rmd template of the workflow they are expected to complete for their challenge project, meaning either the RNA-Seq or the ChIP-Seq workflow that were both covered in class.
-To get started with the following homework tasks, log in to your HPCC account and create under the course project path /bigdata/gen242/shared/&lt;user_name&gt; assigned to you the corresponding workflow template using the genWorkenvir function."/>
+To get started with the following homework tasks, log in to your HPCC account and create under the course project path /bigdata/gen242/&lt;user_name&gt; assigned to you the corresponding workflow template using the genWorkenvir function."/>
 
 
 <script type="application/javascript">
@@ -887,7 +887,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.14739315dfb721c54bcdaea2f8f66665.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.954b91cc6f7df9b2397f61a1f31e1562.json"
   data-offline-search-base-href="../../../../"
   data-offline-search-max-results="10"
 >
@@ -919,7 +919,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.14739315dfb721c54bcdaea2f8f66665.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.954b91cc6f7df9b2397f61a1f31e1562.json"
   data-offline-search-base-href="../../../../"
   data-offline-search-max-results="10"
 >
@@ -1314,27 +1314,27 @@ are expected to complete for their challenge project, meaning either the
 <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/sprnaseq/sprnaseq/">RNA-Seq</a> or the
 <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/sprnaseq/sprnaseq/">ChIP-Seq</a> workflow
 that were both covered in class.</p>
-<p>To get started with the following homework tasks, log in to your HPCC account and create under the course project path <code>/bigdata/gen242/shared/&lt;user_name&gt;</code> assigned
-to you the corresponding workflow template using the <code>genWorkenvir</code> function. Open in the root directory the Rmd file of your workflow with vim/nvim. Next make the
-following changes to the R Markdown file, render it to HTML and PDF format, and then submit the rendered report along with the corresponding Rmd source file to GitHub
+<p>To get started with the following homework tasks, log in to your HPCC account and create under the course project path <code>/bigdata/gen242/&lt;user_name&gt;</code> assigned
+to you the corresponding workflow template using the <code>genWorkenvir</code> function. Open with vim/nvim the Rmd file located in the root directory of the chosen workflow. Next make the
+following changes (1.-8.) to the R Markdown file, render it to HTML and PDF format, and then submit the rendered report along with the corresponding Rmd source file to GitHub
 Classroom as instructed below. The changes to include in the R Markdown are:</p>
 <p><strong>Tasks</strong></p>
 <p>Read the <a href="https://rmarkdown.rstudio.com/authoring_basics.html">basics of Rmarkdown</a> formatting.</p>
 <ol>
-<li>Add a short section describing the analysis steps you have chosen to perform as part of your challenge project.</li>
-<li>In the challenge project section, add the reference of the paper you have chosen to present in class as part of your course project to the <code>bibtex.tex</code> file and
-then cite it in the Rmd file so that the proper citation shows up in the text and the corresponding reference is added to the reference list. Note, references in BibTeX
-format can be obtained from Google Scholar, Paperpile or most other reference management software.
-Read about the <a href="https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html">Rmarkdown reference</a>.</li>
-<li>Add a <a href="https://bookdown.org/yihui/rmarkdown/markdown-syntax.html#math-expressions">mathematical equation</a> to the challenge project section.</li>
-<li>Evaluate an R expression in the text (<a href="https://bookdown.org/yihui/rmarkdown/r-code.html">inline code</a> expression) of your challenge project, <em>e.g.</em> mathematical or number from an existing R oject such as mean value of the first column of
+<li>In the section relating to your challenge project, add a short paragraph describing the analysis steps you have chosen to perform as part of your challenge project.</li>
+<li>In the challenge project section, cite the reference(s) of the paper(s) you have chosen to present in class as part of your course project. For this add the
+reference in BibTeX format to the <code>bibtex.tex</code> file located in the root directory of the workflow, and then cite it in the text of the Rmd file so that the properly rendered
+citation shows up in the text and the corresponding reference is get automatically added to the reference list when running <code>rmarkdown::render</code>. Note, references in BibTeX format can be obtained from
+Google Scholar, Paperpile or most other reference management software. More detailed information about managing references in R Markdown files is <a href="https://girke.bioinformatics.ucr.edu/GEN242/manuals/rbasics/sample/#citations-and-bibliographies">here</a>.</li>
+<li>Add a <a href="https://girke.bioinformatics.ucr.edu/GEN242/manuals/rbasics/sample/#mathematical-equations">mathematical equation</a> to the challenge project section.</li>
+<li>Evaluate an R expression in the text as inline R code (see <a href="https://girke.bioinformatics.ucr.edu/GEN242/manuals/rbasics/sample/#inline-r-code">here</a>) of your challenge project, <em>e.g.</em> mathematical or number from an existing R oject such as mean value of the first column of
 the iris <code>data.frame</code>.</li>
-<li>Add a <a href="https://bookdown.org/yihui/rmarkdown/r-code.html">code chunk</a> that auto-generates the barplot for HW3C. This barplot should be embedded in the
+<li>Add a <a href="https://girke.bioinformatics.ucr.edu/GEN242/manuals/rbasics/sample/#r-code-chunks">code chunk</a> that auto-generates the barplot for HW3C. This barplot should be embedded in the
 rendered report without saving it intermediately to a file.</li>
-<li>Add an interactive table with the the <a href="https://rstudio.github.io/DT/"><code>DT</code> package</a> that includes the iris <code>data.frame</code> in the report</li>
-<li>Use the <code>rmarkdown::render()</code> function to render the report to <a href="https://bookdown.org/yihui/rmarkdown/html-document.html">HTML</a> and
+<li>Insert the targets file of your workflow as an interactive table using the <a href="https://rstudio.github.io/DT/"><code>DT</code> package</a>. An example is given in the table section of the R Markdown manual <a href="https://girke.bioinformatics.ucr.edu/GEN242/manuals/rbasics/sample/#tables">here</a>.</li>
+<li>Use the <code>rmarkdown::render()</code> function to render the report (details are <a href="https://girke.bioinformatics.ucr.edu/GEN242/manuals/rbasics/sample/#render-rmd-script">here</a>) and
 <a href="https://bookdown.org/yihui/rmarkdown/pdf-document.html">PDF</a> format. Important: for this assignment it is not relevant to evaluate the
-code chunks for the actual analysis steps of the workflow. Only the ones for the above tasks are required.</li>
+code chunks for the actual analysis steps of the analysis workflow. Only the chunks required for the above tasks need to be evaluated.</li>
 <li>Submit the Rmd, PDF and HTML file for the report to the corresponding repos on GitHub Classroom (see below).</li>
 </ol>
 <h2 id="homework-submission">Homework submission</h2>
@@ -1347,10 +1347,10 @@ code chunks for the actual analysis steps of the workflow. Only the ones for the
 <p>bibtex file is not required.</p>
 <h2 id="grading">Grading</h2>
 <ul>
-<li>Upload Rmd 1</li>
-<li>Upload HTML 1</li>
-<li>Upload PDF 1</li>
-<li>Step 1-6 1 each</li>
+<li>Upload Rmd: 1</li>
+<li>Upload HTML: 1</li>
+<li>Upload PDF: 1</li>
+<li>Step 1-6: 1 each</li>
 </ul>
 <p>Total 9</p>
 <h3 id="due-date">Due date</h3>
