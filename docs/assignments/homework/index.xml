@@ -2589,7 +2589,7 @@ Source code downloads: &amp;nbsp; &lt;a href=&#34;https://raw.githubusercontent.
 workflow&lt;/a&gt;
 with the toy data sets up to the read quantification step
 &lt;a href=&#34;https://girke.bioinformatics.ucr.edu/GEN242/tutorials/sprnaseq/sprnaseq/#read-quantification&#34;&gt;here&lt;/a&gt;. Note,
-the toy data set gets automatically loaded when configuring the workflow environment with the &lt;code&gt;genWorkenvir&lt;/code&gt;
+the toy data set gets automatically loaded when intializing a workflow environment (directory structure) with the &lt;code&gt;genWorkenvir&lt;/code&gt;
 function (see tutorial &lt;a href=&#34;https://girke.bioinformatics.ucr.edu/GEN242/tutorials/sprnaseq/sprnaseq/#experimental-design&#34;&gt;here&lt;/a&gt;).
 In the read quantification step with &lt;code&gt;summarizeOverlaps&lt;/code&gt; generate count
 tables for exons by genes (&lt;code&gt;eByg&lt;/code&gt;) of the following three strand modes:&lt;/p&gt;
