@@ -2600,7 +2600,10 @@ tables for exons by genes (&lt;code&gt;eByg&lt;/code&gt;) of the following three
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;The solution for generating the unstranded read counts is given below. Note, the upstream steps 1-4 in the RNA-Seq workflow only need to be rerun to generate the proper inputs for the read counting. Thus, they are not required to be included in the homework results (see &lt;code&gt;HW7.R&lt;/code&gt; below).&lt;/p&gt;
+&lt;p&gt;The solution for generating the unstranded read counts is given below. Note,
+the upstream steps of the RNA-Seq workflow only need to be rerun to generate
+the proper inputs for the read counting. Thus, they are not required to be
+included in the homework results (see &lt;code&gt;HW7.R&lt;/code&gt; below).&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;summarizeOverlaps(eByg, bfl, mode=&amp;quot;Union&amp;quot;, 
                     ignore.strand=TRUE, 
                     # preprocess.reads=invertStrand,
