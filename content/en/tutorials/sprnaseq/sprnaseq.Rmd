@@ -121,16 +121,16 @@ module load R/4.0.3
 From command-line
 
 ```sh
-$ Rscript -e "systemPipeRdata::genWorkenvir(workflow='chipseq')"
-$ cd chipseq
+$ Rscript -e "systemPipeRdata::genWorkenvir(workflow='rnaseq')"
+$ cd rnaseq
 ```
 
 From R
 
 ```{r gen_workflow_envir, eval=FALSE}
 library(systemPipeRdata)
-genWorkenvir(workflow="chipseq")
-setwd("chipseq")
+genWorkenvir(workflow="rnaseq")
+setwd("rnaseq")
 ```
 
 3. Optional: if the user wishes to use another `Rmd` file than the template instance provided by the `genWorkenvir` function, then it can be copied or downloaded 

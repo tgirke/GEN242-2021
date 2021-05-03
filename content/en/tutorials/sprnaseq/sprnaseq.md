@@ -1,7 +1,7 @@
 ---
 title: "RNA-Seq Workflow Template" 
 author: "Author: Daniela Cassol, Le Zhang and Thomas Girke"
-date: "Last update: 02 May, 2021" 
+date: "Last update: 03 May, 2021" 
 output:
   BiocStyle::html_document:
     toc_float: true
@@ -109,16 +109,16 @@ module load R/4.0.3
 From command-line
 
 ``` sh
-$ Rscript -e "systemPipeRdata::genWorkenvir(workflow='chipseq')"
-$ cd chipseq
+$ Rscript -e "systemPipeRdata::genWorkenvir(workflow='rnaseq')"
+$ cd rnaseq
 ```
 
 From R
 
 ``` r
 library(systemPipeRdata)
-genWorkenvir(workflow = "chipseq")
-setwd("chipseq")
+genWorkenvir(workflow = "rnaseq")
+setwd("rnaseq")
 ```
 
 3.  Optional: if the user wishes to use another `Rmd` file than the template instance provided by the `genWorkenvir` function, then it can be copied or downloaded

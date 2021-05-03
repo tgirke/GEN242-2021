@@ -33,7 +33,7 @@
 "content/en/tutorials/rsequences/Rsequences.Rmarkdown" "bd696076ff490d5f0a7349c3571b8a5b"
 "content/en/tutorials/rsequences/Rsequences.Rmd" "7c91501c96fbb3d198a5f262a14d5d8b"
 "content/en/tutorials/spchipseq/spchipseq.Rmd" "e14dfd2714155052d4af8d82ee22bad2"
-"content/en/tutorials/sprnaseq/sprnaseq.Rmd" "22ce25471dbd67d3e1778c1542fd5062"
+"content/en/tutorials/sprnaseq/sprnaseq.Rmd" "39225381f50cb262bbfca535ec271515"
 "content/en/tutorials/systempiper/rnaseq/param/cwl/star/runMe_star_picard.Rmd" "c71d4837d598de7e7b52ec3d77d3d874"
 "content/en/tutorials/systempiper/rnaseq/systemPipeRNAseq.Rmd" "4eda39d05faa7a558217357bb0d709a0"
 "content/en/tutorials/systempiper/systemPipeR.Rmd" "abb3cbab80620dd10315ee5d46b25853"

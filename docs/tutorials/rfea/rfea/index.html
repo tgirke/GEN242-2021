@@ -23,12 +23,12 @@
 Gene Ontology DB ## Load GOstats library library(GOstats); library(GO.db) ## Print complete GO term information for &quot;GO:0003700&quot; GOTERM$&quot;GO:0003700&quot; ## Print parent and children terms for a GO ID GOMFPARENTS$&quot;GO:0003700&quot;; GOMFCHILDREN$&quot;GO:0003700&quot; ## Print complete lineages of parents and children for a GO ID GOMFANCESTOR$&quot;GO:0003700&quot;; GOMFOFFSPRING$&quot;GO:0003700&quot; ## Print number of GO terms in each of the 3 ontologies zz &lt;- eapply(GOTERM, function(x) x@Ontology); table(unlist(zz)) ## Gene to GO mappings for an organism (here Arabidopsis) library(org." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rfea/rfea/" />
-<meta property="article:modified_time" content="2021-05-02T19:03:36-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-05-02T19:41:01-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Functional Enrichment Analysis">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
  Introduction TBA … (Subramanian et al. 2005; Sergushichev 2016)
 Gene Ontology DB ## Load GOstats library library(GOstats); library(GO.db) ## Print complete GO term information for &quot;GO:0003700&quot; GOTERM$&quot;GO:0003700&quot; ## Print parent and children terms for a GO ID GOMFPARENTS$&quot;GO:0003700&quot;; GOMFCHILDREN$&quot;GO:0003700&quot; ## Print complete lineages of parents and children for a GO ID GOMFANCESTOR$&quot;GO:0003700&quot;; GOMFOFFSPRING$&quot;GO:0003700&quot; ## Print number of GO terms in each of the 3 ontologies zz &lt;- eapply(GOTERM, function(x) x@Ontology); table(unlist(zz)) ## Gene to GO mappings for an organism (here Arabidopsis) library(org.">
-<meta itemprop="dateModified" content="2021-05-02T19:03:36-07:00" />
+<meta itemprop="dateModified" content="2021-05-02T19:41:01-07:00" />
 <meta itemprop="wordCount" content="639">
 
 
@@ -890,7 +890,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.1580fb04064b00d1ed2b1789aa826f77.json"
+  data-offline-search-index-json-src="../../../offline-search-index.ad06a192d3641a4c03f5a662d53a6318.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -922,7 +922,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.1580fb04064b00d1ed2b1789aa826f77.json"
+  data-offline-search-index-json-src="../../../offline-search-index.ad06a192d3641a4c03f5a662d53a6318.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1349,7 +1349,7 @@ goBarplot(GOBatchResult, gocat=&quot;MF&quot;)
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-02: <a  href="https://github.com/tgirke/GEN242//commit/e9d8fa88f1b2b90345541b3eadc0133b5075d80f">some edits (e9d8fa88f)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-02: <a  href="https://github.com/tgirke/GEN242//commit/7d5af3536a90fe661aaaf89d138c9bb8919d88b7">some edits (7d5af3536)</a>
 </div>
 </div>
 
