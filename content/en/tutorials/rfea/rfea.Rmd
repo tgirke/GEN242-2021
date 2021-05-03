@@ -48,7 +48,7 @@ Source code downloads: &nbsp; &nbsp;
 
 ## Introduction
 
-TBA ...
+TBA ... [@Subramanian2005-kx; @Sergushichev2016-ms]
 
 ## Version Information
 
