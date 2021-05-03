@@ -19,7 +19,7 @@ subdirectory named after their project:
 
 Within each `projdata` directory all input files of a workflow (_e.g._ FASTQ) will be saved to 
 a `data` directory and all output files will be written to a `results` directory. To set up the proper
-directory structure `cd` into `/bigdata/gen242/<user_name>,, then create the `projdata` directory
+directory structure `cd` into `/bigdata/gen242/<user_name>`, then create the `projdata` directory
 and then within this directory creat the `data` and `results` subdirectories. The full path to these 
 directories should look like this:
 
