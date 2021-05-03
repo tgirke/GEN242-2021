@@ -1,0 +1,59 @@
+---
+title: Functional Enrichment Analysis 
+author: "First/last name (first.last@ucr.edu)"
+date: "Last update: `r format(Sys.time(), '%d %B, %Y')`" 
+output:
+  html_document:
+    toc: true
+    toc_float:
+        collapsed: true
+        smooth_scroll: true
+    toc_depth: 3
+    fig_caption: yes
+    code_folding: show
+    number_sections: true
+
+fontsize: 14pt
+bibliography: bibtex.bib
+weight: 9
+type: docs
+---
+
+<!--
+- Compile from command-line
+Rscript -e "rmarkdown::render('rfea.Rmd', c('html_document'), clean=F); knitr::knit('rfea.Rmd', tangle=TRUE)"
+-->
+
+```{r style, echo = FALSE, results = 'asis'}
+BiocStyle::markdown()
+options(width=100, max.print=1000)
+knitr::opts_chunk$set(
+    eval=as.logical(Sys.getenv("KNITR_EVAL", "TRUE")),
+    cache=as.logical(Sys.getenv("KNITR_CACHE", "TRUE")))
+```
+
+```{r setup, echo=FALSE, messages=FALSE, warnings=FALSE}
+suppressPackageStartupMessages({
+    library(ggplot2)
+    library(fgsea)
+})
+```
+
+<div style="text-align: right"> 
+Source code downloads: &nbsp; &nbsp;
+[ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/rfea/rfea.Rmd) ] &nbsp; &nbsp; 
+[ [.R](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/rfea/rfea.R) ]
+</div>
+
+
+## Introduction
+
+TBA ...
+
+## Version Information
+
+```{r sessionInfo}
+sessionInfo()
+```
+
+## References
