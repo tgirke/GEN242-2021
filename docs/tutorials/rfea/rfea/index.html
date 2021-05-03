@@ -20,16 +20,16 @@
 <title>Functional Enrichment Analysis | GEN242</title><meta property="og:title" content="Functional Enrichment Analysis" />
 <meta property="og:description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
  Introduction TBA … (Subramanian et al. 2005; Sergushichev 2016)
-Version Information sessionInfo()  ## R version 4.0.5 (2021-03-31) ## Platform: x86_64-pc-linux-gnu (64-bit) ## Running under: Debian GNU/Linux 10 (buster) ## ## Matrix products: default ## BLAS: /usr/lib/x86_64-linux-gnu/blas/libblas." />
+Gene Ontology DB ## Load GOstats library library(GOstats); library(GO.db) ## Print complete GO term information for &quot;GO:0003700&quot; GOTERM$&quot;GO:0003700&quot; ## Print parent and children terms for a GO ID GOMFPARENTS$&quot;GO:0003700&quot;; GOMFCHILDREN$&quot;GO:0003700&quot; ## Print complete lineages of parents and children for a GO ID GOMFANCESTOR$&quot;GO:0003700&quot;; GOMFOFFSPRING$&quot;GO:0003700&quot; ## Print number of GO terms in each of the 3 ontologies zz &lt;- eapply(GOTERM, function(x) x@Ontology); table(unlist(zz)) ## Gene to GO mappings for an organism (here Arabidopsis) library(org." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rfea/rfea/" />
-<meta property="article:modified_time" content="2021-05-02T18:55:26-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-05-02T19:03:36-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Functional Enrichment Analysis">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
  Introduction TBA … (Subramanian et al. 2005; Sergushichev 2016)
-Version Information sessionInfo()  ## R version 4.0.5 (2021-03-31) ## Platform: x86_64-pc-linux-gnu (64-bit) ## Running under: Debian GNU/Linux 10 (buster) ## ## Matrix products: default ## BLAS: /usr/lib/x86_64-linux-gnu/blas/libblas.">
-<meta itemprop="dateModified" content="2021-05-02T18:55:26-07:00" />
-<meta itemprop="wordCount" content="261">
+Gene Ontology DB ## Load GOstats library library(GOstats); library(GO.db) ## Print complete GO term information for &quot;GO:0003700&quot; GOTERM$&quot;GO:0003700&quot; ## Print parent and children terms for a GO ID GOMFPARENTS$&quot;GO:0003700&quot;; GOMFCHILDREN$&quot;GO:0003700&quot; ## Print complete lineages of parents and children for a GO ID GOMFANCESTOR$&quot;GO:0003700&quot;; GOMFOFFSPRING$&quot;GO:0003700&quot; ## Print number of GO terms in each of the 3 ontologies zz &lt;- eapply(GOTERM, function(x) x@Ontology); table(unlist(zz)) ## Gene to GO mappings for an organism (here Arabidopsis) library(org.">
+<meta itemprop="dateModified" content="2021-05-02T19:03:36-07:00" />
+<meta itemprop="wordCount" content="639">
 
 
 
@@ -38,7 +38,7 @@ Version Information sessionInfo()  ## R version 4.0.5 (2021-03-31) ## Platform: 
 <meta name="twitter:title" content="Functional Enrichment Analysis"/>
 <meta name="twitter:description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
  Introduction TBA … (Subramanian et al. 2005; Sergushichev 2016)
-Version Information sessionInfo()  ## R version 4.0.5 (2021-03-31) ## Platform: x86_64-pc-linux-gnu (64-bit) ## Running under: Debian GNU/Linux 10 (buster) ## ## Matrix products: default ## BLAS: /usr/lib/x86_64-linux-gnu/blas/libblas."/>
+Gene Ontology DB ## Load GOstats library library(GOstats); library(GO.db) ## Print complete GO term information for &quot;GO:0003700&quot; GOTERM$&quot;GO:0003700&quot; ## Print parent and children terms for a GO ID GOMFPARENTS$&quot;GO:0003700&quot;; GOMFCHILDREN$&quot;GO:0003700&quot; ## Print complete lineages of parents and children for a GO ID GOMFANCESTOR$&quot;GO:0003700&quot;; GOMFOFFSPRING$&quot;GO:0003700&quot; ## Print number of GO terms in each of the 3 ontologies zz &lt;- eapply(GOTERM, function(x) x@Ontology); table(unlist(zz)) ## Gene to GO mappings for an organism (here Arabidopsis) library(org."/>
 
 
 <script type="application/javascript">
@@ -890,7 +890,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.93b25e83135ee06ba092b87ebe52bd03.json"
+  data-offline-search-index-json-src="../../../offline-search-index.1580fb04064b00d1ed2b1789aa826f77.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -922,7 +922,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.93b25e83135ee06ba092b87ebe52bd03.json"
+  data-offline-search-index-json-src="../../../offline-search-index.1580fb04064b00d1ed2b1789aa826f77.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1113,6 +1113,37 @@ if (!doNotTrack) {
 <nav id="TableOfContents">
   <ul>
     <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#gene-ontology-db">Gene Ontology DB</a></li>
+    <li><a href="#pathways">Pathways</a>
+      <ul>
+        <li><a href="#kegg">KEGG</a>
+          <ul>
+            <li><a href="#keggdb"><code>KEGG.db</code></a></li>
+          </ul>
+        </li>
+        <li><a href="#reactome">Reactome</a>
+          <ul>
+            <li><a href="#reactomedb"><code>reactome.db</code></a></li>
+            <li><a href="#reactomecontentservice4r"><code>ReactomeContentService4R</code></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#functional-enrichment-analysis-methods">Functional Enrichment Analysis Methods</a>
+      <ul>
+        <li><a href="#over-representation-analysis-ora">Over-representation analysis (ORA)</a>
+          <ul>
+            <li><a href="#gostats-package"><code>GOstats</code> Package</a></li>
+            <li><a href="#gohypergall-and-gocluster_report"><code>GOHyperGAll</code> and <code>GOCluster_Report</code></a></li>
+          </ul>
+        </li>
+        <li><a href="#set-enrichment-analysis-sea">Set enrichment analysis (SEA)</a>
+          <ul>
+            <li><a href="#fgsea-package"><code>fgsea</code> Package</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
     <li><a href="#version-information">Version Information</a></li>
     <li><a href="#references">References</a></li>
   </ul>
@@ -1154,7 +1185,7 @@ if (!doNotTrack) {
 	<h1>Functional Enrichment Analysis</h1>
     
 	
-        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 2 minute read</p>
+        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 3 minute read</p>
            
 	<!--
 - Compile from command-line
@@ -1180,6 +1211,95 @@ document.addEventListener("DOMContentLoaded", function() {
 </div>
 <h2 id="introduction">Introduction</h2>
 <p>TBA … (Subramanian et al. 2005; Sergushichev 2016)</p>
+<h2 id="gene-ontology-db">Gene Ontology DB</h2>
+<pre><code class="language-r">## Load GOstats library
+library(GOstats); library(GO.db)
+## Print complete GO term information for &quot;GO:0003700&quot;
+GOTERM$&quot;GO:0003700&quot;
+## Print parent and children terms for a GO ID
+GOMFPARENTS$&quot;GO:0003700&quot;; GOMFCHILDREN$&quot;GO:0003700&quot;
+## Print complete lineages of parents and children for a GO ID
+GOMFANCESTOR$&quot;GO:0003700&quot;; GOMFOFFSPRING$&quot;GO:0003700&quot;
+## Print number of GO terms in each of the 3 ontologies
+zz &lt;- eapply(GOTERM, function(x) x@Ontology); table(unlist(zz))
+## Gene to GO mappings for an organism (here Arabidopsis)
+library(org.At.tair.db) # For human use org.Hs.eg.db
+xx &lt;- as.list(org.At.tairGO2ALLTAIRS)
+</code></pre>
+<h2 id="pathways">Pathways</h2>
+<h3 id="kegg">KEGG</h3>
+<h4 id="keggdb"><code>KEGG.db</code></h4>
+<h3 id="reactome">Reactome</h3>
+<h4 id="reactomedb"><code>reactome.db</code></h4>
+<h4 id="reactomecontentservice4r"><code>ReactomeContentService4R</code></h4>
+<h2 id="functional-enrichment-analysis-methods">Functional Enrichment Analysis Methods</h2>
+<h3 id="over-representation-analysis-ora">Over-representation analysis (ORA)</h3>
+<h4 id="gostats-package"><code>GOstats</code> Package</h4>
+<pre><code class="language-r">## Load required packages
+library(GOstats); library(GO.db); library(org.At.tair.db)
+## Define universe and test sample set
+geneUniverse &lt;- keys(org.At.tairGENENAME)
+geneSample &lt;- c(&quot;AT2G46210&quot;, &quot;AT2G19880&quot;, &quot;AT2G38910&quot;, &quot;AT5G25140&quot;, &quot;AT2G44525&quot;)
+## Generate params object
+params &lt;- new(&quot;GOHyperGParams&quot;, geneIds = geneSample,
+                universeGeneIds = geneUniverse,
+                annotation=&quot;org.At.tair&quot;, ontology = &quot;MF&quot;, pvalueCutoff = 0.5,
+                conditional = FALSE, testDirection = &quot;over&quot;)
+## Run enrichment test
+hgOver &lt;- hyperGTest(params)
+## Viewing of results
+summary(hgOver)[1:4,]
+htmlReport(hgOver, file = &quot;MyhyperGresult.html&quot;)
+</code></pre>
+<h4 id="gohypergall-and-gocluster_report"><code>GOHyperGAll</code> and <code>GOCluster_Report</code></h4>
+<pre><code class="language-r">library(systemPipeR)
+## Obtain annotations from BioMart
+listMarts() # To choose BioMart database
+m &lt;- useMart(&quot;ENSEMBL_MART_PLANT&quot;); listDatasets(m) 
+m &lt;- useMart(&quot;ENSEMBL_MART_PLANT&quot;, dataset=&quot;athaliana_eg_gene&quot;)
+listAttributes(m) # Choose data types you want to download
+go &lt;- getBM(attributes=c(&quot;go_accession&quot;, &quot;tair_locus&quot;, &quot;go_namespace_1003&quot;), mart=m)
+go &lt;- go[go[,3]!=&quot;&quot;,]; go[,3] &lt;- as.character(go[,3])
+write.table(go, &quot;GOannotationsBiomart_mod.txt&quot;, quote=FALSE, row.names=FALSE, col.names=FALSE, sep=&quot;\t&quot;)
+
+## Create catDB instance (takes a while but needs to be done only once)
+catdb &lt;- makeCATdb(myfile=&quot;GOannotationsBiomart_mod.txt&quot;, lib=NULL, org=&quot;&quot;, colno=c(1,2,3), idconv=NULL)
+catdb
+
+## Create catDB from Bioconductor annotation package
+# catdb &lt;- makeCATdb(myfile=NULL, lib=&quot;ath1121501.db&quot;, org=&quot;&quot;, colno=c(1,2,3), idconv=NULL)
+
+## AffyID-to-GeneID mappings when working with AffyIDs 
+# affy2locusDF &lt;- systemPipeR:::.AffyID2GeneID(map = &quot;ftp://ftp.arabidopsis.org/home/tair/Microarrays/Affymetrix/affy_ATH1_array_elements-2010-12-20.txt&quot;, download=TRUE)
+# catdb_conv &lt;- makeCATdb(myfile=&quot;GOannotationsBiomart_mod.txt&quot;, lib=NULL, org=&quot;&quot;, colno=c(1,2,3), idconv=list(affy=affy2locusDF))
+# systemPipeR:::.AffyID2GeneID(catdb=catdb_conv, affyIDs=c(&quot;244901_at&quot;, &quot;244902_at&quot;))
+
+## Next time catDB can be loaded from file
+save(catdb, file=&quot;catdb.RData&quot;) 
+load(&quot;catdb.RData&quot;)
+
+## Perform enrichment test on single gene set
+test_sample &lt;- unique(as.character(catmap(catdb)$D_MF[1:100,&quot;GeneID&quot;]))
+GOHyperGAll(catdb=catdb, gocat=&quot;MF&quot;, sample=test_sample, Nannot=2)[1:20,]
+
+## GO Slim analysis by subsetting results accordingly
+GOHyperGAll_result &lt;- GOHyperGAll(catdb=catdb, gocat=&quot;MF&quot;, sample=test_sample, Nannot=2)
+GOHyperGAll_Subset(catdb, GOHyperGAll_result, sample=test_sample, type=&quot;goSlim&quot;) 
+
+## Reduce GO term redundancy in 'GOHyperGAll_results'
+simplifyDF &lt;- GOHyperGAll_Simplify(GOHyperGAll_result, gocat=&quot;MF&quot;, cutoff=0.001, correct=T)
+# Returns the redundancy reduced data set. 
+data.frame(GOHyperGAll_result[GOHyperGAll_result[,1] 
+
+## Batch Analysis of Gene Clusters
+testlist &lt;- list(Set1=test_sample)
+GOBatchResult &lt;- GOCluster_Report(catdb=catdb, setlist=testlist, method=&quot;all&quot;, id_type=&quot;gene&quot;, CLSZ=10, cutoff=0.001, gocats=c(&quot;MF&quot;, &quot;BP&quot;, &quot;CC&quot;), recordSpecGO=c(&quot;GO:0003674&quot;, &quot;GO:0008150&quot;, &quot;GO:0005575&quot;))
+
+## Plot 'GOBatchResult' as bar plot
+goBarplot(GOBatchResult, gocat=&quot;MF&quot;)
+</code></pre>
+<h3 id="set-enrichment-analysis-sea">Set enrichment analysis (SEA)</h3>
+<h4 id="fgsea-package"><code>fgsea</code> Package</h4>
 <h2 id="version-information">Version Information</h2>
 <pre><code class="language-r">sessionInfo()
 </code></pre>
@@ -1229,7 +1349,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-02: <a  href="https://github.com/tgirke/GEN242//commit/05a74b60a1473529cbc8959d6a0375d0fe232639">some edits (05a74b60a)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-02: <a  href="https://github.com/tgirke/GEN242//commit/e9d8fa88f1b2b90345541b3eadc0133b5075d80f">some edits (e9d8fa88f)</a>
 </div>
 </div>
 
