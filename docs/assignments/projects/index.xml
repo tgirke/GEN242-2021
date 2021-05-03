@@ -507,7 +507,8 @@ subdirectory named after their project:&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;/bigdata/gen242/&amp;lt;user_name&amp;gt;/projdata&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Within each project subdirectory all input files of a workflow (&lt;em&gt;e.g.&lt;/em&gt; FASTQ) will be saved to
-a &lt;code&gt;data&lt;/code&gt; directory and all output files will be written to a &lt;code&gt;results&lt;/code&gt; directory.&lt;/p&gt;
+a &lt;code&gt;data&lt;/code&gt; directory and all output files will be written to a &lt;code&gt;results&lt;/code&gt; directory. To set up the proper
+directory structure first &lt;code&gt;cd&lt;/code&gt; into &lt;code&gt;/bigdata/gen242/&amp;lt;user_name&amp;gt;, then create the directory &lt;/code&gt;projdata&lt;code&gt;with and then within this directory the &lt;/code&gt;data&lt;code&gt;and&lt;/code&gt;results` directories.&lt;/p&gt;
 &lt;h2 id=&#34;github-repositories-for-projects&#34;&gt;GitHub repositories for projects&lt;/h2&gt;
 &lt;p&gt;Students will work on the course projects within GitHub repositories, one for each course project.
 These project repositories are private and have been shared by the instructor with all members of each project group.

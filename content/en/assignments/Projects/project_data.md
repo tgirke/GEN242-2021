@@ -18,7 +18,9 @@ subdirectory named after their project:
 + `/bigdata/gen242/<user_name>/projdata`
 
 Within each project subdirectory all input files of a workflow (_e.g._ FASTQ) will be saved to 
-a `data` directory and all output files will be written to a `results` directory. 
+a `data` directory and all output files will be written to a `results` directory. To set up the proper
+directory structure first `cd` into `/bigdata/gen242/<user_name>, then create the directory `projdata`
+with and then within this directory the `data` and `results` directories.
 
 ## GitHub repositories for projects
 
