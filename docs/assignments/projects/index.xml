@@ -500,11 +500,11 @@ following files:&lt;/p&gt;
         
         &lt;p&gt;&lt;br&gt;&lt;/br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;shared-big-data-space-on-hpcc&#34;&gt;Shared big data space on HPCC&lt;/h2&gt;
-&lt;p&gt;All larger data sets of the coure projects will be organized in a shared big data space under
-&lt;code&gt;/bigdata/gen242/shared&lt;/code&gt;. Within this space, each group will read and write data to a
+&lt;p&gt;All larger data sets of the coure projects will be organized in a big data space under
+&lt;code&gt;/bigdata/gen242/&amp;lt;user_name&amp;gt;&lt;/code&gt;. Within this space, each student will read and write data to a
 subdirectory named after their project:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;/bigdata/gen242/shared/&amp;lt;user_name&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/bigdata/gen242/&amp;lt;user_name&amp;gt;/projdata&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Within each project subdirectory all input files of a workflow (&lt;em&gt;e.g.&lt;/em&gt; FASTQ) will be saved to
 a &lt;code&gt;data&lt;/code&gt; directory and all output files will be written to a &lt;code&gt;results&lt;/code&gt; directory.&lt;/p&gt;
@@ -518,9 +518,10 @@ given.&lt;/p&gt;
 &lt;li&gt;Log in to the HPCC cluster and set your working directory to &lt;code&gt;bigdata&lt;/code&gt; or (&lt;code&gt;/bigdata/gen242/&amp;lt;user_name&amp;gt;&lt;/code&gt;)&lt;/li&gt;
 &lt;li&gt;Clone the GitHub repository for your project with &lt;code&gt;git clone ...&lt;/code&gt; (URLs listed &lt;a href=&#34;https://bit.ly/3n07XFB&#34;&gt;here&lt;/a&gt;) and then &lt;code&gt;cd&lt;/code&gt; into this directory.&lt;/li&gt;
 &lt;li&gt;Generate the workflow environment for your project on the HPCC cluster with &lt;code&gt;genWorkenvir&lt;/code&gt; from &lt;code&gt;systemPipeRdata&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Delete the default &lt;code&gt;data&lt;/code&gt; and &lt;code&gt;results&lt;/code&gt; directories and replace them with symbolic links pointing to the above described &lt;code&gt;data&lt;/code&gt; and &lt;code&gt;results&lt;/code&gt; directories of your course project. For instance, the project RNA-Seq should create the symbolic links for their &lt;code&gt;data&lt;/code&gt; and &lt;code&gt;results&lt;/code&gt; directories like this:
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;ln -s /bigdata/gen242/shared/&amp;lt;user_name&amp;gt;/&amp;lt;myproj&amp;gt;/data data
-ln -s /bigdata/gen242/shared/&amp;lt;user_name&amp;gt;/&amp;lt;myproj&amp;gt;/results results
+&lt;li&gt;Delete the default &lt;code&gt;data&lt;/code&gt; and &lt;code&gt;results&lt;/code&gt; directories and replace them with symbolic links pointing to the above described &lt;code&gt;data&lt;/code&gt; and &lt;code&gt;results&lt;/code&gt; directories
+of your course project. For instance, the project RNA-Seq should create the symbolic links for their &lt;code&gt;data&lt;/code&gt; and &lt;code&gt;results&lt;/code&gt; directories like this:
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;ln -s /bigdata/gen242/&amp;lt;user_name&amp;gt;/projdata/data data
+ln -s /bigdata/gen242/&amp;lt;user_name&amp;gt;/projdata/results results
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;li&gt;Add the workflow directory to the GitHub repository of your project with &lt;code&gt;git add -A&lt;/code&gt; and the run &lt;code&gt;commit&lt;/code&gt; and &lt;code&gt;push&lt;/code&gt; as outlined in the GitHub instructions of this course &lt;a href=&#34;http://girke.bioinformatics.ucr.edu/GEN242/mydoc_tutorial_01.html#github-basics-from-command-line&#34;&gt;here&lt;/a&gt;. Note, steps 1-4 need to be performed only by one student in each project. After committing and pushing the repository to GitHub, it can be cloned by all other students with &lt;code&gt;git clone ...&lt;/code&gt;.&lt;/li&gt;
