@@ -424,8 +424,8 @@ enable = true
     parent = "Tutorials"
     weight = 209
   [[menu.main]]
-    name = "Gene Set Enrichment (T10)"
-    url = "/tutorials/gsea/gesa/"
+    name = "Functional Enrichment Analysis (T10)"
+    url = "/tutorials/rfea/rfea/"
     parent = "Tutorials"
     weight = 210
   [[menu.main]]
@@ -499,15 +499,20 @@ enable = true
     parent = "Manuals"
     weight = 11
   [[menu.main]]
+    name = "Functional Enrichment Analysis"
+    url = "/tutorials/rfea/rfea/"
+    parent = "Manuals"
+    weight = 12
+  [[menu.main]]
     name = "Cluster Analysis and Data Mining"
     url = "/manuals/rclustering/rclustering/"
     parent = "Manuals"
-    weight = 12
+    weight = 13
   [[menu.main]]
     name = "Graphics and Visualization"
     url = "/manuals/rgraphics/rgraphics/"
     parent = "Manuals"
-    weight = 13
+    weight = 14
 ##
 [[menu.main]]
   name = "Assignments"
