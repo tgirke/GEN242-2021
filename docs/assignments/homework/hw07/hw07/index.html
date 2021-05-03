@@ -18,24 +18,21 @@
 <link rel="icon" type="image/png" href="../../../../favicons/android-192x192.png" sizes="192x192">
 
 <title>HW7 - RNA-Seq Analysis | GEN242</title><meta property="og:title" content="HW7 - RNA-Seq Analysis" />
-<meta property="og:description" content="Source code downloads: &nbsp; [ .R ]  A. Unstranded and strand-specific read counting for features of interest   Task 1: Rerun the RNA-Seq workflow with the toy data sets up to the read quantification step here. In the read quantification step with summarizeOverlaps generate count tables for exons by genes (eByg) of the following three strand modes:
- Unstranded Strand-specific for positive (sense) strand Strand-specific for negative (antisense) strand    The solution for generating the unstranded read counts is given below." />
+<meta property="og:description" content="Source code downloads: &nbsp; [ .R ]  A. Unstranded and strand-specific read counting for features of interest   Task 1: Rerun the RNA-Seq workflow with the toy data sets up to the read quantification step here. Note, the toy data set gets automatically loaded when configuring the workflow environment with the genWorkenvir function (see tutorial here). In the read quantification step with summarizeOverlaps generate count tables for exons by genes (eByg) of the following three strand modes:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/assignments/homework/hw07/hw07/" />
 <meta property="article:modified_time" content="2021-04-29T13:13:51-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="HW7 - RNA-Seq Analysis">
-<meta itemprop="description" content="Source code downloads: &nbsp; [ .R ]  A. Unstranded and strand-specific read counting for features of interest   Task 1: Rerun the RNA-Seq workflow with the toy data sets up to the read quantification step here. In the read quantification step with summarizeOverlaps generate count tables for exons by genes (eByg) of the following three strand modes:
- Unstranded Strand-specific for positive (sense) strand Strand-specific for negative (antisense) strand    The solution for generating the unstranded read counts is given below.">
+<meta itemprop="description" content="Source code downloads: &nbsp; [ .R ]  A. Unstranded and strand-specific read counting for features of interest   Task 1: Rerun the RNA-Seq workflow with the toy data sets up to the read quantification step here. Note, the toy data set gets automatically loaded when configuring the workflow environment with the genWorkenvir function (see tutorial here). In the read quantification step with summarizeOverlaps generate count tables for exons by genes (eByg) of the following three strand modes:">
 <meta itemprop="dateModified" content="2021-04-29T13:13:51-07:00" />
-<meta itemprop="wordCount" content="617">
+<meta itemprop="wordCount" content="637">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="HW7 - RNA-Seq Analysis"/>
-<meta name="twitter:description" content="Source code downloads: &nbsp; [ .R ]  A. Unstranded and strand-specific read counting for features of interest   Task 1: Rerun the RNA-Seq workflow with the toy data sets up to the read quantification step here. In the read quantification step with summarizeOverlaps generate count tables for exons by genes (eByg) of the following three strand modes:
- Unstranded Strand-specific for positive (sense) strand Strand-specific for negative (antisense) strand    The solution for generating the unstranded read counts is given below."/>
+<meta name="twitter:description" content="Source code downloads: &nbsp; [ .R ]  A. Unstranded and strand-specific read counting for features of interest   Task 1: Rerun the RNA-Seq workflow with the toy data sets up to the read quantification step here. Note, the toy data set gets automatically loaded when configuring the workflow environment with the genWorkenvir function (see tutorial here). In the read quantification step with summarizeOverlaps generate count tables for exons by genes (eByg) of the following three strand modes:"/>
 
 
 <script type="application/javascript">
@@ -879,7 +876,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.2e79100b8271340b0bc98903d7c5e2ab.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.6f46411f112f931a40ce8a76eea28a60.json"
   data-offline-search-base-href="../../../../"
   data-offline-search-max-results="10"
 >
@@ -911,7 +908,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.2e79100b8271340b0bc98903d7c5e2ab.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.6f46411f112f931a40ce8a76eea28a60.json"
   data-offline-search-base-href="../../../../"
   data-offline-search-max-results="10"
 >
@@ -1310,7 +1307,14 @@ Source code downloads: &nbsp; <a href="https://raw.githubusercontent.com/tgirke/
 <h2 id="a-unstranded-and-strand-specific-read-counting-for-features-of-interest">A. Unstranded and strand-specific read counting for features of interest</h2>
 <ul>
 <li>
-<p><strong>Task 1</strong>: Rerun the <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/sprnaseq/sprnaseq/">RNA-Seq workflow</a> with the toy data sets up to the read quantification step <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/sprnaseq/sprnaseq/#read-quantification">here</a>. In the read quantification step with <code>summarizeOverlaps</code> generate count tables for exons by genes (<code>eByg</code>) of the following three strand modes:</p>
+<p><strong>Task 1</strong>: Rerun the <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/sprnaseq/sprnaseq/">RNA-Seq
+workflow</a>
+with the toy data sets up to the read quantification step
+<a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/sprnaseq/sprnaseq/#read-quantification">here</a>. Note,
+the toy data set gets automatically loaded when configuring the workflow environment with the <code>genWorkenvir</code>
+function (see tutorial <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/sprnaseq/sprnaseq/#experimental-design">here</a>).
+In the read quantification step with <code>summarizeOverlaps</code> generate count
+tables for exons by genes (<code>eByg</code>) of the following three strand modes:</p>
 <ol>
 <li>Unstranded</li>
 <li>Strand-specific for positive (sense) strand</li>

@@ -2585,7 +2585,14 @@ Source code downloads: &amp;nbsp; &lt;a href=&#34;https://raw.githubusercontent.
 &lt;h2 id=&#34;a-unstranded-and-strand-specific-read-counting-for-features-of-interest&#34;&gt;A. Unstranded and strand-specific read counting for features of interest&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Task 1&lt;/strong&gt;: Rerun the &lt;a href=&#34;https://girke.bioinformatics.ucr.edu/GEN242/tutorials/sprnaseq/sprnaseq/&#34;&gt;RNA-Seq workflow&lt;/a&gt; with the toy data sets up to the read quantification step &lt;a href=&#34;https://girke.bioinformatics.ucr.edu/GEN242/tutorials/sprnaseq/sprnaseq/#read-quantification&#34;&gt;here&lt;/a&gt;. In the read quantification step with &lt;code&gt;summarizeOverlaps&lt;/code&gt; generate count tables for exons by genes (&lt;code&gt;eByg&lt;/code&gt;) of the following three strand modes:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Task 1&lt;/strong&gt;: Rerun the &lt;a href=&#34;https://girke.bioinformatics.ucr.edu/GEN242/tutorials/sprnaseq/sprnaseq/&#34;&gt;RNA-Seq
+workflow&lt;/a&gt;
+with the toy data sets up to the read quantification step
+&lt;a href=&#34;https://girke.bioinformatics.ucr.edu/GEN242/tutorials/sprnaseq/sprnaseq/#read-quantification&#34;&gt;here&lt;/a&gt;. Note,
+the toy data set gets automatically loaded when configuring the workflow environment with the &lt;code&gt;genWorkenvir&lt;/code&gt;
+function (see tutorial &lt;a href=&#34;https://girke.bioinformatics.ucr.edu/GEN242/tutorials/sprnaseq/sprnaseq/#experimental-design&#34;&gt;here&lt;/a&gt;).
+In the read quantification step with &lt;code&gt;summarizeOverlaps&lt;/code&gt; generate count
+tables for exons by genes (&lt;code&gt;eByg&lt;/code&gt;) of the following three strand modes:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Unstranded&lt;/li&gt;
 &lt;li&gt;Strand-specific for positive (sense) strand&lt;/li&gt;
