@@ -2582,7 +2582,7 @@ writeXStringSet(c(p1, p2), &amp;quot;./data/mypep.fasta&amp;quot;)
 &lt;div style=&#34;text-align: right&#34;&gt; 
 Source code downloads: &amp;nbsp; &lt;a href=&#34;https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/assignments/Homework/HW07/HW07.R&#34; target=&#34;_blank&#34;&gt;[ .R ]&lt;/a&gt;
 &lt;/div&gt;
-&lt;h2 id=&#34;a-unstranded-and-strand-specific-read-counting-for-features-of-interest&#34;&gt;A. Unstranded and strand-specific read counting for features of interest&lt;/h2&gt;
+&lt;h2 id=&#34;a-unstranded-and-strand-specific-read-counting&#34;&gt;A. Unstranded and strand-specific read counting&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Task 1&lt;/strong&gt;: Rerun the &lt;a href=&#34;https://girke.bioinformatics.ucr.edu/GEN242/tutorials/sprnaseq/sprnaseq/&#34;&gt;RNA-Seq
