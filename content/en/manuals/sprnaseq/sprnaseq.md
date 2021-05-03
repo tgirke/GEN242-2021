@@ -1,7 +1,7 @@
 ---
 title: "RNA-Seq Workflow Template" 
 author: "Author: Daniela Cassol, Le Zhang and Thomas Girke"
-date: "Last update: 01 May, 2021" 
+date: "Last update: 02 May, 2021" 
 output:
   BiocStyle::html_document:
     toc_float: true
@@ -785,7 +785,7 @@ sessionInfo()
 
 ## Funding
 
-This project was supported by funds from the National Institutes of Health (NIH).
+This project is funded by NSF award [ABI-1661152](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1661152).
 
 ## References
 
