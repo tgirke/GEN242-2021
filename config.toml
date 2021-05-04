@@ -424,20 +424,25 @@ enable = true
     parent = "Tutorials"
     weight = 209
   [[menu.main]]
-    name = "Functional Enrichment Analysis (T10)"
-    url = "/tutorials/rfea/rfea/"
+    name = "R Markdown (T10)"
+    url = "/tutorials/rmarkdown/rmarkdown/"
     parent = "Tutorials"
     weight = 210
   [[menu.main]]
-    name = "Cluster Analysis and Data Mining (T11)"
-    url = "/tutorials/rclustering/rclustering/"
+    name = "Functional Enrichment Analysis (T11)"
+    url = "/tutorials/rfea/rfea/"
     parent = "Tutorials"
     weight = 211
   [[menu.main]]
-    name = "Graphics and Visualization (T12)"
-    url = "/tutorials/rgraphics/rgraphics/"
+    name = "Cluster Analysis and Data Mining (T12)"
+    url = "/tutorials/rclustering/rclustering/"
     parent = "Tutorials"
     weight = 212
+  [[menu.main]]
+    name = "Graphics and Visualization (T13)"
+    url = "/tutorials/rgraphics/rgraphics/"
+    parent = "Tutorials"
+    weight = 213
 ##
 [[menu.main]]
   name = "Manuals"
