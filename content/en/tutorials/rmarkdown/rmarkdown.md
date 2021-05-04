@@ -1,5 +1,5 @@
 ---
-title: "Sample R Markdown" 
+title: R Markdown Tutorial
 author: "Author: Your Name"
 date: "Last update: 03 May, 2021" 
 output:
@@ -33,8 +33,16 @@ weight: 10
 <script src="/rmarkdown-libs/crosstalk/js/crosstalk.min.js"></script>
 <!---
 - Compile from command-line
-Rscript -e "rmarkdown::render('sample.Rmd', c('html_document'), clean=FALSE)"
+Rscript -e "rmarkdown::render('rmarkdown.Rmd', c('html_document'), clean=FALSE); knitr::knit('rmarkdown.Rmd', tangle=TRUE)"
 -->
+
+<div style="text-align: right">
+
+Source code downloads:    
+\[ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/rmarkdown/rmarkdown.Rmd) \]    
+\[ [.R](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/rmarkdown/rmarkdown.R) \]
+
+</div>
 
 ## R Markdown Overview
 

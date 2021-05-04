@@ -1,5 +1,5 @@
 ---
-title: "Sample R Markdown" 
+title: R Markdown Tutorial
 author: "Author: Your Name"
 date: "Last update: `r format(Sys.time(), '%d %B, %Y')`" 
 output:
@@ -20,8 +20,14 @@ weight: 10
 
 <!---
 - Compile from command-line
-Rscript -e "rmarkdown::render('sample.Rmd', c('html_document'), clean=FALSE)"
+Rscript -e "rmarkdown::render('rmarkdown.Rmd', c('html_document'), clean=FALSE); knitr::knit('rmarkdown.Rmd', tangle=TRUE)"
 -->
+
+<div style="text-align: right"> 
+Source code downloads: &nbsp; &nbsp;
+[ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/rmarkdown/rmarkdown.Rmd) ] &nbsp; &nbsp; 
+[ [.R](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/rmarkdown/rmarkdown.R) ]
+</div>
 
 
 ## R Markdown Overview
