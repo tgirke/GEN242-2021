@@ -22,12 +22,12 @@
  R Markdown Overview R Markdown combines markdown (an easy to write plain text format) with embedded R code chunks. When compiling R Markdown documents, the code components can be evaluated so that both the code and its output can be included in the final document. This makes analysis reports highly reproducible by allowing to automatically regenerate them when the underlying R code or data changes." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rmarkdown/rmarkdown/" />
-<meta property="article:modified_time" content="2021-05-03T17:50:32-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-05-03T17:58:42-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="R Markdown Tutorial">
 <meta itemprop="description" content="Source code downloads: [ .Rmd ] [ .R ]
  R Markdown Overview R Markdown combines markdown (an easy to write plain text format) with embedded R code chunks. When compiling R Markdown documents, the code components can be evaluated so that both the code and its output can be included in the final document. This makes analysis reports highly reproducible by allowing to automatically regenerate them when the underlying R code or data changes.">
-<meta itemprop="dateModified" content="2021-05-03T17:50:32-07:00" />
-<meta itemprop="wordCount" content="1734">
+<meta itemprop="dateModified" content="2021-05-03T17:58:42-07:00" />
+<meta itemprop="wordCount" content="1738">
 
 
 
@@ -895,7 +895,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.19ae0f398071593b6a78903d90135dc5.json"
+  data-offline-search-index-json-src="../../../offline-search-index.a8299749c737551766e123cabfc24fc7.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -927,7 +927,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.19ae0f398071593b6a78903d90135dc5.json"
+  data-offline-search-index-json-src="../../../offline-search-index.a8299749c737551766e123cabfc24fc7.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1135,6 +1135,8 @@ if (!doNotTrack) {
         <li><a href="#r-code-chunks">R code chunks</a></li>
         <li><a href="#learning-markdown">Learning Markdown</a></li>
         <li><a href="#tables">Tables</a></li>
+        <li><a href="#with-knitrkable">With <code>knitr::kable</code></a></li>
+        <li><a href="#with-dtdatatable">With <code>DT::datatable</code></a></li>
         <li><a href="#figures">Figures</a></li>
         <li><a href="#inline-r-code">Inline R code</a></li>
         <li><a href="#mathematical-equations">Mathematical equations</a></li>
@@ -1314,6 +1316,7 @@ than providing another introduction on this topic, here are some useful sites fo
 <p>There are several ways to render tables. First, they can be printed within the R code chunks. Second,
 much nicer formatted tables can be generated with the functions <code>kable</code>, <code>pander</code> or <code>xtable</code>. The following
 example uses <code>kable</code> from the <code>knitr</code> package.</p>
+<h3 id="with-knitrkable">With <code>knitr::kable</code></h3>
 <pre><code class="language-r">library(knitr)
 kable(iris[1:12,])
 </code></pre>
@@ -1417,6 +1420,7 @@ kable(iris[1:12,])
 <p>A much more elegant and powerful solution is to create fully interactive tables with the <a href="https://rstudio.github.io/DT/"><code>DT</code> package</a>.
 This JavaScirpt based environment provides a wrapper to the DataTables library using jQuery. The resulting tables can be sorted, queried and resized by the
 user.</p>
+<h3 id="with-dtdatatable">With <code>DT::datatable</code></h3>
 <pre><code class="language-r">library(DT)
 datatable(iris, filter = 'top', options = list(
   pageLength = 100, scrollX = TRUE, scrollY = &quot;600px&quot;, autoWidth = TRUE
@@ -1531,7 +1535,7 @@ If necessary access to the URL can be restricted with a password following the i
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-03: <a  href="https://github.com/tgirke/GEN242//commit/85c6f3777495506db9bd5084b1a718d341cb020e">some edits (85c6f3777)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-03: <a  href="https://github.com/tgirke/GEN242//commit/ea566ea832ae5aa6fdf37b9ea8cb2eca2340b997">some edits (ea566ea83)</a>
 </div>
 </div>
 

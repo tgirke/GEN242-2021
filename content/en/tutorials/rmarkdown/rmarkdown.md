@@ -177,6 +177,8 @@ There are several ways to render tables. First, they can be printed within the R
 much nicer formatted tables can be generated with the functions `kable`, `pander` or `xtable`. The following
 example uses `kable` from the `knitr` package.
 
+### With `knitr::kable`
+
 ``` r
 library(knitr)
 kable(iris[1:12,])
@@ -200,6 +202,8 @@ kable(iris[1:12,])
 A much more elegant and powerful solution is to create fully interactive tables with the [`DT` package](https://rstudio.github.io/DT/).
 This JavaScirpt based environment provides a wrapper to the DataTables library using jQuery. The resulting tables can be sorted, queried and resized by the
 user.
+
+### With `DT::datatable`
 
 ``` r
 library(DT)
