@@ -561,7 +561,7 @@ system(&#39;fastq-dump --help&#39;) # prints help to screen
 To save space in home accounts (limited to 20GB), users need to redirect this output to their project&amp;rsquo;s
 &lt;code&gt;data&lt;/code&gt; directory via a symbolic link. The following shows how to do this for the &lt;code&gt;data&lt;/code&gt; directory
 of the &lt;code&gt;ChIP-Seq&lt;/code&gt; project.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;system(&amp;quot;ln -s /bigdata/gen242/shared/&amp;lt;user_name&amp;gt;/data ~/ncbi&amp;quot;)
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;system(&amp;quot;ln -s /bigdata/gen242/&amp;lt;user_name&amp;gt;/projdata/data ~/ncbi&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h4 id=&#34;define-download-function&#34;&gt;Define download function&lt;/h4&gt;
 &lt;p&gt;The following function downloads and extracts the FASTQ files for each project from SRA.

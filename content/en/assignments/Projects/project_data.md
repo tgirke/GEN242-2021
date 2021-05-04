@@ -84,7 +84,7 @@ To save space in home accounts (limited to 20GB), users need to redirect this ou
 of the `ChIP-Seq` project.
 
 ```r
-system("ln -s /bigdata/gen242/shared/<user_name>/data ~/ncbi")
+system("ln -s /bigdata/gen242/<user_name>/projdata/data ~/ncbi")
 ```
 
 #### Define download function
