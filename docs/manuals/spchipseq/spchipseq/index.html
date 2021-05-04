@@ -22,12 +22,12 @@
 Background and objectives This report describes the analysis of several ChIP-Seq experiments studying the DNA binding patterns of the transcriptions factors … from organism …." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/manuals/spchipseq/spchipseq/" />
-<meta property="article:modified_time" content="2021-05-02T17:51:24-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-05-04T12:13:40-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="ChIP-Seq Workflow Template">
 <meta itemprop="description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Introduction Users want to provide here background information about the design of their ChIP-Seq project.
 Background and objectives This report describes the analysis of several ChIP-Seq experiments studying the DNA binding patterns of the transcriptions factors … from organism ….">
-<meta itemprop="dateModified" content="2021-05-02T17:51:24-07:00" />
-<meta itemprop="wordCount" content="3704">
+<meta itemprop="dateModified" content="2021-05-04T12:13:40-07:00" />
+<meta itemprop="wordCount" content="3690">
 
 
 
@@ -895,7 +895,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.a9d0d01043bf23112cbc39937bc295dd.json"
+  data-offline-search-index-json-src="../../../offline-search-index.d24777a375ecc49d96c9f7cad481bf66.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -927,7 +927,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.a9d0d01043bf23112cbc39937bc295dd.json"
+  data-offline-search-index-json-src="../../../offline-search-index.d24777a375ecc49d96c9f7cad481bf66.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1545,9 +1545,10 @@ writeTargetsout(x = args_input, file = &quot;targets_macs_input.txt&quot;,
 separate files in the <code>results</code> directory. They are named after the corresponding
 files with extensions used by MACS2.</p>
 <h3 id="identify-consensus-peaks">Identify consensus peaks</h3>
-<p>The following example shows how one can identify consensus preaks among two peak sets sharing either a minimum absolute overlap and/or minimum relative overlap using the <code>subsetByOverlaps</code> or <code>olRanges</code> functions, respectively. Note, the latter is a custom function imported below by sourcing it.</p>
-<pre><code class="language-r"># source('http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/My_R_Scripts/rangeoverlapper.R')
-outpaths &lt;- subsetWF(args, slot = &quot;output&quot;, subset = 1, index = 1)  ## escolher um dos outputs index
+<p>The following example shows how one can identify consensus preaks among two
+peak sets sharing either a minimum absolute overlap and/or minimum relative
+overlap using the <code>subsetByOverlaps</code> or <code>olRanges</code> functions, respectively.</p>
+<pre><code class="language-r">outpaths &lt;- subsetWF(args, slot = &quot;output&quot;, subset = 1, index = 1)  ## escolher um dos outputs index
 peak_M1A &lt;- outpaths[&quot;M1A&quot;]
 peak_M1A &lt;- as(read.delim(peak_M1A, comment = &quot;#&quot;)[, 1:3], &quot;GRanges&quot;)
 peak_A1A &lt;- outpaths[&quot;A1A&quot;]
@@ -1854,7 +1855,7 @@ dev.off()
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-02: <a  href="https://github.com/tgirke/GEN242//commit/1aa925b74d7fe31a924fe259280c37a38283cde0">some edits (1aa925b74)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-04: <a  href="https://github.com/tgirke/GEN242//commit/b018c496482eb7a9a56e59e4d522d84c1b62b677">some edits (b018c4964)</a>
 </div>
 </div>
 

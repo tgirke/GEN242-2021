@@ -438,10 +438,11 @@ files with extensions used by MACS2.
 
 ### Identify consensus peaks
 
-The following example shows how one can identify consensus preaks among two peak sets sharing either a minimum absolute overlap and/or minimum relative overlap using the `subsetByOverlaps` or `olRanges` functions, respectively. Note, the latter is a custom function imported below by sourcing it.
+The following example shows how one can identify consensus preaks among two
+peak sets sharing either a minimum absolute overlap and/or minimum relative
+overlap using the `subsetByOverlaps` or `olRanges` functions, respectively.
 
 ``` r
-# source('http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/My_R_Scripts/rangeoverlapper.R')
 outpaths <- subsetWF(args, slot = "output", subset = 1, index = 1)  ## escolher um dos outputs index
 peak_M1A <- outpaths["M1A"]
 peak_M1A <- as(read.delim(peak_M1A, comment = "#")[, 1:3], "GRanges")
