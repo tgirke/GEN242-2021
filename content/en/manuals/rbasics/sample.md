@@ -1,7 +1,7 @@
 ---
 title: "Sample R Markdown" 
 author: "Author: Your Name"
-date: "Last update: 22 April, 2021" 
+date: "Last update: 03 May, 2021" 
 output:
   html_document:
     toc: true
@@ -66,8 +66,8 @@ then modify it as needed. Note the file name of an R Markdown scirpt needs to
 have the extension `.Rmd`. Template files for the following examples are available
 here:
 
--   R Markdown sample script: [`sample.Rmd`](https://raw.githubusercontent.com/tgirke/GEN242/gh-pages/_vignettes/07_Rbasics/sample.Rmd)
--   Bibtex file for handling citations and reference section: [`bibtex.bib`](https://raw.githubusercontent.com/tgirke/GEN242/gh-pages/_vignettes/07_Rbasics/bibtex.bib)
+-   R Markdown sample script: [`sample.Rmd`](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/manuals/rbasics/sample.Rmd)
+-   Bibtex file for handling citations and reference section: [`bibtex.bib`](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/manuals/rbasics/bibtex.bib)
 
 Users want to download these files, open the `sample.Rmd` file with their preferred R IDE
 (*e.g.* RStudio, vim or emacs), initilize an R session and then direct their R session to
@@ -85,7 +85,7 @@ package from Bioconductor.
      ---
     title: "My First R Markdown Document"
     author: "Author: First Last"
-    date: "Last update: 22 April, 2021"
+    date: "Last update: 03 May, 2021"
     output:
       BiocStyle::html_document:
         toc: true
@@ -99,8 +99,8 @@ package from Bioconductor.
 ### Render `Rmd` script
 
 An R Markdown script can be evaluated and rendered with the following `render` command or by pressing the `knit` button in RStudio.
-The `output_format` argument defines the format of the output (*e.g.* `html_document`). The setting `output_format="all"` will generate
-all supported output formats. Alternatively, one can specify several output formats in the metadata section as shown in the above example.
+The `output_format` argument defines the format of the output (*e.g.* `html_document` or `pdf_document`). The setting `output_format="all"` will generate
+all supported output formats. Alternatively, one can specify several output formats in the metadata section.
 
 ``` r
 rmarkdown::render("sample.Rmd", clean=TRUE, output_format="html_document")
@@ -109,7 +109,7 @@ rmarkdown::render("sample.Rmd", clean=TRUE, output_format="html_document")
 The following shows two options how to run the rendering from the command-line.
 
 ``` sh
-$ Rscript -e "rmarkdown::render('sample.Rmd', clean=TRUE)"
+$ Rscript -e "rmarkdown::render('sample.Rmd', output_format='html_document', clean=TRUE)"
 ```
 
 Alternatively, one can use a Makefile to evaluate and render an R Markdown
@@ -156,6 +156,7 @@ For more details on code chunk options see [here](https://www.rstudio.com/wp-con
 The basic syntax of Markdown and derivatives like kramdown is extremely easy to learn. Rather
 than providing another introduction on this topic, here are some useful sites for learning Markdown:
 
+-   [R Markdown Online Book](https://bookdown.org/yihui/rmarkdown/)
 -   [Markdown Intro on GitHub](https://guides.github.com/features/mastering-markdown/)
 -   [Markdown Cheet Sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 -   [Markdown Basics from RStudio](http://rmarkdown.rstudio.com/authoring_basics.html)

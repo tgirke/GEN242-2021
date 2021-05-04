@@ -25,7 +25,7 @@
 <meta itemprop="name" content="Sample R Markdown">
 <meta itemprop="description" content="R Markdown Overview R Markdown combines markdown (an easy to write plain text format) with embedded R code chunks. When compiling R Markdown documents, the code components can be evaluated so that both the code and its output can be included in the final document. This makes analysis reports highly reproducible by allowing to automatically regenerate them when the underlying R code or data changes.">
 <meta itemprop="dateModified" content="2021-04-22T10:23:03-07:00" />
-<meta itemprop="wordCount" content="1724">
+<meta itemprop="wordCount" content="1725">
 
 
 
@@ -884,7 +884,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.954b91cc6f7df9b2397f61a1f31e1562.json"
+  data-offline-search-index-json-src="../../../offline-search-index.2fd744d7996c95576378b655f268219b.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -916,7 +916,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.954b91cc6f7df9b2397f61a1f31e1562.json"
+  data-offline-search-index-json-src="../../../offline-search-index.2fd744d7996c95576378b655f268219b.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1204,8 +1204,8 @@ then modify it as needed. Note the file name of an R Markdown scirpt needs to
 have the extension <code>.Rmd</code>. Template files for the following examples are available
 here:</p>
 <ul>
-<li>R Markdown sample script: <a href="https://raw.githubusercontent.com/tgirke/GEN242/gh-pages/_vignettes/07_Rbasics/sample.Rmd"><code>sample.Rmd</code></a></li>
-<li>Bibtex file for handling citations and reference section: <a href="https://raw.githubusercontent.com/tgirke/GEN242/gh-pages/_vignettes/07_Rbasics/bibtex.bib"><code>bibtex.bib</code></a></li>
+<li>R Markdown sample script: <a href="https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/manuals/rbasics/sample.Rmd"><code>sample.Rmd</code></a></li>
+<li>Bibtex file for handling citations and reference section: <a href="https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/manuals/rbasics/bibtex.bib"><code>bibtex.bib</code></a></li>
 </ul>
 <p>Users want to download these files, open the <code>sample.Rmd</code> file with their preferred R IDE
 (<em>e.g.</em> RStudio, vim or emacs), initilize an R session and then direct their R session to
@@ -1220,7 +1220,7 @@ package from Bioconductor.</p>
 <pre><code> ---
 title: &quot;My First R Markdown Document&quot;
 author: &quot;Author: First Last&quot;
-date: &quot;Last update: 22 April, 2021&quot;
+date: &quot;Last update: 03 May, 2021&quot;
 output:
   BiocStyle::html_document:
     toc: true
@@ -1233,12 +1233,12 @@ bibliography: bibtex.bib
 </code></pre>
 <h3 id="render-rmd-script">Render <code>Rmd</code> script</h3>
 <p>An R Markdown script can be evaluated and rendered with the following <code>render</code> command or by pressing the <code>knit</code> button in RStudio.
-The <code>output_format</code> argument defines the format of the output (<em>e.g.</em> <code>html_document</code>). The setting <code>output_format=&quot;all&quot;</code> will generate
-all supported output formats. Alternatively, one can specify several output formats in the metadata section as shown in the above example.</p>
+The <code>output_format</code> argument defines the format of the output (<em>e.g.</em> <code>html_document</code> or <code>pdf_document</code>). The setting <code>output_format=&quot;all&quot;</code> will generate
+all supported output formats. Alternatively, one can specify several output formats in the metadata section.</p>
 <pre><code class="language-r">rmarkdown::render(&quot;sample.Rmd&quot;, clean=TRUE, output_format=&quot;html_document&quot;)
 </code></pre>
 <p>The following shows two options how to run the rendering from the command-line.</p>
-<pre><code class="language-sh">$ Rscript -e &quot;rmarkdown::render('sample.Rmd', clean=TRUE)&quot;
+<pre><code class="language-sh">$ Rscript -e &quot;rmarkdown::render('sample.Rmd', output_format='html_document', clean=TRUE)&quot;
 </code></pre>
 <p>Alternatively, one can use a Makefile to evaluate and render an R Markdown
 script. A sample Makefile for rendering the above <code>sample.Rmd</code> can be
@@ -1277,6 +1277,7 @@ not part of it. They have been added to print the code chunk syntax in this docu
 <p>The basic syntax of Markdown and derivatives like kramdown is extremely easy to learn. Rather
 than providing another introduction on this topic, here are some useful sites for learning Markdown:</p>
 <ul>
+<li><a href="https://bookdown.org/yihui/rmarkdown/">R Markdown Online Book</a></li>
 <li><a href="https://guides.github.com/features/mastering-markdown/">Markdown Intro on GitHub</a></li>
 <li><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown Cheet Sheet</a></li>
 <li><a href="http://rmarkdown.rstudio.com/authoring_basics.html">Markdown Basics from RStudio</a></li>

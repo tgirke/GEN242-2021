@@ -3,7 +3,7 @@
 "content/en/docs/test.Rmarkdown" "57a94487fffa01fffde108829d91b2e3"
 "content/en/manuals/rbasics/Rbasics.Rmarkdown" "f35269f84a1d7ce0a18d843f1c7acb23"
 "content/en/manuals/rbasics/sample.Rmarkdown" "b94bfe5d863d8bcff325819a7fffe2d7"
-"content/en/manuals/rbasics/sample.Rmd" "c4e896ae66ff579e2e21f174e3e9ed86"
+"content/en/manuals/rbasics/sample.Rmd" "dfb1a0ca9d0a146658e697049f4af3d2"
 "content/en/manuals/rclustering/Rclustering.Rmarkdown" "dd682604aa8d2e83f759190666fa6f6e"
 "content/en/manuals/rclustering/rclustering.Rmd" "03e069b2ebac297bfe8a3579d015916e"
 "content/en/manuals/rclustering/Rclustering.Rmd" "ff2ddcf24274ba1695135b96ec1e86e4"
