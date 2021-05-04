@@ -553,7 +553,7 @@ ln -s /bigdata/gen242/&amp;lt;user_name&amp;gt;/projdata/results results
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h4 id=&#34;load-libraries-and-modules&#34;&gt;Load libraries and modules&lt;/h4&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(systemPipeR)
-moduleload(&amp;quot;sratoolkit/2.10.8&amp;quot;)
+moduleload(&amp;quot;sratoolkit/2.9.2&amp;quot;)
 system(&#39;fastq-dump --help&#39;) # prints help to screen
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h4 id=&#34;redirect-cache-output-of-sra-toolkit&#34;&gt;Redirect cache output of SRA Toolkit&lt;/h4&gt;

@@ -72,7 +72,7 @@ sraidv <- paste("SRR4460", 27:44, sep="")
 
 ```r
 library(systemPipeR)
-moduleload("sratoolkit/2.10.8")
+moduleload("sratoolkit/2.9.2")
 system('fastq-dump --help') # prints help to screen
 ```
 
