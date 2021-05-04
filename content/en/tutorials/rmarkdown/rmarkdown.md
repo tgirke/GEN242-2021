@@ -292,7 +292,7 @@ ln -s ~/bigdata/today/rmarkdown/sample.html sample.html
 After this one can view the report in a web browser using this URL <http://biocluster.ucr.edu/~ttest/rmarkdown/sample.html>.
 If necessary access to the URL can be restricted with a password following the instructions [here](http://hpcc.ucr.edu/manuals_linux-cluster_sharing.html#sharing-files-on-the-web).
 
-# Session Info
+## Session Info
 
 ``` r
 sessionInfo()
@@ -333,7 +333,7 @@ sessionInfo()
     ## [37] htmltools_0.5.1.1 ellipsis_0.3.1    colorspace_2.0-0  labeling_0.4.2   
     ## [41] stringi_1.5.3     munsell_0.5.0     crayon_1.3.4
 
-# References
+## References
 
 <div id="refs" class="references csl-bib-body hanging-indent">
 

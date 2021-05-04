@@ -260,11 +260,11 @@ After this one can view the report in a web browser using this URL [http://biocl
 If necessary access to the URL can be restricted with a password following the instructions [here](http://hpcc.ucr.edu/manuals_linux-cluster_sharing.html#sharing-files-on-the-web).
 
 
-# Session Info
+## Session Info
 
 ```{r sessionInfo}
 sessionInfo()
 ```
 
-# References
+## References
 
