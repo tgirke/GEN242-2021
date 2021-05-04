@@ -1,7 +1,7 @@
 ---
 title: "ChIP-Seq Workflow Template" 
 author: "Author: Daniela Cassol, Le Zhang and Thomas Girke"
-date: "Last update: 02 May, 2021" 
+date: "Last update: 04 May, 2021" 
 output:
   BiocStyle::html_document:
     toc_float: true
@@ -87,7 +87,7 @@ to be included in a final HTML/PDF report of a workflow.
     first unload an active software version before loading another version, *e.g.* `module unload R`.
 
 ``` sh
-srun --x11 --partition=short --mem=2gb --cpus-per-task 4 --ntasks 1 --time 2:00:00 --pty bash -l
+srun --x11 --partition=short --mem=8gb --cpus-per-task 4 --ntasks 1 --time 2:00:00 --pty bash -l
 module load R/4.0.3
 ```
 
@@ -446,10 +446,11 @@ files with extensions used by MACS2.
 
 ### Identify consensus peaks
 
-The following example shows how one can identify consensus preaks among two peak sets sharing either a minimum absolute overlap and/or minimum relative overlap using the `subsetByOverlaps` or `olRanges` functions, respectively. Note, the latter is a custom function imported below by sourcing it.
+The following example shows how one can identify consensus preaks among two
+peak sets sharing either a minimum absolute overlap and/or minimum relative
+overlap using the `subsetByOverlaps` or `olRanges` functions, respectively.
 
 ``` r
-# source('http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/My_R_Scripts/rangeoverlapper.R')
 outpaths <- subsetWF(args, slot = "output", subset = 1, index = 1)  ## escolher um dos outputs index
 peak_M1A <- outpaths["M1A"]
 peak_M1A <- as(read.delim(peak_M1A, comment = "#")[, 1:3], "GRanges")
