@@ -13,7 +13,7 @@
 "content/en/manuals/rprogramming/rprogramming.Rmarkdown" "3695e398b7b68f5871b466653083e7dd"
 "content/en/manuals/rsequences/Rsequences.Rmarkdown" "601dc1b02f1ab533ca7feb076822dd54"
 "content/en/manuals/spchipseq/spchipseq.Rmd" "fc9318734c467d492ffcb9ca0754515a"
-"content/en/manuals/sprnaseq/sprnaseq.Rmd" "2701ce7abff6ded6d1098374dc355f26"
+"content/en/manuals/sprnaseq/sprnaseq.Rmd" "f5e280f2117978c856db0a3e9df47f60"
 "content/en/manuals/systempiper/systemPipeR.Rmd" "e83c17e8cb2ecaae4797727156276dd3"
 "content/en/rmarkdown/examples/example_rmd.Rmarkdown" "f742c6cb51209c0348f4db7c606042ad"
 "content/en/rmarkdown/new_features/new_features.Rmarkdown" "d61278972d234700692dfabb044542ff"

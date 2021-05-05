@@ -550,7 +550,7 @@ vennPlot(list(vennsetup, vennsetdown), mymain = "", mysub = "",
 dev.off()
 ```
 
-![](results/vennplot.png)
+![](../results/vennplot.png)
 
 <div align="center">
 
