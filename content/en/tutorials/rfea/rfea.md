@@ -56,8 +56,8 @@ statistical FEA methods assess whether functional annotation terms are
 over-represented in a query gene set. In case of so called over-represention
 analysis (ORA) methods the query is a list of unranked gene identifiers
 (Falcon and Gentleman 2007). In contrast to this, Gene Set Enrichment Analysis (GSEA)
-algorithms use as query score ranked lists, e.g. all genes profiled by an assay
-\[Subramanian et al. (2005); Sergushichev2016-ms; Duan2020-wz\]. The actual sets can
+algorithms use as query score ranked lists, *e.g.* all genes profiled by an assay
+(Subramanian et al. 2005; Sergushichev 2016; Duan et al. 2020). The actual sets can
 be composed of genes, proteins and even compounds. For simplicity. the term
 gene sets is used throughtout this text.
 
@@ -213,9 +213,21 @@ sessionInfo()
 
 <div id="refs" class="references csl-bib-body hanging-indent">
 
+<div id="ref-Duan2020-wz" class="csl-entry">
+
+Duan, Yuzhu, Daniel S Evans, Richard A Miller, Nicholas J Schork, Steven R Cummings, and Thomas Girke. 2020. “<span class="nocase">signatureSearch: environment for gene expression signature searching and functional interpretation</span>.” *Nucleic Acids Res.*, October. <https://doi.org/10.1093/nar/gkaa878>.
+
+</div>
+
 <div id="ref-Falcon2007-eb" class="csl-entry">
 
 Falcon, S, and R Gentleman. 2007. “<span class="nocase">Using GOstats to test gene lists for GO term association</span>.” *Bioinformatics* 23 (2): 257–58. <https://doi.org/10.1093/bioinformatics/btl567>.
+
+</div>
+
+<div id="ref-Sergushichev2016-ms" class="csl-entry">
+
+Sergushichev, Alexey. 2016. “<span class="nocase">An algorithm for fast preranked gene set enrichment analysis using cumulative statistic calculation</span>.” *bioRxiv*. <https://doi.org/10.1101/060012>.
 
 </div>
 
