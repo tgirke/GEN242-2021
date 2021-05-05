@@ -1,7 +1,7 @@
 ---
 title: "RNA-Seq Workflow Template" 
 author: "Author: Daniela Cassol, Le Zhang and Thomas Girke"
-date: "Last update: 04 May, 2021" 
+date: "Last update: 05 May, 2021" 
 output:
   BiocStyle::html_document:
     toc_float: true
@@ -734,7 +734,7 @@ pheatmap(y, scale = "row", clustering_distance_rows = "correlation",
 dev.off()
 ```
 
-![](results/heatmap1.png)
+![](../results/heatmap1.png)
 
 <div align="center">
 

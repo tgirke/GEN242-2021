@@ -524,7 +524,7 @@ pheatmap(y, scale="row", clustering_distance_rows="correlation", clustering_dist
 dev.off()
 ```
 
-![](results/heatmap1.png)
+![](../results/heatmap1.png)
 <div align="center">Figure 6: Heat Map with Hierarchical Clustering Dendrograms of DEGs</div></br>
 
 ## Version Information
