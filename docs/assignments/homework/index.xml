@@ -2610,7 +2610,11 @@ included in the homework results (see &lt;code&gt;HW7.R&lt;/code&gt; below).&lt;
                     inter.feature=FALSE, 
                     singleEnd=TRUE)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Before attempting to solve this homework task please read the vignette &lt;em&gt;Counting reads with &lt;code&gt;summarizeOverlaps&lt;/code&gt;&lt;/em&gt; (&lt;a href=&#34;http://bioconductor.org/packages/release/bioc/html/GenomicAlignments.html&#34;&gt;here&lt;/a&gt;) from the &lt;code&gt;GenomicAlignments&lt;/code&gt; package that defines the &lt;code&gt;summarizeOverlap&lt;/code&gt; function.&lt;/p&gt;
+&lt;p&gt;Before attempting to solve this homework task please read the vignette
+&lt;em&gt;Counting reads with &lt;code&gt;summarizeOverlaps&lt;/code&gt;&lt;/em&gt;
+(&lt;a href=&#34;http://bioconductor.org/packages/release/bioc/html/GenomicAlignments.html&#34;&gt;here&lt;/a&gt;)
+from the &lt;code&gt;GenomicAlignments&lt;/code&gt; package that defines the &lt;code&gt;summarizeOverlap&lt;/code&gt;
+function. In addition, the help file for &lt;code&gt;?summarizeOverlaps&lt;/code&gt; provides useful information.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Task 2&lt;/strong&gt;: Provide R code that demonstrates that the two strand-specific count tables sum up to the values of the unstranded count table.&lt;/p&gt;

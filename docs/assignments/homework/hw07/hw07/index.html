@@ -21,11 +21,11 @@
 <meta property="og:description" content="Source code downloads: &nbsp; [ .R ]  A. Unstranded and strand-specific read counting   Task 1: Rerun the RNA-Seq workflow with the toy data sets up to the read quantification step here. Note, the toy data set gets automatically loaded when intializing a workflow environment (directory structure) with the genWorkenvir function (see tutorial here). In the read quantification step with summarizeOverlaps generate count tables for exons by genes (eByg) of the following three strand modes:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/assignments/homework/hw07/hw07/" />
-<meta property="article:modified_time" content="2021-05-04T18:25:26-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-05-04T18:27:03-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="HW7 - RNA-Seq Analysis">
 <meta itemprop="description" content="Source code downloads: &nbsp; [ .R ]  A. Unstranded and strand-specific read counting   Task 1: Rerun the RNA-Seq workflow with the toy data sets up to the read quantification step here. Note, the toy data set gets automatically loaded when intializing a workflow environment (directory structure) with the genWorkenvir function (see tutorial here). In the read quantification step with summarizeOverlaps generate count tables for exons by genes (eByg) of the following three strand modes:">
-<meta itemprop="dateModified" content="2021-05-04T18:25:26-07:00" />
-<meta itemprop="wordCount" content="669">
+<meta itemprop="dateModified" content="2021-05-04T18:27:03-07:00" />
+<meta itemprop="wordCount" content="679">
 
 
 
@@ -892,7 +892,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.172622573bcc130bb875333f2b8573ec.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.3b1ee116a5e0404d4603991e065f1249.json"
   data-offline-search-base-href="../../../../"
   data-offline-search-max-results="10"
 >
@@ -924,7 +924,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.172622573bcc130bb875333f2b8573ec.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.3b1ee116a5e0404d4603991e065f1249.json"
   data-offline-search-base-href="../../../../"
   data-offline-search-max-results="10"
 >
@@ -1348,7 +1348,11 @@ included in the homework results (see <code>HW7.R</code> below).</p>
                     inter.feature=FALSE, 
                     singleEnd=TRUE)
 </code></pre>
-<p>Before attempting to solve this homework task please read the vignette <em>Counting reads with <code>summarizeOverlaps</code></em> (<a href="http://bioconductor.org/packages/release/bioc/html/GenomicAlignments.html">here</a>) from the <code>GenomicAlignments</code> package that defines the <code>summarizeOverlap</code> function.</p>
+<p>Before attempting to solve this homework task please read the vignette
+<em>Counting reads with <code>summarizeOverlaps</code></em>
+(<a href="http://bioconductor.org/packages/release/bioc/html/GenomicAlignments.html">here</a>)
+from the <code>GenomicAlignments</code> package that defines the <code>summarizeOverlap</code>
+function. In addition, the help file for <code>?summarizeOverlaps</code> provides useful information.</p>
 <ul>
 <li>
 <p><strong>Task 2</strong>: Provide R code that demonstrates that the two strand-specific count tables sum up to the values of the unstranded count table.</p>
@@ -1442,7 +1446,7 @@ and rename it to <code>hw7.Rmd</code> when you upload it to GitHub.</li>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-04: <a  href="https://github.com/tgirke/GEN242//commit/d1fb140e9b9295e1cf00712ea21c15c357ee9ee5">some edits (d1fb140e9)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-04: <a  href="https://github.com/tgirke/GEN242//commit/a3b1f142332e1b2b2e09a948037283607b49180b">some edits (a3b1f1423)</a>
 </div>
 </div>
 
