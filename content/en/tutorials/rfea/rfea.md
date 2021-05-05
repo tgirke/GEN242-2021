@@ -136,10 +136,11 @@ load_reacList <- function(org="R-HSA") {
     return(reac_gene_list)
 }
 ## Usage:
-reacdb <- load_reacList(org="")
+reacdb <- load_reacList(org="R-HSA")
 ```
 
-#### `ReactomeContentService4R`
+A very useful query interface for Reactome is the `ReactomeContentService4R` package.
+Its vignette provides many useful examples, see [here](https://bioconductor.org/packages/devel/bioc/vignettes/ReactomeContentService4R/inst/doc/ReactomeContentService4R.html).
 
 ## Functional Enrichment Analysis Methods
 
