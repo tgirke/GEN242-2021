@@ -2649,22 +2649,23 @@ until the end of this class for all remaining homework assignments as well as th
 You are responsible to maintain this &amp;ldquo;project&amp;rdquo; repository including its &lt;code&gt;README.md&lt;/code&gt; file.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;To start with HW7, accept the assignment and &lt;code&gt;git clone&lt;/code&gt; to your user account on the HPCC cluster or your local computer.&lt;/li&gt;
-&lt;li&gt;Create a directory &amp;ldquo;hw7&amp;rdquo; and upload your HW7 script and result files to this directory. This includes the following files:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;Create a directory &amp;ldquo;hw7&amp;rdquo; and upload all your HW7 script and result files to this directory. This includes the following files:
 &lt;ul&gt;
 &lt;li&gt;Your script file either as R or R Markdown file, here &lt;code&gt;hw7.R&lt;/code&gt; or &lt;code&gt;hw7.Rmd&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Two Venn diagram plots: &lt;code&gt;unstranded.png&lt;/code&gt; and &lt;code&gt;hw7/sense.png&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h3 id=&#34;auto-grading&#34;&gt;Auto-grading&lt;/h3&gt;
 &lt;p&gt;You will complete most of your HW7 on the HPCC cluster. In this and the following homeworks auto-grading will not be used.&lt;br&gt;
 Your TA will manually check your homework solutions.&lt;/p&gt;
 &lt;h3 id=&#34;details&#34;&gt;Details&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;If you wish then you can for this homework submission R Markdown (Rmd). Alternatively, an R file will be sufficient.
-Due to dependencies of large files there is also no need to make sure your code can be sourced with &lt;strong&gt;&lt;code&gt;source()&lt;/code&gt;&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;Another option will be to add your homework code to the &lt;code&gt;systemPipeRNAseq.Rmd&lt;/code&gt; file and rename it &lt;code&gt;hw7.Rmd&lt;/code&gt; when you upload
-it to GitHub.&lt;/li&gt;
-&lt;li&gt;If possible please use only one of the above options.&lt;/li&gt;
+&lt;li&gt;If you wish then you can submit your homeworks as an R Markdown (Rmd) file. However, an R file will be sufficient.
+Due to dependencies of large input/result files there is also no need to make sure your code can be sourced with &lt;strong&gt;&lt;code&gt;source()&lt;/code&gt;&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Another option will be to add your homework code to the &lt;code&gt;systemPipeRNAseq.Rmd&lt;/code&gt; file used in the corresponding workflow template
+and rename it to &lt;code&gt;hw7.Rmd&lt;/code&gt; when you upload it to GitHub.&lt;/li&gt;
+&lt;li&gt;If possible please use only one of the above format options.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;For the graphis files, you can upload them either as &lt;code&gt;.png&lt;/code&gt; or &lt;code&gt;.jpg&lt;/code&gt; (&lt;code&gt;.jpeg&lt;/code&gt;) files.&lt;/p&gt;
 &lt;h3 id=&#34;grading&#34;&gt;Grading&lt;/h3&gt;
