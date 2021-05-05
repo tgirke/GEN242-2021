@@ -38,9 +38,9 @@ class rather than auditing it in a passive manner.
 
 ## Code of conduct and DEI standards 
 
-The organizers of this class are committed to create an environment in which
-everyone can learn and thrive in ways inclusive of their diverse backgrounds
-and identities. All course activities are expected to be a harassment-free
+This class is committed to create an environment in which everyone can learn
+and thrive in ways inclusive of their diverse backgrounds and identities. All
+teaching material and course activities are expected to be a harassment-free
 experience for everyone, regardless of age, body size, visible or invisible
 disability, ethnicity, sex characteristics, gender identity and expression,
 level of experience, education, socio-economic status, nationality, personal
