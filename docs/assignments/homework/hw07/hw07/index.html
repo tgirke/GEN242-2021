@@ -21,11 +21,11 @@
 <meta property="og:description" content="Source code downloads: &nbsp; [ .R ]  A. Unstranded and strand-specific read counting   Task 1: Rerun the RNA-Seq workflow with the toy data sets up to the read quantification step here. Note, the toy data set gets automatically loaded when intializing a workflow environment (directory structure) with the genWorkenvir function (see tutorial here). In the read quantification step with summarizeOverlaps generate count tables for exons by genes (eByg) of the following three strand modes:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/assignments/homework/hw07/hw07/" />
-<meta property="article:modified_time" content="2021-05-04T18:27:03-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-05-04T18:29:01-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="HW7 - RNA-Seq Analysis">
 <meta itemprop="description" content="Source code downloads: &nbsp; [ .R ]  A. Unstranded and strand-specific read counting   Task 1: Rerun the RNA-Seq workflow with the toy data sets up to the read quantification step here. Note, the toy data set gets automatically loaded when intializing a workflow environment (directory structure) with the genWorkenvir function (see tutorial here). In the read quantification step with summarizeOverlaps generate count tables for exons by genes (eByg) of the following three strand modes:">
-<meta itemprop="dateModified" content="2021-05-04T18:27:03-07:00" />
-<meta itemprop="wordCount" content="679">
+<meta itemprop="dateModified" content="2021-05-04T18:29:01-07:00" />
+<meta itemprop="wordCount" content="738">
 
 
 
@@ -892,7 +892,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.3b1ee116a5e0404d4603991e065f1249.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.34f76b24c043ea9b7e5a2c12e1d256da.json"
   data-offline-search-base-href="../../../../"
   data-offline-search-max-results="10"
 >
@@ -924,7 +924,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.3b1ee116a5e0404d4603991e065f1249.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.34f76b24c043ea9b7e5a2c12e1d256da.json"
   data-offline-search-base-href="../../../../"
   data-offline-search-max-results="10"
 >
@@ -1336,12 +1336,12 @@ tables for exons by genes (<code>eByg</code>) of the following three strand mode
 <li>Strand-specific for positive (sense) strand</li>
 <li>Strand-specific for negative (antisense) strand</li>
 </ol>
-</li>
-</ul>
 <p>The solution for generating the unstranded read counts is given below. Note,
 the upstream steps of the RNA-Seq workflow only need to be rerun to generate
 the proper inputs for the read counting. Thus, they are not required to be
 included in the homework results (see <code>HW7.R</code> below).</p>
+</li>
+</ul>
 <pre><code class="language-r">summarizeOverlaps(eByg, bfl, mode=&quot;Union&quot;, 
                     ignore.strand=TRUE, 
                     # preprocess.reads=invertStrand,
@@ -1361,6 +1361,7 @@ function. In addition, the help file for <code>?summarizeOverlaps</code> provide
 <p><strong>Task 3</strong>: Explain the utility (biological relevance) of the different strand counting modes used under Task 1. Include your explanation as comment text in your homework script (see <code>HW7.R</code> below).</p>
 </li>
 </ul>
+<p>Note, for Tasks 1-3 only the code and/or text needs to be included in the homework submission. For details see below.</p>
 <h2 id="b-read-counting-for-different-feature-types">B. Read counting for different feature types</h2>
 <ul>
 <li>
@@ -1374,16 +1375,21 @@ function. In addition, the help file for <code>?summarizeOverlaps</code> provide
 </ol>
 </li>
 </ul>
+<p>Note, for Tasks 4 only include the code and/or text in your homework submission. For details see below.</p>
 <h2 id="c-deg-analysis">C. DEG analysis</h2>
 <ul>
 <li>
-<p><strong>Task 5</strong>: Perform the DEG analysis with <code>edgeR</code> as outlined under section 6 of the RNA-Seq workflow <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/sprnaseq/sprnaseq/#run-edger">here</a>. Use in one case for the DEG analysis the unstranded count table as input (from Task 1.1) and in another the sense strand count table (from Task 1.2). Compare the DEG result of the two methods in two separate 4-way Venn diagrams for the same sample comparisons used in the workflow example <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/sprnaseq/sprnaseq/#venn-diagrams-of-deg-sets">here</a>.</p>
+<p><strong>Task 5</strong>: Perform the DEG analysis with <code>edgeR</code> as outlined under section 6 of the RNA-Seq workflow <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/sprnaseq/sprnaseq/#run-edger">here</a>.
+Use in one case for the DEG analysis the unstranded count table as input (from Task 1.1) and in another the sense strand count table (from Task 1.2).
+Compare the DEG result of the two methods in two separate 4-way Venn diagrams for the same sample comparisons used in the workflow example
+<a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/sprnaseq/sprnaseq/#venn-diagrams-of-deg-sets">here</a>.</p>
 <ol>
 <li>4-way Venn diagram for unstranded count table</li>
 <li>4-way Venn diagram for sense strand count table</li>
 </ol>
 </li>
 </ul>
+<p>Note, for Tasks 5 include both the code and the resulting image in your homework submission. For deteails see below.</p>
 <h2 id="homework-submission">Homework submission</h2>
 <p>Accept the <strong>project</strong> repos on <a href="https://classroom.github.com/a/mSDjRBc8">Github Classroom</a></p>
 <p>Starting with this homework, you will use a classroom repository called <strong>project</strong>. This repository will be used
@@ -1446,7 +1452,7 @@ and rename it to <code>hw7.Rmd</code> when you upload it to GitHub.</li>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-04: <a  href="https://github.com/tgirke/GEN242//commit/a3b1f142332e1b2b2e09a948037283607b49180b">some edits (a3b1f1423)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-04: <a  href="https://github.com/tgirke/GEN242//commit/1c2358f24eeca6357c9625048f6117a68b914c49">some edits (1c2358f24)</a>
 </div>
 </div>
 

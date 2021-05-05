@@ -2598,12 +2598,12 @@ tables for exons by genes (&lt;code&gt;eByg&lt;/code&gt;) of the following three
 &lt;li&gt;Strand-specific for positive (sense) strand&lt;/li&gt;
 &lt;li&gt;Strand-specific for negative (antisense) strand&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
 &lt;p&gt;The solution for generating the unstranded read counts is given below. Note,
 the upstream steps of the RNA-Seq workflow only need to be rerun to generate
 the proper inputs for the read counting. Thus, they are not required to be
 included in the homework results (see &lt;code&gt;HW7.R&lt;/code&gt; below).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;summarizeOverlaps(eByg, bfl, mode=&amp;quot;Union&amp;quot;, 
                     ignore.strand=TRUE, 
                     # preprocess.reads=invertStrand,
@@ -2623,6 +2623,7 @@ function. In addition, the help file for &lt;code&gt;?summarizeOverlaps&lt;/code
 &lt;p&gt;&lt;strong&gt;Task 3&lt;/strong&gt;: Explain the utility (biological relevance) of the different strand counting modes used under Task 1. Include your explanation as comment text in your homework script (see &lt;code&gt;HW7.R&lt;/code&gt; below).&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;Note, for Tasks 1-3 only the code and/or text needs to be included in the homework submission. For details see below.&lt;/p&gt;
 &lt;h2 id=&#34;b-read-counting-for-different-feature-types&#34;&gt;B. Read counting for different feature types&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -2636,16 +2637,21 @@ function. In addition, the help file for &lt;code&gt;?summarizeOverlaps&lt;/code
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;Note, for Tasks 4 only include the code and/or text in your homework submission. For details see below.&lt;/p&gt;
 &lt;h2 id=&#34;c-deg-analysis&#34;&gt;C. DEG analysis&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Task 5&lt;/strong&gt;: Perform the DEG analysis with &lt;code&gt;edgeR&lt;/code&gt; as outlined under section 6 of the RNA-Seq workflow &lt;a href=&#34;https://girke.bioinformatics.ucr.edu/GEN242/tutorials/sprnaseq/sprnaseq/#run-edger&#34;&gt;here&lt;/a&gt;. Use in one case for the DEG analysis the unstranded count table as input (from Task 1.1) and in another the sense strand count table (from Task 1.2). Compare the DEG result of the two methods in two separate 4-way Venn diagrams for the same sample comparisons used in the workflow example &lt;a href=&#34;https://girke.bioinformatics.ucr.edu/GEN242/tutorials/sprnaseq/sprnaseq/#venn-diagrams-of-deg-sets&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Task 5&lt;/strong&gt;: Perform the DEG analysis with &lt;code&gt;edgeR&lt;/code&gt; as outlined under section 6 of the RNA-Seq workflow &lt;a href=&#34;https://girke.bioinformatics.ucr.edu/GEN242/tutorials/sprnaseq/sprnaseq/#run-edger&#34;&gt;here&lt;/a&gt;.
+Use in one case for the DEG analysis the unstranded count table as input (from Task 1.1) and in another the sense strand count table (from Task 1.2).
+Compare the DEG result of the two methods in two separate 4-way Venn diagrams for the same sample comparisons used in the workflow example
+&lt;a href=&#34;https://girke.bioinformatics.ucr.edu/GEN242/tutorials/sprnaseq/sprnaseq/#venn-diagrams-of-deg-sets&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;4-way Venn diagram for unstranded count table&lt;/li&gt;
 &lt;li&gt;4-way Venn diagram for sense strand count table&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;Note, for Tasks 5 include both the code and the resulting image in your homework submission. For deteails see below.&lt;/p&gt;
 &lt;h2 id=&#34;homework-submission&#34;&gt;Homework submission&lt;/h2&gt;
 &lt;p&gt;Accept the &lt;strong&gt;project&lt;/strong&gt; repos on &lt;a href=&#34;https://classroom.github.com/a/mSDjRBc8&#34;&gt;Github Classroom&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Starting with this homework, you will use a classroom repository called &lt;strong&gt;project&lt;/strong&gt;. This repository will be used
