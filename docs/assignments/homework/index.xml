@@ -2643,10 +2643,10 @@ included in the homework results (see &lt;code&gt;HW7.R&lt;/code&gt; below).&lt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;homework-submission&#34;&gt;Homework submission&lt;/h2&gt;
-&lt;p&gt;Accept the &lt;strong&gt;project&lt;/strong&gt; on &lt;a href=&#34;https://classroom.github.com/a/mSDjRBc8&#34;&gt;Github Classroom&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Starting with this homework, you will use a classroom repository called &amp;ldquo;project&amp;rdquo;. This repository will be used
+&lt;p&gt;Accept the &lt;strong&gt;project&lt;/strong&gt; repos on &lt;a href=&#34;https://classroom.github.com/a/mSDjRBc8&#34;&gt;Github Classroom&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Starting with this homework, you will use a classroom repository called &lt;strong&gt;project&lt;/strong&gt;. This repository will be used
 until the end of this class for all remaining homework assignments as well as the course project.
-You are responsible to maintain this &amp;ldquo;project&amp;rdquo; repository including its &lt;code&gt;README.md&lt;/code&gt; file.&lt;/p&gt;
+You are responsible to maintain this &lt;strong&gt;project&lt;/strong&gt; repository including its &lt;code&gt;README.md&lt;/code&gt; file.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;To start with HW7, accept the assignment and &lt;code&gt;git clone&lt;/code&gt; to your user account on the HPCC cluster or your local computer.&lt;/li&gt;
 &lt;li&gt;Create a directory &amp;ldquo;hw7&amp;rdquo; and upload all your HW7 script and result files to this directory. This includes the following files:
