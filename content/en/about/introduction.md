@@ -36,7 +36,7 @@ It is possible to audit this class. However, due to the emphasis on active parti
 in practicals and course projects, students usually learn much more if they enroll into the
 class rather than auditing it in a passive manner.
 
-## Code of conduct and commitment to UCR's DEI standards 
+## Code of conduct and DEI standards 
 
 The instructors, organizers and participants of this class are committed to
 create an environment in which all students can learn and thrive in ways
