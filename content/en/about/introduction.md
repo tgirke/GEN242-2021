@@ -26,7 +26,7 @@ the development of web-based analysis tools (_e.g._ Shiny Apps).
 Students with a strong interest and motivation in acquiring the skills required for mastering
 the computational aspects of modern genome research. The class is mainly
 targeting graduate students but senior undergraduate students are welcome to
-enroll as well. The main audience of this class are usually students from
+enroll as well. The main audience of this class usually includes students from
 bioscience, biomedical and bioengineering programs as well as CS and statistics
 students with interest in computational biology.
 
