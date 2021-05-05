@@ -38,7 +38,7 @@ class rather than auditing it in a passive manner.
 
 ## Code of conduct and DEI standards 
 
-This instructors, organizers and participants of this class are committed to
+The instructors, organizers and participants of this class are committed to
 create an environment in which everyone can learn and thrive in ways inclusive
 of their diverse backgrounds and identities. All teaching material, activities,
 virtual or face-to-face interactions related to this course are expected to be
