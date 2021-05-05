@@ -48,6 +48,6 @@ characteristics, gender identity and expression, level of experience,
 education, socio-economic status, nationality, personal appearance, race,
 caste, color, religion, or sexual identity and orientation.  For additional
 information about this important topic please visit the website of [UCR's
-Office of Diversity, Equity & Inclusion](https://diversity.ucr.edu/).
+Office of Diversity, Equity & Inclusion (DEI)](https://diversity.ucr.edu/).
 
 
