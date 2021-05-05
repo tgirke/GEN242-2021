@@ -42,7 +42,7 @@ The instructors, organizers and participants of this class are committed to
 create and maintain an environment in which everyone can learn and thrive in
 ways inclusive of their diverse backgrounds and identities. All teaching
 material, activities, virtual or face-to-face interactions related to this
-course are expected to be a harassment-free experience for everyone, regardless
+course are intended to provide a harassment-free experience for everyone, regardless
 of age, body size, visible or invisible disability, ethnicity, sex
 characteristics, gender identity and expression, level of experience,
 education, socio-economic status, nationality, personal appearance, race,
