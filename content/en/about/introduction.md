@@ -47,7 +47,7 @@ of age, body size, visible or invisible disability, ethnicity, sex
 characteristics, gender identity and expression, level of experience,
 education, socio-economic status, nationality, personal appearance, race,
 caste, color, religion, or sexual identity and orientation.  For additional
-infromation about this important topic please visit the website of [UCR's
+information about this important topic please visit the website of [UCR's
 Office of Diversity, Equity & Inclusion](https://diversity.ucr.edu/).
 
 
