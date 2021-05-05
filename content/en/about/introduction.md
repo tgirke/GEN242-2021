@@ -36,4 +36,17 @@ It is possible to audit this class. However, due to the emphasis on active parti
 in practicals and course projects, students usually learn much more if they enroll into the
 class rather than auditing it in a passive manner.
 
+## Code of conduct 
+
+The instructors, organizers and participants of this class are committed to
+create an environment in which all students can learn and thrive in ways
+inclusive of their diverse backgrounds and identities. All course activities
+are expected to be a harassment-free experience for everyone, regardless of
+age, body size, visible or invisible disability, ethnicity, sex
+characteristics, gender identity and expression, level of experience,
+education, socio-economic status, nationality, personal appearance, race,
+caste, color, religion, or sexual identity and orientation. For additional
+infromation about this important topic please visit the website of 
+[UCR's Office of Diversity, Equity & Inclusion](https://diversity.ucr.edu/).
+
 
