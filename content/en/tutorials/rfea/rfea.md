@@ -49,12 +49,17 @@ Source code downloads:    
 
 The following introduces several widely used gene and protein annotation
 systems that are commonly used for functional enrichment analysis (FEA). These
-include among many others: Gene Ontology (GO), Disease Ontology (DO) and pathway annotations, such
-as KEGG and Reactome. Examples of widely used statistical enrichment methods
-are introduced as well. These statistical FEA methods assess whether functional annotation terms
-are over-represented in a query gene set. In case of so called over-represention analysis (ORA)
-methods the query is a list of unranked gene identifiers. In contrast to this, Gene Set Enrichment
-Analysis (GSEA) algorithms use as query score ranked lists, e.g. all genes profiled by an assay.
+include among many other annotation systems: Gene Ontology (GO), Disease
+Ontology (DO) and pathway annotations, such as KEGG and Reactome. Examples of
+widely used statistical enrichment methods are introduced as well. These
+statistical FEA methods assess whether functional annotation terms are
+over-represented in a query gene set. In case of so called over-represention
+analysis (ORA) methods the query is a list of unranked gene identifiers
+(Falcon and Gentleman 2007). In contrast to this, Gene Set Enrichment Analysis (GSEA)
+algorithms use as query score ranked lists, e.g. all genes profiled by an assay
+\[Subramanian et al. (2005); Sergushichev2016-ms; Duan2020-wz\]. The actual sets can
+be composed of genes, proteins and even compounds. For simplicity. the term
+gene sets is used throughtout this text.
 
 ## Gene Ontology DB
 
@@ -205,3 +210,19 @@ sessionInfo()
     ## [45] colorspace_2.0-0    stringi_1.5.3       munsell_0.5.0       crayon_1.3.4
 
 ## References
+
+<div id="refs" class="references csl-bib-body hanging-indent">
+
+<div id="ref-Falcon2007-eb" class="csl-entry">
+
+Falcon, S, and R Gentleman. 2007. “<span class="nocase">Using GOstats to test gene lists for GO term association</span>.” *Bioinformatics* 23 (2): 257–58. <https://doi.org/10.1093/bioinformatics/btl567>.
+
+</div>
+
+<div id="ref-Subramanian2005-kx" class="csl-entry">
+
+Subramanian, A, P Tamayo, V K Mootha, S Mukherjee, B L Ebert, M A Gillette, A Paulovich, et al. 2005. “<span class="nocase">Gene set enrichment analysis: a knowledge-based approach for interpreting genome-wide expression profiles</span>.” *Proc. Natl. Acad. Sci. U. S. A.* 102 (43): 15545–50. <https://doi.org/10.1073/pnas.0506580102>.
+
+</div>
+
+</div>

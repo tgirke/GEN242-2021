@@ -19,15 +19,15 @@
 
 <title>Functional Enrichment Analysis | GEN242</title><meta property="og:title" content="Functional Enrichment Analysis" />
 <meta property="og:description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
- Introduction The following introduces several widely used gene and protein annotation systems that are commonly used for functional enrichment analysis (FEA). These include among many others: Gene Ontology (GO), Disease Ontology (DO) and pathway annotations, such as KEGG and Reactome." />
+ Introduction The following introduces several widely used gene and protein annotation systems that are commonly used for functional enrichment analysis (FEA). These include among many other annotation systems: Gene Ontology (GO), Disease Ontology (DO) and pathway annotations, such as KEGG and Reactome." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rfea/rfea/" />
-<meta property="article:modified_time" content="2021-05-03T17:45:39-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-05-05T13:48:07-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Functional Enrichment Analysis">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
- Introduction The following introduces several widely used gene and protein annotation systems that are commonly used for functional enrichment analysis (FEA). These include among many others: Gene Ontology (GO), Disease Ontology (DO) and pathway annotations, such as KEGG and Reactome.">
-<meta itemprop="dateModified" content="2021-05-03T17:45:39-07:00" />
-<meta itemprop="wordCount" content="677">
+ Introduction The following introduces several widely used gene and protein annotation systems that are commonly used for functional enrichment analysis (FEA). These include among many other annotation systems: Gene Ontology (GO), Disease Ontology (DO) and pathway annotations, such as KEGG and Reactome.">
+<meta itemprop="dateModified" content="2021-05-05T13:48:07-07:00" />
+<meta itemprop="wordCount" content="776">
 
 
 
@@ -35,7 +35,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Functional Enrichment Analysis"/>
 <meta name="twitter:description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
- Introduction The following introduces several widely used gene and protein annotation systems that are commonly used for functional enrichment analysis (FEA). These include among many others: Gene Ontology (GO), Disease Ontology (DO) and pathway annotations, such as KEGG and Reactome."/>
+ Introduction The following introduces several widely used gene and protein annotation systems that are commonly used for functional enrichment analysis (FEA). These include among many other annotation systems: Gene Ontology (GO), Disease Ontology (DO) and pathway annotations, such as KEGG and Reactome."/>
 
 
 <script type="application/javascript">
@@ -895,7 +895,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.fe7503a1e1432e9d24bdef0e4e6811bf.json"
+  data-offline-search-index-json-src="../../../offline-search-index.f9e71267703dfbcf825f5b84d3a7581c.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -927,7 +927,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.fe7503a1e1432e9d24bdef0e4e6811bf.json"
+  data-offline-search-index-json-src="../../../offline-search-index.f9e71267703dfbcf825f5b84d3a7581c.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1225,12 +1225,17 @@ document.addEventListener("DOMContentLoaded", function() {
 <h2 id="introduction">Introduction</h2>
 <p>The following introduces several widely used gene and protein annotation
 systems that are commonly used for functional enrichment analysis (FEA). These
-include among many others: Gene Ontology (GO), Disease Ontology (DO) and pathway annotations, such
-as KEGG and Reactome. Examples of widely used statistical enrichment methods
-are introduced as well. These statistical FEA methods assess whether functional annotation terms
-are over-represented in a query gene set. In case of so called over-represention analysis (ORA)
-methods the query is a list of unranked gene identifiers. In contrast to this, Gene Set Enrichment
-Analysis (GSEA) algorithms use as query score ranked lists, e.g. all genes profiled by an assay.</p>
+include among many other annotation systems: Gene Ontology (GO), Disease
+Ontology (DO) and pathway annotations, such as KEGG and Reactome. Examples of
+widely used statistical enrichment methods are introduced as well. These
+statistical FEA methods assess whether functional annotation terms are
+over-represented in a query gene set. In case of so called over-represention
+analysis (ORA) methods the query is a list of unranked gene identifiers
+(Falcon and Gentleman 2007). In contrast to this, Gene Set Enrichment Analysis (GSEA)
+algorithms use as query score ranked lists, e.g. all genes profiled by an assay
+[Subramanian et al. (2005); Sergushichev2016-ms; Duan2020-wz]. The actual sets can
+be composed of genes, proteins and even compounds. For simplicity. the term
+gene sets is used throughtout this text.</p>
 <h2 id="gene-ontology-db">Gene Ontology DB</h2>
 <pre><code class="language-r">## Load GOstats library
 library(GOstats); library(GO.db)
@@ -1358,10 +1363,18 @@ goBarplot(GOBatchResult, gocat=&quot;MF&quot;)
 ## [45] colorspace_2.0-0    stringi_1.5.3       munsell_0.5.0       crayon_1.3.4
 </code></pre>
 <h2 id="references">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Falcon2007-eb" class="csl-entry">
+<p>Falcon, S, and R Gentleman. 2007. “<span class="nocase">Using GOstats to test gene lists for GO term association</span>.” <em>Bioinformatics</em> 23 (2): 257–58. <a href="https://doi.org/10.1093/bioinformatics/btl567">https://doi.org/10.1093/bioinformatics/btl567</a>.</p>
+</div>
+<div id="ref-Subramanian2005-kx" class="csl-entry">
+<p>Subramanian, A, P Tamayo, V K Mootha, S Mukherjee, B L Ebert, M A Gillette, A Paulovich, et al. 2005. “<span class="nocase">Gene set enrichment analysis: a knowledge-based approach for interpreting genome-wide expression profiles</span>.” <em>Proc. Natl. Acad. Sci. U. S. A.</em> 102 (43): 15545–50. <a href="https://doi.org/10.1073/pnas.0506580102">https://doi.org/10.1073/pnas.0506580102</a>.</p>
+</div>
+</div>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-03: <a  href="https://github.com/tgirke/GEN242//commit/bb6e94fe59f2572b0eaee5473a00b215b85eb6f2">some edits (bb6e94fe5)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-05: <a  href="https://github.com/tgirke/GEN242//commit/eb18daf122fca6bb181942c4808fe2d88ea891a3">some edits (eb18daf12)</a>
 </div>
 </div>
 
