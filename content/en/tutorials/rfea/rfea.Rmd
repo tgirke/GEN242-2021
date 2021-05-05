@@ -63,9 +63,9 @@ be composed of genes, proteins and even compounds. For simplicity. the term
 gene sets is used throughtout this text.
 
 ## Functional Annotations Systems
-This section introduces a small selection of functional annotation systems provided
-by Bioconductor. This includes code to inspect how the annotation data is organized
-and how to access it.
+This section introduces a small selection of functional annotation systems, largely
+ provided by Bioconductor packages. This includes code to inspect how the annotations 
+are organized and how to access them.
 
 ## Gene Ontology DB 
 
