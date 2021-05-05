@@ -40,8 +40,8 @@ document.addEventListener("DOMContentLoaded", function() {
 <div style="text-align: right">
 
 Source code downloads:    
-\[ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/rfea/rfea.Rmd) \]    
-\[ [.R](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/rfea/rfea.R) \]
+[.Rmd](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/rfea/rfea.Rmd)    
+[.R](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/rfea/rfea.R)
 
 </div>
 
@@ -69,12 +69,13 @@ are organized and how to access them.
 
 ## Gene Ontology DB
 
-`GO.db` is a data package that stores the GO term information in an SQLite database.
-Several accessor functions are provide to query the database. Organism specific
-gene to GO annotations are provied by organism data packages and/or Bioconductor’s
+`GO.db` is a data package that stores the GO term information from the GO
+consortium in an SQLite database. Several accessor functions are provide to
+query the database. Organism specific gene to GO annotations are provied by
+organism data packages and/or Bioconductor’s
 [`AnntationHub`](https://bioconductor.org/packages/release/bioc/html/AnnotationHub.html).
-The following provide sample code for using `GO.db` as well as a organism database
-example.
+The following provide sample code for using `GO.db` as well as a organism
+database example.
 
 ``` r
 ## Load GOstats library
@@ -92,15 +93,51 @@ library(org.At.tair.db) # For human use org.Hs.eg.db
 xx <- as.list(org.At.tairGO2ALLTAIRS)
 ```
 
-## Pathways
+## Pathway DBs
 
 ### KEGG
 
 #### `KEGG.db`
 
+The following `load_keggList` function returns the pathway annotations from the `KEGG.db` package for a species selected
+under the `org` argument (*e.g.* hsa, ath, dme, mmu, …). The resulting `list` object can be used
+for ORA or GSEA methods, *e.g.* by `fgsea`.
+
+``` r
+## KEGG Pathway ID to Hs Entrez ID list
+load_keggList <- function(org="ath") {
+    suppressMessages(suppressWarnings(library(KEGG.db))) 
+    kegg_gene_list <- as.list(KEGGPATHID2EXTID) # All organisms in kegg
+    kegg_gene_list <- kegg_gene_list[grepl(org, names(kegg_gene_list))] # Only human
+    kegg_name_list <- unlist(as.list(KEGGPATHID2NAME)) # All organisms in kegg
+    kegg_name_list <- kegg_name_list[gsub(paste0("^", org), "", names(kegg_gene_list))]
+    names(kegg_gene_list) <- paste0(names(kegg_gene_list), " (", names(kegg_name_list), ") - ", kegg_name_list)
+    return(kegg_gene_list)
+}
+## Usage:
+keggdb <- load_keggList(org="ath") # org can be: hsa, ath, dme, mmu, ... 
+```
+
 ### Reactome
 
-#### `reactome.db`
+The following `load_reacList` function returns the pathway annotations from the `reactome.db`
+package for a species selected under the `org` argument (*e.g.* R-HSA, R-MMU, R-DME, R-CEL, …).
+The resulting `list` object can be used for various ORA or GSEA methods, *e.g.* by `fgsea`.
+
+``` r
+## Reactome Pathway ID to Hs Entrez ID list
+load_reacList <- function(org="R-HSA") {
+    library(reactome.db)
+    reac_gene_list <- as.list(reactomePATHID2EXTID) # All organisms in reactome
+    reac_gene_list <- reac_gene_list[grepl(org, names(reac_gene_list))] # Only human
+    reac_name_list <- unlist(as.list(reactomePATHID2NAME)) # All organisms in reactome
+    reac_name_list <- reac_name_list[names(reac_gene_list)]
+    names(reac_gene_list) <- paste0(names(reac_gene_list), " (", names(reac_name_list), ") - ", gsub("^.*: ", "", reac_name_list))
+    return(reac_gene_list)
+}
+## Usage:
+reacdb <- load_reacList(org="")
+```
 
 #### `ReactomeContentService4R`
 
