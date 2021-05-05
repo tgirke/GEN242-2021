@@ -2622,7 +2622,7 @@ included in the homework results (see &lt;code&gt;HW7.R&lt;/code&gt; below).&lt;
 &lt;h2 id=&#34;b-read-counting-for-different-feature-types&#34;&gt;B. Read counting for different feature types&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Task 4&lt;/strong&gt;: Compute strand-specific count tables for the positive (sense) strand of the following feature types:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Task 4&lt;/strong&gt;: Compute strand-specific count tables for the positive (sense) strand of the following feature types. The help files of &lt;code&gt;?exonsBy&lt;/code&gt; and `?transcripts&#39; provide useful information for solving these tasks.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Genes&lt;/li&gt;
 &lt;li&gt;Exons&lt;/li&gt;

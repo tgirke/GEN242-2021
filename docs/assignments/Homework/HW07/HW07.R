@@ -34,7 +34,8 @@ summarizeOverlaps(eByg, bfl, mode="Union",
 
 ## B. Read counting for different feature types
 ## Task 4: Compute strand-specific count tables for the positive (sense) strand
-## of the following feature types: 
+## of the following feature types. The help files of `?exonsBy` and `?transcripts'
+## provide useful information to solve these tasks.
 
 ##   1. Genes
 ##   2. Exons
