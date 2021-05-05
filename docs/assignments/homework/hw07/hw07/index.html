@@ -21,11 +21,11 @@
 <meta property="og:description" content="Source code downloads: &nbsp; [ .R ]  A. Unstranded and strand-specific read counting   Task 1: Rerun the RNA-Seq workflow with the toy data sets up to the read quantification step here. Note, the toy data set gets automatically loaded when intializing a workflow environment (directory structure) with the genWorkenvir function (see tutorial here). In the read quantification step with summarizeOverlaps generate count tables for exons by genes (eByg) of the following three strand modes:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/assignments/homework/hw07/hw07/" />
-<meta property="article:modified_time" content="2021-05-04T17:51:49-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-05-04T17:54:12-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="HW7 - RNA-Seq Analysis">
 <meta itemprop="description" content="Source code downloads: &nbsp; [ .R ]  A. Unstranded and strand-specific read counting   Task 1: Rerun the RNA-Seq workflow with the toy data sets up to the read quantification step here. Note, the toy data set gets automatically loaded when intializing a workflow environment (directory structure) with the genWorkenvir function (see tutorial here). In the read quantification step with summarizeOverlaps generate count tables for exons by genes (eByg) of the following three strand modes:">
-<meta itemprop="dateModified" content="2021-05-04T17:51:49-07:00" />
-<meta itemprop="wordCount" content="648">
+<meta itemprop="dateModified" content="2021-05-04T17:54:12-07:00" />
+<meta itemprop="wordCount" content="656">
 
 
 
@@ -892,7 +892,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.8c3a8f2dd046aa3e61b8d3dde278efd0.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.cd1b7b4e3dad45d67156a8f08fbc7bc1.json"
   data-offline-search-base-href="../../../../"
   data-offline-search-max-results="10"
 >
@@ -924,7 +924,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.8c3a8f2dd046aa3e61b8d3dde278efd0.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.cd1b7b4e3dad45d67156a8f08fbc7bc1.json"
   data-offline-search-base-href="../../../../"
   data-offline-search-max-results="10"
 >
@@ -1382,37 +1382,29 @@ included in the homework results (see <code>HW7.R</code> below).</p>
 </ul>
 <h2 id="homework-submission">Homework submission</h2>
 <p>Accept the <strong>project</strong> on <a href="https://classroom.github.com/a/mSDjRBc8">Github Classroom</a></p>
-<p>From this homework, you will start to use a big classroom repository &ldquo;project&rdquo;. It means you will continue to work on
-this repository till the end of this class, including later homework and the course project.
-You are responsible to maintain the repository including the <code>README.md</code> file.</p>
+<p>Starting with this homework, you will use a classroom repository called &ldquo;project&rdquo;. This repository will be used
+until the end of this class for all remaining homework assignments as well as the course project.
+You are responsible to maintain this &ldquo;project&rdquo; repository including its <code>README.md</code> file.</p>
 <ol>
-<li>To start with HW7, accept the assignment and git clone to HPCC or your local.</li>
-<li>Create a directory &ldquo;hw7&rdquo; and include your HW7 submissions in that directory.</li>
+<li>To start with HW7, accept the assignment and <code>git clone</code> to your user account on the HPCC cluster or your local computer.</li>
+<li>Create a directory &ldquo;hw7&rdquo; and upload your HW7 script and result files to this directory. This includes the following files:</li>
 </ol>
 <ul>
-<li>Your script file, submit to either <code>hw7/hw7.R</code> or <code>hw7/hw7.Rmd</code>.</li>
-<li>two Venn diagram plots <code>hw7/unstranded.png</code> and <code>hw7/sense.png</code></li>
+<li>Your script file either as R or R Markdown file, here <code>hw7.R</code> or <code>hw7.Rmd</code>.</li>
+<li>Two Venn diagram plots: <code>unstranded.png</code> and <code>hw7/sense.png</code></li>
 </ul>
 <h3 id="auto-grading">Auto-grading</h3>
-<p>You will complete most of your HW7 on HPC, some files are too large to submit
-to Github, so there is no auto-grading for this homework.  Your TA will
-manually check the code later.</p>
+<p>You will complete most of your HW7 on the HPCC cluster. In this and the following homeworks auto-grading will not be used.<br>
+Your TA will manually check your homework solutions.</p>
 <h3 id="details">Details</h3>
 <ul>
-<li>
-<p>From this homework, you will start to learn Rmarkdown. If you think
-this is new to you, then provide your solution in a file <code>hw7.R</code>. In <code>hw7.R</code>,
-there is no object you are asked to assign to. Some files in
-the code may be stored on HPC, so it will be <strong>fine if your <code>hw7.R</code> cannot be <code>source()</code></strong>.</p>
-</li>
-<li>
-<p>Or add your new homework code to the <code>systemPipeRNAseq.Rmd</code> file and rename it <code>hw7.Rmd</code> to submit.</p>
-</li>
-<li>
-<p>Only choose one type to submit, not both.</p>
-</li>
+<li>If you wish then you can for this homework submission R Markdown (Rmd). Alternatively, an R file will be sufficient.
+Due to dependencies of large files there is also no need to make sure your code can be sourced with <strong><code>source()</code></strong>.</li>
+<li>Another option will be to add your homework code to the <code>systemPipeRNAseq.Rmd</code> file and rename it <code>hw7.Rmd</code> when you upload
+it to GitHub.</li>
+<li>If possible please use only one of the above options.</li>
 </ul>
-<p>As for the plots, again, they can be <code>.png</code> or <code>.jpg</code> or <code>.jpeg</code> extensions.</p>
+<p>For the graphis files, you can upload them either as <code>.png</code> or <code>.jpg</code> (<code>.jpeg</code>) files.</p>
 <h3 id="grading">Grading</h3>
 <ul>
 <li>Task1
@@ -1449,7 +1441,7 @@ the code may be stored on HPC, so it will be <strong>fine if your <code>hw7.R</c
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-04: <a  href="https://github.com/tgirke/GEN242//commit/43eb6be7c32d5585cbf0c62b2f88764618847ec6">some edits (43eb6be7c)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-04: <a  href="https://github.com/tgirke/GEN242//commit/97b086f6c62ea85b9e0cfbaa4915ecb62e503351">some edits (97b086f6c)</a>
 </div>
 </div>
 
