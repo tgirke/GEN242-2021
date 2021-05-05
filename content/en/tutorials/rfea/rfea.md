@@ -61,6 +61,12 @@ algorithms use as query score ranked lists, *e.g.* all genes profiled by an assa
 be composed of genes, proteins and even compounds. For simplicity. the term
 gene sets is used throughtout this text.
 
+## Functional Annotations Systems
+
+This section introduces a small selection of functional annotation systems provided
+by Bioconductor. This includes code to inspect how the annotation data is organized
+and how to access it.
+
 ## Gene Ontology DB
 
 ``` r
