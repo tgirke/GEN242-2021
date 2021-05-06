@@ -175,7 +175,7 @@ htmlReport(hgOver, file = "MyhyperGresult.html") # html file will be written to 
 The following introduceds a `GOCluster_Report` convenience function from the
 `systemPipeR` package. The first part shows how to generate the proper `catdb`
 lookup data structure for any organism supported by BioMart (H Backman and Girke 2016).
-This more time consuming step needs to performed only once.
+This more time consuming step needs to be performed only once.
 
 ``` r
 ## Create a custom genome-to-GO lookup table for enrichment testing
