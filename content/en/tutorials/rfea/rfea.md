@@ -194,7 +194,7 @@ save(catdb, file="GO/catdb.RData")
 
 The above needs to done only once. For the enrichment analysis one can load the `catdb` object
 from the corresponding file, and then perform batch GO term analysis where the results include
-all terms meeting a user-provided P-value cutoff as well as GO Slim term analysis.
+all terms meeting a user-provided P-value cutoff as well as GO Slim terms.
 
 ``` r
 ## Next time catDB can be loaded from file
@@ -220,6 +220,29 @@ goBarplot(goslim, gocat="MF")
 ### Set enrichment analysis (SEA)
 
 #### `fgsea` Package
+
+The `fgsea` function performs gene set enrichment analysis (GSEA) on a score ranked
+gene list. Compared to other GESA implementations, `fgsea` is very fast. Its P-value
+estimation is based on an adaptive multi-level split Monte-Carlo scheme. In addition
+to its speed, it is very flexible in adopting custom annotation systems since it
+stores the gene-to-category annotations in a simple `list` object that is easy to create. The
+following uses the `keegdb` and `reacdb` lists created above as annotation systems.
+
+``` r
+## Load packages and create sample ranked gene list 
+library(fgsea); library(data.table); library(ggplot2)
+exampleRanks <- sort(setNames(sample(seq(-100,100, by=0.01), length(geneids)), geneids))
+
+## fgsea with KEGG
+fgseaResKegg <- fgsea(pathways=keggdb, stats=exampleRanks, minSize=15, maxSize=500)
+head(fgseaResKegg[order(pval), ])
+plotEnrichment(keggdb[["ath00052 (00052) - Galactose metabolism"]], exampleRanks) + labs(title="Galactose metabolism")
+
+## fgsea with Reactome
+fgseaResReac <- fgsea(pathways=reacdb, stats=exampleRanks, minSize=15, maxSize=500)
+head(fgseaResReac[order(pval), ])
+plotEnrichment(keggdb[["ath03013 (03013) - RNA transport"]], exampleRanks) + labs(title="RNA Transport")
+```
 
 ## Version Information
 
