@@ -148,6 +148,10 @@ Its vignette provides many useful examples, see [here](https://bioconductor.org/
 
 #### `GOstats` Package
 
+The `GOstats` package allows testing for both over and under representation of GO terms using
+either the standard Hypergeometric test or a conditional Hypergeometric test that uses the
+relationships among the GO terms for conditioning (Falcon and Gentleman 2007).
+
 ``` r
 ## Load required packages
 library(GOstats); library(GO.db); library(org.At.tair.db)
@@ -222,7 +226,7 @@ goBarplot(goslim, gocat="MF")
 #### `fgsea` Package
 
 The `fgsea` function performs gene set enrichment analysis (GSEA) on a score ranked
-gene list. Compared to other GESA implementations, `fgsea` is very fast. Its P-value
+gene list (Sergushichev 2016). Compared to other GESA implementations, `fgsea` is very fast. Its P-value
 estimation is based on an adaptive multi-level split Monte-Carlo scheme. In addition
 to its speed, it is very flexible in adopting custom annotation systems since it
 stores the gene-to-category annotations in a simple `list` object that is easy to create. The
