@@ -22,12 +22,12 @@
  Introduction The following introduces several widely used gene and protein annotation systems that are commonly used for functional enrichment analysis (FEA). These include among many other annotation systems: Gene Ontology (GO), Disease Ontology (DO) and pathway annotations, such as KEGG and Reactome." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rfea/rfea/" />
-<meta property="article:modified_time" content="2021-05-05T18:12:00-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-05-05T18:13:04-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Functional Enrichment Analysis">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: .Rmd .R
  Introduction The following introduces several widely used gene and protein annotation systems that are commonly used for functional enrichment analysis (FEA). These include among many other annotation systems: Gene Ontology (GO), Disease Ontology (DO) and pathway annotations, such as KEGG and Reactome.">
-<meta itemprop="dateModified" content="2021-05-05T18:12:00-07:00" />
-<meta itemprop="wordCount" content="1481">
+<meta itemprop="dateModified" content="2021-05-05T18:13:04-07:00" />
+<meta itemprop="wordCount" content="1485">
 
 
 
@@ -895,7 +895,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.42acb592d9b129b35a61280125ad455b.json"
+  data-offline-search-index-json-src="../../../offline-search-index.ae9ece868c04644e35b675db9d4ec817.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -927,7 +927,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.42acb592d9b129b35a61280125ad455b.json"
+  data-offline-search-index-json-src="../../../offline-search-index.ae9ece868c04644e35b675db9d4ec817.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1372,8 +1372,9 @@ to its speed, it is very flexible in adopting custom annotation systems since it
 stores the gene-to-category annotations in a simple <code>list</code> object that is easy to create. The
 following uses the <code>keegdb</code> and <code>reacdb</code> lists created above as annotation systems.</p>
 <pre><code class="language-r">## Load packages and create sample ranked gene list 
-library(fgsea); library(data.table); library(ggplot2)
-exampleRanks &lt;- sort(setNames(sample(seq(-100,100, by=0.01), length(geneids)), geneids))
+library(fgsea); library(data.table); library(ggplot2); library(org.At.tair.db)
+geneids &lt;- mappedkeys(org.At.tairCHR)
+exampleRanks &lt;- sort(setNames(sample(seq(-100,100, by=0.001), length(geneids)), geneids))
 
 ## fgsea with KEGG
 fgseaResKegg &lt;- fgsea(pathways=keggdb, stats=exampleRanks, minSize=15, maxSize=500)
@@ -1443,7 +1444,7 @@ plotEnrichment(keggdb[[&quot;ath03013 (03013) - RNA transport&quot;]], exampleRa
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-05: <a  href="https://github.com/tgirke/GEN242//commit/b3655ff110c2b7a02a6e3a43b2cd707388c20a45">some edits (b3655ff11)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-05: <a  href="https://github.com/tgirke/GEN242//commit/7f4970e646546d4fe28ea0706ec07cae97187a58">some edits (7f4970e64)</a>
 </div>
 </div>
 

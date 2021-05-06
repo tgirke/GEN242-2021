@@ -235,8 +235,9 @@ following uses the `keegdb` and `reacdb` lists created above as annotation syste
 
 ``` r
 ## Load packages and create sample ranked gene list 
-library(fgsea); library(data.table); library(ggplot2)
-exampleRanks <- sort(setNames(sample(seq(-100,100, by=0.01), length(geneids)), geneids))
+library(fgsea); library(data.table); library(ggplot2); library(org.At.tair.db)
+geneids <- mappedkeys(org.At.tairCHR)
+exampleRanks <- sort(setNames(sample(seq(-100,100, by=0.001), length(geneids)), geneids))
 
 ## fgsea with KEGG
 fgseaResKegg <- fgsea(pathways=keggdb, stats=exampleRanks, minSize=15, maxSize=500)
