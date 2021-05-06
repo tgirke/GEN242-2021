@@ -366,7 +366,14 @@ The following sample submission script (`script_name.sh`) executes an R script n
 Rscript my_script.R
 ```
 
-Interactive session: logs user into node
+STDOUT` and `STDERROR` of jobs will be written to files named
+`slurm-<jobid>.out` or to custom a file specified under `#SBATCH --output` in
+the submission script. 
+
+### Interactive sessions with `srun`
+
+This option logs a user in to a computer node of a specified partition (queue).
+
 ```sh
 srun --pty bash -l
 ```
@@ -376,9 +383,12 @@ Interactive session with specific resource requests
 srun --x11 --partition=short --mem=2gb --cpus-per-task 4 --ntasks 1 --time 1:00:00 --pty bash -l
 ```
 
-The argument `--mem` limits the amount of RAM, `--cpus` the number of CPU cores, `--time` the time how long a session will be active. Under `--parition` one can 
-choose among different queues and node architectures. Current options for `--partition` are: `intel`, `batch`, `highmem`, `gpu`, and `short`. The latter has a time limit of 2 hours. 
-`STDOUT` and `STDERROR` of jobs will be written to files named `slurm-<jobid>.out` or to custom a file specified under `#SBATCH --output` in the submission script. 
+The argument `--mem` limits the amount of RAM, `--cpus` the number of CPU
+cores, `--time` the time how long a session will be active. Under
+`--parition` one can choose among different queues and node architectures.
+Current options for `--partition` are: `intel`, `batch`, `highmem`, `gpu`,
+and `short`. The latter has a time limit of 2 hours. 
+
 
 ### Monitoring jobs with `squeue`
 
