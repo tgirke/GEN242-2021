@@ -1,0 +1,1581 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.80.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+
+<link rel="shortcut icon" href="../../../favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="../../../favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="../../../favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="../../../favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="../../../favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="../../../favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="../../../favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="../../../favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="../../../favicons/android-192x192.png" sizes="192x192">
+
+<title>Functional Enrichment Analysis | GEN242</title><meta property="og:title" content="Functional Enrichment Analysis" />
+<meta property="og:description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: .Rmd .R
+ Introduction The following introduces gene and protein annotation systems that are widely used for functional enrichment analysis (FEA). These include among many other annotation systems: Gene Ontology (GO), Disease Ontology (DO) and pathway annotations, such as KEGG and Reactome. Examples of widely used statistical enrichment methods are introduced as well." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/manuals/rfea/rfea/" />
+<meta property="og:site_name" content="GEN242" />
+<meta itemprop="name" content="Functional Enrichment Analysis">
+<meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: .Rmd .R
+ Introduction The following introduces gene and protein annotation systems that are widely used for functional enrichment analysis (FEA). These include among many other annotation systems: Gene Ontology (GO), Disease Ontology (DO) and pathway annotations, such as KEGG and Reactome. Examples of widely used statistical enrichment methods are introduced as well.">
+
+<meta itemprop="wordCount" content="1625">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Functional Enrichment Analysis"/>
+<meta name="twitter:description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: .Rmd .R
+ Introduction The following introduces gene and protein annotation systems that are widely used for functional enrichment analysis (FEA). These include among many other annotation systems: Gene Ontology (GO), Disease Ontology (DO) and pathway annotations, such as KEGG and Reactome. Examples of widely used statistical enrichment methods are introduced as well."/>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-00000000-0', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+<link rel="preload" href="../../../scss/main.min.1f416e6a5f646f231d085681bf2b4ebdad5d41f149a3977625affc97f735ab7e.css" as="style">
+<link href="../../../scss/main.min.1f416e6a5f646f231d085681bf2b4ebdad5d41f149a3977625affc97f735ab7e.css" rel="stylesheet" integrity="">
+
+
+<script
+  src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+
+<link rel="stylesheet" href="../../../css/prism.css"/>
+
+
+<script src="../../../js/driver0.9.8.min.js"></script>
+<link rel="stylesheet" href="../../../css/driver0.9.8.min.css"/>
+
+
+<link rel="stylesheet" href="../../../css/site.css"/>
+<script src="../../../js/site.js"></script>
+
+
+
+  </head>
+  <body class="td-page line-numbers">
+    <header>
+     
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+  <a class="navbar-brand" href="../../../">
+		<span class="font-weight-bold">GEN242</span>
+	</a>
+	<row class="header-switch">
+	  	<div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="sidebarSwitch" checked=true>
+        <label class="custom-control-label" for="sidebarSwitch">sidebar</label>
+      </div>
+    	<div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="tocSwitch" checked=true>
+        <label class="custom-control-label" for="tocSwitch">toc</label>
+      </div>
+	</row>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0" style="position: relative">
+				
+				
+				
+				
+				
+          <a class="nav-link dropdown-toggle" href="../../../about/" id="navbarDropdown" role="button">
+          	About
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../about/introduction/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Introduction
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../about/syllabus/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Syllabus
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../about/schedule/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Schedule
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../about/internal/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Internal
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../about/internal/internal_resources/"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 Resources
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../about/internal/install/"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 Installation
+              </a>
+          	
+          </div>
+				
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0" style="position: relative">
+				
+				
+				
+				
+				
+          <a class="nav-link dropdown-toggle" href="../../../slides/" id="navbarDropdown" role="button">
+          	Slides
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_01"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Course Introduction (S1)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_02"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Genome Basics (S2)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_03"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Databases and Software (S3)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_04"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 DNA Sequencing (S4)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_05"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Introduction to R (S5)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_06"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Sequence Alignments (S6)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_07"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Programming in R (S7)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_08"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Multiple Alignments (S8)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_09"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Short Read Alignments (S9)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_10"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 R on HPC (S10)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_11"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 NGS Analysis Basics (S11)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_12"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Gene Expression Analysis (S12)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_13"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 NGS Workflows (S13)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_14/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 ChIP-Seq Overview (S14)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_15/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Enrichment Analysis (S15)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_16/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Cluster Analysis (S16)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_17/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 R Packages and dplyr (S17)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_18/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Shiny Apps (S18)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_19/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Profile HMMs (S19)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_20/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Sequence Assembly (S20)
+              </a>
+          	
+          </div>
+				
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0" style="position: relative">
+				
+				
+				
+				
+				
+          <a class="nav-link dropdown-toggle" href="../../../tutorials/" id="navbarDropdown" role="button">
+          	Tutorials
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/github/github/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 GitHub Introduction (T1)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/linux/linux/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Linux and HPCC Cluster (T2)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/rbasics/rbasics/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Introduction to R (T3)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/rprogramming/rprogramming/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Programming in R (T4)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/rparallel/rparallel/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Parallel R (T5)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/rsequences/rsequences/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 NGS Analysis Basics (T6)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/systempiper/systempiper/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Workflows (T7)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/sprnaseq/sprnaseq/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 RNA-Seq Workflow (T8)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/spchipseq/spchipseq/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 ChIP-Seq Workflow (T9)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/rmarkdown/rmarkdown/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 R Markdown (T10)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/rfea/rfea/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Functional Enrichment Analysis (T11)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/rclustering/rclustering/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Cluster Analysis and Data Mining (T12)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/rgraphics/rgraphics/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Graphics and Visualization (T13)
+              </a>
+          	
+          </div>
+				
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0" style="position: relative">
+				
+				
+				
+				
+				
+          <a class="nav-link dropdown-toggle" href="../../../manuals/" id="navbarDropdown" role="button">
+          	Manuals
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../manuals/github/github/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 GitHub
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../manuals/linux/linux/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Linux &amp; HPCC Cluster
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../manuals/rbasics/rbasics/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Introduction to R
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../manuals/rbasics/sample/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Sample R Markdown
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../manuals/rprogramming/rprogramming/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Programming in R
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../manuals/rparallel/rparallel/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Parallel Evaluations in R
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../manuals/rsequences/rsequences/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 NGS Analysis Basics
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../manuals/systempiper/systempiper/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 NGS Workflow Overview
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../manuals/sprnaseq/sprnaseq/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 RNA-Seq Workflow
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../manuals/spchipseq/spchipseq/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 ChIP-Seq Workflow
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../manuals/rfea/rfea/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Functional Enrichment Analysis
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../manuals/rclustering/rclustering/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Cluster Analysis and Data Mining
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../manuals/rgraphics/rgraphics/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Graphics and Visualization
+              </a>
+          	
+          </div>
+				
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0" style="position: relative">
+				
+				
+				
+				
+				
+          <a class="nav-link dropdown-toggle" href="../../../assignments/" id="navbarDropdown" role="button">
+          	Assignments
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../assignments/homework/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Homework
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/homework/hw01/hw01/"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 HW1: Intro &amp; GitHub
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/homework/hw02/hw02/"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 HW2: Linux &amp; HPC
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/homework/hw03/hw03/"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 HW3: R Basics
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/homework/hw04/hw04/"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 HW4: Alignments
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/homework/hw05/hw05"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 HW5: R Programming
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/homework/hw06/hw06"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 HW6: NGS Analysis Basics
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/homework/hw07/hw07"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 HW7: RNA-Seq Analysis
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/homework/hw08/hw08"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 HW8: R Markdown
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../assignments/projects/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Projects
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/projects/project_overview/"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 Overview of Projects
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/projects/01_rnaseq_aligners/"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 RNA-Seq Aligners
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/projects/02_rnaseq_deg/"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 DEG Methods
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/projects/03_cluster_analysis/"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 Cluster Analysis
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/projects/04_scrnaseq_embedding/"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 scRNA-Seq Embedding
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/projects/05_chipseq_peakcaller/"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 ChIP-Seq Peak Callers
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/projects/06_functional_enrichment/"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 Functional Enrichment
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/projects/07_motif_enrichment/"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 Motif Enrichment
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/projects/08_genome_graphics/"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 Genome Graphics
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/projects/project_data/"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 Project Data
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../assignments/presentations/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Presentations
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/presentations/paper_presentations/"
+              style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 Paper Presentations
+              </a>
+          	
+          </div>
+				
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0" style="position: relative">
+				
+				
+				
+				
+				
+          <a class="nav-link dropdown-toggle" href="../../../external_resources/" id="navbarDropdown" role="button">
+          	Links
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="https://piazza.com/ucr/spring2021/gen242/home"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Piazza
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="https://classroom.github.com/classrooms/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 GitHub Classroom
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="https://github.com/tgirke/GEN242"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 GitHub Repo
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="https://bioconductor.org/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Bioconductor
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="https://www.dcassol.com/docsy_Rmarkdown/rmarkdown/install/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Hugo, Docsy &amp; R
+              </a>
+          	
+          </div>
+				
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0" style="position: relative">
+				
+				
+				
+				
+				
+				
+				
+					<a class="nav-link" href="../../../blog/" ><span>News</span></a>
+				
+			</li>
+			
+			
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block">
+
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="../../../offline-search-index.72f4c4bdcac2de58cbdb636f489c002d.json"
+  data-offline-search-base-href="../../../"
+  data-offline-search-max-results="10"
+>
+
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="../../../offline-search-index.72f4c4bdcac2de58cbdb636f489c002d.json"
+  data-offline-search-base-href="../../../"
+  data-offline-search-max-results="10"
+>
+
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav" id="td-section-nav">
+    
+    
+    
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="../../../manuals/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Manuals</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="manuals">
+      
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualsgithubgithub" href="../../../manuals/github/github/">GitHub</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualslinuxlinux" href="../../../manuals/linux/linux/">Linux &amp; HPCC Cluster</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualsrbasicsrbasics" href="../../../manuals/rbasics/rbasics/">Introduction to R</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualsrprogrammingrprogramming" href="../../../manuals/rprogramming/rprogramming/">Programming in R</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualsrbasicssample" href="../../../manuals/rbasics/sample/">Sample R Markdown</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualsrparallelrparallel" href="../../../manuals/rparallel/rparallel/">Parallel Evaluations in R</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualsrsequencesrsequences" href="../../../manuals/rsequences/rsequences/">NGS Analysis Basics</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualssystempipersystempiper" href="../../../manuals/systempiper/systempiper/">systemPipeR: Workflow design and reporting generation environment</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualssprnaseqsprnaseq" href="../../../manuals/sprnaseq/sprnaseq/">RNA-Seq Workflow Template</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualsspchipseqspchipseq" href="../../../manuals/spchipseq/spchipseq/">ChIP-Seq Workflow Template</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page  active" id="m-manualsrfearfea" href="../../../manuals/rfea/rfea/">Functional Enrichment Analysis</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualsrclusteringrclustering" href="../../../manuals/rclustering/rclustering/">Cluster Analysis in R</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-manualsrgraphicsrgraphics" href="../../../manuals/rgraphics/rgraphics/">Graphics and Data Visualization in R</a>
+        
+      
+      
+    </li>
+  </ul>
+</ul>
+
+  </nav>
+</div>
+
+
+
+
+          </div>
+          
+          
+
+          
+            
+          
+
+          
+          
+              <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+                
+  
+  
+  
+  
+  
+  <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+  
+    
+    
+      
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+    
+    
+      <a href="https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/manuals/rfea/rfea.Rmd" target="_blank" class="source-link"><i class="fa fa-code fa-fw"></i> View Rmd source</a>
+    
+
+    <a href="https://github.com/tgirke/GEN242//edit/main/content/en/manuals/rfea/rfea.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+    <a href="https://github.com/tgirke/GEN242//new/main/content/en/manuals/rfea/rfea.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" target="_blank"><i class="fa fa-edit fa-fw"></i> Create child page</a>
+    <a href="https://github.com/tgirke/GEN242//issues/new?title=Functional%20Enrichment%20Analysis" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+    
+      
+      <a href="https://github.com/tgirke/GEN242/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
+    
+
+  
+  
+  </div>
+
+
+
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#functional-annotations-systems">Functional Annotations Systems</a></li>
+    <li><a href="#gene-ontology-db">Gene Ontology DB</a></li>
+    <li><a href="#pathway-dbs">Pathway DBs</a>
+      <ul>
+        <li><a href="#kegg">KEGG</a>
+          <ul>
+            <li><a href="#keggdb"><code>KEGG.db</code></a></li>
+          </ul>
+        </li>
+        <li><a href="#reactome">Reactome</a></li>
+      </ul>
+    </li>
+    <li><a href="#functional-enrichment-analysis-methods">Functional Enrichment Analysis Methods</a>
+      <ul>
+        <li><a href="#over-representation-analysis-ora">Over-representation analysis (ORA)</a>
+          <ul>
+            <li><a href="#gostats-package"><code>GOstats</code> Package</a></li>
+            <li><a href="#gohypergall-and-gocluster_report"><code>GOHyperGAll</code> and <code>GOCluster_Report</code></a></li>
+          </ul>
+        </li>
+        <li><a href="#set-enrichment-analysis-sea">Set enrichment analysis (SEA)</a>
+          <ul>
+            <li><a href="#fgsea-package"><code>fgsea</code> Package</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#version-information">Version Information</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+
+
+
+              </div>
+              <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+                
+  
+
+                <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../manuals/">Manuals</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="../../../manuals/rfea/rfea/">Functional Enrichment Analysis</a>
+</li>
+
+	</ol>
+</nav	>
+
+                
+<div class="td-content">
+	<h1>Functional Enrichment Analysis</h1>
+    
+	
+        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 8 minute read</p>
+           
+	<!--
+- Compile from command-line
+Rscript -e "rmarkdown::render('rfea.Rmd', c('html_document'), clean=F); knitr::knit('rfea.Rmd', tangle=TRUE)"
+-->
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelector("h1").className = "title";
+});
+</script>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+  var links = document.links;  
+  for (var i = 0, linksLength = links.length; i < linksLength; i++)
+    if (links[i].hostname != window.location.hostname)
+      links[i].target = '_blank';
+});
+</script>
+<div style="text-align: right">
+<p>Source code downloads:    
+<a href="https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/rfea/rfea.Rmd">.Rmd</a>    
+<a href="https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/rfea/rfea.R">.R</a></p>
+</div>
+<h2 id="introduction">Introduction</h2>
+<p>The following introduces gene and protein annotation systems that are widely
+used for functional enrichment analysis (FEA). These include among many other
+annotation systems: Gene Ontology (GO), Disease Ontology (DO) and pathway
+annotations, such as KEGG and Reactome. Examples of widely used statistical
+enrichment methods are introduced as well. These statistical FEA methods assess
+whether functional annotation terms are over-represented in a query gene set.
+In case of so called over-represention analysis (ORA) methods, such as Fisher’s
+exact and hypgeometric distribution tests, the query is usually a list of
+unranked gene identifiers (Falcon and Gentleman 2007). In contrast to this, Gene Set
+Enrichment Analysis (GSEA) algorithms use as query a score ranked lists (<em>e.g.</em>
+all genes profiled by an assay) and assess whether annotation categories are
+more highly enriched among the highest ranking genes compared to random
+rankings (Subramanian et al. 2005; Sergushichev 2016; Duan et al. 2020). The sets in
+both the query and the annotation databases can be composed of genes, proteins,
+compounds or other factors. For simplicity, the term gene sets is used
+throughtout this text.</p>
+<h2 id="functional-annotations-systems">Functional Annotations Systems</h2>
+<p>This section introduces a small selection of functional annotation systems, largely
+provided by Bioconductor packages. This includes code to inspect how the annotations
+are organized and how to access them.</p>
+<h2 id="gene-ontology-db">Gene Ontology DB</h2>
+<p><code>GO.db</code> is a data package that stores the GO term information from the GO
+consortium in an SQLite database. Several accessor functions are provide to
+query the database. Organism specific gene to GO annotations are provied by
+organism data packages and/or Bioconductor’s
+<a href="https://bioconductor.org/packages/release/bioc/html/AnnotationHub.html"><code>AnntationHub</code></a>.
+The following provide sample code for using <code>GO.db</code> as well as a organism
+database example.</p>
+<pre><code class="language-r">## Load GOstats library
+library(GOstats); library(GO.db)
+## Print complete GO term information for &quot;GO:0003700&quot;
+GOTERM$&quot;GO:0003700&quot;
+## Print parent and children terms for a GO ID
+GOMFPARENTS$&quot;GO:0003700&quot;; GOMFCHILDREN$&quot;GO:0003700&quot;
+## Print complete lineages of parents and children for a GO ID
+GOMFANCESTOR$&quot;GO:0003700&quot;; GOMFOFFSPRING$&quot;GO:0003700&quot;
+## Print number of GO terms in each of the 3 ontologies
+zz &lt;- eapply(GOTERM, function(x) x@Ontology); table(unlist(zz))
+## Gene to GO mappings for an organism (here Arabidopsis)
+library(org.At.tair.db) # For human use org.Hs.eg.db
+xx &lt;- as.list(org.At.tairGO2ALLTAIRS)
+</code></pre>
+<h2 id="pathway-dbs">Pathway DBs</h2>
+<h3 id="kegg">KEGG</h3>
+<h4 id="keggdb"><code>KEGG.db</code></h4>
+<p>The following <code>load_keggList</code> function returns the pathway annotations from the <code>KEGG.db</code> package for a species selected
+under the <code>org</code> argument (<em>e.g.</em> hsa, ath, dme, mmu, …). The resulting <code>list</code> object can be used
+for ORA or GSEA methods, <em>e.g.</em> by <code>fgsea</code>.</p>
+<pre><code class="language-r">## Define function to create KEGG pathway list db 
+load_keggList &lt;- function(org=&quot;ath&quot;) {
+    suppressMessages(suppressWarnings(library(KEGG.db))) 
+    kegg_gene_list &lt;- as.list(KEGGPATHID2EXTID) # All organisms in kegg
+    kegg_gene_list &lt;- kegg_gene_list[grepl(org, names(kegg_gene_list))] # Only human
+    kegg_name_list &lt;- unlist(as.list(KEGGPATHID2NAME)) # All organisms in kegg
+    kegg_name_list &lt;- kegg_name_list[gsub(paste0(&quot;^&quot;, org), &quot;&quot;, names(kegg_gene_list))]
+    names(kegg_gene_list) &lt;- paste0(names(kegg_gene_list), &quot; (&quot;, names(kegg_name_list), &quot;) - &quot;, kegg_name_list)
+    return(kegg_gene_list)
+}
+## Usage:
+keggdb &lt;- load_keggList(org=&quot;ath&quot;) # org can be: hsa, ath, dme, mmu, ... 
+</code></pre>
+<p>Additional packages for KEGG pathways:</p>
+<ul>
+<li><a href="https://bioconductor.org/packages/3.12/bioc/vignettes/pathview/inst/doc/pathview.pdf">pathview</a>: plotting pathways with quantitative information embedded</li>
+<li><a href="https://bioconductor.org/packages/3.12/bioc/html/KEGGREST.html">KEGGREST</a>: access via KEGG REST API</li>
+<li>Many additional packages can be found under Bioc’s KEGG View page <a href="https://bioconductor.org/packages/3.12/BiocViews.html#___KEGG">here</a></li>
+</ul>
+<h3 id="reactome">Reactome</h3>
+<p>The following <code>load_reacList</code> function returns the pathway annotations from the <code>reactome.db</code>
+package for a species selected under the <code>org</code> argument (<em>e.g.</em> R-HSA, R-MMU, R-DME, R-CEL, …).
+The resulting <code>list</code> object can be used for various ORA or GSEA methods, <em>e.g.</em> by <code>fgsea</code>.</p>
+<pre><code class="language-r">## Define function to create Reactome pathway list db 
+load_reacList &lt;- function(org=&quot;R-HSA&quot;) {
+    library(reactome.db)
+    reac_gene_list &lt;- as.list(reactomePATHID2EXTID) # All organisms in reactome
+    reac_gene_list &lt;- reac_gene_list[grepl(org, names(reac_gene_list))] # Only human
+    reac_name_list &lt;- unlist(as.list(reactomePATHID2NAME)) # All organisms in reactome
+    reac_name_list &lt;- reac_name_list[names(reac_gene_list)]
+    names(reac_gene_list) &lt;- paste0(names(reac_gene_list), &quot; (&quot;, names(reac_name_list), &quot;) - &quot;, gsub(&quot;^.*: &quot;, &quot;&quot;, reac_name_list))
+    return(reac_gene_list)
+}
+## Usage:
+reacdb &lt;- load_reacList(org=&quot;R-HSA&quot;)
+</code></pre>
+<p>A very useful query interface for Reactome is the <code>ReactomeContentService4R</code> package.
+Its vignette provides many useful examples, see <a href="https://bioconductor.org/packages/devel/bioc/vignettes/ReactomeContentService4R/inst/doc/ReactomeContentService4R.html">here</a>.
+A sample plot from <code>ReactomeContentService4R</code> is shown below.</p>
+<p><img src="../results/reactome_bigpicture.jpeg" alt=""></p>
+<div align="center">
+<p>Figure 1: Fireworks plot giving genome-wide pathway overview.</p>
+</div>
+</br>
+<h2 id="functional-enrichment-analysis-methods">Functional Enrichment Analysis Methods</h2>
+<h3 id="over-representation-analysis-ora">Over-representation analysis (ORA)</h3>
+<h4 id="gostats-package"><code>GOstats</code> Package</h4>
+<p>The <code>GOstats</code> package allows testing for both over and under representation of GO terms using
+either the standard Hypergeometric test or a conditional Hypergeometric test that uses the
+relationships among the GO terms for conditioning (Falcon and Gentleman 2007).</p>
+<pre><code class="language-r">## Load required packages
+library(GOstats); library(GO.db); library(org.At.tair.db)
+## Define universe and test sample set
+geneUniverse &lt;- keys(org.At.tairGENENAME)
+geneSample &lt;- c(&quot;AT2G46210&quot;, &quot;AT2G19880&quot;, &quot;AT2G38910&quot;, &quot;AT5G25140&quot;, &quot;AT2G44525&quot;)
+## Generate params object
+params &lt;- new(&quot;GOHyperGParams&quot;, geneIds = geneSample,
+                universeGeneIds = geneUniverse,
+                annotation=&quot;org.At.tair&quot;, ontology = &quot;MF&quot;, pvalueCutoff = 0.5,
+                conditional = FALSE, testDirection = &quot;over&quot;)
+## Run enrichment test
+hgOver &lt;- hyperGTest(params)
+## Viewing of results
+summary(hgOver)[1:4,]
+htmlReport(hgOver, file = &quot;MyhyperGresult.html&quot;) # html file will be written to current working directory
+</code></pre>
+<h4 id="gohypergall-and-gocluster_report"><code>GOHyperGAll</code> and <code>GOCluster_Report</code></h4>
+<p>The following introduceds a <code>GOCluster_Report</code> convenience function from the
+<code>systemPipeR</code> package. The first part shows how to generate the proper <code>catdb</code>
+lookup data structure for any organism supported by BioMart (H Backman and Girke 2016).
+This more time consuming step needs to be performed only once.</p>
+<pre><code class="language-r">## Create a custom genome-to-GO lookup table for enrichment testing
+library(systemPipeR); library(biomaRt)
+listMarts()  # To choose BioMart database
+listMarts(host = &quot;plants.ensembl.org&quot;)
+## Obtain annotations from BioMart
+listMarts() # To choose BioMart database
+m &lt;- useMart(&quot;plants_mart&quot;, host = &quot;plants.ensembl.org&quot;)
+listDatasets(m)
+m &lt;- useMart(&quot;plants_mart&quot;, dataset = &quot;athaliana_eg_gene&quot;, host = &quot;plants.ensembl.org&quot;)
+listAttributes(m)  # Choose data types you want to download
+go &lt;- getBM(attributes = c(&quot;go_id&quot;, &quot;tair_locus&quot;, &quot;namespace_1003&quot;), mart = m)
+go &lt;- go[go[, 3] != &quot;&quot;, ]; go[, 3] &lt;- as.character(go[, 3])
+go[go[, 3] == &quot;molecular_function&quot;, 3] &lt;- &quot;F&quot;; go[go[, 3] == &quot;biological_process&quot;, 3] &lt;- &quot;P&quot;; go[go[, 3] == &quot;cellular_component&quot;, 3] &lt;- &quot;C&quot;
+go[1:4, ]
+dir.create(&quot;./GO&quot;)
+write.table(go, &quot;GO/GOannotationsBiomart_mod.txt&quot;, quote = FALSE, row.names = FALSE, col.names = FALSE, sep = &quot;\t&quot;)
+catdb &lt;- makeCATdb(myfile = &quot;GO/GOannotationsBiomart_mod.txt&quot;, lib = NULL, org = &quot;&quot;, colno = c(1, 2, 3), idconv = NULL)
+save(catdb, file=&quot;GO/catdb.RData&quot;) 
+</code></pre>
+<p>For the actual enrichment analysis one can load the <code>catdb</code> object from the
+corresponding file, and then perform batch GO term analysis where the results
+include all terms meeting a user-provided P-value cutoff as well as GO Slim
+terms.</p>
+<pre><code class="language-r">## Next time catDB can be loaded from file
+load(&quot;GO/catdb.RData&quot;)
+
+## Perform enrichment test on single gene set
+geneids &lt;- unique(as.character(catmap(catdb)$D_MF[,&quot;GeneID&quot;]))
+gene_set_list &lt;- sapply(c(&quot;Set1&quot;, &quot;Set2&quot;, &quot;Set3&quot;), function(x) sample(geneids, 100), simplify=FALSE)
+GOHyperGAll(catdb=catdb, gocat=&quot;MF&quot;, sample=gene_set_list[[1]], Nannot=2)[1:20,]
+
+## Batch analysis of many gene sets for all and slim terms
+goall &lt;- GOCluster_Report(catdb=catdb, setlist=gene_set_list, method=&quot;all&quot;, id_type=&quot;gene&quot;, CLSZ=2, cutoff=0.01, gocats=c(&quot;MF&quot;, &quot;BP&quot;, &quot;CC&quot;), recordSpecGO = NULL)
+
+## GO Slim analysis by subsetting enrichment results accordingly
+m &lt;- useMart(&quot;plants_mart&quot;, dataset = &quot;athaliana_eg_gene&quot;, host = &quot;plants.ensembl.org&quot;)
+goslimvec &lt;- as.character(getBM(attributes = c(&quot;goslim_goa_accession&quot;), mart = m)[, 1])
+goslim &lt;- GOCluster_Report(catdb=catdb, setlist=gene_set_list, method=&quot;slim&quot;,id_type=&quot;gene&quot;, myslimv=goslimvec, CLSZ=2, cutoff=0.01, gocats = c(&quot;MF&quot;, &quot;BP&quot;, &quot;CC&quot;), recordSpecGO = NULL)
+
+## Plot 'GOBatchResult' as bar plot
+goBarplot(goslim, gocat=&quot;MF&quot;)
+</code></pre>
+<p><img src="../results/goslim.png" alt=""></p>
+<div align="center">
+<p>Figure 2: Batch ORA result of GO slim terms using 3 test gene sets.</p>
+</div>
+</br>
+<h3 id="set-enrichment-analysis-sea">Set enrichment analysis (SEA)</h3>
+<h4 id="fgsea-package"><code>fgsea</code> Package</h4>
+<p>The <code>fgsea</code> function performs gene set enrichment analysis (GSEA) on a score ranked
+gene list (Sergushichev 2016). Compared to other GESA implementations, <code>fgsea</code> is very fast. Its P-value
+estimation is based on an adaptive multi-level split Monte-Carlo scheme. In addition
+to its speed, it is very flexible in adopting custom annotation systems since it
+stores the gene-to-category annotations in a simple <code>list</code> object that is easy to create. The
+following uses the <code>keegdb</code> and <code>reacdb</code> lists created above as annotation systems.</p>
+<pre><code class="language-r">## Load packages and create sample ranked gene list 
+library(fgsea); library(data.table); library(ggplot2); library(org.At.tair.db)
+set.seed(42)
+
+## fgsea with KEGG (Arabidopsis)
+geneids &lt;- mappedkeys(org.At.tairCHR)
+exampleRanks &lt;- sort(setNames(sample(seq(-100,100, by=0.001), length(geneids)), geneids))
+fgseaResKegg &lt;- fgsea(pathways=keggdb, stats=exampleRanks, minSize=15, maxSize=500)
+head(fgseaResKegg[order(pval), ])
+plotEnrichment(keggdb[[&quot;ath00052 (00052) - Galactose metabolism&quot;]], exampleRanks) + labs(title=&quot;Galactose metabolism&quot;)
+
+## fgsea with Reactome (Human)
+geneids &lt;- unique(as.character(unlist(reacdb))) 
+exampleRanks &lt;- sort(setNames(sample(seq(-100,100, by=0.001), length(geneids)), geneids))
+fgseaResReac &lt;- fgsea(pathways=reacdb, stats=exampleRanks, minSize=15, maxSize=500)
+head(fgseaResReac[order(pval), ])
+plotEnrichment(reacdb[[&quot;R-HSA-3247509 (R-HSA-3247509) - Chromatin modifying enzymes&quot;]], exampleRanks) + labs(title=&quot;Chromatin modifying enzymes&quot;)
+</code></pre>
+<p>The <code>plotEnrichment</code> can be used to create enrichment plots. Additional examples are available
+in the vignette of the <code>fgsea</code> package <a href="https://bioconductor.org/packages/3.12/bioc/vignettes/fgsea/inst/doc/fgsea-tutorial.html">here</a>.</p>
+<p><img src="../results/enrplot.png" alt=""></p>
+<div align="center">
+<p>Figure 3: Enrichment plot for selected pathway.</p>
+</div>
+</br>
+<h2 id="version-information">Version Information</h2>
+<pre><code class="language-r">sessionInfo()
+</code></pre>
+<pre><code>## R version 4.0.5 (2021-03-31)
+## Platform: x86_64-pc-linux-gnu (64-bit)
+## Running under: Debian GNU/Linux 10 (buster)
+## 
+## Matrix products: default
+## BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.8.0
+## LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.8.0
+## 
+## locale:
+##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C               LC_TIME=en_US.UTF-8       
+##  [4] LC_COLLATE=en_US.UTF-8     LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                  LC_ADDRESS=C              
+## [10] LC_TELEPHONE=C             LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+## [1] fgsea_1.16.0     ggplot2_3.3.2    BiocStyle_2.18.0
+## 
+## loaded via a namespace (and not attached):
+##  [1] Rcpp_1.0.5          bslib_0.2.4         compiler_4.0.5      pillar_1.4.7       
+##  [5] BiocManager_1.30.10 jquerylib_0.1.3     tools_4.0.5         digest_0.6.27      
+##  [9] lattice_0.20-41     jsonlite_1.7.1      evaluate_0.14       lifecycle_0.2.0    
+## [13] tibble_3.0.4        gtable_0.3.0        pkgconfig_2.0.3     rlang_0.4.8        
+## [17] Matrix_1.3-2        fastmatch_1.1-0     parallel_4.0.5      yaml_2.2.1         
+## [21] blogdown_1.2        xfun_0.22           gridExtra_2.3       withr_2.3.0        
+## [25] stringr_1.4.0       dplyr_1.0.2         knitr_1.30          generics_0.1.0     
+## [29] sass_0.3.1          vctrs_0.3.5         grid_4.0.5          tidyselect_1.1.0   
+## [33] data.table_1.13.2   glue_1.4.2          R6_2.5.0            BiocParallel_1.24.1
+## [37] rmarkdown_2.7       bookdown_0.21       purrr_0.3.4         magrittr_2.0.1     
+## [41] codetools_0.2-18    scales_1.1.1        htmltools_0.5.1.1   ellipsis_0.3.1     
+## [45] colorspace_2.0-0    stringi_1.5.3       munsell_0.5.0       crayon_1.3.4
+</code></pre>
+<h2 id="references">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Duan2020-wz" class="csl-entry">
+<p>Duan, Yuzhu, Daniel S Evans, Richard A Miller, Nicholas J Schork, Steven R Cummings, and Thomas Girke. 2020. “<span class="nocase">signatureSearch: environment for gene expression signature searching and functional interpretation</span>.” <em>Nucleic Acids Res.</em>, October. <a href="https://doi.org/10.1093/nar/gkaa878">https://doi.org/10.1093/nar/gkaa878</a>.</p>
+</div>
+<div id="ref-Falcon2007-eb" class="csl-entry">
+<p>Falcon, S, and R Gentleman. 2007. “<span class="nocase">Using GOstats to test gene lists for GO term association</span>.” <em>Bioinformatics</em> 23 (2): 257–58. <a href="https://doi.org/10.1093/bioinformatics/btl567">https://doi.org/10.1093/bioinformatics/btl567</a>.</p>
+</div>
+<div id="ref-H_Backman2016-xk" class="csl-entry">
+<p>H Backman, Tyler W, and Thomas Girke. 2016. “<span class="nocase">systemPipeR: NGS workflow and report generation environment</span>.” <em>BMC Bioinformatics</em> 17 (September): 388. <a href="https://doi.org/10.1186/s12859-016-1241-0">https://doi.org/10.1186/s12859-016-1241-0</a>.</p>
+</div>
+<div id="ref-Sergushichev2016-ms" class="csl-entry">
+<p>Sergushichev, Alexey. 2016. “<span class="nocase">An algorithm for fast preranked gene set enrichment analysis using cumulative statistic calculation</span>.” <em>bioRxiv</em>. <a href="https://doi.org/10.1101/060012">https://doi.org/10.1101/060012</a>.</p>
+</div>
+<div id="ref-Subramanian2005-kx" class="csl-entry">
+<p>Subramanian, A, P Tamayo, V K Mootha, S Mukherjee, B L Ebert, M A Gillette, A Paulovich, et al. 2005. “<span class="nocase">Gene set enrichment analysis: a knowledge-based approach for interpreting genome-wide expression profiles</span>.” <em>Proc. Natl. Acad. Sci. U. S. A.</em> 102 (43): 15545–50. <a href="https://doi.org/10.1073/pnas.0506580102">https://doi.org/10.1073/pnas.0506580102</a>.</p>
+</div>
+</div>
+
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 0001-01-01
+</div>
+</div>
+
+
+              </main>
+          
+
+
+        </div>
+      </div>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2021 The GEN242 Instructors All Rights Reserved</small>
+        <small class="ml-1"><a href="https://www.ucr.edu/privacy.html" target="_blank">Privacy Policy</a></small>
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+<script>
+  (function() {
+    var i, text, code, codes = document.getElementsByTagName('code');
+    for (i = 0; i < codes.length;) {
+      code = codes[i];
+      if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+        text = code.textContent;
+        if (/^\$[^$]/.test(text) && /[^$]\$$/.test(text)) {
+          text = text.replace(/^\$/, '\\(').replace(/\$$/, '\\)');
+          code.textContent = text;
+        }
+        if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+            /^\$(.|\s)+\$$/.test(text) ||
+            /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+          code.outerHTML = code.innerHTML;  
+          continue;
+        }
+      }
+      i++;
+    }
+  })();
+</script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true,
+        processEnvironments: true
+    },
+    // Center justify equations in code and markdown cells. Elsewhere
+    // we use CSS to left justify single line equations in code cells.
+    displayAlign: 'center',
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}},
+        linebreaks: { automatic: true }
+    }
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="../../../js/main.min.f820bfc507c3ebefe17f8881ec4ee10013f3b89ad9555a50acf9bb1771e6823f.js" integrity="sha256-&#43;CC/xQfD6&#43;/hf4iB7E7hABPzuJrZVVpQrPm7F3Hmgj8=" crossorigin="anonymous"></script>
+
+
+
+<script src='../../../js/prism.js'></script>
+
+
+
+  </body>
+</html>

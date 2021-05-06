@@ -505,7 +505,7 @@ enable = true
     weight = 11
   [[menu.main]]
     name = "Functional Enrichment Analysis"
-    url = "/tutorials/rfea/rfea/"
+    url = "/manuals/rfea/rfea/"
     parent = "Manuals"
     weight = 12
   [[menu.main]]

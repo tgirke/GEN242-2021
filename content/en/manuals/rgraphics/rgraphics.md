@@ -1,7 +1,7 @@
 ---
 title: Graphics and Data Visualization in R
 author: "First/last name (first.last@ucr.edu)"
-date: "Last update: 02 May, 2021" 
+date: "Last update: 05 May, 2021" 
 output:
   html_document:
     toc: true
@@ -15,7 +15,7 @@ output:
 
 fontsize: 14pt
 bibliography: bibtex.bib
-weight: 10
+weight: 12
 type: docs
 ---
 

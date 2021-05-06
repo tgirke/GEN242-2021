@@ -128,13 +128,7 @@
   </url>
   
   <url>
-    <loc>/manuals/rclustering/rclustering/</loc>
-    <lastmod>2021-05-02T16:37:42-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/manuals/rgraphics/rgraphics/</loc>
-    <lastmod>2021-05-02T16:37:42-07:00</lastmod>
+    <loc>/manuals/rfea/rfea/</loc>
   </url>
   
   <url>
@@ -143,13 +137,23 @@
   </url>
   
   <url>
+    <loc>/manuals/rclustering/rclustering/</loc>
+    <lastmod>2021-05-02T16:37:42-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tutorials/rfea/rfea/</loc>
-    <lastmod>2021-05-05T20:13:59-07:00</lastmod>
+    <lastmod>2021-05-05T20:18:24-07:00</lastmod>
   </url>
   
   <url>
     <loc>/tutorials/rclustering/rclustering/</loc>
     <lastmod>2021-05-03T17:45:39-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/manuals/rgraphics/rgraphics/</loc>
+    <lastmod>2021-05-02T16:37:42-07:00</lastmod>
   </url>
   
   <url>
