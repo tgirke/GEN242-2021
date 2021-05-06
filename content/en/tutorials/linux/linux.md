@@ -372,7 +372,7 @@ the submission script.
 
 ### Interactive sessions with `srun`
 
-This option logs a user in to a computer node of a specified partition (queue).
+This option logs a user in to a computer node of a specified partition (queue), while Slurm monitors and controls the resource request.
 
 ```sh
 srun --pty bash -l
