@@ -56,11 +56,11 @@ statistical FEA methods assess whether functional annotation terms are
 over-represented in a query gene set. In case of so called over-represention
 analysis (ORA) methods the query is a list of unranked gene identifiers
 (Falcon and Gentleman 2007). In contrast to this, Gene Set Enrichment Analysis (GSEA)
-algorithms use as query score ranked lists (*e.g.* all genes profiled by an assay)
-and assess whether annotation catetories more highly enriched at the top of
-ranked query list compared to random rankings (Subramanian et al. 2005; Sergushichev 2016; Duan et al. 2020). The actual sets can
-be composed of genes, proteins and even compounds. For simplicity, the term
-gene sets is used throughtout this text.
+algorithms use as query score ranked lists (*e.g.* all genes profiled by an
+assay) and assess whether annotation catetories are more highly enriched for
+the highest ranking genes compared to random rankings (Subramanian et al. 2005; Sergushichev 2016; Duan et al. 2020). The sets in both the query and the
+annotation databases can be composed of genes, proteins and even compounds. For
+simplicity, the term gene sets is used throughtout this text.
 
 ## Functional Annotations Systems
 
