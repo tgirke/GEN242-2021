@@ -117,11 +117,17 @@ load_keggList <- function(org="ath") {
 keggdb <- load_keggList(org="ath") # org can be: hsa, ath, dme, mmu, ... 
 ```
 
+Additional packages for KEGG pathways:
+    + [pathview](https://bioconductor.org/packages/3.12/bioc/vignettes/pathview/inst/doc/pathview.pdf): plotting pathways with quantitative information embedded
+    + [KEGGREST](https://bioconductor.org/packages/3.12/bioc/html/KEGGREST.html): access via KEGG REST API
+	+ Many additional packages can be found under Bioc's KEGG View page [here](https://bioconductor.org/packages/3.12/BiocViews.html#___KEGG)
+
 ### Reactome
 
 The following `load_reacList` function returns the pathway annotations from the `reactome.db` 
 package for a species selected under the `org` argument (_e.g._ R-HSA, R-MMU, R-DME, R-CEL, ...). 
-The resulting `list` object can be used for various ORA or GSEA methods, _e.g._ by `fgsea`.  
+The resulting `list` object can be used for various ORA or GSEA methods, _e.g._ by `fgsea`. 
+
 
 ```{r reactomedb, eval=FALSE, warning=FALSE, message=FALSE}
 ## Define function to create Reactome pathway list db 
