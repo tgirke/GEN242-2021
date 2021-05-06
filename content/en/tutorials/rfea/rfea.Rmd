@@ -235,19 +235,28 @@ following uses the `keegdb` and `reacdb` lists created above as annotation syste
 ```{r fgsea, eval=FALSE, warning=FALSE, message=FALSE}
 ## Load packages and create sample ranked gene list 
 library(fgsea); library(data.table); library(ggplot2); library(org.At.tair.db)
+set.seed(42)
+
+## fgsea with KEGG (Arabidopsis)
 geneids <- mappedkeys(org.At.tairCHR)
 exampleRanks <- sort(setNames(sample(seq(-100,100, by=0.001), length(geneids)), geneids))
-
-## fgsea with KEGG
 fgseaResKegg <- fgsea(pathways=keggdb, stats=exampleRanks, minSize=15, maxSize=500)
 head(fgseaResKegg[order(pval), ])
 plotEnrichment(keggdb[["ath00052 (00052) - Galactose metabolism"]], exampleRanks) + labs(title="Galactose metabolism")
 
-## fgsea with Reactome
+## fgsea with Reactome (Human)
+geneids <- unique(as.character(unlist(reacdb))) 
+exampleRanks <- sort(setNames(sample(seq(-100,100, by=0.001), length(geneids)), geneids))
 fgseaResReac <- fgsea(pathways=reacdb, stats=exampleRanks, minSize=15, maxSize=500)
 head(fgseaResReac[order(pval), ])
-plotEnrichment(keggdb[["ath03013 (03013) - RNA transport"]], exampleRanks) + labs(title="RNA Transport")
+plotEnrichment(reacdb[["R-HSA-3247509 (R-HSA-3247509) - Chromatin modifying enzymes"]], exampleRanks) + labs(title="Chromatin modifying enzymes")
 ```
+The `plotEnrichment` can be used to create enrichment plots. Additional examples are available
+in the vignette of the `fgsea` package [here](https://bioconductor.org/packages/3.12/bioc/vignettes/fgsea/inst/doc/fgsea-tutorial.html).
+
+![](../results/enrplot.png)
+<div align="center">Figure 1: Enrichment plot for selected pathway.</div></br>
+
 
 ## Version Information
 
