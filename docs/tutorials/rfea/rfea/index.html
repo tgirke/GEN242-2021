@@ -22,12 +22,12 @@
  Introduction The following introduces several widely used gene and protein annotation systems that are commonly used for functional enrichment analysis (FEA). These include among many other annotation systems: Gene Ontology (GO), Disease Ontology (DO) and pathway annotations, such as KEGG and Reactome." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rfea/rfea/" />
-<meta property="article:modified_time" content="2021-05-05T18:05:19-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-05-05T18:12:00-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Functional Enrichment Analysis">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: .Rmd .R
  Introduction The following introduces several widely used gene and protein annotation systems that are commonly used for functional enrichment analysis (FEA). These include among many other annotation systems: Gene Ontology (GO), Disease Ontology (DO) and pathway annotations, such as KEGG and Reactome.">
-<meta itemprop="dateModified" content="2021-05-05T18:05:19-07:00" />
-<meta itemprop="wordCount" content="1453">
+<meta itemprop="dateModified" content="2021-05-05T18:12:00-07:00" />
+<meta itemprop="wordCount" content="1481">
 
 
 
@@ -895,7 +895,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.3c4024b6463838dce509152c8b47a9d2.json"
+  data-offline-search-index-json-src="../../../offline-search-index.42acb592d9b129b35a61280125ad455b.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -927,7 +927,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.3c4024b6463838dce509152c8b47a9d2.json"
+  data-offline-search-index-json-src="../../../offline-search-index.42acb592d9b129b35a61280125ad455b.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1319,8 +1319,9 @@ summary(hgOver)[1:4,]
 htmlReport(hgOver, file = &quot;MyhyperGresult.html&quot;) # html file will be written to current working directory
 </code></pre>
 <h4 id="gohypergall-and-gocluster_report"><code>GOHyperGAll</code> and <code>GOCluster_Report</code></h4>
-<p>The following introduceds a <code>GOCluster_Report</code> convenience function from the <code>systemPipeR</code> package.
-The first part show how to generate the proper <code>catdb</code> file for any organism supported by BioMart.</p>
+<p>The following introduceds a <code>GOCluster_Report</code> convenience function from the
+<code>systemPipeR</code> package. The first part shows how to generate the proper <code>catdb</code>
+lookup data structure for any organism supported by BioMart (H Backman and Girke 2016).</p>
 <pre><code class="language-r">## Create a custom genome-to-GO lookup table for enrichment testing
 library(systemPipeR); library(biomaRt)
 listMarts()  # To choose BioMart database
@@ -1429,6 +1430,9 @@ plotEnrichment(keggdb[[&quot;ath03013 (03013) - RNA transport&quot;]], exampleRa
 <div id="ref-Falcon2007-eb" class="csl-entry">
 <p>Falcon, S, and R Gentleman. 2007. “<span class="nocase">Using GOstats to test gene lists for GO term association</span>.” <em>Bioinformatics</em> 23 (2): 257–58. <a href="https://doi.org/10.1093/bioinformatics/btl567">https://doi.org/10.1093/bioinformatics/btl567</a>.</p>
 </div>
+<div id="ref-H_Backman2016-xk" class="csl-entry">
+<p>H Backman, Tyler W, and Thomas Girke. 2016. “<span class="nocase">systemPipeR: NGS workflow and report generation environment</span>.” <em>BMC Bioinformatics</em> 17 (September): 388. <a href="https://doi.org/10.1186/s12859-016-1241-0">https://doi.org/10.1186/s12859-016-1241-0</a>.</p>
+</div>
 <div id="ref-Sergushichev2016-ms" class="csl-entry">
 <p>Sergushichev, Alexey. 2016. “<span class="nocase">An algorithm for fast preranked gene set enrichment analysis using cumulative statistic calculation</span>.” <em>bioRxiv</em>. <a href="https://doi.org/10.1101/060012">https://doi.org/10.1101/060012</a>.</p>
 </div>
@@ -1439,7 +1443,7 @@ plotEnrichment(keggdb[[&quot;ath03013 (03013) - RNA transport&quot;]], exampleRa
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-05: <a  href="https://github.com/tgirke/GEN242//commit/a39f04792930afed88e1e8dd9e1985173f5c377f">some edits (a39f04792)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-05: <a  href="https://github.com/tgirke/GEN242//commit/b3655ff110c2b7a02a6e3a43b2cd707388c20a45">some edits (b3655ff11)</a>
 </div>
 </div>
 

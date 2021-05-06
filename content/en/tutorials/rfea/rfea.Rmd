@@ -171,8 +171,9 @@ htmlReport(hgOver, file = "MyhyperGresult.html") # html file will be written to 
 
 #### `GOHyperGAll` and `GOCluster_Report`
 
-The following introduceds a `GOCluster_Report` convenience function from the `systemPipeR` package.
-The first part show how to generate the proper `catdb` file for any organism supported by BioMart.
+The following introduceds a `GOCluster_Report` convenience function from the
+`systemPipeR` package. The first part shows how to generate the proper `catdb`
+lookup data structure for any organism supported by BioMart [@H_Backman2016-xk].
 
 ```{r gohypergall_catdb, eval=FALSE, warning=FALSE, message=FALSE}
 ## Create a custom genome-to-GO lookup table for enrichment testing

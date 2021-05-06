@@ -172,8 +172,9 @@ htmlReport(hgOver, file = "MyhyperGresult.html") # html file will be written to 
 
 #### `GOHyperGAll` and `GOCluster_Report`
 
-The following introduceds a `GOCluster_Report` convenience function from the `systemPipeR` package.
-The first part show how to generate the proper `catdb` file for any organism supported by BioMart.
+The following introduceds a `GOCluster_Report` convenience function from the
+`systemPipeR` package. The first part shows how to generate the proper `catdb`
+lookup data structure for any organism supported by BioMart (H Backman and Girke 2016).
 
 ``` r
 ## Create a custom genome-to-GO lookup table for enrichment testing
@@ -301,6 +302,12 @@ Duan, Yuzhu, Daniel S Evans, Richard A Miller, Nicholas J Schork, Steven R Cummi
 <div id="ref-Falcon2007-eb" class="csl-entry">
 
 Falcon, S, and R Gentleman. 2007. “<span class="nocase">Using GOstats to test gene lists for GO term association</span>.” *Bioinformatics* 23 (2): 257–58. <https://doi.org/10.1093/bioinformatics/btl567>.
+
+</div>
+
+<div id="ref-H_Backman2016-xk" class="csl-entry">
+
+H Backman, Tyler W, and Thomas Girke. 2016. “<span class="nocase">systemPipeR: NGS workflow and report generation environment</span>.” *BMC Bioinformatics* 17 (September): 388. <https://doi.org/10.1186/s12859-016-1241-0>.
 
 </div>
 
