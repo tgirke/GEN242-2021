@@ -22,12 +22,12 @@
  Introduction The following introduces several widely used gene and protein annotation systems that are commonly used for functional enrichment analysis (FEA). These include among many other annotation systems: Gene Ontology (GO), Disease Ontology (DO) and pathway annotations, such as KEGG and Reactome." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rfea/rfea/" />
-<meta property="article:modified_time" content="2021-05-05T20:02:13-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-05-05T20:06:54-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Functional Enrichment Analysis">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: .Rmd .R
  Introduction The following introduces several widely used gene and protein annotation systems that are commonly used for functional enrichment analysis (FEA). These include among many other annotation systems: Gene Ontology (GO), Disease Ontology (DO) and pathway annotations, such as KEGG and Reactome.">
-<meta itemprop="dateModified" content="2021-05-05T20:02:13-07:00" />
-<meta itemprop="wordCount" content="1617">
+<meta itemprop="dateModified" content="2021-05-05T20:06:54-07:00" />
+<meta itemprop="wordCount" content="1626">
 
 
 
@@ -895,7 +895,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.75efe3c1e8db5b82be02c653814f995a.json"
+  data-offline-search-index-json-src="../../../offline-search-index.c30c9ee8bf9c37eb62711d3977ef2130.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -927,7 +927,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.75efe3c1e8db5b82be02c653814f995a.json"
+  data-offline-search-index-json-src="../../../offline-search-index.c30c9ee8bf9c37eb62711d3977ef2130.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1226,10 +1226,11 @@ Ontology (DO) and pathway annotations, such as KEGG and Reactome. Examples of
 widely used statistical enrichment methods are introduced as well. These
 statistical FEA methods assess whether functional annotation terms are
 over-represented in a query gene set. In case of so called over-represention
-analysis (ORA) methods the query is a list of unranked gene identifiers
+analysis (ORA) methods, such as Fisher’s exact and hypgeometric distribution tests,
+the query is usually a list of unranked gene identifiers
 (Falcon and Gentleman 2007). In contrast to this, Gene Set Enrichment Analysis (GSEA)
 algorithms use as query score ranked lists (<em>e.g.</em> all genes profiled by an
-assay) and assess whether annotation catetories are more highly enriched for
+assay) and assess whether annotation catetories are more highly enriched among
 the highest ranking genes compared to random rankings (Subramanian et al. 2005; Sergushichev 2016; Duan et al. 2020). The sets in both the query and the
 annotation databases can be composed of genes, proteins and even compounds. For
 simplicity, the term gene sets is used throughtout this text.</p>
@@ -1474,7 +1475,7 @@ in the vignette of the <code>fgsea</code> package <a href="https://bioconductor.
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-05: <a  href="https://github.com/tgirke/GEN242//commit/57437a399978a99d0050f51b2bb8025ed39942bb">some edits (57437a399)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-05: <a  href="https://github.com/tgirke/GEN242//commit/09e18ddd8b0a5428a63cc98108e67d0ce741cea4">some edits (09e18ddd8)</a>
 </div>
 </div>
 
