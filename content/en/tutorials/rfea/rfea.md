@@ -163,57 +163,58 @@ params <- new("GOHyperGParams", geneIds = geneSample,
 hgOver <- hyperGTest(params)
 ## Viewing of results
 summary(hgOver)[1:4,]
-htmlReport(hgOver, file = "MyhyperGresult.html")
+htmlReport(hgOver, file = "MyhyperGresult.html") # html file will be written to current working directory
 ```
 
 #### `GOHyperGAll` and `GOCluster_Report`
 
+The following introduceds a `GOCluster_Report` convenience function from the `systemPipeR` package.
+The first part show how to generate the proper `catdb` file for any organism supported by BioMart.
+
 ``` r
-library(systemPipeR)
+## Create a custom genome-to-GO lookup table for enrichment testing
+library(systemPipeR); library(biomaRt)
+listMarts()  # To choose BioMart database
+listMarts(host = "plants.ensembl.org")
 ## Obtain annotations from BioMart
 listMarts() # To choose BioMart database
-m <- useMart("ENSEMBL_MART_PLANT"); listDatasets(m) 
-m <- useMart("ENSEMBL_MART_PLANT", dataset="athaliana_eg_gene")
-listAttributes(m) # Choose data types you want to download
-go <- getBM(attributes=c("go_accession", "tair_locus", "go_namespace_1003"), mart=m)
-go <- go[go[,3]!="",]; go[,3] <- as.character(go[,3])
-write.table(go, "GOannotationsBiomart_mod.txt", quote=FALSE, row.names=FALSE, col.names=FALSE, sep="\t")
+m <- useMart("plants_mart", host = "plants.ensembl.org")
+listDatasets(m)
+m <- useMart("plants_mart", dataset = "athaliana_eg_gene", host = "plants.ensembl.org")
+listAttributes(m)  # Choose data types you want to download
+go <- getBM(attributes = c("go_id", "tair_locus", "namespace_1003"), mart = m)
+go <- go[go[, 3] != "", ]; go[, 3] <- as.character(go[, 3])
+go[go[, 3] == "molecular_function", 3] <- "F"; go[go[, 3] == "biological_process", 3] <- "P"; go[go[, 3] == "cellular_component", 3] <- "C"
+go[1:4, ]
+dir.create("./GO")
+write.table(go, "GO/GOannotationsBiomart_mod.txt", quote = FALSE, row.names = FALSE, col.names = FALSE, sep = "\t")
+catdb <- makeCATdb(myfile = "GO/GOannotationsBiomart_mod.txt", lib = NULL, org = "", colno = c(1, 2, 3), idconv = NULL)
+save(catdb, file="GO/catdb.RData") 
+```
 
-## Create catDB instance (takes a while but needs to be done only once)
-catdb <- makeCATdb(myfile="GOannotationsBiomart_mod.txt", lib=NULL, org="", colno=c(1,2,3), idconv=NULL)
-catdb
+The above needs to done only once. For the enrichment analysis one can load the `catdb` object
+from the corresponding file, and then perform batch GO term analysis where the results include
+all terms meeting a user-provided P-value cutoff as well as GO Slim term analysis.
 
-## Create catDB from Bioconductor annotation package
-# catdb <- makeCATdb(myfile=NULL, lib="ath1121501.db", org="", colno=c(1,2,3), idconv=NULL)
-
-## AffyID-to-GeneID mappings when working with AffyIDs 
-# affy2locusDF <- systemPipeR:::.AffyID2GeneID(map = "ftp://ftp.arabidopsis.org/home/tair/Microarrays/Affymetrix/affy_ATH1_array_elements-2010-12-20.txt", download=TRUE)
-# catdb_conv <- makeCATdb(myfile="GOannotationsBiomart_mod.txt", lib=NULL, org="", colno=c(1,2,3), idconv=list(affy=affy2locusDF))
-# systemPipeR:::.AffyID2GeneID(catdb=catdb_conv, affyIDs=c("244901_at", "244902_at"))
-
+``` r
 ## Next time catDB can be loaded from file
-save(catdb, file="catdb.RData") 
-load("catdb.RData")
+load("GO/catdb.RData")
 
 ## Perform enrichment test on single gene set
-test_sample <- unique(as.character(catmap(catdb)$D_MF[1:100,"GeneID"]))
-GOHyperGAll(catdb=catdb, gocat="MF", sample=test_sample, Nannot=2)[1:20,]
+geneids <- unique(as.character(catmap(catdb)$D_MF[,"GeneID"]))
+gene_set_list <- sapply(c("Set1", "Set2", "Set3"), function(x) sample(geneids, 100), simplify=FALSE)
+GOHyperGAll(catdb=catdb, gocat="MF", sample=gene_set_list[[1]], Nannot=2)[1:20,]
 
-## GO Slim analysis by subsetting results accordingly
-GOHyperGAll_result <- GOHyperGAll(catdb=catdb, gocat="MF", sample=test_sample, Nannot=2)
-GOHyperGAll_Subset(catdb, GOHyperGAll_result, sample=test_sample, type="goSlim") 
+## Batch analysis of many gene sets for all and slim terms
+goall <- GOCluster_Report(catdb=catdb, setlist=gene_set_list, method="all", id_type="gene", CLSZ=2, cutoff=0.01, gocats=c("MF", "BP", "CC"), recordSpecGO = NULL)
 
-## Reduce GO term redundancy in 'GOHyperGAll_results'
-simplifyDF <- GOHyperGAll_Simplify(GOHyperGAll_result, gocat="MF", cutoff=0.001, correct=T)
-# Returns the redundancy reduced data set. 
-data.frame(GOHyperGAll_result[GOHyperGAll_result[,1] 
-
-## Batch Analysis of Gene Clusters
-testlist <- list(Set1=test_sample)
-GOBatchResult <- GOCluster_Report(catdb=catdb, setlist=testlist, method="all", id_type="gene", CLSZ=10, cutoff=0.001, gocats=c("MF", "BP", "CC"), recordSpecGO=c("GO:0003674", "GO:0008150", "GO:0005575"))
+## GO Slim analysis by subsetting enrichment results accordingly
+m <- useMart("plants_mart", dataset = "athaliana_eg_gene", host = "plants.ensembl.org")
+goslimvec <- as.character(getBM(attributes = c("goslim_goa_accession"), mart = m)[, 1])
+goslim <- GOCluster_Report(catdb=catdb, setlist=gene_set_list, method="slim",id_type="gene", myslimv=goslimvec, CLSZ=2, cutoff=0.01, gocats = c("MF", "BP", "CC"), recordSpecGO = NULL)
 
 ## Plot 'GOBatchResult' as bar plot
-goBarplot(GOBatchResult, gocat="MF")
+goBarplot(goslim, gocat="MF")
 ```
 
 ### Set enrichment analysis (SEA)
