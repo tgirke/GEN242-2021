@@ -386,7 +386,7 @@ srun --x11 --partition=short --mem=2gb --cpus-per-task 4 --ntasks 1 --time 1:00:
 The argument `--mem` limits the amount of RAM, `--cpus` the number of CPU
 cores, `--time` the time how long a session will be active. Under
 `--parition` one can choose among different queues and node architectures.
-Current options for `--partition` are: `intel`, `batch`, `highmem`, `gpu`,
+Current options under `--partition` for most users of the HPCC cluster are: `intel`, `batch`, `highmem`, `gpu`,
 and `short`. The latter has a time limit of 2 hours. 
 
 
