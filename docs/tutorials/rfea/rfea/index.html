@@ -22,12 +22,12 @@
  Introduction The following introduces several widely used gene and protein annotation systems that are commonly used for functional enrichment analysis (FEA). These include among many other annotation systems: Gene Ontology (GO), Disease Ontology (DO) and pathway annotations, such as KEGG and Reactome." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rfea/rfea/" />
-<meta property="article:modified_time" content="2021-05-05T15:28:10-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-05-05T17:25:18-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Functional Enrichment Analysis">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: .Rmd .R
  Introduction The following introduces several widely used gene and protein annotation systems that are commonly used for functional enrichment analysis (FEA). These include among many other annotation systems: Gene Ontology (GO), Disease Ontology (DO) and pathway annotations, such as KEGG and Reactome.">
-<meta itemprop="dateModified" content="2021-05-05T15:28:10-07:00" />
-<meta itemprop="wordCount" content="1148">
+<meta itemprop="dateModified" content="2021-05-05T17:25:18-07:00" />
+<meta itemprop="wordCount" content="1274">
 
 
 
@@ -895,7 +895,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.4c42cced0947732660f7c010fc82ff03.json"
+  data-offline-search-index-json-src="../../../offline-search-index.a64ebeea18258d2cf129bc84c103ba4f.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -927,7 +927,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.4c42cced0947732660f7c010fc82ff03.json"
+  data-offline-search-index-json-src="../../../offline-search-index.a64ebeea18258d2cf129bc84c103ba4f.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1313,54 +1313,51 @@ params &lt;- new(&quot;GOHyperGParams&quot;, geneIds = geneSample,
 hgOver &lt;- hyperGTest(params)
 ## Viewing of results
 summary(hgOver)[1:4,]
-htmlReport(hgOver, file = &quot;MyhyperGresult.html&quot;)
+htmlReport(hgOver, file = &quot;MyhyperGresult.html&quot;) # html file will be written to current working directory
 </code></pre>
 <h4 id="gohypergall-and-gocluster_report"><code>GOHyperGAll</code> and <code>GOCluster_Report</code></h4>
-<pre><code class="language-r">library(systemPipeR)
+<p>The following introduceds a <code>GOCluster_Report</code> convenience function from the <code>systemPipeR</code> package.
+The first part show how to generate the proper <code>catdb</code> file for any organism supported by BioMart.</p>
+<pre><code class="language-r">## Create a custom genome-to-GO lookup table for enrichment testing
+library(systemPipeR); library(biomaRt)
+listMarts()  # To choose BioMart database
+listMarts(host = &quot;plants.ensembl.org&quot;)
 ## Obtain annotations from BioMart
 listMarts() # To choose BioMart database
-m &lt;- useMart(&quot;ENSEMBL_MART_PLANT&quot;); listDatasets(m) 
-m &lt;- useMart(&quot;ENSEMBL_MART_PLANT&quot;, dataset=&quot;athaliana_eg_gene&quot;)
-listAttributes(m) # Choose data types you want to download
-go &lt;- getBM(attributes=c(&quot;go_accession&quot;, &quot;tair_locus&quot;, &quot;go_namespace_1003&quot;), mart=m)
-go &lt;- go[go[,3]!=&quot;&quot;,]; go[,3] &lt;- as.character(go[,3])
-write.table(go, &quot;GOannotationsBiomart_mod.txt&quot;, quote=FALSE, row.names=FALSE, col.names=FALSE, sep=&quot;\t&quot;)
-
-## Create catDB instance (takes a while but needs to be done only once)
-catdb &lt;- makeCATdb(myfile=&quot;GOannotationsBiomart_mod.txt&quot;, lib=NULL, org=&quot;&quot;, colno=c(1,2,3), idconv=NULL)
-catdb
-
-## Create catDB from Bioconductor annotation package
-# catdb &lt;- makeCATdb(myfile=NULL, lib=&quot;ath1121501.db&quot;, org=&quot;&quot;, colno=c(1,2,3), idconv=NULL)
-
-## AffyID-to-GeneID mappings when working with AffyIDs 
-# affy2locusDF &lt;- systemPipeR:::.AffyID2GeneID(map = &quot;ftp://ftp.arabidopsis.org/home/tair/Microarrays/Affymetrix/affy_ATH1_array_elements-2010-12-20.txt&quot;, download=TRUE)
-# catdb_conv &lt;- makeCATdb(myfile=&quot;GOannotationsBiomart_mod.txt&quot;, lib=NULL, org=&quot;&quot;, colno=c(1,2,3), idconv=list(affy=affy2locusDF))
-# systemPipeR:::.AffyID2GeneID(catdb=catdb_conv, affyIDs=c(&quot;244901_at&quot;, &quot;244902_at&quot;))
-
-## Next time catDB can be loaded from file
-save(catdb, file=&quot;catdb.RData&quot;) 
-load(&quot;catdb.RData&quot;)
+m &lt;- useMart(&quot;plants_mart&quot;, host = &quot;plants.ensembl.org&quot;)
+listDatasets(m)
+m &lt;- useMart(&quot;plants_mart&quot;, dataset = &quot;athaliana_eg_gene&quot;, host = &quot;plants.ensembl.org&quot;)
+listAttributes(m)  # Choose data types you want to download
+go &lt;- getBM(attributes = c(&quot;go_id&quot;, &quot;tair_locus&quot;, &quot;namespace_1003&quot;), mart = m)
+go &lt;- go[go[, 3] != &quot;&quot;, ]; go[, 3] &lt;- as.character(go[, 3])
+go[go[, 3] == &quot;molecular_function&quot;, 3] &lt;- &quot;F&quot;; go[go[, 3] == &quot;biological_process&quot;, 3] &lt;- &quot;P&quot;; go[go[, 3] == &quot;cellular_component&quot;, 3] &lt;- &quot;C&quot;
+go[1:4, ]
+dir.create(&quot;./GO&quot;)
+write.table(go, &quot;GO/GOannotationsBiomart_mod.txt&quot;, quote = FALSE, row.names = FALSE, col.names = FALSE, sep = &quot;\t&quot;)
+catdb &lt;- makeCATdb(myfile = &quot;GO/GOannotationsBiomart_mod.txt&quot;, lib = NULL, org = &quot;&quot;, colno = c(1, 2, 3), idconv = NULL)
+save(catdb, file=&quot;GO/catdb.RData&quot;) 
+</code></pre>
+<p>The above needs to done only once. For the enrichment analysis one can load the <code>catdb</code> object
+from the corresponding file, and then perform batch GO term analysis where the results include
+all terms meeting a user-provided P-value cutoff as well as GO Slim term analysis.</p>
+<pre><code class="language-r">## Next time catDB can be loaded from file
+load(&quot;GO/catdb.RData&quot;)
 
 ## Perform enrichment test on single gene set
-test_sample &lt;- unique(as.character(catmap(catdb)$D_MF[1:100,&quot;GeneID&quot;]))
-GOHyperGAll(catdb=catdb, gocat=&quot;MF&quot;, sample=test_sample, Nannot=2)[1:20,]
+geneids &lt;- unique(as.character(catmap(catdb)$D_MF[,&quot;GeneID&quot;]))
+gene_set_list &lt;- sapply(c(&quot;Set1&quot;, &quot;Set2&quot;, &quot;Set3&quot;), function(x) sample(geneids, 100), simplify=FALSE)
+GOHyperGAll(catdb=catdb, gocat=&quot;MF&quot;, sample=gene_set_list[[1]], Nannot=2)[1:20,]
 
-## GO Slim analysis by subsetting results accordingly
-GOHyperGAll_result &lt;- GOHyperGAll(catdb=catdb, gocat=&quot;MF&quot;, sample=test_sample, Nannot=2)
-GOHyperGAll_Subset(catdb, GOHyperGAll_result, sample=test_sample, type=&quot;goSlim&quot;) 
+## Batch analysis of many gene sets for all and slim terms
+goall &lt;- GOCluster_Report(catdb=catdb, setlist=gene_set_list, method=&quot;all&quot;, id_type=&quot;gene&quot;, CLSZ=2, cutoff=0.01, gocats=c(&quot;MF&quot;, &quot;BP&quot;, &quot;CC&quot;), recordSpecGO = NULL)
 
-## Reduce GO term redundancy in 'GOHyperGAll_results'
-simplifyDF &lt;- GOHyperGAll_Simplify(GOHyperGAll_result, gocat=&quot;MF&quot;, cutoff=0.001, correct=T)
-# Returns the redundancy reduced data set. 
-data.frame(GOHyperGAll_result[GOHyperGAll_result[,1] 
-
-## Batch Analysis of Gene Clusters
-testlist &lt;- list(Set1=test_sample)
-GOBatchResult &lt;- GOCluster_Report(catdb=catdb, setlist=testlist, method=&quot;all&quot;, id_type=&quot;gene&quot;, CLSZ=10, cutoff=0.001, gocats=c(&quot;MF&quot;, &quot;BP&quot;, &quot;CC&quot;), recordSpecGO=c(&quot;GO:0003674&quot;, &quot;GO:0008150&quot;, &quot;GO:0005575&quot;))
+## GO Slim analysis by subsetting enrichment results accordingly
+m &lt;- useMart(&quot;plants_mart&quot;, dataset = &quot;athaliana_eg_gene&quot;, host = &quot;plants.ensembl.org&quot;)
+goslimvec &lt;- as.character(getBM(attributes = c(&quot;goslim_goa_accession&quot;), mart = m)[, 1])
+goslim &lt;- GOCluster_Report(catdb=catdb, setlist=gene_set_list, method=&quot;slim&quot;,id_type=&quot;gene&quot;, myslimv=goslimvec, CLSZ=2, cutoff=0.01, gocats = c(&quot;MF&quot;, &quot;BP&quot;, &quot;CC&quot;), recordSpecGO = NULL)
 
 ## Plot 'GOBatchResult' as bar plot
-goBarplot(GOBatchResult, gocat=&quot;MF&quot;)
+goBarplot(goslim, gocat=&quot;MF&quot;)
 </code></pre>
 <h3 id="set-enrichment-analysis-sea">Set enrichment analysis (SEA)</h3>
 <h4 id="fgsea-package"><code>fgsea</code> Package</h4>
@@ -1419,7 +1416,7 @@ goBarplot(GOBatchResult, gocat=&quot;MF&quot;)
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-05: <a  href="https://github.com/tgirke/GEN242//commit/401afb29af4316b0743558f0db43e135a30b275b">some edits (401afb29a)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-05: <a  href="https://github.com/tgirke/GEN242//commit/81fec3a70570fadcc909f84991e6cce68f7af6f2">some edits (81fec3a70)</a>
 </div>
 </div>
 
