@@ -175,6 +175,7 @@ htmlReport(hgOver, file = "MyhyperGresult.html") # html file will be written to 
 The following introduceds a `GOCluster_Report` convenience function from the
 `systemPipeR` package. The first part shows how to generate the proper `catdb`
 lookup data structure for any organism supported by BioMart (H Backman and Girke 2016).
+This more time consuming step needs to performed only once.
 
 ``` r
 ## Create a custom genome-to-GO lookup table for enrichment testing
@@ -197,9 +198,10 @@ catdb <- makeCATdb(myfile = "GO/GOannotationsBiomart_mod.txt", lib = NULL, org =
 save(catdb, file="GO/catdb.RData") 
 ```
 
-The above needs to done only once. For the enrichment analysis one can load the `catdb` object
-from the corresponding file, and then perform batch GO term analysis where the results include
-all terms meeting a user-provided P-value cutoff as well as GO Slim terms.
+For the actual enrichment analysis one can load the `catdb` object from the
+corresponding file, and then perform batch GO term analysis where the results
+include all terms meeting a user-provided P-value cutoff as well as GO Slim
+terms.
 
 ``` r
 ## Next time catDB can be loaded from file
@@ -221,6 +223,16 @@ goslim <- GOCluster_Report(catdb=catdb, setlist=gene_set_list, method="slim",id_
 ## Plot 'GOBatchResult' as bar plot
 goBarplot(goslim, gocat="MF")
 ```
+
+![](../results/goslim.png)
+
+<div align="center">
+
+Figure 1: Batch ORA result of GO slim terms using 3 test gene sets.
+
+</div>
+
+</br>
 
 ### Set enrichment analysis (SEA)
 
@@ -260,7 +272,7 @@ in the vignette of the `fgsea` package [here](https://bioconductor.org/packages/
 
 <div align="center">
 
-Figure 1: Enrichment plot for selected pathway.
+Figure 2: Enrichment plot for selected pathway.
 
 </div>
 
