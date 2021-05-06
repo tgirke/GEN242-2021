@@ -22,12 +22,12 @@
  Introduction The following introduces several widely used gene and protein annotation systems that are commonly used for functional enrichment analysis (FEA). These include among many other annotation systems: Gene Ontology (GO), Disease Ontology (DO) and pathway annotations, such as KEGG and Reactome." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rfea/rfea/" />
-<meta property="article:modified_time" content="2021-05-05T18:53:00-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-05-05T19:06:00-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Functional Enrichment Analysis">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: .Rmd .R
  Introduction The following introduces several widely used gene and protein annotation systems that are commonly used for functional enrichment analysis (FEA). These include among many other annotation systems: Gene Ontology (GO), Disease Ontology (DO) and pathway annotations, such as KEGG and Reactome.">
-<meta itemprop="dateModified" content="2021-05-05T18:53:00-07:00" />
-<meta itemprop="wordCount" content="1576">
+<meta itemprop="dateModified" content="2021-05-05T19:06:00-07:00" />
+<meta itemprop="wordCount" content="1592">
 
 
 
@@ -895,7 +895,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.743d2542b1d23ee6e516be4c97001d05.json"
+  data-offline-search-index-json-src="../../../offline-search-index.adf2168033f94e4699fdbed40ab0c1a7.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -927,7 +927,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.743d2542b1d23ee6e516be4c97001d05.json"
+  data-offline-search-index-json-src="../../../offline-search-index.adf2168033f94e4699fdbed40ab0c1a7.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1301,7 +1301,13 @@ load_reacList &lt;- function(org=&quot;R-HSA&quot;) {
 reacdb &lt;- load_reacList(org=&quot;R-HSA&quot;)
 </code></pre>
 <p>A very useful query interface for Reactome is the <code>ReactomeContentService4R</code> package.
-Its vignette provides many useful examples, see <a href="https://bioconductor.org/packages/devel/bioc/vignettes/ReactomeContentService4R/inst/doc/ReactomeContentService4R.html">here</a>.</p>
+Its vignette provides many useful examples, see <a href="https://bioconductor.org/packages/devel/bioc/vignettes/ReactomeContentService4R/inst/doc/ReactomeContentService4R.html">here</a>.
+A sample plot from <code>ReactomeContentService4R</code> is shown below.</p>
+<p><img src="../results/reactome_bigpicture.jpeg" alt=""></p>
+<div align="center">
+<p>Figure 1: Fireworks plot giving genome-wide pathway overview.</p>
+</div>
+</br>
 <h2 id="functional-enrichment-analysis-methods">Functional Enrichment Analysis Methods</h2>
 <h3 id="over-representation-analysis-ora">Over-representation analysis (ORA)</h3>
 <h4 id="gostats-package"><code>GOstats</code> Package</h4>
@@ -1373,7 +1379,7 @@ goBarplot(goslim, gocat=&quot;MF&quot;)
 </code></pre>
 <p><img src="../results/goslim.png" alt=""></p>
 <div align="center">
-<p>Figure 1: Batch ORA result of GO slim terms using 3 test gene sets.</p>
+<p>Figure 2: Batch ORA result of GO slim terms using 3 test gene sets.</p>
 </div>
 </br>
 <h3 id="set-enrichment-analysis-sea">Set enrichment analysis (SEA)</h3>
@@ -1406,7 +1412,7 @@ plotEnrichment(reacdb[[&quot;R-HSA-3247509 (R-HSA-3247509) - Chromatin modifying
 in the vignette of the <code>fgsea</code> package <a href="https://bioconductor.org/packages/3.12/bioc/vignettes/fgsea/inst/doc/fgsea-tutorial.html">here</a>.</p>
 <p><img src="../results/enrplot.png" alt=""></p>
 <div align="center">
-<p>Figure 2: Enrichment plot for selected pathway.</p>
+<p>Figure 3: Enrichment plot for selected pathway.</p>
 </div>
 </br>
 <h2 id="version-information">Version Information</h2>
@@ -1467,7 +1473,7 @@ in the vignette of the <code>fgsea</code> package <a href="https://bioconductor.
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-05: <a  href="https://github.com/tgirke/GEN242//commit/4f9199d839eab7bb62e5b4eb0f3382344448f939">some edits (4f9199d83)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-05: <a  href="https://github.com/tgirke/GEN242//commit/4bc446ec0a328bf8a1030244f57e4612499eb4dd">some edits (4bc446ec0)</a>
 </div>
 </div>
 

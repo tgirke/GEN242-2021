@@ -146,6 +146,17 @@ reacdb <- load_reacList(org="R-HSA")
 
 A very useful query interface for Reactome is the `ReactomeContentService4R` package.
 Its vignette provides many useful examples, see [here](https://bioconductor.org/packages/devel/bioc/vignettes/ReactomeContentService4R/inst/doc/ReactomeContentService4R.html).
+A sample plot from `ReactomeContentService4R` is shown below.
+
+![](../results/reactome_bigpicture.jpeg)
+
+<div align="center">
+
+Figure 1: Fireworks plot giving genome-wide pathway overview.
+
+</div>
+
+</br>
 
 ## Functional Enrichment Analysis Methods
 
@@ -233,7 +244,7 @@ goBarplot(goslim, gocat="MF")
 
 <div align="center">
 
-Figure 1: Batch ORA result of GO slim terms using 3 test gene sets.
+Figure 2: Batch ORA result of GO slim terms using 3 test gene sets.
 
 </div>
 
@@ -277,7 +288,7 @@ in the vignette of the `fgsea` package [here](https://bioconductor.org/packages/
 
 <div align="center">
 
-Figure 2: Enrichment plot for selected pathway.
+Figure 3: Enrichment plot for selected pathway.
 
 </div>
 
