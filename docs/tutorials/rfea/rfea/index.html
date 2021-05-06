@@ -22,11 +22,11 @@
  Introduction The following introduces several widely used gene and protein annotation systems that are commonly used for functional enrichment analysis (FEA). These include among many other annotation systems: Gene Ontology (GO), Disease Ontology (DO) and pathway annotations, such as KEGG and Reactome." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rfea/rfea/" />
-<meta property="article:modified_time" content="2021-05-05T18:47:57-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-05-05T18:51:27-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Functional Enrichment Analysis">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: .Rmd .R
  Introduction The following introduces several widely used gene and protein annotation systems that are commonly used for functional enrichment analysis (FEA). These include among many other annotation systems: Gene Ontology (GO), Disease Ontology (DO) and pathway annotations, such as KEGG and Reactome.">
-<meta itemprop="dateModified" content="2021-05-05T18:47:57-07:00" />
+<meta itemprop="dateModified" content="2021-05-05T18:51:27-07:00" />
 <meta itemprop="wordCount" content="1546">
 
 
@@ -895,7 +895,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.4938b5e869f711c5eeb5fd38d8dc3e2e.json"
+  data-offline-search-index-json-src="../../../offline-search-index.6af5cb05f04dc43252fd67b1371f0cd3.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -927,7 +927,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.4938b5e869f711c5eeb5fd38d8dc3e2e.json"
+  data-offline-search-index-json-src="../../../offline-search-index.6af5cb05f04dc43252fd67b1371f0cd3.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1264,7 +1264,7 @@ xx &lt;- as.list(org.At.tairGO2ALLTAIRS)
 <p>The following <code>load_keggList</code> function returns the pathway annotations from the <code>KEGG.db</code> package for a species selected
 under the <code>org</code> argument (<em>e.g.</em> hsa, ath, dme, mmu, …). The resulting <code>list</code> object can be used
 for ORA or GSEA methods, <em>e.g.</em> by <code>fgsea</code>.</p>
-<pre><code class="language-r">## KEGG Pathway ID to Hs Entrez ID list
+<pre><code class="language-r">## Define function to create KEGG pathway list db 
 load_keggList &lt;- function(org=&quot;ath&quot;) {
     suppressMessages(suppressWarnings(library(KEGG.db))) 
     kegg_gene_list &lt;- as.list(KEGGPATHID2EXTID) # All organisms in kegg
@@ -1281,7 +1281,7 @@ keggdb &lt;- load_keggList(org=&quot;ath&quot;) # org can be: hsa, ath, dme, mmu
 <p>The following <code>load_reacList</code> function returns the pathway annotations from the <code>reactome.db</code>
 package for a species selected under the <code>org</code> argument (<em>e.g.</em> R-HSA, R-MMU, R-DME, R-CEL, …).
 The resulting <code>list</code> object can be used for various ORA or GSEA methods, <em>e.g.</em> by <code>fgsea</code>.</p>
-<pre><code class="language-r">## Reactome Pathway ID to Hs Entrez ID list
+<pre><code class="language-r">## Define function to create Reactome pathway list db 
 load_reacList &lt;- function(org=&quot;R-HSA&quot;) {
     library(reactome.db)
     reac_gene_list &lt;- as.list(reactomePATHID2EXTID) # All organisms in reactome
@@ -1461,7 +1461,7 @@ in the vignette of the <code>fgsea</code> package <a href="https://bioconductor.
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-05: <a  href="https://github.com/tgirke/GEN242//commit/21efd410a65cf4c509afcac6406afe43d6e9600b">some edits (21efd410a)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-05: <a  href="https://github.com/tgirke/GEN242//commit/e78ced5702c181b4ea846201723e5f7a2201994f">some edits (e78ced570)</a>
 </div>
 </div>
 

@@ -103,7 +103,7 @@ under the `org` argument (_e.g._ hsa, ath, dme, mmu, ...). The resulting `list` 
 for ORA or GSEA methods, _e.g._ by `fgsea`.  
 
 ```{r keggdb, eval=FALSE, warning=FALSE, message=FALSE}
-## KEGG Pathway ID to Hs Entrez ID list
+## Define function to create KEGG pathway list db 
 load_keggList <- function(org="ath") {
     suppressMessages(suppressWarnings(library(KEGG.db))) 
     kegg_gene_list <- as.list(KEGGPATHID2EXTID) # All organisms in kegg
@@ -124,7 +124,7 @@ package for a species selected under the `org` argument (_e.g._ R-HSA, R-MMU, R-
 The resulting `list` object can be used for various ORA or GSEA methods, _e.g._ by `fgsea`.  
 
 ```{r reactomedb, eval=FALSE, warning=FALSE, message=FALSE}
-## Reactome Pathway ID to Hs Entrez ID list
+## Define function to create Reactome pathway list db 
 load_reacList <- function(org="R-HSA") {
     library(reactome.db)
     reac_gene_list <- as.list(reactomePATHID2EXTID) # All organisms in reactome
