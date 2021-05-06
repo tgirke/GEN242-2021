@@ -57,11 +57,11 @@ over-represented in a query gene set. In case of so called over-represention
 analysis (ORA) methods, such as Fisher’s exact and hypgeometric distribution tests,
 the query is usually a list of unranked gene identifiers
 (Falcon and Gentleman 2007). In contrast to this, Gene Set Enrichment Analysis (GSEA)
-algorithms use as query score ranked lists (*e.g.* all genes profiled by an
+algorithms use as query a score ranked lists (*e.g.* all genes profiled by an
 assay) and assess whether annotation catetories are more highly enriched among
-the highest ranking genes compared to random rankings (Subramanian et al. 2005; Sergushichev 2016; Duan et al. 2020). The sets in both the query and the
-annotation databases can be composed of genes, proteins and even compounds. For
-simplicity, the term gene sets is used throughtout this text.
+the highest ranking genes in the list compared to random rankings (Subramanian et al. 2005; Sergushichev 2016; Duan et al. 2020). The sets in both the query and the
+annotation databases can be composed of genes, proteins, compounds or other
+factors. For simplicity, the term gene sets is used throughtout this text.
 
 ## Functional Annotations Systems
 

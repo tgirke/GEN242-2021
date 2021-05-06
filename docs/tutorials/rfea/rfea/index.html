@@ -22,12 +22,12 @@
  Introduction The following introduces several widely used gene and protein annotation systems that are commonly used for functional enrichment analysis (FEA). These include among many other annotation systems: Gene Ontology (GO), Disease Ontology (DO) and pathway annotations, such as KEGG and Reactome." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rfea/rfea/" />
-<meta property="article:modified_time" content="2021-05-05T20:06:54-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-05-05T20:11:37-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Functional Enrichment Analysis">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: .Rmd .R
  Introduction The following introduces several widely used gene and protein annotation systems that are commonly used for functional enrichment analysis (FEA). These include among many other annotation systems: Gene Ontology (GO), Disease Ontology (DO) and pathway annotations, such as KEGG and Reactome.">
-<meta itemprop="dateModified" content="2021-05-05T20:06:54-07:00" />
-<meta itemprop="wordCount" content="1626">
+<meta itemprop="dateModified" content="2021-05-05T20:11:37-07:00" />
+<meta itemprop="wordCount" content="1631">
 
 
 
@@ -895,7 +895,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.c30c9ee8bf9c37eb62711d3977ef2130.json"
+  data-offline-search-index-json-src="../../../offline-search-index.dca9b1b805ce17bed2c11165ce6109e7.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -927,7 +927,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.c30c9ee8bf9c37eb62711d3977ef2130.json"
+  data-offline-search-index-json-src="../../../offline-search-index.dca9b1b805ce17bed2c11165ce6109e7.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1229,11 +1229,11 @@ over-represented in a query gene set. In case of so called over-represention
 analysis (ORA) methods, such as Fisher’s exact and hypgeometric distribution tests,
 the query is usually a list of unranked gene identifiers
 (Falcon and Gentleman 2007). In contrast to this, Gene Set Enrichment Analysis (GSEA)
-algorithms use as query score ranked lists (<em>e.g.</em> all genes profiled by an
+algorithms use as query a score ranked lists (<em>e.g.</em> all genes profiled by an
 assay) and assess whether annotation catetories are more highly enriched among
-the highest ranking genes compared to random rankings (Subramanian et al. 2005; Sergushichev 2016; Duan et al. 2020). The sets in both the query and the
-annotation databases can be composed of genes, proteins and even compounds. For
-simplicity, the term gene sets is used throughtout this text.</p>
+the highest ranking genes in the list compared to random rankings (Subramanian et al. 2005; Sergushichev 2016; Duan et al. 2020). The sets in both the query and the
+annotation databases can be composed of genes, proteins, compounds or other
+factors. For simplicity, the term gene sets is used throughtout this text.</p>
 <h2 id="functional-annotations-systems">Functional Annotations Systems</h2>
 <p>This section introduces a small selection of functional annotation systems, largely
 provided by Bioconductor packages. This includes code to inspect how the annotations
@@ -1475,7 +1475,7 @@ in the vignette of the <code>fgsea</code> package <a href="https://bioconductor.
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-05: <a  href="https://github.com/tgirke/GEN242//commit/09e18ddd8b0a5428a63cc98108e67d0ce741cea4">some edits (09e18ddd8)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-05: <a  href="https://github.com/tgirke/GEN242//commit/f22c39a6bc252cd4e070c82609d90c2d5c54d602">some edits (f22c39a6b)</a>
 </div>
 </div>
 
