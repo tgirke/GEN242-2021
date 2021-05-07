@@ -73,7 +73,7 @@ are organized and how to access them.
 ## Gene Ontology DB
 
 `GO.db` is a data package that stores the GO term information from the GO
-consortium in an SQLite database. Several accessor functions are provide to
+consortium in an SQLite database. Several accessor functions are provided to
 query the database. Organism specific gene to GO annotations are provied by
 organism data packages and/or Bioconductor’s
 [`AnntationHub`](https://bioconductor.org/packages/release/bioc/html/AnnotationHub.html).
