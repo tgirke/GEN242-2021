@@ -1,7 +1,7 @@
 ---
 title: Functional Enrichment Analysis 
 author: "First/last name (first.last@ucr.edu)"
-date: "Last update: 05 May, 2021" 
+date: "Last update: 07 May, 2021" 
 output:
   html_document:
     toc: true
