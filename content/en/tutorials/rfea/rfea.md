@@ -128,6 +128,8 @@ Additional packages for KEGG pathways:
 
 ### Reactome
 
+#### `reactome.db`
+
 The following `load_reacList` function returns the pathway annotations from the `reactome.db`
 package for a species selected under the `org` argument (*e.g.* R-HSA, R-MMU, R-DME, R-CEL, …).
 The resulting `list` object can be used for various ORA or GSEA methods, *e.g.* by `fgsea`.
