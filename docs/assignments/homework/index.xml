@@ -14,7 +14,284 @@
     
     
     <item>
+      <title>Assignments: HW1 - Online Exercise and Basic GitHub Usage</title>
+      <link>/assignments/homework/hw01/hw01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/assignments/homework/hw01/hw01/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;a-online-excercise-databases-and-software-tools&#34;&gt;A. Online Excercise: Databases and Software Tools&lt;/h2&gt;
+&lt;p&gt;This is an easy warm-up homework exposing students to a variety of online databases and software tools.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Go to &lt;a href=&#34;http://www.ncbi.nlm.nih.gov&#34;&gt;http://www.ncbi.nlm.nih.gov&lt;/a&gt;, select &lt;code&gt;Protein&lt;/code&gt; database in dropdown, and then run query: &lt;code&gt;P450 &amp;amp; hydroxylase &amp;amp; human [organism]&lt;/code&gt;, select under &lt;em&gt;Source&lt;/em&gt; databases UniProtKB/Swiss-Prot
+&lt;ol&gt;
+&lt;li&gt;Report final query syntax from &lt;em&gt;Search Details&lt;/em&gt; field.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Save GIs of the final query result to a file. For this select under &lt;code&gt;Send to&lt;/code&gt; dropdown &lt;code&gt;GI List&lt;/code&gt; format.
+&lt;ol&gt;
+&lt;li&gt;Report the number of retrieved GIs.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Retrieve the corresponding sequences through &lt;a href=&#34;http://www.ncbi.nlm.nih.gov/sites/batchentrez&#34;&gt;Batch-Entrez&lt;/a&gt; using GI list file as query input -&amp;gt; save sequences in FASTA format&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Generate multiple alignment and tree of these sequences using &lt;a href=&#34;http://bioinfo.genotoul.fr/multalin&#34;&gt;MultAalin&lt;/a&gt;
+&lt;ol&gt;
+&lt;li&gt;Save multiple alignment and tree to file&lt;/li&gt;
+&lt;li&gt;Identify putative heme binding cysteine in multiple alignment&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Open corresponding &lt;a href=&#34;http://www.uniprot.org&#34;&gt;UniProt page&lt;/a&gt; and search for first P450 sequence in your list.
+&lt;ol&gt;
+&lt;li&gt;Compare putative heme binding cysteine with consensus pattern from Prosite database (&lt;a href=&#34;http://prosite.expasy.org/scanprosite/scanprosite_doc.html#mo_motifs&#34;&gt;Syntax&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Report corresponding Pfam ID&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.ncbi.nlm.nih.gov/blast/Blast.cgi&#34;&gt;BLASTP&lt;/a&gt; against PDF database (use again first P450 in your list);
+on result page click first entry in BLAST hit list (here &lt;a href=&#34;https://www.ncbi.nlm.nih.gov/protein/3K9V_A?report=genbank&amp;amp;log$=protalign&amp;amp;blast_rank=1&amp;amp;RID=6BZUZS51016&#34;&gt;3K9V_A&lt;/a&gt;); then select &amp;lsquo;Identify Conserved Domains&amp;rsquo; on side bar; click blue bar labelled &amp;lsquo;CYP24A1&amp;rsquo;; then select &amp;lsquo;Interactive View&amp;rsquo; which will download &amp;lsquo;cd20645.cn3&amp;rsquo; file.
+&lt;ol&gt;
+&lt;li&gt;Compare resulting alignment with result from MultAlin&lt;/li&gt;
+&lt;li&gt;View 3D structure in Cn3D*, save structure (screen shot) and highlight heme binding cysteine. Note, Cn3D* can be downloaded from &lt;a href=&#34;https://www.ncbi.nlm.nih.gov/Structure/CN3D/cn3d.shtml&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;*If there are problems in the last step (6.2) with the install of Cn3D, then please use this online only alternative: (i) click in the &lt;a href=&#34;https://www.ncbi.nlm.nih.gov/protein/3K9V_A?report=genbank&amp;amp;log$=protalign&amp;amp;blast_rank=1&amp;amp;RID=6BZUZS51016&#34;&gt;3K9V_A&lt;/a&gt; page &lt;em&gt;&amp;lsquo;Protein 3D Structure&amp;rsquo;&lt;/em&gt; instead of &lt;em&gt;&amp;lsquo;Identify Conserved Domains&amp;rsquo;&lt;/em&gt;; (ii) choose one of the two structure entries provided on the subsequent page; (iii) select option &amp;ldquo;full-featured 3D viewer&amp;rdquo; in the bottom right corner of the structure image; (iv) choose the &amp;lsquo;&lt;em&gt;Details&amp;rsquo;&lt;/em&gt; tab on the right; (v) after this the structure of the protein is shown on the left and the underlying protein sequence on the right; (vi) highlight the heme binding cysteine in the structure by selecting it in the sequence; and (vii) then save the structure view to a PNG file or take a screenshot.&lt;/p&gt;
+&lt;h2 id=&#34;b-homework-submission-to-a-private-github-repository&#34;&gt;B. Homework Submission to a Private GitHub Repository&lt;/h2&gt;
+&lt;p&gt;To learn the basics of GitHub, this homework assignment will be uploaded to a private GitHub respository that will be shared with the instructors. To do so, follow these steps:
+In this homework, you are asked to create a github &lt;strong&gt;private&lt;/strong&gt; repository.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Login to your GitHub account.&lt;/li&gt;
+&lt;li&gt;Click the &amp;ldquo;&lt;strong&gt;New&amp;rdquo;&lt;/strong&gt; button in the sidebar on the left.&lt;/li&gt;
+&lt;li&gt;Under &amp;ldquo;&lt;strong&gt;Repository name&amp;rdquo;&lt;/strong&gt;, use &lt;strong&gt;&amp;ldquo;learn-github&amp;rdquo;&lt;/strong&gt; as the name.&lt;/li&gt;
+&lt;li&gt;Choose &amp;ldquo;&lt;strong&gt;Private&lt;/strong&gt;&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;Choose to add a README file (optional).&lt;/li&gt;
+&lt;li&gt;Click &amp;ldquo;&lt;strong&gt;Create repository&lt;/strong&gt;&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;You should redirected to your new repo&amp;rsquo;s page. In the new page, click &amp;ldquo;&lt;strong&gt;Settings&lt;/strong&gt;&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;Click &amp;ldquo;&lt;strong&gt;Manage access&lt;/strong&gt;&amp;rdquo;, and the choose &amp;ldquo;&lt;strong&gt;Invite a collaborator&lt;/strong&gt;&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;Invite both &amp;ldquo;&lt;strong&gt;tgirke&lt;/strong&gt;&amp;rdquo; and &amp;ldquo;&lt;strong&gt;lz100&lt;/strong&gt;&amp;rdquo; and send out the invitation.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;video width=&#34;100%&#34; height=&#34;100%&#34; controls&gt;
+  &lt;source src=&#34;https://github.com/GEN242-2021/class_notes/blob/main/week1/GitHub.mp4?raw=true&#34; type=&#34;video/mp4&#34;&gt;
+&lt;/video&gt;
+&lt;p&gt;Note, the creator of this demo cannot search for an invitation created by the same user
+(here lz100). Thus, the message &amp;lsquo;could not find lz100&amp;rsquo; at the end of the video. This
+will not be the case for students in the class.&lt;/p&gt;
+&lt;p&gt;Please assemble the results of part A of HW1 in one PDF file named &lt;code&gt;hw1.pdf&lt;/code&gt; and upload it to your private GitHub repository generated in part B. To do so, follow the upload instructions &lt;a href=&#34;https://girke.bioinformatics.ucr.edu/GEN242/tutorials/github/github/#online-file-upload&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;c-homework-submission-via-github-classroom&#34;&gt;C. Homework Submission via GitHub Classroom&lt;/h2&gt;
+&lt;p&gt;To also submit your homework to GitHub Classroom click &lt;a href=&#34;https://classroom.github.com/a/uvuGwqec&#34;&gt;this link&lt;/a&gt; to accept the homework.
+This will create a private homework repository in GitHub Classroom for you. Note: this new repository is &lt;strong&gt;different&lt;/strong&gt; from the
+repository in part A. It belongs to the &lt;code&gt;GEN242-2021&lt;/code&gt; Github classroom that will be used for all subsequent homework submissions.&lt;/p&gt;
+&lt;h2 id=&#34;due-date&#34;&gt;Due date&lt;/h2&gt;
+&lt;p&gt;Most homework will be due one week after they are assigned. This one is due on Thu, April 8th at 6:00 PM. You have unlimited attempts. Students can edit and re-upload files
+anytime before the deadline.&lt;/p&gt;
+&lt;h2 id=&#34;homework-solution&#34;&gt;Homework solution&lt;/h2&gt;
+&lt;p&gt;A solution for this homework is not required since the tasks are identical to the steps described above under sections HW1A-B.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Assignments: HW2 - Introduction to Biocluster and Linux</title>
+      <link>/assignments/homework/hw02/hw02/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/assignments/homework/hw02/hw02/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;topic-linux-basics&#34;&gt;Topic: Linux Basics&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Download code from this page&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;wget https://cluster.hpcc.ucr.edu/~tgirke/Linux.sh --no-check-certificate 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Download Halobacterium proteome and inspect it&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;wget https://ftp.ncbi.nlm.nih.gov/genomes/genbank/archaea/Halobacterium_salinarum/representative/GCA_004799605.1_ASM479960v1/GCA_004799605.1_ASM479960v1_protein.faa.gz
+gunzip GCA_004799605.1_ASM479960v1_protein.faa.gz
+mv GCA_004799605.1_ASM479960v1_protein.faa halobacterium.faa
+less halobacterium.faa # press q to quit
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;How many protein sequences are stored in the downloaded file?&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;grep &#39;&amp;gt;&#39; halobacterium.faa | wc
+grep &#39;^&amp;gt;&#39; halobacterium.faa --count
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;How many proteins contain the pattern &lt;code&gt;WxHxxH&lt;/code&gt; or &lt;code&gt;WxHxxHH&lt;/code&gt;?&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;egrep &#39;W.H..H{1,2}&#39; halobacterium.faa --count
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use &lt;code&gt;less&lt;/code&gt; to find IDs for pattern matches or use &lt;code&gt;awk&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;awk --posix -v RS=&#39;&amp;gt;&#39; &#39;/W.H..(H){1,2}/ { print &amp;quot;&amp;gt;&amp;quot; $0;}&#39; halobacterium.faa | less
+awk --posix -v RS=&#39;&amp;gt;&#39; &#39;/W.H..(H){1,2}/ { print &amp;quot;&amp;gt;&amp;quot; $0;}&#39; halobacterium.faa | grep &#39;^&amp;gt;&#39; | cut -c 2- | cut -f 1 -d\ &amp;gt; myIDs
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create a BLASTable database with &lt;code&gt;formatdb&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;module load ncbi-blast
+makeblastdb -in halobacterium.faa -out halobacterium.faa -dbtype prot -hash_index -parse_seqids
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Query BLASTable database by IDs stored in a file (&lt;em&gt;e.g.&lt;/em&gt; &lt;code&gt;myIDs&lt;/code&gt;)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;blastdbcmd -db halobacterium.faa -dbtype prot -entry_batch myIDs -get_dups -out myseq.fasta
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Run BLAST search for sequences stored in &lt;code&gt;myseq.fasta&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;blastp -query myseq.fasta -db halobacterium.faa -outfmt 0 -evalue 1e-6 -out blastp.out
+blastp -query myseq.fasta -db halobacterium.faa -outfmt 6 -evalue 1e-6 -out blastp.tab
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Return system time and host name&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;date
+hostname
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Additional exercise material in &lt;a href=&#34;https://hpcc.ucr.edu/manuals_linux-basics_shell.html&#34;&gt;Linux Manual&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;homework-assignment&#34;&gt;Homework assignment&lt;/h2&gt;
+&lt;p&gt;Perform above analysis on the protein sequences from &lt;a href=&#34;https://ftp.ncbi.nlm.nih.gov/genomes/genbank/bacteria/Escherichia_coli/reference/GCA_000008865.2_ASM886v2/GCA_000008865.2_ASM886v2_protein.faa.gz&#34;&gt;E. coli&lt;/a&gt;. A right click on the link will allow you to copy the URL so that it can be used together with &lt;code&gt;wget&lt;/code&gt;.
+Record result from final BLAST command (with &lt;code&gt;outfmt 6&lt;/code&gt;) in text file.&lt;/p&gt;
+&lt;h2 id=&#34;homework-submission&#34;&gt;Homework submission&lt;/h2&gt;
+&lt;p&gt;Submit your homework to &lt;a href=&#34;https://classroom.github.com/a/HZMNsG_T&#34;&gt;GEN242-2021 HW2&lt;/a&gt; on GitHub Classroom by following these stepwise instructions:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Upload your script and name it &lt;code&gt;hw2.sh&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Upload the unzipped faa file from step 1, name it &lt;code&gt;ecoli.faa&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Upload IDs from step 5 in a file named &lt;code&gt;myIDs&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Upload the final file generated with &lt;code&gt;outfmt 6&lt;/code&gt; from step 8, and name it &lt;code&gt;ecoli.txt&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;due-date&#34;&gt;Due date&lt;/h2&gt;
+&lt;p&gt;Most homeworks will be due one week after they are assigned. This one is due on Thu, April 8th at 6:00 PM.&lt;/p&gt;
+&lt;h2 id=&#34;homework-solution&#34;&gt;Homework solution&lt;/h2&gt;
+&lt;p&gt;See &lt;a href=&#34;https://raw.githubusercontent.com/tgirke/GEN242/main/static/custom/hw_solutions/hw2.sh&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Assignments: HW3 - Introduction to R</title>
+      <link>/assignments/homework/hw03/hw03/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/assignments/homework/hw03/hw03/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;a-object-subsetting-import-and-export&#34;&gt;A. Object Subsetting, Import and Export&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Task 1&lt;/strong&gt;: Sort the rows of the &lt;code&gt;iris&lt;/code&gt; data frame by its first column and sort its columns alphabetically by column names.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Task 2&lt;/strong&gt;: Subset the first 12 rows, export the result to a text file and view it in a spreadsheet program like Excel or Google Sheets.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Task 3&lt;/strong&gt;: Change some column titles in your spreadsheet program, save the result to a tab delimited text file and import it back into R. Note, for this task you only want to include the &lt;code&gt;read.table&lt;/code&gt; command in the homework result (here R script).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Before you start it can be helpful to evaluate the structure of the &lt;code&gt;iris&lt;/code&gt; data set with the following commands:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;class(iris)
+dim(iris)
+colnames(iris)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;b-scatter-plots&#34;&gt;B. Scatter Plots&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Task 1&lt;/strong&gt;: Generate a scatter plot for the first two columns of the &lt;code&gt;iris&lt;/code&gt; data frame and color the dots by the &lt;code&gt;Species&lt;/code&gt; column.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Task 2&lt;/strong&gt;: Use the &lt;code&gt;xlim/ylim&lt;/code&gt; arguments to set limits on the x- and y-axes so that all data points are restricted to the bottom left quadrant of the plot.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Again before you start, evaluate the structure of iris data set. The following commands are useful:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;iris[1:4,]
+table(iris$Species)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;c-bar-plots&#34;&gt;C. Bar Plots&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Task 1&lt;/strong&gt;: Calculate the mean values for the &lt;code&gt;Species&lt;/code&gt; components of the first four columns in the &lt;code&gt;iris&lt;/code&gt; data frame. Organize the results in a matrix where the row names are the unique values from the &lt;code&gt;iris Species&lt;/code&gt; column and the column names are the names of the first four &lt;code&gt;iris&lt;/code&gt; columns.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Task 2&lt;/strong&gt;: Generate two bar plots for the matrix generated in the previous step: one with stacked bars and one with horizontally arranged bars.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;d-h-analysis-worflow&#34;&gt;D-H. Analysis Worflow&lt;/h2&gt;
+&lt;p&gt;The instructions for these homework assignments are &lt;a href=&#34;https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rbasics/rbasics/#analysis-routine&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;homework-submission&#34;&gt;Homework submission&lt;/h2&gt;
+&lt;p&gt;Accept the homework on &lt;a href=&#34;https://classroom.github.com/a/5BpGYGxO&#34;&gt;Github Classroom&lt;/a&gt;, and follow the instructions in the &lt;code&gt;README.md&lt;/code&gt; file.&lt;/p&gt;
+&lt;h2 id=&#34;due-date&#34;&gt;Due date&lt;/h2&gt;
+&lt;p&gt;This homework is due on Thu, April 15th at 6:00 PM.&lt;/p&gt;
+&lt;h2 id=&#34;homework-solutions&#34;&gt;Homework Solutions&lt;/h2&gt;
+&lt;p&gt;See &lt;a href=&#34;https://raw.githubusercontent.com/tgirke/GEN242/main/static/custom/hw_solutions/hw3_solution.R&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Assignments: HW4: Pairwise Alignments</title>
+      <link>/assignments/homework/hw04/hw04/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/assignments/homework/hw04/hw04/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;br&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;a-choice-of-sequence-type&#34;&gt;A. Choice of Sequence Type&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Task 1&lt;/strong&gt;: Which sequence type - amino acid or nucleotide - is more appropriate to search databases for remotely related sequences? Provide at least three reasons for your decision.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;b-dynamic-programming-for-pairwise-alignments&#34;&gt;B. Dynamic Programming for Pairwise Alignments&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Task 2&lt;/strong&gt;: Create manually (or write an R script for it) one global and one local alignment for the following two protein sequences using the Needleman-Wusch and Smith-Waterman algorithms, respectively:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;O15528: PFGFGKRSCMGRRLA
+P98187: FIPFSAGPRNCIGQK
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Use in each case BLOSUM50 as substitution matrix and 8 as gap extension penalty (no extra penalty for gap opening).
+Note, &lt;a href=&#34;https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/assignments/Homework/HW04/HW04b_StarterCode.R&#34;&gt;here&lt;/a&gt; is helper code in R to create the initial matrix programmatically for upload to a spreadsheet program. Alternatively, solve the entire homework by writing an R script.
+Your answers should contain the following components:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Manually populated dynamic programming matrices&lt;/li&gt;
+&lt;li&gt;The optimal pairwise alignments created by traceback&lt;/li&gt;
+&lt;li&gt;The final scores of the alignments&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;c-alignments-with-different-substitution-matrices&#34;&gt;C. Alignments with Different Substitution Matrices&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Task 1&lt;/strong&gt;: Load the &lt;code&gt;Biostrings&lt;/code&gt; package in R, import the following two cytochrome P450 sequences &lt;code&gt;O15528&lt;/code&gt; and &lt;code&gt;P98187&lt;/code&gt; from &lt;a href=&#34;http://www.ncbi.nlm.nih.gov/protein/O15528,P98187&#34;&gt;NCBI&lt;/a&gt; (save as &lt;code&gt;myseq.fasta&lt;/code&gt;), and create a global alignment with the &lt;code&gt;pairwiseAlignment&lt;/code&gt; function from &lt;code&gt;Biostrings&lt;/code&gt; as follows:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(Biostrings)
+myseq &amp;lt;- readAAStringSet(&amp;quot;myseq.fasta&amp;quot;, &amp;quot;fasta&amp;quot;)
+(p &amp;lt;- pairwiseAlignment(myseq[[1]], myseq[[2]], type=&amp;quot;global&amp;quot;, substitutionMatrix=&amp;quot;BLOSUM50&amp;quot;))
+writePairwiseAlignments(p)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Your answers should address the following items:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Record the scores for the scoring matrices BLOSUM50, BLOSUM62 and BLOSUM80.&lt;/li&gt;
+&lt;li&gt;How and why do the scores differ for the three scoring matrices?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;homework-submission&#34;&gt;Homework submission&lt;/h2&gt;
+&lt;p&gt;Accept the homework on &lt;a href=&#34;https://classroom.github.com/a/5BpGYGxO&#34;&gt;Github Classroom&lt;/a&gt;, and follow the instructions in the &lt;code&gt;README.md&lt;/code&gt; file.&lt;/p&gt;
+&lt;h2 id=&#34;due-date&#34;&gt;Due date&lt;/h2&gt;
+&lt;p&gt;This homework is due in two weeks on Thu, April 22 at 6:00 PM.&lt;/p&gt;
+&lt;h2 id=&#34;homework-solutions&#34;&gt;Homework Solutions&lt;/h2&gt;
+&lt;p&gt;See &lt;a href=&#34;https://girke.bioinformatics.ucr.edu/GEN242/assignments/Homework/HW04/hw4_solution/HW4_key.html&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Assignments: HW4: Pairwise Alignments Solution</title>
       <link>/assignments/homework/hw04/hw4_solution/hw4_key/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -2129,283 +2406,6 @@ sequences (&lt;em&gt;e.g.&lt;/em&gt; BLOSUM80).&lt;/p&gt;
 &lt;p&gt;Smith, T F, and M S Waterman. 1981. “&lt;span class=&#34;nocase&#34;&gt;Identification of common molecular subsequences&lt;/span&gt;.” &lt;em&gt;J. Mol. Biol.&lt;/em&gt; 147 (1): 195–97. &lt;a href=&#34;http://www.ncbi.nlm.nih.gov/pubmed/7265238&#34;&gt;http://www.ncbi.nlm.nih.gov/pubmed/7265238&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Assignments: HW1 - Online Exercise and Basic GitHub Usage</title>
-      <link>/assignments/homework/hw01/hw01/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/assignments/homework/hw01/hw01/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;a-online-excercise-databases-and-software-tools&#34;&gt;A. Online Excercise: Databases and Software Tools&lt;/h2&gt;
-&lt;p&gt;This is an easy warm-up homework exposing students to a variety of online databases and software tools.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Go to &lt;a href=&#34;http://www.ncbi.nlm.nih.gov&#34;&gt;http://www.ncbi.nlm.nih.gov&lt;/a&gt;, select &lt;code&gt;Protein&lt;/code&gt; database in dropdown, and then run query: &lt;code&gt;P450 &amp;amp; hydroxylase &amp;amp; human [organism]&lt;/code&gt;, select under &lt;em&gt;Source&lt;/em&gt; databases UniProtKB/Swiss-Prot
-&lt;ol&gt;
-&lt;li&gt;Report final query syntax from &lt;em&gt;Search Details&lt;/em&gt; field.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Save GIs of the final query result to a file. For this select under &lt;code&gt;Send to&lt;/code&gt; dropdown &lt;code&gt;GI List&lt;/code&gt; format.
-&lt;ol&gt;
-&lt;li&gt;Report the number of retrieved GIs.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;Retrieve the corresponding sequences through &lt;a href=&#34;http://www.ncbi.nlm.nih.gov/sites/batchentrez&#34;&gt;Batch-Entrez&lt;/a&gt; using GI list file as query input -&amp;gt; save sequences in FASTA format&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;Generate multiple alignment and tree of these sequences using &lt;a href=&#34;http://bioinfo.genotoul.fr/multalin&#34;&gt;MultAalin&lt;/a&gt;
-&lt;ol&gt;
-&lt;li&gt;Save multiple alignment and tree to file&lt;/li&gt;
-&lt;li&gt;Identify putative heme binding cysteine in multiple alignment&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;ol start=&#34;5&#34;&gt;
-&lt;li&gt;Open corresponding &lt;a href=&#34;http://www.uniprot.org&#34;&gt;UniProt page&lt;/a&gt; and search for first P450 sequence in your list.
-&lt;ol&gt;
-&lt;li&gt;Compare putative heme binding cysteine with consensus pattern from Prosite database (&lt;a href=&#34;http://prosite.expasy.org/scanprosite/scanprosite_doc.html#mo_motifs&#34;&gt;Syntax&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;Report corresponding Pfam ID&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;ol start=&#34;6&#34;&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.ncbi.nlm.nih.gov/blast/Blast.cgi&#34;&gt;BLASTP&lt;/a&gt; against PDF database (use again first P450 in your list);
-on result page click first entry in BLAST hit list (here &lt;a href=&#34;https://www.ncbi.nlm.nih.gov/protein/3K9V_A?report=genbank&amp;amp;log$=protalign&amp;amp;blast_rank=1&amp;amp;RID=6BZUZS51016&#34;&gt;3K9V_A&lt;/a&gt;); then select &amp;lsquo;Identify Conserved Domains&amp;rsquo; on side bar; click blue bar labelled &amp;lsquo;CYP24A1&amp;rsquo;; then select &amp;lsquo;Interactive View&amp;rsquo; which will download &amp;lsquo;cd20645.cn3&amp;rsquo; file.
-&lt;ol&gt;
-&lt;li&gt;Compare resulting alignment with result from MultAlin&lt;/li&gt;
-&lt;li&gt;View 3D structure in Cn3D*, save structure (screen shot) and highlight heme binding cysteine. Note, Cn3D* can be downloaded from &lt;a href=&#34;https://www.ncbi.nlm.nih.gov/Structure/CN3D/cn3d.shtml&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;*If there are problems in the last step (6.2) with the install of Cn3D, then please use this online only alternative: (i) click in the &lt;a href=&#34;https://www.ncbi.nlm.nih.gov/protein/3K9V_A?report=genbank&amp;amp;log$=protalign&amp;amp;blast_rank=1&amp;amp;RID=6BZUZS51016&#34;&gt;3K9V_A&lt;/a&gt; page &lt;em&gt;&amp;lsquo;Protein 3D Structure&amp;rsquo;&lt;/em&gt; instead of &lt;em&gt;&amp;lsquo;Identify Conserved Domains&amp;rsquo;&lt;/em&gt;; (ii) choose one of the two structure entries provided on the subsequent page; (iii) select option &amp;ldquo;full-featured 3D viewer&amp;rdquo; in the bottom right corner of the structure image; (iv) choose the &amp;lsquo;&lt;em&gt;Details&amp;rsquo;&lt;/em&gt; tab on the right; (v) after this the structure of the protein is shown on the left and the underlying protein sequence on the right; (vi) highlight the heme binding cysteine in the structure by selecting it in the sequence; and (vii) then save the structure view to a PNG file or take a screenshot.&lt;/p&gt;
-&lt;h2 id=&#34;b-homework-submission-to-a-private-github-repository&#34;&gt;B. Homework Submission to a Private GitHub Repository&lt;/h2&gt;
-&lt;p&gt;To learn the basics of GitHub, this homework assignment will be uploaded to a private GitHub respository that will be shared with the instructors. To do so, follow these steps:
-In this homework, you are asked to create a github &lt;strong&gt;private&lt;/strong&gt; repository.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Login to your GitHub account.&lt;/li&gt;
-&lt;li&gt;Click the &amp;ldquo;&lt;strong&gt;New&amp;rdquo;&lt;/strong&gt; button in the sidebar on the left.&lt;/li&gt;
-&lt;li&gt;Under &amp;ldquo;&lt;strong&gt;Repository name&amp;rdquo;&lt;/strong&gt;, use &lt;strong&gt;&amp;ldquo;learn-github&amp;rdquo;&lt;/strong&gt; as the name.&lt;/li&gt;
-&lt;li&gt;Choose &amp;ldquo;&lt;strong&gt;Private&lt;/strong&gt;&amp;rdquo;.&lt;/li&gt;
-&lt;li&gt;Choose to add a README file (optional).&lt;/li&gt;
-&lt;li&gt;Click &amp;ldquo;&lt;strong&gt;Create repository&lt;/strong&gt;&amp;rdquo;.&lt;/li&gt;
-&lt;li&gt;You should redirected to your new repo&amp;rsquo;s page. In the new page, click &amp;ldquo;&lt;strong&gt;Settings&lt;/strong&gt;&amp;rdquo;.&lt;/li&gt;
-&lt;li&gt;Click &amp;ldquo;&lt;strong&gt;Manage access&lt;/strong&gt;&amp;rdquo;, and the choose &amp;ldquo;&lt;strong&gt;Invite a collaborator&lt;/strong&gt;&amp;rdquo;.&lt;/li&gt;
-&lt;li&gt;Invite both &amp;ldquo;&lt;strong&gt;tgirke&lt;/strong&gt;&amp;rdquo; and &amp;ldquo;&lt;strong&gt;lz100&lt;/strong&gt;&amp;rdquo; and send out the invitation.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;video width=&#34;100%&#34; height=&#34;100%&#34; controls&gt;
-  &lt;source src=&#34;https://github.com/GEN242-2021/class_notes/blob/main/week1/GitHub.mp4?raw=true&#34; type=&#34;video/mp4&#34;&gt;
-&lt;/video&gt;
-&lt;p&gt;Note, the creator of this demo cannot search for an invitation created by the same user
-(here lz100). Thus, the message &amp;lsquo;could not find lz100&amp;rsquo; at the end of the video. This
-will not be the case for students in the class.&lt;/p&gt;
-&lt;p&gt;Please assemble the results of part A of HW1 in one PDF file named &lt;code&gt;hw1.pdf&lt;/code&gt; and upload it to your private GitHub repository generated in part B. To do so, follow the upload instructions &lt;a href=&#34;https://girke.bioinformatics.ucr.edu/GEN242/tutorials/github/github/#online-file-upload&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;c-homework-submission-via-github-classroom&#34;&gt;C. Homework Submission via GitHub Classroom&lt;/h2&gt;
-&lt;p&gt;To also submit your homework to GitHub Classroom click &lt;a href=&#34;https://classroom.github.com/a/uvuGwqec&#34;&gt;this link&lt;/a&gt; to accept the homework.
-This will create a private homework repository in GitHub Classroom for you. Note: this new repository is &lt;strong&gt;different&lt;/strong&gt; from the
-repository in part A. It belongs to the &lt;code&gt;GEN242-2021&lt;/code&gt; Github classroom that will be used for all subsequent homework submissions.&lt;/p&gt;
-&lt;h2 id=&#34;due-date&#34;&gt;Due date&lt;/h2&gt;
-&lt;p&gt;Most homework will be due one week after they are assigned. This one is due on Thu, April 8th at 6:00 PM. You have unlimited attempts. Students can edit and re-upload files
-anytime before the deadline.&lt;/p&gt;
-&lt;h2 id=&#34;homework-solution&#34;&gt;Homework solution&lt;/h2&gt;
-&lt;p&gt;A solution for this homework is not required since the tasks are identical to the steps described above under sections HW1A-B.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Assignments: HW2 - Introduction to Biocluster and Linux</title>
-      <link>/assignments/homework/hw02/hw02/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/assignments/homework/hw02/hw02/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;topic-linux-basics&#34;&gt;Topic: Linux Basics&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Download code from this page&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;wget https://cluster.hpcc.ucr.edu/~tgirke/Linux.sh --no-check-certificate 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Download Halobacterium proteome and inspect it&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;wget https://ftp.ncbi.nlm.nih.gov/genomes/genbank/archaea/Halobacterium_salinarum/representative/GCA_004799605.1_ASM479960v1/GCA_004799605.1_ASM479960v1_protein.faa.gz
-gunzip GCA_004799605.1_ASM479960v1_protein.faa.gz
-mv GCA_004799605.1_ASM479960v1_protein.faa halobacterium.faa
-less halobacterium.faa # press q to quit
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;How many protein sequences are stored in the downloaded file?&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;grep &#39;&amp;gt;&#39; halobacterium.faa | wc
-grep &#39;^&amp;gt;&#39; halobacterium.faa --count
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;How many proteins contain the pattern &lt;code&gt;WxHxxH&lt;/code&gt; or &lt;code&gt;WxHxxHH&lt;/code&gt;?&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;egrep &#39;W.H..H{1,2}&#39; halobacterium.faa --count
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Use &lt;code&gt;less&lt;/code&gt; to find IDs for pattern matches or use &lt;code&gt;awk&lt;/code&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;awk --posix -v RS=&#39;&amp;gt;&#39; &#39;/W.H..(H){1,2}/ { print &amp;quot;&amp;gt;&amp;quot; $0;}&#39; halobacterium.faa | less
-awk --posix -v RS=&#39;&amp;gt;&#39; &#39;/W.H..(H){1,2}/ { print &amp;quot;&amp;gt;&amp;quot; $0;}&#39; halobacterium.faa | grep &#39;^&amp;gt;&#39; | cut -c 2- | cut -f 1 -d\ &amp;gt; myIDs
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Create a BLASTable database with &lt;code&gt;formatdb&lt;/code&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;module load ncbi-blast
-makeblastdb -in halobacterium.faa -out halobacterium.faa -dbtype prot -hash_index -parse_seqids
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Query BLASTable database by IDs stored in a file (&lt;em&gt;e.g.&lt;/em&gt; &lt;code&gt;myIDs&lt;/code&gt;)&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;blastdbcmd -db halobacterium.faa -dbtype prot -entry_batch myIDs -get_dups -out myseq.fasta
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Run BLAST search for sequences stored in &lt;code&gt;myseq.fasta&lt;/code&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;blastp -query myseq.fasta -db halobacterium.faa -outfmt 0 -evalue 1e-6 -out blastp.out
-blastp -query myseq.fasta -db halobacterium.faa -outfmt 6 -evalue 1e-6 -out blastp.tab
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Return system time and host name&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;date
-hostname
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Additional exercise material in &lt;a href=&#34;https://hpcc.ucr.edu/manuals_linux-basics_shell.html&#34;&gt;Linux Manual&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;homework-assignment&#34;&gt;Homework assignment&lt;/h2&gt;
-&lt;p&gt;Perform above analysis on the protein sequences from &lt;a href=&#34;https://ftp.ncbi.nlm.nih.gov/genomes/genbank/bacteria/Escherichia_coli/reference/GCA_000008865.2_ASM886v2/GCA_000008865.2_ASM886v2_protein.faa.gz&#34;&gt;E. coli&lt;/a&gt;. A right click on the link will allow you to copy the URL so that it can be used together with &lt;code&gt;wget&lt;/code&gt;.
-Record result from final BLAST command (with &lt;code&gt;outfmt 6&lt;/code&gt;) in text file.&lt;/p&gt;
-&lt;h2 id=&#34;homework-submission&#34;&gt;Homework submission&lt;/h2&gt;
-&lt;p&gt;Submit your homework to &lt;a href=&#34;https://classroom.github.com/a/HZMNsG_T&#34;&gt;GEN242-2021 HW2&lt;/a&gt; on GitHub Classroom by following these stepwise instructions:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Upload your script and name it &lt;code&gt;hw2.sh&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Upload the unzipped faa file from step 1, name it &lt;code&gt;ecoli.faa&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Upload IDs from step 5 in a file named &lt;code&gt;myIDs&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Upload the final file generated with &lt;code&gt;outfmt 6&lt;/code&gt; from step 8, and name it &lt;code&gt;ecoli.txt&lt;/code&gt;.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;due-date&#34;&gt;Due date&lt;/h2&gt;
-&lt;p&gt;Most homeworks will be due one week after they are assigned. This one is due on Thu, April 8th at 6:00 PM.&lt;/p&gt;
-&lt;h2 id=&#34;homework-solution&#34;&gt;Homework solution&lt;/h2&gt;
-&lt;p&gt;See &lt;a href=&#34;https://raw.githubusercontent.com/tgirke/GEN242/main/static/custom/hw_solutions/hw2.sh&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Assignments: HW3 - Introduction to R</title>
-      <link>/assignments/homework/hw03/hw03/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/assignments/homework/hw03/hw03/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;a-object-subsetting-import-and-export&#34;&gt;A. Object Subsetting, Import and Export&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Task 1&lt;/strong&gt;: Sort the rows of the &lt;code&gt;iris&lt;/code&gt; data frame by its first column and sort its columns alphabetically by column names.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Task 2&lt;/strong&gt;: Subset the first 12 rows, export the result to a text file and view it in a spreadsheet program like Excel or Google Sheets.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Task 3&lt;/strong&gt;: Change some column titles in your spreadsheet program, save the result to a tab delimited text file and import it back into R. Note, for this task you only want to include the &lt;code&gt;read.table&lt;/code&gt; command in the homework result (here R script).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Before you start it can be helpful to evaluate the structure of the &lt;code&gt;iris&lt;/code&gt; data set with the following commands:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;class(iris)
-dim(iris)
-colnames(iris)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;b-scatter-plots&#34;&gt;B. Scatter Plots&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Task 1&lt;/strong&gt;: Generate a scatter plot for the first two columns of the &lt;code&gt;iris&lt;/code&gt; data frame and color the dots by the &lt;code&gt;Species&lt;/code&gt; column.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Task 2&lt;/strong&gt;: Use the &lt;code&gt;xlim/ylim&lt;/code&gt; arguments to set limits on the x- and y-axes so that all data points are restricted to the bottom left quadrant of the plot.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Again before you start, evaluate the structure of iris data set. The following commands are useful:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;iris[1:4,]
-table(iris$Species)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;c-bar-plots&#34;&gt;C. Bar Plots&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Task 1&lt;/strong&gt;: Calculate the mean values for the &lt;code&gt;Species&lt;/code&gt; components of the first four columns in the &lt;code&gt;iris&lt;/code&gt; data frame. Organize the results in a matrix where the row names are the unique values from the &lt;code&gt;iris Species&lt;/code&gt; column and the column names are the names of the first four &lt;code&gt;iris&lt;/code&gt; columns.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Task 2&lt;/strong&gt;: Generate two bar plots for the matrix generated in the previous step: one with stacked bars and one with horizontally arranged bars.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;d-h-analysis-worflow&#34;&gt;D-H. Analysis Worflow&lt;/h2&gt;
-&lt;p&gt;The instructions for these homework assignments are &lt;a href=&#34;https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rbasics/rbasics/#analysis-routine&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;homework-submission&#34;&gt;Homework submission&lt;/h2&gt;
-&lt;p&gt;Accept the homework on &lt;a href=&#34;https://classroom.github.com/a/5BpGYGxO&#34;&gt;Github Classroom&lt;/a&gt;, and follow the instructions in the &lt;code&gt;README.md&lt;/code&gt; file.&lt;/p&gt;
-&lt;h2 id=&#34;due-date&#34;&gt;Due date&lt;/h2&gt;
-&lt;p&gt;This homework is due on Thu, April 15th at 6:00 PM.&lt;/p&gt;
-&lt;h2 id=&#34;homework-solutions&#34;&gt;Homework Solutions&lt;/h2&gt;
-&lt;p&gt;See &lt;a href=&#34;https://raw.githubusercontent.com/tgirke/GEN242/main/static/custom/hw_solutions/hw3_solution.R&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Assignments: HW4: Pairwise Alignments</title>
-      <link>/assignments/homework/hw04/hw04/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/assignments/homework/hw04/hw04/</guid>
-      <description>
-        
-        
-        &lt;p&gt;&lt;br&gt;&lt;/br&gt;&lt;/p&gt;
-&lt;h2 id=&#34;a-choice-of-sequence-type&#34;&gt;A. Choice of Sequence Type&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Task 1&lt;/strong&gt;: Which sequence type - amino acid or nucleotide - is more appropriate to search databases for remotely related sequences? Provide at least three reasons for your decision.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;b-dynamic-programming-for-pairwise-alignments&#34;&gt;B. Dynamic Programming for Pairwise Alignments&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Task 2&lt;/strong&gt;: Create manually (or write an R script for it) one global and one local alignment for the following two protein sequences using the Needleman-Wusch and Smith-Waterman algorithms, respectively:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;O15528: PFGFGKRSCMGRRLA
-P98187: FIPFSAGPRNCIGQK
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Use in each case BLOSUM50 as substitution matrix and 8 as gap extension penalty (no extra penalty for gap opening).
-Note, &lt;a href=&#34;https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/assignments/Homework/HW04/HW04b_StarterCode.R&#34;&gt;here&lt;/a&gt; is helper code in R to create the initial matrix programmatically for upload to a spreadsheet program. Alternatively, solve the entire homework by writing an R script.
-Your answers should contain the following components:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Manually populated dynamic programming matrices&lt;/li&gt;
-&lt;li&gt;The optimal pairwise alignments created by traceback&lt;/li&gt;
-&lt;li&gt;The final scores of the alignments&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;c-alignments-with-different-substitution-matrices&#34;&gt;C. Alignments with Different Substitution Matrices&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Task 1&lt;/strong&gt;: Load the &lt;code&gt;Biostrings&lt;/code&gt; package in R, import the following two cytochrome P450 sequences &lt;code&gt;O15528&lt;/code&gt; and &lt;code&gt;P98187&lt;/code&gt; from &lt;a href=&#34;http://www.ncbi.nlm.nih.gov/protein/O15528,P98187&#34;&gt;NCBI&lt;/a&gt; (save as &lt;code&gt;myseq.fasta&lt;/code&gt;), and create a global alignment with the &lt;code&gt;pairwiseAlignment&lt;/code&gt; function from &lt;code&gt;Biostrings&lt;/code&gt; as follows:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(Biostrings)
-myseq &amp;lt;- readAAStringSet(&amp;quot;myseq.fasta&amp;quot;, &amp;quot;fasta&amp;quot;)
-(p &amp;lt;- pairwiseAlignment(myseq[[1]], myseq[[2]], type=&amp;quot;global&amp;quot;, substitutionMatrix=&amp;quot;BLOSUM50&amp;quot;))
-writePairwiseAlignments(p)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Your answers should address the following items:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Record the scores for the scoring matrices BLOSUM50, BLOSUM62 and BLOSUM80.&lt;/li&gt;
-&lt;li&gt;How and why do the scores differ for the three scoring matrices?&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;homework-submission&#34;&gt;Homework submission&lt;/h2&gt;
-&lt;p&gt;Accept the homework on &lt;a href=&#34;https://classroom.github.com/a/5BpGYGxO&#34;&gt;Github Classroom&lt;/a&gt;, and follow the instructions in the &lt;code&gt;README.md&lt;/code&gt; file.&lt;/p&gt;
-&lt;h2 id=&#34;due-date&#34;&gt;Due date&lt;/h2&gt;
-&lt;p&gt;This homework is due in two weeks on Thu, April 22 at 6:00 PM.&lt;/p&gt;
-&lt;h2 id=&#34;homework-solutions&#34;&gt;Homework Solutions&lt;/h2&gt;
-&lt;p&gt;See &lt;a href=&#34;https://girke.bioinformatics.ucr.edu/GEN242/assignments/Homework/HW04/hw4_solution/HW4_key.html&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
       </description>
     </item>

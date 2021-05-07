@@ -1,5 +1,5 @@
 ---
-title: "HW4: Pairwise Alignments" 
+title: "HW4: Pairwise Alignments Solution" 
 author: "Author: Your Name"
 date: "Last update: 22 April, 2021" 
 output:
@@ -15,7 +15,7 @@ output:
 fontsize: 14pt
 bibliography: bibtex.bib
 type: docs
-weight: 5
+weight: 304
 ---
 
 <script src="/rmarkdown-libs/kePrint/kePrint.js"></script>
