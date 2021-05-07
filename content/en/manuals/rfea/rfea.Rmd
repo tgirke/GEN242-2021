@@ -153,7 +153,7 @@ Its vignette provides many useful examples, see [here](https://bioconductor.org/
 A sample plot from `ReactomeContentService4R` is shown below.
 
 ![](../results/reactome_bigpicture.jpeg)
-<div align="center">Figure 1: Fireworks plot giving genome-wide pathway overview.</div></br>
+<div align="center">Figure 1: Fireworks plot depicting genome-wide view of reactome pathways.</div></br>
 
 ## Functional Enrichment Analysis Methods
 

@@ -157,7 +157,7 @@ A sample plot from `ReactomeContentService4R` is shown below.
 
 <div align="center">
 
-Figure 1: Fireworks plot giving genome-wide pathway overview.
+Figure 1: Fireworks plot depicting genome-wide view of reactome pathways.
 
 </div>
 
