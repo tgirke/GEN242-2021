@@ -54,7 +54,7 @@ annotations, such as KEGG and Reactome. Examples of widely used statistical
 enrichment methods are introduced as well. These statistical FEA methods assess
 whether functional annotation terms are over-represented in a query gene set.
 In case of so called over-represention analysis (ORA) methods, such as Fisher’s
-exact and hypgeometric distribution tests, the query is usually a list of
+exact and hypergeometric distribution tests, the query is usually a list of
 unranked gene identifiers (Falcon and Gentleman 2007). In contrast to this, Gene Set
 Enrichment Analysis (GSEA) algorithms use as query a score ranked lists (*e.g.*
 all genes profiled by an assay) and assess whether annotation categories are
