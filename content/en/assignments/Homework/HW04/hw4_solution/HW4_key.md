@@ -1,5 +1,5 @@
 ---
-title: "HW4: Pairwise Alignments Solution" 
+title: "HW4: Pairwise Alignment Solutions" 
 author: "Author: Your Name"
 date: "Last update: 22 April, 2021" 
 output:
