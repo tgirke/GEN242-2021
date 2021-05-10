@@ -103,7 +103,7 @@ all supported output formats. Alternatively, one can specify several output form
 rmarkdown::render("sample.Rmd", clean=TRUE, output_format="html_document")
 ```
 
-The following shows two options how to run the rendering from the command-line.
+The following shows two options how to run the rendering from the command-line. To render to PDF format, use the argument setting: `output_format="pdf_document"`.
 
 ```{sh render_commandline, eval=FALSE, message=FALSE}
 $ Rscript -e "rmarkdown::render('sample.Rmd', output_format='html_document', clean=TRUE)"

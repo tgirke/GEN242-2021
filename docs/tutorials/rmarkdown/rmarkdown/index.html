@@ -27,7 +27,7 @@
 <meta itemprop="description" content="Source code downloads: [ .Rmd ] [ .R ]
  R Markdown Overview R Markdown combines markdown (an easy to write plain text format) with embedded R code chunks. When compiling R Markdown documents, the code components can be evaluated so that both the code and its output can be included in the final document. This makes analysis reports highly reproducible by allowing to automatically regenerate them when the underlying R code or data changes.">
 <meta itemprop="dateModified" content="2021-05-03T18:01:11-07:00" />
-<meta itemprop="wordCount" content="1738">
+<meta itemprop="wordCount" content="1748">
 
 
 
@@ -895,7 +895,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.435497964f2a1309c5e221c7a94174e1.json"
+  data-offline-search-index-json-src="../../../offline-search-index.09ef90e8d46a6d8215c282ecb192df43.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -927,7 +927,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.435497964f2a1309c5e221c7a94174e1.json"
+  data-offline-search-index-json-src="../../../offline-search-index.09ef90e8d46a6d8215c282ecb192df43.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1248,7 +1248,7 @@ package from Bioconductor.</p>
 <pre><code> ---
 title: &quot;My First R Markdown Document&quot;
 author: &quot;Author: First Last&quot;
-date: &quot;Last update: 03 May, 2021&quot;
+date: &quot;Last update: 09 May, 2021&quot;
 output:
   BiocStyle::html_document:
     toc: true
@@ -1265,7 +1265,7 @@ The <code>output_format</code> argument defines the format of the output (<em>e.
 all supported output formats. Alternatively, one can specify several output formats in the metadata section.</p>
 <pre><code class="language-r">rmarkdown::render(&quot;sample.Rmd&quot;, clean=TRUE, output_format=&quot;html_document&quot;)
 </code></pre>
-<p>The following shows two options how to run the rendering from the command-line.</p>
+<p>The following shows two options how to run the rendering from the command-line. To render to PDF format, use the argument setting: <code>output_format=&quot;pdf_document&quot;</code>.</p>
 <pre><code class="language-sh">$ Rscript -e &quot;rmarkdown::render('sample.Rmd', output_format='html_document', clean=TRUE)&quot;
 </code></pre>
 <p>Alternatively, one can use a Makefile to evaluate and render an R Markdown
