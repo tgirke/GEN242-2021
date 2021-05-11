@@ -45,11 +45,11 @@ material, activities, virtual or face-to-face interactions related to this
 course are intended to provide a harassment-free experience for everyone,
 regardless of age, body size, visible or invisible disability, ethnicity, sex
 characteristics, gender identity and expression, level of experience,
-education, socio-economic or Veteran status, nationality, citizenship status,
-personal appearance, race, caste, color, religion, or sexual identity and
-orientation. Violations of this code of conduct should be reported to the  
+education, socio-economic status, nationality, Veteran status, citizenship
+status, personal appearance, race, caste, color, religion, or sexual identity
+and orientation. Violations of this code of conduct should be reported to the
 main instructor (Thomas Girke, [thomas.girke@ucr.edu](mailto:thomas.girke@ucr.edu)). 
-For additional information about this important topic please visit the website of 
-[UCR's Office of Diversity, Equity & Inclusion (DEI)](https://diversity.ucr.edu/).
+For additional information about this important topic please visit the website of [UCR's
+Office of Diversity, Equity & Inclusion (DEI)](https://diversity.ucr.edu/).
 
 
