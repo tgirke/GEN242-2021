@@ -36,18 +36,20 @@ It is possible to audit this class. However, due to the emphasis on active parti
 in practicals and course projects, students usually learn much more if they enroll into the
 class rather than auditing it in a passive manner.
 
-## Code of conduct and DEI standards 
+## Inclusive Classroom Code of Conduct 
 
 The instructors, organizers and participants of this class are committed to
 create and maintain an environment in which everyone can learn and thrive in
 ways inclusive of their diverse backgrounds and identities. All teaching
 material, activities, virtual or face-to-face interactions related to this
-course are intended to provide a harassment-free experience for everyone, regardless
-of age, body size, visible or invisible disability, ethnicity, sex
+course are intended to provide a harassment-free experience for everyone,
+regardless of age, body size, visible or invisible disability, ethnicity, sex
 characteristics, gender identity and expression, level of experience,
-education, socio-economic status, nationality, personal appearance, race,
-caste, color, religion, or sexual identity and orientation.  For additional
-information about this important topic please visit the website of [UCR's
-Office of Diversity, Equity & Inclusion (DEI)](https://diversity.ucr.edu/).
+education, socio-economic or Veteran status, nationality, citizenship status,
+personal appearance, race, caste, color, religion, or sexual identity and
+orientation. Violations of this code of conduct should be reported to the  
+main instructor (Thomas Girke, [thomas.girke@ucr.edu](mailto:thomas.girke@ucr.edu)). 
+For additional information about this important topic please visit the website of 
+[UCR's Office of Diversity, Equity & Inclusion (DEI)](https://diversity.ucr.edu/).
 
 
