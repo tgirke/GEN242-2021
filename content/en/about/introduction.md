@@ -52,4 +52,18 @@ main instructor (Thomas Girke, [thomas.girke@ucr.edu](mailto:thomas.girke@ucr.ed
 For additional information about this important topic please visit the website of [UCR's
 Office of Diversity, Equity & Inclusion (DEI)](https://diversity.ucr.edu/).
 
+## Accessibility 
 
+UC Riverside is committed to creating a learning environment that meets the
+needs of its diverse student body. If students anticipate or experience any
+barriers to learning in this course, they are welcome to discuss their concerns
+with the instructor(s). If students have a disability, they may want to contact
+the [Student Disability Resource Center](https://sdrc.ucr.edu/) to accommodate
+their specific needs. As faculty we are responsible for collaborating with SDRC
+to ensure that the students enrolled in our classes have access to the SDRC
+approved classroom accommodations and services outlined in each student's
+Letter of Accommodation.  A Letter of Accommodation may be issued at any time
+during the quarter. In addition, Disability Services are free, voluntary,
+private, and not part of your transcript.
+
+ 
