@@ -29,7 +29,7 @@ Background and objectives This report describes the analysis of several ChIP-Seq
  Introduction Users want to provide here background information about the design of their ChIP-Seq project.
 Background and objectives This report describes the analysis of several ChIP-Seq experiments studying the DNA binding patterns of the transcriptions factors … from organism ….">
 <meta itemprop="dateModified" content="2021-05-04T12:13:40-07:00" />
-<meta itemprop="wordCount" content="3699">
+<meta itemprop="wordCount" content="3702">
 
 
 
@@ -898,7 +898,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.77fdc7cdee3a983eabad5562220c8744.json"
+  data-offline-search-index-json-src="../../../offline-search-index.6aa2773a492b05f7eb83c06d1cc4fb96.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -930,7 +930,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.77fdc7cdee3a983eabad5562220c8744.json"
+  data-offline-search-index-json-src="../../../offline-search-index.6aa2773a492b05f7eb83c06d1cc4fb96.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1285,7 +1285,7 @@ first unload an active software version before loading another version, <em>e.g.
 </li>
 </ol>
 <pre><code class="language-sh">srun --x11 --partition=short --mem=8gb --cpus-per-task 4 --ntasks 1 --time 2:00:00 --pty bash -l
-module load R/4.0.3
+module unload R; module load R/4.0.3_gcc-8.3.0
 </code></pre>
 <ol start="2">
 <li>Load a workflow template with the <code>genWorkenvir</code> function. This can be done from the command-line or from within R.

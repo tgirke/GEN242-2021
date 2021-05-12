@@ -1,7 +1,7 @@
 ---
 title: "ChIP-Seq Workflow Template" 
 author: "Author: Daniela Cassol, Le Zhang and Thomas Girke"
-date: "Last update: 04 May, 2021" 
+date: "Last update: 12 May, 2021" 
 output:
   BiocStyle::html_document:
     toc_float: true
@@ -88,7 +88,7 @@ to be included in a final HTML/PDF report of a workflow.
 
 ``` sh
 srun --x11 --partition=short --mem=8gb --cpus-per-task 4 --ntasks 1 --time 2:00:00 --pty bash -l
-module load R/4.0.3
+module unload R; module load R/4.0.3_gcc-8.3.0
 ```
 
 2.  Load a workflow template with the `genWorkenvir` function. This can be done from the command-line or from within R.
