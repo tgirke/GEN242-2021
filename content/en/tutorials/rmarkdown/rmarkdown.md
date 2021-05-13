@@ -1,7 +1,7 @@
 ---
 title: R Markdown Tutorial
 author: "Author: Your Name"
-date: "Last update: 09 May, 2021" 
+date: "Last update: 13 May, 2021" 
 output:
   html_document:
     toc: true
@@ -93,7 +93,7 @@ package from Bioconductor.
      ---
     title: "My First R Markdown Document"
     author: "Author: First Last"
-    date: "Last update: 09 May, 2021"
+    date: "Last update: 13 May, 2021"
     output:
       BiocStyle::html_document:
         toc: true
@@ -262,6 +262,10 @@ enclosing them with double `$$` signs will show them in display mode. For instan
 Latex syntax `d(X,Y) = \sqrt[]{ \sum_{i=1}^{n}{(x_{i}-y_{i})^2} }` renders in display mode as follows:
 
 `$$d(X,Y) = \sqrt[]{ \sum_{i=1}^{n}{(x_{i}-y_{i})^2} }$$`
+
+To learn LaTeX syntax for mathematical equations, one can consult various online manuals, such as
+this [Wikibooks tutorial](https://en.wikibooks.org/wiki/LaTeX/Mathematics), or use an online
+equation rendering and checking tool, such as this [one](https://arachnoid.com/latex/).
 
 ### Citations and bibliographies
 
