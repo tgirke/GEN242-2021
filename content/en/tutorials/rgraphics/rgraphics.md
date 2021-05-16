@@ -1085,8 +1085,9 @@ print(p)
 ### Histograms
 
 ``` r
-p <- ggplot(iris, aes(x=Sepal.Width)) + geom_histogram(aes(y = ..density.., 
-            fill = ..count..), binwidth=0.2) + geom_density()  
+p <- ggplot(iris, aes(x=Sepal.Width)) + 
+            geom_histogram(aes(y = ..density.., fill = ..count..), binwidth=0.2) + 
+            geom_density()  
 print(p) 
 ```
 
@@ -1109,8 +1110,9 @@ print(p)
 
 ``` r
 p <- ggplot(df, aes(x = variable, y = value, fill = variable)) + 
-       geom_bar(width = 1, stat="identity") + coord_polar("y", start=pi / 3) + 
-       ggtitle("Pie Chart") 
+            geom_bar(width = 1, stat="identity") + 
+            coord_polar("y", start=pi / 3) + 
+            ggtitle("Pie Chart") 
 print(p) 
 ```
 
@@ -1177,6 +1179,14 @@ plot(sdfsample[1], print=FALSE)
 ```
 
 <img src="/en/tutorials/rgraphics/rgraphics_files/figure-html/specgraph_structure-1.png" width="672" />
+
+Alternative with nicer structure rendering.
+
+``` r
+openBabelPlot(sdfsample[1])
+```
+
+<img src="/en/tutorials/rgraphics/rgraphics_files/figure-html/specgraph_structure2-1.png" width="672" />
 
 ### ROC Plots
 

@@ -867,8 +867,9 @@ print(p)
 ### Histograms
 
 ```{r ggplot_histogram, eval=TRUE}
-p <- ggplot(iris, aes(x=Sepal.Width)) + geom_histogram(aes(y = ..density.., 
-            fill = ..count..), binwidth=0.2) + geom_density()  
+p <- ggplot(iris, aes(x=Sepal.Width)) + 
+            geom_histogram(aes(y = ..density.., fill = ..count..), binwidth=0.2) + 
+            geom_density()  
 print(p) 
 ```
 
@@ -887,8 +888,9 @@ print(p)
 
 ```{r ggplot_windrose_pie_chart, eval=TRUE}
 p <- ggplot(df, aes(x = variable, y = value, fill = variable)) + 
-       geom_bar(width = 1, stat="identity") + coord_polar("y", start=pi / 3) + 
-       ggtitle("Pie Chart") 
+            geom_bar(width = 1, stat="identity") + 
+            coord_polar("y", start=pi / 3) + 
+            ggtitle("Pie Chart") 
 print(p) 
 ```
 
@@ -942,6 +944,12 @@ Plots depictions of small molecules with `ChemmineR` package
 library(ChemmineR)
 data(sdfsample)
 plot(sdfsample[1], print=FALSE)
+```
+
+Alternative with nicer structure rendering.
+
+```{r specgraph_structure2, eval=TRUE}
+openBabelPlot(sdfsample[1])
 ```
 
 ### ROC Plots

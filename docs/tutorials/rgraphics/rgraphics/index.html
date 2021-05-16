@@ -27,7 +27,7 @@
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
  Overview Graphics in R  Powerful environment for visualizing scientific data Integrated graphics and statistics infrastructure Publication quality graphics Fully programmable Highly reproducible Full LaTeX, Sweave, knitr and R Markdown support.">
 <meta itemprop="dateModified" content="2021-05-16T14:16:29-07:00" />
-<meta itemprop="wordCount" content="66625">
+<meta itemprop="wordCount" content="66631">
 
 
 
@@ -903,7 +903,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.551ef851964f8ce6e79c42f0211d7f49.json"
+  data-offline-search-index-json-src="../../../offline-search-index.8cbff5df69bd7b5bdc85ba7921da82cd.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -935,7 +935,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.551ef851964f8ce6e79c42f0211d7f49.json"
+  data-offline-search-index-json-src="../../../offline-search-index.8cbff5df69bd7b5bdc85ba7921da82cd.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -2149,8 +2149,9 @@ print(p)
 </code></pre>
 <p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_density_plot_areacol-1.png" width="672" /></p>
 <h3 id="histograms-1">Histograms</h3>
-<pre><code class="language-r">p &lt;- ggplot(iris, aes(x=Sepal.Width)) + geom_histogram(aes(y = ..density.., 
-            fill = ..count..), binwidth=0.2) + geom_density()  
+<pre><code class="language-r">p &lt;- ggplot(iris, aes(x=Sepal.Width)) + 
+            geom_histogram(aes(y = ..density.., fill = ..count..), binwidth=0.2) + 
+            geom_density()  
 print(p) 
 </code></pre>
 <p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_histogram-1.png" width="672" /></p>
@@ -2165,8 +2166,9 @@ print(p)
 <p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_pie_chart-1.png" width="672" /></p>
 <h3 id="wind-rose-pie-chart">Wind Rose Pie Chart</h3>
 <pre><code class="language-r">p &lt;- ggplot(df, aes(x = variable, y = value, fill = variable)) + 
-       geom_bar(width = 1, stat=&quot;identity&quot;) + coord_polar(&quot;y&quot;, start=pi / 3) + 
-       ggtitle(&quot;Pie Chart&quot;) 
+            geom_bar(width = 1, stat=&quot;identity&quot;) + 
+            coord_polar(&quot;y&quot;, start=pi / 3) + 
+            ggtitle(&quot;Pie Chart&quot;) 
 print(p) 
 </code></pre>
 <p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_windrose_pie_chart-1.png" width="672" /></p>
@@ -2209,6 +2211,10 @@ data(sdfsample)
 plot(sdfsample[1], print=FALSE)
 </code></pre>
 <p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/specgraph_structure-1.png" width="672" /></p>
+<p>Alternative with nicer structure rendering.</p>
+<pre><code class="language-r">openBabelPlot(sdfsample[1])
+</code></pre>
+<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/specgraph_structure2-1.png" width="672" /></p>
 <h3 id="roc-plots">ROC Plots</h3>
 <p>A variety of libraries are available for plotting receiver operating characteristic (ROC) curves in R:</p>
 <ul>
