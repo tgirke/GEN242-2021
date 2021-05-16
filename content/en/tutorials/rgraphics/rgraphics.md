@@ -1183,7 +1183,7 @@ plot(sdfsample[1], print=FALSE)
 Alternative with nicer structure rendering.
 
 ``` r
-openBabelPlot(sdfsample[1])
+openBabelPlot(sdfsample[1], regenCoords=TRUE)
 ```
 
 <img src="/en/tutorials/rgraphics/rgraphics_files/figure-html/specgraph_structure2-1.png" width="672" />
@@ -1204,7 +1204,7 @@ An illustrative example is provided in the `ROCR` package where one wants to ins
 defining the structure of the input data in two vectors.
 
 ``` r
-# install.packages("ROCR") # Install if necessary on your laptop
+# install.packages("ROCR") # Install if necessary
 library(ROCR)
 data(ROCR.simple)
 ROCR.simple
@@ -1294,9 +1294,10 @@ cophyloplot(tree1, tree2, assoc = association,
     -   Most of the core object types for handling genomic data with R/Bioconductor are supported: `GRanges`, `GAlignments`, `VCF`, etc. For more details, see Table 1.1 of the `ggbio` vignette [here](http://www.bioconductor.org/packages/release/bioc/vignettes/ggbio/inst/doc/ggbio.pdf).
     -   `ggbio`’s convenience plotting function is `autoplot`. For more customizable plots, one can use the generic `ggplot` function.
     -   Apart from the standard `ggplot2` plotting components, `ggbio` defines serval new components useful for genomic data visualization. A detailed list is given in Table 1.2 of the vignette [here](http://www.bioconductor.org/packages/release/bioc/vignettes/ggbio/inst/doc/ggbio.pdf).
-    -   Useful web sites: - [ggbio manual](http://www.tengfei.name/ggbio/docs/)
-        -   [ggbio functions](http://www.tengfei.name/ggbio/docs/man/)
-        -   [autoplot demo](http://www.tengfei.name/ggbio/docs/man/autoplot-method.html)
+    -   Useful web sites:
+        -   [ggbio Bioc vignette](http://bioconductor.org/packages/release/bioc/html/ggbio.html)
+        -   [ggbio online manual](https://lawremi.github.io/ggbio/)
+        -   [autoplot demo](https://lawremi.github.io/ggbio/docs/man/autoplot-method.html)
 
 #### Tracks: aligning plots along chromosomes
 

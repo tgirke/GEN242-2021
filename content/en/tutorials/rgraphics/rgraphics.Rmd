@@ -949,7 +949,7 @@ plot(sdfsample[1], print=FALSE)
 Alternative with nicer structure rendering.
 
 ```{r specgraph_structure2, eval=TRUE}
-openBabelPlot(sdfsample[1])
+openBabelPlot(sdfsample[1], regenCoords=TRUE)
 ```
 
 ### ROC Plots
@@ -969,7 +969,7 @@ defining the structure of the input data in two vectors.
 
 
 ```{r ROCR_example, eval=TRUE, warning=FALSE, message=FALSE}
-# install.packages("ROCR") # Install if necessary on your laptop
+# install.packages("ROCR") # Install if necessary
 library(ROCR)
 data(ROCR.simple)
 ROCR.simple
@@ -1016,9 +1016,9 @@ cophyloplot(tree1, tree2, assoc = association,
     - `ggbio`'s convenience plotting function is `autoplot`. For more customizable plots, one can use the generic `ggplot` function.
 	- Apart from the standard `ggplot2` plotting components, `ggbio` defines serval new components useful for genomic data visualization. A detailed list is given in Table 1.2 of the vignette [here](http://www.bioconductor.org/packages/release/bioc/vignettes/ggbio/inst/doc/ggbio.pdf). 
 	- Useful web sites:
-        	- [ggbio manual](http://www.tengfei.name/ggbio/docs/)
-		- [ggbio functions](http://www.tengfei.name/ggbio/docs/man/)
-		- [autoplot demo](http://www.tengfei.name/ggbio/docs/man/autoplot-method.html)
+		- [ggbio Bioc vignette](http://bioconductor.org/packages/release/bioc/html/ggbio.html)
+        - [ggbio online manual](https://lawremi.github.io/ggbio/)
+		- [autoplot demo](https://lawremi.github.io/ggbio/docs/man/autoplot-method.html)
 
 #### Tracks: aligning plots along chromosomes
 

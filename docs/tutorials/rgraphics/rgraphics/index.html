@@ -22,12 +22,12 @@
  Overview Graphics in R  Powerful environment for visualizing scientific data Integrated graphics and statistics infrastructure Publication quality graphics Fully programmable Highly reproducible Full LaTeX, Sweave, knitr and R Markdown support." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rgraphics/rgraphics/" />
-<meta property="article:modified_time" content="2021-05-16T14:16:29-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-05-16T14:49:23-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Graphics and Data Visualization in R">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
  Overview Graphics in R  Powerful environment for visualizing scientific data Integrated graphics and statistics infrastructure Publication quality graphics Fully programmable Highly reproducible Full LaTeX, Sweave, knitr and R Markdown support.">
-<meta itemprop="dateModified" content="2021-05-16T14:16:29-07:00" />
-<meta itemprop="wordCount" content="66631">
+<meta itemprop="dateModified" content="2021-05-16T14:49:23-07:00" />
+<meta itemprop="wordCount" content="66630">
 
 
 
@@ -903,7 +903,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.8cbff5df69bd7b5bdc85ba7921da82cd.json"
+  data-offline-search-index-json-src="../../../offline-search-index.fd56450f5ef5e15c24d38b55d6f9e3bf.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -935,7 +935,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.8cbff5df69bd7b5bdc85ba7921da82cd.json"
+  data-offline-search-index-json-src="../../../offline-search-index.fd56450f5ef5e15c24d38b55d6f9e3bf.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -2212,7 +2212,7 @@ plot(sdfsample[1], print=FALSE)
 </code></pre>
 <p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/specgraph_structure-1.png" width="672" /></p>
 <p>Alternative with nicer structure rendering.</p>
-<pre><code class="language-r">openBabelPlot(sdfsample[1])
+<pre><code class="language-r">openBabelPlot(sdfsample[1], regenCoords=TRUE)
 </code></pre>
 <p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/specgraph_structure2-1.png" width="672" /></p>
 <h3 id="roc-plots">ROC Plots</h3>
@@ -2227,7 +2227,7 @@ plot(sdfsample[1], print=FALSE)
 <p>Most commonly, in an ROC we plot the true positive rate (y-axis) against the false positive rate (x-axis) at decreasing thresholds.
 An illustrative example is provided in the <code>ROCR</code> package where one wants to inspect the content of the <code>ROCR.simple</code> object
 defining the structure of the input data in two vectors.</p>
-<pre><code class="language-r"># install.packages(&quot;ROCR&quot;) # Install if necessary on your laptop
+<pre><code class="language-r"># install.packages(&quot;ROCR&quot;) # Install if necessary
 library(ROCR)
 data(ROCR.simple)
 ROCR.simple
@@ -2308,10 +2308,11 @@ cophyloplot(tree1, tree2, assoc = association,
 <li>Most of the core object types for handling genomic data with R/Bioconductor are supported: <code>GRanges</code>, <code>GAlignments</code>, <code>VCF</code>, etc. For more details, see Table 1.1 of the <code>ggbio</code> vignette <a href="http://www.bioconductor.org/packages/release/bioc/vignettes/ggbio/inst/doc/ggbio.pdf">here</a>.</li>
 <li><code>ggbio</code>’s convenience plotting function is <code>autoplot</code>. For more customizable plots, one can use the generic <code>ggplot</code> function.</li>
 <li>Apart from the standard <code>ggplot2</code> plotting components, <code>ggbio</code> defines serval new components useful for genomic data visualization. A detailed list is given in Table 1.2 of the vignette <a href="http://www.bioconductor.org/packages/release/bioc/vignettes/ggbio/inst/doc/ggbio.pdf">here</a>.</li>
-<li>Useful web sites: - <a href="http://www.tengfei.name/ggbio/docs/">ggbio manual</a>
+<li>Useful web sites:
 <ul>
-<li><a href="http://www.tengfei.name/ggbio/docs/man/">ggbio functions</a></li>
-<li><a href="http://www.tengfei.name/ggbio/docs/man/autoplot-method.html">autoplot demo</a></li>
+<li><a href="http://bioconductor.org/packages/release/bioc/html/ggbio.html">ggbio Bioc vignette</a></li>
+<li><a href="https://lawremi.github.io/ggbio/">ggbio online manual</a></li>
+<li><a href="https://lawremi.github.io/ggbio/docs/man/autoplot-method.html">autoplot demo</a></li>
 </ul>
 </li>
 </ul>
@@ -2443,7 +2444,7 @@ IGVgoto(sock, 'Chr1:45296-47019')
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-16: <a  href="https://github.com/tgirke/GEN242//commit/6eb44dd05c51879107de07d7941e5e4b1f82813c">some edits (6eb44dd05)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-16: <a  href="https://github.com/tgirke/GEN242//commit/c6d4e5b000fe728be94a1709c4d423217627130c">some edits (c6d4e5b00)</a>
 </div>
 </div>
 
