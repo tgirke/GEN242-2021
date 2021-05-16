@@ -1,7 +1,7 @@
 ---
 title: Shiny Apps
 author: "First/last name (first.last@ucr.edu)"
-date: "Last update: 13 May, 2021" 
+date: "Last update: 15 May, 2021" 
 output:
   html_document:
     toc: true
@@ -79,7 +79,7 @@ Alternatively, the `ui` and `server` functions can be organized in two script fi
 ### Develop and test Shiny app locally
 
 Open R and set session to parent directory (here `myappdir`) containing shiny script `app.R`, and the
-run it with the `runApp()` function. A sample `app.R` script for testing can be downloaded from [here](https://raw.githubusercontent.com/tgirke/GEN242/gh-pages/_vignettes/07_Rbasics/shinyapp/app.R).
+run it with the `runApp()` function. A sample `app.R` script for testing can be downloaded from [here](https://raw.githubusercontent.com/tgirke/GEN242/main/static/custom/scripts/app.R).
 
 ``` r
 library(shiny)
