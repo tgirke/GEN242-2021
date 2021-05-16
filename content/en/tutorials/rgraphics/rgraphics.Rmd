@@ -119,6 +119,7 @@ Sample data set for subsequent plots
 ```{r scatter_plot_basic, eval=TRUE}
 set.seed(1410)
 y <- matrix(runif(30), ncol=3, dimnames=list(letters[1:10], LETTERS[1:3]))
+y
 plot(y[,1], y[,2]) 
 ```
 

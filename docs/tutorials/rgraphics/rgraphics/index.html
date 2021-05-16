@@ -22,12 +22,12 @@
  Overview Graphics in R  Powerful environment for visualizing scientific data Integrated graphics and statistics infrastructure Publication quality graphics Fully programmable Highly reproducible Full LaTeX, Sweave, knitr and R Markdown support. Vast number of R packages with graphics utilities  Documentation on Graphics in R  General  Graphics Task Page R Graph Gallery R Graphical Manual Paul Murrell’s book R (Grid) Graphics   Interactive graphics  rggobi (GGobi) iplots Open GL (rgl) plotly    Graphics Environments  Viewing and savings graphics in R  On-screen graphics postscript, pdf, svg jpeg/png/wmf/tiff/…   Four major graphics environments  Low-level infrastructure  R Base Graphics (low- and high-level) grid: Manual, Book   High-level infrastructure  lattice: Manual, Intro, Book ggplot2: Manual, Intro, Book      Base Graphics Overview  Important high-level plotting functions  plot: generic x-y plotting barplot: bar plots boxplot: box-and-whisker plot hist: histograms pie: pie charts dotchart: cleveland dot plots image, heatmap, contour, persp: functions to generate image-like plots qqnorm, qqline, qqplot: distribution comparison plots pairs, coplot: display of multivariant data   Help on these functions  ?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rgraphics/rgraphics/" />
-<meta property="article:modified_time" content="2021-05-13T20:30:24-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-05-16T12:26:49-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Graphics and Data Visualization in R">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
  Overview Graphics in R  Powerful environment for visualizing scientific data Integrated graphics and statistics infrastructure Publication quality graphics Fully programmable Highly reproducible Full LaTeX, Sweave, knitr and R Markdown support. Vast number of R packages with graphics utilities  Documentation on Graphics in R  General  Graphics Task Page R Graph Gallery R Graphical Manual Paul Murrell’s book R (Grid) Graphics   Interactive graphics  rggobi (GGobi) iplots Open GL (rgl) plotly    Graphics Environments  Viewing and savings graphics in R  On-screen graphics postscript, pdf, svg jpeg/png/wmf/tiff/…   Four major graphics environments  Low-level infrastructure  R Base Graphics (low- and high-level) grid: Manual, Book   High-level infrastructure  lattice: Manual, Intro, Book ggplot2: Manual, Intro, Book      Base Graphics Overview  Important high-level plotting functions  plot: generic x-y plotting barplot: bar plots boxplot: box-and-whisker plot hist: histograms pie: pie charts dotchart: cleveland dot plots image, heatmap, contour, persp: functions to generate image-like plots qqnorm, qqline, qqplot: distribution comparison plots pairs, coplot: display of multivariant data   Help on these functions  ?">
-<meta itemprop="dateModified" content="2021-05-13T20:30:24-07:00" />
-<meta itemprop="wordCount" content="4261">
+<meta itemprop="dateModified" content="2021-05-16T12:26:49-07:00" />
+<meta itemprop="wordCount" content="4316">
 
 
 
@@ -903,7 +903,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.b1a2f99c1764b79a85cd98bf3834456a.json"
+  data-offline-search-index-json-src="../../../offline-search-index.ba96c23bd739ac7dab2f9b04cc6c5d7a.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -935,7 +935,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.b1a2f99c1764b79a85cd98bf3834456a.json"
+  data-offline-search-index-json-src="../../../offline-search-index.ba96c23bd739ac7dab2f9b04cc6c5d7a.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1452,7 +1452,21 @@ document.addEventListener("DOMContentLoaded", function() {
 <p>Sample data set for subsequent plots</p>
 <pre><code class="language-r">set.seed(1410)
 y &lt;- matrix(runif(30), ncol=3, dimnames=list(letters[1:10], LETTERS[1:3]))
-plot(y[,1], y[,2]) 
+y
+</code></pre>
+<pre><code>##            A          B            C
+## a 0.26904539 0.47439030 0.4427788756
+## b 0.53178658 0.31128960 0.3233293493
+## c 0.93379571 0.04576263 0.0004628517
+## d 0.14314802 0.12066723 0.4104402000
+## e 0.57627063 0.83251909 0.9884746270
+## f 0.49001235 0.38298651 0.8235850153
+## g 0.66562596 0.70857731 0.7490944304
+## h 0.50089252 0.24772695 0.2117313873
+## i 0.57033245 0.06044799 0.8776291364
+## j 0.04087422 0.85814118 0.1061618729
+</code></pre>
+<pre><code class="language-r">plot(y[,1], y[,2]) 
 </code></pre>
 <p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/scatter_plot_basic-1.png" width="672" /></p>
 <h4 id="all-pairs">All pairs</h4>
@@ -2390,7 +2404,7 @@ IGVgoto(sock, 'Chr1:45296-47019')
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-13: <a  href="https://github.com/tgirke/GEN242//commit/31b2fac3af8ff754c1c10061d8a4a69dab64596a">some edits (31b2fac3a)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-16: <a  href="https://github.com/tgirke/GEN242//commit/b07cb1ff31cb719694ba01e88d1224516170561d">some edits (b07cb1ff3)</a>
 </div>
 </div>
 
