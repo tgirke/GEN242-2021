@@ -1180,14 +1180,6 @@ plot(sdfsample[1], print=FALSE)
 
 <img src="/en/tutorials/rgraphics/rgraphics_files/figure-html/specgraph_structure-1.png" width="672" />
 
-Alternative with nicer structure rendering.
-
-``` r
-openBabelPlot(sdfsample[1], regenCoords=TRUE)
-```
-
-<img src="/en/tutorials/rgraphics/rgraphics_files/figure-html/specgraph_structure2-1.png" width="672" />
-
 ### ROC Plots
 
 A variety of libraries are available for plotting receiver operating characteristic (ROC) curves in R:
@@ -1413,10 +1405,10 @@ View genome data in IGV
 
 <!-- -->
 
-    http://faculty.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_6_10_2012/Rrnaseq/results/SRR064154.fastq.bam
-    http://faculty.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_6_10_2012/Rrnaseq/results/SRR064155.fastq.bam
-    http://faculty.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_6_10_2012/Rrnaseq/results/SRR064166.fastq.bam
-    http://faculty.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_6_10_2012/Rrnaseq/results/SRR064167.fastq.bam
+    https://cluster.hpcc.ucr.edu/~tgirke/Teaching/GEN242/bam_samples/SRR064154.fastq.bam
+    https://cluster.hpcc.ucr.edu/~tgirke/Teaching/GEN242/bam_samples/SRR064155.fastq.bam
+    https://cluster.hpcc.ucr.edu/~tgirke/Teaching/GEN242/bam_samples/SRR064166.fastq.bam
+    https://cluster.hpcc.ucr.edu/~tgirke/Teaching/GEN242/bam_samples/SRR064167.fastq.bam
 
 -   To view area of interest, enter its coordinates `Chr1:49,457-51,457` in position menu on top.
 
