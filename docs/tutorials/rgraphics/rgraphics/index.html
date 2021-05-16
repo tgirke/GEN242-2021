@@ -22,12 +22,12 @@
  Overview Graphics in R  Powerful environment for visualizing scientific data Integrated graphics and statistics infrastructure Publication quality graphics Fully programmable Highly reproducible Full LaTeX, Sweave, knitr and R Markdown support. Vast number of R packages with graphics utilities  Documentation on Graphics in R  General  Graphics Task Page R Graph Gallery R Graphical Manual Paul Murrell’s book R (Grid) Graphics   Interactive graphics  rggobi (GGobi) iplots Open GL (rgl) plotly    Graphics Environments  Viewing and savings graphics in R  On-screen graphics postscript, pdf, svg jpeg/png/wmf/tiff/…   Four major graphics environments  Low-level infrastructure  R Base Graphics (low- and high-level) grid: Manual, Book   High-level infrastructure  lattice: Manual, Intro, Book ggplot2: Manual, Intro, Book      Base Graphics Overview  Important high-level plotting functions  plot: generic x-y plotting barplot: bar plots boxplot: box-and-whisker plot hist: histograms pie: pie charts dotchart: cleveland dot plots image, heatmap, contour, persp: functions to generate image-like plots qqnorm, qqline, qqplot: distribution comparison plots pairs, coplot: display of multivariant data   Help on these functions  ?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rgraphics/rgraphics/" />
-<meta property="article:modified_time" content="2021-05-16T12:26:49-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-05-16T12:33:32-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Graphics and Data Visualization in R">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
  Overview Graphics in R  Powerful environment for visualizing scientific data Integrated graphics and statistics infrastructure Publication quality graphics Fully programmable Highly reproducible Full LaTeX, Sweave, knitr and R Markdown support. Vast number of R packages with graphics utilities  Documentation on Graphics in R  General  Graphics Task Page R Graph Gallery R Graphical Manual Paul Murrell’s book R (Grid) Graphics   Interactive graphics  rggobi (GGobi) iplots Open GL (rgl) plotly    Graphics Environments  Viewing and savings graphics in R  On-screen graphics postscript, pdf, svg jpeg/png/wmf/tiff/…   Four major graphics environments  Low-level infrastructure  R Base Graphics (low- and high-level) grid: Manual, Book   High-level infrastructure  lattice: Manual, Intro, Book ggplot2: Manual, Intro, Book      Base Graphics Overview  Important high-level plotting functions  plot: generic x-y plotting barplot: bar plots boxplot: box-and-whisker plot hist: histograms pie: pie charts dotchart: cleveland dot plots image, heatmap, contour, persp: functions to generate image-like plots qqnorm, qqline, qqplot: distribution comparison plots pairs, coplot: display of multivariant data   Help on these functions  ?">
-<meta itemprop="dateModified" content="2021-05-16T12:26:49-07:00" />
-<meta itemprop="wordCount" content="4316">
+<meta itemprop="dateModified" content="2021-05-16T12:33:32-07:00" />
+<meta itemprop="wordCount" content="4319">
 
 
 
@@ -903,7 +903,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.ba96c23bd739ac7dab2f9b04cc6c5d7a.json"
+  data-offline-search-index-json-src="../../../offline-search-index.c6d9caf32e17e6bab9c5358fcdbc3d30.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -935,7 +935,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.ba96c23bd739ac7dab2f9b04cc6c5d7a.json"
+  data-offline-search-index-json-src="../../../offline-search-index.c6d9caf32e17e6bab9c5358fcdbc3d30.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1596,9 +1596,9 @@ arrows(bar, m, bar, m + stdev, length=0.15, angle = 90)
 <p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/bar_plot_error_bar-1.png" width="672" /></p>
 <h4 id="mirrored-bar-plot">Mirrored bar plot</h4>
 <pre><code class="language-r">df &lt;- data.frame(group = rep(c(&quot;Above&quot;, &quot;Below&quot;), each=10), x = rep(1:10, 2), y = c(runif(10, 0, 1), runif(10, -1, 0)))
-plot(c(0,12),range(df$y),type = &quot;n&quot;)
-barplot(height = df$y[df$group == &quot;Above&quot;], add = TRUE,axes = FALSE)
-barplot(height = df$y[df$group == &quot;Below&quot;], add = TRUE,axes = FALSE)
+plot(c(0,12), range(df$y), type = &quot;n&quot;)
+barplot(height = df$y[df$group == &quot;Above&quot;], add = TRUE, axes = FALSE)
+barplot(height = df$y[df$group == &quot;Below&quot;], add = TRUE, axes = FALSE)
 </code></pre>
 <p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/bar_plot_mirrored-1.png" width="672" /></p>
 <h3 id="histograms">Histograms</h3>
@@ -1639,8 +1639,9 @@ colorpanel(5, &quot;darkblue&quot;, &quot;yellow&quot;, &quot;white&quot;)
 </code></pre>
 <p>Much more on colors in R see Earl Glynn’s <a href="http://research.stowers-institute.org/efg/R/Color/Chart/">color chart</a></p>
 <h3 id="arranging-several-plots-on-single-page">Arranging Several Plots on Single Page</h3>
-<p>With <code>par(mfrow=c(nrow,ncol))</code> one can define how several plots are arranged next to each other.</p>
-<pre><code class="language-r">par(mfrow=c(2,3)); for(i in 1:6) { plot(1:10) } 
+<p>With <code>par(mfrow=c(nrow, ncol))</code> one can define how several plots are arranged next to each other.</p>
+<pre><code class="language-r">par(mfrow=c(2,3)) 
+for(i in 1:6) plot(1:10) 
 </code></pre>
 <p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/par_mfrow-1.png" width="672" /></p>
 <h4 id="arranging-plots-with-variable-width">Arranging Plots with Variable Width</h4>
@@ -1648,7 +1649,7 @@ colorpanel(5, &quot;darkblue&quot;, &quot;yellow&quot;, &quot;white&quot;)
 <pre><code class="language-r">nf &lt;- layout(matrix(c(1,2,3,3), 2, 2, byrow=TRUE), c(3,7), c(5,5), 
              respect=TRUE)
 # layout.show(nf)
-for(i in 1:3) { barplot(1:10) } 
+for(i in 1:3) barplot(1:10) 
 </code></pre>
 <p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/layout_plot-1.png" width="672" /></p>
 <h3 id="saving-graphics-to-files">Saving Graphics to Files</h3>
@@ -1715,13 +1716,14 @@ for(i in 1:3) { barplot(1:10) }
 <li>Documentation and Help
 <ul>
 <li><a href="http://lmdvr.r-forge.r-project.org">Manual</a></li>
-<li><a href="http://www.his.sunderland.ac.uk/~cs0her/Statistics/UsingLatticeGraphicsInR.htm">Intro</a></li>
+<li><a href="https://www.statmethods.net/advgraphs/trellis.html">Intro</a></li>
 <li><a href="http://www.amazon.com/Lattice-Multivariate-Data-Visualization-Use/dp/0387759689">Book</a></li>
 </ul>
 </li>
 </ul>
 <p>Open a list of all functions available in the lattice package</p>
-<pre><code class="language-r">library(help=lattice) 
+<pre><code class="language-r">library(lattice) 
+library(help=lattice) 
 </code></pre>
 <p>Accessing and changing global parameters:</p>
 <pre><code class="language-r">?lattice.options
@@ -1753,23 +1755,22 @@ plot(p2)
 </li>
 <li>Documentation and Help
 <ul>
-<li><a href="http://had.co.nz/ggplot2/">Manual</a></li>
-<li><a href="http://www.ling.upenn.edu/~joseff/rstudy/summer2010_ggplot2_intro.html">Intro</a></li>
-<li><a href="http://had.co.nz/ggplot2/book/">Book</a></li>
+<li><a href="https://ggplot2.tidyverse.org/reference/">Manual</a></li>
+<li><a href="https://ggplot2-book.org/">Book</a></li>
 <li><a href="http://www.cookbook-r.com/Graphs/">Cookbook for R</a></li>
 </ul>
 </li>
 </ul>
 <h3 id="ggplot2-usage"><code>ggplot2</code> Usage</h3>
 <ul>
-<li><code>ggplot</code> function accepts two arguments
+<li><code>ggplot</code> function accepts two main arguments
 <ul>
 <li>Data set to be plotted</li>
 <li>Aesthetic mappings provided by <code>aes</code> function</li>
 </ul>
 </li>
 <li>Additional parameters such as geometric objects (<em>e.g.</em> points, lines, bars) are passed on by appending them with <code>+</code> as separator.</li>
-<li>List of available <code>geom_*</code> functions see <a href="http://docs.ggplot2.org/current/">here</a></li>
+<li>List of available <code>geom_*</code> functions see <a href="https://ggplot2.tidyverse.org/reference/">here</a></li>
 <li>Settings of plotting theme can be accessed with the command <code>theme_get()</code> and its settings can be changed with <code>theme()</code>.</li>
 <li>Preferred input data object
 <ul>
@@ -1779,7 +1780,7 @@ plot(p2)
 </li>
 <li>Packages with convenience utilities to create expected inputs
 <ul>
-<li><code>plyr</code></li>
+<li><code>dplyr</code> (<code>plyr</code>)</li>
 <li><code>reshape</code></li>
 </ul>
 </li>
@@ -2404,7 +2405,7 @@ IGVgoto(sock, 'Chr1:45296-47019')
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-16: <a  href="https://github.com/tgirke/GEN242//commit/b07cb1ff31cb719694ba01e88d1224516170561d">some edits (b07cb1ff3)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-16: <a  href="https://github.com/tgirke/GEN242//commit/68694f7cda679cb95014f64bef147c4551f5c47f">some edits (68694f7cd)</a>
 </div>
 </div>
 

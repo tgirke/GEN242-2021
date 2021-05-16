@@ -326,9 +326,9 @@ arrows(bar, m, bar, m + stdev, length=0.15, angle = 90)
 
 ``` r
 df <- data.frame(group = rep(c("Above", "Below"), each=10), x = rep(1:10, 2), y = c(runif(10, 0, 1), runif(10, -1, 0)))
-plot(c(0,12),range(df$y),type = "n")
-barplot(height = df$y[df$group == "Above"], add = TRUE,axes = FALSE)
-barplot(height = df$y[df$group == "Below"], add = TRUE,axes = FALSE)
+plot(c(0,12), range(df$y), type = "n")
+barplot(height = df$y[df$group == "Above"], add = TRUE, axes = FALSE)
+barplot(height = df$y[df$group == "Below"], add = TRUE, axes = FALSE)
 ```
 
 <img src="/en/tutorials/rgraphics/rgraphics_files/figure-html/bar_plot_mirrored-1.png" width="672" />
@@ -399,10 +399,11 @@ Much more on colors in R see Earl Glynn’s [color chart](http://research.stower
 
 ### Arranging Several Plots on Single Page
 
-With `par(mfrow=c(nrow,ncol))` one can define how several plots are arranged next to each other.
+With `par(mfrow=c(nrow, ncol))` one can define how several plots are arranged next to each other.
 
 ``` r
-par(mfrow=c(2,3)); for(i in 1:6) { plot(1:10) } 
+par(mfrow=c(2,3)) 
+for(i in 1:6) plot(1:10) 
 ```
 
 <img src="/en/tutorials/rgraphics/rgraphics_files/figure-html/par_mfrow-1.png" width="672" />
@@ -415,7 +416,7 @@ The `layout` function allows to divide the plotting device into variable numbers
 nf <- layout(matrix(c(1,2,3,3), 2, 2, byrow=TRUE), c(3,7), c(5,5), 
              respect=TRUE)
 # layout.show(nf)
-for(i in 1:3) { barplot(1:10) } 
+for(i in 1:3) barplot(1:10) 
 ```
 
 <img src="/en/tutorials/rgraphics/rgraphics_files/figure-html/layout_plot-1.png" width="672" />
@@ -489,12 +490,13 @@ table(iris$Species)
     -   Syntax similar to R’s base graphics
 -   Documentation and Help
     -   [Manual](http://lmdvr.r-forge.r-project.org)
-    -   [Intro](http://www.his.sunderland.ac.uk/~cs0her/Statistics/UsingLatticeGraphicsInR.htm)
+    -   [Intro](https://www.statmethods.net/advgraphs/trellis.html)
     -   [Book](http://www.amazon.com/Lattice-Multivariate-Data-Visualization-Use/dp/0387759689)
 
 Open a list of all functions available in the lattice package
 
 ``` r
+library(lattice) 
 library(help=lattice) 
 ```
 
@@ -535,24 +537,23 @@ plot(p2)
     -   Syntax centered around main `ggplot` function
     -   Simpler `qplot` function provides many shortcuts
 -   Documentation and Help
-    -   [Manual](http://had.co.nz/ggplot2/)
-    -   [Intro](http://www.ling.upenn.edu/~joseff/rstudy/summer2010_ggplot2_intro.html)
-    -   [Book](http://had.co.nz/ggplot2/book/)
+    -   [Manual](https://ggplot2.tidyverse.org/reference/)
+    -   [Book](https://ggplot2-book.org/)
     -   [Cookbook for R](http://www.cookbook-r.com/Graphs/)
 
 ### `ggplot2` Usage
 
--   `ggplot` function accepts two arguments
+-   `ggplot` function accepts two main arguments
     -   Data set to be plotted
     -   Aesthetic mappings provided by `aes` function
 -   Additional parameters such as geometric objects (*e.g.* points, lines, bars) are passed on by appending them with `+` as separator.
--   List of available `geom_*` functions see [here](http://docs.ggplot2.org/current/)
+-   List of available `geom_*` functions see [here](https://ggplot2.tidyverse.org/reference/)
 -   Settings of plotting theme can be accessed with the command `theme_get()` and its settings can be changed with `theme()`.
 -   Preferred input data object
     -   `qplot`: `data.frame` or `tibble` (support for `vector`, `matrix`, `...`)
     -   `ggplot`: `data.frame` or `tibble`
 -   Packages with convenience utilities to create expected inputs
-    -   `plyr`
+    -   `dplyr` (`plyr`)
     -   `reshape`
 
 ### `qplot` Function
