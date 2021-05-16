@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Global  genome="A. thaliana (TAIR10)" version="2">
+<Files>
+<DataFile name="http://faculty.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_6_10_2012/Rrnaseq/results/SRR064154.fastq.bam" />
+<DataFile name="http://faculty.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_6_10_2012/Rrnaseq/results/SRR064155.fastq.bam" />
+<DataFile name="http://faculty.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_6_10_2012/Rrnaseq/results/SRR064166.fastq.bam" />
+<DataFile name="http://faculty.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_6_10_2012/Rrnaseq/results/SRR064167.fastq.bam" />
+
+</Files>
+<ColorScales/>
+</Global>
+

@@ -1341,7 +1341,8 @@ neg <- sapply(coverage(gr[strand(gr)=="-"]), as.numeric)
 neg <- data.frame(Chr=rep(names(neg), sapply(neg, length)), Strand=rep("-", length(unlist(neg))), Position=unlist(sapply(neg, function(x) 1:length(x))), Coverage=-as.numeric(unlist(neg)))
 covdf <- rbind(pos, neg)
 p <- ggplot(covdf, aes(Position, Coverage, fill=Strand)) + 
-        geom_bar(stat="identity", position="identity") + facet_wrap(~Chr)
+            geom_bar(stat="identity", position="identity") + 
+            facet_wrap(~Chr)
 p
 ```
 
@@ -1350,7 +1351,8 @@ p
 ### Circular genome plots
 
 ``` r
-ggplot(gr) + layout_circle(aes(fill = seqnames), geom = "rect")
+ggplot(gr) + 
+    layout_circle(aes(fill = seqnames), geom = "rect")
 ```
 
 <img src="/en/tutorials/rgraphics/rgraphics_files/figure-html/ggbio_circular1-1.png" width="672" />
@@ -1362,12 +1364,11 @@ seqlengths(gr) <- c(400, 500, 700)
 values(gr)$to.gr <- gr[sample(1:length(gr), size = length(gr))]
 idx <- sample(1:length(gr), size = 50)
 gr <- gr[idx]
-ggplot() + layout_circle(gr, geom = "ideo", fill = "gray70", radius = 7, trackWidth = 3) +
-  layout_circle(gr, geom = "bar", radius = 10, trackWidth = 4,
-                aes(fill = score, y = score)) +
-  layout_circle(gr, geom = "point", color = "red", radius = 14,
-                trackWidth = 3, grid = TRUE, aes(y = score)) +
-  layout_circle(gr, geom = "link", linked.to = "to.gr", radius = 6, trackWidth = 1)
+ggplot() + 
+    layout_circle(gr, geom = "ideo", fill = "gray70", radius = 7, trackWidth = 3) +
+    layout_circle(gr, geom = "bar", radius = 10, trackWidth = 4, aes(fill = score, y = score)) +
+    layout_circle(gr, geom = "point", color = "red", radius = 14, trackWidth = 3, grid = TRUE, aes(y = score)) +
+    layout_circle(gr, geom = "link", linked.to = "to.gr", radius = 6, trackWidth = 1)
 ```
 
 <center>
@@ -1394,13 +1395,12 @@ tracks(Reads=p1, Coverage=p2, Variant=p3, Transcripts=p4, heights = c(0.3, 0.2, 
 
 ### Additional examples
 
-See `autoplot` demo [here](http://www.tengfei.name/ggbio/docs/man/autoplot-method.html)
+See `autoplot` demo [here](https://lawremi.github.io/ggbio/docs/man/autoplot-method.html)
 
 ### Additional genome graphics
 
 -   [`Gviz`](http://www.bioconductor.org/packages/devel/bioc/html/Gviz.html)
 -   [`RCircos`](http://cran.us.r-project.org/web/packages/RCircos/index.html) (Zhang, Meltzer, and Davis 2013)
--   [`Genome Graphs`](http://bioconductor.org/packages/release/bioc/html/GenomeGraphs.html)
 -   [`genoPlotR`](http://genoplotr.r-forge.r-project.org/)
 
 ### Genome Browser: IGV
@@ -1444,7 +1444,7 @@ Note this may not work on all systems.
 
 ``` r
 library(SRAdb)
-myurls <- readLines("http://biocluster.ucr.edu/~tgirke/Documents/R_BioCond/Samples/bam_urls.txt")
+myurls <- readLines("http://cluster.hpcc.ucr.edu/~tgirke/Documents/R_BioCond/Samples/bam_urls.txt")
 #startIGV("lm") # opens IGV
 sock <- IGVsocket()
 session <- IGVsession(files=myurls, 

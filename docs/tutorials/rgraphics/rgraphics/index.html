@@ -22,12 +22,12 @@
  Overview Graphics in R  Powerful environment for visualizing scientific data Integrated graphics and statistics infrastructure Publication quality graphics Fully programmable Highly reproducible Full LaTeX, Sweave, knitr and R Markdown support." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rgraphics/rgraphics/" />
-<meta property="article:modified_time" content="2021-05-16T14:49:23-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-05-16T15:18:01-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Graphics and Data Visualization in R">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
  Overview Graphics in R  Powerful environment for visualizing scientific data Integrated graphics and statistics infrastructure Publication quality graphics Fully programmable Highly reproducible Full LaTeX, Sweave, knitr and R Markdown support.">
-<meta itemprop="dateModified" content="2021-05-16T14:49:23-07:00" />
-<meta itemprop="wordCount" content="66630">
+<meta itemprop="dateModified" content="2021-05-16T15:18:01-07:00" />
+<meta itemprop="wordCount" content="66628">
 
 
 
@@ -903,7 +903,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.fd56450f5ef5e15c24d38b55d6f9e3bf.json"
+  data-offline-search-index-json-src="../../../offline-search-index.008f9853ec5638368620d0a51cd3f0b2.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -935,7 +935,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.fd56450f5ef5e15c24d38b55d6f9e3bf.json"
+  data-offline-search-index-json-src="../../../offline-search-index.008f9853ec5638368620d0a51cd3f0b2.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -2345,12 +2345,14 @@ neg &lt;- sapply(coverage(gr[strand(gr)==&quot;-&quot;]), as.numeric)
 neg &lt;- data.frame(Chr=rep(names(neg), sapply(neg, length)), Strand=rep(&quot;-&quot;, length(unlist(neg))), Position=unlist(sapply(neg, function(x) 1:length(x))), Coverage=-as.numeric(unlist(neg)))
 covdf &lt;- rbind(pos, neg)
 p &lt;- ggplot(covdf, aes(Position, Coverage, fill=Strand)) + 
-        geom_bar(stat=&quot;identity&quot;, position=&quot;identity&quot;) + facet_wrap(~Chr)
+            geom_bar(stat=&quot;identity&quot;, position=&quot;identity&quot;) + 
+            facet_wrap(~Chr)
 p
 </code></pre>
 <p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggbio_mirrored_coverage-1.png" width="672" /></p>
 <h3 id="circular-genome-plots">Circular genome plots</h3>
-<pre><code class="language-r">ggplot(gr) + layout_circle(aes(fill = seqnames), geom = &quot;rect&quot;)
+<pre><code class="language-r">ggplot(gr) + 
+    layout_circle(aes(fill = seqnames), geom = &quot;rect&quot;)
 </code></pre>
 <p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggbio_circular1-1.png" width="672" /></p>
 <p>More complex circular example</p>
@@ -2358,12 +2360,11 @@ p
 values(gr)$to.gr &lt;- gr[sample(1:length(gr), size = length(gr))]
 idx &lt;- sample(1:length(gr), size = 50)
 gr &lt;- gr[idx]
-ggplot() + layout_circle(gr, geom = &quot;ideo&quot;, fill = &quot;gray70&quot;, radius = 7, trackWidth = 3) +
-  layout_circle(gr, geom = &quot;bar&quot;, radius = 10, trackWidth = 4,
-                aes(fill = score, y = score)) +
-  layout_circle(gr, geom = &quot;point&quot;, color = &quot;red&quot;, radius = 14,
-                trackWidth = 3, grid = TRUE, aes(y = score)) +
-  layout_circle(gr, geom = &quot;link&quot;, linked.to = &quot;to.gr&quot;, radius = 6, trackWidth = 1)
+ggplot() + 
+    layout_circle(gr, geom = &quot;ideo&quot;, fill = &quot;gray70&quot;, radius = 7, trackWidth = 3) +
+    layout_circle(gr, geom = &quot;bar&quot;, radius = 10, trackWidth = 4, aes(fill = score, y = score)) +
+    layout_circle(gr, geom = &quot;point&quot;, color = &quot;red&quot;, radius = 14, trackWidth = 3, grid = TRUE, aes(y = score)) +
+    layout_circle(gr, geom = &quot;link&quot;, linked.to = &quot;to.gr&quot;, radius = 6, trackWidth = 1)
 </code></pre>
 <center>
 <img title="vim-r" src="../images/circularplot.png"/>
@@ -2382,12 +2383,11 @@ tracks(Reads=p1, Coverage=p2, Variant=p3, Transcripts=p4, heights = c(0.3, 0.2, 
 </code></pre>
 <p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggbio_align_variants-1.png" width="672" /></p>
 <h3 id="additional-examples">Additional examples</h3>
-<p>See <code>autoplot</code> demo <a href="http://www.tengfei.name/ggbio/docs/man/autoplot-method.html">here</a></p>
+<p>See <code>autoplot</code> demo <a href="https://lawremi.github.io/ggbio/docs/man/autoplot-method.html">here</a></p>
 <h3 id="additional-genome-graphics">Additional genome graphics</h3>
 <ul>
 <li><a href="http://www.bioconductor.org/packages/devel/bioc/html/Gviz.html"><code>Gviz</code></a></li>
 <li><a href="http://cran.us.r-project.org/web/packages/RCircos/index.html"><code>RCircos</code></a> (Zhang, Meltzer, and Davis 2013)</li>
-<li><a href="http://bioconductor.org/packages/release/bioc/html/GenomeGraphs.html"><code>Genome Graphs</code></a></li>
 <li><a href="http://genoplotr.r-forge.r-project.org/"><code>genoPlotR</code></a></li>
 </ul>
 <h3 id="genome-browser-igv">Genome Browser: IGV</h3>
@@ -2423,7 +2423,7 @@ symLink2bam(sysargs=args, htmldir=c(&quot;~/.html/&quot;, &quot;somedir/&quot;),
 <p>Open IGV before running the following routine. Alternatively, open IGV from within R with <code>startIGV(&quot;lm&quot;)</code> .
 Note this may not work on all systems.</p>
 <pre><code class="language-r">library(SRAdb)
-myurls &lt;- readLines(&quot;http://biocluster.ucr.edu/~tgirke/Documents/R_BioCond/Samples/bam_urls.txt&quot;)
+myurls &lt;- readLines(&quot;http://cluster.hpcc.ucr.edu/~tgirke/Documents/R_BioCond/Samples/bam_urls.txt&quot;)
 #startIGV(&quot;lm&quot;) # opens IGV
 sock &lt;- IGVsocket()
 session &lt;- IGVsession(files=myurls, 
@@ -2444,7 +2444,7 @@ IGVgoto(sock, 'Chr1:45296-47019')
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-16: <a  href="https://github.com/tgirke/GEN242//commit/c6d4e5b000fe728be94a1709c4d423217627130c">some edits (c6d4e5b00)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-16: <a  href="https://github.com/tgirke/GEN242//commit/151cedc02be54294aebd2419107c5aff24876b1e">some edits (151cedc02)</a>
 </div>
 </div>
 
