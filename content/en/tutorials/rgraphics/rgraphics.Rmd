@@ -459,7 +459,7 @@ The syntax of `qplot` is similar as R's basic `plot` function
 
 ### `qplot`: scatter plot basics
 
-Create sample data
+Create sample data, here 3 vectors: `x`, `y` and `cat`
 ```{r qplot_scatter_plot_sample, eval=TRUE}
 library(ggplot2)
 x <- sample(1:10, 10); y <- sample(1:10, 10); cat <- rep(c("A", "B"), 5)
@@ -582,6 +582,8 @@ Saves plot stored in variable `p` to file
 ggsave(p, file="myplot.pdf") 
 ```
 
+Standard R export functons for graphics work as well (see [here](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rgraphics/rgraphics/#saving-graphics-to-files)). 
+
 ### `ggplot`: scatter plots
 
 #### Basic example
@@ -593,6 +595,15 @@ p <- ggplot(dsmall, aes(carat, price, color=color)) +
             geom_point(size=4)
 print(p) 
 ```
+
+Interactive version with graphics with `plotly`
+
+```{r ggplot_scatter_plot_interactive1, eval=TRUE}
+library(plotly)
+ggplotly(p)
+```
+
+
 
 #### Regression line
 
