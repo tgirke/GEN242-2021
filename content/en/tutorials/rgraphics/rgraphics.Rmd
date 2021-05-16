@@ -596,14 +596,13 @@ p <- ggplot(dsmall, aes(carat, price, color=color)) +
 print(p) 
 ```
 
-Interactive version with graphics with `plotly`
+Interactive version of above plot can be generated with the `ggplotly` function from 
+the `plotly` package.
 
 ```{r ggplot_scatter_plot_interactive1, eval=TRUE}
 library(plotly)
 ggplotly(p)
 ```
-
-
 
 #### Regression line
 
@@ -653,7 +652,7 @@ Scatter plots with `ggplot2`
 
 - __Task 1__: Generate scatter plot for first two columns in `iris` data frame and color dots by its `Species` column.
 - __Task 2__: Use the `xlim` and `ylim` arguments to set limits on the x- and y-axes so that all data points are restricted to the left bottom quadrant of the plot. 
-- __Task 3__: Generate corresponding line plot with faceting show individual data sets in saparate plots. 
+- __Task 3__: Generate corresponding line plot with faceting presenting the individual data sets in saparate plots. 
 
 Structure of `iris` data set
 
@@ -707,7 +706,7 @@ limits <- aes(ymax = df_mean[,"Values"] + df_sd[,"Values"], ymin=df_mean[,"Value
 
 ```{r iris_mean_bar_plot, eval=TRUE}
 p <- ggplot(df_mean, aes(Samples, Values, fill = Species)) + 
-	    geom_bar(position="dodge", stat="identity")
+            geom_bar(position="dodge", stat="identity")
 print(p) 
 ```
 
@@ -742,7 +741,8 @@ print(p)
 
 ```{r iris_mean_bar_plot_error, eval=TRUE}
 p <- ggplot(df_mean, aes(Samples, Values, fill = Species)) + 
-	    geom_bar(position="dodge", stat="identity") + geom_errorbar(limits, position="dodge") 
+            geom_bar(position="dodge", stat="identity") + 
+            geom_errorbar(limits, position="dodge") 
 print(p) 
 ```
 
@@ -751,7 +751,7 @@ print(p)
 ```{r ggplot2_mirrored_barplot, eval=TRUE}
 df <- data.frame(group = rep(c("Above", "Below"), each=10), x = rep(1:10, 2), y = c(runif(10, 0, 1), runif(10, -1, 0)))
 p <- ggplot(df, aes(x=x, y=y, fill=group)) + 
-	    geom_bar(stat="identity", position="identity")
+	        geom_bar(stat="identity", position="identity")
 print(p) 
 ```
 
@@ -766,7 +766,7 @@ p <- ggplot(df_mean, aes(Samples, Values, fill=Species, color=Species)) +
 print(p) 
 ```
 
-#### Using standard colors
+#### Using standard R color theme
 
 ```{r ggplot2_color2, eval=TRUE}
 p <- ggplot(df_mean, aes(Samples, Values, fill=Species, color=Species)) + 
@@ -815,7 +815,7 @@ print(p)
 Same data can be represented in box plot as follows
 
 ```{r ggplot_melt_box_plot, eval=FALSE}
-ggplot(df, aes(Samples, Values, fill=Samples)) + geom_boxplot()
+ggplot(df, aes(Samples, Values, fill=Samples)) + geom_boxplot() + geom_jitter(color="darkgrey")
 ```
 
 ### Jitter Plots
@@ -833,12 +833,27 @@ p <- ggplot(dsmall, aes(color, price/carat, fill=color)) + geom_boxplot()
 print(p) 
 ```
 
+Same box plot showing the actual data points as well.
+
+```{r ggplot_box_plot2_jitter, eval=FALSE}
+p <- ggplot(dsmall, aes(color, price/carat, fill=color)) + geom_boxplot() + geom_jitter(aes(color=color))
+print(p) 
+```
+
 ### Violin plots                                                                                                                                                               
                                                                                                                                                                               
 ```{r ggplot_box_violin, eval=TRUE}                                                                                                                                           
 p <- ggplot(dsmall, aes(color, price/carat, fill=color)) + geom_violin()                                                                                                      
 print(p)                                                                                                                                                                      
 ```      
+
+Same violin plot as interactive plot generated with `ggplotly`, where the actual data points 
+are shown as well by including `geom_jitter()`. 
+
+```{r ggplot_box_plot2_jitter, eval=FALSE}
+p <- ggplot(dsmall, aes(color, price/carat, fill=color)) + geom_violin() + geom_jitter(aes(color=color))
+ggploty(p) 
+```
 
 ### Density plots 
 

@@ -27,7 +27,7 @@
 "content/en/tutorials/rclustering/rclustering.Rmd" "57dfc8583a3d28af7a6c230739e804cd"
 "content/en/tutorials/reference/reference.Rmarkdown" "345f444c7beee1062f0d4c7c16559b4d"
 "content/en/tutorials/rfea/rfea.Rmd" "a9a5c7a667b5754fb42362d743d327ef"
-"content/en/tutorials/rgraphics/rgraphics.Rmd" "77f9cda65a0af3af162200b8a074a65f"
+"content/en/tutorials/rgraphics/rgraphics.Rmd" "48ac1c50e1d912fd1af113433823be72"
 "content/en/tutorials/rmarkdown/rmarkdown.Rmd" "459f1fe4397812bca5b7c68c5dfa0b27"
 "content/en/tutorials/rparallel/rparallel.Rmd" "d182c24f0f4653a4915fb556947c9e54"
 "content/en/tutorials/rprogramming/rprogramming.Rmarkdown" "2fa1bb09128adb28bb2075a154daab37"
