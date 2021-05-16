@@ -845,7 +845,7 @@ are shown as well by including `geom_jitter()`.
 
 ```{r ggplot_box_plot2_jitter, eval=TRUE}
 p <- ggplot(dsmall, aes(color, price/carat, fill=color)) + geom_violin() + geom_jitter(aes(color=color))
-ggploty(p) 
+ggplotly(p) 
 ```
 
 ### Density plots 
