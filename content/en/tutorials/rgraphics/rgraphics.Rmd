@@ -833,13 +833,6 @@ p <- ggplot(dsmall, aes(color, price/carat, fill=color)) + geom_boxplot()
 print(p) 
 ```
 
-Same box plot showing the actual data points as well.
-
-```{r ggplot_box_plot2_jitter, eval=FALSE}
-p <- ggplot(dsmall, aes(color, price/carat, fill=color)) + geom_boxplot() + geom_jitter(aes(color=color))
-print(p) 
-```
-
 ### Violin plots                                                                                                                                                               
                                                                                                                                                                               
 ```{r ggplot_box_violin, eval=TRUE}                                                                                                                                           

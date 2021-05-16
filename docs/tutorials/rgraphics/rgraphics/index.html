@@ -27,7 +27,7 @@
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
  Overview Graphics in R  Powerful environment for visualizing scientific data Integrated graphics and statistics infrastructure Publication quality graphics Fully programmable Highly reproducible Full LaTeX, Sweave, knitr and R Markdown support.">
 <meta itemprop="dateModified" content="2021-05-16T13:38:20-07:00" />
-<meta itemprop="wordCount" content="9348">
+<meta itemprop="wordCount" content="9395">
 
 
 
@@ -903,7 +903,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.a43e8a053ef8d9f275ba6c7ffea32941.json"
+  data-offline-search-index-json-src="../../../offline-search-index.c3fdc02f4d97141395eb7ad8aaf6afcd.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -935,7 +935,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.a43e8a053ef8d9f275ba6c7ffea32941.json"
+  data-offline-search-index-json-src="../../../offline-search-index.c3fdc02f4d97141395eb7ad8aaf6afcd.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1239,7 +1239,7 @@ if (!doNotTrack) {
         </li>
         <li><a href="#changing-color-settings">Changing Color Settings</a>
           <ul>
-            <li><a href="#using-standard-colors">Using standard colors</a></li>
+            <li><a href="#using-standard-r-color-theme">Using standard R color theme</a></li>
             <li><a href="#exercise-4">Exercise 4</a></li>
           </ul>
         </li>
@@ -1337,7 +1337,7 @@ if (!doNotTrack) {
 	<h1>Graphics and Data Visualization in R</h1>
     
 	
-        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 44 minute read</p>
+        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 45 minute read</p>
            
 	<script src="../../../rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
 <script src="../../../rmarkdown-libs/plotly-binding/plotly.js"></script>
@@ -1924,7 +1924,8 @@ p &lt;- ggplot(dsmall, aes(carat, price, color=color)) +
 print(p) 
 </code></pre>
 <p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_scatter_plot1-1.png" width="672" /></p>
-<p>Interactive version with graphics with <code>plotly</code></p>
+<p>Interactive version of above plot can be generated with the <code>ggplotly</code> function from
+the <code>plotly</code> package.</p>
 <pre><code class="language-r">library(plotly)
 ggplotly(p)
 </code></pre>
@@ -1967,7 +1968,7 @@ print(p)
 <ul>
 <li><strong>Task 1</strong>: Generate scatter plot for first two columns in <code>iris</code> data frame and color dots by its <code>Species</code> column.</li>
 <li><strong>Task 2</strong>: Use the <code>xlim</code> and <code>ylim</code> arguments to set limits on the x- and y-axes so that all data points are restricted to the left bottom quadrant of the plot.</li>
-<li><strong>Task 3</strong>: Generate corresponding line plot with faceting show individual data sets in saparate plots.</li>
+<li><strong>Task 3</strong>: Generate corresponding line plot with faceting presenting the individual data sets in saparate plots.</li>
 </ul>
 <p>Structure of <code>iris</code> data set</p>
 <pre><code class="language-r">class(iris)
@@ -2008,7 +2009,7 @@ df_mean &lt;- melt(iris_mean, id.vars=c(&quot;Species&quot;), variable.name = &q
 </code></pre>
 <h4 id="verical-orientation">Verical orientation</h4>
 <pre><code class="language-r">p &lt;- ggplot(df_mean, aes(Samples, Values, fill = Species)) + 
-        geom_bar(position=&quot;dodge&quot;, stat=&quot;identity&quot;)
+            geom_bar(position=&quot;dodge&quot;, stat=&quot;identity&quot;)
 print(p) 
 </code></pre>
 <p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/iris_mean_bar_plot-1.png" width="672" /></p>
@@ -2031,14 +2032,15 @@ print(p)
 </code></pre>
 <h4 id="error-bars-1">Error bars</h4>
 <pre><code class="language-r">p &lt;- ggplot(df_mean, aes(Samples, Values, fill = Species)) + 
-        geom_bar(position=&quot;dodge&quot;, stat=&quot;identity&quot;) + geom_errorbar(limits, position=&quot;dodge&quot;) 
+            geom_bar(position=&quot;dodge&quot;, stat=&quot;identity&quot;) + 
+            geom_errorbar(limits, position=&quot;dodge&quot;) 
 print(p) 
 </code></pre>
 <p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/iris_mean_bar_plot_error-1.png" width="672" /></p>
 <h4 id="mirrored">Mirrored</h4>
 <pre><code class="language-r">df &lt;- data.frame(group = rep(c(&quot;Above&quot;, &quot;Below&quot;), each=10), x = rep(1:10, 2), y = c(runif(10, 0, 1), runif(10, -1, 0)))
 p &lt;- ggplot(df, aes(x=x, y=y, fill=group)) + 
-        geom_bar(stat=&quot;identity&quot;, position=&quot;identity&quot;)
+            geom_bar(stat=&quot;identity&quot;, position=&quot;identity&quot;)
 print(p) 
 </code></pre>
 <p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot2_mirrored_barplot-1.png" width="672" /></p>
@@ -2051,7 +2053,7 @@ p &lt;- ggplot(df_mean, aes(Samples, Values, fill=Species, color=Species)) +
 print(p) 
 </code></pre>
 <p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot2_color1-1.png" width="672" /></p>
-<h4 id="using-standard-colors">Using standard colors</h4>
+<h4 id="using-standard-r-color-theme">Using standard R color theme</h4>
 <pre><code class="language-r">p &lt;- ggplot(df_mean, aes(Samples, Values, fill=Species, color=Species)) + 
             geom_bar(position=&quot;dodge&quot;, stat=&quot;identity&quot;) + geom_errorbar(limits, position=&quot;dodge&quot;) + 
             scale_fill_manual(values=c(&quot;red&quot;, &quot;green3&quot;, &quot;blue&quot;)) + 
@@ -2102,7 +2104,7 @@ print(p)
 </code></pre>
 <p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_melt_data-1.png" width="672" /></p>
 <p>Same data can be represented in box plot as follows</p>
-<pre><code class="language-r">ggplot(df, aes(Samples, Values, fill=Samples)) + geom_boxplot()
+<pre><code class="language-r">ggplot(df, aes(Samples, Values, fill=Samples)) + geom_boxplot() + geom_jitter(color=&quot;darkgrey&quot;)
 </code></pre>
 <h3 id="jitter-plots">Jitter Plots</h3>
 <pre><code class="language-r">p &lt;- ggplot(dsmall, aes(color, price/carat)) + 
@@ -2120,6 +2122,11 @@ print(p)
 print(p)                                                                                                                                                                      
 </code></pre>
 <p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_box_violin-1.png" width="672" /></p>
+<p>Same violin plot as interactive plot generated with <code>ggplotly</code>, where the actual data points
+are shown as well by including <code>geom_jitter()</code>.</p>
+<pre><code class="language-r">p &lt;- ggplot(dsmall, aes(color, price/carat, fill=color)) + geom_violin() + geom_jitter(aes(color=color))
+ggploty(p) 
+</code></pre>
 <h3 id="density-plots-1">Density plots</h3>
 <h4 id="line-coloring">Line coloring</h4>
 <pre><code class="language-r">p &lt;- ggplot(dsmall, aes(carat)) + geom_density(aes(color = color))

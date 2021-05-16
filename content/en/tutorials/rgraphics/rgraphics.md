@@ -735,7 +735,8 @@ print(p)
 
 <img src="/en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_scatter_plot1-1.png" width="672" />
 
-Interactive version with graphics with `plotly`
+Interactive version of above plot can be generated with the `ggplotly` function from
+the `plotly` package.
 
 ``` r
 library(plotly)
@@ -803,7 +804,7 @@ Scatter plots with `ggplot2`
 
 -   **Task 1**: Generate scatter plot for first two columns in `iris` data frame and color dots by its `Species` column.
 -   **Task 2**: Use the `xlim` and `ylim` arguments to set limits on the x- and y-axes so that all data points are restricted to the left bottom quadrant of the plot.
--   **Task 3**: Generate corresponding line plot with faceting show individual data sets in saparate plots.
+-   **Task 3**: Generate corresponding line plot with faceting presenting the individual data sets in saparate plots.
 
 Structure of `iris` data set
 
@@ -870,7 +871,7 @@ limits <- aes(ymax = df_mean[,"Values"] + df_sd[,"Values"], ymin=df_mean[,"Value
 
 ``` r
 p <- ggplot(df_mean, aes(Samples, Values, fill = Species)) + 
-        geom_bar(position="dodge", stat="identity")
+            geom_bar(position="dodge", stat="identity")
 print(p) 
 ```
 
@@ -908,7 +909,8 @@ print(p)
 
 ``` r
 p <- ggplot(df_mean, aes(Samples, Values, fill = Species)) + 
-        geom_bar(position="dodge", stat="identity") + geom_errorbar(limits, position="dodge") 
+            geom_bar(position="dodge", stat="identity") + 
+            geom_errorbar(limits, position="dodge") 
 print(p) 
 ```
 
@@ -919,7 +921,7 @@ print(p)
 ``` r
 df <- data.frame(group = rep(c("Above", "Below"), each=10), x = rep(1:10, 2), y = c(runif(10, 0, 1), runif(10, -1, 0)))
 p <- ggplot(df, aes(x=x, y=y, fill=group)) + 
-        geom_bar(stat="identity", position="identity")
+            geom_bar(stat="identity", position="identity")
 print(p) 
 ```
 
@@ -938,7 +940,7 @@ print(p)
 
 <img src="/en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot2_color1-1.png" width="672" />
 
-#### Using standard colors
+#### Using standard R color theme
 
 ``` r
 p <- ggplot(df_mean, aes(Samples, Values, fill=Species, color=Species)) + 
@@ -1010,7 +1012,7 @@ print(p)
 Same data can be represented in box plot as follows
 
 ``` r
-ggplot(df, aes(Samples, Values, fill=Samples)) + geom_boxplot()
+ggplot(df, aes(Samples, Values, fill=Samples)) + geom_boxplot() + geom_jitter(color="darkgrey")
 ```
 
 ### Jitter Plots
@@ -1040,6 +1042,14 @@ print(p)
 ```
 
 <img src="/en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_box_violin-1.png" width="672" />
+
+Same violin plot as interactive plot generated with `ggplotly`, where the actual data points
+are shown as well by including `geom_jitter()`.
+
+``` r
+p <- ggplot(dsmall, aes(color, price/carat, fill=color)) + geom_violin() + geom_jitter(aes(color=color))
+ggploty(p) 
+```
 
 ### Density plots
 
