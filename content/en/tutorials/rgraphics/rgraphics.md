@@ -1,7 +1,7 @@
 ---
 title: Graphics and Data Visualization in R
 author: "First/last name (first.last@ucr.edu)"
-date: "Last update: 13 May, 2021" 
+date: "Last update: 16 May, 2021" 
 output:
   html_document:
     toc: true
@@ -62,12 +62,13 @@ Source code downloads:    
 -   General
     -   [Graphics Task Page](http://cran.r-project.org/web/views/Graphics.html)
     -   [R Graph Gallery](http://www.r-graph-gallery.com/)
-    -   [R Graphical Manual](http://bm2.genes.nig.ac.jp/RGM2/index.php)
+    -   [R Graphical Manual](https://www.imsbio.co.jp/RGM/R_image_list?page=575&init=true)
     -   [Paul Murrell’s book R (Grid) Graphics](http://www.stat.auckland.ac.nz/~paul/RGraphics/rgraphics.html)
 -   Interactive graphics
-    -   [`rggobi` (GGobi)](http://www.ggobi.org/)
-    -   [`iplots`](http://www.iplots.org/)
+    -   [rggobi (GGobi)](http://www.ggobi.org/)
+    -   [iplots](http://www.iplots.org/)
     -   [Open GL (`rgl`)](http://rgl.neoscientists.org/gallery.shtml)
+    -   [plotly](https://plotly.com/r/)
 
 ### Graphics Environments
 
