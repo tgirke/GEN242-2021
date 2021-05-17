@@ -444,15 +444,20 @@ enable = true
     parent = "Tutorials"
     weight = 212
   [[menu.main]]
+    name = "Project Data (T13)"
+    url = "/assignments/Projects/project_data.md/"
+    parent = "Tutorials"
+    weight = 213
+  [[menu.main]]
     name = "Graphics and Visualization (T14)"
     url = "/tutorials/rgraphics/rgraphics/"
     parent = "Tutorials"
-    weight = 213
+    weight = 214
   [[menu.main]]
     name = "Shiny Apps (T15)"
     url = "/tutorials/shinyapps/shinyapps/"
     parent = "Tutorials"
-    weight = 214
+    weight = 215
 ##
 [[menu.main]]
   name = "Manuals"
