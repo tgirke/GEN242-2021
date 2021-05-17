@@ -505,17 +505,23 @@ print(a)
 print(b, vp=viewport(width=0.3, height=0.3, x=0.8, y=0.8))
 
 
-## ----specgraph_venn, eval=TRUE, message=FALSE---------------------------------
+## ----specgraph_venn, eval=TRUE, message=FALSE, fig.dim=c(5,5), fig.align="center"----
 library(systemPipeR)
 setlist5 <- list(A=sample(letters, 18), B=sample(letters, 16), C=sample(letters, 20), D=sample(letters, 22), E=sample(letters, 18))
 OLlist5 <- overLapper(setlist=setlist5, sep="_", type="vennsets")
 vennPlot(OLlist5, mymain="", mysub="", colmode=2, ccol=c("blue", "red"))
 
 
-## ----specgraph_structure, eval=TRUE-------------------------------------------
+## ----specgraph_structure, eval=TRUE, warning=FALSE, message=FALSE, fig.dim=c(5,5), fig.align="center"----
 library(ChemmineR)
 data(sdfsample)
 plot(sdfsample[1], print=FALSE)
+
+
+## ----pheatmap, eval=TRUE, warning=FALSE, message=FALSE, fig.dim=c(6,6), fig.align="center"----
+library(pheatmap); library("RColorBrewer")
+y <- matrix(rnorm(50), 10, 5, dimnames=list(paste("g", 1:10, sep=""), paste("t", 1:5, sep="")))
+pheatmap(y, color=brewer.pal(9,"Blues"))
 
 
 ## ----ROCR_example, eval=TRUE, warning=FALSE, message=FALSE--------------------

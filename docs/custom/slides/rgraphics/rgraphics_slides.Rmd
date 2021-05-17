@@ -445,6 +445,8 @@ Open a list of all functions available in the lattice package
 library(lattice) 
 library(help=lattice) 
 ```
+<p style='text-align: right;'> __[ Scroll down to continue ]__ </p>
+<br/><br/>
 
 Accessing and changing global parameters:
 
@@ -478,10 +480,18 @@ plot(p2)
 - Graphics with _lattice_ 
 - <div class="white">__Graphics with _ggplot2_ (_ggplotly_) __</div>
 - Specialty Graphics
-- Genome Graphics
+- 
 - References
 
 ## ggplot2 Graphics
+
+Plotting formalized and implemented by the grammar of graphics by Leland Wilkinson and Hadley Wickham [@Wickham2010-nu; @Wilkinson2012-wv; @Wickham2009-aq] 
+
+<center><img title="sphm" src="images/grammar_ggplot2.png" width="500" /></center>
+
+<br/><br/>
+<p style='text-align: right;'> __[ Scroll down to continue ]__ </p>
+<br/><br/>
 
 - What is `ggplot2`?
     - High-level graphics system developed by Hadley Wickham
@@ -1006,9 +1016,19 @@ print(b, vp=viewport(width=0.3, height=0.3, x=0.8, y=0.8))
 
 ## Specialty Graphics
 
+### Spatial Heatmap Diagrams 
+
+Spatial expression data can be visualized with the [`spatialHeatmap`](https://bioconductor.org/packages/release/bioc/vignettes/spatialHeatmap/inst/doc/spatialHeatmap.html) package.
+
+<center><img title="sphm" src="images/spatial_heatmap.jpeg" width="500" /></center>
+
+
+<p style='text-align: right;'> __[ Scroll down to continue ]__ </p>
+<br/><br/>
+
 ### Venn Diagrams 
 
-```{r specgraph_venn, eval=TRUE, message=FALSE}
+```{r specgraph_venn, eval=TRUE, message=FALSE, fig.dim=c(5,5), fig.align="center"}
 library(systemPipeR)
 setlist5 <- list(A=sample(letters, 18), B=sample(letters, 16), C=sample(letters, 20), D=sample(letters, 22), E=sample(letters, 18))
 OLlist5 <- overLapper(setlist=setlist5, sep="_", type="vennsets")
@@ -1019,10 +1039,20 @@ vennPlot(OLlist5, mymain="", mysub="", colmode=2, ccol=c("blue", "red"))
 
 Plots depictions of small molecules with `ChemmineR` package
 
-```{r specgraph_structure, eval=TRUE}
+```{r specgraph_structure, eval=TRUE, warning=FALSE, message=FALSE, fig.dim=c(5,5), fig.align="center"}
 library(ChemmineR)
 data(sdfsample)
 plot(sdfsample[1], print=FALSE)
+```
+
+### Heatmaps
+
+There are many packages for plotting heatmaps in R. The following uses `pheatmap`.
+
+```{r pheatmap, eval=TRUE, warning=FALSE, message=FALSE, fig.dim=c(6,6), fig.align="center"}
+library(pheatmap); library("RColorBrewer")
+y <- matrix(rnorm(50), 10, 5, dimnames=list(paste("g", 1:10, sep=""), paste("t", 1:5, sep="")))
+pheatmap(y, color=brewer.pal(9,"Blues"))
 ```
 
 ### ROC Plots
@@ -1096,6 +1126,8 @@ cophyloplot(tree1, tree2, assoc = association,
 	- The `ggbio` package [@Yin2012-jj] facilitates plotting of complex genome data objects, such as read alignments (SAM/BAM), genomic context/annotation information (gff/txdb), variant calls (VCF/BCF), and more. To easily compare these data sets, it extends the faceting facility of `ggplot2` to genome browser-like tracks.
 	- Most of the core object types for handling genomic data with R/Bioconductor are supported: `GRanges`, `GAlignments`, `VCF`, etc. For more details, see Table 1.1 of the `ggbio` vignette [here](http://www.bioconductor.org/packages/release/bioc/vignettes/ggbio/inst/doc/ggbio.pdf).
     - `ggbio`'s convenience plotting function is `autoplot`. For more customizable plots, one can use the generic `ggplot` function.
+<p style='text-align: right;'> __[ Scroll down to continue ]__ </p>
+<br/><br/>
 	- Apart from the standard `ggplot2` plotting components, `ggbio` defines serval new components useful for genomic data visualization. A detailed list is given in Table 1.2 of the vignette [here](http://www.bioconductor.org/packages/release/bioc/vignettes/ggbio/inst/doc/ggbio.pdf). 
 	- Useful web sites:
 		- [ggbio Bioc vignette](http://bioconductor.org/packages/release/bioc/html/ggbio.html)

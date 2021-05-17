@@ -1,7 +1,7 @@
 ---
 title: Graphics and Data Visualization in R
 author: "First/last name (first.last@ucr.edu)"
-date: "Last update: 16 May, 2021" 
+date: "Last update: 17 May, 2021" 
 output:
   html_document:
     toc: true
@@ -545,6 +545,12 @@ plot(p2)
 <img src="/en/tutorials/rgraphics/rgraphics_files/figure-html/line_plot_lattice-1.png" width="672" />
 
 ## ggplot2 Graphics
+
+Plotting formalized and implemented by the grammar of graphics by Leland Wilkinson and Hadley Wickham (**Wickham2010-nu?**; **Wilkinson2012-wv?**; **Wickham2009-aq?**)
+
+<center>
+<img title="sphm" src="images/grammar_ggplot2.png" width="500" />
+</center>
 
 -   What is `ggplot2`?
     -   High-level graphics system developed by Hadley Wickham
@@ -1157,6 +1163,14 @@ print(b, vp=viewport(width=0.3, height=0.3, x=0.8, y=0.8))
 
 ## Specialty Graphics
 
+### Spatial Heatmap Diagrams
+
+Spatial expression data can be visualized with the [`spatialHeatmap`](https://bioconductor.org/packages/release/bioc/vignettes/spatialHeatmap/inst/doc/spatialHeatmap.html) package.
+
+<center>
+<img title="sphm" src="images/spatial_heatmap.jpeg" width="500" />
+</center>
+
 ### Venn Diagrams
 
 ``` r
@@ -1179,6 +1193,18 @@ plot(sdfsample[1], print=FALSE)
 ```
 
 <img src="/en/tutorials/rgraphics/rgraphics_files/figure-html/specgraph_structure-1.png" width="672" />
+
+### Heatmaps
+
+There are many packages for plotting heatmaps in R. The following uses `pheatmap`.
+
+``` r
+library(pheatmap); library("RColorBrewer")
+y <- matrix(rnorm(50), 10, 5, dimnames=list(paste("g", 1:10, sep=""), paste("t", 1:5, sep="")))
+pheatmap(y, color=brewer.pal(9,"Blues"))
+```
+
+<img src="/en/tutorials/rgraphics/rgraphics_files/figure-html/pheatmap-1.png" width="576" style="display: block; margin: auto;" />
 
 ### ROC Plots
 

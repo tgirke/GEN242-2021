@@ -415,6 +415,10 @@ plot(p2)
 
 ## ggplot2 Graphics
 
+Plotting formalized and implemented by the grammar of graphics by Leland Wilkinson and Hadley Wickham [@Wickham2010-nu; @Wilkinson2012-wv; @Wickham2009-aq] 
+
+<center><img title="sphm" src="images/grammar_ggplot2.png" width="500" /></center>
+
 - What is `ggplot2`?
     - High-level graphics system developed by Hadley Wickham
     - Implements grammar of graphics from [Leland Wilkinson](http://www.amazon.com/Grammar-Graphics-Leland-Wilkinson/dp/0387987746) 
@@ -927,6 +931,13 @@ print(b, vp=viewport(width=0.3, height=0.3, x=0.8, y=0.8))
 
 ## Specialty Graphics
 
+### Spatial Heatmap Diagrams 
+
+Spatial expression data can be visualized with the [`spatialHeatmap`](https://bioconductor.org/packages/release/bioc/vignettes/spatialHeatmap/inst/doc/spatialHeatmap.html) package.
+
+<center><img title="sphm" src="images/spatial_heatmap.jpeg" width="500" /></center>
+
+
 ### Venn Diagrams 
 
 ```{r specgraph_venn, eval=TRUE, message=FALSE}
@@ -944,6 +955,16 @@ Plots depictions of small molecules with `ChemmineR` package
 library(ChemmineR)
 data(sdfsample)
 plot(sdfsample[1], print=FALSE)
+```
+
+### Heatmaps
+
+There are many packages for plotting heatmaps in R. The following uses `pheatmap`.
+
+```{r pheatmap, eval=TRUE, warning=FALSE, message=FALSE, fig.dim=c(6,6), fig.align="center"}
+library(pheatmap); library("RColorBrewer")
+y <- matrix(rnorm(50), 10, 5, dimnames=list(paste("g", 1:10, sep=""), paste("t", 1:5, sep="")))
+pheatmap(y, color=brewer.pal(9,"Blues"))
 ```
 
 ### ROC Plots
