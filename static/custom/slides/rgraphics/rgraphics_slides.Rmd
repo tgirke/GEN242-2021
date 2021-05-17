@@ -1,0 +1,131 @@
+---
+title: "Graphics and Data <br /> Visualization in R"
+author: Thomas Girke
+date: May 20, 2021
+output: 
+  ioslides_presentation:
+    keep_md: yes
+    logo: ./images/ucr_logo.png
+    widescreen: yes
+    df_print: paged
+    smaller: true
+subtitle: "Overview of Graphics Environments in R" 
+bibliography: bibtex.bib
+---
+
+<!---
+- ioslides manual: 
+   https://bookdown.org/yihui/rmarkdown/ioslides-presentation.html
+
+- Compile from command-line
+Rscript -e "rmarkdown::render('rgraphics_slides.Rmd'); knitr::knit('rgraphics_slides.Rmd', tangle=TRUE)"
+-->
+
+<!---
+  Note: following css chunks are required for scrolling support beyond slide boundaries
+-->
+
+<style>
+slides > slide {
+  overflow-x: auto !important;
+  overflow-y: auto !important;
+}
+</style>
+
+```{css, echo=FALSE}
+pre {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+pre[class] {
+  max-height: 300px;
+}
+```
+
+```{css, echo=FALSE}
+.scroll-300 {
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: inherit;
+}
+```
+
+# Outline
+
+- <div class="white">__Overview__</div>
+- Base Graphics
+- Grid Graphics
+- Graphics with _lattice_
+- Graphics with _ggplot2_ (_ggplotly_) 
+- Specialty Graphics
+- Genome Graphics
+- References
+
+## Overview
+
+### Graphics in R
+
+-   Powerful environment for visualizing data
+-   Integrated graphics and statistics infrastructure
+-   Publication quality graphics
+-   Fully programmable
+-   Highly reproducible
+-   Full [LaTeX](http://www.latex-project.org/), [Sweave](http://www.stat.auckland.ac.nz/~dscott/782/Sweave-manual-20060104.pdf), [knitr](http://yihui.name/knitr/) and [R Markdown](http://rmarkdown.rstudio.com/) support.
+-   Many R packages with graphics utilities
+
+### Documentation on Graphics in R
+
+- General 
+    - [Graphics Task Page](http://cran.r-project.org/web/views/Graphics.html)
+    - [R Graph Gallery](http://www.r-graph-gallery.com/)
+    - [R Graphical Manual](https://www.imsbio.co.jp/RGM/R_image_list?page=575&init=true)
+    - [Paul Murrell’s book R (Grid) Graphics](http://www.stat.auckland.ac.nz/~paul/RGraphics/rgraphics.html)
+
+- Interactive graphics
+    - [rggobi (GGobi)](http://www.ggobi.org/)
+    - [iplots](http://www.iplots.org/)
+    - [Open GL (`rgl`)](http://rgl.neoscientists.org/gallery.shtml)
+    - [plotly](https://plotly.com/r/)
+
+### Graphics Environments
+
+- Viewing and savings graphics in R
+    - On-screen graphics
+    - postscript, pdf, svg
+    - jpeg/png/wmf/tiff/...
+
+- Four major graphics environments
+    - Low-level infrastructure
+        - R Base Graphics (low- and high-level)
+        - `grid`: [Manual](http://www.stat.auckland.ac.nz/~paul/grid/grid.html), [Book](http://www.stat.auckland.ac.nz/~paul/RGraphics/rgraphics.html)
+    - High-level infrastructure
+        - `lattice`: [Manual](http://lmdvr.r-forge.r-project.org), [Intro](http://www.his.sunderland.ac.uk/~cs0her/Statistics/UsingLatticeGraphicsInR.htm), [Book](http://www.amazon.com/Lattice-Multivariate-Data-Visualization-Use/dp/0387759689)
+        - `ggplot2`: [Manual](http://docs.ggplot2.org/current/), [Intro](http://www.ling.upenn.edu/~joseff/rstudy/summer2010_ggplot2_intro.html), [Book](http://had.co.nz/ggplot2/book/)
+
+## `ggplot2`
+
+### `ggplot`: scatter plots
+
+#### Basic example
+
+```{r ggplot_scatter_plot1, eval=TRUE}
+library(ggplot2)
+set.seed(1410)  
+dsmall <- as.data.frame(diamonds[sample(nrow(diamonds), 1000), ])
+p <- ggplot(dsmall, aes(carat, price, color=color)) + 
+            geom_point(size=4)
+print(p) 
+```
+
+Interactive version of above plot can be generated with the `ggplotly` function from 
+the `plotly` package.
+
+```{r ggplot_scatter_plot_interactive1, eval=TRUE, message=FALSE}
+library(plotly)
+ggplotly(p)
+```
+
+
+## References 
+
