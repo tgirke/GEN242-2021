@@ -485,13 +485,23 @@ plot(p2)
 
 ## ggplot2 Graphics
 
-Plotting formalized and implemented by the grammar of graphics by Leland Wilkinson and Hadley Wickham [@Wickham2010-nu; @Wilkinson2012-wv; @Wickham2009-aq] 
 
-<center><img title="sphm" src="images/grammar_ggplot2.png" width="500" /></center>
+Plotting formalized and implemented by the grammar of graphics by Leland Wilkinson and Hadley Wickham [@Wickham2010-nu; @Wilkinson2012-wv; @Wickham2009-aq]. The plotting process
+in `ggplot2` is devided into layers including:
 
-<br/><br/>
-<p style='text-align: right;'> __[ Scroll down to continue ]__ </p>
-<br/><br/>
+<div class="columns-2">
+
+1. Theme: styles to be used, such as fonts, backgrounds, etc.
+2. Coordinates: the plotting space
+3. Statistics: data models and summaries
+4. Facets: row and column layout of sub-plots
+5. Geometries: shapes used to represent data (_e.g._ bar or scatter plot)
+6. Aesthetics: the scales onto which the data will be mapped
+7. Data: the actual data to be plotted
+
+<center><img title="sphm" src="images/grammar_ggplot2.png" width="400" /></center>
+
+## `ggplot2` Overview
 
 - What is `ggplot2`?
     - High-level graphics system developed by Hadley Wickham
@@ -504,6 +514,10 @@ Plotting formalized and implemented by the grammar of graphics by Leland Wilkins
     - [Manual](https://ggplot2.tidyverse.org/reference/)
     - [Book](https://ggplot2-book.org/)
     - [Cookbook for R](http://www.cookbook-r.com/Graphs/)
+
+<br/><br/>
+<p style='text-align: right;'> __[ Scroll down to continue ]__ </p>
+<br/><br/>
 
 ### `ggplot2` Usage
 	
@@ -520,7 +534,7 @@ Plotting formalized and implemented by the grammar of graphics by Leland Wilkins
     - `dplyr` (`plyr`)
     - `reshape`
 
-### `qplot` Function
+## Usage with `qplot` Function
 
 The syntax of `qplot` is similar as R's basic `plot` function
 
@@ -534,6 +548,10 @@ The syntax of `qplot` is similar as R's basic `plot` function
 	- `xlab, ylab`: labels for the x- and y-axes
 	- `color`, `shape`, `size`
 	- `...`: many arguments accepted by `plot` function
+
+<br/><br/>
+<p style='text-align: right;'> __[ Scroll down to continue ]__ </p>
+<br/><br/>
 
 ### `qplot`: scatter plot basics
 
@@ -595,7 +613,7 @@ p <- qplot(carat, price, data=dsmall, geom=c("point", "smooth"))
 print(p) # Setting se=FALSE removes error shade
 ```
 
-### `ggplot` Function
+## Usage with `ggplot` Function
 
 - More important than `qplot` to access full functionality of `ggplot2`
 - Main arguments
@@ -610,10 +628,13 @@ print(p) # Setting se=FALSE removes error shade
     - `scales`
 	- `coordinates`
 	- `facet`
+<p style='text-align: right;'> __[ Scroll down to continue ]__ </p>
+<br/><br/>
 - `aes()` mappings can be passed on to all components (`ggplot, geom`, etc.). Effects are global when passed on to `ggplot()` and local for other components.
     - `x, y`
 	- `color`: grouping vector (factor) 
 	- `group`: grouping vector (factor)
+
 
 #### Changing Plotting Themes in `ggplot`
 

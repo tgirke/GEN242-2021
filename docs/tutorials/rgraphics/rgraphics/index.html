@@ -22,12 +22,12 @@
  Overview Graphics in R  Powerful environment for visualizing scientific data Integrated graphics and statistics infrastructure Publication quality graphics Fully programmable Highly reproducible Full LaTeX, Sweave, knitr and R Markdown support." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rgraphics/rgraphics/" />
-<meta property="article:modified_time" content="2021-05-17T14:40:50-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-05-17T14:44:16-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Graphics and Data Visualization in R">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
  Overview Graphics in R  Powerful environment for visualizing scientific data Integrated graphics and statistics infrastructure Publication quality graphics Fully programmable Highly reproducible Full LaTeX, Sweave, knitr and R Markdown support.">
-<meta itemprop="dateModified" content="2021-05-17T14:40:50-07:00" />
-<meta itemprop="wordCount" content="66744">
+<meta itemprop="dateModified" content="2021-05-17T14:44:16-07:00" />
+<meta itemprop="wordCount" content="66805">
 
 
 
@@ -911,7 +911,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.cd1d4442c304c7f168be2ce822a35dd1.json"
+  data-offline-search-index-json-src="../../../offline-search-index.5615dbbb8b514198452a116f58f2732c.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -943,7 +943,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.cd1d4442c304c7f168be2ce822a35dd1.json"
+  data-offline-search-index-json-src="../../../offline-search-index.5615dbbb8b514198452a116f58f2732c.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1769,7 +1769,17 @@ plot(p2)
 </code></pre>
 <p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/line_plot_lattice-1.png" width="672" /></p>
 <h2 id="ggplot2-graphics">ggplot2 Graphics</h2>
-<p>Plotting formalized and implemented by the grammar of graphics by Leland Wilkinson and Hadley Wickham (Wickham 2010, 2009; Wilkinson 2012)</p>
+<p>Plotting formalized and implemented by the grammar of graphics by Leland Wilkinson and Hadley Wickham (Wickham 2010, 2009; Wilkinson 2012). The plotting process
+in <code>ggplot2</code> is devided into layers including:</p>
+<ol>
+<li>Data: the actual data to be plotted</li>
+<li>Aesthetics: the scales onto which the data will be mapped</li>
+<li>Geometries: shapes used to represent data (<em>e.g.</em> bar or scatter plot)</li>
+<li>Facets: row and column layout of sub-plots</li>
+<li>Statistics: data models and summaries</li>
+<li>Coordinates: the plotting space</li>
+<li>Theme: styles to be used, such as fonts, backgrounds, etc.</li>
+</ol>
 <center>
 <img title="sphm" src="../images/grammar_ggplot2.png" width="500" />
 </center>
@@ -2457,7 +2467,7 @@ IGVgoto(sock, 'Chr1:45296-47019')
 <h2 id="references">References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-Wickham2009-aq" class="csl-entry">
-<p>Wickham, Hadley. 2009. <em><span class="nocase">ggplot2: elegant graphics for data analysis</span></em>. Springer New York. <a href="http://had.co.nz/ggplot2/book">http://had.co.nz/ggplot2/book</a>.</p>
+<p>Wickham, Hadley. 2009. “<span class="nocase">ggplot2: elegant graphics for data analysis</span>.” <a href="http://had.co.nz/ggplot2/book">http://had.co.nz/ggplot2/book</a>.</p>
 </div>
 <div id="ref-Wickham2010-nu" class="csl-entry">
 <p>———. 2010. “<span class="nocase">A Layered Grammar of Graphics</span>.” <em>J. Comput. Graph. Stat.</em> 19 (1): 3–28. <a href="https://doi.org/10.1198/jcgs.2009.07098">https://doi.org/10.1198/jcgs.2009.07098</a>.</p>
@@ -2475,7 +2485,7 @@ IGVgoto(sock, 'Chr1:45296-47019')
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-17: <a  href="https://github.com/tgirke/GEN242//commit/615d4776537a78b0f569ed6e4e49b6471d71cb8a">some edits (615d47765)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-17: <a  href="https://github.com/tgirke/GEN242//commit/80d49f9b95683886d2f857201a3bb89c4a05b9b7">some edits (80d49f9b9)</a>
 </div>
 </div>
 

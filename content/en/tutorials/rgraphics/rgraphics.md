@@ -546,7 +546,16 @@ plot(p2)
 
 ## ggplot2 Graphics
 
-Plotting formalized and implemented by the grammar of graphics by Leland Wilkinson and Hadley Wickham (Wickham 2010, 2009; Wilkinson 2012)
+Plotting formalized and implemented by the grammar of graphics by Leland Wilkinson and Hadley Wickham (Wickham 2010, 2009; Wilkinson 2012). The plotting process
+in `ggplot2` is devided into layers including:
+
+1.  Data: the actual data to be plotted
+2.  Aesthetics: the scales onto which the data will be mapped
+3.  Geometries: shapes used to represent data (*e.g.* bar or scatter plot)
+4.  Facets: row and column layout of sub-plots
+5.  Statistics: data models and summaries
+6.  Coordinates: the plotting space
+7.  Theme: styles to be used, such as fonts, backgrounds, etc.
 
 <center>
 <img title="sphm" src="../images/grammar_ggplot2.png" width="500" />
@@ -1478,7 +1487,7 @@ IGVgoto(sock, 'Chr1:45296-47019')
 
 <div id="ref-Wickham2009-aq" class="csl-entry">
 
-Wickham, Hadley. 2009. *<span class="nocase">ggplot2: elegant graphics for data analysis</span>*. Springer New York. <http://had.co.nz/ggplot2/book>.
+Wickham, Hadley. 2009. “<span class="nocase">ggplot2: elegant graphics for data analysis</span>.” <http://had.co.nz/ggplot2/book>.
 
 </div>
 
