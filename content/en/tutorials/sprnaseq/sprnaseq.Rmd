@@ -368,9 +368,9 @@ eByg <- exonsBy(txdb, by=c("gene"))
 bfl <- BamFileList(outpaths, yieldSize=50000, index=character())
 multicoreParam <- MulticoreParam(workers=2); register(multicoreParam); registered()
 counteByg <- bplapply(bfl, function(x) summarizeOverlaps(eByg, x, mode="Union", 
-                                               ignore.strand=TRUE, 
-                                               inter.feature=FALSE, 
-                                               singleEnd=TRUE)) 
+                                                         ignore.strand=TRUE, 
+                                                         inter.feature=FALSE, 
+                                                         singleEnd=TRUE)) 
 countDFeByg <- sapply(seq(along=counteByg), function(x) assays(counteByg[[x]])$counts)
 rownames(countDFeByg) <- names(rowRanges(counteByg[[1]])); colnames(countDFeByg) <- names(bfl)
 rpkmDFeByg <- apply(countDFeByg, 2, function(x) returnRPKM(counts=x, ranges=eByg))

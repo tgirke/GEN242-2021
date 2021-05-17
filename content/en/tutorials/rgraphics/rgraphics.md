@@ -1186,7 +1186,7 @@ Spatial expression data can be visualized with the [`spatialHeatmap`](https://bi
 library(systemPipeR)
 setlist5 <- list(A=sample(letters, 18), B=sample(letters, 16), C=sample(letters, 20), D=sample(letters, 22), E=sample(letters, 18))
 OLlist5 <- overLapper(setlist=setlist5, sep="_", type="vennsets")
-vennPlot(OLlist5, mymain="", mysub="", colmode=2, ccol=c("blue", "red"))
+vennPlot(OLlist5, mymain="", mysub="default", colmode=2, ccol=c("blue", "red"))
 ```
 
 <img src="/en/tutorials/rgraphics/rgraphics_files/figure-html/specgraph_venn-1.png" width="480" style="display: block; margin: auto;" />

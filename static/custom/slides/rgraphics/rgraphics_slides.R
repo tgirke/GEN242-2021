@@ -514,7 +514,7 @@ ggplotly(p)
 library(systemPipeR)
 setlist5 <- list(A=sample(letters, 18), B=sample(letters, 16), C=sample(letters, 20), D=sample(letters, 22), E=sample(letters, 18))
 OLlist5 <- overLapper(setlist=setlist5, sep="_", type="vennsets")
-vennPlot(OLlist5, mymain="", mysub="", colmode=2, ccol=c("blue", "red"))
+vennPlot(OLlist5, mymain="", mysub="default", colmode=2, ccol=c("blue", "red"))
 
 
 ## ----specgraph_structure, eval=TRUE, warning=FALSE, message=FALSE, fig.dim=c(5,5), fig.align="center"----
