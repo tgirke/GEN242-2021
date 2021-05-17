@@ -546,10 +546,10 @@ plot(p2)
 
 ## ggplot2 Graphics
 
-Plotting formalized and implemented by the grammar of graphics by Leland Wilkinson and Hadley Wickham (**Wickham2010-nu?**; **Wilkinson2012-wv?**; **Wickham2009-aq?**)
+Plotting formalized and implemented by the grammar of graphics by Leland Wilkinson and Hadley Wickham (Wickham 2010, 2009; Wilkinson 2012)
 
 <center>
-<img title="sphm" src="images/grammar_ggplot2.png" width="500" />
+<img title="sphm" src="../images/grammar_ggplot2.png" width="500" />
 </center>
 
 -   What is `ggplot2`?
@@ -1168,7 +1168,7 @@ print(b, vp=viewport(width=0.3, height=0.3, x=0.8, y=0.8))
 Spatial expression data can be visualized with the [`spatialHeatmap`](https://bioconductor.org/packages/release/bioc/vignettes/spatialHeatmap/inst/doc/spatialHeatmap.html) package.
 
 <center>
-<img title="sphm" src="images/spatial_heatmap.jpeg" width="500" />
+<img title="sphm" src="../images/spatial_heatmap.jpeg" width="500" />
 </center>
 
 ### Venn Diagrams
@@ -1475,6 +1475,24 @@ IGVgoto(sock, 'Chr1:45296-47019')
 ## References
 
 <div id="refs" class="references csl-bib-body hanging-indent">
+
+<div id="ref-Wickham2009-aq" class="csl-entry">
+
+Wickham, Hadley. 2009. *<span class="nocase">ggplot2: elegant graphics for data analysis</span>*. Springer New York. <http://had.co.nz/ggplot2/book>.
+
+</div>
+
+<div id="ref-Wickham2010-nu" class="csl-entry">
+
+———. 2010. “<span class="nocase">A Layered Grammar of Graphics</span>.” *J. Comput. Graph. Stat.* 19 (1): 3–28. <https://doi.org/10.1198/jcgs.2009.07098>.
+
+</div>
+
+<div id="ref-Wilkinson2012-wv" class="csl-entry">
+
+Wilkinson, Leland. 2012. “<span class="nocase">The Grammar of Graphics</span>.” In *<span class="nocase">Handbook of Computational Statistics: Concepts and Methods</span>*, edited by James E Gentle, Wolfgang Karl Härdle, and Yuichi Mori, 375–414. Berlin, Heidelberg: Springer Berlin Heidelberg. [https://doi.org/10.1007/978-3-642-21551-3\\\_13](https://doi.org/10.1007/978-3-642-21551-3\_13).
+
+</div>
 
 <div id="ref-Yin2012-jj" class="csl-entry">
 
