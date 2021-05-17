@@ -1180,7 +1180,7 @@ OLlist5 <- overLapper(setlist=setlist5, sep="_", type="vennsets")
 vennPlot(OLlist5, mymain="", mysub="", colmode=2, ccol=c("blue", "red"))
 ```
 
-<img src="/en/tutorials/rgraphics/rgraphics_files/figure-html/specgraph_venn-1.png" width="672" />
+<img src="/en/tutorials/rgraphics/rgraphics_files/figure-html/specgraph_venn-1.png" width="480" style="display: block; margin: auto;" />
 
 ### Compound Structures
 
