@@ -698,7 +698,7 @@ print(p)
 Interactive version of above plot can be generated with the `ggplotly` function from 
 the `plotly` package.
 
-```{r ggplot_scatter_plot_interactive1, eval=TRUE}
+```{r ggplot_scatter_plot_interactive1, eval=TRUE, warning=FALSE, message=FALSE, fig.dim=c(5,5), fig.align="center"}
 library(plotly)
 ggplotly(p)
 ```
@@ -942,7 +942,7 @@ print(p)
 Same violin plot as interactive plot generated with `ggplotly`, where the actual data points 
 are shown as well by including `geom_jitter()`. 
 
-```{r ggplot_box_plot2_jitter, eval=TRUE}
+```{r ggplot_box_plot2_jitter, eval=TRUE, warning=FALSE, message=FALSE}
 p <- ggplot(dsmall, aes(color, price/carat, fill=color)) + geom_violin() + geom_jitter(aes(color=color))
 ggplotly(p) 
 ```
@@ -1022,6 +1022,16 @@ grid.arrange(a, b, c, nrow = 2, ncol=2)
 library(grid)
 print(a)
 print(b, vp=viewport(width=0.3, height=0.3, x=0.8, y=0.8))
+```
+
+## Interactive Graphics with `plotly`
+
+Many graphics generated with `ggplot` can be rendered into interactive plots using `plotly::ggplotly()`. Note,
+interactive graphics can be embedded into HTML pages and viewed in a browser.
+
+```{r ggplot_box_plotly_jitter, eval=TRUE, warning=FALSE, message=FALSE, fig.dim=c(4,4), fig.align="center"}
+p <- ggplot(dsmall, aes(color, price/carat, fill=color)) + geom_violin() + geom_jitter(aes(color=color))
+ggplotly(p) 
 ```
 
 # Outline

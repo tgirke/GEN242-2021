@@ -277,7 +277,7 @@ p <- ggplot(dsmall, aes(carat, price, color=color)) +
 print(p) 
 
 
-## ----ggplot_scatter_plot_interactive1, eval=TRUE------------------------------
+## ----ggplot_scatter_plot_interactive1, eval=TRUE, warning=FALSE, message=FALSE, fig.dim=c(5,5), fig.align="center"----
 library(plotly)
 ggplotly(p)
 
@@ -443,7 +443,7 @@ p <- ggplot(dsmall, aes(color, price/carat, fill=color)) + geom_violin()
 print(p)                                                                                                                                                                      
 
 
-## ----ggplot_box_plot2_jitter, eval=TRUE---------------------------------------
+## ----ggplot_box_plot2_jitter, eval=TRUE, warning=FALSE, message=FALSE---------
 p <- ggplot(dsmall, aes(color, price/carat, fill=color)) + geom_violin() + geom_jitter(aes(color=color))
 ggplotly(p) 
 
@@ -503,6 +503,11 @@ grid.arrange(a, b, c, nrow = 2, ncol=2)
 library(grid)
 print(a)
 print(b, vp=viewport(width=0.3, height=0.3, x=0.8, y=0.8))
+
+
+## ----ggplot_box_plotly_jitter, eval=TRUE, warning=FALSE, message=FALSE, fig.dim=c(4,4), fig.align="center"----
+p <- ggplot(dsmall, aes(color, price/carat, fill=color)) + geom_violin() + geom_jitter(aes(color=color))
+ggplotly(p) 
 
 
 ## ----specgraph_venn, eval=TRUE, message=FALSE, fig.dim=c(5,5), fig.align="center"----
