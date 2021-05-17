@@ -445,7 +445,7 @@ enable = true
     weight = 212
   [[menu.main]]
     name = "Project Data (T13)"
-    url = "/assignments/Projects/project_data.md/"
+    url = "/assignments/Projects/project_data/"
     parent = "Tutorials"
     weight = 213
   [[menu.main]]
