@@ -29,7 +29,7 @@ Background and objectives This report describes the analysis of several ChIP-Seq
  Introduction Users want to provide here background information about the design of their ChIP-Seq project.
 Background and objectives This report describes the analysis of several ChIP-Seq experiments studying the DNA binding patterns of the transcriptions factors … from organism ….">
 <meta itemprop="dateModified" content="2021-05-12T16:13:42-07:00" />
-<meta itemprop="wordCount" content="3955">
+<meta itemprop="wordCount" content="3973">
 
 
 
@@ -914,7 +914,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.9fad46058f9010420ce410816e16d052.json"
+  data-offline-search-index-json-src="../../../offline-search-index.f8942acf8934a08a0aa96166894254ea.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -946,7 +946,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.9fad46058f9010420ce410816e16d052.json"
+  data-offline-search-index-json-src="../../../offline-search-index.f8942acf8934a08a0aa96166894254ea.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1589,7 +1589,8 @@ with a path specified under <code>urlfile</code> in the <code>results</code> dir
 <p>Reads overlapping with annotation ranges of interest are counted for
 each sample using the <code>summarizeOverlaps</code> function (Lawrence et al. 2013). The read counting is
 preformed for exonic gene regions in a non-strand-specific manner while
-ignoring overlaps among different genes. Subsequently, the expression
+ignoring overlaps among different genes. If the corresponding bam files were generated from
+paired end reads, then <code>singleEnd</code> should be set to <code>FALSE</code>. Subsequently, the expression
 count values are normalized by <em>reads per kp per million mapped reads</em>
 (RPKM). The raw read count table (<code>countDFeByg.xls</code>) and the corresponding
 RPKM table (<code>rpkmDFeByg.xls</code>) are written to separate files in the directory of this project. Parallelization is achieved with the <code>BiocParallel</code> package, here using 8 CPU cores.</p>

@@ -1,7 +1,7 @@
 ---
 title: "RNA-Seq Workflow Template" 
 author: "Author: Daniela Cassol, Le Zhang and Thomas Girke"
-date: "Last update: 12 May, 2021" 
+date: "Last update: 17 May, 2021" 
 output:
   BiocStyle::html_document:
     toc_float: true
@@ -440,7 +440,8 @@ symLink2bam(sysargs = args, htmldir = c("~/.html/", "somedir/"),
 Reads overlapping with annotation ranges of interest are counted for
 each sample using the `summarizeOverlaps` function (Lawrence et al. 2013). The read counting is
 preformed for exonic gene regions in a non-strand-specific manner while
-ignoring overlaps among different genes. Subsequently, the expression
+ignoring overlaps among different genes. If the corresponding bam files were generated from
+paired end reads, then `singleEnd` should be set to `FALSE`. Subsequently, the expression
 count values are normalized by *reads per kp per million mapped reads*
 (RPKM). The raw read count table (`countDFeByg.xls`) and the corresponding
 RPKM table (`rpkmDFeByg.xls`) are written to separate files in the directory of this project. Parallelization is achieved with the `BiocParallel` package, here using 8 CPU cores.
