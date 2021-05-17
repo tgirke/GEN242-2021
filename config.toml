@@ -444,15 +444,15 @@ enable = true
     parent = "Tutorials"
     weight = 212
   [[menu.main]]
-    name = "Shiny Apps (T13)"
-    url = "/tutorials/shinyapps/shinyapps/"
-    parent = "Tutorials"
-    weight = 212
-  [[menu.main]]
     name = "Graphics and Visualization (T14)"
     url = "/tutorials/rgraphics/rgraphics/"
     parent = "Tutorials"
     weight = 213
+  [[menu.main]]
+    name = "Shiny Apps (T15)"
+    url = "/tutorials/shinyapps/shinyapps/"
+    parent = "Tutorials"
+    weight = 214
 ##
 [[menu.main]]
   name = "Manuals"

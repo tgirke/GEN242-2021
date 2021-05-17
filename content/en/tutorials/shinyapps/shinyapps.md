@@ -1,7 +1,7 @@
 ---
 title: Shiny Apps
 author: "First/last name (first.last@ucr.edu)"
-date: "Last update: 15 May, 2021" 
+date: "Last update: 17 May, 2021" 
 output:
   html_document:
     toc: true
@@ -15,7 +15,7 @@ output:
 
 fontsize: 14pt
 bibliography: bibtex.bib
-weight: 13
+weight: 15
 type: docs
 ---
 
