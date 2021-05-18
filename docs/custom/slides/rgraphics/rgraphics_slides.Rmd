@@ -53,7 +53,8 @@ pre[class] {
 
 ## How to navigate this slide show
 
-This slide show contains some scrollable slides. This is indicated by the tag __'[ Scroll down to continue ]'__ at the bottom of each scollable slide.
++ This slide show contains some scrollable slides. 
++ Which slides are scrollable is indicated by tag at the bottom of the corresponding slides stating: __'[ Scroll down to continue ]'__ 
 
 # Outline
 
