@@ -72,8 +72,9 @@ shinyApp(ui = ui, server = server)
 
 ## Get started
 
-It is recommended to develop Shiny apps from Rstudio. It has powerful built-in 
-integration that allows you to build, run, debug, and deploy easily. 
+The following introduces basic development routines for Shiny apps using the RStudio IDE. Most other development 
+for R (IDEs) can be used for this as well. For beginners the interactive test and debugging functionalities of 
+RStudio simplify the development process of Shiny apps. 
 
 
 To start, open an Rscript in Rstudio and load the `shiny` library
@@ -82,14 +83,13 @@ library(shiny)
 ```
 
 
-In the next line use the code snippet to create your first Shiny app basic structure. 
-Type `shiny` in the script and it should give you the option to create the app by 
-snippet. If you do not see the pop-up, press `Ctrl+space` to open it (use `command` instead of `Ctrl` on Mac).
-You should see this:
+Below the most basic code structure for creating Shiny apps is shown. 
+When typing `shiny` in the code editor, the code/function suggestion dialog allows to select the corresponding code snippet. 
+If the dialog does not show up automatically, one can press `Ctrl + space` to open it (on Mac use `command` instead of `Ctrl`).
 
 ![shiny_snippet](../shiny_snippet.png)
 
-When you select it, it should add all the code required for a shiny App to your script.
+After selecting `shinyapp` in the dialog, the following code snippet will be inserted in the code editor.
 ```{r eval=FALSE}
 library(shiny)
 

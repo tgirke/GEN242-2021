@@ -22,12 +22,12 @@
  What is Shiny? Shiny is an R-based environment for building interactive web applications for data analysis and exploration (“Shiny - Tutorial,” n.d.). One can create a beautiful web app in Shiny with only knowledge of basic R. Shiny apps can be deployed on local computers or web servers including custom and cloud-based servers (e." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/shinyapps/shinyapps/" />
-<meta property="article:modified_time" content="2021-05-17T18:43:54-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-05-17T18:47:55-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Shiny Apps">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: .Rmd .R
  What is Shiny? Shiny is an R-based environment for building interactive web applications for data analysis and exploration (“Shiny - Tutorial,” n.d.). One can create a beautiful web app in Shiny with only knowledge of basic R. Shiny apps can be deployed on local computers or web servers including custom and cloud-based servers (e.">
-<meta itemprop="dateModified" content="2021-05-17T18:43:54-07:00" />
-<meta itemprop="wordCount" content="2666">
+<meta itemprop="dateModified" content="2021-05-17T18:47:55-07:00" />
+<meta itemprop="wordCount" content="2681">
 
 
 
@@ -919,7 +919,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.f2c1c6988395e2ab16e1b4c6d0121a38.json"
+  data-offline-search-index-json-src="../../../offline-search-index.cc62035d73541caf8037c3aeb22e3847.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -951,7 +951,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.f2c1c6988395e2ab16e1b4c6d0121a38.json"
+  data-offline-search-index-json-src="../../../offline-search-index.cc62035d73541caf8037c3aeb22e3847.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1272,17 +1272,17 @@ AWS, GCP, <a href="http://www.shinyapps.io/">shinyapp.io</a> service). The basic
 <pre><code class="language-r">shinyApp(ui = ui, server = server)
 </code></pre>
 <h2 id="get-started">Get started</h2>
-<p>It is recommended to develop Shiny apps from Rstudio. It has powerful built-in
-integration that allows you to build, run, debug, and deploy easily.</p>
+<p>The following introduces basic development routines for Shiny apps using the RStudio IDE. Most other development
+for R (IDEs) can be used for this as well. For beginners the interactive test and debugging functionalities of
+RStudio simplify the development process of Shiny apps.</p>
 <p>To start, open an Rscript in Rstudio and load the <code>shiny</code> library</p>
 <pre><code class="language-r">library(shiny)
 </code></pre>
-<p>In the next line use the code snippet to create your first Shiny app basic structure.
-Type <code>shiny</code> in the script and it should give you the option to create the app by
-snippet. If you do not see the pop-up, press <code>Ctrl+space</code> to open it (use <code>command</code> instead of <code>Ctrl</code> on Mac).
-You should see this:</p>
+<p>Below the most basic code structure for creating Shiny apps is shown.
+When typing <code>shiny</code> in the code editor, the code/function suggestion dialog allows to select the corresponding code snippet.
+If the dialog does not show up automatically, one can press <code>Ctrl + space</code> to open it (on Mac use <code>command</code> instead of <code>Ctrl</code>).</p>
 <p><img src="../shiny_snippet.png" alt="shiny\_snippet"></p>
-<p>When you select it, it should add all the code required for a shiny App to your script.</p>
+<p>After selecting <code>shinyapp</code> in the dialog, the following code snippet will be inserted in the code editor.</p>
 <pre><code class="language-r">library(shiny)
 
 ui &lt;- fluidPage(
@@ -1827,7 +1827,7 @@ DEG section in UI and server files.</li>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-17: <a  href="https://github.com/tgirke/GEN242//commit/1991880fe4a57d450bb6a7acc1dd9fdafdb5dd68">Add files via upload (1991880fe)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-17: <a  href="https://github.com/tgirke/GEN242//commit/5abc35918659fb416229ae0bb9a3e18ecac7318f">some edits (5abc35918)</a>
 </div>
 </div>
 
