@@ -1,6 +1,6 @@
 ---
-title: "Shiny Apps"
-linkTitle: "Shiny Apps"
+title: "R packages, tidyverse and dplyr"
+linkTitle: "R Packages and dplyr"
 description: >
 type: docs
 weight: 119

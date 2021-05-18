@@ -1,6 +1,6 @@
 ---
-title: "Graphics and Data Visualization in R"
-linkTitle: "R Graphics"
+title: "Project Data Management"
+linkTitle: "Project Data"
 description: >
 type: docs
 weight: 117
@@ -8,12 +8,9 @@ weight: 117
 
 <br></br>
 
-[ <a href="https://girke.bioinformatics.ucr.edu/GEN242/custom/slides/rgraphics/rgraphics_slides.html" target="_blank">View Slides in Separate Browser Tab</a> ]
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vS_fF9isDeq7mOkXkhrQeq0v3myOYK575KDw6udDKICWqd1_F85XqrG4STXY2YMurkMx4nSaRwIIsDf/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
-<div style="overflow:auto;">
-<iframe src="https://girke.bioinformatics.ucr.edu/GEN242/custom/slides/rgraphics/rgraphics_slides.html" scrolling="yes", frameborder="3px solid black" width="1152" height="682" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="width: 1100px"></iframe>
-</div>
-
+[ [Download](https://docs.google.com/presentation/d/1Wfcxu8OHyN-5HIXgMteQ8cQa9KhBe4jatfU3w3-IF8Q/edit?usp=sharing) ]
 
 
 

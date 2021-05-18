@@ -354,30 +354,35 @@ enable = true
     parent = "Slides"
     weight = 116
   [[menu.main]]
-    name = "Graphics in R (S17)"
+    name = "Project Data (S17)"
     url = "/slides/slides_17/"
     parent = "Slides"
     weight = 117
   [[menu.main]]
-    name = "R Packages and dplyr (S18)"
+    name = "Graphics in R (S18)"
     url = "/slides/slides_18/"
     parent = "Slides"
     weight = 118
   [[menu.main]]
-    name = "Shiny Apps (S19)"
+    name = "R Packages and dplyr (S19)"
     url = "/slides/slides_19/"
     parent = "Slides"
     weight = 119
   [[menu.main]]
-    name = "Profile HMMs (S20)"
+    name = "Shiny Apps (S20)"
     url = "/slides/slides_20/"
     parent = "Slides"
     weight = 120
   [[menu.main]]
-    name = "Sequence Assembly (S21)"
+    name = "Profile HMMs (S21)"
     url = "/slides/slides_21/"
     parent = "Slides"
     weight = 121
+  [[menu.main]]
+    name = "Sequence Assembly (S22)"
+    url = "/slides/slides_22/"
+    parent = "Slides"
+    weight = 122
 ##
 [[menu.main]]
   name = "Tutorials"

@@ -1,9 +1,9 @@
 ---
-title: "Profile HMMs"
-linkTitle: "Profile HMMs"
+title: "Assembly of Genomes and Transcriptomes"
+linkTitle: "Sequence Assembly"
 description: >
 type: docs
-weight: 121
+weight: 122
 ---
 
 <br></br>

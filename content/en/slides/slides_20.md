@@ -1,6 +1,6 @@
 ---
-title: "Profile HMMs"
-linkTitle: "Profile HMMs"
+title: "Shiny Apps"
+linkTitle: "Shiny Apps"
 description: >
 type: docs
 weight: 120
