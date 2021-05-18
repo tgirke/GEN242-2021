@@ -53,12 +53,19 @@ pre[class] {
 
 ## How to Navigate this Slide Show?
 
-<br/><br/>
+<br/>
 
-- This slideshow contains scrollable slides. 
+- This __ioslides__ presentation contains scrollable slides. 
 - Which slides are scrollable, is indicated by a tag at the bottom of the corresponding slides stating: 
 
 <p style='text-align: center;'> __[ Scroll down to continue ]__ </p>
+
+- The following single character keyboard shortcuts enable alternate display modes of __ioslides__:
+    - `f`: enable fullscreen mode
+    - `w`: toggle widescreen mode
+    - `o`: enable overview mode
+    - `h`: enable code highlight mode
+- Pressing Esc exits all of these modes. Additional details can be found [here](https://bookdown.org/yihui/rmarkdown/ioslides-presentation.html).
 
 # Outline
 
