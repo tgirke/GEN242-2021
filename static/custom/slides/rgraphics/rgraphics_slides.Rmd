@@ -51,6 +51,10 @@ pre[class] {
 }
 ```
 
+## How to navigate this slide show
+
+This slide show contains some scrollable slides. This is indicated by the tag __'[ Scroll down to continue ]'__ at the bottom of each scollable slide.
+
 # Outline
 
 - <div class="white">__Overview__</div>
@@ -515,11 +519,8 @@ in `ggplot2` is devided into layers including:
     - [Book](https://ggplot2-book.org/)
     - [Cookbook for R](http://www.cookbook-r.com/Graphs/)
 
-<br/><br/>
-<p style='text-align: right;'> __[ Scroll down to continue ]__ </p>
-<br/><br/>
 
-### `ggplot2` Usage
+## `ggplot2` Usage
 	
 - `ggplot` function accepts two main arguments
     - Data set to be plotted 
