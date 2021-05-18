@@ -11,7 +11,7 @@ weight: 401
 ## Introduction
 
 During the tutorial sessions of this class all students will perform the basic
-data analysis of at least two NGS Workflows including RNA-Seq, ChIP-Seq and ATAC-Seq.
+data analysis of at least two NGS Workflows including RNA-Seq and ChIP-Seq (or ATAC-Seq).
 In addition, every student will work on a Challenge
 Project addressing a specific data analysis task within one of the general NGS
 Workflows. Students will also present a scientific paper closely related to
