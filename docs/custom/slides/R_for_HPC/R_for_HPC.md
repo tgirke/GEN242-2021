@@ -51,6 +51,15 @@ pre[class] {
 }
 </style>
 
+## How to Navigate this Slide Show?
+
+<br/><br/>
++ This slideshow contains scrollable slides. 
+<br/><br/>
++ Which slides are scrollable, is indicated by a tag at the bottom of the corresponding slides stating: 
+<br/><br/>
+<p style='text-align: center;'> __[ Scroll down to continue ]__ </p>
+
 # Outline
 
 - <div class="white">__Background__</div>
