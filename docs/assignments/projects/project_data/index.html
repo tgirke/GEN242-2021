@@ -27,7 +27,7 @@
 <meta itemprop="description" content="Shared big data space on HPCC All larger data sets of the coure projects will be organized in a big data space under /bigdata/gen242/&lt;user_name&gt;. Within this space, each student will read and write data to a subdirectory named after their project:
  /bigdata/gen242/&lt;user_name&gt;/projdata  Within each projdata directory all input files of a workflow (e.g. FASTQ) will be saved to a data directory and all output files will be written to a results directory.">
 <meta itemprop="dateModified" content="2021-05-04T11:18:31-07:00" />
-<meta itemprop="wordCount" content="809">
+<meta itemprop="wordCount" content="808">
 
 
 
@@ -919,7 +919,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.6f9b532ed8a461977067366f67eb7507.json"
+  data-offline-search-index-json-src="../../../offline-search-index.85014af3d1ba31cdc3c0140c8cce3371.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -951,7 +951,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.6f9b532ed8a461977067366f67eb7507.json"
+  data-offline-search-index-json-src="../../../offline-search-index.85014af3d1ba31cdc3c0140c8cce3371.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1366,7 +1366,7 @@ directories should look like this:</p>
 <li><code>/bigdata/gen242/&lt;user_name&gt;/projdata/results</code></li>
 </ul>
 <h2 id="github-repositories-for-projects">GitHub repositories for projects</h2>
-<p>Students will work on the course projects within GitHub repositories, one for each course project.
+<p>Students will work on their course projects within GitHub repositories, one for each student.
 These project repositories are private and have been shared with each student via GitHub Classroom.
 To populate a course project with an initial project workflow, please follow the instructions
 given.</p>
@@ -1385,7 +1385,7 @@ ln -s /bigdata/gen242/&lt;user_name&gt;/projdata/results results
 <li>Download the FASTQ files of your project with <code>getSRAfastq</code> (see below) to the <code>data</code> directory of your project, here &lsquo;/bigdata/gen242/&lt;user_name&gt;/projdata/data&rsquo;.</li>
 <li>Generate a proper <code>targets</code> file for your project where the first column(s) point(s) to the downloaded FASTQ files. In addition, provide sample names matching the experimental design (columns: <code>SampleNames</code> and <code>Factor</code>).</li>
 <li>Inspect and adjust the <code>.param</code> files you will be using. For instance, make sure the software modules you are loading and the path to the reference genome are correct.</li>
-<li>Every time you start working on your project you <code>cd</code> into the directory of the repository and then run <code>git pull</code> to get the latest change. When you are done, you commit and push your changes back to GitHub with <code>git commit -am &quot;some edits&quot;; git push -u origin master</code>.</li>
+<li>Every time you start working on your project you <code>cd</code> into the directory of the repository and then run <code>git pull</code> to get the latest change. When you are done, you commit and push your changes back to GitHub with <code>git commit -am &quot;some edits&quot;; git push -u origin main</code>.</li>
 </ol>
 <h2 id="download-of-project-data">Download of project data</h2>
 <p>Open R from within the GitHub respository of your project and then run the following code section, but only those that apply to your project.</p>

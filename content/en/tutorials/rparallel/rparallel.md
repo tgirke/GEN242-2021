@@ -1,7 +1,7 @@
 ---
 title: "Parallel Evaluations in R"
 author: Thomas Girke
-date: "Last update: 02 May, 2021" 
+date: "Last update: 17 May, 2021" 
 output:
   html_document:
     toc: true
@@ -71,7 +71,7 @@ sbatch script_name.sh
     [here](https://hpcc.ucr.edu/manuals_linux-cluster_parallelR.html)
 -   To simplify the evaluation of the R code on the following slides, the
     corresponding text version is available for download from
-    [here](https://raw.githubusercontent.com/ucr-hpcc/ucr-hpcc.github.io/master/presentations/2020-12-18_Workshop/R_for_HPC/demo_files/R_for_HPC_demo.R).
+    [here](https://raw.githubusercontent.com/tgirke/GEN242/main/static/custom/slides/R_for_HPC/demo_files/R_for_HPC_demo.R).
 
 ## Hands-on Demo of `batchtools`
 

@@ -516,7 +516,7 @@ directories should look like this:&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;/bigdata/gen242/&amp;lt;user_name&amp;gt;/projdata/results&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;github-repositories-for-projects&#34;&gt;GitHub repositories for projects&lt;/h2&gt;
-&lt;p&gt;Students will work on the course projects within GitHub repositories, one for each course project.
+&lt;p&gt;Students will work on their course projects within GitHub repositories, one for each student.
 These project repositories are private and have been shared with each student via GitHub Classroom.
 To populate a course project with an initial project workflow, please follow the instructions
 given.&lt;/p&gt;
@@ -535,7 +535,7 @@ ln -s /bigdata/gen242/&amp;lt;user_name&amp;gt;/projdata/results results
 &lt;li&gt;Download the FASTQ files of your project with &lt;code&gt;getSRAfastq&lt;/code&gt; (see below) to the &lt;code&gt;data&lt;/code&gt; directory of your project, here &amp;lsquo;/bigdata/gen242/&amp;lt;user_name&amp;gt;/projdata/data&amp;rsquo;.&lt;/li&gt;
 &lt;li&gt;Generate a proper &lt;code&gt;targets&lt;/code&gt; file for your project where the first column(s) point(s) to the downloaded FASTQ files. In addition, provide sample names matching the experimental design (columns: &lt;code&gt;SampleNames&lt;/code&gt; and &lt;code&gt;Factor&lt;/code&gt;).&lt;/li&gt;
 &lt;li&gt;Inspect and adjust the &lt;code&gt;.param&lt;/code&gt; files you will be using. For instance, make sure the software modules you are loading and the path to the reference genome are correct.&lt;/li&gt;
-&lt;li&gt;Every time you start working on your project you &lt;code&gt;cd&lt;/code&gt; into the directory of the repository and then run &lt;code&gt;git pull&lt;/code&gt; to get the latest change. When you are done, you commit and push your changes back to GitHub with &lt;code&gt;git commit -am &amp;quot;some edits&amp;quot;; git push -u origin master&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Every time you start working on your project you &lt;code&gt;cd&lt;/code&gt; into the directory of the repository and then run &lt;code&gt;git pull&lt;/code&gt; to get the latest change. When you are done, you commit and push your changes back to GitHub with &lt;code&gt;git commit -am &amp;quot;some edits&amp;quot;; git push -u origin main&lt;/code&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;download-of-project-data&#34;&gt;Download of project data&lt;/h2&gt;
 &lt;p&gt;Open R from within the GitHub respository of your project and then run the following code section, but only those that apply to your project.&lt;/p&gt;

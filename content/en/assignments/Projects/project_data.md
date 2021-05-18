@@ -28,7 +28,7 @@ directories should look like this:
 
 ## GitHub repositories for projects
 
-Students will work on the course projects within GitHub repositories, one for each course project.
+Students will work on their course projects within GitHub repositories, one for each student.
 These project repositories are private and have been shared with each student via GitHub Classroom.
 To populate a course project with an initial project workflow, please follow the instructions
 given.
@@ -48,7 +48,7 @@ of your course project. For instance, the project RNA-Seq should create the symb
 5. Download the FASTQ files of your project with `getSRAfastq` (see below) to the `data` directory of your project, here '/bigdata/gen242/<user_name>/projdata/data'. 
 6. Generate a proper `targets` file for your project where the first column(s) point(s) to the downloaded FASTQ files. In addition, provide sample names matching the experimental design (columns: `SampleNames` and `Factor`).
 7. Inspect and adjust the `.param` files you will be using. For instance, make sure the software modules you are loading and the path to the reference genome are correct. 
-8. Every time you start working on your project you `cd` into the directory of the repository and then run `git pull` to get the latest change. When you are done, you commit and push your changes back to GitHub with `git commit -am "some edits"; git push -u origin master`.
+8. Every time you start working on your project you `cd` into the directory of the repository and then run `git pull` to get the latest change. When you are done, you commit and push your changes back to GitHub with `git commit -am "some edits"; git push -u origin main`.
 
 ## Download of project data
 
