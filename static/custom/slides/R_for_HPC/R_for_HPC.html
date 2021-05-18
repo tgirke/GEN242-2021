@@ -625,6 +625,7 @@ read_tsv(&quot;iris.txt&quot;) %&gt;% # Import with read_tbv from readr package
 <li>For an overview of parallelization packages available for R see <a href='https://cran.r-project.org/web/views/HighPerformanceComputing.html' title=''>here</a></li>
 <li>One of the most comprehensive parallel computing environments for R is <a href='https://mllg.github.io/batchtools/articles/batchtools.html#migration' title=''><code>batchtools</code></a>. Older versions of this package were released under the name <code>BatchJobs</code> <span class="cite">(Bischl et al. 2015)</span>.</li>
 <li><code>batchtools</code> supports both multi-core and multi-node computations with and without schedulers. By making use of cluster template files, most schedulers and queueing systems are supported (<em>e.g.</em> Torque, Sun Grid Engine, Slurm).</li>
+<li>The <code>BiocParallel</code> package (see <a href='https://bioconductor.org/packages/release/bioc/html/BiocParallel.html' title=''>here</a>) provides similar functionalities as <code>batchtools</code>, but is tailored to use Bioconductor objects.</li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>Reminder: Traditional Job Submission for R</h2></hgroup><article  id="reminder-traditional-job-submission-for-r" class="smaller ">
@@ -654,7 +655,6 @@ Rscript my_script.R</pre>
 
 <ul>
 <li>The following introduces the usage of <code>batchtools</code> for a computer cluster using SLURM as scheduler (workload manager). SLURM is the scheduler used by the HPCC at UCR.</li>
-<li>The <code>BiocParallel</code> package (see <a href='https://bioconductor.org/packages/release/bioc/html/BiocParallel.html' title=''>here</a>) provides similar functionalities as <code>batchtools</code>, but is tailored to use Bioconductor objects.</li>
 <li>Similar instructions are provided this tutorial section covering <code>batchtools</code> <a href='https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rparallel/rparallel/' title=''>here</a></li>
 <li>To simplify the evaluation of the R code on the following slides, the corresponding text version is available for download from <a href='https://raw.githubusercontent.com/tgirke/GEN242/main/static/custom/slides/R_for_HPC/demo_files/R_for_HPC_demo.R' title=''>here</a>.</li>
 </ul>

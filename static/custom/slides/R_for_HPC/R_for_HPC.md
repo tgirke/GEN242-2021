@@ -415,6 +415,8 @@ module list
   [`batchtools`](https://mllg.github.io/batchtools/articles/batchtools.html#migration). Older versions of this package were released under the name `BatchJobs` [@Bischl2015-rf]. 
 - `batchtools` supports both multi-core and multi-node computations with and without schedulers. By making use of
   cluster template files, most schedulers and queueing systems are supported (_e.g._ Torque, Sun Grid Engine, Slurm). 
+- The `BiocParallel` package (see [here](https://bioconductor.org/packages/release/bioc/html/BiocParallel.html)) 
+  provides similar functionalities as `batchtools`, but is tailored to use Bioconductor objects.
 
 ## Reminder: Traditional Job Submission for R 
 
@@ -451,8 +453,6 @@ sbatch script_name.sh
 - The following introduces the usage of `batchtools` for a computer cluster
   using SLURM as scheduler (workload manager). SLURM is the scheduler used by
   the HPCC at UCR.
-- The `BiocParallel` package (see [here](https://bioconductor.org/packages/release/bioc/html/BiocParallel.html)) 
-  provides similar functionalities as `batchtools`, but is tailored to use Bioconductor objects.
 - Similar instructions are provided this tutorial section covering
   `batchtools`
   [here](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rparallel/rparallel/)
