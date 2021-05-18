@@ -72,8 +72,8 @@ shinyApp(ui = ui, server = server)
 
 ## Get started
 
-The following introduces the basic development routines for Shiny apps using the RStudio IDE. Most other development 
-for R environments can be used here as well. For beginners the interactive test and debugging functionalities of 
+The following introduces the basic development routines for Shiny apps using the RStudio. Most other  
+R IDEs can be used here as well. For beginners the interactive test and debugging functionalities of 
 RStudio simplify the development process of Shiny apps. 
 
 
