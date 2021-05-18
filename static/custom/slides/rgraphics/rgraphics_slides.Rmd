@@ -51,10 +51,14 @@ pre[class] {
 }
 ```
 
-## How to navigate this slide show
+## How to Navigate this Slide Show?
 
-+ This slide show contains some scrollable slides. 
-+ Which slides are scrollable is indicated by tag at the bottom of the corresponding slides stating: __'[ Scroll down to continue ]'__ 
+<br/><br/>
++ This slideshow contains scrollable slides. 
+<br/><br/>
++ Which slides are scrollable, is indicated by a tag at the bottom of the corresponding slides stating: 
+<br/><br/>
+<p style='text-align: center;'> __[ Scroll down to continue ]__ </p>
 
 # Outline
 
