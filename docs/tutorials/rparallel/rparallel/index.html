@@ -21,11 +21,11 @@
 <meta property="og:description" content="Overview  R provides a large number of packages for parallel evaluations on multi-core, multi-socket and multi-node systems. The latter are usually referred to as computer clusters. MPI is also supported For an overview of parallelization packages available for R see here One of the most comprehensive parallel computing environments for R is batchtools. Older versions of this package were released under the name BatchJobs (Bischl et al. 2015). batchtools supports both multi-core and multi-node computations with and without schedulers." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rparallel/rparallel/" />
-<meta property="article:modified_time" content="2021-05-02T14:40:20-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-05-17T18:09:52-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Parallel Evaluations in R">
 <meta itemprop="description" content="Overview  R provides a large number of packages for parallel evaluations on multi-core, multi-socket and multi-node systems. The latter are usually referred to as computer clusters. MPI is also supported For an overview of parallelization packages available for R see here One of the most comprehensive parallel computing environments for R is batchtools. Older versions of this package were released under the name BatchJobs (Bischl et al. 2015). batchtools supports both multi-core and multi-node computations with and without schedulers.">
-<meta itemprop="dateModified" content="2021-05-02T14:40:20-07:00" />
-<meta itemprop="wordCount" content="824">
+<meta itemprop="dateModified" content="2021-05-17T18:09:52-07:00" />
+<meta itemprop="wordCount" content="845">
 
 
 
@@ -916,7 +916,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.85014af3d1ba31cdc3c0140c8cce3371.json"
+  data-offline-search-index-json-src="../../../offline-search-index.18c6eeb6e844cb515c3d2f03590d5c67.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -948,7 +948,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.85014af3d1ba31cdc3c0140c8cce3371.json"
+  data-offline-search-index-json-src="../../../offline-search-index.18c6eeb6e844cb515c3d2f03590d5c67.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1156,7 +1156,7 @@ if (!doNotTrack) {
   <ul>
     <li><a href="#overview">Overview</a></li>
     <li><a href="#reminder-traditional-job-submission-for-r">Reminder: Traditional Job Submission for R</a></li>
-    <li><a href="#parallel-evaluations-on-clusters-with-batchtools">Parallel Evaluations on Clusters with <code>batchtools</code></a></li>
+    <li><a href="#parallel-evaluations-on-clusters-with-batchtools-and-biocparallel">Parallel Evaluations on Clusters with <code>batchtools</code> and <code>BiocParallel</code></a></li>
     <li><a href="#hands-on-demo-of-batchtools">Hands-on Demo of <code>batchtools</code></a>
       <ul>
         <li><a href="#set-up-working-directory-for-slurm">Set up working directory for SLURM</a></li>
@@ -1249,11 +1249,13 @@ Rscript my_script.R
 <p><strong>2.</strong> Submit R script called <a href="https://raw.githubusercontent.com/tgirke/GEN242/main/static/custom/slides/R_for_HPC/demo_files/my_script.R">my_script.R</a> by above Slurm script with:</p>
 <pre><code class="language-bash">sbatch script_name.sh
 </code></pre>
-<h2 id="parallel-evaluations-on-clusters-with-batchtools">Parallel Evaluations on Clusters with <code>batchtools</code></h2>
+<h2 id="parallel-evaluations-on-clusters-with-batchtools-and-biocparallel">Parallel Evaluations on Clusters with <code>batchtools</code> and <code>BiocParallel</code></h2>
 <ul>
 <li>The following introduces the usage of <code>batchtools</code> for a computer cluster
 using SLURM as scheduler (workload manager). SLURM is the scheduler used by
-the HPCC.</li>
+the HPCC at UCR.</li>
+<li>The <code>BiocParallel</code> package (see <a href="https://bioconductor.org/packages/release/bioc/html/BiocParallel.html">here</a>)
+provides similar functionalities as <code>batchtools</code>, but is tailored to use Bioconductor objects.</li>
 <li>Similar instructions are provided in HPCC’s manual section covering
 <code>batchtools</code>
 <a href="https://hpcc.ucr.edu/manuals_linux-cluster_parallelR.html">here</a></li>
@@ -1377,7 +1379,7 @@ reduceResults(rbind)
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-02: <a  href="https://github.com/tgirke/GEN242//commit/568ceb2a3690df59c14c200e04f7972b5d29aa67">some edits (568ceb2a3)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-17: <a  href="https://github.com/tgirke/GEN242//commit/085d5cbc92bac906f6f7bfd08842669df7aff522">some edits (085d5cbc9)</a>
 </div>
 </div>
 

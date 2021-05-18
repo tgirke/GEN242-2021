@@ -63,11 +63,13 @@ __2.__ Submit R script called [my_script.R](https://raw.githubusercontent.com/tg
 sbatch script_name.sh
 ```
 
-## Parallel Evaluations on Clusters with `batchtools` 
+## Parallel Evaluations on Clusters with `batchtools` and `BiocParallel` 
 
 - The following introduces the usage of `batchtools` for a computer cluster
   using SLURM as scheduler (workload manager). SLURM is the scheduler used by
-  the HPCC.
+  the HPCC at UCR. 
+- The `BiocParallel` package (see [here](https://bioconductor.org/packages/release/bioc/html/BiocParallel.html)) 
+  provides similar functionalities as `batchtools`, but is tailored to use Bioconductor objects.
 - Similar instructions are provided in HPCC's manual section covering
   `batchtools`
   [here](https://hpcc.ucr.edu/manuals_linux-cluster_parallelR.html)

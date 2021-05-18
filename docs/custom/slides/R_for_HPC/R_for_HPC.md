@@ -450,7 +450,9 @@ sbatch script_name.sh
 
 - The following introduces the usage of `batchtools` for a computer cluster
   using SLURM as scheduler (workload manager). SLURM is the scheduler used by
-  the HPCC.
+  the HPCC at UCR.
+- The `BiocParallel` package (see [here](https://bioconductor.org/packages/release/bioc/html/BiocParallel.html)) 
+  provides similar functionalities as `batchtools`, but is tailored to use Bioconductor objects.
 - Similar instructions are provided this tutorial section covering
   `batchtools`
   [here](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rparallel/rparallel/)
