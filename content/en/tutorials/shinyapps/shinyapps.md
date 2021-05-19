@@ -1,7 +1,7 @@
 ---
 title: Shiny Apps
 author: "Le Zhang & Thomas Girke"
-date: "Last update: 17 May, 2021" 
+date: "Last update: 18 May, 2021" 
 output:
   html_document:
     toc: true
@@ -75,7 +75,7 @@ shinyApp(ui = ui, server = server)
 
 ## Get started
 
-The following introduces the basic development routines for Shiny apps using the RStudio. Most other  
+The following introduces the basic development routines for Shiny apps using RStudio. Most other  
 R IDEs can be used here as well. For beginners the interactive test and debugging functionalities of
 RStudio simplify the development process of Shiny apps.
 
