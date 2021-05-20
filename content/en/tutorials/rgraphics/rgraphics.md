@@ -564,6 +564,19 @@ plot(p2)
 
 ## ggplot2 Graphics
 
+  - What is `ggplot2`?
+      - High-level graphics system developed by Hadley Wickham
+      - Implements grammar of graphics from [Leland Wilkinson](http://www.amazon.com/Grammar-Graphics-Leland-Wilkinson/dp/0387987746)
+      - Streamlines many graphics workflows for complex plots
+      - Syntax centered around main `ggplot` function
+      - Simpler `qplot` function provides many shortcuts
+  - Documentation and Help
+      - [Manual](https://ggplot2.tidyverse.org/reference/)
+      - [Book](https://ggplot2-book.org/)
+      - [Cookbook for R](http://www.cookbook-r.com/Graphs/)
+
+### Design Concept of `ggplot2`
+
 Plotting formalized and implemented by the grammar of graphics by Leland Wilkinson and Hadley Wickham (Wickham 2010, 2009; Wilkinson 2012). The plotting process
 in `ggplot2` is devided into layers including:
 
@@ -580,17 +593,6 @@ in `ggplot2` is devided into layers including:
 <img title="sphm" src="../images/grammar_ggplot2.png" width="500" />
 
 </center>
-
-  - What is `ggplot2`?
-      - High-level graphics system developed by Hadley Wickham
-      - Implements grammar of graphics from [Leland Wilkinson](http://www.amazon.com/Grammar-Graphics-Leland-Wilkinson/dp/0387987746)
-      - Streamlines many graphics workflows for complex plots
-      - Syntax centered around main `ggplot` function
-      - Simpler `qplot` function provides many shortcuts
-  - Documentation and Help
-      - [Manual](https://ggplot2.tidyverse.org/reference/)
-      - [Book](https://ggplot2-book.org/)
-      - [Cookbook for R](http://www.cookbook-r.com/Graphs/)
 
 ### `ggplot2` Usage
 
