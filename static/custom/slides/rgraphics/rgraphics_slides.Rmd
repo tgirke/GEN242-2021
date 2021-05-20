@@ -95,10 +95,8 @@ pre[class] {
     - [Paul Murrell’s book R (Grid) Graphics](http://www.stat.auckland.ac.nz/~paul/RGraphics/rgraphics.html)
 
 - Interactive graphics
-    - [rggobi (GGobi)](http://www.ggobi.org/)
-    - [iplots](http://www.iplots.org/)
-    - [Open GL (`rgl`)](http://rgl.neoscientists.org/gallery.shtml)
-    - [plotly](https://plotly.com/r/)
+    - [plotly](https://plotly.com/r/) and [iplots](http://www.iplots.org/)
+    - [Open GL (`rgl`)](http://rgl.neoscientists.org/gallery.shtml) and [rggobi (GGobi)](http://www.ggobi.org/)
 
 ## Graphics Environments
 
