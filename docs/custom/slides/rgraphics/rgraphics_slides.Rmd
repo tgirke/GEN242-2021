@@ -642,6 +642,7 @@ print(p) # Setting se=FALSE removes error shade
 
 #### Changing Plotting Themes in `ggplot`
 
+<br/>
 
 - Theme settings can be accessed with `theme_get()`
 - Their settings can be changed with `theme()`
@@ -654,6 +655,7 @@ Example how to change background color to white
 
 #### Storing `ggplot` Specifications
 
+<br/>
 
 Plots and layers can be stored in variables
 
