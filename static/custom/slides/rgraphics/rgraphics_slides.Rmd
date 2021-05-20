@@ -536,7 +536,7 @@ in `ggplot2` is devided into layers including:
     - `ggplot`: `data.frame` or `tibble`
 - Packages with convenience utilities to create expected inputs
     - `dplyr` (`plyr`)
-    - `reshape`
+    - `tidyr` and `reshape2`
 
 ## Usage with `qplot` Function
 
@@ -642,6 +642,7 @@ print(p) # Setting se=FALSE removes error shade
 
 #### Changing Plotting Themes in `ggplot`
 
+
 - Theme settings can be accessed with `theme_get()`
 - Their settings can be changed with `theme()`
 
@@ -652,6 +653,7 @@ Example how to change background color to white
 ```
 
 #### Storing `ggplot` Specifications
+
 
 Plots and layers can be stored in variables
 
@@ -1025,6 +1027,8 @@ Using `gridExtra` package
 library(gridExtra)                                                                                                                                                            
 grid.arrange(a, b, c, nrow = 2, ncol=2)                                                                                                                                       
 ```    
+
+Also see `patchwork` in ggplot2 book [here](https://ggplot2-book.org/arranging-plots.html).
 
 ### Inserting Graphics into Plots
 

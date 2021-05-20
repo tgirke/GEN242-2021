@@ -605,7 +605,7 @@ in `ggplot2` is devided into layers including:
       - `ggplot`: `data.frame` or `tibble`
   - Packages with convenience utilities to create expected inputs
       - `dplyr` (`plyr`)
-      - `reshape`
+      - `tidyr` and `reshape2`
 
 ### `qplot` Function
 
@@ -1185,6 +1185,8 @@ grid.arrange(a, b, c, nrow = 2, ncol=2)
 ```
 
 <img src="/en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_arrange_graphics2-1.png" width="672" />
+
+Also see `patchwork` in ggplot2 book [here](https://ggplot2-book.org/arranging-plots.html).
 
 ### Inserting Graphics into Plots
 
