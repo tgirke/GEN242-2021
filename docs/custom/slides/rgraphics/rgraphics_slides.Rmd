@@ -1402,7 +1402,7 @@ ggplot() +
 
 <br/>
 
-To make the following example work, please download and unpack this [data archive](http://biocluster.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_12_16_2013/Rgraphics/data.zip) containing GFF, BAM and VCF sample files.
+To make the following example work, please download and unpack this [data archive](http://cluster.hpcc.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_12_16_2013/Rgraphics/data.zip) containing GFF, BAM and VCF sample files.
 
 ```{r ggbio_align_variants, eval=TRUE, warning=FALSE, message=FALSE}
 library(rtracklayer); library(GenomicFeatures); library(Rsamtools); library(GenomicAlignments); library(VariantAnnotation)

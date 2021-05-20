@@ -2425,7 +2425,7 @@ ggplot() +
 <img title="vim-r" src="../images/circularplot.png"/>
 </center>
 <h4 id="alignments-and-variants">Alignments and variants</h4>
-<p>To make the following example work, please download and unpack this <a href="http://biocluster.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_12_16_2013/Rgraphics/data.zip">data archive</a> containing GFF, BAM and VCF sample files.</p>
+<p>To make the following example work, please download and unpack this <a href="http://cluster.hpcc.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_12_16_2013/Rgraphics/data.zip">data archive</a> containing GFF, BAM and VCF sample files.</p>
 <pre><code class="language-r">library(rtracklayer); library(GenomicFeatures); library(Rsamtools); library(GenomicAlignments); library(VariantAnnotation)
 ga &lt;- readGAlignments(&quot;./data/SRR064167.fastq.bam&quot;, use.names=TRUE, param=ScanBamParam(which=GRanges(&quot;Chr5&quot;, IRanges(4000, 8000))))
 p1 &lt;- autoplot(ga, geom = &quot;rect&quot;)

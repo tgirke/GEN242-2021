@@ -1,7 +1,7 @@
 ---
 title: Graphics and Data Visualization in R
 author: "First/last name (first.last@ucr.edu)"
-date: "Last update: 19 May, 2021" 
+date: "Last update: 20 May, 2021" 
 output:
   html_document:
     toc: true
@@ -1438,7 +1438,7 @@ ggplot() +
 
 #### Alignments and variants
 
-To make the following example work, please download and unpack this [data archive](http://biocluster.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_12_16_2013/Rgraphics/data.zip) containing GFF, BAM and VCF sample files.
+To make the following example work, please download and unpack this [data archive](http://cluster.hpcc.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_12_16_2013/Rgraphics/data.zip) containing GFF, BAM and VCF sample files.
 
 ``` r
 library(rtracklayer); library(GenomicFeatures); library(Rsamtools); library(GenomicAlignments); library(VariantAnnotation)
