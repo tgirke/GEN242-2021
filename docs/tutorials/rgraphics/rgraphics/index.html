@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.80.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+<meta name="generator" content="Hugo 0.79.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
 
 <link rel="shortcut icon" href="../../../favicons/favicon.ico" >
@@ -19,15 +19,15 @@
 
 <title>Graphics and Data Visualization in R | GEN242</title><meta property="og:title" content="Graphics and Data Visualization in R" />
 <meta property="og:description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
- Overview Graphics in R  Powerful environment for visualizing scientific data Integrated graphics and statistics infrastructure Publication quality graphics Fully programmable Highly reproducible Full LaTeX, Sweave, knitr and R Markdown support." />
+ Overview zGraphics in R  Powerful environment for visualizing scientific data Integrated graphics and statistics infrastructure Publication quality graphics Fully programmable Highly reproducible Full LaTeX, Sweave, knitr and R Markdown support." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rgraphics/rgraphics/" />
-<meta property="article:modified_time" content="2021-05-17T16:49:32-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-05-18T17:12:56-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Graphics and Data Visualization in R">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
- Overview Graphics in R  Powerful environment for visualizing scientific data Integrated graphics and statistics infrastructure Publication quality graphics Fully programmable Highly reproducible Full LaTeX, Sweave, knitr and R Markdown support.">
-<meta itemprop="dateModified" content="2021-05-17T16:49:32-07:00" />
-<meta itemprop="wordCount" content="66805">
+ Overview zGraphics in R  Powerful environment for visualizing scientific data Integrated graphics and statistics infrastructure Publication quality graphics Fully programmable Highly reproducible Full LaTeX, Sweave, knitr and R Markdown support.">
+<meta itemprop="dateModified" content="2021-05-18T17:12:56-07:00" />
+<meta itemprop="wordCount" content="66817">
 
 
 
@@ -35,7 +35,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Graphics and Data Visualization in R"/>
 <meta name="twitter:description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
- Overview Graphics in R  Powerful environment for visualizing scientific data Integrated graphics and statistics infrastructure Publication quality graphics Fully programmable Highly reproducible Full LaTeX, Sweave, knitr and R Markdown support."/>
+ Overview zGraphics in R  Powerful environment for visualizing scientific data Integrated graphics and statistics infrastructure Publication quality graphics Fully programmable Highly reproducible Full LaTeX, Sweave, knitr and R Markdown support."/>
 
 
 <script type="application/javascript">
@@ -927,7 +927,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.78c1173dc87912797e8e034f683fe9d7.json"
+  data-offline-search-index-json-src="../../../offline-search-index.b715097b8af1af3d8a63618643646cfb.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -959,7 +959,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.78c1173dc87912797e8e034f683fe9d7.json"
+  data-offline-search-index-json-src="../../../offline-search-index.b715097b8af1af3d8a63618643646cfb.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1167,7 +1167,7 @@ if (!doNotTrack) {
   <ul>
     <li><a href="#overview">Overview</a>
       <ul>
-        <li><a href="#graphics-in-r">Graphics in R</a></li>
+        <li><a href="#zgraphics-in-r">zGraphics in R</a></li>
         <li><a href="#documentation-on-graphics-in-r">Documentation on Graphics in R</a></li>
         <li><a href="#graphics-environments">Graphics Environments</a></li>
       </ul>
@@ -1404,7 +1404,7 @@ document.addEventListener("DOMContentLoaded", function() {
 [ <a href="https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/rgraphics/rgraphics.R">.R</a> ]</p>
 </div>
 <h2 id="overview">Overview</h2>
-<h3 id="graphics-in-r">Graphics in R</h3>
+<h3 id="zgraphics-in-r">zGraphics in R</h3>
 <ul>
 <li>Powerful environment for visualizing scientific data</li>
 <li>Integrated graphics and statistics infrastructure</li>
@@ -1533,15 +1533,13 @@ plot(y[,1], y[,2], type=&quot;p&quot;, col=&quot;red&quot;, cex.lab=1.2, cex.axi
      ylab=&quot;y label&quot;, main=&quot;My Main&quot;, sub=&quot;My Sub&quot;)
 par(op)
 </code></pre>
-<p>Important arguments}</p>
-<ul>
-<li><code>mar</code>: specifies the margin sizes around the plotting area in order: <code>c(bottom, left, top, right)</code></li>
-<li><code>col</code>: color of symbols</li>
-<li><code>pch</code>: type of symbols, samples: <code>example(points)</code></li>
-<li><code>lwd</code>: size of symbols</li>
-<li><code>cex.*</code>: control font sizes</li>
-<li>For details see <code>?par</code></li>
-</ul>
+<p>Important arguments}
+- <code>mar</code>: specifies the margin sizes around the plotting area in order: <code>c(bottom, left, top, right)</code>
+- <code>col</code>: color of symbols
+- <code>pch</code>: type of symbols, samples: <code>example(points)</code>
+- <code>lwd</code>: size of symbols
+- <code>cex.*</code>: control font sizes
+- For details see <code>?par</code></p>
 <p>Add a regression line to a plot</p>
 <pre><code class="language-r">plot(y[,1], y[,2])
 myline &lt;- lm(y[,2]~y[,1]); abline(myline, lwd=2) 
@@ -1797,7 +1795,7 @@ in <code>ggplot2</code> is devided into layers including:</p>
 <li>Theme: styles to be used, such as fonts, backgrounds, etc.</li>
 </ol>
 <center>
-<img title="sphm" src="../images/grammar_ggplot2.png" width="500" />
+<p><img title="sphm" src="../images/grammar_ggplot2.png" width="500" /></p>
 </center>
 <ul>
 <li>What is <code>ggplot2</code>?
@@ -2240,7 +2238,7 @@ print(b, vp=viewport(width=0.3, height=0.3, x=0.8, y=0.8))
 <h3 id="spatial-heatmap-diagrams">Spatial Heatmap Diagrams</h3>
 <p>Spatial expression data can be visualized with the <a href="https://bioconductor.org/packages/release/bioc/vignettes/spatialHeatmap/inst/doc/spatialHeatmap.html"><code>spatialHeatmap</code></a> package.</p>
 <center>
-<img title="sphm" src="../images/spatial_heatmap.jpeg" width="500" />
+<p><img title="sphm" src="../images/spatial_heatmap.jpeg" width="500" /></p>
 </center>
 <h3 id="venn-diagrams">Venn Diagrams</h3>
 <pre><code class="language-r">library(systemPipeR)
@@ -2445,7 +2443,7 @@ tracks(Reads=p1, Coverage=p2, Variant=p3, Transcripts=p4, heights = c(0.3, 0.2, 
 <li>Select in menu in top left corner <em>A. thaliana</em> (TAIR10)</li>
 <li>Upload the following indexed/sorted Bam files with <code>File -&gt; Load from URL...</code></li>
 </ul>
-<!-- -->
+<!-- end list -->
 <pre><code>https://cluster.hpcc.ucr.edu/~tgirke/Teaching/GEN242/bam_samples/SRR064154.fastq.bam
 https://cluster.hpcc.ucr.edu/~tgirke/Teaching/GEN242/bam_samples/SRR064155.fastq.bam
 https://cluster.hpcc.ucr.edu/~tgirke/Teaching/GEN242/bam_samples/SRR064166.fastq.bam
@@ -2462,6 +2460,7 @@ https://cluster.hpcc.ucr.edu/~tgirke/Teaching/GEN242/bam_samples/SRR064167.fastq
 <ul>
 <li><code>systemPipeR</code>: utilities for building NGS analysis pipelines.</li>
 </ul>
+<!-- end list -->
 <pre><code class="language-r">library(&quot;systemPipeR&quot;)
 symLink2bam(sysargs=args, htmldir=c(&quot;~/.html/&quot;, &quot;somedir/&quot;), 
             urlbase=&quot;http://myserver.edu/~username/&quot;,
@@ -2481,27 +2480,27 @@ IGVload(sock, session)
 IGVgoto(sock, 'Chr1:45296-47019')
 </code></pre>
 <h2 id="references">References</h2>
-<div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-Wickham2009-aq" class="csl-entry">
-<p>Wickham, Hadley. 2009. “<span class="nocase">ggplot2: elegant graphics for data analysis</span>.” <a href="http://had.co.nz/ggplot2/book">http://had.co.nz/ggplot2/book</a>.</p>
+<div id="refs" class="references">
+<div id="ref-Wickham2009-aq">
+<p>Wickham, Hadley. 2009. “ggplot2: elegant graphics for data analysis.” Springer New York. <a href="http://had.co.nz/ggplot2/book">http://had.co.nz/ggplot2/book</a>.</p>
 </div>
-<div id="ref-Wickham2010-nu" class="csl-entry">
-<p>———. 2010. “<span class="nocase">A Layered Grammar of Graphics</span>.” <em>J. Comput. Graph. Stat.</em> 19 (1): 3–28. <a href="https://doi.org/10.1198/jcgs.2009.07098">https://doi.org/10.1198/jcgs.2009.07098</a>.</p>
+<div id="ref-Wickham2010-nu">
+<p>———. 2010. “A Layered Grammar of Graphics.” <em>J. Comput. Graph. Stat.</em> 19 (1). Taylor &amp; Francis: 3–28. <a href="https://doi.org/10.1198/jcgs.2009.07098">https://doi.org/10.1198/jcgs.2009.07098</a>.</p>
 </div>
-<div id="ref-Wilkinson2012-wv" class="csl-entry">
-<p>Wilkinson, Leland. 2012. “<span class="nocase">The Grammar of Graphics</span>.” In <em><span class="nocase">Handbook of Computational Statistics: Concepts and Methods</span></em>, edited by James E Gentle, Wolfgang Karl Härdle, and Yuichi Mori, 375–414. Berlin, Heidelberg: Springer Berlin Heidelberg. <a href="https://doi.org/10.1007/978-3-642-21551-3_13">https://doi.org/10.1007/978-3-642-21551-3\_13</a>.</p>
+<div id="ref-Wilkinson2012-wv">
+<p>Wilkinson, Leland. 2012. “The Grammar of Graphics.” In <em>Handbook of Computational Statistics: Concepts and Methods</em>, edited by James E Gentle, Wolfgang Karl Härdle, and Yuichi Mori, 375–414. Berlin, Heidelberg: Springer Berlin Heidelberg. <a href="https://doi.org/10.1007/978-3-642-21551-3%5C_13">https://doi.org/10.1007/978-3-642-21551-3\_13</a>.</p>
 </div>
-<div id="ref-Yin2012-jj" class="csl-entry">
+<div id="ref-Yin2012-jj">
 <p>Yin, T, D Cook, and M Lawrence. 2012. “Ggbio: An R Package for Extending the Grammar of Graphics for Genomic Data.” <em>Genome Biol.</em> 13 (8). <a href="https://doi.org/10.1186/gb-2012-13-8-r77">https://doi.org/10.1186/gb-2012-13-8-r77</a>.</p>
 </div>
-<div id="ref-Zhang2013-zn" class="csl-entry">
-<p>Zhang, H, P Meltzer, and S Davis. 2013. “RCircos: An R Package for Circos 2d Track Plots.” <em>BMC Bioinformatics</em> 14: 244–44. <a href="https://doi.org/10.1186/1471-2105-14-244">https://doi.org/10.1186/1471-2105-14-244</a>.</p>
+<div id="ref-Zhang2013-zn">
+<p>Zhang, H, P Meltzer, and S Davis. 2013. “RCircos: An R Package for Circos 2D Track Plots.” <em>BMC Bioinformatics</em> 14: 244–44. <a href="https://doi.org/10.1186/1471-2105-14-244">https://doi.org/10.1186/1471-2105-14-244</a>.</p>
 </div>
 </div>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-17: <a  href="https://github.com/tgirke/GEN242//commit/e11041dd0adb8ecc6bf1942b535351dc4df8484c">some edits (e11041dd0)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-18: <a  href="https://github.com/tgirke/GEN242//commit/802436f9b304dd4024a5f9ee86c8583e7c5f3131">some edits (802436f)</a>
 </div>
 </div>
 

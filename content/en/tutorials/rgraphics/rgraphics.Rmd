@@ -43,7 +43,7 @@ Source code downloads: &nbsp; &nbsp;
 
 ## Overview
 
-### Graphics in R
+### zGraphics in R
 
 -   Powerful environment for visualizing scientific data
 -   Integrated graphics and statistics infrastructure
