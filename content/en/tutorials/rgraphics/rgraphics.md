@@ -81,7 +81,7 @@ Source code downloads:    
 
 ## Overview
 
-### zGraphics in R
+### Graphics in R
 
   - Powerful environment for visualizing scientific data
   - Integrated graphics and statistics infrastructure
@@ -891,11 +891,17 @@ Calculate standard deviations for aggregates given by `Species` column in `iris`
 iris_sd <- aggregate(iris[,1:4], by=list(Species=iris$Species), FUN=sd) 
 ```
 
-Reformat `iris_mean` with `melt`
+Reformat `iris_mean` with `melt` from wide to long form as expected by `ggplot2`. Newer
+alternatives for restructuring `data.frames` and `tibbles` from wide into long form use the
+`gather` and `pivot_longer` functions defined by the `tidyr` package. Their usage is shown
+below as well. The functions `pivot_longer` and `pivot_wider` are expected to provide the most
+flexible long-term solution, but may not work in older R versions.
 
 ``` r
 library(reshape2) # Defines melt function
 df_mean <- melt(iris_mean, id.vars=c("Species"), variable.name = "Samples", value.name="Values")
+df_mean2 <- tidyr::gather(iris_mean, !Species, key = "Samples", value = "Values")
+df_mean3 <- tidyr::pivot_longer(iris_mean, !Species, names_to="Samples", values_to="Values") 
 ```
 
 Reformat `iris_sd` with `melt`

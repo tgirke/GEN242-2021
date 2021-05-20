@@ -82,24 +82,17 @@ pre[class] {
 
 ### Graphics in R
 
--   Powerful environment for visualizing data
--   Integrated graphics and statistics infrastructure
--   Publication quality graphics
--   Fully programmable
--   Highly reproducible
+-   Large ecosystem for visualizing data
+-   Fully programmable and highly reproducible publication quality graphics
 -   Full [LaTeX](http://www.latex-project.org/), [Sweave](http://www.stat.auckland.ac.nz/~dscott/782/Sweave-manual-20060104.pdf), [knitr](http://yihui.name/knitr/) and [R Markdown](http://rmarkdown.rstudio.com/) support.
--   Many R packages with graphics utilities
 
 ### Documentation on Graphics in R
 
 - General 
     - [Graphics Task Page](http://cran.r-project.org/web/views/Graphics.html)
     - [R Graph Gallery](http://www.r-graph-gallery.com/)
-<p style='text-align: right;'> __[ Scroll down to continue ]__ </p>
-<br/><br/>
     - [R Graphical Manual](https://www.imsbio.co.jp/RGM/R_image_list?page=575&init=true)
     - [Paul Murrell’s book R (Grid) Graphics](http://www.stat.auckland.ac.nz/~paul/RGraphics/rgraphics.html)
-
 
 - Interactive graphics
     - [rggobi (GGobi)](http://www.ggobi.org/)
@@ -107,7 +100,7 @@ pre[class] {
     - [Open GL (`rgl`)](http://rgl.neoscientists.org/gallery.shtml)
     - [plotly](https://plotly.com/r/)
 
-### Graphics Environments
+## Graphics Environments
 
 - Viewing and savings graphics in R
     - On-screen graphics
@@ -604,8 +597,8 @@ qplot(x, y, geom="point", size=5, shape=cat)
 
 ```{r qplot_scatter_plot_colored_groups, eval=TRUE}
 p <- qplot(x, y, geom="point", size=x, color=cat, 
-            main="Dot Size and Color Relative to Some Values") + 
-     theme(legend.position = "none")
+           main="Dot Size and Color Relative to Some Values") + 
+           theme(legend.position = "none")
 print(p)
 ``` 
 
@@ -795,11 +788,17 @@ Calculate standard deviations for aggregates given by `Species` column in `iris`
 iris_sd <- aggregate(iris[,1:4], by=list(Species=iris$Species), FUN=sd) 
 ```
 
-Reformat `iris_mean` with `melt`
+Reformat `iris_mean` with `melt` from wide to long form as expected by `ggplot2`. Newer 
+alternatives for restructuring `data.frames` and `tibbles` from wide into long form use the 
+`gather` and  `pivot_longer` functions defined by the `tidyr` package. Their usage is shown 
+below as well. The functions `pivot_longer` and `pivot_wider` are expected to provide the most
+flexible long-term solution, but may not work in older R versions.
 
 ```{r iris_mean_melt, eval=TRUE}
 library(reshape2) # Defines melt function
 df_mean <- melt(iris_mean, id.vars=c("Species"), variable.name = "Samples", value.name="Values")
+df_mean2 <- tidyr::gather(iris_mean, !Species, key = "Samples", value = "Values")
+df_mean3 <- tidyr::pivot_longer(iris_mean, !Species, names_to="Samples", values_to="Values") 
 ```
 
 Reformat `iris_sd` with `melt`
