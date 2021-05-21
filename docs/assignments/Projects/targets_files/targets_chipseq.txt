@@ -1,0 +1,11 @@
+# Project ID: Arabidopsis - chip-seq (SRA: SRP002174 ; PMID:20360106)
+# The following line(s) allow to specify the contrasts needed for comparative analyses, such as DEG identification. All possible comparisons can be specified with 'CMPset: ALL'.
+# <CMP> CMPset1: ALL
+FileName	SampleName	Factor	SampleLong	Experiment	Date	SampleReference
+./data/SRR038845_1.fastq.gz	AP1_1	AP1	APETALA1 Induced	1	23-Mar-12	
+./data/SRR038846_1.fastq.gz	AP1_2A	AP1	APETALA1 Induced	1	23-Mar-12	
+./data/SRR038847_1.fastq.gz	AP1_2B	AP1	APETALA1 Induced	1	23-Mar-12	
+./data/SRR038848_1.fastq.gz	C_1A	C	Control Mock	1	23-Mar-12	AP1_1
+./data/SRR038849_1.fastq.gz	C_1B	C	Control Mock	1	23-Mar-12	AP1_1
+./data/SRR038850_1.fastq.gz	C_2A	C	Control Mock	1	23-Mar-12	AP1_2A
+./data/SRR038851_1.fastq.gz	C_2B	C	Control Mock	1	23-Mar-12	AP1_2B
