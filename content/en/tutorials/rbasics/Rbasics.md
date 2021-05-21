@@ -1,7 +1,7 @@
 ---
 title: "Introduction to R" 
 author: "Author: Thomas Girke"
-date: "Last update: 16 April, 2021" 
+date: "Last update: 21 May, 2021" 
 output:
   html_document:
     toc: true
@@ -342,6 +342,19 @@ which(x) # Returns index for the 'TRUE' values in logical vector
 ## Data Objects
 
 ### Object types
+
+-   List of common object types
+    -   `vectors`: ordered collection of numeric, character, complex and logical values.
+    -   `factors`: special type vectors with grouping information of its components
+    -   `data.frames` including modern variants `DataFrame`, `tibbles`, etc.: two dimensional structures with different data types
+    -   `matrices`: two dimensional structures with data of same type
+    -   `arrays`: multidimensional arrays of vectors
+    -   `lists`: general form of vectors with different types of elements
+    -   Many more …
+-   Simple rules for naming objects and their components
+    -   Object, row and column names should not start with a number
+    -   Avoid spaces in object, row and column names
+    -   Avoid special characters like ‘\#’
 
 #### Vectors (1D)
 
