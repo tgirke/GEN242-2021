@@ -51,17 +51,6 @@ pre[class] {
 }
 ```
 
-## Online Sign-in Form
-
-<br/>
-<br/>
-<br/>
-
-<p style='text-align: center;'> 
-[https://bit.ly/3ylNdgR](https://bit.ly/3ylNdgR)
-</p>
-
-
 ## How to Navigate this Slide Show?
 
 <br/>
