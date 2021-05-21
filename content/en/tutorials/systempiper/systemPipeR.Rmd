@@ -289,7 +289,9 @@ plots and column titles). Importantly, the labels used in the `SampleName`
 column need to be unique, while technical or biological replicates are
 indicated by duplicated values under the `Factor` column. For readability 
 and transparency, it is useful to use here a short, consistent and informative
-syntax for naming samples and replicates. 
+syntax for naming samples and replicates. In addition, to avoid problems with other
+packages or external software, it is recommended to use the basic naming rules
+for R objects as outlined [here](https://girke.bioinformatics.ucr.edu/GEN242/manuals/rbasics/rbasics/#data-objects).
 
 Users should note here, the usage of targets files is optional when using
 *systemPipeR's* new CWL interface. They can be replaced by a standard YAML
