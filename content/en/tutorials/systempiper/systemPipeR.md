@@ -1,7 +1,7 @@
 ---
 title: "systemPipeR: Workflow design and reporting generation environment" 
 author: "Author: Daniela Cassol, Le Zhang and Thomas Girke"
-date: "Last update: 02 May, 2021" 
+date: "Last update: 21 May, 2021" 
 output:
   BiocStyle::html_document:
     toc_float: true
@@ -273,13 +273,23 @@ The following parameter files are included in each workflow template:
 
 ### Structure of *`targets`* file
 
-The *`targets`* file defines all input files (*e.g.* FASTQ, BAM, BCF) and sample
-comparisons of an analysis workflow. The following shows the format of a sample
-*`targets`* file included in the package. It also can be viewed and downloaded
-from *`systemPipeR`*’s GitHub repository [here](https://github.com/tgirke/systemPipeR/blob/master/inst/extdata/targets.txt).
-In a target file with a single type of input files, here FASTQ files of single-end (SE) reads, the first three columns are mandatory including their column
-names, while it is four mandatory columns for FASTQ files of PE reads. All
-subsequent columns are optional and any number of additional columns can be added as needed.
+The *`targets`* file defines all input files (*e.g.* FASTQ, BAM, BCF) and
+sample comparisons of an analysis workflow. The following shows the format of a
+sample *`targets`* file included in the package. It also can be viewed and
+downloaded from *`systemPipeR`*’s GitHub repository
+[here](https://github.com/tgirke/systemPipeR/blob/master/inst/extdata/targets.txt).
+In a target file with a single type of input files, here FASTQ files of
+single-end (SE) reads, the first three columns are mandatory including their
+column names, while it is four mandatory columns for FASTQ files of PE reads.
+All subsequent columns are optional and any number of additional columns can be
+added as needed. The columns in targets files are expected to be tab separated (TSV format).
+The `SampleName` column contains usually short labels for
+referencing samples (here FASTQ files) accross many workflow steps (*e.g.*
+plots and column titles). Importantly, the labels used in the `SampleName`
+column need to be unique, while technical or biological replicates are
+indicated by duplicated values under the `Factor` column. For readability
+and transparency, it is useful to use here a short, consistent and informative
+syntax for naming samples and replicates.
 
 Users should note here, the usage of targets files is optional when using
 *systemPipeR’s* new CWL interface. They can be replaced by a standard YAML
