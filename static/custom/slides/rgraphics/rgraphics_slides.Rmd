@@ -51,6 +51,17 @@ pre[class] {
 }
 ```
 
+## Online Sign-in Form
+
+<br/>
+<br/>
+<br/>
+
+<p style='text-align: center;'> 
+[https://bit.ly/3ylNdgR](https://bit.ly/3ylNdgR)
+</p>
+
+
 ## How to Navigate this Slide Show?
 
 <br/>
@@ -95,10 +106,8 @@ pre[class] {
     - [Paul Murrell’s book R (Grid) Graphics](http://www.stat.auckland.ac.nz/~paul/RGraphics/rgraphics.html)
 
 - Interactive graphics
-    - [rggobi (GGobi)](http://www.ggobi.org/)
-    - [iplots](http://www.iplots.org/)
-    - [Open GL (`rgl`)](http://rgl.neoscientists.org/gallery.shtml)
-    - [plotly](https://plotly.com/r/)
+    - [plotly](https://plotly.com/r/) and [iplots](http://www.iplots.org/)
+    - [Open GL (`rgl`)](http://rgl.neoscientists.org/gallery.shtml) and [rggobi (GGobi)](http://www.ggobi.org/)
 
 ## Graphics Environments
 
@@ -156,7 +165,11 @@ pre[class] {
 
 ### Scatter Plots
 
+<br/>
+
 #### Basic scatter plots
+
+<br/>
 
 Sample data set for subsequent plots
 ```{r scatter_plot_basic, eval=TRUE}
@@ -166,20 +179,32 @@ y
 plot(y[,1], y[,2]) 
 ```
 
+<br/>
+
 #### All pairs
+
+<br/>
 
 ```{r scatter_plot_allpairs, eval=TRUE}
 pairs(y) 
 ```
 
+<br/>
+
 #### Plot labels
+
+<br/>
 
 ```{r scatter_plot_labels, eval=TRUE}
 plot(y[,1], y[,2], pch=20, col="red", main="Symbols and Labels")
 text(y[,1]+0.03, y[,2], rownames(y))
 ```
 
+<br/>
+
 #### More examples
+
+<br/>
 
 Print instead of symbols the row names
 
@@ -229,7 +254,11 @@ plot(y[,1], y[,2]); text(y[1,1], y[1,2],
      expression(sum(frac(1,sqrt(x^2*pi)))), cex=1.3) 
 ```
 
+<br/>
+
 #### Exercise 1
+
+<br/>
 
 - __Task 1__: Generate scatter plot for first two columns in `iris` data frame and color dots by its `Species` column.
 - __Task 2__: Use the `xlim/ylim` arguments to set limits on the x- and y-axes so that all data points are restricted to the left bottom quadrant of the plot. 
@@ -248,13 +277,21 @@ plot(iris[,1], iris[,2], col=iris$Species, lwd=2, pch=19, xlim=c(4,16), ylim=c(2
 
 ### Line Plots
 
+<br/>
+
 #### Single Data Set
+
+<br/>
 
 ```{r line_plot_single, eval=TRUE}
 plot(y[,1], type="l", lwd=2, col="blue") 
 ```
 
+<br/>
+
 #### Many Data Sets
+
+<br/>
 
 Plots line graph for all columns in data frame `y`. The `split.screen` function is used in this example in a for loop to overlay several line graphs in the same plot. 
 
@@ -271,7 +308,11 @@ close.screen(all=TRUE)
 
 ### Bar Plots
 
+<br/>
+
 #### Basics
+
+<br/>
 
 ```{r bar_plot_basic, eval=TRUE}
 barplot(y[1:4,], ylim=c(0, max(y[1:4,])+0.3), beside=TRUE, 
@@ -280,7 +321,11 @@ text(labels=round(as.vector(as.matrix(y[1:4,])),2), x=seq(1.5, 13, by=1)
      +sort(rep(c(0,1,2), 4)), y=as.vector(as.matrix(y[1:4,]))+0.04) 
 ```
 	
+<br/>
+
 #### Error bars
+
+<br/>
 
 ```{r bar_plot_error_bar, eval=TRUE}
 bar <- barplot(m <- rowMeans(y) * 10, ylim=c(0, 10))
@@ -288,7 +333,11 @@ stdev <- sd(t(y))
 arrows(bar, m, bar, m + stdev, length=0.15, angle = 90)
 ```
 
+<br/>
+
 #### Mirrored bar plot
+
+<br/>
 
 ```{r bar_plot_mirrored, eval=TRUE}
 df <- data.frame(group = rep(c("Above", "Below"), each=10), x = rep(1:10, 2), y = c(runif(10, 0, 1), runif(10, -1, 0)))
@@ -341,7 +390,7 @@ library(gplots)
 colorpanel(5, "darkblue", "yellow", "white")
 ```
 
-Much more on colors in R see Earl Glynn's [color chart](http://research.stowers-institute.org/efg/R/Color/Chart/)
+Much more on colors in R see Earl Glynn's [color chart](http://earlglynn.github.io/color/ColorInR)
 
 
 ### Arranging Several Plots on Single Page
@@ -353,7 +402,11 @@ par(mfrow=c(2,3))
 for(i in 1:6) plot(1:10) 
 ```
 
+<br/>
+
 #### Arranging Plots with Variable Width
+
+<br/>
 
 The `layout` function allows to divide the plotting device into variable numbers of rows and columns with the column-widths and the row-heights specified in the respective arguments.
 
@@ -378,7 +431,11 @@ Generates Scalable Vector Graphics (SVG) files that can be edited in vector grap
 svg("test.svg"); plot(1:10, 1:10); dev.off() 
 ```
 
+<br/>
+
 #### Exercise 2
+
+<br/>
 
 Bar plots
         
@@ -494,6 +551,20 @@ plot(p2)
 
 ## ggplot2 Graphics
 
+- What is `ggplot2`?
+    - High-level graphics system developed by Hadley Wickham
+    - Implements grammar of graphics from [Leland Wilkinson](http://www.amazon.com/Grammar-Graphics-Leland-Wilkinson/dp/0387987746) 
+    - Streamlines many graphics workflows for complex plots
+    - Syntax centered around main `ggplot` function 
+    - Simpler `qplot` function provides many shortcuts
+        
+- Documentation and Help
+    - [Manual](https://ggplot2.tidyverse.org/reference/)
+    - [Book](https://ggplot2-book.org/)
+    - [Cookbook for R](http://www.cookbook-r.com/Graphs/)
+
+
+## Design Concept of `ggplot2`
 
 Plotting formalized and implemented by the grammar of graphics by Leland Wilkinson and Hadley Wickham [@Wickham2010-nu; @Wilkinson2012-wv; @Wickham2009-aq]. The plotting process
 in `ggplot2` is devided into layers including:
@@ -510,20 +581,6 @@ in `ggplot2` is devided into layers including:
 
 <center><img title="sphm" src="images/grammar_ggplot2.png" width="400" /></center>
 
-## `ggplot2` Overview
-
-- What is `ggplot2`?
-    - High-level graphics system developed by Hadley Wickham
-    - Implements grammar of graphics from [Leland Wilkinson](http://www.amazon.com/Grammar-Graphics-Leland-Wilkinson/dp/0387987746) 
-    - Streamlines many graphics workflows for complex plots
-    - Syntax centered around main `ggplot` function 
-    - Simpler `qplot` function provides many shortcuts
-        
-- Documentation and Help
-    - [Manual](https://ggplot2.tidyverse.org/reference/)
-    - [Book](https://ggplot2-book.org/)
-    - [Cookbook for R](http://www.cookbook-r.com/Graphs/)
-
 
 ## `ggplot2` Usage
 	
@@ -538,7 +595,7 @@ in `ggplot2` is devided into layers including:
     - `ggplot`: `data.frame` or `tibble`
 - Packages with convenience utilities to create expected inputs
     - `dplyr` (`plyr`)
-    - `reshape`
+    - `tidyr` and `reshape2`
 
 ## Usage with `qplot` Function
 
@@ -593,7 +650,11 @@ Plot different shapes
 qplot(x, y, geom="point", size=5, shape=cat)
 ```
 
+<br/>
+
 #### Colored groups
+
+<br/>
 
 ```{r qplot_scatter_plot_colored_groups, eval=TRUE}
 p <- qplot(x, y, geom="point", size=x, color=cat, 
@@ -602,7 +663,11 @@ p <- qplot(x, y, geom="point", size=x, color=cat,
 print(p)
 ``` 
 
+<br/>
+
 #### Regression line
+
+<br/>
 
 ```{r qplot_scatter_regression_line, eval=TRUE}
 set.seed(1410)
@@ -612,7 +677,11 @@ p <- qplot(carat, price, data = dsmall) +
 print(p)
 ```
 
+<br/>
+
 #### Local regression curve (loess)
+
+<br/>
 
 ```{r qplot_scatter_regression_loess, eval=TRUE}
 p <- qplot(carat, price, data=dsmall, geom=c("point", "smooth")) 
@@ -641,8 +710,11 @@ print(p) # Setting se=FALSE removes error shade
 	- `color`: grouping vector (factor) 
 	- `group`: grouping vector (factor)
 
+<br/>
 
 #### Changing Plotting Themes in `ggplot`
+
+<br/>
 
 - Theme settings can be accessed with `theme_get()`
 - Their settings can be changed with `theme()`
@@ -653,7 +725,11 @@ Example how to change background color to white
 ... + theme(panel.background=element_rect(fill = "white", colour = "black")) 
 ```
 
+<br/>
+
 #### Storing `ggplot` Specifications
+
+<br/>
 
 Plots and layers can be stored in variables
 
@@ -691,7 +767,11 @@ Standard R export functons for graphics work as well (see [here](https://girke.b
 
 ### `ggplot`: scatter plots
 
+<br/>
+
 #### Basic example
+
+<br/>
 
 ```{r ggplot_scatter_plot1, eval=TRUE}
 set.seed(1410)  
@@ -709,7 +789,11 @@ library(plotly)
 ggplotly(p)
 ```
 
+<br/>
+
 #### Regression line
+
+<br/>
 
 ```{r ggplot_regression_line, eval=TRUE}
 p <- ggplot(dsmall, aes(carat, price)) + geom_point() + 
@@ -718,7 +802,11 @@ p <- ggplot(dsmall, aes(carat, price)) + geom_point() +
 print(p) 
 ```
 
+<br/>
+
 #### Several regression lines
+
+<br/>
 
 ```{r ggplot_many_regression_lines, eval=TRUE}
 p <- ggplot(dsmall, aes(carat, price, group=color)) + 
@@ -727,7 +815,11 @@ p <- ggplot(dsmall, aes(carat, price, group=color)) +
 print(p) 
 ```
 
+<br/>
+
 #### Local regression curve (loess)
+
+<br/>
 
 ```{r ggplot_loess_regression, eval=TRUE}
 p <- ggplot(dsmall, aes(carat, price)) + geom_point() + geom_smooth() 
@@ -751,7 +843,11 @@ p <- ggplot(iris, aes(Sepal.Length, Sepal.Width)) +
 print(p) 
 ```
 
+<br/>
+
 #### Exercise 3
+
+<br/>
 
 Scatter plots with `ggplot2`
 
@@ -788,11 +884,17 @@ Calculate standard deviations for aggregates given by `Species` column in `iris`
 iris_sd <- aggregate(iris[,1:4], by=list(Species=iris$Species), FUN=sd) 
 ```
 
-Reformat `iris_mean` with `melt`
+Reformat `iris_mean` with `melt` from wide to long form as expected by `ggplot2`. Newer 
+alternatives for restructuring `data.frames` and `tibbles` from wide into long form use the 
+`gather` and  `pivot_longer` functions defined by the `tidyr` package. Their usage is shown 
+below as well. The functions `pivot_longer` and `pivot_wider` are expected to provide the most
+flexible long-term solution, but may not work in older R versions.
 
 ```{r iris_mean_melt, eval=TRUE}
 library(reshape2) # Defines melt function
 df_mean <- melt(iris_mean, id.vars=c("Species"), variable.name = "Samples", value.name="Values")
+df_mean2 <- tidyr::gather(iris_mean, !Species, key = "Samples", value = "Values")
+df_mean3 <- tidyr::pivot_longer(iris_mean, !Species, names_to="Samples", values_to="Values") 
 ```
 
 Reformat `iris_sd` with `melt`
@@ -807,7 +909,11 @@ Define standard deviation limits
 limits <- aes(ymax = df_mean[,"Values"] + df_sd[,"Values"], ymin=df_mean[,"Values"] - df_sd[,"Values"])
 ```
 
+<br/>
+
 #### Verical orientation
+
+<br/>
 
 ```{r iris_mean_bar_plot, eval=TRUE}
 p <- ggplot(df_mean, aes(Samples, Values, fill = Species)) + 
@@ -825,7 +931,11 @@ df_mean$Species <- factor(df_mean$Species, levels=unique(df_mean$Species), order
 
 In the above example this is not necessary since `ggplot` uses this order already. 
 
+<br/>
+
 #### Horizontal orientation
+
+<br/>
 
 ```{r iris_mean_bar_plot_sideways, eval=TRUE}
 p <- ggplot(df_mean, aes(Samples, Values, fill = Species)) + 
@@ -834,7 +944,11 @@ p <- ggplot(df_mean, aes(Samples, Values, fill = Species)) +
 print(p) 
 ```
 
+<br/>
+
 #### Faceting
+
+<br/>
 
 ```{r iris_mean_bar_plot_facetting, eval=FALSE}
 p <- ggplot(df_mean, aes(Samples, Values)) + geom_bar(aes(fill = Species), stat="identity") +
@@ -842,7 +956,11 @@ p <- ggplot(df_mean, aes(Samples, Values)) + geom_bar(aes(fill = Species), stat=
 print(p) 
 ```
 
+<br/>
+
 #### Error bars
+
+<br/>
 
 ```{r iris_mean_bar_plot_error, eval=TRUE}
 p <- ggplot(df_mean, aes(Samples, Values, fill = Species)) + 
@@ -851,7 +969,11 @@ p <- ggplot(df_mean, aes(Samples, Values, fill = Species)) +
 print(p) 
 ```
 
+<br/>
+
 #### Mirrored 
+
+<br/>
 
 ```{r ggplot2_mirrored_barplot, eval=TRUE}
 df <- data.frame(group = rep(c("Above", "Below"), each=10), x = rep(1:10, 2), y = c(runif(10, 0, 1), runif(10, -1, 0)))
@@ -871,7 +993,11 @@ p <- ggplot(df_mean, aes(Samples, Values, fill=Species, color=Species)) +
 print(p) 
 ```
 
+<br/>
+
 #### Using standard R color theme
+
+<br/>
 
 ```{r ggplot2_color2, eval=TRUE}
 p <- ggplot(df_mean, aes(Samples, Values, fill=Species, color=Species)) + 
@@ -881,7 +1007,12 @@ p <- ggplot(df_mean, aes(Samples, Values, fill=Species, color=Species)) +
 print(p) 
 ```
 
+<br/>
+
 #### Exercise 4
+
+<br/>
+
 
 Bar plots
 
@@ -955,14 +1086,22 @@ ggplotly(p)
 
 ### Density plots 
 
+<br/>
+
 #### Line coloring
+
+<br/>
 
 ```{r ggplot_density_plot_linecol, eval=TRUE}
 p <- ggplot(dsmall, aes(carat)) + geom_density(aes(color = color))
 print(p) 
 ```
 
+<br/>
+
 #### Area coloring
+
+<br/>
 
 ```{r ggplot_density_plot_areacol, eval=TRUE}
 p <- ggplot(dsmall, aes(carat)) + geom_density(aes(fill = color))
@@ -1021,6 +1160,8 @@ Using `gridExtra` package
 library(gridExtra)                                                                                                                                                            
 grid.arrange(a, b, c, nrow = 2, ncol=2)                                                                                                                                       
 ```    
+
+Also see `patchwork` in ggplot2 book [here](https://ggplot2-book.org/arranging-plots.html).
 
 ### Inserting Graphics into Plots
 
@@ -1101,7 +1242,11 @@ A variety of libraries are available for plotting receiver operating characteris
 + [pROC](http://web.expasy.org/pROC/)
 + [ggplot2](http://largedata.blogspot.com/2011/07/plotting-roc-curves-in-ggplot2.html)
 
+<br/>
+
 #### Example
+
+<br/>
 
 Most commonly, in an ROC we plot the true positive rate (y-axis) against the false positive rate (x-axis) at decreasing thresholds. 
 An illustrative example is provided in the `ROCR` package where one wants to inspect the content of the `ROCR.simple` object
@@ -1171,7 +1316,11 @@ cophyloplot(tree1, tree2, assoc = association,
         - [ggbio online manual](https://lawremi.github.io/ggbio/)
 		- [autoplot demo](https://lawremi.github.io/ggbio/docs/man/autoplot-method.html)
 
+<br/>
+
 #### Tracks: aligning plots along chromosomes
+
+<br/>
 
 ```{r ggbio_align, eval=TRUE, warning=FALSE, message=FALSE}
 library(ggbio)
@@ -1182,7 +1331,11 @@ p2 <- ggplot(data = df2, aes(x = time, y = score)) + geom_line() + geom_point(si
 tracks(time1 = p1, time2 = p2) + xlim(1, 40) + theme_tracks_sunset()
 ```
 
+<br/>
+
 #### Plotting genomic ranges
+
+<br/>
 
 `GRanges` objects are essential for storing alignment or annotation ranges in R/Bioconductor. The following creates a sample `GRanges` object and plots its content.
 
@@ -1192,13 +1345,21 @@ set.seed(1); N <- 100; gr <- GRanges(seqnames = sample(c("chr1", "chr2", "chr3")
 autoplot(gr, aes(color = strand, fill = strand), facets = strand ~ seqnames)
 ```
 
+<br/>
+
 #### Plotting coverage 
+
+<br/>
 
 ```{r ggbio_coverage, eval=TRUE}
 autoplot(gr, aes(color = strand, fill = strand), facets = strand ~ seqnames, stat = "coverage")
 ```
 
+<br/>
+
 #### Mirrored coverage 
+
+<br/>
 
 ```{r ggbio_mirrored_coverage, eval=TRUE}
 pos <- sapply(coverage(gr[strand(gr)=="+"]), as.numeric)
@@ -1235,9 +1396,13 @@ ggplot() +
 
 <center><img title="vim-r" src="images/circularplot.png"/></center>
 
+<br/>
+
 #### Alignments and variants
 
-To make the following example work, please download and unpack this [data archive](http://biocluster.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_12_16_2013/Rgraphics/data.zip) containing GFF, BAM and VCF sample files.
+<br/>
+
+To make the following example work, please download and unpack this [data archive](http://cluster.hpcc.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_12_16_2013/Rgraphics/data.zip) containing GFF, BAM and VCF sample files.
 
 ```{r ggbio_align_variants, eval=TRUE, warning=FALSE, message=FALSE}
 library(rtracklayer); library(GenomicFeatures); library(Rsamtools); library(GenomicAlignments); library(VariantAnnotation)
@@ -1281,7 +1446,11 @@ https://cluster.hpcc.ucr.edu/~tgirke/Teaching/GEN242/bam_samples/SRR064167.fastq
 <center><img title="vim-r" src="images/igv_peak_3.png"/></center>
 
 
+<br/>
+
 #### Create symbolic links 
+
+<br/>
 
 For viewing BAM files in IGV as part of `systemPipeR` workflows.
 
@@ -1295,7 +1464,11 @@ symLink2bam(sysargs=args, htmldir=c("~/.html/", "somedir/"),
             urlfile="IGVurl.txt")
 ```
 
+<br/>
+
 #### Controlling IGV from R
+
+<br/>
 
 Open IGV before running the following routine. Alternatively, open IGV from within R with `startIGV("lm")` .
 Note this may not work on all systems. 

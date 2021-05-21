@@ -225,8 +225,8 @@ qplot(x, y, geom="point", size=5, shape=cat)
 
 ## ----qplot_scatter_plot_colored_groups, eval=TRUE-----------------------------
 p <- qplot(x, y, geom="point", size=x, color=cat, 
-            main="Dot Size and Color Relative to Some Values") + 
-     theme(legend.position = "none")
+           main="Dot Size and Color Relative to Some Values") + 
+           theme(legend.position = "none")
 print(p)
 
 
@@ -336,6 +336,8 @@ iris_sd <- aggregate(iris[,1:4], by=list(Species=iris$Species), FUN=sd)
 ## ----iris_mean_melt, eval=TRUE------------------------------------------------
 library(reshape2) # Defines melt function
 df_mean <- melt(iris_mean, id.vars=c("Species"), variable.name = "Samples", value.name="Values")
+df_mean2 <- tidyr::gather(iris_mean, !Species, key = "Samples", value = "Values")
+df_mean3 <- tidyr::pivot_longer(iris_mean, !Species, names_to="Samples", values_to="Values") 
 
 
 ## ----iris_sd_melt, eval=TRUE--------------------------------------------------
