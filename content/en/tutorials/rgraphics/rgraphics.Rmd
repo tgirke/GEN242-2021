@@ -298,7 +298,7 @@ library(gplots)
 colorpanel(5, "darkblue", "yellow", "white")
 ```
 
-Much more on colors in R see Earl Glynn's [color chart](http://research.stowers-institute.org/efg/R/Color/Chart/)
+Much more on colors in R see Earl Glynn's [color chart](http://earlglynn.github.io/color/ColorInR)
 
 
 ### Arranging Several Plots on Single Page
