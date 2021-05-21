@@ -22,12 +22,12 @@
  Introduction systemPipeR is provides flexible utilities for building and running automated end-to-end analysis workflows for a wide range of research applications, including next-generation sequencing (NGS) experiments, such as RNA-Seq, ChIP-Seq, VAR-Seq and Ribo-Seq (H Backman and Girke 2016)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/systempiper/systempiper/" />
-<meta property="article:modified_time" content="2021-05-21T10:28:55-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-05-21T10:32:22-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="systemPipeR: Workflow design and reporting generation environment">
 <meta itemprop="description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
  Introduction systemPipeR is provides flexible utilities for building and running automated end-to-end analysis workflows for a wide range of research applications, including next-generation sequencing (NGS) experiments, such as RNA-Seq, ChIP-Seq, VAR-Seq and Ribo-Seq (H Backman and Girke 2016).">
-<meta itemprop="dateModified" content="2021-05-21T10:28:55-07:00" />
-<meta itemprop="wordCount" content="5028">
+<meta itemprop="dateModified" content="2021-05-21T10:32:22-07:00" />
+<meta itemprop="wordCount" content="5059">
 
 
 
@@ -927,7 +927,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.3539b32d113b306ed75bad9261795216.json"
+  data-offline-search-index-json-src="../../../offline-search-index.ff11dcaff87e251b3c0f3b97a3a87917.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -959,7 +959,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.3539b32d113b306ed75bad9261795216.json"
+  data-offline-search-index-json-src="../../../offline-search-index.ff11dcaff87e251b3c0f3b97a3a87917.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1527,9 +1527,12 @@ plots and column titles). Importantly, the labels used in the <code>SampleName</
 column need to be unique, while technical or biological replicates are
 indicated by duplicated values under the <code>Factor</code> column. For readability
 and transparency, it is useful to use here a short, consistent and informative
-syntax for naming samples and replicates. In addition, to avoid problems with other
+syntax for naming samples and replicates. To avoid problems with other
 packages or external software, it is recommended to use the basic naming rules
-for R objects as outlined <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rbasics/rbasics/#data-objects">here</a>.</p>
+for R objects and their components as outlined <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rbasics/rbasics/#data-objects">here</a>.
+This is important since the values used under the <code>SampleName</code> and <code>Factor</code>
+columns are intended to be used as labels for naming columns or plotting features
+in downstream analysis steps.</p>
 <p>Users should note here, the usage of targets files is optional when using
 <em>systemPipeR’s</em> new CWL interface. They can be replaced by a standard YAML
 input file used by CWL. Since for organizing experimental variables targets
@@ -2318,7 +2321,7 @@ setwd(&quot;riboseq&quot;)
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-21: <a  href="https://github.com/tgirke/GEN242//commit/2d4a0d9b9656523dca3235e2500bab4ede0285c6">some edits (2d4a0d9b9)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-21: <a  href="https://github.com/tgirke/GEN242//commit/7a845152b4d24b53223c0c3bff605711a5df7028">some edits (7a845152b)</a>
 </div>
 </div>
 
