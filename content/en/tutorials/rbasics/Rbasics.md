@@ -350,6 +350,7 @@ which(x) # Returns index for the 'TRUE' values in logical vector
     -   `matrices`: two dimensional structures with data of same type
     -   `arrays`: multidimensional arrays of vectors
     -   `lists`: general form of vectors with different types of elements
+    -   `functions`: piece of code
     -   Many more …
 -   Simple rules for naming objects and their components
     -   Object, row and column names should not start with a number
