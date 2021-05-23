@@ -690,13 +690,31 @@ For details see the *R Packages* online book by Hadley Wickham and Jenny Bryan [
 ### 2. With `devtools`, `usethis`, `roxygen2` and `sinew`
 
 Several package develpment routines of the traditional method outlined above are manual, such as updating the NAMESPACE file and documenting functions in separate help (`*.Rd`)
-files. This process can be simplified and partially automated by taking advantages of the new R package development environment that includes several helper packages including: `devtools`, `usethis`, `roxygen2` and `sinew`. The following outlines the basic workflow for building, testing and extending R packages with functionalities of these packages. Much more detailed information is provided by the following online resources:
+files. This process can be simplified and partially automated by taking advantage of a more recent R package development environment composed of several helper packages including `devtools`, `usethis`, `roxygen2` and `sinew`. The following outlines the basic workflow for building, testing and extending R packages with functionalities of this environment. Much more detailed information is provided by the following online resources:
 
 -   Book: [R Packages](https://r-pkgs.org/index.html) by Hadley Wickham and Jenny Bryan  
 -   [My First R Package](https://tinyheero.github.io/jekyll/update/2015/07/26/making-your-first-R-package.html) by Fong Chun Chan
 -   [How to Creat an R Package, Easy Mode](https://www.amitkohli.com/2020/01/07/2020-01-07-how-to-create-an-r-package-my-way/) by Amit Kohli
 -   [Package Development Cheat Sheet](https://rawgit.com/rstudio/cheatsheets/master/package-development.pdf)
 -   Automating `roxygen2` documentation with `sinew` by Jonathan Sidi: [Blog](https://yonicd.github.io/2017-09-18-sinew/) and [CRAN](https://cran.r-project.org/web/packages/sinew/index.html)
+
+#### (a) Create package skeleton
+
+``` r
+library("devtools"); library("roxygen2"); library("usethis"); library(sinew) # If not availble install these packages with 'install.packages(...)'
+create("myfirstpkg") # Creates package skeleton. The chosen name (here myfirstpkg) will be the name of the package.
+setwd("myfirstpkg") # Set working directory of R session to package directory 'myfirstpkg'
+use_mit_license() # Adds license to description file (here MIT). To look up alternatives, do ?use_mit_license
+```
+
+#### (b) Add function(s) to `*.R` file(s) to R directory of package
+
+Several functions can be in one `*.R` file, each in its own file or any combination. For demonstration purposes, the following will download an R file with two functions to the
+R directory of the new `myfirstpkg` package.
+
+``` r
+download.file(..., "R/my..")
+```
 
 ## Programming Exercises
 
