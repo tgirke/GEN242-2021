@@ -755,7 +755,7 @@ of the vignette will be located under a new `vignette` directory. Additional vig
 use_vignette("introduction", title="Introduction to this package")
 ```
 
-### \#\# (f) Check, install and build package
+#### (f) Check, install and build package
 
 Now the package can be checked for problems. All warnings and errors should be
 addressed prior to submission to a public repository. After this it can be
@@ -770,7 +770,7 @@ install("myfirstpkg", build_vignettes=TRUE) # Installs package
 build("myfirstpkg") # Creates *.tar.gz file for package required to for submission to CRAN/Bioc
 ```
 
-### \#\# (g) Using new package
+#### (g) Using new package
 
 After installing and loading the package its functions, help files and vignettes can be accessed as follows.
 
@@ -779,6 +779,9 @@ library(myfirstpkg)
 ?myMAcomp
 vignette("introduction", "myfirstpkg")
 ```
+
+Other useful functions include `load_all` for loading a package for testing prior to installing it, and `test`
+for evaluating the test code of a package.
 
 ## Programming Exercises
 
