@@ -25,7 +25,7 @@
 <meta itemprop="name" content="Programming in R">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Overview One of the main attractions of using the R (http://cran.at.r-project.org) environment is the ease with which users can write their own programs and custom functions. The R programming syntax is extremely easy to learn, even for users with no previous programming experience. Once the basic R programming control structures are understood, users can use the R language as a powerful environment to perform complex custom analyses of almost any type of data (Gentleman 2008).">
 <meta itemprop="dateModified" content="2021-05-23T16:27:35-07:00" />
-<meta itemprop="wordCount" content="4439">
+<meta itemprop="wordCount" content="4482">
 
 
 
@@ -924,7 +924,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.eda8185f95669254567ad213fc57cd1c.json"
+  data-offline-search-index-json-src="../../../offline-search-index.1d13456919f3237374e03e2495325764.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -956,7 +956,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.eda8185f95669254567ad213fc57cd1c.json"
+  data-offline-search-index-json-src="../../../offline-search-index.1d13456919f3237374e03e2495325764.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1323,7 +1323,7 @@ if (!doNotTrack) {
 	<h1>Programming in R</h1>
     
 	
-        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 21 minute read</p>
+        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 22 minute read</p>
            
 	<!--
 - Compile from command-line
@@ -1819,9 +1819,9 @@ use_mit_license() # Add license information to description file (here MIT). To l
 <p>Next R functions can be added to <code>*.R</code> file(s) under R directory of the new
 package. Several functions can be organized in one <code>*.R</code> file, each in its own
 file or any combination. For demonstration purposes, the following will
-download an R file defining two functions (here <code>myMAcomp</code> and <code>...</code>) to the R directory of the new
-<code>myfirstpkg</code> package.</p>
-<pre><code class="language-r">download.file(..., &quot;R/my..&quot;)
+download an R file (here <code>pkg_build_fct.R</code>) defining two functions (named:<code>myMAcomp</code>
+and <code>talkToMe</code>) to the R directory of the new <code>myfirstpkg</code> package.</p>
+<pre><code class="language-r">download.file(&quot;https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/manuals/rprogramming/helper_functions/pkg_build_fct.R&quot;, &quot;R/pkg_build_fct.R&quot;)
 </code></pre>
 <h4 id="c-auto-generate-roxygen-comment-lines">(c) Auto-generate roxygen comment lines</h4>
 <p>The <code>makeOxygen</code> function from the <code>sinew</code> package creates <code>roxygen2</code> comment
@@ -1834,12 +1834,17 @@ roxygen comment lines have been added above all functions automatically. Next,
 the default text in the comment lines needs to be replaced by meaningful text
 to document the utility and usage of each function. This manual process can be
 completed any time.</p>
-<pre><code class="language-r">writeLines(makeOxygen(myMAcomp), &quot;myroxylines&quot;) # This creates a 'myroxylines' file in current directory. Delete this file after adding its content to the corresponding functions.
+<pre><code class="language-r">load_all() # Loads package in a simulated way without installing it. 
+writeLines(makeOxygen(myMAcomp), &quot;myroxylines&quot;) # This creates a 'myroxylines' file in current directory. Delete this file after adding its content to the corresponding functions.
 </code></pre>
 <h4 id="d-autogenerate-help-files">(d) Autogenerate help files</h4>
-<p>The <code>document</code> function autogenerates for each function a <code>*.Rd</code> file in the <code>man</code> directory of the package.<br>
-The content in the <code>*.Rd</code> help files is based on the information provided by the roxygen comment lines generated in the previous
-step.</p>
+<p>The <code>document</code> function autogenerates for each function a <code>*.Rd</code> file in the
+<code>man</code> directory of the package. The content in the <code>*.Rd</code> help files is based
+on the information provided by the roxygen comment lines generated in the
+previous step. In addition, all relevant export/import instructions are added
+to the <code>NAMESPACE</code> file. Importantly, when using roxygen-base documentation in a package
+then the <code>NAMESPACE</code> and <code>*.Rd</code> files should not be manually edited since this information
+will be lost during the autmation process.</p>
 <pre><code class="language-r">document()
 </code></pre>
 <h4 id="e-add-a-vignette">(e) Add a vignette</h4>
@@ -1864,8 +1869,7 @@ build(&quot;myfirstpkg&quot;) # Creates *.tar.gz file for package required to fo
 ?myMAcomp
 vignette(&quot;introduction&quot;, &quot;myfirstpkg&quot;)
 </code></pre>
-<p>Other useful functions include <code>load_all</code> for loading a package for testing prior to installing it, and <code>test</code>
-for evaluating the test code of a package.</p>
+<p>Another very useful development function is <code>test</code> for evaluating the test code of a package.</p>
 <h2 id="programming-exercises">Programming Exercises</h2>
 <h3 id="exercise-1">Exercise 1</h3>
 <h4 id="for-loop-1"><code>for</code> loop</h4>
