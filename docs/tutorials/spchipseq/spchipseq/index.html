@@ -29,7 +29,7 @@ Background and objectives This report describes the analysis of several ChIP-Seq
  Introduction Users want to provide here background information about the design of their ChIP-Seq project.
 Background and objectives This report describes the analysis of several ChIP-Seq experiments studying the DNA binding patterns of the transcriptions factors … from organism ….">
 <meta itemprop="dateModified" content="2021-05-12T16:13:42-07:00" />
-<meta itemprop="wordCount" content="3702">
+<meta itemprop="wordCount" content="3705">
 
 
 
@@ -930,7 +930,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.4e83a383cd3b0bfbc11badc7f6fef36d.json"
+  data-offline-search-index-json-src="../../../offline-search-index.be2bbd3ea95ff2b7bcc57bb73d73bdcc.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -962,7 +962,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.4e83a383cd3b0bfbc11badc7f6fef36d.json"
+  data-offline-search-index-json-src="../../../offline-search-index.be2bbd3ea95ff2b7bcc57bb73d73bdcc.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1694,6 +1694,7 @@ args_bam &lt;- output_update(args_bam, dir = FALSE, replace = TRUE,
     extension = c(&quot;.sam&quot;, &quot;.bam&quot;))
 outpaths &lt;- subsetWF(args_bam, slot = &quot;output&quot;, subset = 1, index = 1)
 
+register(MulticoreParam(workers = 3))
 bfl &lt;- BamFileList(outpaths, yieldSize = 50000, index = character())
 countDFnames &lt;- countRangeset(bfl, args, mode = &quot;Union&quot;, ignore.strand = TRUE)
 writeTargetsout(x = args, file = &quot;targets_countDF.txt&quot;, step = 1, 

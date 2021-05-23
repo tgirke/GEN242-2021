@@ -1,7 +1,7 @@
 ---
 title: "ChIP-Seq Workflow Template" 
 author: "Author: Daniela Cassol, Le Zhang and Thomas Girke"
-date: "Last update: 12 May, 2021" 
+date: "Last update: 22 May, 2021" 
 output:
   BiocStyle::html_document:
     toc_float: true
@@ -558,6 +558,7 @@ args_bam <- output_update(args_bam, dir = FALSE, replace = TRUE,
     extension = c(".sam", ".bam"))
 outpaths <- subsetWF(args_bam, slot = "output", subset = 1, index = 1)
 
+register(MulticoreParam(workers = 3))
 bfl <- BamFileList(outpaths, yieldSize = 50000, index = character())
 countDFnames <- countRangeset(bfl, args, mode = "Union", ignore.strand = TRUE)
 writeTargetsout(x = args, file = "targets_countDF.txt", step = 1, 

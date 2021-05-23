@@ -532,6 +532,7 @@ args_bam <- renderWF(args_bam, inputvars = c(FileName1 = "_FASTQ_PATH1_", Sample
 args_bam <- output_update(args_bam, dir=FALSE, replace=TRUE, extension=c(".sam", ".bam"))
 outpaths <- subsetWF(args_bam, slot="output", subset=1, index=1)
 
+register(MulticoreParam(workers=3))
 bfl <- BamFileList(outpaths, yieldSize=50000, index=character())
 countDFnames <- countRangeset(bfl, args, mode="Union", ignore.strand=TRUE)
 writeTargetsout(x=args, file="targets_countDF.txt", step = 1, 
