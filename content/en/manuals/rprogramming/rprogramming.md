@@ -704,16 +704,80 @@ files. This process can be simplified and partially automated by taking advantag
 library("devtools"); library("roxygen2"); library("usethis"); library(sinew) # If not availble install these packages with 'install.packages(...)'
 create("myfirstpkg") # Creates package skeleton. The chosen name (here myfirstpkg) will be the name of the package.
 setwd("myfirstpkg") # Set working directory of R session to package directory 'myfirstpkg'
-use_mit_license() # Adds license to description file (here MIT). To look up alternatives, do ?use_mit_license
+use_mit_license() # Add license information to description file (here MIT). To look up alternatives, do ?use_mit_license
 ```
 
-#### (b) Add function(s) to `*.R` file(s) to R directory of package
+#### (b) Add R functions
 
-Several functions can be in one `*.R` file, each in its own file or any combination. For demonstration purposes, the following will download an R file with two functions to the
-R directory of the new `myfirstpkg` package.
+Next R functions can be added to `*.R` file(s) under R directory of the new
+package. Several functions can be organized in one `*.R` file, each in its own
+file or any combination. For demonstration purposes, the following will
+download an R file defining two functions (here `myMAcomp` and `...`) to the R directory of the new
+`myfirstpkg` package.
 
 ``` r
 download.file(..., "R/my..")
+```
+
+#### (c) Auto-generate roxygen comment lines
+
+The `makeOxygen` function from the `sinew` package creates `roxygen2` comment
+skeletons based on the information from each function (below for `myMAcomp`).
+The roxygen comment lines need to be added above the code of each function.
+This can be done by copy and paste from the R console or by writing the output
+to a temporary file (below via `writeLines`). Alternatively, the `makeOxyFile`
+function can be used to create from a copy of an R source file where the
+roxygen comment lines have been added above all functions automatically. Next,
+the default text in the comment lines needs to be replaced by meaningful text
+to document the utility and usage of each function. This manual process can be
+completed any time.
+
+``` r
+writeLines(makeOxygen(myMAcomp), "myroxylines") # This creates a 'myroxylines' file in current directory. Delete this file after adding its content to the corresponding functions.
+```
+
+#### (d) Autogenerate help files
+
+The `document` function autogenerates for each function a `*.Rd` file in the `man` directory of the package.  
+The content in the `*.Rd` help files is based on the information provided by the roxygen comment lines generated in the previous
+step.
+
+``` r
+document()
+```
+
+#### (e) Add a vignette
+
+A vignette template can be auto-generated with the `use_vignette` function from the `usethis` package. The `*.Rmd` source file
+of the vignette will be located under a new `vignette` directory. Additional vignettes can be manually added to this directory.
+
+``` r
+use_vignette("introduction", title="Introduction to this package")
+```
+
+### \#\# (f) Check, install and build package
+
+Now the package can be checked for problems. All warnings and errors should be
+addressed prior to submission to a public repository. After this it can be
+installed on a user’s system with the `install` command. In addition, the
+`build` function allows to assembled the package in a `*.tar.gz` file. The
+latter is often important for sharing and submission to public repositories.
+
+``` r
+setwd("..") # Redirect R session to parent directory
+check("myfirstpkg") # Check package for problems, when in pkg dir one can just use check()
+install("myfirstpkg", build_vignettes=TRUE) # Installs package  
+build("myfirstpkg") # Creates *.tar.gz file for package required to for submission to CRAN/Bioc
+```
+
+### \#\# (g) Using new package
+
+After installing and loading the package its functions, help files and vignettes can be accessed as follows.
+
+``` r
+library(myfirstpkg)
+?myMAcomp
+vignette("introduction", "myfirstpkg")
 ```
 
 ## Programming Exercises
