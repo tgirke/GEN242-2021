@@ -520,10 +520,10 @@ In the given example the number `10` is passed on from the command-line as an ar
 
 Two approaches for building R packages are introduced here: 
 
-A. Traditional approach using base R functionalities 
-B. R package development with suite of helper packages: `devtools`, `usethis`, `roxygen2` and `sinew`.
+1. Traditional approach using base R functionalities 
+2. R package development with suite of helper packages: `devtools`, `usethis`, `roxygen2` and `sinew`.
 
-### (A) Traditional Approach
+### (1) Traditional Approach
 
 ### Short Overview of Package Building Process
 
@@ -545,9 +545,11 @@ Install package from source
 install.packages("mypackage_1.0.tar.gz", repos=NULL) 
 ```
 
-For more details see [here](http://manuals.bioinformatics.ucr.edu/home/programming-in-r#TOC-Building-R-Packages)
+For more details see [here](http://manuals.bioinformatics.ucr.edu/home/programming-in-r#TOC-Building-R-Packages). 
+Additional utilities for building R packages are provided by `devtools::create` and `usethis::create_package` functions. 
+For details see the _R Packages_ online book by Hadley Wickham and Jenny Bryan [here](https://r-pkgs.org/package-structure-state.html#in-memory-package).
 
-### (B) With `devtools`, `usethis`, `roxygen2` and `sinew`
+### (2) With `devtools`, `usethis`, `roxygen2` and `sinew`
 
 
 ## Programming Exercises
