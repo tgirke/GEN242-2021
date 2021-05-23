@@ -632,7 +632,7 @@ install("myfirstpkg", build_vignettes=TRUE) # Installs package
 build("myfirstpkg") # Creates *.tar.gz file for package required to for submission to CRAN/Bioc
 ```
 
-#### (g) Using new package
+#### (g) Using the new package
 
 After installing and loading the package its functions, help files and vignettes can be accessed as follows. 
 

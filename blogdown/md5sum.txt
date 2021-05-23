@@ -12,7 +12,7 @@
 "content/en/manuals/rgraphics/rgraphics.Rmd" "c06e9c3548fb59f9310fdf1ecd3103cb"
 "content/en/manuals/rparallel/rparallel.Rmarkdown" "264f740bb570ad35ab302e6c5c71aa36"
 "content/en/manuals/rprogramming/rprogramming.Rmarkdown" "3695e398b7b68f5871b466653083e7dd"
-"content/en/manuals/rprogramming/rprogramming.Rmd" "c6cbfb79c8fcf916352fd9a4096dae03"
+"content/en/manuals/rprogramming/rprogramming.Rmd" "dc254b062c7a04d744d228d93a5e00a1"
 "content/en/manuals/rsequences/Rsequences.Rmarkdown" "601dc1b02f1ab533ca7feb076822dd54"
 "content/en/manuals/spchipseq/spchipseq.Rmd" "fc9318734c467d492ffcb9ca0754515a"
 "content/en/manuals/sprnaseq/sprnaseq.Rmd" "f5e280f2117978c856db0a3e9df47f60"
