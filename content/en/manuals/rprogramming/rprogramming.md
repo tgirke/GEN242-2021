@@ -1,7 +1,7 @@
 ---
 title: "Programming in R" 
 author: "Author: Thomas Girke"
-date: "Last update: 01 May, 2021" 
+date: "Last update: 23 May, 2021" 
 output:
   html_document:
     toc: true
@@ -655,6 +655,13 @@ In the given example the number `10` is passed on from the command-line as an ar
 
 ## Building R Packages
 
+Two approaches for building R packages are introduced here:
+
+A. Traditional approach using base R functionalities
+B. R package development with suite of helper packages: `devtools`, `usethis`, `roxygen2` and `sinew`.
+
+### (A) Traditional Approach
+
 ### Short Overview of Package Building Process
 
 R packages can be built with the `package.skeleton` function. The given example will create a directory named `mypackage` containing the skeleton of the package for all functions, methods and classes defined in the R script(s) passed on to the `code_files` argument. The basic structure of the package directory is described [here](http://manuals.bioinformatics.ucr.edu/home/programming-in-r#Progr_pack). The package directory will also contain a file named `Read-and-delete-me` with instructions for completing the package:
@@ -677,6 +684,8 @@ install.packages("mypackage_1.0.tar.gz", repos=NULL)
 ```
 
 For more details see [here](http://manuals.bioinformatics.ucr.edu/home/programming-in-r#TOC-Building-R-Packages)
+
+### (B) With `devtools`, `usethis`, `roxygen2` and `sinew`
 
 ## Programming Exercises
 
