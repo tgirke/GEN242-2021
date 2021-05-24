@@ -463,6 +463,11 @@ enable = true
     url = "/tutorials/shinyapps/shinyapps/"
     parent = "Tutorials"
     weight = 215
+  [[menu.main]]
+    name = "Building R Packages (T16)"
+    url = "/tutorials/rpackages/rpackages/"
+    parent = "Tutorials"
+    weight = 216
 ##
 [[menu.main]]
   name = "Manuals"

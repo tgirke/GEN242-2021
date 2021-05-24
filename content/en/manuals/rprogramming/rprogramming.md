@@ -704,8 +704,8 @@ are manual, such as updating the NAMESPACE file and documenting functions in
 separate help (`*.Rd`) files. This process can be simplified and partially
 automated by taking advantage of a more recent R package development
 environment composed of several helper packages including `devtools`,
-`usethis`, `roxygen2` and `sinew`. Many books and online resources document this process
-in more detail. Here is a small selection of useful documentation about
+`usethis`, `roxygen2` and `sinew`. Many books and web sites document this process
+in more detail. Here is a small selection of useful online documentation about
 R package development:
 
 -   Book: [R Packages](https://r-pkgs.org/index.html) by Hadley Wickham and Jenny Bryan  
@@ -715,7 +715,7 @@ R package development:
 -   Automating `roxygen2` documentation with `sinew` by Jonathan Sidi: [Blog](https://yonicd.github.io/2017-09-18-sinew/) and [CRAN](https://cran.r-project.org/web/packages/sinew/index.html)
 
 The following outlines the basic workflow for building, testing and extending R packages with
-the functionalities of above package development environment.
+the functionalities of package development environment outlined above.
 
 #### (a) Create package skeleton
 
@@ -732,7 +732,7 @@ Next, R functions can be added to `*.R` file(s) under the R directory of the new
 package. Several functions can be organized in one `*.R` file, each in its own
 file or any combination. For demonstration purposes, the following will
 download an R file (`pkg_build_fct.R` from [here](https://bit.ly/3hK0mdH)) defining two functions (named:`myMAcomp`
-and `talkToMe`) and save it to the R directory of the new `myfirstpkg` package.
+and `talkToMe`) and save it to the R directory of the package.
 
 ``` r
 download.file("https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/manuals/rprogramming/helper_functions/pkg_build_fct.R", "R/pkg_build_fct.R")

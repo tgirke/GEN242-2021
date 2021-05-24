@@ -59,7 +59,7 @@
   
   <url>
     <loc>/manuals/rprogramming/rprogramming/</loc>
-    <lastmod>2021-05-23T17:10:01-07:00</lastmod>
+    <lastmod>2021-05-23T17:16:21-07:00</lastmod>
   </url>
   
   <url>
@@ -160,6 +160,10 @@
   <url>
     <loc>/tutorials/shinyapps/shinyapps/</loc>
     <lastmod>2021-05-18T17:12:56-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tutorials/rpackages/rpackages/</loc>
   </url>
   
   <url>

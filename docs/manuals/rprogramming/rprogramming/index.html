@@ -21,10 +21,10 @@
 <meta property="og:description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Overview One of the main attractions of using the R (http://cran.at.r-project.org) environment is the ease with which users can write their own programs and custom functions. The R programming syntax is extremely easy to learn, even for users with no previous programming experience. Once the basic R programming control structures are understood, users can use the R language as a powerful environment to perform complex custom analyses of almost any type of data (Gentleman 2008)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/manuals/rprogramming/rprogramming/" />
-<meta property="article:modified_time" content="2021-05-23T17:10:01-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-05-23T17:16:21-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Programming in R">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Overview One of the main attractions of using the R (http://cran.at.r-project.org) environment is the ease with which users can write their own programs and custom functions. The R programming syntax is extremely easy to learn, even for users with no previous programming experience. Once the basic R programming control structures are understood, users can use the R language as a powerful environment to perform complex custom analyses of almost any type of data (Gentleman 2008).">
-<meta itemprop="dateModified" content="2021-05-23T17:10:01-07:00" />
+<meta itemprop="dateModified" content="2021-05-23T17:16:21-07:00" />
 <meta itemprop="wordCount" content="4510">
 
 
@@ -490,6 +490,14 @@ if (!doNotTrack) {
                  Shiny Apps (T15)
               </a>
           	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/rpackages/rpackages/"
+              style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Building R Packages (T16)
+              </a>
+          	
           </div>
 				
 			</li>
@@ -924,7 +932,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.1c0ac6a3dc293503d694e4c888a25992.json"
+  data-offline-search-index-json-src="../../../offline-search-index.585e577b93709f8c19190c4ed7c19e14.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -956,7 +964,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.1c0ac6a3dc293503d694e4c888a25992.json"
+  data-offline-search-index-json-src="../../../offline-search-index.585e577b93709f8c19190c4ed7c19e14.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1815,8 +1823,8 @@ are manual, such as updating the NAMESPACE file and documenting functions in
 separate help (<code>*.Rd</code>) files. This process can be simplified and partially
 automated by taking advantage of a more recent R package development
 environment composed of several helper packages including <code>devtools</code>,
-<code>usethis</code>, <code>roxygen2</code> and <code>sinew</code>. Many books and online resources document this process
-in more detail. Here is a small selection of useful documentation about
+<code>usethis</code>, <code>roxygen2</code> and <code>sinew</code>. Many books and web sites document this process
+in more detail. Here is a small selection of useful online documentation about
 R package development:</p>
 <ul>
 <li>Book: <a href="https://r-pkgs.org/index.html">R Packages</a> by Hadley Wickham and Jenny Bryan</li>
@@ -1826,7 +1834,7 @@ R package development:</p>
 <li>Automating <code>roxygen2</code> documentation with <code>sinew</code> by Jonathan Sidi: <a href="https://yonicd.github.io/2017-09-18-sinew/">Blog</a> and <a href="https://cran.r-project.org/web/packages/sinew/index.html">CRAN</a></li>
 </ul>
 <p>The following outlines the basic workflow for building, testing and extending R packages with
-the functionalities of above package development environment.</p>
+the functionalities of package development environment outlined above.</p>
 <h4 id="a-create-package-skeleton">(a) Create package skeleton</h4>
 <pre><code class="language-r">library(&quot;devtools&quot;); library(&quot;roxygen2&quot;); library(&quot;usethis&quot;); library(sinew) # If not availble install these packages with 'install.packages(...)'
 create(&quot;myfirstpkg&quot;) # Creates package skeleton. The chosen name (here myfirstpkg) will be the name of the package.
@@ -1838,7 +1846,7 @@ use_mit_license() # Add license information to description file (here MIT). To l
 package. Several functions can be organized in one <code>*.R</code> file, each in its own
 file or any combination. For demonstration purposes, the following will
 download an R file (<code>pkg_build_fct.R</code> from <a href="https://bit.ly/3hK0mdH">here</a>) defining two functions (named:<code>myMAcomp</code>
-and <code>talkToMe</code>) and save it to the R directory of the new <code>myfirstpkg</code> package.</p>
+and <code>talkToMe</code>) and save it to the R directory of the package.</p>
 <pre><code class="language-r">download.file(&quot;https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/manuals/rprogramming/helper_functions/pkg_build_fct.R&quot;, &quot;R/pkg_build_fct.R&quot;)
 </code></pre>
 <h4 id="c-auto-generate-roxygen-comment-lines">(c) Auto-generate roxygen comment lines</h4>
@@ -2153,7 +2161,7 @@ AAv[y]
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-23: <a  href="https://github.com/tgirke/GEN242//commit/b8742b0cf083729540d2cdf7eacc9b522058e1f0">some edits (b8742b0cf)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-23: <a  href="https://github.com/tgirke/GEN242//commit/e44cb4d05ada430a6634ad10bf2785fe908a860a">some edits (e44cb4d05)</a>
 </div>
 </div>
 
