@@ -71,7 +71,7 @@ pre[class] {
 
 - <div class="white">__Overview__</div>
 - Package Development with `R Base` _et al._
-- Package Develop with `devtools` _et al._
+- Package Development with `devtools` _et al._
 - References
 
 
@@ -109,7 +109,7 @@ practical soluton for newer users of R.
 
 - Overview
 - <div class="white">Package Development with `R Base` _et al._<div class="white">
-- Package Develop with `devtools` _et al._
+- Package Development with `devtools` _et al._
 - References
 
 
@@ -154,7 +154,7 @@ install.packages("mypackage_1.0.tar.gz", repos=NULL)
 
 - Overview
 - Package Development with `R Base` _et al._
-- <div class="white">Package Develop with `devtools` _et al._<div class="white">
+- <div class="white">Package Development with `devtools` _et al._<div class="white">
 - References
 
 ## R `devtools` _et al._ 
@@ -281,7 +281,7 @@ Another very useful development function is `test` for evaluating the test code 
 
 - Overview
 - Package Development with `R Base` _et al._
-- Package Develop with `devtools` _et al._
+- Package Development with `devtools` _et al._
 - <div class="white">References<div class="white">
 
 ## Session Info
