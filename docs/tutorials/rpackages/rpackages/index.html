@@ -18,24 +18,21 @@
 <link rel="icon" type="image/png" href="../../../favicons/android-192x192.png" sizes="192x192">
 
 <title>Building R Packages | GEN242</title><meta property="og:title" content="Building R Packages" />
-<meta property="og:description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Overview This tutorial introduces two approaches for building R packages:
- Traditional approach using base R functionalities R package development with helper packages: devtools, usethis, roxygen2 and sinew  The sample code provided below creates for each method a simple test package that can be installed and loaded on a user’s system." />
+<meta property="og:description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Overview Motivation to build R packages  Organization  Consolidate functions with related utilties in single place Interdepencies among less complex functions make coding more efficient Minimizes duplications   Documentation  Help page infrastructure improves documentation of functions Big picture of utilties provided by package vignettes (manuals)   Sharability  Package can be easier shared with colleagues and public Increases code accessibilty for other users    Package development environments This following introduces two approaches for building R packages:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rpackages/rpackages/" />
-<meta property="article:modified_time" content="2021-05-23T18:10:34-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-05-23T19:19:30-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Building R Packages">
-<meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Overview This tutorial introduces two approaches for building R packages:
- Traditional approach using base R functionalities R package development with helper packages: devtools, usethis, roxygen2 and sinew  The sample code provided below creates for each method a simple test package that can be installed and loaded on a user’s system.">
-<meta itemprop="dateModified" content="2021-05-23T18:10:34-07:00" />
-<meta itemprop="wordCount" content="1178">
+<meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Overview Motivation to build R packages  Organization  Consolidate functions with related utilties in single place Interdepencies among less complex functions make coding more efficient Minimizes duplications   Documentation  Help page infrastructure improves documentation of functions Big picture of utilties provided by package vignettes (manuals)   Sharability  Package can be easier shared with colleagues and public Increases code accessibilty for other users    Package development environments This following introduces two approaches for building R packages:">
+<meta itemprop="dateModified" content="2021-05-23T19:19:30-07:00" />
+<meta itemprop="wordCount" content="1307">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Building R Packages"/>
-<meta name="twitter:description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Overview This tutorial introduces two approaches for building R packages:
- Traditional approach using base R functionalities R package development with helper packages: devtools, usethis, roxygen2 and sinew  The sample code provided below creates for each method a simple test package that can be installed and loaded on a user’s system."/>
+<meta name="twitter:description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Overview Motivation to build R packages  Organization  Consolidate functions with related utilties in single place Interdepencies among less complex functions make coding more efficient Minimizes duplications   Documentation  Help page infrastructure improves documentation of functions Big picture of utilties provided by package vignettes (manuals)   Sharability  Package can be easier shared with colleagues and public Increases code accessibilty for other users    Package development environments This following introduces two approaches for building R packages:"/>
 
 
 <script type="application/javascript">
@@ -911,7 +908,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.878272045957b8505b78edcd0817de37.json"
+  data-offline-search-index-json-src="../../../offline-search-index.51f1e790684001d57f16cb5aeaaf79cf.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -943,7 +940,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.878272045957b8505b78edcd0817de37.json"
+  data-offline-search-index-json-src="../../../offline-search-index.51f1e790684001d57f16cb5aeaaf79cf.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1157,20 +1154,23 @@ if (!doNotTrack) {
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#overview">Overview</a></li>
-    <li><a href="#1-traditional-approach">1. Traditional Approach</a>
+    <li><a href="#overview">Overview</a>
       <ul>
-        <li><a href="#2-with-devtools-usethis-roxygen2-and-sinew">2. With <code>devtools</code>, <code>usethis</code>, <code>roxygen2</code> and <code>sinew</code></a>
-          <ul>
-            <li><a href="#a-create-package-skeleton">(a) Create package skeleton</a></li>
-            <li><a href="#b-add-r-functions">(b) Add R functions</a></li>
-            <li><a href="#c-auto-generate-roxygen-comment-lines">(c) Auto-generate roxygen comment lines</a></li>
-            <li><a href="#d-autogenerate-help-files">(d) Autogenerate help files</a></li>
-            <li><a href="#e-add-a-vignette">(e) Add a vignette</a></li>
-            <li><a href="#f-check-install-and-build-package">(f) Check, install and build package</a></li>
-            <li><a href="#g-using-the-new-package">(g) Using the new package</a></li>
-          </ul>
-        </li>
+        <li><a href="#motivation-to-build-r-packages">Motivation to build R packages</a></li>
+        <li><a href="#package-development-environments">Package development environments</a></li>
+      </ul>
+    </li>
+    <li><a href="#1-r-base-et-al-approach">1. R Base <em>et al.</em> Approach</a></li>
+    <li><a href="#2-r-devtools-et-al-approach">2. R <code>devtools</code> <em>et al.</em> Approach</a></li>
+    <li><a href="#workflow-for-building-r-packages">Workflow for building R packages</a>
+      <ul>
+        <li><a href="#a-create-package-skeleton">(a) Create package skeleton</a></li>
+        <li><a href="#b-add-r-functions">(b) Add R functions</a></li>
+        <li><a href="#c-auto-generate-roxygen-comment-lines">(c) Auto-generate roxygen comment lines</a></li>
+        <li><a href="#d-autogenerate-help-files">(d) Autogenerate help files</a></li>
+        <li><a href="#e-add-a-vignette">(e) Add a vignette</a></li>
+        <li><a href="#f-check-install-and-build-package">(f) Check, install and build package</a></li>
+        <li><a href="#g-using-the-new-package">(g) Using the new package</a></li>
       </ul>
     </li>
     <li><a href="#session-info">Session Info</a></li>
@@ -1214,7 +1214,7 @@ if (!doNotTrack) {
 	<h1>Building R Packages</h1>
     
 	
-        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 6 minute read</p>
+        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 7 minute read</p>
            
 	<!--
 - Compile from command-line
@@ -1234,7 +1234,38 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 <h2 id="overview">Overview</h2>
-<p>This tutorial introduces two approaches for building R packages:</p>
+<h3 id="motivation-to-build-r-packages">Motivation to build R packages</h3>
+<ol>
+<li>Organization
+<ul>
+<li>Consolidate functions with related utilties in single place</li>
+<li>Interdepencies among less complex functions make coding more efficient</li>
+<li>Minimizes duplications</li>
+</ul>
+</li>
+<li>Documentation
+<ul>
+<li>Help page infrastructure improves documentation of functions</li>
+<li>Big picture of utilties provided by package vignettes (manuals)</li>
+</ul>
+</li>
+<li>Sharability
+<ul>
+<li>Package can be easier shared with colleagues and public</li>
+<li>Increases code accessibilty for other users</li>
+</ul>
+</li>
+</ol>
+<h3 id="package-development-environments">Package development environments</h3>
+<p>This following introduces two approaches for building R packages:</p>
+<ol>
+<li><code>R Base</code> and related functionalities</li>
+<li><code>devtools</code> and related packages (<em>e.g.</em> <code>usethis</code>, <code>roxygen2</code> and <code>sinew</code>)</li>
+</ol>
+<p>The sample code provided below creates for each method a simple test package
+that can be installed and loaded on a user’s system. The instructions for the
+second appoach are more detailed since it is likely to provide the most
+practical solution for newer users of R.</p>
 <ol>
 <li>Traditional approach using base R functionalities</li>
 <li>R package development with helper packages: <code>devtools</code>, <code>usethis</code>, <code>roxygen2</code> and <code>sinew</code></li>
@@ -1242,8 +1273,8 @@ document.addEventListener("DOMContentLoaded", function() {
 <p>The sample code provided below creates for each method a simple test package
 that can be installed and loaded on a user’s system. The instructions for the
 second appoach are more detailed since it is likely to provide the most
-practical soluton for newer users of R.</p>
-<h2 id="1-traditional-approach">1. Traditional Approach</h2>
+practical solution for newer users of R.</p>
+<h2 id="1-r-base-et-al-approach">1. R Base <em>et al.</em> Approach</h2>
 <p>R packages can be built with the <code>package.skeleton</code> function. The most
 comprehensive documentation on package development is provided by the <a href="https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Package-Dependencies">Writing
 R
@@ -1265,7 +1296,7 @@ R CMD check mypackage_1.0.tar.gz
 <pre><code class="language-r">install.packages(&quot;mypackage_1.0.tar.gz&quot;, repos=NULL) 
 </code></pre>
 <p>For more details see <a href="http://manuals.bioinformatics.ucr.edu/home/programming-in-r#TOC-Building-R-Packages">here</a>.</p>
-<h3 id="2-with-devtools-usethis-roxygen2-and-sinew">2. With <code>devtools</code>, <code>usethis</code>, <code>roxygen2</code> and <code>sinew</code></h3>
+<h2 id="2-r-devtools-et-al-approach">2. R <code>devtools</code> <em>et al.</em> Approach</h2>
 <p>Several package develpment routines of the traditional method outlined above
 are manual, such as updating the NAMESPACE file and documenting functions in
 separate help (<code>*.Rd</code>) files. This process can be simplified and partially
@@ -1281,15 +1312,16 @@ R package development:</p>
 <li><a href="https://rawgit.com/rstudio/cheatsheets/master/package-development.pdf">Package Development Cheat Sheet</a></li>
 <li>Automating <code>roxygen2</code> documentation with <code>sinew</code> by Jonathan Sidi: <a href="https://yonicd.github.io/2017-09-18-sinew/">Blog</a> and <a href="https://cran.r-project.org/web/packages/sinew/index.html">CRAN</a></li>
 </ul>
+<h2 id="workflow-for-building-r-packages">Workflow for building R packages</h2>
 <p>The following outlines the basic workflow for building, testing and extending R packages with
 the functionalities of package development environment outlined above.</p>
-<h4 id="a-create-package-skeleton">(a) Create package skeleton</h4>
+<h3 id="a-create-package-skeleton">(a) Create package skeleton</h3>
 <pre><code class="language-r">library(&quot;devtools&quot;); library(&quot;roxygen2&quot;); library(&quot;usethis&quot;); library(sinew) # If not availble install these packages with 'install.packages(...)'
 create(&quot;myfirstpkg&quot;) # Creates package skeleton. The chosen name (here myfirstpkg) will be the name of the package.
 setwd(&quot;myfirstpkg&quot;) # Set working directory of R session to package directory 'myfirstpkg'
 use_mit_license() # Add license information to description file (here MIT). To look up alternatives, do ?use_mit_license
 </code></pre>
-<h4 id="b-add-r-functions">(b) Add R functions</h4>
+<h3 id="b-add-r-functions">(b) Add R functions</h3>
 <p>Next, R functions can be added to <code>*.R</code> file(s) under the R directory of the new
 package. Several functions can be organized in one <code>*.R</code> file, each in its own
 file or any combination. For demonstration purposes, the following will
@@ -1297,7 +1329,7 @@ download an R file (<code>pkg_build_fct.R</code> from <a href="https://bit.ly/3h
 and <code>talkToMe</code>) and save it to the R directory of the package.</p>
 <pre><code class="language-r">download.file(&quot;https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/manuals/rprogramming/helper_functions/pkg_build_fct.R&quot;, &quot;R/pkg_build_fct.R&quot;)
 </code></pre>
-<h4 id="c-auto-generate-roxygen-comment-lines">(c) Auto-generate roxygen comment lines</h4>
+<h3 id="c-auto-generate-roxygen-comment-lines">(c) Auto-generate roxygen comment lines</h3>
 <p>The <code>makeOxygen</code> function from the <code>sinew</code> package creates <code>roxygen2</code> comment
 skeletons based on the information from each function (below for <code>myMAcomp</code> example).
 The roxygen comment lines need to be added above the code of each function.
@@ -1311,7 +1343,7 @@ can be completed and/or revised any time.</p>
 <pre><code class="language-r">load_all() # Loads package in a simulated way without installing it. 
 writeLines(makeOxygen(myMAcomp), &quot;myroxylines&quot;) # This creates a 'myroxylines' file in current directory. Delete this file after adding its content to the corresponding functions.
 </code></pre>
-<h4 id="d-autogenerate-help-files">(d) Autogenerate help files</h4>
+<h3 id="d-autogenerate-help-files">(d) Autogenerate help files</h3>
 <p>The <code>document</code> function autogenerates for each function one <code>*.Rd</code> file in the
 <code>man</code> directory of the package. The content in the <code>*.Rd</code> help files is based
 on the information in the roxygen comment lines generated in the
@@ -1323,14 +1355,14 @@ will be lost during the automation routines provided by <code>roxygen2</code>.</
 tools::Rd2txt(&quot;man/myMAcomp.Rd&quot;) # Renders Rd file from source
 tools::checkRd(&quot;man/myMAcomp.Rd&quot;) # Checks Rd file for problems
 </code></pre>
-<h4 id="e-add-a-vignette">(e) Add a vignette</h4>
+<h3 id="e-add-a-vignette">(e) Add a vignette</h3>
 <p>A vignette template can be auto-generated with the <code>use_vignette</code> function from
 the <code>usethis</code> package. The <code>*.Rmd</code> source file of the vignette will be located
 under a new <code>vignette</code> directory. Additional vignettes can be manually added to
 this directory as needed.</p>
 <pre><code class="language-r">use_vignette(&quot;introduction&quot;, title=&quot;Introduction to this package&quot;)
 </code></pre>
-<h4 id="f-check-install-and-build-package">(f) Check, install and build package</h4>
+<h3 id="f-check-install-and-build-package">(f) Check, install and build package</h3>
 <p>Now the package can be checked for problems. All warnings and errors should be
 addressed prior to submission to a public repository. After this it can be
 installed on a user’s system with the <code>install</code> command. In addition, the
@@ -1342,7 +1374,7 @@ check(&quot;myfirstpkg&quot;) # Check package for problems, when in pkg dir one 
 install(&quot;myfirstpkg&quot;, build_vignettes=TRUE) # Installs package  
 build(&quot;myfirstpkg&quot;) # Creates *.tar.gz file for package required to for submission to CRAN/Bioc
 </code></pre>
-<h4 id="g-using-the-new-package">(g) Using the new package</h4>
+<h3 id="g-using-the-new-package">(g) Using the new package</h3>
 <p>After installing and loading the package its functions, help files and
 vignettes can be accessed as follows.</p>
 <pre><code class="language-r">library(myfirstpkg)
@@ -1395,7 +1427,7 @@ vignette(&quot;introduction&quot;, &quot;myfirstpkg&quot;)
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-23: <a  href="https://github.com/tgirke/GEN242//commit/79d026894c5c57d43bb0c9b3fc794aa642e221f9">some edits (79d026894)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-23: <a  href="https://github.com/tgirke/GEN242//commit/c56925f00af528123f5fbe19966375bd6b6e8b33">some edits (c56925f00)</a>
 </div>
 </div>
 

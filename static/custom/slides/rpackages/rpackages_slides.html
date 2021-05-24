@@ -266,38 +266,67 @@ pre[class] {
 <ul>
 <li><div class="white">
 <strong>Overview</strong></div></li>
-<li>Traditional Approach</li>
-<li>Newer Package Build Environment</li>
+<li>Package Development with <code>R Base</code> <em>et al.</em></li>
+<li>Package Develop with <code>devtools</code> <em>et al.</em></li>
 <li>References</li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>Overview</h2></hgroup><article  class="smaller " id="overview">
 
-<p>This tutorial introduces two approaches for building R packages:</p>
+<h3>Motivation to build R packages</h3>
 
 <ol>
-<li>Traditional approach using base R functionalities</li>
-<li>R package development with helper packages: <code>devtools</code>, <code>usethis</code>, <code>roxygen2</code> and <code>sinew</code></li>
+<li>Organization
+
+<ul>
+<li>Consolidate functions with related utilties in single place<br/></li>
+<li>Interdepencies among less complex functions make coding more efficient</li>
+<li>Minimizes duplications</li>
+</ul></li>
+<li>Documentation
+
+<ul>
+<li>Help page infrastructure improves documentation of functions</li>
+<li>Big picture of utilties provided by package vignettes (manuals)</li>
+</ul></li>
+<li>Sharability
+
+<ul>
+<li>Package can be easier shared with colleagues and public</li>
+<li>Increases code accessibilty for other users</li>
+</ul></li>
 </ol>
 
-<p>The sample code provided below creates for each method a simple test package that can be installed and loaded on a user’s system. The instructions for the second appoach are more detailed since it is likely to provide the most practical soluton for newer users of R.</p>
+</article></slide><slide class=""><hgroup><h2>Package development environments</h2></hgroup><article  class="smaller " id="package-development-environments">
+
+<p><br/><br/> This following introduces two approaches for building R packages: <br/><br/></p>
+
+<ol>
+<li><code>R Base</code> and related functionalities</li>
+<li><code>devtools</code> and related packages (<em>e.g.</em> <code>usethis</code>, <code>roxygen2</code> and <code>sinew</code>)</li>
+</ol>
+
+<p><br/><br/> The sample code provided below creates for each method a simple test package that can be installed and loaded on a user’s system. The instructions for the second appoach are more detailed since it is likely to provide the most practical soluton for newer users of R.</p>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Outline</h2></hgroup><article  class="smaller " id="outline-1">
 
 <ul>
 <li>Overview</li>
 <li><div class="white">
-<strong>Traditional Approach</strong></div></li>
-<li>Newer Package Build Environment</li>
+
+Package Development with <code>R Base</code> <em>et al.</em>
+
+<div class="white"></li>
+<li>Package Develop with <code>devtools</code> <em>et al.</em></li>
 <li>References</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Traditional Approach</h2></hgroup><article  class="smaller " id="traditional-approach">
+</article></slide><slide class=""><hgroup><h2>R Base <em>et al.</em></h2></hgroup><article  class="smaller " id="r-base-et-al.">
 
 <ul>
 <li>R packages can be built with the <code>package.skeleton</code> function. The most comprehensive documentation on package development is provided by the <a href='https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Package-Dependencies' title=''>Writing R Extensions</a> page on CRAN.</li>
 <li>The basic workflow example below will create a directory named <code>mypackage</code> containing the skeleton of the package for all functions, methods and classes defined in the R script(s) passed on to the <code>code_files</code> argument.</li>
-<li>The basic structure of the package directory is described <a href='http://manuals.bioinformatics.ucr.edu/home/programming-in-r#Progr_pack' title=''>here</a>.</li>
+<li>The basic structure of the package directory is described <a href='http://cran.fhcrc.org/doc/manuals/R-exts.html#Package-structure' title=''>here</a>.</li>
 <li>The package directory will also contain a file named <code>Read-and-delete-me</code> with instructions for completing the package:</li>
 </ul>
 
@@ -314,7 +343,7 @@ pre[class] {
 
 </p>
 
-<p><br/><br/></p>
+<p><br/><br/> <br/><br/></p>
 
 <pre class = 'prettyprint lang-r'>R CMD build mypackage
 R CMD check mypackage_1.0.tar.gz</pre>
@@ -327,13 +356,16 @@ R CMD check mypackage_1.0.tar.gz</pre>
 
 <ul>
 <li>Overview</li>
-<li>Traditional Approach</li>
+<li>Package Development with <code>R Base</code> <em>et al.</em></li>
 <li><div class="white">
-<strong>Newer Package Build Environment</strong></div></li>
+
+Package Develop with <code>devtools</code> <em>et al.</em>
+
+<div class="white"></li>
 <li>References</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>With <code>devtools</code>, <code>usethis</code>, <code>roxygen2</code> and <code>sinew</code></h2></hgroup><article  class="smaller " id="with-devtools-usethis-roxygen2-and-sinew">
+</article></slide><slide class=""><hgroup><h2>R <code>devtools</code> <em>et al.</em></h2></hgroup><article  class="smaller " id="r-devtools-et-al.">
 
 <p>Several package develpment routines of the traditional method outlined above are manual, such as updating the NAMESPACE file and documenting functions in separate help (<code>*.Rd</code>) files. This process can be simplified and partially automated by taking advantage of a more recent R package development environment composed of several helper packages including <code>devtools</code>, <code>usethis</code>, <code>roxygen2</code> and <code>sinew</code> <span class="cite">(Wickham and Bryan, n.d.)</span>. Many books and web sites document this process in more detail. Here is a small selection of useful online documentation about R package development:</p>
 
@@ -414,10 +446,14 @@ vignette(&quot;introduction&quot;, &quot;myfirstpkg&quot;)</pre>
 
 <ul>
 <li>Overview</li>
-<li>Traditional Approach</li>
-<li>Newer Package Build Environment</li>
+<li>Package Development with <code>R Base</code> <em>et al.</em></li>
+<li>Package Develop with <code>devtools</code> <em>et al.</em></li>
 <li><div class="white">
-<strong>References</strong></div></li>
+
+References
+
+<div class="white">
+</li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>Session Info</h2></hgroup><article  class="smaller " id="session-info">

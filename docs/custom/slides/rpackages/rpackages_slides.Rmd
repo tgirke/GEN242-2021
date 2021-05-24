@@ -70,19 +70,36 @@ pre[class] {
 # Outline
 
 - <div class="white">__Overview__</div>
-- Traditional Approach
-- Newer Package Build Environment
+- Package Development with `R Base` _et al._
+- Package Develop with `devtools` _et al._
 - References
 
 
 ## Overview
 
-This tutorial introduces two approaches for building R packages: 
+### Motivation to build R packages
 
+1. Organization
+    - Consolidate functions with related utilties in single place  
+    - Interdepencies among less complex functions make coding more efficient
+    - Minimizes duplications
+2. Documentation
+    - Help page infrastructure improves documentation of functions
+    - Big picture of utilties provided by package vignettes (manuals) 
+3. Sharability 
+    - Package can be easier shared with colleagues and public
+    - Increases code accessibilty for other users
 
-1. Traditional approach using base R functionalities 
-2. R package development with helper packages: `devtools`, `usethis`, `roxygen2` and `sinew`
+## Package development environments
 
+<br/><br/>
+This following introduces two approaches for building R packages: 
+<br/><br/>
+
+1. `R Base` and related functionalities 
+2. `devtools` and related packages (_e.g._ `usethis`, `roxygen2` and `sinew`)
+
+<br/><br/>
 The sample code provided below creates for each method a simple test package
 that can be installed and loaded on a user's system. The instructions for the
 second appoach are more detailed since it is likely to provide the most
@@ -91,11 +108,12 @@ practical soluton for newer users of R.
 # Outline
 
 - Overview
-- <div class="white">__Traditional Approach__</div>
-- Newer Package Build Environment
+- <div class="white">Package Development with `R Base` _et al._<div class="white">
+- Package Develop with `devtools` _et al._
 - References
 
-## Traditional Approach
+
+## R Base _et al._ 
 
 - R packages can be built with the `package.skeleton` function. The most
   comprehensive documentation on package development is provided by the [Writing R Extensions](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Package-Dependencies)
@@ -104,7 +122,7 @@ practical soluton for newer users of R.
   containing the skeleton of the package for all functions, methods and classes
   defined in the R script(s) passed on to the `code_files` argument.
 - The basic structure of the package directory is described
-  [here](http://manuals.bioinformatics.ucr.edu/home/programming-in-r#Progr_pack).
+  [here](http://cran.fhcrc.org/doc/manuals/R-exts.html#Package-structure).
 - The package directory will also contain a file named `Read-and-delete-me`
   with instructions for completing the package:
 
@@ -120,6 +138,7 @@ package.skeleton(name="mypackage", code_files=c("script1.R", "script2.R"))
 
 <p style='text-align: right;'> __[ Scroll down to continue ]__ </p>
 <br/><br/>
+<br/><br/>
 
 ```{r r_build_package, eval=FALSE}
 R CMD build mypackage
@@ -134,11 +153,11 @@ install.packages("mypackage_1.0.tar.gz", repos=NULL)
 # Outline
 
 - Overview
-- Traditional Approach
-- <div class="white">__Newer Package Build Environment__</div>
+- Package Development with `R Base` _et al._
+- <div class="white">Package Develop with `devtools` _et al._<div class="white">
 - References
 
-## With `devtools`, `usethis`, `roxygen2` and `sinew`
+## R `devtools` _et al._ 
 
 Several package develpment routines of the traditional method outlined above
 are manual, such as updating the NAMESPACE file and documenting functions in
@@ -261,9 +280,9 @@ Another very useful development function is `test` for evaluating the test code 
 # Outline
 
 - Overview
-- Traditional Approach
-- Newer Package Build Environment
-- <div class="white">__References__</div>
+- Package Development with `R Base` _et al._
+- Package Develop with `devtools` _et al._
+- <div class="white">References<div class="white">
 
 ## Session Info
 

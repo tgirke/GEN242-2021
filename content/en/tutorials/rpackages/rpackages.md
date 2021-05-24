@@ -39,7 +39,30 @@ document.addEventListener("DOMContentLoaded", function() {
 
 ## Overview
 
-This tutorial introduces two approaches for building R packages:
+### Motivation to build R packages
+
+1.  Organization
+    -   Consolidate functions with related utilties in single place  
+    -   Interdepencies among less complex functions make coding more efficient
+    -   Minimizes duplications
+2.  Documentation
+    -   Help page infrastructure improves documentation of functions
+    -   Big picture of utilties provided by package vignettes (manuals)
+3.  Sharability
+    -   Package can be easier shared with colleagues and public
+    -   Increases code accessibilty for other users
+
+### Package development environments
+
+This following introduces two approaches for building R packages:
+
+1.  `R Base` and related functionalities
+2.  `devtools` and related packages (*e.g.* `usethis`, `roxygen2` and `sinew`)
+
+The sample code provided below creates for each method a simple test package
+that can be installed and loaded on a user’s system. The instructions for the
+second appoach are more detailed since it is likely to provide the most
+practical solution for newer users of R.
 
 1.  Traditional approach using base R functionalities
 2.  R package development with helper packages: `devtools`, `usethis`, `roxygen2` and `sinew`
@@ -47,9 +70,9 @@ This tutorial introduces two approaches for building R packages:
 The sample code provided below creates for each method a simple test package
 that can be installed and loaded on a user’s system. The instructions for the
 second appoach are more detailed since it is likely to provide the most
-practical soluton for newer users of R.
+practical solution for newer users of R.
 
-## 1. Traditional Approach
+## 1. R Base *et al.* Approach
 
 R packages can be built with the `package.skeleton` function. The most
 comprehensive documentation on package development is provided by the [Writing
@@ -82,7 +105,7 @@ install.packages("mypackage_1.0.tar.gz", repos=NULL)
 
 For more details see [here](http://manuals.bioinformatics.ucr.edu/home/programming-in-r#TOC-Building-R-Packages).
 
-### 2. With `devtools`, `usethis`, `roxygen2` and `sinew`
+## 2. R `devtools` *et al.* Approach
 
 Several package develpment routines of the traditional method outlined above
 are manual, such as updating the NAMESPACE file and documenting functions in
@@ -99,10 +122,12 @@ R package development:
 -   [Package Development Cheat Sheet](https://rawgit.com/rstudio/cheatsheets/master/package-development.pdf)
 -   Automating `roxygen2` documentation with `sinew` by Jonathan Sidi: [Blog](https://yonicd.github.io/2017-09-18-sinew/) and [CRAN](https://cran.r-project.org/web/packages/sinew/index.html)
 
+## Workflow for building R packages
+
 The following outlines the basic workflow for building, testing and extending R packages with
 the functionalities of package development environment outlined above.
 
-#### (a) Create package skeleton
+### (a) Create package skeleton
 
 ``` r
 library("devtools"); library("roxygen2"); library("usethis"); library(sinew) # If not availble install these packages with 'install.packages(...)'
@@ -111,7 +136,7 @@ setwd("myfirstpkg") # Set working directory of R session to package directory 'm
 use_mit_license() # Add license information to description file (here MIT). To look up alternatives, do ?use_mit_license
 ```
 
-#### (b) Add R functions
+### (b) Add R functions
 
 Next, R functions can be added to `*.R` file(s) under the R directory of the new
 package. Several functions can be organized in one `*.R` file, each in its own
@@ -123,7 +148,7 @@ and `talkToMe`) and save it to the R directory of the package.
 download.file("https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/manuals/rprogramming/helper_functions/pkg_build_fct.R", "R/pkg_build_fct.R")
 ```
 
-#### (c) Auto-generate roxygen comment lines
+### (c) Auto-generate roxygen comment lines
 
 The `makeOxygen` function from the `sinew` package creates `roxygen2` comment
 skeletons based on the information from each function (below for `myMAcomp` example).
@@ -141,7 +166,7 @@ load_all() # Loads package in a simulated way without installing it.
 writeLines(makeOxygen(myMAcomp), "myroxylines") # This creates a 'myroxylines' file in current directory. Delete this file after adding its content to the corresponding functions.
 ```
 
-#### (d) Autogenerate help files
+### (d) Autogenerate help files
 
 The `document` function autogenerates for each function one `*.Rd` file in the
 `man` directory of the package. The content in the `*.Rd` help files is based
@@ -157,7 +182,7 @@ tools::Rd2txt("man/myMAcomp.Rd") # Renders Rd file from source
 tools::checkRd("man/myMAcomp.Rd") # Checks Rd file for problems
 ```
 
-#### (e) Add a vignette
+### (e) Add a vignette
 
 A vignette template can be auto-generated with the `use_vignette` function from
 the `usethis` package. The `*.Rmd` source file of the vignette will be located
@@ -168,7 +193,7 @@ this directory as needed.
 use_vignette("introduction", title="Introduction to this package")
 ```
 
-#### (f) Check, install and build package
+### (f) Check, install and build package
 
 Now the package can be checked for problems. All warnings and errors should be
 addressed prior to submission to a public repository. After this it can be
@@ -184,7 +209,7 @@ install("myfirstpkg", build_vignettes=TRUE) # Installs package
 build("myfirstpkg") # Creates *.tar.gz file for package required to for submission to CRAN/Bioc
 ```
 
-#### (g) Using the new package
+### (g) Using the new package
 
 After installing and loading the package its functions, help files and
 vignettes can be accessed as follows.
