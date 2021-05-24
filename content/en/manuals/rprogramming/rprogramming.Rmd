@@ -518,12 +518,33 @@ In the given example the number `10` is passed on from the command-line as an ar
 
 ## Building R Packages
 
-Two approaches for building R packages are introduced here: 
+### Motivation for building R packages
 
-1. Traditional approach using base R functionalities 
-2. R package development with helper packages: `devtools`, `usethis`, `roxygen2` and `sinew`
+1. Organization
+    - Consolidate functions with related utilties in single place  
+    - Interdepencies among less complex functions make coding more efficient
+    - Minimizes duplications
+2. Documentation
+    - Help page infrastructure improves documentation of functions
+    - Big picture of utilties provided by package vignettes (manuals) 
+3. Sharability 
+    - Package can be easier shared with colleagues and public
+    - Increases code accessibilty for other users
 
-### 1. Traditional Approach
+### Package development environments
+
+This following introduces two approaches for building R packages: 
+
+1. `R Base` and related functionalities 
+2. `devtools` and related packages (_e.g._ `usethis`, `roxygen2` and `sinew`)
+
+The sample code provided below creates for each method a simple test package
+that can be installed and loaded on a user's system. The instructions for the
+second appoach are more detailed since it is likely to provide the most
+practical solution for newer users of R.
+
+
+### 1. R Base _et al._ Approach 
 
 R packages can be built with the `package.skeleton` function. The most
 comprehensive documentation on package development is provided by the [Writing
@@ -555,7 +576,7 @@ install.packages("mypackage_1.0.tar.gz", repos=NULL)
 
 For more details see [here](http://manuals.bioinformatics.ucr.edu/home/programming-in-r#TOC-Building-R-Packages). 
 
-### 2. With `devtools`, `usethis`, `roxygen2` and `sinew`
+### 2. R `devtools` _et al._ Approach
 
 Several package develpment routines of the traditional method outlined above
 are manual, such as updating the NAMESPACE file and documenting functions in
