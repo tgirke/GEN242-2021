@@ -49,9 +49,7 @@ that can be installed and loaded on a user’s system. The instructions for the
 second appoach are more detailed since it is likely to provide the most
 practical soluton for newer users of R.
 
-### 1. Traditional Approach
-
-#### Short Overview of Package Building Process
+## 1. Traditional Approach
 
 R packages can be built with the `package.skeleton` function. The most
 comprehensive documentation on package development is provided by the [Writing
@@ -86,14 +84,14 @@ For more details see [here](http://manuals.bioinformatics.ucr.edu/home/programmi
 Additional utilities for building R packages are provided by `devtools::create` and `usethis::create_package` functions.
 For details see the *R Packages* online book by Hadley Wickham and Jenny Bryan [here](https://r-pkgs.org/package-structure-state.html#in-memory-package).
 
-#### 2. With `devtools`, `usethis`, `roxygen2` and `sinew`
+### 2. With `devtools`, `usethis`, `roxygen2` and `sinew`
 
 Several package develpment routines of the traditional method outlined above
 are manual, such as updating the NAMESPACE file and documenting functions in
 separate help (`*.Rd`) files. This process can be simplified and partially
 automated by taking advantage of a more recent R package development
 environment composed of several helper packages including `devtools`,
-`usethis`, `roxygen2` and `sinew`. Many books and web sites document this process
+`usethis`, `roxygen2` and `sinew` (Wickham and Bryan, n.d.). Many books and web sites document this process
 in more detail. Here is a small selection of useful online documentation about
 R package development:
 
@@ -106,7 +104,7 @@ R package development:
 The following outlines the basic workflow for building, testing and extending R packages with
 the functionalities of package development environment outlined above.
 
-##### (a) Create package skeleton
+#### (a) Create package skeleton
 
 ``` r
 library("devtools"); library("roxygen2"); library("usethis"); library(sinew) # If not availble install these packages with 'install.packages(...)'
@@ -115,7 +113,7 @@ setwd("myfirstpkg") # Set working directory of R session to package directory 'm
 use_mit_license() # Add license information to description file (here MIT). To look up alternatives, do ?use_mit_license
 ```
 
-##### (b) Add R functions
+#### (b) Add R functions
 
 Next, R functions can be added to `*.R` file(s) under the R directory of the new
 package. Several functions can be organized in one `*.R` file, each in its own
@@ -127,7 +125,7 @@ and `talkToMe`) and save it to the R directory of the package.
 download.file("https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/manuals/rprogramming/helper_functions/pkg_build_fct.R", "R/pkg_build_fct.R")
 ```
 
-##### (c) Auto-generate roxygen comment lines
+#### (c) Auto-generate roxygen comment lines
 
 The `makeOxygen` function from the `sinew` package creates `roxygen2` comment
 skeletons based on the information from each function (below for `myMAcomp` example).
@@ -145,7 +143,7 @@ load_all() # Loads package in a simulated way without installing it.
 writeLines(makeOxygen(myMAcomp), "myroxylines") # This creates a 'myroxylines' file in current directory. Delete this file after adding its content to the corresponding functions.
 ```
 
-##### (d) Autogenerate help files
+#### (d) Autogenerate help files
 
 The `document` function autogenerates for each function one `*.Rd` file in the
 `man` directory of the package. The content in the `*.Rd` help files is based
@@ -159,7 +157,7 @@ will be lost during the automation routines provided by `roxygen2`.
 document()
 ```
 
-##### (e) Add a vignette
+#### (e) Add a vignette
 
 A vignette template can be auto-generated with the `use_vignette` function from
 the `usethis` package. The `*.Rmd` source file of the vignette will be located
@@ -170,7 +168,7 @@ this directory as needed.
 use_vignette("introduction", title="Introduction to this package")
 ```
 
-##### (f) Check, install and build package
+#### (f) Check, install and build package
 
 Now the package can be checked for problems. All warnings and errors should be
 addressed prior to submission to a public repository. After this it can be
@@ -186,7 +184,7 @@ install("myfirstpkg", build_vignettes=TRUE) # Installs package
 build("myfirstpkg") # Creates *.tar.gz file for package required to for submission to CRAN/Bioc
 ```
 
-##### (g) Using the new package
+#### (g) Using the new package
 
 After installing and loading the package its functions, help files and
 vignettes can be accessed as follows.
@@ -239,3 +237,13 @@ sessionInfo()
     ## [41] utf8_1.2.1          stringi_1.6.2       munsell_0.5.0       crayon_1.4.1
 
 ## References
+
+<div id="refs" class="references csl-bib-body hanging-indent">
+
+<div id="ref-Wickham_undated-ei" class="csl-entry">
+
+Wickham, Hadley, and Jennifer Bryan. n.d. “R Packages.” <https://r-pkgs.org/index.html>. <https://r-pkgs.org/index.html>.
+
+</div>
+
+</div>
