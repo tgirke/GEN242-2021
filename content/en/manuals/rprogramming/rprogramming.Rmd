@@ -590,11 +590,11 @@ use_mit_license() # Add license information to description file (here MIT). To l
 
 #### (b) Add R functions 
 
-Next R functions can be added to `*.R` file(s) under R directory of the new
+Next, R functions can be added to `*.R` file(s) under the R directory of the new
 package. Several functions can be organized in one `*.R` file, each in its own
 file or any combination. For demonstration purposes, the following will
 download an R file (`pkg_build_fct.R` from [here](https://bit.ly/3hK0mdH)) defining two functions (named:`myMAcomp` 
-and `talkToMe`) to the R directory of the new `myfirstpkg` package.
+and `talkToMe`) and save it to the R directory of the new `myfirstpkg` package.
 
 ```{r package_devtools_skeleton2, eval=FALSE}
 download.file("https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/manuals/rprogramming/helper_functions/pkg_build_fct.R", "R/pkg_build_fct.R")
@@ -603,7 +603,7 @@ download.file("https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/m
 #### (c) Auto-generate roxygen comment lines
 
 The `makeOxygen` function from the `sinew` package creates `roxygen2` comment
-skeletons based on the information from each function (below for `myMAcomp`).
+skeletons based on the information from each function (below for `myMAcomp` example).
 The roxygen comment lines need to be added above the code of each function.
 This can be done by copy and paste from the R console or by writing the output
 to a temporary file (below via `writeLines`). Alternatively, the `makeOxyFile`
@@ -620,13 +620,13 @@ writeLines(makeOxygen(myMAcomp), "myroxylines") # This creates a 'myroxylines' f
 
 #### (d) Autogenerate help files 
 
-The `document` function autogenerates for each function a `*.Rd` file in the
+The `document` function autogenerates for each function one `*.Rd` file in the
 `man` directory of the package.  The content in the `*.Rd` help files is based
 on the information in the roxygen comment lines generated in the
 previous step. In addition, all relevant export/import instructions are added
-to the `NAMESPACE` file.  Importantly, when using roxygen-base documentation in a package
+to the `NAMESPACE` file.  Importantly, when using roxygen-based documentation in a package
 then the `NAMESPACE` and `*.Rd` files should not be manually edited since this information
-will be lost during the automation provided by `roxygen2`.
+will be lost during the automation routines provided by `roxygen2`.
 
 ```{r package_devtools_skeleton4, eval=FALSE}
 document()
@@ -637,7 +637,7 @@ document()
 A vignette template can be auto-generated with the `use_vignette` function from
 the `usethis` package. The `*.Rmd` source file of the vignette will be located
 under a new `vignette` directory. Additional vignettes can be manually added to
-this directory.
+this directory as needed.
 
 ```{r package_devtools_skeleton5, eval=FALSE}
 use_vignette("introduction", title="Introduction to this package")
@@ -648,8 +648,9 @@ use_vignette("introduction", title="Introduction to this package")
 Now the package can be checked for problems. All warnings and errors should be
 addressed prior to submission to a public repository.  After this it can be
 installed on a user's system with the `install` command. In addition, the
-`build` function allows to assembled the package in a `*.tar.gz` file. The
-latter is often important for sharing and submission to public repositories.  
+`build` function allows to assemble the package in a `*.tar.gz` file. The
+latter is often important for sharing packages and/or submitting them to public 
+repositories.  
 
 ```{r package_devtools_skeleton6, eval=FALSE}
 setwd("..") # Redirect R session to parent directory
@@ -660,7 +661,8 @@ build("myfirstpkg") # Creates *.tar.gz file for package required to for submissi
 
 #### (g) Using the new package
 
-After installing and loading the package its functions, help files and vignettes can be accessed as follows. 
+After installing and loading the package its functions, help files and
+vignettes can be accessed as follows. 
 
 ```{r package_devtools_skeleton7, eval=FALSE}
 library(myfirstpkg)
