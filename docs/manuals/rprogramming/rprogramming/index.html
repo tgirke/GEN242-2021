@@ -21,11 +21,11 @@
 <meta property="og:description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Overview One of the main attractions of using the R (http://cran.at.r-project.org) environment is the ease with which users can write their own programs and custom functions. The R programming syntax is extremely easy to learn, even for users with no previous programming experience. Once the basic R programming control structures are understood, users can use the R language as a powerful environment to perform complex custom analyses of almost any type of data (Gentleman 2008)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/manuals/rprogramming/rprogramming/" />
-<meta property="article:modified_time" content="2021-05-23T16:27:35-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-05-23T16:54:37-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Programming in R">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Overview One of the main attractions of using the R (http://cran.at.r-project.org) environment is the ease with which users can write their own programs and custom functions. The R programming syntax is extremely easy to learn, even for users with no previous programming experience. Once the basic R programming control structures are understood, users can use the R language as a powerful environment to perform complex custom analyses of almost any type of data (Gentleman 2008).">
-<meta itemprop="dateModified" content="2021-05-23T16:27:35-07:00" />
-<meta itemprop="wordCount" content="4482">
+<meta itemprop="dateModified" content="2021-05-23T16:54:37-07:00" />
+<meta itemprop="wordCount" content="4487">
 
 
 
@@ -924,7 +924,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.1d13456919f3237374e03e2495325764.json"
+  data-offline-search-index-json-src="../../../offline-search-index.b942823743ae2e3ab6277fb3670092c5.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -956,7 +956,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.1d13456919f3237374e03e2495325764.json"
+  data-offline-search-index-json-src="../../../offline-search-index.b942823743ae2e3ab6277fb3670092c5.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1819,7 +1819,7 @@ use_mit_license() # Add license information to description file (here MIT). To l
 <p>Next R functions can be added to <code>*.R</code> file(s) under R directory of the new
 package. Several functions can be organized in one <code>*.R</code> file, each in its own
 file or any combination. For demonstration purposes, the following will
-download an R file (here <code>pkg_build_fct.R</code>) defining two functions (named:<code>myMAcomp</code>
+download an R file (<code>pkg_build_fct.R</code> from <a href="https://bit.ly/3hK0mdH">here</a>) defining two functions (named:<code>myMAcomp</code>
 and <code>talkToMe</code>) to the R directory of the new <code>myfirstpkg</code> package.</p>
 <pre><code class="language-r">download.file(&quot;https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/manuals/rprogramming/helper_functions/pkg_build_fct.R&quot;, &quot;R/pkg_build_fct.R&quot;)
 </code></pre>
@@ -1829,27 +1829,29 @@ skeletons based on the information from each function (below for <code>myMAcomp<
 The roxygen comment lines need to be added above the code of each function.
 This can be done by copy and paste from the R console or by writing the output
 to a temporary file (below via <code>writeLines</code>). Alternatively, the <code>makeOxyFile</code>
-function can be used to create from a copy of an R source file where the
+function can be used to create a roxygenized copy of an R source file, where the
 roxygen comment lines have been added above all functions automatically. Next,
 the default text in the comment lines needs to be replaced by meaningful text
-to document the utility and usage of each function. This manual process can be
-completed any time.</p>
+describing the utility and usage of each function. This editing process of documentation
+can be completed and/or revised any time.</p>
 <pre><code class="language-r">load_all() # Loads package in a simulated way without installing it. 
 writeLines(makeOxygen(myMAcomp), &quot;myroxylines&quot;) # This creates a 'myroxylines' file in current directory. Delete this file after adding its content to the corresponding functions.
 </code></pre>
 <h4 id="d-autogenerate-help-files">(d) Autogenerate help files</h4>
 <p>The <code>document</code> function autogenerates for each function a <code>*.Rd</code> file in the
 <code>man</code> directory of the package. The content in the <code>*.Rd</code> help files is based
-on the information provided by the roxygen comment lines generated in the
+on the information in the roxygen comment lines generated in the
 previous step. In addition, all relevant export/import instructions are added
 to the <code>NAMESPACE</code> file. Importantly, when using roxygen-base documentation in a package
 then the <code>NAMESPACE</code> and <code>*.Rd</code> files should not be manually edited since this information
-will be lost during the autmation process.</p>
+will be lost during the automation provided by <code>roxygen2</code>.</p>
 <pre><code class="language-r">document()
 </code></pre>
 <h4 id="e-add-a-vignette">(e) Add a vignette</h4>
-<p>A vignette template can be auto-generated with the <code>use_vignette</code> function from the <code>usethis</code> package. The <code>*.Rmd</code> source file
-of the vignette will be located under a new <code>vignette</code> directory. Additional vignettes can be manually added to this directory.</p>
+<p>A vignette template can be auto-generated with the <code>use_vignette</code> function from
+the <code>usethis</code> package. The <code>*.Rmd</code> source file of the vignette will be located
+under a new <code>vignette</code> directory. Additional vignettes can be manually added to
+this directory.</p>
 <pre><code class="language-r">use_vignette(&quot;introduction&quot;, title=&quot;Introduction to this package&quot;)
 </code></pre>
 <h4 id="f-check-install-and-build-package">(f) Check, install and build package</h4>
@@ -2131,7 +2133,7 @@ AAv[y]
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-23: <a  href="https://github.com/tgirke/GEN242//commit/59c24dbb239ddf620a81ff79d5a21a527d15aea5">some edits (59c24dbb2)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-23: <a  href="https://github.com/tgirke/GEN242//commit/b0dff7622026d2b405e7f9a54beef714c608e433">some edits (b0dff7622)</a>
 </div>
 </div>
 

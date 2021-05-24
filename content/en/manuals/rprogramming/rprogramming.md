@@ -712,7 +712,7 @@ use_mit_license() # Add license information to description file (here MIT). To l
 Next R functions can be added to `*.R` file(s) under R directory of the new
 package. Several functions can be organized in one `*.R` file, each in its own
 file or any combination. For demonstration purposes, the following will
-download an R file (here `pkg_build_fct.R`) defining two functions (named:`myMAcomp`
+download an R file (`pkg_build_fct.R` from [here](https://bit.ly/3hK0mdH)) defining two functions (named:`myMAcomp`
 and `talkToMe`) to the R directory of the new `myfirstpkg` package.
 
 ``` r
@@ -726,11 +726,11 @@ skeletons based on the information from each function (below for `myMAcomp`).
 The roxygen comment lines need to be added above the code of each function.
 This can be done by copy and paste from the R console or by writing the output
 to a temporary file (below via `writeLines`). Alternatively, the `makeOxyFile`
-function can be used to create from a copy of an R source file where the
+function can be used to create a roxygenized copy of an R source file, where the
 roxygen comment lines have been added above all functions automatically. Next,
 the default text in the comment lines needs to be replaced by meaningful text
-to document the utility and usage of each function. This manual process can be
-completed any time.
+describing the utility and usage of each function. This editing process of documentation
+can be completed and/or revised any time.
 
 ``` r
 load_all() # Loads package in a simulated way without installing it. 
@@ -741,11 +741,11 @@ writeLines(makeOxygen(myMAcomp), "myroxylines") # This creates a 'myroxylines' f
 
 The `document` function autogenerates for each function a `*.Rd` file in the
 `man` directory of the package. The content in the `*.Rd` help files is based
-on the information provided by the roxygen comment lines generated in the
+on the information in the roxygen comment lines generated in the
 previous step. In addition, all relevant export/import instructions are added
 to the `NAMESPACE` file. Importantly, when using roxygen-base documentation in a package
 then the `NAMESPACE` and `*.Rd` files should not be manually edited since this information
-will be lost during the autmation process.
+will be lost during the automation provided by `roxygen2`.
 
 ``` r
 document()
@@ -753,8 +753,10 @@ document()
 
 #### (e) Add a vignette
 
-A vignette template can be auto-generated with the `use_vignette` function from the `usethis` package. The `*.Rmd` source file
-of the vignette will be located under a new `vignette` directory. Additional vignettes can be manually added to this directory.
+A vignette template can be auto-generated with the `use_vignette` function from
+the `usethis` package. The `*.Rmd` source file of the vignette will be located
+under a new `vignette` directory. Additional vignettes can be manually added to
+this directory.
 
 ``` r
 use_vignette("introduction", title="Introduction to this package")
