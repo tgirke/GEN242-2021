@@ -662,8 +662,6 @@ Two approaches for building R packages are introduced here:
 
 ### 1. Traditional Approach
 
-### Short Overview of Package Building Process
-
 R packages can be built with the `package.skeleton` function. The most
 comprehensive documentation on package development is provided by the [Writing
 R
@@ -694,8 +692,6 @@ install.packages("mypackage_1.0.tar.gz", repos=NULL)
 ```
 
 For more details see [here](http://manuals.bioinformatics.ucr.edu/home/programming-in-r#TOC-Building-R-Packages).
-Additional utilities for building R packages are provided by `devtools::create` and `usethis::create_package` functions.
-For details see the *R Packages* online book by Hadley Wickham and Jenny Bryan [here](https://r-pkgs.org/package-structure-state.html#in-memory-package).
 
 ### 2. With `devtools`, `usethis`, `roxygen2` and `sinew`
 
@@ -704,7 +700,7 @@ are manual, such as updating the NAMESPACE file and documenting functions in
 separate help (`*.Rd`) files. This process can be simplified and partially
 automated by taking advantage of a more recent R package development
 environment composed of several helper packages including `devtools`,
-`usethis`, `roxygen2` and `sinew`. Many books and web sites document this process
+`usethis`, `roxygen2` and `sinew` (Wickham and Bryan, n.d.). Many books and web sites document this process
 in more detail. Here is a small selection of useful online documentation about
 R package development:
 
@@ -768,6 +764,8 @@ will be lost during the automation routines provided by `roxygen2`.
 
 ``` r
 document()
+tools::Rd2txt("man/myMAcomp.Rd") # Renders Rd file from source
+tools::checkRd("man/myMAcomp.Rd") # Checks Rd file for problems
 ```
 
 #### (e) Add a vignette
@@ -1152,6 +1150,12 @@ sessionInfo()
 <div id="ref-Gentleman2008-xo" class="csl-entry">
 
 Gentleman, Robert. 2008. *R Programming for Bioinformatics (Chapman & Hall/CRC Computer Science & Data Analysis)*. 1 edition. Chapman; Hall/CRC. <http://www.amazon.com/Programming-Bioinformatics-Chapman-Computer-Analysis/dp/1420063677>.
+
+</div>
+
+<div id="ref-Wickham_undated-ei" class="csl-entry">
+
+Wickham, Hadley, and Jennifer Bryan. n.d. “R Packages.” <https://r-pkgs.org/index.html>. <https://r-pkgs.org/index.html>.
 
 </div>
 

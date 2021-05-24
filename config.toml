@@ -368,21 +368,6 @@ enable = true
     url = "/slides/slides_19/"
     parent = "Slides"
     weight = 119
-  [[menu.main]]
-    name = "Shiny Apps (S20)"
-    url = "/slides/slides_20/"
-    parent = "Slides"
-    weight = 120
-  [[menu.main]]
-    name = "Profile HMMs (S21)"
-    url = "/slides/slides_21/"
-    parent = "Slides"
-    weight = 121
-  [[menu.main]]
-    name = "Sequence Assembly (S22)"
-    url = "/slides/slides_22/"
-    parent = "Slides"
-    weight = 122
 ##
 [[menu.main]]
   name = "Tutorials"

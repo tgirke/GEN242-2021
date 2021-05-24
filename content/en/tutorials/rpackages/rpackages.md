@@ -81,8 +81,6 @@ install.packages("mypackage_1.0.tar.gz", repos=NULL)
 ```
 
 For more details see [here](http://manuals.bioinformatics.ucr.edu/home/programming-in-r#TOC-Building-R-Packages).
-Additional utilities for building R packages are provided by `devtools::create` and `usethis::create_package` functions.
-For details see the *R Packages* online book by Hadley Wickham and Jenny Bryan [here](https://r-pkgs.org/package-structure-state.html#in-memory-package).
 
 ### 2. With `devtools`, `usethis`, `roxygen2` and `sinew`
 
@@ -154,7 +152,9 @@ then the `NAMESPACE` and `*.Rd` files should not be manually edited since this i
 will be lost during the automation routines provided by `roxygen2`.
 
 ``` r
-document()
+document() # Auto-generates/updates *.Rd files under man directory (here: myMAcomp.Rd and talkToMe.Rd)
+tools::Rd2txt("man/myMAcomp.Rd") # Renders Rd file from source
+tools::checkRd("man/myMAcomp.Rd") # Checks Rd file for problems
 ```
 
 #### (e) Add a vignette
