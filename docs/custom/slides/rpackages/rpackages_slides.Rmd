@@ -77,7 +77,7 @@ pre[class] {
 
 ## Overview
 
-### Motivation to build R packages
+### Motivation for building R packages
 
 1. Organization
     - Consolidate functions with related utilties in single place  
