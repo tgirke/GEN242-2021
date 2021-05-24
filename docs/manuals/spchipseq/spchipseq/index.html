@@ -911,7 +911,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.0106272dfe98046826cb1b1df3f2085a.json"
+  data-offline-search-index-json-src="../../../offline-search-index.f0d3be3b8a3a64914ab335c7a1bccc90.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -943,7 +943,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.0106272dfe98046826cb1b1df3f2085a.json"
+  data-offline-search-index-json-src="../../../offline-search-index.f0d3be3b8a3a64914ab335c7a1bccc90.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1553,8 +1553,8 @@ file intermediate for running MACS2 with the corresponding input samples.</p>
 dir_path &lt;- system.file(&quot;extdata/cwl/MACS2/MACS2-input/&quot;, package = &quot;systemPipeR&quot;)
 args_input &lt;- loadWF(targets = &quot;targets_bam_ref.txt&quot;, wf_file = &quot;macs2-input.cwl&quot;, 
     input_file = &quot;macs2.yml&quot;, dir_path = dir_path)
-args_input &lt;- renderWF(args_input, inputvars = c(FileName1 = &quot;_FASTQ_PATH1_&quot;, 
-    FileName2 = &quot;_FASTQ_PATH2_&quot;, SampleName = &quot;_SampleName_&quot;))
+args_input &lt;- renderWF(args_input, inputvars = c(FileName1 = &quot;_FASTQ_PATH2_&quot;, 
+    FileName2 = &quot;_FASTQ_PATH1_&quot;, SampleName = &quot;_SampleName_&quot;))
 cmdlist(args_input)[1]
 ### Run
 args_input &lt;- runCommandline(args_input, make_bam = FALSE, force = T)

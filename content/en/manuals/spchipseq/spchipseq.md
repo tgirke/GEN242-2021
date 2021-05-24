@@ -1,7 +1,7 @@
 ---
 title: "ChIP-Seq Workflow Template" 
 author: "Author: Daniela Cassol, Le Zhang and Thomas Girke"
-date: "Last update: 04 May, 2021" 
+date: "Last update: 24 May, 2021" 
 output:
   BiocStyle::html_document:
     toc_float: true
@@ -419,8 +419,8 @@ writeTargetsRef(infile = "targets_mergeBamByFactor.txt", outfile = "targets_bam_
 dir_path <- system.file("extdata/cwl/MACS2/MACS2-input/", package = "systemPipeR")
 args_input <- loadWF(targets = "targets_bam_ref.txt", wf_file = "macs2-input.cwl", 
     input_file = "macs2.yml", dir_path = dir_path)
-args_input <- renderWF(args_input, inputvars = c(FileName1 = "_FASTQ_PATH1_", 
-    FileName2 = "_FASTQ_PATH2_", SampleName = "_SampleName_"))
+args_input <- renderWF(args_input, inputvars = c(FileName1 = "_FASTQ_PATH2_", 
+    FileName2 = "_FASTQ_PATH1_", SampleName = "_SampleName_"))
 cmdlist(args_input)[1]
 ### Run
 args_input <- runCommandline(args_input, make_bam = FALSE, force = T)
