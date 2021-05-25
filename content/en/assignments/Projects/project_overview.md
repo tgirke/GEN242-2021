@@ -16,7 +16,7 @@ In addition, every student will work on a Challenge
 Project addressing a specific data analysis task within one of the general NGS
 Workflows. Students will also present a scientific paper closely related to
 their challenge topic (see
-[here](http://girke.bioinformatics.ucr.edu/GEN242/mydoc_paper_presentations.html)).
+[here](https://girke.bioinformatics.ucr.edu/GEN242/assignments/presentations/paper_presentations/)).
 To facilitate teamwork and communication with instructors, each course project will be
 assigned a private GitHub repository.
 
