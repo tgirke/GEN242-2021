@@ -27,7 +27,7 @@
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ Slides ] [ .Rmd ] [ .R ]
  Overview Motivation for building R packages  Organization  Consolidate functions with related utilties in single place Interdepencies among less complex functions make coding more efficient Minimizes duplications   Documentation  Help page infrastructure improves documentation of functions Big picture of utilties provided by package vignettes (manuals)   Sharability  Package can be easier shared with colleagues and public Increases code accessibilty for other users    Package development environments This following introduces two approaches for building R packages:">
 <meta itemprop="dateModified" content="2021-05-24T18:29:52-07:00" />
-<meta itemprop="wordCount" content="1499">
+<meta itemprop="wordCount" content="1519">
 
 
 
@@ -927,7 +927,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.a90b11b86d1383eae7d822c796a69c88.json"
+  data-offline-search-index-json-src="../../../offline-search-index.eae2f4d74224bdc2ef1f221084072555.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -959,7 +959,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.a90b11b86d1383eae7d822c796a69c88.json"
+  data-offline-search-index-json-src="../../../offline-search-index.eae2f4d74224bdc2ef1f221084072555.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1317,17 +1317,20 @@ page on CRAN. The basic workflow example below will create a directory named
 <code>mypackage</code> containing the skeleton of the package for all functions, methods
 and classes defined in the R script(s) passed on to the <code>code_files</code> argument.
 The basic structure of the package directory is described
-<a href="http://manuals.bioinformatics.ucr.edu/home/programming-in-r#Progr_pack">here</a>.
+<a href="http://cran.fhcrc.org/doc/manuals/R-exts.html#Package-structure">here</a>.
 The package directory will also contain a file named <code>Read-and-delete-me</code> with
 instructions for completing the package:</p>
-<pre><code class="language-r">package.skeleton(name=&quot;mypackage&quot;, code_files=c(&quot;script1.R&quot;, &quot;script2.R&quot;))
+<pre><code class="language-r">## Download R script (here pkg_build_fct.R) containing two sample functions
+download.file(&quot;https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/manuals/rprogramming/helper_functions/pkg_build_fct.R&quot;, &quot;pkg_build_fct.R&quot;)
+## Build package skeleton based on functions in pkg_build_fct.R
+package.skeleton(name=&quot;mypackage&quot;, code_files=c(&quot;pkg_build_fct.R&quot;))
 </code></pre>
 <p>Once a package skeleton is available one can build the package from the
 command-line (Linux/OS X). This will create a tarball of the package with its
 version number encoded in the file name. Subequently, the package tarball needs
 to be checked for errors with:</p>
-<pre><code class="language-r">R CMD build mypackage
-R CMD check mypackage_1.0.tar.gz
+<pre><code class="language-r">system(&quot;R CMD build mypackage&quot;)
+system(&quot;R CMD check mypackage_1.0.tar.gz&quot;)
 </code></pre>
 <p>Install package from source</p>
 <pre><code class="language-r">install.packages(&quot;mypackage_1.0.tar.gz&quot;, repos=NULL) 

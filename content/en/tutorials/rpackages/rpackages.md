@@ -1,7 +1,7 @@
 ---
 title: "Building R Packages" 
 author: "Author: Thomas Girke"
-date: "Last update: 24 May, 2021" 
+date: "Last update: 25 May, 2021" 
 output:
   html_document:
     toc: true
@@ -91,12 +91,15 @@ page on CRAN. The basic workflow example below will create a directory named
 `mypackage` containing the skeleton of the package for all functions, methods
 and classes defined in the R script(s) passed on to the `code_files` argument.
 The basic structure of the package directory is described
-[here](http://manuals.bioinformatics.ucr.edu/home/programming-in-r#Progr_pack).
+[here](http://cran.fhcrc.org/doc/manuals/R-exts.html#Package-structure).
 The package directory will also contain a file named `Read-and-delete-me` with
 instructions for completing the package:
 
 ``` r
-package.skeleton(name="mypackage", code_files=c("script1.R", "script2.R"))
+## Download R script (here pkg_build_fct.R) containing two sample functions
+download.file("https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/manuals/rprogramming/helper_functions/pkg_build_fct.R", "pkg_build_fct.R")
+## Build package skeleton based on functions in pkg_build_fct.R
+package.skeleton(name="mypackage", code_files=c("pkg_build_fct.R"))
 ```
 
 Once a package skeleton is available one can build the package from the
@@ -105,8 +108,8 @@ version number encoded in the file name. Subequently, the package tarball needs
 to be checked for errors with:
 
 ``` r
-R CMD build mypackage
-R CMD check mypackage_1.0.tar.gz
+system("R CMD build mypackage")
+system("R CMD check mypackage_1.0.tar.gz")
 ```
 
 Install package from source
