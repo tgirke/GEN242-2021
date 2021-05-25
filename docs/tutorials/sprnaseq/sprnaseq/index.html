@@ -29,7 +29,7 @@ Background and objectives This report describes the analysis of several ChIP-Seq
  Introduction Users want to provide here background information about the design of their ChIP-Seq project.
 Background and objectives This report describes the analysis of several ChIP-Seq experiments studying the DNA binding patterns of the transcriptions factors … from organism ….">
 <meta itemprop="dateModified" content="2021-05-17T08:39:49-07:00" />
-<meta itemprop="wordCount" content="3973">
+<meta itemprop="wordCount" content="4018">
 
 
 
@@ -930,7 +930,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.ae163e910ab6d649bf44ddb13c89fd9d.json"
+  data-offline-search-index-json-src="../../../offline-search-index.d45cf4c761630a6a2a87beb718787af4.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -962,7 +962,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.ae163e910ab6d649bf44ddb13c89fd9d.json"
+  data-offline-search-index-json-src="../../../offline-search-index.d45cf4c761630a6a2a87beb718787af4.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1190,6 +1190,7 @@ if (!doNotTrack) {
         <li><a href="#experimental-design">Experimental design</a></li>
         <li><a href="#workflow-environment">Workflow environment</a></li>
         <li><a href="#required-packages-and-resources">Required packages and resources</a></li>
+        <li><a href="#import-custom-functions">Import custom functions</a></li>
         <li><a href="#experiment-definition-provided-by-targets-file">Experiment definition provided by <code>targets</code> file</a></li>
       </ul>
     </li>
@@ -1385,6 +1386,13 @@ of each workflow template. They are also viewable in the GitHub repository of <e
 here</a>).
 For more information of the structure of the <em>targets</em> file, please consult the documentation
 <a href="http://www.bioconductor.org/packages/release/bioc/vignettes/systemPipeR/inst/doc/systemPipeR.html#25_structure_of_targets_file">here</a>. More details about the new parameter files from systemPipeR can be found <a href="http://www.bioconductor.org/packages/release/bioc/vignettes/systemPipeR/inst/doc/systemPipeR.html#26_structure_of_the_new_param_files_and_construct_sysargs2_container">here</a>.</p>
+<h3 id="import-custom-functions">Import custom functions</h3>
+<p>Custem functions for the challenge projects can be imported with the source
+command from a local R script (here <code>custom_Fct.R</code>). Skip this step if such a
+script is not available. Alternatively, these functions can be loaded from a
+custom R package.</p>
+<pre><code class="language-r">source(&quot;custom_Fct.R&quot;)
+</code></pre>
 <h3 id="experiment-definition-provided-by-targets-file">Experiment definition provided by <code>targets</code> file</h3>
 <p>The <code>targets</code> file defines all FASTQ files and sample
 comparisons of the analysis workflow.</p>

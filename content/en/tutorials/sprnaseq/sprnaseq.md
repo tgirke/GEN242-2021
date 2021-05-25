@@ -1,7 +1,7 @@
 ---
 title: "RNA-Seq Workflow Template" 
 author: "Author: Daniela Cassol, Le Zhang and Thomas Girke"
-date: "Last update: 17 May, 2021" 
+date: "Last update: 25 May, 2021" 
 output:
   BiocStyle::html_document:
     toc_float: true
@@ -144,6 +144,17 @@ of each workflow template. They are also viewable in the GitHub repository of *`
 here](https://github.com/tgirke/systemPipeRdata/tree/master/inst/extdata/param/cwl)).
 For more information of the structure of the *targets* file, please consult the documentation
 [here](http://www.bioconductor.org/packages/release/bioc/vignettes/systemPipeR/inst/doc/systemPipeR.html#25_structure_of_targets_file). More details about the new parameter files from systemPipeR can be found [here](http://www.bioconductor.org/packages/release/bioc/vignettes/systemPipeR/inst/doc/systemPipeR.html#26_structure_of_the_new_param_files_and_construct_sysargs2_container).
+
+### Import custom functions
+
+Custem functions for the challenge projects can be imported with the source
+command from a local R script (here `custom_Fct.R`). Skip this step if such a
+script is not available. Alternatively, these functions can be loaded from a
+custom R package.
+
+``` r
+source("custom_Fct.R")
+```
 
 ### Experiment definition provided by `targets` file
 

@@ -1,7 +1,7 @@
 ---
 title: "ChIP-Seq Workflow Template" 
 author: "Author: Daniela Cassol, Le Zhang and Thomas Girke"
-date: "Last update: 24 May, 2021" 
+date: "Last update: 25 May, 2021" 
 output:
   BiocStyle::html_document:
     toc_float: true
@@ -126,6 +126,17 @@ see `systemPipeR's` main [vignette](http://www.bioconductor.org/packages/devel/b
 
 ``` r
 library(systemPipeR)
+```
+
+### Import custom functions
+
+Custem functions for the challenge projects can be imported with the source
+command from a local R script (here `custom_Fct.R`). Skip this step if such a
+script is not available. Alternatively, these functions can be loaded from a
+custom R package.
+
+``` r
+source("custom_Fct.R")
 ```
 
 ## Read preprocessing
@@ -595,11 +606,6 @@ The following performs GO term enrichment analysis for each annotated peak set.
 
 ``` r
 dir_path <- system.file("extdata/cwl/annotate_peaks", package = "systemPipeR")
-args <- loadWF(targets = "targets_bam_ref.txt", wf_file = "annotate-peaks.cwl", 
-    input_file = "annotate-peaks.yml", dir_path = dir_path)
-args <- renderWF(args, inputvars = c(FileName1 = "_FASTQ_PATH1_", 
-    FileName2 = "_FASTQ_PATH2_", SampleName = "_SampleName_"))
-
 args_anno <- loadWF(targets = "targets_macs.txt", wf_file = "annotate-peaks.cwl", 
     input_file = "annotate-peaks.yml", dir_path = dir_path)
 args_anno <- renderWF(args_anno, inputvars = c(FileName = "_FASTQ_PATH1_", 
