@@ -20,7 +20,7 @@ type: docs
 
 <!---
 - Compile from command-line
-Rscript -e "rmarkdown::render('Rbasics.Rmd', c('html_document'), clean=F); knitr::knit('Rbasics.Rmd', tangle=TRUE)"; Rscript ../md2jekyll.R Rbasics.knit.md 8; Rscript -e "rmarkdown::render('Rbasics.Rmd', c('pdf_document'))"
+Rscript -e "rmarkdown::render('dplyr.Rmd', c('html_document'), clean=FALSE); knitr::knit('dplyr.Rmd', tangle=TRUE)"
 -->
 <script type="text/javascript">
 document.addEventListener("DOMContentLoaded", function() {
@@ -35,6 +35,15 @@ document.addEventListener("DOMContentLoaded", function() {
       links[i].target = '_blank';
 });
 </script>
+
+<div style="text-align: right">
+
+Source code downloads:    
+\[ [Slides](https://girke.bioinformatics.ucr.edu/GEN242/slides/slides_19/) \]    
+\[ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/dplyr/dplyr.Rmd) \]    
+\[ [.R](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/dplyr/dplyr.R) \]
+
+</div>
 
 ## Overview
 

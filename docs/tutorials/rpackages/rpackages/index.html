@@ -18,21 +18,24 @@
 <link rel="icon" type="image/png" href="../../../favicons/android-192x192.png" sizes="192x192">
 
 <title>Building R Packages | GEN242</title><meta property="og:title" content="Building R Packages" />
-<meta property="og:description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Overview Motivation for building R packages  Organization  Consolidate functions with related utilties in single place Interdepencies among less complex functions make coding more efficient Minimizes duplications   Documentation  Help page infrastructure improves documentation of functions Big picture of utilties provided by package vignettes (manuals)   Sharability  Package can be easier shared with colleagues and public Increases code accessibilty for other users    Package development environments This following introduces two approaches for building R packages:" />
+<meta property="og:description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ Slides ] [ .Rmd ] [ .R ]
+ Overview Motivation for building R packages  Organization  Consolidate functions with related utilties in single place Interdepencies among less complex functions make coding more efficient Minimizes duplications   Documentation  Help page infrastructure improves documentation of functions Big picture of utilties provided by package vignettes (manuals)   Sharability  Package can be easier shared with colleagues and public Increases code accessibilty for other users    Package development environments This following introduces two approaches for building R packages:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rpackages/rpackages/" />
 <meta property="article:modified_time" content="2021-05-24T17:27:39-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Building R Packages">
-<meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Overview Motivation for building R packages  Organization  Consolidate functions with related utilties in single place Interdepencies among less complex functions make coding more efficient Minimizes duplications   Documentation  Help page infrastructure improves documentation of functions Big picture of utilties provided by package vignettes (manuals)   Sharability  Package can be easier shared with colleagues and public Increases code accessibilty for other users    Package development environments This following introduces two approaches for building R packages:">
+<meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ Slides ] [ .Rmd ] [ .R ]
+ Overview Motivation for building R packages  Organization  Consolidate functions with related utilties in single place Interdepencies among less complex functions make coding more efficient Minimizes duplications   Documentation  Help page infrastructure improves documentation of functions Big picture of utilties provided by package vignettes (manuals)   Sharability  Package can be easier shared with colleagues and public Increases code accessibilty for other users    Package development environments This following introduces two approaches for building R packages:">
 <meta itemprop="dateModified" content="2021-05-24T17:27:39-07:00" />
-<meta itemprop="wordCount" content="1487">
+<meta itemprop="wordCount" content="1499">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Building R Packages"/>
-<meta name="twitter:description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Overview Motivation for building R packages  Organization  Consolidate functions with related utilties in single place Interdepencies among less complex functions make coding more efficient Minimizes duplications   Documentation  Help page infrastructure improves documentation of functions Big picture of utilties provided by package vignettes (manuals)   Sharability  Package can be easier shared with colleagues and public Increases code accessibilty for other users    Package development environments This following introduces two approaches for building R packages:"/>
+<meta name="twitter:description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ Slides ] [ .Rmd ] [ .R ]
+ Overview Motivation for building R packages  Organization  Consolidate functions with related utilties in single place Interdepencies among less complex functions make coding more efficient Minimizes duplications   Documentation  Help page infrastructure improves documentation of functions Big picture of utilties provided by package vignettes (manuals)   Sharability  Package can be easier shared with colleagues and public Increases code accessibilty for other users    Package development environments This following introduces two approaches for building R packages:"/>
 
 
 <script type="application/javascript">
@@ -916,7 +919,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.07182de8b99bf5db327e1cef01c7b708.json"
+  data-offline-search-index-json-src="../../../offline-search-index.541ef3fe6013ef314b94621df7d437de.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -948,7 +951,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.07182de8b99bf5db327e1cef01c7b708.json"
+  data-offline-search-index-json-src="../../../offline-search-index.541ef3fe6013ef314b94621df7d437de.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1231,7 +1234,7 @@ if (!doNotTrack) {
 	<h1>Building R Packages</h1>
     
 	
-        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 7 minute read</p>
+        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 8 minute read</p>
            
 	<!--
 - Compile from command-line
@@ -1250,6 +1253,12 @@ document.addEventListener("DOMContentLoaded", function() {
       links[i].target = '_blank';
 });
 </script>
+<div style="text-align: right">
+<p>Source code downloads:    
+[ <a href="https://girke.bioinformatics.ucr.edu/GEN242/slides/slides_19/">Slides</a> ]    
+[ <a href="https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/rpackages/rpackages.Rmd">.Rmd</a> ]    
+[ <a href="https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/rpackages/rpackages.R">.R</a> ]</p>
+</div>
 <h2 id="overview">Overview</h2>
 <h3 id="motivation-for-building-r-packages">Motivation for building R packages</h3>
 <ol>

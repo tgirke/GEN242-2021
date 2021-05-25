@@ -37,6 +37,15 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
+<div style="text-align: right">
+
+Source code downloads:    
+\[ [Slides](https://girke.bioinformatics.ucr.edu/GEN242/slides/slides_19/) \]    
+\[ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/rpackages/rpackages.Rmd) \]    
+\[ [.R](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/rpackages/rpackages.R) \]
+
+</div>
+
 ## Overview
 
 ### Motivation for building R packages

@@ -20,7 +20,7 @@ type: docs
 
 <!---
 - Compile from command-line
-Rscript -e "rmarkdown::render('Rbasics.Rmd', c('html_document'), clean=F); knitr::knit('Rbasics.Rmd', tangle=TRUE)"; Rscript ../md2jekyll.R Rbasics.knit.md 8; Rscript -e "rmarkdown::render('Rbasics.Rmd', c('pdf_document'))"
+Rscript -e "rmarkdown::render('dplyr.Rmd', c('html_document'), clean=FALSE); knitr::knit('dplyr.Rmd', tangle=TRUE)"
 -->
 
 ```{r style, echo = FALSE, results = 'asis'}
@@ -37,6 +37,13 @@ suppressPackageStartupMessages({
     library(limma) 
     library(ggplot2) }) 
 ```
+
+<div style="text-align: right"> 
+Source code downloads: &nbsp; &nbsp;
+[ [Slides](https://girke.bioinformatics.ucr.edu/GEN242/slides/slides_19/) ] &nbsp; &nbsp; 
+[ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/dplyr/dplyr.Rmd) ] &nbsp; &nbsp; 
+[ [.R](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/dplyr/dplyr.R) ]
+</div>
 
 ## Overview
 
