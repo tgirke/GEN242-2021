@@ -57,7 +57,7 @@ pre[class] {
 <br/><br/>
 <br/><br/>
 
-<p style='text-align: center;'> __[The Sign in Form is [here](https://bit.ly/3ufjfYA)__ </p>
+<p style='text-align: center;'> __The Sign in Form is [here](https://bit.ly/3ufjfYA)__ </p>
 
 
 ## How to Navigate this Slide Show?
