@@ -49,7 +49,7 @@ Source code downloads:    
 
 Modern object classes and methods for handling `data.frame` like structures
 are provided by the `dplyr` (`tidyr`) and `data.table` packages. A related example is Bioconductor’s
-`DataTable` object class. This tutorial provide a short introduction to the usage and
+`DataTable` object class (“<span class="nocase">Learn the tidyverse</span>,” n.d.). This tutorial provide a short introduction to the usage and
 functionalities of the `dplyr` and related packages.
 
 ### Related documentation
@@ -1083,3 +1083,13 @@ sessionInfo()
     ## [69] xfun_0.23
 
 ## References
+
+<div id="refs" class="references csl-bib-body hanging-indent">
+
+<div id="ref-noauthor_undated-kc" class="csl-entry">
+
+“<span class="nocase">Learn the tidyverse</span>.” n.d. <https://www.tidyverse.org/learn/>. <https://www.tidyverse.org/learn/>.
+
+</div>
+
+</div>
