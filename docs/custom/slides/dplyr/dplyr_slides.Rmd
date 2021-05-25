@@ -138,7 +138,7 @@ library(tidyverse)
 
 ## Construct objects
 
-### Construct a `tibble` (`tibble`)
+### Construct a `tibble`
 
 ```{r data_frame_tbl1, eval=TRUE}
 as_tibble(iris) # coerce data.frame to tibble tbl
