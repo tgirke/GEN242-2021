@@ -399,7 +399,7 @@ iris_df$Species[1:12]
 
 ### Slice and filter functions 
 
-#### Filter function
+### Filter function
 
 
 ```r
@@ -412,7 +412,7 @@ filter(iris_df, Sepal.Length > 7.5, Species=="virginica")
   </script>
 </div>
 
-#### Base R code equivalent
+### Base R code equivalent
 
 
 ```r
@@ -425,7 +425,7 @@ iris_df[iris_df[, "Sepal.Length"] > 7.5 & iris_df[, "Species"]=="virginica", ]
   </script>
 </div>
 
-#### Including boolean operators
+### Including boolean operators
 
 
 ```r
@@ -438,7 +438,7 @@ filter(iris_df, Sepal.Length > 7.5 | Sepal.Length < 5.5, Species=="virginica")
   </script>
 </div>
 
-#### Subset rows by position
+### Subset rows by position
 
 `dplyr` approach
 
@@ -466,7 +466,7 @@ iris_df[1:2,]
   </script>
 </div>
 
-#### Subset rows by names
+### Subset rows by names
 
 Since `tibbles` do not contain row names, row wise subsetting via the `[,]` operator cannot be used.
 However, the corresponding behavior can be achieved by passing to `select` a row position index 
@@ -670,7 +670,7 @@ iris_df[!duplicated(iris_df$Species),]
 
 ### Add columns
 
-#### `mutate`
+### `mutate`
 
 The `mutate` function allows to append columns to existing ones.
 
@@ -685,7 +685,7 @@ mutate(iris_df, Ratio = Sepal.Length / Sepal.Width, Sum = Sepal.Length + Sepal.W
   </script>
 </div>
 
-#### `transmute`
+### `transmute`
 
 The `transmute` function does the same as `mutate` but drops existing columns
 
@@ -700,7 +700,7 @@ transmute(iris_df, Ratio = Sepal.Length / Sepal.Width, Sum = Sepal.Length + Sepa
   </script>
 </div>
 
-#### `bind_cols`
+### `bind_cols`
 
 The `bind_cols` function is the equivalent of `cbind` in base R. To add rows, use the corresponding 
 `bind_rows` function.
@@ -818,7 +818,7 @@ df2
 {"columns":[{"label":["ids2"],"name":[1],"type":["chr"],"align":["left"]},{"label":["CB1"],"name":[2],"type":["int"],"align":["right"]},{"label":["CB2"],"name":[3],"type":["int"],"align":["right"]},{"label":["CB3"],"name":[4],"type":["int"],"align":["right"]},{"label":["CB4"],"name":[5],"type":["int"],"align":["right"]}],"data":[{"1":"g2","2":"1","3":"5","4":"9","5":"13"},{"1":"g5","2":"2","3":"6","4":"10","5":"14"},{"1":"g11","2":"3","3":"7","4":"11","5":"15"},{"1":"g12","2":"4","3":"8","4":"12","5":"16"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-#### Inner join
+### Inner join
 
 
 ```r
@@ -831,7 +831,7 @@ inner_join(df1, df2, by=c("ids1"="ids2"))
   </script>
 </div>
 
-#### Left join
+### Left join
 
 
 ```r
@@ -844,7 +844,7 @@ left_join(df1, df2, by=c("ids1"="ids2"))
   </script>
 </div>
 
-#### Right join
+### Right join
 
 
 ```r
@@ -857,7 +857,7 @@ right_join(df1, df2, by=c("ids1"="ids2"))
   </script>
 </div>
 
-#### Full join
+### Full join
 
 
 ```r
@@ -870,7 +870,7 @@ full_join(df1, df2, by=c("ids1"="ids2"))
   </script>
 </div>
 
-#### Anti join
+### Anti join
 
 
 ```r
@@ -1048,7 +1048,7 @@ dbGetQuery(mydb, 'SELECT * FROM mydf2')
 
 <div data-pagedtable="false">
   <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["ids"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Sepal.Length"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Sepal.Width"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Petal.Length"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Petal.Width"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["Species"],"name":[6],"type":["chr"],"align":["left"]}],"data":[{"1":"id75","2":"6.4","3":"2.9","4":"4.3","5":"1.3","6":"versicolor"},{"1":"id5","2":"5.0","3":"3.6","4":"1.4","5":"0.2","6":"setosa"},{"1":"id49","2":"5.3","3":"3.7","4":"1.5","5":"0.2","6":"setosa"},{"1":"id83","2":"5.8","3":"2.7","4":"3.9","5":"1.2","6":"versicolor"},{"1":"id48","2":"4.6","3":"3.2","4":"1.4","5":"0.2","6":"setosa"},{"1":"id133","2":"6.4","3":"2.8","4":"5.6","5":"2.2","6":"virginica"},{"1":"id43","2":"4.4","3":"3.2","4":"1.3","5":"0.2","6":"setosa"},{"1":"id31","2":"4.8","3":"3.1","4":"1.6","5":"0.2","6":"setosa"},{"1":"id63","2":"6.0","3":"2.2","4":"4.0","5":"1.0","6":"versicolor"},{"1":"id89","2":"5.6","3":"3.0","4":"4.1","5":"1.3","6":"versicolor"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["ids"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Sepal.Length"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Sepal.Width"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Petal.Length"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Petal.Width"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["Species"],"name":[6],"type":["chr"],"align":["left"]}],"data":[{"1":"id2","2":"4.9","3":"3.0","4":"1.4","5":"0.2","6":"setosa"},{"1":"id30","2":"4.7","3":"3.2","4":"1.6","5":"0.2","6":"setosa"},{"1":"id21","2":"5.4","3":"3.4","4":"1.7","5":"0.2","6":"setosa"},{"1":"id88","2":"6.3","3":"2.3","4":"4.4","5":"1.3","6":"versicolor"},{"1":"id61","2":"5.0","3":"2.0","4":"3.5","5":"1.0","6":"versicolor"},{"1":"id84","2":"6.0","3":"2.7","4":"5.1","5":"1.6","6":"versicolor"},{"1":"id144","2":"6.8","3":"3.2","4":"5.9","5":"2.3","6":"virginica"},{"1":"id95","2":"5.6","3":"2.7","4":"4.2","5":"1.3","6":"versicolor"},{"1":"id146","2":"6.7","3":"3.0","4":"5.2","5":"2.3","6":"virginica"},{"1":"id148","2":"6.5","3":"3.0","4":"5.2","5":"2.0","6":"virginica"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 
@@ -1076,7 +1076,7 @@ dbGetQuery(mydb, 'SELECT * FROM mydf1, mydf2 WHERE mydf1.ids = mydf2.ids')
 
 <div data-pagedtable="false">
   <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["ids"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Sepal.Length"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Sepal.Width"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Petal.Length"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Petal.Width"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["Species"],"name":[6],"type":["chr"],"align":["left"]},{"label":["ids"],"name":[7],"type":["chr"],"align":["left"]},{"label":["Sepal.Length"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["Sepal.Width"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["Petal.Length"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["Petal.Width"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["Species"],"name":[12],"type":["chr"],"align":["left"]}],"data":[{"1":"id5","2":"5.0","3":"3.6","4":"1.4","5":"0.2","6":"setosa","7":"id5","8":"5.0","9":"3.6","10":"1.4","11":"0.2","12":"setosa"},{"1":"id31","2":"4.8","3":"3.1","4":"1.6","5":"0.2","6":"setosa","7":"id31","8":"4.8","9":"3.1","10":"1.6","11":"0.2","12":"setosa"},{"1":"id43","2":"4.4","3":"3.2","4":"1.3","5":"0.2","6":"setosa","7":"id43","8":"4.4","9":"3.2","10":"1.3","11":"0.2","12":"setosa"},{"1":"id48","2":"4.6","3":"3.2","4":"1.4","5":"0.2","6":"setosa","7":"id48","8":"4.6","9":"3.2","10":"1.4","11":"0.2","12":"setosa"},{"1":"id49","2":"5.3","3":"3.7","4":"1.5","5":"0.2","6":"setosa","7":"id49","8":"5.3","9":"3.7","10":"1.5","11":"0.2","12":"setosa"},{"1":"id63","2":"6.0","3":"2.2","4":"4.0","5":"1.0","6":"versicolor","7":"id63","8":"6.0","9":"2.2","10":"4.0","11":"1.0","12":"versicolor"},{"1":"id75","2":"6.4","3":"2.9","4":"4.3","5":"1.3","6":"versicolor","7":"id75","8":"6.4","9":"2.9","10":"4.3","11":"1.3","12":"versicolor"},{"1":"id83","2":"5.8","3":"2.7","4":"3.9","5":"1.2","6":"versicolor","7":"id83","8":"5.8","9":"2.7","10":"3.9","11":"1.2","12":"versicolor"},{"1":"id89","2":"5.6","3":"3.0","4":"4.1","5":"1.3","6":"versicolor","7":"id89","8":"5.6","9":"3.0","10":"4.1","11":"1.3","12":"versicolor"},{"1":"id133","2":"6.4","3":"2.8","4":"5.6","5":"2.2","6":"virginica","7":"id133","8":"6.4","9":"2.8","10":"5.6","11":"2.2","12":"virginica"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["ids"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Sepal.Length"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Sepal.Width"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Petal.Length"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Petal.Width"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["Species"],"name":[6],"type":["chr"],"align":["left"]},{"label":["ids"],"name":[7],"type":["chr"],"align":["left"]},{"label":["Sepal.Length"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["Sepal.Width"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["Petal.Length"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["Petal.Width"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["Species"],"name":[12],"type":["chr"],"align":["left"]}],"data":[{"1":"id2","2":"4.9","3":"3.0","4":"1.4","5":"0.2","6":"setosa","7":"id2","8":"4.9","9":"3.0","10":"1.4","11":"0.2","12":"setosa"},{"1":"id21","2":"5.4","3":"3.4","4":"1.7","5":"0.2","6":"setosa","7":"id21","8":"5.4","9":"3.4","10":"1.7","11":"0.2","12":"setosa"},{"1":"id30","2":"4.7","3":"3.2","4":"1.6","5":"0.2","6":"setosa","7":"id30","8":"4.7","9":"3.2","10":"1.6","11":"0.2","12":"setosa"},{"1":"id61","2":"5.0","3":"2.0","4":"3.5","5":"1.0","6":"versicolor","7":"id61","8":"5.0","9":"2.0","10":"3.5","11":"1.0","12":"versicolor"},{"1":"id84","2":"6.0","3":"2.7","4":"5.1","5":"1.6","6":"versicolor","7":"id84","8":"6.0","9":"2.7","10":"5.1","11":"1.6","12":"versicolor"},{"1":"id88","2":"6.3","3":"2.3","4":"4.4","5":"1.3","6":"versicolor","7":"id88","8":"6.3","9":"2.3","10":"4.4","11":"1.3","12":"versicolor"},{"1":"id95","2":"5.6","3":"2.7","4":"4.2","5":"1.3","6":"versicolor","7":"id95","8":"5.6","9":"2.7","10":"4.2","11":"1.3","12":"versicolor"},{"1":"id144","2":"6.8","3":"3.2","4":"5.9","5":"2.3","6":"virginica","7":"id144","8":"6.8","9":"3.2","10":"5.9","11":"2.3","12":"virginica"},{"1":"id146","2":"6.7","3":"3.0","4":"5.2","5":"2.3","6":"virginica","7":"id146","8":"6.7","9":"3.0","10":"5.2","11":"2.3","12":"virginica"},{"1":"id148","2":"6.5","3":"3.0","4":"5.2","5":"2.0","6":"virginica","7":"id148","8":"6.5","9":"3.0","10":"5.2","11":"2.0","12":"virginica"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 
