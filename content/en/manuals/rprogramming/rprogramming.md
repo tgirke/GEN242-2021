@@ -1,7 +1,7 @@
 ---
 title: "Programming in R" 
 author: "Author: Thomas Girke"
-date: "Last update: 23 May, 2021" 
+date: "Last update: 24 May, 2021" 
 output:
   html_document:
     toc: true
@@ -731,7 +731,7 @@ R package development:
 -   Automating `roxygen2` documentation with `sinew` by Jonathan Sidi: [Blog](https://yonicd.github.io/2017-09-18-sinew/) and [CRAN](https://cran.r-project.org/web/packages/sinew/index.html)
 
 The following outlines the basic workflow for building, testing and extending R packages with
-the functionalities of package development environment outlined above.
+the package development environment functionalities outlined above.
 
 #### (a) Create package skeleton
 
@@ -827,6 +827,24 @@ vignette("introduction", "myfirstpkg")
 ```
 
 Another very useful development function is `test` for evaluating the test code of a package.
+
+#### (h) Share package on GitHub
+
+To host and share the new package `myfirstpkg` on GitHub, one can use the following steps:
+
+1.  Create an empty target GitHub repos online (*e.g.* named `mypkg_repos`) as outlined [here](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/github/github/#exercise).
+2.  Clone the new GitHub repos to local system with `git clone https://github.com/<github_username>/<repo name>` (here from command-line)
+3.  Copy the root directory of the package into the downloaded repos with `cp myfirstpkg mypkg_repos`  
+4.  Next `cd` into `mypkg_repos`, and then add all files and directories of the package to the staging area with `git add -A :/`.
+5.  Commit and push the changes to GitHub with: `git commit -am "first commit"; git push`.
+6.  After this the package should be life on the corresponding GitHub web page.
+7.  Assuming the package is public, it can be installed directly from GitHub by anyone as shown below (from within R). Installs of
+    private packages require a personal access token (PAT) that needs to be assigned to the `auth_token` argument. PATs can be created
+    [here](https://github.com/settings/tokens).
+
+``` r
+devtools::install_github("<github_user_name>/<mypkg_repos>", subdir="myfirstpkg") # If the package is in the root directory of the repos, then the 'subdir' argument can be dropped.
+```
 
 ## Programming Exercises
 

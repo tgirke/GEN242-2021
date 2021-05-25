@@ -77,6 +77,10 @@
 ## vignette("introduction", "myfirstpkg")
 
 
+## ----package_devtools_skeleton8, eval=FALSE-----------------------------------
+## devtools::install_github("<github_user_name>/<mypkg_repos>", subdir="myfirstpkg") # If the package is in the root directory of the repos, then the 'subdir' argument can be dropped.
+
+
 ## ----sessionInfo--------------------------------------------------------------
 sessionInfo()
 

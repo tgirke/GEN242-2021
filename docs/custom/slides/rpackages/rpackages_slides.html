@@ -379,7 +379,7 @@ Package Development with <code>devtools</code> <em>et al.</em>
 
 </article></slide><slide class=""><hgroup><h2>Workflow for building R packages</h2></hgroup><article  id="workflow-for-building-r-packages" class="smaller ">
 
-<p>The following outlines the basic workflow for building, testing and extending R packages with the functionalities of package development environment outlined above.</p>
+<p>The following outlines the basic workflow for building, testing and extending R packages with the package development environment functionalities outlined above.</p>
 
 <h3>(a) Create package skeleton</h3>
 
@@ -441,6 +441,22 @@ build(&quot;myfirstpkg&quot;) # Creates *.tar.gz file for package required to fo
 vignette(&quot;introduction&quot;, &quot;myfirstpkg&quot;)</pre>
 
 <p>Another very useful development function is <code>test</code> for evaluating the test code of a package.</p>
+
+<h3>(h) Share package on GitHub</h3>
+
+<p>To host and share the new package <code>myfirstpkg</code> on GitHub, one can use the following steps:</p>
+
+<ol>
+<li>Create an empty target GitHub repos online (<em>e.g.</em> named <code>mypkg_repos</code>) as outlined <a href='https://girke.bioinformatics.ucr.edu/GEN242/tutorials/github/github/#exercise' title=''>here</a>.</li>
+<li>Clone the new GitHub repos to local system with <code>git clone https://github.com/&lt;github_username&gt;/&lt;repo name&gt;</code> (here from command-line)</li>
+<li>Copy the root directory of the package into the downloaded repos with <code>cp myfirstpkg mypkg_repos</code><br/></li>
+<li>Next <code>cd</code> into <code>mypkg_repos</code>, and then add all files and directories of the package to the staging area with <code>git add -A :/</code>.</li>
+<li>Commit and push the changes to GitHub with: <code>git commit -am &quot;first commit&quot;; git push</code>.</li>
+<li>After this the package should be life on the corresponding GitHub web page.</li>
+<li>Assuming the package is public, it can be installed directly from GitHub by anyone as shown below (from within R). Installs of private packages require a personal access token (PAT) that needs to be assigned to the <code>auth_token</code> argument. PATs can be created <a href='https://github.com/settings/tokens' title=''>here</a>.</li>
+</ol>
+
+<pre class = 'prettyprint lang-r'>devtools::install_github(&quot;&lt;github_user_name&gt;/&lt;mypkg_repos&gt;&quot;, subdir=&quot;myfirstpkg&quot;) # If the package is in the root directory of the repos, then the &#39;subdir&#39; argument can be dropped.</pre>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Outline</h2></hgroup><article  id="outline-3" class="smaller ">
 
