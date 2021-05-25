@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <div style="text-align: right">
 
 Source code downloads:    
-\[ [Slides](https://girke.bioinformatics.ucr.edu/GEN242/slides/slides_19/) \]    
+\[ [Slides](https://girke.bioinformatics.ucr.edu/GEN242/slides/slides_20/) \]    
 \[ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/dplyr/dplyr.Rmd) \]    
 \[ [.R](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/dplyr/dplyr.R) \]
 

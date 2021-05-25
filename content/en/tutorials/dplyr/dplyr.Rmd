@@ -40,7 +40,7 @@ suppressPackageStartupMessages({
 
 <div style="text-align: right"> 
 Source code downloads: &nbsp; &nbsp;
-[ [Slides](https://girke.bioinformatics.ucr.edu/GEN242/slides/slides_19/) ] &nbsp; &nbsp; 
+[ [Slides](https://girke.bioinformatics.ucr.edu/GEN242/slides/slides_20/) ] &nbsp; &nbsp; 
 [ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/dplyr/dplyr.Rmd) ] &nbsp; &nbsp; 
 [ [.R](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/dplyr/dplyr.R) ]
 </div>
