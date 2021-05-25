@@ -21,11 +21,11 @@
 <meta property="og:description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Overview Motivation for building R packages  Organization  Consolidate functions with related utilties in single place Interdepencies among less complex functions make coding more efficient Minimizes duplications   Documentation  Help page infrastructure improves documentation of functions Big picture of utilties provided by package vignettes (manuals)   Sharability  Package can be easier shared with colleagues and public Increases code accessibilty for other users    Package development environments This following introduces two approaches for building R packages:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rpackages/rpackages/" />
-<meta property="article:modified_time" content="2021-05-23T21:19:24-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-05-24T17:23:31-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Building R Packages">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Overview Motivation for building R packages  Organization  Consolidate functions with related utilties in single place Interdepencies among less complex functions make coding more efficient Minimizes duplications   Documentation  Help page infrastructure improves documentation of functions Big picture of utilties provided by package vignettes (manuals)   Sharability  Package can be easier shared with colleagues and public Increases code accessibilty for other users    Package development environments This following introduces two approaches for building R packages:">
-<meta itemprop="dateModified" content="2021-05-23T21:19:24-07:00" />
-<meta itemprop="wordCount" content="1485">
+<meta itemprop="dateModified" content="2021-05-24T17:23:31-07:00" />
+<meta itemprop="wordCount" content="1487">
 
 
 
@@ -908,7 +908,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.c7248b4e1ff602338e61d1318166284d.json"
+  data-offline-search-index-json-src="../../../offline-search-index.2376dde6bbec529c817a749d556f4193.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -940,7 +940,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.c7248b4e1ff602338e61d1318166284d.json"
+  data-offline-search-index-json-src="../../../offline-search-index.2376dde6bbec529c817a749d556f4193.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1387,7 +1387,7 @@ vignette(&quot;introduction&quot;, &quot;myfirstpkg&quot;)
 </code></pre>
 <p>Another very useful development function is <code>test</code> for evaluating the test code of a package.</p>
 <h3 id="h-share-package-on-github">(h) Share package on GitHub</h3>
-<p>To host and share the new package on GitHub, one can use the following steps:</p>
+<p>To host and share the new package <code>myfirstpkg</code> on GitHub, one can use the following steps:</p>
 <ol>
 <li>Create an empty target GitHub repos online (<em>e.g.</em> named <code>mypkg_repos</code>) as outlined <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/github/github/#exercise">here</a>.</li>
 <li>Clone the new GitHub repos to local system with <code>git clone https://github.com/&lt;github_username&gt;/&lt;repo name&gt;</code> (here from command-line)</li>
@@ -1399,7 +1399,7 @@ vignette(&quot;introduction&quot;, &quot;myfirstpkg&quot;)
 private packages require a personal access token (PAT) that needs to be assigned to the <code>auth_token</code> argument. PATs can be created
 <a href="https://github.com/settings/tokens">here</a>.</li>
 </ol>
-<pre><code class="language-r">devtools::install_github(&quot;&lt;github_user_name&gt;/&lt;mypkgs&gt;&quot;, subdir=&quot;myfirstpkg&quot;) # If the package is in the root directory of repos, then the 'subdir' argument can be dropped.
+<pre><code class="language-r">devtools::install_github(&quot;&lt;github_user_name&gt;/&lt;mypkg_repos&gt;&quot;, subdir=&quot;myfirstpkg&quot;) # If the package is in the root directory of the repos, then the 'subdir' argument can be dropped.
 </code></pre>
 <h2 id="session-info">Session Info</h2>
 <pre><code class="language-r">sessionInfo()
@@ -1446,7 +1446,7 @@ private packages require a personal access token (PAT) that needs to be assigned
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-23: <a  href="https://github.com/tgirke/GEN242//commit/747fab638b0079fb66593ef5b6fc30e9aa918e0a">some edits (747fab638)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-24: <a  href="https://github.com/tgirke/GEN242//commit/a8746250034407687494cd492c87ce5a3382331b">some edits (a87462500)</a>
 </div>
 </div>
 

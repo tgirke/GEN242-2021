@@ -227,7 +227,7 @@ Another very useful development function is `test` for evaluating the test code 
 
 ### (h) Share package on GitHub
 
-To host and share the new package on GitHub, one can use the following steps:
+To host and share the new package `myfirstpkg` on GitHub, one can use the following steps:
 
 1.  Create an empty target GitHub repos online (*e.g.* named `mypkg_repos`) as outlined [here](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/github/github/#exercise).
 2.  Clone the new GitHub repos to local system with `git clone https://github.com/<github_username>/<repo name>` (here from command-line)
@@ -240,7 +240,7 @@ To host and share the new package on GitHub, one can use the following steps:
     [here](https://github.com/settings/tokens).
 
 ``` r
-devtools::install_github("<github_user_name>/<mypkgs>", subdir="myfirstpkg") # If the package is in the root directory of repos, then the 'subdir' argument can be dropped.
+devtools::install_github("<github_user_name>/<mypkg_repos>", subdir="myfirstpkg") # If the package is in the root directory of the repos, then the 'subdir' argument can be dropped.
 ```
 
 ## Session Info
