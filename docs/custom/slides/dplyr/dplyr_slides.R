@@ -65,8 +65,11 @@ iris_df
 
 
 ## ----dplyr_bind, eval=TRUE----------------------------------------------------
-bind_cols(iris_df, iris_df)
-bind_rows(iris_df, iris_df)
+bind_cols(iris_df, iris_df)[1:2,]
+
+
+## ----dplyr_bind2, eval=TRUE---------------------------------------------------
+bind_rows(iris_df, iris_df)[1:2,]
 
 
 ## ----plyr_get_cols, eval=TRUE-------------------------------------------------

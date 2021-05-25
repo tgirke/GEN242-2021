@@ -108,11 +108,11 @@ More detailed tutorials on this topic can be found here:
 - SQLite
 - References
 
-### Installation
+## Installation
 
 The `dplyr` (`tidyr`) environment has evolved into an ecosystem of packages. To simplify
 package management, one can install and load the entire collection via the
-`tidyverse` package. For more details on `tidyverse` see
+`tidyverse` package [@noauthor_undated-kc]. For more details on `tidyverse` see
 [here](http://tidyverse.org/).
 
 
@@ -125,7 +125,6 @@ Load `tidyverse` package environment
 ```{r tidyverse_load, eval=TRUE}
 library(tidyverse)
 ```
-
 
 # Outline
 
@@ -169,6 +168,10 @@ Import functions provided by `readr` include:
 * `read_fwf()`: fixed width files
 * `read_table()`: tabular files where colums are separated by white-space.
 * `read_log()`: web log files
+
+<p style='text-align: right;'> __[ scroll down to continue ]__ </p>
+<br/><br/>
+<br/><br/>
 
 
 Create a sample tab delimited file for import
@@ -237,8 +240,15 @@ write_tsv(iris_df, "iris.txt")
 The equivalents to base R's `rbind` and `cbind` are `bind_rows` and `bind_cols`, respectively.
 
 ```{r dplyr_bind, eval=TRUE}
-bind_cols(iris_df, iris_df)
-bind_rows(iris_df, iris_df)
+bind_cols(iris_df, iris_df)[1:2,]
+```
+
+<p style='text-align: right;'> __[ scroll down to continue ]__ </p>
+<br/><br/>
+<br/><br/>
+
+```{r dplyr_bind2, eval=TRUE}
+bind_rows(iris_df, iris_df)[1:2,]
 ```
 
 ### Extract column as vector
@@ -514,10 +524,22 @@ For additional join options users want to cosult the `*_join` help pages.
 
 ## Chaining
 
+<br/><br/>
+<br/><br/>
+
 To simplify chaining of serveral operations, `dplyr` provides the `%>%`
 operator, where `x %>% f(y)` turns into `f(x, y)`. This way one can pipe
 together multiple operations by writing them from left-to-right or
 top-to-bottom. This makes for easy to type and readable code.
+
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+
+<p style='text-align: right;'> __[ scroll down to continue ]__ </p>
+<br/><br/>
+<br/><br/>
 
 
 ### Example 1
@@ -573,6 +595,9 @@ iris_df %>%
 
 ## SQLite Databases
 
+<br/><br/>
+<br/><br/>
+
 `SQLite` is a lightweight relational database solution. The `RSQLite` package provides an easy to use interface to create, manage and query `SQLite` databases directly from R. Basic instructions
 for using `SQLite` from the command-line are available [here](https://www.sqlite.org/cli.html). A short introduction to `RSQLite` is available [here](https://github.com/rstats-db/RSQLite/blob/master/vignettes/RSQLite.Rmd).
 
@@ -591,11 +616,17 @@ dbWriteTable(mydb, "mydf1", mydf1)
 dbWriteTable(mydb, "mydf2", mydf2)
 ```
 
+
 ### List names of tables in database
 
 ```{r list_tables, eval=TRUE}
 dbListTables(mydb)
 ```
+
+<p style='text-align: right;'> __[ scroll down to continue ]__ </p>
+<br/><br/>
+<br/><br/>
+
 
 ### Import table into `data.frame`
 
