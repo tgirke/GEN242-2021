@@ -368,6 +368,11 @@ enable = true
     url = "/slides/slides_19/"
     parent = "Slides"
     weight = 119
+  [[menu.main]]
+    name = "dplyr, tidyr and SQLite (S20)"
+    url = "/slides/slides_20/"
+    parent = "Slides"
+    weight = 120
 ##
 [[menu.main]]
   name = "Tutorials"
@@ -454,7 +459,7 @@ enable = true
     parent = "Tutorials"
     weight = 216
   [[menu.main]]
-    name = "dplyr, tidyverse and SQLite (T17)"
+    name = "dplyr, tidyr and SQLite (T17)"
     url = "/tutorials/dplyr/dplyr/"
     parent = "Tutorials"
     weight = 217
