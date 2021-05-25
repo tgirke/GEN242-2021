@@ -1,5 +1,5 @@
 ---
-title: _dplyr_ and _tidyverse_ Environments plus some _SQLite_" 
+title: Environments dplyr, tidyverse and some SQLite" 
 author: "Author: Thomas Girke"
 date: "Last update: 24 May, 2021" 
 output:
@@ -36,11 +36,15 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
-## `dplyr` Environment
+## Overview
 
 Modern object classes and methods for handling `data.frame` like structures
-are provided by the `dplyr` and `data.table` packages. The following gives a
-short introduction to the usage and functionalities of the `dplyr` package.
+are provided by the `dplyr` and `data.table` packages. A related example is Bioconductor’s
+`DataTable` object class. This tutorial provide a short introduction to the usage and
+functionalities of the `dplyr` and related packages.
+
+### Related documentation
+
 More detailed tutorials on this topic can be found here:
 
 -   [dplyr: A Grammar of Data Manipulation](https://rdrr.io/cran/dplyr/)
