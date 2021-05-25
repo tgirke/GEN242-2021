@@ -1,6 +1,6 @@
 ---
-title: ""
-linkTitle: "Environments dplyr, tidyr and some SQLite"
+title: "Environments dplyr, tidyr and some SQLite"
+linkTitle: "dplyr, tidyr and SQLite"
 description: >
 type: docs
 weight: 120
