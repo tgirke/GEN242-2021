@@ -1,5 +1,5 @@
 ---
-title: Environments `dplyr`, tidyverse and some SQLite
+title: Environments dplyr, tidyr and some SQLite
 author: "Author: Thomas Girke"
 date: "Last update: `r format(Sys.time(), '%d %B, %Y')`" 
 output:
@@ -48,7 +48,7 @@ Source code downloads: &nbsp; &nbsp;
 ## Overview
 
 Modern object classes and methods for handling `data.frame` like structures
-are provided by the `dplyr` and `data.table` packages. A related example is Bioconductor's 
+are provided by the `dplyr` (`tidyr`) and `data.table` packages. A related example is Bioconductor's 
 `DataTable` object class. This tutorial provide a short introduction to the usage and 
 functionalities of the `dplyr` and related packages.  
 
@@ -67,7 +67,7 @@ More detailed tutorials on this topic can be found here:
 
 ### Installation
 
-The `dplyr` environment has evolved into an ecosystem of packages. To simplify
+The `dplyr` (`tidyr`) environment has evolved into an ecosystem of packages. To simplify
 package management, one can install and load the entire collection via the
 `tidyverse` package. For more details on `tidyverse` see
 [here](http://tidyverse.org/).
@@ -84,10 +84,10 @@ library(tidyverse)
 as_tibble(iris) # coerce data.frame to tibble tbl
 ```
 
-Alternative functions producing the same result include `as_data_frame` and `tbl_df`:
+Alternative function producing the same result include `tbl_df` and `as_data_frame` (latter
+has been deprecated):
 
 ```{r data_frame_tbl2, eval=FALSE}
-as_data_frame(iris) 
 tbl_df(iris) 
 ```
 ### Reading and writing tabular files
@@ -123,7 +123,7 @@ iris_df <- read_tsv("iris.txt") # Import with read_tbv from readr package
 iris_df
 ```
 
-To import Google Sheets directly into R, see [here](http://girke.bioinformatics.ucr.edu/GEN242/mydoc_Rbasics_10.html).
+To import Google Sheets directly into R, see [here](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rbasics/rbasics/#reading-and-writing-external-data).
 
 #### Fast table import with `fread` 
 
@@ -239,7 +239,7 @@ df1
 `dplyr` approach
 
 ```{r plyr_subset_names, eval=TRUE}
-slice(df1, match(c("g10", "g4", "g4"), df1$ids1))
+slice(df1, match(c("g10", "g4", "g4"), ids1))
 ```
 
 Base R equivalent
@@ -444,7 +444,7 @@ Series of data manipulations and export
 
 ```{r plyr_chaining1, eval=TRUE}
 read_tsv("iris.txt") %>% # Import with read_tbv from readr package
-    as_tibble() %>% # Declare tibble to use
+    as_tibble() %>% # Declare to use tibble
     select(Sepal.Length:Species) %>% # Select columns
     filter(Species=="setosa") %>% # Filter rows by some value
     arrange(Sepal.Length) %>% # Sort by some column
@@ -476,7 +476,7 @@ iris_df %>%
     summarize_all(mean) %>% 
     reshape2::melt(id.vars=c("Species"), variable.name = "Samples", value.name="Values") %>%
     ggplot(aes(Samples, Values, fill = Species)) + 
-        geom_bar(position="dodge", stat="identity")
+           geom_bar(position="dodge", stat="identity")
 ```
 
 ## SQLite Databases

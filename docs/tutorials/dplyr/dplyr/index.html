@@ -17,25 +17,25 @@
 <link rel="icon" type="image/png" href="../../../favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="../../../favicons/android-192x192.png" sizes="192x192">
 
-<title>Environments `dplyr`, tidyverse and some SQLite | GEN242</title><meta property="og:title" content="Environments `dplyr`, tidyverse and some SQLite" />
+<title>Environments dplyr, tidyr and some SQLite | GEN242</title><meta property="og:title" content="Environments dplyr, tidyr and some SQLite" />
 <meta property="og:description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ Slides ] [ .Rmd ] [ .R ]
- Overview Modern object classes and methods for handling data.frame like structures are provided by the dplyr and data.table packages. A related example is Bioconductor’s DataTable object class. This tutorial provide a short introduction to the usage and functionalities of the dplyr and related packages." />
+ Overview Modern object classes and methods for handling data.frame like structures are provided by the dplyr (tidyr) and data.table packages. A related example is Bioconductor’s DataTable object class. This tutorial provide a short introduction to the usage and functionalities of the dplyr and related packages." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/dplyr/dplyr/" />
-<meta property="article:modified_time" content="2021-05-24T18:29:52-07:00" /><meta property="og:site_name" content="GEN242" />
-<meta itemprop="name" content="Environments `dplyr`, tidyverse and some SQLite">
+<meta property="article:modified_time" content="2021-05-24T18:34:27-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta itemprop="name" content="Environments dplyr, tidyr and some SQLite">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ Slides ] [ .Rmd ] [ .R ]
- Overview Modern object classes and methods for handling data.frame like structures are provided by the dplyr and data.table packages. A related example is Bioconductor’s DataTable object class. This tutorial provide a short introduction to the usage and functionalities of the dplyr and related packages.">
-<meta itemprop="dateModified" content="2021-05-24T18:29:52-07:00" />
-<meta itemprop="wordCount" content="4717">
+ Overview Modern object classes and methods for handling data.frame like structures are provided by the dplyr (tidyr) and data.table packages. A related example is Bioconductor’s DataTable object class. This tutorial provide a short introduction to the usage and functionalities of the dplyr and related packages.">
+<meta itemprop="dateModified" content="2021-05-24T18:34:27-07:00" />
+<meta itemprop="wordCount" content="4722">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Environments `dplyr`, tidyverse and some SQLite"/>
+<meta name="twitter:title" content="Environments dplyr, tidyr and some SQLite"/>
 <meta name="twitter:description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ Slides ] [ .Rmd ] [ .R ]
- Overview Modern object classes and methods for handling data.frame like structures are provided by the dplyr and data.table packages. A related example is Bioconductor’s DataTable object class. This tutorial provide a short introduction to the usage and functionalities of the dplyr and related packages."/>
+ Overview Modern object classes and methods for handling data.frame like structures are provided by the dplyr (tidyr) and data.table packages. A related example is Bioconductor’s DataTable object class. This tutorial provide a short introduction to the usage and functionalities of the dplyr and related packages."/>
 
 
 <script type="application/javascript">
@@ -919,7 +919,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.a4d77261b5827837122c857995ed16ca.json"
+  data-offline-search-index-json-src="../../../offline-search-index.279fa62d9abb6d8e7300ee7e1e02edd2.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -951,7 +951,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.a4d77261b5827837122c857995ed16ca.json"
+  data-offline-search-index-json-src="../../../offline-search-index.279fa62d9abb6d8e7300ee7e1e02edd2.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1104,7 +1104,7 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page  active" id="m-tutorialsdplyrdplyr" href="../../../tutorials/dplyr/dplyr/">Environments `dplyr`, tidyverse and some SQLite</a>
+          <a class="td-sidebar-link td-sidebar-link__page  active" id="m-tutorialsdplyrdplyr" href="../../../tutorials/dplyr/dplyr/">Environments dplyr, tidyr and some SQLite</a>
         
       
       
@@ -1157,7 +1157,7 @@ if (!doNotTrack) {
 
     <a href="https://github.com/tgirke/GEN242//edit/main/content/en/tutorials/dplyr/dplyr.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
     <a href="https://github.com/tgirke/GEN242//new/main/content/en/tutorials/dplyr/dplyr.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" target="_blank"><i class="fa fa-edit fa-fw"></i> Create child page</a>
-    <a href="https://github.com/tgirke/GEN242//issues/new?title=Environments%20%60dplyr%60,%20tidyverse%20and%20some%20SQLite" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+    <a href="https://github.com/tgirke/GEN242//issues/new?title=Environments%20dplyr,%20tidyr%20and%20some%20SQLite" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
     
       
       <a href="https://github.com/tgirke/GEN242/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
@@ -1266,7 +1266,7 @@ if (!doNotTrack) {
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="../../../tutorials/dplyr/dplyr/">Environments `dplyr`, tidyverse and some SQLite</a>
+	<a href="../../../tutorials/dplyr/dplyr/">Environments dplyr, tidyr and some SQLite</a>
 </li>
 
 	</ol>
@@ -1274,7 +1274,7 @@ if (!doNotTrack) {
 
                 
 <div class="td-content">
-	<h1>Environments `dplyr`, tidyverse and some SQLite</h1>
+	<h1>Environments dplyr, tidyr and some SQLite</h1>
     
 	
         <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 23 minute read</p>
@@ -1304,7 +1304,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </div>
 <h2 id="overview">Overview</h2>
 <p>Modern object classes and methods for handling <code>data.frame</code> like structures
-are provided by the <code>dplyr</code> and <code>data.table</code> packages. A related example is Bioconductor’s
+are provided by the <code>dplyr</code> (<code>tidyr</code>) and <code>data.table</code> packages. A related example is Bioconductor’s
 <code>DataTable</code> object class. This tutorial provide a short introduction to the usage and
 functionalities of the <code>dplyr</code> and related packages.</p>
 <h3 id="related-documentation">Related documentation</h3>
@@ -1320,7 +1320,7 @@ functionalities of the <code>dplyr</code> and related packages.</p>
 <li><a href="https://www.r-bloggers.com/fast-data-lookups-in-r-dplyr-vs-data-table/">Fast lookups with <code>dplyr</code> and <code>data.table</code></a></li>
 </ul>
 <h3 id="installation">Installation</h3>
-<p>The <code>dplyr</code> environment has evolved into an ecosystem of packages. To simplify
+<p>The <code>dplyr</code> (<code>tidyr</code>) environment has evolved into an ecosystem of packages. To simplify
 package management, one can install and load the entire collection via the
 <code>tidyverse</code> package. For more details on <code>tidyverse</code> see
 <a href="http://tidyverse.org/">here</a>.</p>
@@ -1345,9 +1345,9 @@ as_tibble(iris) # coerce data.frame to tibble tbl
 ## 10          4.9         3.1          1.5         0.1 setosa 
 ## # … with 140 more rows
 </code></pre>
-<p>Alternative functions producing the same result include <code>as_data_frame</code> and <code>tbl_df</code>:</p>
-<pre><code class="language-r">as_data_frame(iris) 
-tbl_df(iris) 
+<p>Alternative function producing the same result include <code>tbl_df</code> and <code>as_data_frame</code> (latter
+has been deprecated):</p>
+<pre><code class="language-r">tbl_df(iris) 
 </code></pre>
 <h3 id="reading-and-writing-tabular-files">Reading and writing tabular files</h3>
 <p>While the base R read/write utilities can be used for <code>data.frames</code>, best time
@@ -1386,7 +1386,7 @@ iris_df
 ## 10          4.9         3.1          1.5         0.1 setosa 
 ## # … with 140 more rows
 </code></pre>
-<p>To import Google Sheets directly into R, see <a href="http://girke.bioinformatics.ucr.edu/GEN242/mydoc_Rbasics_10.html">here</a>.</p>
+<p>To import Google Sheets directly into R, see <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rbasics/rbasics/#reading-and-writing-external-data">here</a>.</p>
 <h4 id="fast-table-import-with-fread">Fast table import with <code>fread</code></h4>
 <p>The <code>fread</code> function from the <code>data.table</code> package provides the best time performance for reading large
 tabular files into R.</p>
@@ -1567,7 +1567,7 @@ df1
 ## 10 g10      10    20    30    40
 </code></pre>
 <p><code>dplyr</code> approach</p>
-<pre><code class="language-r">slice(df1, match(c(&quot;g10&quot;, &quot;g4&quot;, &quot;g4&quot;), df1$ids1))
+<pre><code class="language-r">slice(df1, match(c(&quot;g10&quot;, &quot;g4&quot;, &quot;g4&quot;), ids1))
 </code></pre>
 <pre><code>## # A tibble: 3 x 5
 ##   ids1    CA1   CA2   CA3   CA4
@@ -1974,7 +1974,7 @@ top-to-bottom. This makes for easy to type and readable code.</p>
 <h4 id="example-1">Example 1</h4>
 <p>Series of data manipulations and export</p>
 <pre><code class="language-r">read_tsv(&quot;iris.txt&quot;) %&gt;% # Import with read_tbv from readr package
-    as_tibble() %&gt;% # Declare tibble to use
+    as_tibble() %&gt;% # Declare to use tibble
     select(Sepal.Length:Species) %&gt;% # Select columns
     filter(Species==&quot;setosa&quot;) %&gt;% # Filter rows by some value
     arrange(Sepal.Length) %&gt;% # Sort by some column
@@ -2021,7 +2021,7 @@ top-to-bottom. This makes for easy to type and readable code.</p>
     summarize_all(mean) %&gt;% 
     reshape2::melt(id.vars=c(&quot;Species&quot;), variable.name = &quot;Samples&quot;, value.name=&quot;Values&quot;) %&gt;%
     ggplot(aes(Samples, Values, fill = Species)) + 
-        geom_bar(position=&quot;dodge&quot;, stat=&quot;identity&quot;)
+           geom_bar(position=&quot;dodge&quot;, stat=&quot;identity&quot;)
 </code></pre>
 <p><img src="../../../en/tutorials/dplyr/dplyr_files/figure-html/plyr_chaining3-1.png" width="672" /></p>
 <h2 id="sqlite-databases">SQLite Databases</h2>
@@ -2144,7 +2144,7 @@ dbWriteTable(mydb, &quot;mydf2&quot;, mydf2)
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-24: <a  href="https://github.com/tgirke/GEN242//commit/a9da3d34be1007aa197f548f85c2df6c271e4f7c">some edits (a9da3d34b)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-24: <a  href="https://github.com/tgirke/GEN242//commit/1d0a68dab142be1f96fab837b52db04cc71f503a">some edits (1d0a68dab)</a>
 </div>
 </div>
 
