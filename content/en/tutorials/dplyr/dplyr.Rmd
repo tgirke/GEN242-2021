@@ -1,5 +1,5 @@
 ---
-title: Environments dplyr, tidyverse and some SQLite" 
+title: Environments: `dplyr`, tidyverse and some SQLite
 author: "Author: Thomas Girke"
 date: "Last update: `r format(Sys.time(), '%d %B, %Y')`" 
 output:
