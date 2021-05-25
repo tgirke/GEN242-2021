@@ -1,5 +1,5 @@
 ---
-title: "New Environments for R: `dplyr` and `tidyverse` (some `SQLite`)" 
+title: _dplyr_ and _tidyverse_ Environments plus some _SQLite_" 
 author: "Author: Thomas Girke"
 date: "Last update: 24 May, 2021" 
 output:
@@ -36,9 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
-## Overview
-
-## dplyr Environment
+## `dplyr` Environment
 
 Modern object classes and methods for handling `data.frame` like structures
 are provided by the `dplyr` and `data.table` packages. The following gives a
