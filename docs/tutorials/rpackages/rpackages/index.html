@@ -25,7 +25,7 @@
 <meta itemprop="name" content="Building R Packages">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Overview Motivation for building R packages  Organization  Consolidate functions with related utilties in single place Interdepencies among less complex functions make coding more efficient Minimizes duplications   Documentation  Help page infrastructure improves documentation of functions Big picture of utilties provided by package vignettes (manuals)   Sharability  Package can be easier shared with colleagues and public Increases code accessibilty for other users    Package development environments This following introduces two approaches for building R packages:">
 <meta itemprop="dateModified" content="2021-05-23T21:19:24-07:00" />
-<meta itemprop="wordCount" content="1307">
+<meta itemprop="wordCount" content="1485">
 
 
 
@@ -908,7 +908,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.f0d3be3b8a3a64914ab335c7a1bccc90.json"
+  data-offline-search-index-json-src="../../../offline-search-index.c7248b4e1ff602338e61d1318166284d.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -940,7 +940,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.f0d3be3b8a3a64914ab335c7a1bccc90.json"
+  data-offline-search-index-json-src="../../../offline-search-index.c7248b4e1ff602338e61d1318166284d.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1171,6 +1171,7 @@ if (!doNotTrack) {
         <li><a href="#e-add-a-vignette">(e) Add a vignette</a></li>
         <li><a href="#f-check-install-and-build-package">(f) Check, install and build package</a></li>
         <li><a href="#g-using-the-new-package">(g) Using the new package</a></li>
+        <li><a href="#h-share-package-on-github">(h) Share package on GitHub</a></li>
       </ul>
     </li>
     <li><a href="#session-info">Session Info</a></li>
@@ -1288,7 +1289,10 @@ The package directory will also contain a file named <code>Read-and-delete-me</c
 instructions for completing the package:</p>
 <pre><code class="language-r">package.skeleton(name=&quot;mypackage&quot;, code_files=c(&quot;script1.R&quot;, &quot;script2.R&quot;))
 </code></pre>
-<p>Once a package skeleton is available one can build the package from the command-line (Linux/OS X). This will create a tarball of the package with its version number encoded in the file name. Subequently, the package tarball needs to be checked for errors with:</p>
+<p>Once a package skeleton is available one can build the package from the
+command-line (Linux/OS X). This will create a tarball of the package with its
+version number encoded in the file name. Subequently, the package tarball needs
+to be checked for errors with:</p>
 <pre><code class="language-r">R CMD build mypackage
 R CMD check mypackage_1.0.tar.gz
 </code></pre>
@@ -1314,7 +1318,7 @@ R package development:</p>
 </ul>
 <h2 id="workflow-for-building-r-packages">Workflow for building R packages</h2>
 <p>The following outlines the basic workflow for building, testing and extending R packages with
-the functionalities of package development environment outlined above.</p>
+the package development environment functionalities outlined above.</p>
 <h3 id="a-create-package-skeleton">(a) Create package skeleton</h3>
 <pre><code class="language-r">library(&quot;devtools&quot;); library(&quot;roxygen2&quot;); library(&quot;usethis&quot;); library(sinew) # If not availble install these packages with 'install.packages(...)'
 create(&quot;myfirstpkg&quot;) # Creates package skeleton. The chosen name (here myfirstpkg) will be the name of the package.
@@ -1382,6 +1386,21 @@ vignettes can be accessed as follows.</p>
 vignette(&quot;introduction&quot;, &quot;myfirstpkg&quot;)
 </code></pre>
 <p>Another very useful development function is <code>test</code> for evaluating the test code of a package.</p>
+<h3 id="h-share-package-on-github">(h) Share package on GitHub</h3>
+<p>To host and share the new package on GitHub, one can use the following steps:</p>
+<ol>
+<li>Create an empty target GitHub repos online (<em>e.g.</em> named <code>mypkg_repos</code>) as outlined <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/github/github/#exercise">here</a>.</li>
+<li>Clone the new GitHub repos to local system with <code>git clone https://github.com/&lt;github_username&gt;/&lt;repo name&gt;</code> (here from command-line)</li>
+<li>Copy the root directory of the package into the downloaded repos with <code>cp myfirstpkg mypkg_repos</code></li>
+<li>Next <code>cd</code> into <code>mypkg_repos</code>, and then add all files and directories of the package to the staging area with <code>git add -A :/</code>.</li>
+<li>Commit and push the changes to GitHub with: <code>git commit -am &quot;first commit&quot;; git push</code>.</li>
+<li>After this the package should be life on the corresponding GitHub web page.</li>
+<li>Assuming the package is public, it can be installed directly from GitHub by anyone as shown below (from within R). Installs of
+private packages require a personal access token (PAT) that needs to be assigned to the <code>auth_token</code> argument. PATs can be created
+<a href="https://github.com/settings/tokens">here</a>.</li>
+</ol>
+<pre><code class="language-r">devtools::install_github(&quot;&lt;github_user_name&gt;/&lt;mypkgs&gt;&quot;, subdir=&quot;myfirstpkg&quot;) # If the package is in the root directory of repos, then the 'subdir' argument can be dropped.
+</code></pre>
 <h2 id="session-info">Session Info</h2>
 <pre><code class="language-r">sessionInfo()
 </code></pre>
