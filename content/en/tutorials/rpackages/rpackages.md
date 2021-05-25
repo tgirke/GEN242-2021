@@ -220,6 +220,7 @@ repositories.
 ``` r
 setwd("..") # Redirect R session to parent directory
 check("myfirstpkg") # Check package for problems, when in pkg dir one can just use check()
+# remove.packages("myfirstpkg") # Not necessary, removes test package if already installed
 install("myfirstpkg", build_vignettes=TRUE) # Installs package  
 build("myfirstpkg") # Creates *.tar.gz file for package required to for submission to CRAN/Bioc
 ```
@@ -230,7 +231,8 @@ After installing and loading the package its functions, help files and
 vignettes can be accessed as follows.
 
 ``` r
-library(myfirstpkg)
+library("myfirstpkg")
+library(help="myfirstpkg")
 ?myMAcomp
 vignette("introduction", "myfirstpkg")
 ```
