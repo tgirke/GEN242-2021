@@ -1,0 +1,526 @@
+---
+title: "New Environments for R: `dplyr` and `tidyverse` (some `SQLite`)" 
+author: "Author: Thomas Girke"
+date: "Last update: `r format(Sys.time(), '%d %B, %Y')`" 
+output:
+  html_document:
+    toc: true
+    toc_float:
+        collapsed: true
+        smooth_scroll: true
+    toc_depth: 3
+    fig_caption: yes
+    code_folding: show
+    number_sections: true
+fontsize: 14pt
+bibliography: bibtex.bib
+weight: 17
+type: docs
+---
+
+<!---
+- Compile from command-line
+Rscript -e "rmarkdown::render('Rbasics.Rmd', c('html_document'), clean=F); knitr::knit('Rbasics.Rmd', tangle=TRUE)"; Rscript ../md2jekyll.R Rbasics.knit.md 8; Rscript -e "rmarkdown::render('Rbasics.Rmd', c('pdf_document'))"
+-->
+
+```{r style, echo = FALSE, results = 'asis'}
+BiocStyle::markdown()
+options(width=100, max.print=1000)
+knitr::opts_chunk$set(
+    eval=as.logical(Sys.getenv("KNITR_EVAL", "TRUE")),
+    cache=as.logical(Sys.getenv("KNITR_CACHE", "TRUE")),
+    warning=FALSE, message=FALSE)
+```
+
+```{r setup, echo=FALSE, messages=FALSE, warnings=FALSE}
+suppressPackageStartupMessages({
+    library(limma) 
+    library(ggplot2) }) 
+```
+
+## Overview
+
+## dplyr Environment
+
+Modern object classes and methods for handling `data.frame` like structures
+are provided by the `dplyr` and `data.table` packages. The following gives a
+short introduction to the usage and functionalities of the `dplyr` package. 
+More detailed tutorials on this topic can be found here:
+
+* [dplyr: A Grammar of Data Manipulation](https://rdrr.io/cran/dplyr/)
+* [Introduction to `dplyr`](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html)
+* [Tutorial on `dplyr`](http://genomicsclass.github.io/book/pages/dplyr_tutorial.html)
+* [Cheatsheet for Joins from Jenny Bryan](http://stat545.com/bit001_dplyr-cheatsheet.html)
+* [Tibbles](https://cran.r-project.org/web/packages/tibble/vignettes/tibble.html)
+* [Intro to `data.table` package](https://www.r-bloggers.com/intro-to-the-data-table-package/)
+* [Big data with `dplyr` and `data.table`](https://www.r-bloggers.com/working-with-large-datasets-with-dplyr-and-data-table/)
+* [Fast lookups with `dplyr` and `data.table`](https://www.r-bloggers.com/fast-data-lookups-in-r-dplyr-vs-data-table/)
+
+### Installation
+
+The `dplyr` environment has evolved into an ecosystem of packages. To simplify
+package management, one can install and load the entire collection via the
+`tidyverse` package. For more details on `tidyverse` see
+[here](http://tidyverse.org/).
+
+
+```{r tidyverse_install, eval=FALSE}
+install.packages("tidyverse")
+```
+
+### Construct a `tibble` (`tibble`)
+
+```{r data_frame_tbl1, eval=TRUE}
+library(tidyverse)
+as_tibble(iris) # coerce data.frame to tibble tbl
+```
+
+Alternative functions producing the same result include `as_data_frame` and `tbl_df`:
+
+```{r data_frame_tbl2, eval=FALSE}
+as_data_frame(iris) 
+tbl_df(iris) 
+```
+### Reading and writing tabular files
+
+While the base R read/write utilities can be used for `data.frames`, best time
+performance with the least amount of typing is achieved with the export/import
+functions from the `readr` package. For very large files the `fread` function from 
+the `data.table` package achieves the best time performance. 
+
+
+#### Import with `readr` 
+
+Import functions provided by `readr` include:
+
+* `read_csv()`: comma separated (CSV) files
+* `read_tsv()`: tab separated files
+* `read_delim()`: general delimited files
+* `read_fwf()`: fixed width files
+* `read_table()`: tabular files where colums are separated by white-space.
+* `read_log()`: web log files
+
+
+Create a sample tab delimited file for import
+
+```{r tabular_sample, eval=TRUE}
+write_tsv(iris, "iris.txt") # Creates sample file
+```
+
+Import with `read_tsv` 
+
+```{r tabular_import1, eval=TRUE}
+iris_df <- read_tsv("iris.txt") # Import with read_tbv from readr package
+iris_df
+```
+
+To import Google Sheets directly into R, see [here](http://girke.bioinformatics.ucr.edu/GEN242/mydoc_Rbasics_10.html).
+
+#### Fast table import with `fread` 
+
+The `fread` function from the `data.table` package provides the best time performance for reading large
+tabular files into R.
+
+```{r tabular_import2, eval=TRUE}
+library(data.table)
+iris_df <- as_data_frame(fread("iris.txt")) # Import with fread and conversion to tibble
+iris_df
+```
+
+Note: to ignore lines starting with comment signs, one can pass on to `fread` a shell
+command for preprocessing the file. The following example illustrates this option.
+
+```{r tabular_import_ignore, eval=FALSE}
+fread("grep -v '^#' iris.txt") 
+```
+
+#### Export with `readr` 
+
+Export function provided by `readr` inlcude
+
+* `write_delim()`: general delimited files
+* `write_csv()`: comma separated (CSV) files 
+* `write_excel_csv()`: excel style CSV files
+* `write_tsv()`: tab separated files
+
+For instance, the `write_tsv` function writes a `data.frame` or `tibble` to a tab delimited file with much nicer
+default settings than the base R `write.table` function. 
+
+```{r tabular_export_readr, eval=FALSE}
+write_tsv(iris_df, "iris.txt")
+```
+
+### Column and row binds
+
+The equivalents to base R's `rbind` and `cbind` are `bind_rows` and `bind_cols`, respectively.
+
+```{r dplyr_bind, eval=TRUE}
+bind_cols(iris_df, iris_df)
+bind_rows(iris_df, iris_df)
+```
+
+### Extract column as vector
+
+The subsetting operators `[[` and `$`can be used to extract from a `tibble` single columns as vector.
+
+```{r plyr_get_cols, eval=TRUE}
+iris_df[[5]][1:12]
+iris_df$Species[1:12]
+```
+
+### Important `dplyr` functions
+
+1. `filter()` and `slice()`
+2. `arrange()`
+3. `select()` and `rename()`
+4. `distinct()`
+5. `mutate()` and `transmute()`
+6. `summarise()`
+7. `sample_n()` and `sample_frac()`
+
+
+### Slice and filter functions 
+
+#### Filter function
+
+```{r plyr_filter, eval=TRUE}
+filter(iris_df, Sepal.Length > 7.5, Species=="virginica")
+```
+
+#### Base R code equivalent
+
+```{r plyr_filter_base, eval=TRUE}
+iris_df[iris_df[, "Sepal.Length"] > 7.5 & iris_df[, "Species"]=="virginica", ]
+```
+
+#### Including boolean operators
+
+```{r plyr_filter_boolean, eval=TRUE}
+filter(iris_df, Sepal.Length > 7.5 | Sepal.Length < 5.5, Species=="virginica")
+```
+
+#### Subset rows by position
+
+`dplyr` approach
+
+```{r plyr_subset, eval=TRUE}
+slice(iris_df, 1:2)
+```
+
+Base R code equivalent
+
+```{r plyr_subset_base, eval=TRUE}
+iris_df[1:2,]
+```
+
+#### Subset rows by names
+
+Since `tibbles` do not contain row names, row wise subsetting via the `[,]` operator cannot be used.
+However, the corresponding behavior can be achieved by passing to `select` a row position index 
+obtained by basic R intersect utilities such as `match`.
+
+
+Create a suitable test `tibble`
+
+```{r plyr_sample_set2, eval=TRUE}
+df1 <- bind_cols(data_frame(ids1=paste0("g", 1:10)), as_data_frame(matrix(1:40, 10, 4, dimnames=list(1:10, paste0("CA", 1:4)))))
+df1
+```
+
+`dplyr` approach
+
+```{r plyr_subset_names, eval=TRUE}
+slice(df1, match(c("g10", "g4", "g4"), df1$ids1))
+```
+
+Base R equivalent
+
+```{r plyr_subset_names_base, eval=TRUE}
+df1_old <- as.data.frame(df1)
+rownames(df1_old) <- df1_old[,1]
+df1_old[c("g10", "g4", "g4"),]
+```
+
+### Sorting with `arrange`
+
+Row-wise ordering based on specific columns
+
+`dplyr` approach
+
+```{r plyr_order1, eval=TRUE}
+arrange(iris_df, Species, Sepal.Length, Sepal.Width)
+```
+
+For ordering descendingly use `desc()` function
+
+```{r plyr_order2, eval=TRUE}
+arrange(iris_df, desc(Species), Sepal.Length, Sepal.Width)
+```
+
+Base R code equivalent
+
+```{r plyr_order_base, eval=TRUE}
+iris_df[order(iris_df$Species, iris_df$Sepal.Length, iris_df$Sepal.Width), ]
+iris_df[order(iris_df$Species, decreasing=TRUE), ] 
+```
+
+### Select columns with `select`
+
+Select specific columns
+
+```{r plyr_col_select1, eval=TRUE}
+select(iris_df, Species, Petal.Length, Sepal.Length)
+```
+
+Select range of columns by name
+
+```{r plyr_col_select2, eval=TRUE}
+select(iris_df, Sepal.Length : Petal.Width)
+```
+
+Drop specific columns (here range)
+
+```{r plyr_col_drop, eval=TRUE}
+select(iris_df, -(Sepal.Length : Petal.Width))
+```
+
+### Renaming columns with `rename`
+
+
+`dplyr` approach
+
+```{r plyr_col_rename, eval=TRUE}
+rename(iris_df, new_col_name = Species)
+```
+
+Base R code approach
+
+```{r baser_col_rename, eval=FALSE}
+colnames(iris_df)[colnames(iris_df)=="Species"] <- "new_col_names"
+```
+
+### Obtain unique rows with `distinct`
+
+`dplyr` approach
+
+```{r plyr_unique, eval=TRUE}
+distinct(iris_df, Species, .keep_all=TRUE)
+```
+
+Base R code approach
+
+```{r baser_unique, eval=TRUE}
+iris_df[!duplicated(iris_df$Species),]
+```
+
+### Add columns
+
+#### `mutate`
+
+The `mutate` function allows to append columns to existing ones.
+
+```{r plyr_mutate, eval=TRUE}
+mutate(iris_df, Ratio = Sepal.Length / Sepal.Width, Sum = Sepal.Length + Sepal.Width)
+```
+
+#### `transmute`
+
+The `transmute` function does the same as `mutate` but drops existing columns
+
+```{r plyr_transmute, eval=TRUE}
+transmute(iris_df, Ratio = Sepal.Length / Sepal.Width, Sum = Sepal.Length + Sepal.Width)
+```
+
+#### `bind_cols`
+
+The `bind_cols` function is the equivalent of `cbind` in base R. To add rows, use the corresponding 
+`bind_rows` function.
+
+```{r plyr_bind_cols, eval=TRUE}
+bind_cols(iris_df, iris_df)
+```
+
+### Summarize data
+
+Summary calculation on single column
+
+```{r plyr_summarize1, eval=TRUE}
+summarize(iris_df, mean(Petal.Length))
+```
+
+Summary calculation on many columns
+
+```{r plyr_summarize2, eval=TRUE}
+summarize_all(iris_df[,1:4], mean)
+```
+
+Summarize by grouping column
+
+```{r plyr_summarize, eval=TRUE}
+summarize(group_by(iris_df, Species), mean(Petal.Length))
+```
+
+Aggregate summaries
+
+```{r plyr_summarize3, eval=TRUE}
+summarize_all(group_by(iris_df, Species), mean) 
+```
+
+Note: `group_by` does the looping for the user similar to `aggregate` or `tapply`.
+
+
+### Merging tibbles
+
+The `dplyr` package provides several join functions for merging `tibbles` by a common key column
+similar to the `merge` function in base R. These `*_join` functions include: 
+
+* `inner_join()`: returns join only for rows matching among both `tibbles`
+* `full_join()`: returns join for all (matching and non-matching) rows of two `tibbles` 
+* `left_join()`: returns join for all rows in first `tibble` 
+* `right_join()`: returns join for all rows in second `tibble`
+* `anti_join()`: returns for first `tibble` only those rows that have no match in the second one
+
+Sample `tibbles` to illustrate `*.join` functions.
+
+```{r plyr_join_sample, eval=TRUE}
+df1 <- bind_cols(data_frame(ids1=paste0("g", 1:10)), as_data_frame(matrix(1:40, 10, 4, dimnames=list(1:10, paste0("CA", 1:4)))))
+df1
+df2 <- bind_cols(data_frame(ids2=paste0("g", c(2,5,11,12))), as_data_frame(matrix(1:16, 4, 4, dimnames=list(1:4, paste0("CB", 1:4)))))
+df2
+```
+#### Inner join
+
+```{r plyr_inner_join, eval=TRUE}
+inner_join(df1, df2, by=c("ids1"="ids2"))
+```
+
+#### Left join
+
+```{r plyr_left_join, eval=TRUE}
+left_join(df1, df2, by=c("ids1"="ids2"))
+```
+
+#### Right join
+
+```{r plyr_right_join, eval=TRUE}
+right_join(df1, df2, by=c("ids1"="ids2"))
+```
+
+#### Full join
+
+```{r plyr_full_join, eval=TRUE}
+full_join(df1, df2, by=c("ids1"="ids2"))
+```
+
+#### Anti join
+
+```{r plyr_anti_join, eval=TRUE}
+anti_join(df1, df2, by=c("ids1"="ids2"))
+```
+
+For additional join options users want to cosult the `*_join` help pages.
+
+
+### Chaining
+
+To simplify chaining of serveral operations, `dplyr` provides the `%>%`
+operator, where `x %>% f(y)` turns into `f(x, y)`. This way one can pipe
+together multiple operations by writing them from left-to-right or
+top-to-bottom. This makes for easy to type and readable code.
+
+
+#### Example 1
+
+Series of data manipulations and export
+
+```{r plyr_chaining1, eval=TRUE}
+read_tsv("iris.txt") %>% # Import with read_tbv from readr package
+    as_tibble() %>% # Declare tibble to use
+    select(Sepal.Length:Species) %>% # Select columns
+    filter(Species=="setosa") %>% # Filter rows by some value
+    arrange(Sepal.Length) %>% # Sort by some column
+    mutate(Subtract=Petal.Length - Petal.Width) # Calculate and append
+    # write_tsv("iris.txt") # Export to file, omitted here to show result 
+```
+
+#### Example 2
+
+Series of summary calculations for grouped data (`group_by`)
+
+```{r plyr_chaining2, eval=TRUE}
+iris_df %>% # Declare tibble to use 
+    group_by(Species) %>% # Group by species
+    summarize(Mean_Sepal.Length=mean(Sepal.Length), 
+              Max_Sepal.Length=max(Sepal.Length),
+              Min_Sepal.Length=min(Sepal.Length),
+              SD_Sepal.Length=sd(Sepal.Length),
+              Total=n()) 
+```
+
+#### Example 3
+
+Combining `dplyr` chaining with `ggplot`
+
+```{r plyr_chaining3, eval=TRUE}
+iris_df %>% 
+    group_by(Species) %>% 
+    summarize_all(mean) %>% 
+    reshape2::melt(id.vars=c("Species"), variable.name = "Samples", value.name="Values") %>%
+    ggplot(aes(Samples, Values, fill = Species)) + 
+        geom_bar(position="dodge", stat="identity")
+```
+
+## SQLite Databases
+
+`SQLite` is a lightweight relational database solution. The `RSQLite` package provides an easy to use interface to create, manage and query `SQLite` databases directly from R. Basic instructions
+for using `SQLite` from the command-line are available [here](https://www.sqlite.org/cli.html). A short introduction to `RSQLite` is available [here](https://github.com/rstats-db/RSQLite/blob/master/vignettes/RSQLite.Rmd).
+
+## Loading data into SQLite databases
+
+The following loads two `data.frames` derived from the `iris` data set (here `mydf1` and `mydf2`) 
+into an SQLite database (here `test.db`).
+
+```{r load_sqlite, eval=TRUE}
+library(RSQLite)
+unlink("test.db") # Delete any existing test.db
+mydb <- dbConnect(SQLite(), "test.db") # Creates database file test.db
+mydf1 <- data.frame(ids=paste0("id", seq_along(iris[,1])), iris)
+mydf2 <- mydf1[sample(seq_along(mydf1[,1]), 10),]
+dbWriteTable(mydb, "mydf1", mydf1)
+dbWriteTable(mydb, "mydf2", mydf2)
+```
+
+### List names of tables in database
+
+```{r list_tables, eval=TRUE}
+dbListTables(mydb)
+```
+
+### Import table into `data.frame`
+
+```{r import_sqlite_tables, eval=TRUE}
+dbGetQuery(mydb, 'SELECT * FROM mydf2')
+```
+
+### Query database
+
+```{r query_sqlite_tables, eval=TRUE}
+dbGetQuery(mydb, 'SELECT * FROM mydf1 WHERE "Sepal.Length" < 4.6')
+```
+
+### Join tables
+
+The two tables can be joined on the shared `ids` column as follows. 
+
+```{r join_sqlite_tables, eval=TRUE}
+dbGetQuery(mydb, 'SELECT * FROM mydf1, mydf2 WHERE mydf1.ids = mydf2.ids')
+```
+
+## Session Info
+
+```{r sessionInfo}
+sessionInfo()
+```
+
+## References
+

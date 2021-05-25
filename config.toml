@@ -453,6 +453,11 @@ enable = true
     url = "/tutorials/rpackages/rpackages/"
     parent = "Tutorials"
     weight = 216
+  [[menu.main]]
+    name = "dplyr, tidyverse and SQLite (T17)"
+    url = "/tutorials/dplyr/dplyr/"
+    parent = "Tutorials"
+    weight = 217
 ##
 [[menu.main]]
   name = "Manuals"
