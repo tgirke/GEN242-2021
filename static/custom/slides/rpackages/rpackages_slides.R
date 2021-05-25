@@ -26,12 +26,15 @@
 
 
 ## ----package_skeleton1, eval=FALSE--------------------------------------------
-## package.skeleton(name="mypackage", code_files=c("script1.R", "script2.R"))
+## ## Download R script (here pkg_build_fct.R) containing two sample functions
+## download.file("https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/manuals/rprogramming/helper_functions/pkg_build_fct.R", "pkg_build_fct.R")
+## ## Build package skeleton based on functions in pkg_build_fct.R
+## package.skeleton(name="mypackage", code_files=c("pkg_build_fct.R"))
 
 
 ## ----r_build_package, eval=FALSE----------------------------------------------
-## R CMD build mypackage
-## R CMD check mypackage_1.0.tar.gz
+## system("R CMD build mypackage")
+## system("R CMD check mypackage_1.0.tar.gz")
 
 
 ## ----install_package, eval=FALSE----------------------------------------------
@@ -67,12 +70,14 @@
 ## ----package_devtools_skeleton6, eval=FALSE-----------------------------------
 ## setwd("..") # Redirect R session to parent directory
 ## check("myfirstpkg") # Check package for problems, when in pkg dir one can just use check()
+## # remove.packages("myfirstpkg") # Optional. Removes test package if already installed
 ## install("myfirstpkg", build_vignettes=TRUE) # Installs package
 ## build("myfirstpkg") # Creates *.tar.gz file for package required to for submission to CRAN/Bioc
 
 
 ## ----package_devtools_skeleton7, eval=FALSE-----------------------------------
-## library(myfirstpkg)
+## library("myfirstpkg")
+## library(help="myfirstpkg")
 ## ?myMAcomp
 ## vignette("introduction", "myfirstpkg")
 

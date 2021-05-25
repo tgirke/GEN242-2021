@@ -234,7 +234,7 @@ pre[class] {
 }
 </style>
 
-<slide class=""><hgroup><h2>How to Navigate this Slide Show?</h2></hgroup><article  id="how-to-navigate-this-slide-show" class="smaller ">
+<slide class=""><hgroup><h2>How to Navigate this Slide Show?</h2></hgroup><article  class="smaller " id="how-to-navigate-this-slide-show">
 
 <p><br/></p>
 
@@ -261,7 +261,7 @@ pre[class] {
 <li>Pressing Esc exits all of these modes. Additional details can be found <a href='https://bookdown.org/yihui/rmarkdown/ioslides-presentation.html' title=''>here</a>.</li>
 </ul>
 
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Outline</h2></hgroup><article  id="outline" class="smaller ">
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Outline</h2></hgroup><article  class="smaller " id="outline">
 
 <ul>
 <li><div class="white">
@@ -271,7 +271,7 @@ pre[class] {
 <li>References</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Overview</h2></hgroup><article  id="overview" class="smaller ">
+</article></slide><slide class=""><hgroup><h2>Overview</h2></hgroup><article  class="smaller " id="overview">
 
 <h3>Motivation for building R packages</h3>
 
@@ -297,7 +297,7 @@ pre[class] {
 </ul></li>
 </ol>
 
-</article></slide><slide class=""><hgroup><h2>Package development environments</h2></hgroup><article  id="package-development-environments" class="smaller ">
+</article></slide><slide class=""><hgroup><h2>Package development environments</h2></hgroup><article  class="smaller " id="package-development-environments">
 
 <p><br/><br/> This following introduces two approaches for building R packages: <br/><br/></p>
 
@@ -308,7 +308,7 @@ pre[class] {
 
 <p><br/><br/> The sample code provided below creates for each method a simple test package that can be installed and loaded on a user’s system. The instructions for the second appoach are more detailed since it is likely to provide the most practical soluton for newer users of R.</p>
 
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Outline</h2></hgroup><article  id="outline-1" class="smaller ">
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Outline</h2></hgroup><article  class="smaller " id="outline-1">
 
 <ul>
 <li>Overview</li>
@@ -321,7 +321,7 @@ Package Development with <code>R Base</code> <em>et al.</em>
 <li>References</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>R Base <em>et al.</em></h2></hgroup><article  id="r-base-et-al." class="smaller ">
+</article></slide><slide class=""><hgroup><h2>R Base <em>et al.</em></h2></hgroup><article  class="smaller " id="r-base-et-al.">
 
 <ul>
 <li>R packages can be built with the <code>package.skeleton</code> function. The most comprehensive documentation on package development is provided by the <a href='https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Package-Dependencies' title=''>Writing R Extensions</a> page on CRAN.</li>
@@ -330,7 +330,10 @@ Package Development with <code>R Base</code> <em>et al.</em>
 <li>The package directory will also contain a file named <code>Read-and-delete-me</code> with instructions for completing the package:</li>
 </ul>
 
-<pre class = 'prettyprint lang-r'>package.skeleton(name=&quot;mypackage&quot;, code_files=c(&quot;script1.R&quot;, &quot;script2.R&quot;))</pre>
+<pre class = 'prettyprint lang-r'>## Download R script (here pkg_build_fct.R) containing two sample functions                                                                                                         
+download.file(&quot;https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/manuals/rprogramming/helper_functions/pkg_build_fct.R&quot;, &quot;pkg_build_fct.R&quot;)                           
+## Build package skeleton based on functions in pkg_build_fct.R                                                                                                                     
+package.skeleton(name=&quot;mypackage&quot;, code_files=c(&quot;pkg_build_fct.R&quot;)) </pre>
 
 <ul>
 <li>Once a package skeleton is available one can build the package from the command-line (Linux/OS X).</li>
@@ -345,14 +348,14 @@ Package Development with <code>R Base</code> <em>et al.</em>
 
 <p><br/><br/> <br/><br/></p>
 
-<pre class = 'prettyprint lang-r'>R CMD build mypackage
-R CMD check mypackage_1.0.tar.gz</pre>
+<pre class = 'prettyprint lang-r'>system(&quot;R CMD build mypackage&quot;)
+system(&quot;R CMD check mypackage_1.0.tar.gz&quot;) </pre>
 
 <p>Install package from source</p>
 
 <pre class = 'prettyprint lang-r'>install.packages(&quot;mypackage_1.0.tar.gz&quot;, repos=NULL) </pre>
 
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Outline</h2></hgroup><article  id="outline-2" class="smaller ">
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Outline</h2></hgroup><article  class="smaller " id="outline-2">
 
 <ul>
 <li>Overview</li>
@@ -365,7 +368,7 @@ Package Development with <code>devtools</code> <em>et al.</em>
 <li>References</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>R <code>devtools</code> <em>et al.</em></h2></hgroup><article  id="r-devtools-et-al." class="smaller ">
+</article></slide><slide class=""><hgroup><h2>R <code>devtools</code> <em>et al.</em></h2></hgroup><article  class="smaller " id="r-devtools-et-al.">
 
 <p>Several package develpment routines of the traditional method outlined above are manual, such as updating the NAMESPACE file and documenting functions in separate help (<code>*.Rd</code>) files. This process can be simplified and partially automated by taking advantage of a more recent R package development environment composed of several helper packages including <code>devtools</code>, <code>usethis</code>, <code>roxygen2</code> and <code>sinew</code> <span class="cite">(Wickham and Bryan, n.d.)</span>. Many books and web sites document this process in more detail. Here is a small selection of useful online documentation about R package development:</p>
 
@@ -377,7 +380,7 @@ Package Development with <code>devtools</code> <em>et al.</em>
 <li>Automating <code>roxygen2</code> documentation with <code>sinew</code> by Jonathan Sidi: <a href='https://yonicd.github.io/2017-09-18-sinew/' title=''>Blog</a> and <a href='https://cran.r-project.org/web/packages/sinew/index.html' title=''>CRAN</a></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Workflow for building R packages</h2></hgroup><article  id="workflow-for-building-r-packages" class="smaller ">
+</article></slide><slide class=""><hgroup><h2>Workflow for building R packages</h2></hgroup><article  class="smaller " id="workflow-for-building-r-packages">
 
 <p>The following outlines the basic workflow for building, testing and extending R packages with the package development environment functionalities outlined above.</p>
 
@@ -429,6 +432,7 @@ tools::checkRd(&quot;man/myMAcomp.Rd&quot;) # Checks Rd file for problems</pre>
 
 <pre class = 'prettyprint lang-r'>setwd(&quot;..&quot;) # Redirect R session to parent directory
 check(&quot;myfirstpkg&quot;) # Check package for problems, when in pkg dir one can just use check()
+# remove.packages(&quot;myfirstpkg&quot;) # Optional. Removes test package if already installed
 install(&quot;myfirstpkg&quot;, build_vignettes=TRUE) # Installs package  
 build(&quot;myfirstpkg&quot;) # Creates *.tar.gz file for package required to for submission to CRAN/Bioc</pre>
 
@@ -436,7 +440,8 @@ build(&quot;myfirstpkg&quot;) # Creates *.tar.gz file for package required to fo
 
 <p>After installing and loading the package its functions, help files and vignettes can be accessed as follows.</p>
 
-<pre class = 'prettyprint lang-r'>library(myfirstpkg)
+<pre class = 'prettyprint lang-r'>library(&quot;myfirstpkg&quot;)
+library(help=&quot;myfirstpkg&quot;)
 ?myMAcomp
 vignette(&quot;introduction&quot;, &quot;myfirstpkg&quot;)</pre>
 
@@ -458,7 +463,7 @@ vignette(&quot;introduction&quot;, &quot;myfirstpkg&quot;)</pre>
 
 <pre class = 'prettyprint lang-r'>devtools::install_github(&quot;&lt;github_user_name&gt;/&lt;mypkg_repos&gt;&quot;, subdir=&quot;myfirstpkg&quot;) # If the package is in the root directory of the repos, then the &#39;subdir&#39; argument can be dropped.</pre>
 
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Outline</h2></hgroup><article  id="outline-3" class="smaller ">
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Outline</h2></hgroup><article  class="smaller " id="outline-3">
 
 <ul>
 <li>Overview</li>
@@ -472,7 +477,7 @@ References
 </li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Session Info</h2></hgroup><article  id="session-info" class="smaller ">
+</article></slide><slide class=""><hgroup><h2>Session Info</h2></hgroup><article  class="smaller " id="session-info">
 
 <pre class = 'prettyprint lang-r'>sessionInfo()</pre>
 
@@ -502,10 +507,10 @@ References
 ## [13] xfun_0.23         yaml_2.2.1        compiler_4.1.0    htmltools_0.5.1.1
 ## [17] knitr_1.33        sass_0.4.0</pre>
 
-</article></slide><slide class=""><hgroup><h2>References</h2></hgroup><article  id="references" class="smaller unnumbered">
+</article></slide><slide class=""><hgroup><h2>References</h2></hgroup><article  class="smaller unnumbered" id="references">
 
-<div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-Wickham_undated-ei" class="csl-entry">
+<div class="references csl-bib-body hanging-indent" id="refs">
+<div class="csl-entry" id="ref-Wickham_undated-ei">
 <p>Wickham, Hadley, and Jennifer Bryan. n.d. <span>
 “<span>
 R Packages</span>.”</span> <a href='https://r-pkgs.org/index.html' title=''>https://r-pkgs.org/index.html</a>. <a href='https://r-pkgs.org/index.html' title=''>https://r-pkgs.org/index.html</a>.</p></div></div></article></slide>

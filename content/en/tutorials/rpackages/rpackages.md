@@ -220,7 +220,7 @@ repositories.
 ``` r
 setwd("..") # Redirect R session to parent directory
 check("myfirstpkg") # Check package for problems, when in pkg dir one can just use check()
-# remove.packages("myfirstpkg") # Not necessary, removes test package if already installed
+# remove.packages("myfirstpkg") # Optional. Removes test package if already installed
 install("myfirstpkg", build_vignettes=TRUE) # Installs package  
 build("myfirstpkg") # Creates *.tar.gz file for package required to for submission to CRAN/Bioc
 ```
