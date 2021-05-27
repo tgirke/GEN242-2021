@@ -338,7 +338,7 @@ cmdlist(HW_mul)
     ## [1] "echo Hello Bioconcudctor! > results/M3.txt"
 
 <center>
-<img title="spr-cwl" src="../images/SPR_CWL_hello.png" width="500" />
+<img title="spr-cwl" src="../images/targetCWL.png" width="500" />
 </center>
 <center>
 Figure 1: Connectivity between CWL param files and targets files.
