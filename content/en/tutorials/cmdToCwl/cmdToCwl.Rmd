@@ -233,7 +233,7 @@ HW_mul
 cmdlist(HW_mul)
 ```
 
-![**Figure 1:** Connectivity between CWL param files and targets files.](../images/SPR_CWL_hello.png)
+![**Figure 1:** Connectivity between CWL param files and targets files.](images/SPR_CWL_hello.png)
 
 ## Creating the CWL param files from the command line
 
