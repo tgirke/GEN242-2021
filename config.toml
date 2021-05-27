@@ -463,6 +463,11 @@ enable = true
     url = "/tutorials/dplyr/dplyr/"
     parent = "Tutorials"
     weight = 217
+  [[menu.main]]
+    name = "Automate CWL Creation (T18)"
+    url = "/tutorials/cmdToCwl/cmdToCwl/"
+    parent = "Tutorials"
+    weight = 218
 ##
 [[menu.main]]
   name = "Manuals"

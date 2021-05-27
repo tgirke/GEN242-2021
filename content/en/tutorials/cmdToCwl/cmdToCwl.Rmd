@@ -1,5 +1,6 @@
 ---
-title: "systemPipeR and CWL" 
+title: "Automate Creation of CWL Instructions" 
+author: "Author: Daniela Cassol, Le Zhang, Thomas Girke"
 date: "Last update: `r format(Sys.time(), '%d %B, %Y')`" 
 output:
   BiocStyle::html_document:
@@ -12,18 +13,27 @@ vignette: |
   %\VignetteIndexEntry{systemPipeR and CWL}
   %\VignetteEngine{knitr::rmarkdown}
 fontsize: 14pt
+weight: 18
 bibliography: bibtex.bib
 ---
+
+<!---
+- Compile from command-line
+Rscript -e "rmarkdown::render('systemPipeR_CWL_SYSargs2.Rmd', c('html_document'), clean=FALSE); knitr::knit('systemPipeR_CWL_SYSargs2.Rmd', tangle=TRUE)"
+-->
+
+<div style="text-align: right"> 
+Source code downloads: &nbsp; &nbsp;
+[ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/cmdToCwl/cmdToCwl.Rmd) ] &nbsp; &nbsp; 
+[ [.R](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/cmdToCwl/cmdToCwl.R) ]
+</div>
 
 ```{r, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r load_library, eval=TRUE, include=FALSE}
-library(systemPipeR)
-```
 
-# Introduction
+## Introduction
 
 A central concept for designing workflows within the `systemPipeR` environment is 
 the use of workflow management containers. `systemPipeR` adopted the widely used community standard [Common Workflow Language](https://www.commonwl.org/) (CWL) 
@@ -54,7 +64,18 @@ This overview introduces how CWL describes command line tools and how to connect
 them to create workflows. In addition, we will demonstrate how the workflow can
 be easily scalable with `systemPipeR.`
 
-# CWL command line specifications
+
+## Load package 
+
+Important: this tutorial uses several new functions that are currently
+only available in the development version of the `systemPipeR` package that is installed under R-4.0.3 and R-4.1.0
+on the HPCC cluster at UCR.
+
+```{r load_library, eval=TRUE, include=FALSE}
+library(systemPipeR)
+```
+
+## CWL command line specifications
 
 CWL command line specifications are written in [YAML](http://yaml.org/) format.
 
@@ -129,7 +150,7 @@ yaml::read_yaml(file.path(dir_path, "example_single.yml"))
 Note that if we define an input component in the *.cwl* file, this value needs 
 to be also defined here in the *.yml* file. 
 
-## How to connect CWL description files within `systemPipeR`
+### How to connect CWL description files within `systemPipeR`
 
 `SYSargs2` container stores all the information and instructions needed for processing 
 a set of input files with a single or many command-line steps within a workflow 
@@ -179,7 +200,7 @@ Users should note here, the usage of `targets` files is optional when using
 `systemPipeR's` new CWL interface. Since for organizing experimental variables 
 targets files are extremely useful and user-friendly. Thus, we encourage users to keep using them.
 
-### How to connect the parameter files and `targets` file information?
+#### How to connect the parameter files and `targets` file information?
 
 The constructor functions create an `SYSargs2` S4 class object connecting three input files:
 
@@ -213,7 +234,7 @@ cmdlist(HW_mul)
 
 ![**Figure 1:** Connectivity between CWL param files and targets files.](SPR_CWL_hello.png)
 
-# Creating the CWL param files from the command line
+## Creating the CWL param files from the command line
 
 Users need to define the command line in a pseudo-bash script format:
 
@@ -230,7 +251,7 @@ hisat2 \
 "
 ```
 
-## Define prefix and defaults
+### Define prefix and defaults
 
 - First line is the base command. Each line is an argument with its default value.
 
@@ -250,7 +271,7 @@ hisat2 \
   
 - If any argument has no default value, just a flag, like `--verbose`, there is no need to add any `<...>`
 
-## `createParamFiles` Function
+### `createParamFiles` Function
 
 `createParamFiles` function requires the `string` as defined above as an input. 
 
@@ -279,9 +300,9 @@ it can use the `writeParamFiles` function.
 writeParamFiles(cmd, overwrite = TRUE)
 ```
 
-## How to access and edit param files
+### How to access and edit param files
 
-### Print a component
+#### Print a component
 
 ```{r}
 printParam(cmd, position = "baseCommand") ## Print a baseCommand section
@@ -290,7 +311,7 @@ printParam(cmd, position = "inputs", index = 1:2) ## Print by index
 printParam(cmd, position = "inputs", index = -1:-2) ## Negative indexing printing to exclude certain indices in a position
 ```
 
-### Subsetting the command line
+#### Subsetting the command line
 
 ```{r}
 cmd2 <- subsetParam(cmd, position = "inputs", index = 1:2, trim = TRUE)
@@ -301,7 +322,7 @@ cmdlist(cmd2)
 
 ```
 
-### Replacing a existing argument in the command line
+#### Replacing a existing argument in the command line
 
 ```{r}
 cmd3 <- replaceParam(cmd, "base", index = 1, replace = list(baseCommand = "bwa"))
@@ -317,7 +338,7 @@ cmd4 <- replaceParam(cmd, "inputs", index = 1:2, replace = new_inputs)
 cmdlist(cmd4)
 ```
 
-### Adding new arguments
+#### Adding new arguments
 
 ```{r}
 newIn <- new_inputs <- list(
@@ -332,7 +353,7 @@ cmd6 <- appendParam(cmd, "inputs", index = 1:2, after=0, append = new_inputs)
 cmdlist(cmd6)
 ```
 
-### Editing `output` param
+#### Editing `output` param
 
 ```{r}
 new_outs <- list(
@@ -342,14 +363,14 @@ cmd7 <- replaceParam(cmd, "outputs", index = 1, replace = new_outs)
 output(cmd7) 
 ```
 
-# Version information
+## Version information
 
 ```{r sessionInfo}
 sessionInfo()
 ```
 
-# Funding
+## Funding
 
 This project is funded by NSF award [ABI-1661152](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1661152). 
 
-# References
+## References
