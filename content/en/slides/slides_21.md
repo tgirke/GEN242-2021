@@ -1,6 +1,6 @@
 ---
-title: "More on Data Analysis Workflows"
-linkTitle: "More on Workflows"
+title: "Review of Data Analysis Workflows"
+linkTitle: "Review of Workflows"
 description: >
 type: docs
 weight: 121
