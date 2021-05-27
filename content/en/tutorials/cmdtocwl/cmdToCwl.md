@@ -338,7 +338,7 @@ cmdlist(HW_mul)
     ## [1] "echo Hello Bioconcudctor! > results/M3.txt"
 
 <center>
-<img title="spr-cwl" src="../images/targetCWL.jpg" width="500" />
+<img title="spr-cwl" src="../images/targetsCWL.jpg" width="500" />
 </center>
 <center>
 Figure 1: Connectivity between CWL param files and targets files.
@@ -781,11 +781,11 @@ sessionInfo()
 
     ## R version 4.1.0 (2021-05-18)
     ## Platform: x86_64-pc-linux-gnu (64-bit)
-    ## Running under: Debian GNU/Linux 10 (buster)
+    ## Running under: Ubuntu 20.04.2 LTS
     ## 
     ## Matrix products: default
-    ## BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.8.0
-    ## LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.8.0
+    ## BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.9.0
+    ## LAPACK: /home/dcassol/src/R-4.1.0/lib/libRlapack.so
     ## 
     ## locale:
     ##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
@@ -812,7 +812,7 @@ sessionInfo()
     ## loaded via a namespace (and not attached):
     ##   [1] colorspace_2.0-1         rjson_0.2.20             hwriter_1.3.2           
     ##   [4] ellipsis_0.3.2           bit64_4.0.5              AnnotationDbi_1.54.0    
-    ##   [7] fansi_0.4.2              splines_4.1.0            cachem_1.0.5            
+    ##   [7] fansi_0.5.0              splines_4.1.0            cachem_1.0.5            
     ##  [10] knitr_1.33               jsonlite_1.7.2           annotate_1.70.0         
     ##  [13] GO.db_3.13.0             dbplyr_2.1.1             png_0.1-7               
     ##  [16] pheatmap_1.0.12          graph_1.70.0             compiler_4.1.0          
