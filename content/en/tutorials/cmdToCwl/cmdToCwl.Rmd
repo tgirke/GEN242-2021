@@ -15,6 +15,7 @@ vignette: |
 fontsize: 14pt
 weight: 18
 bibliography: bibtex.bib
+type: docs
 ---
 
 <!---
