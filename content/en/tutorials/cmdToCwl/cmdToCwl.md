@@ -337,7 +337,12 @@ cmdlist(HW_mul)
     ## $M3$example
     ## [1] "echo Hello Bioconcudctor! > results/M3.txt"
 
-![**Figure 1:** Connectivity between CWL param files and targets files.](images/SPR_CWL_hello.png)
+<center>
+<img title="sphm" src="../images/SPR_CWL_hello.png" width="500" />
+</center>
+<center>
+Figure 1: Connectivity between CWL param files and targets files.
+</center>
 
 ## Creating the CWL param files from the command line
 

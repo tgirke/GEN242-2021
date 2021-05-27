@@ -22,12 +22,12 @@
  Introduction A central concept for designing workflows within the systemPipeR environment is the use of workflow management containers. systemPipeR adopted the widely used community standard Common Workflow Language (CWL) (Amstutz et al. 2016) for describing analysis workflows in a generic and reproducible manner. Using this community standard in systemPipeR has many advantages. For instance, the integration of CWL allows running systemPipeR workflows from a single specification instance either entirely from within R, from various command line wrappers (e." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/cmdtocwl/cmdtocwl/" />
-<meta property="article:modified_time" content="2021-05-26T19:22:59-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-05-26T19:28:19-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Automate Creation of CWL Instructions">
 <meta itemprop="description" content="Source code downloads: [ .Rmd ] [ .R ]
  Introduction A central concept for designing workflows within the systemPipeR environment is the use of workflow management containers. systemPipeR adopted the widely used community standard Common Workflow Language (CWL) (Amstutz et al. 2016) for describing analysis workflows in a generic and reproducible manner. Using this community standard in systemPipeR has many advantages. For instance, the integration of CWL allows running systemPipeR workflows from a single specification instance either entirely from within R, from various command line wrappers (e.">
-<meta itemprop="dateModified" content="2021-05-26T19:22:59-07:00" />
-<meta itemprop="wordCount" content="3205">
+<meta itemprop="dateModified" content="2021-05-26T19:28:19-07:00" />
+<meta itemprop="wordCount" content="3215">
 
 
 
@@ -943,7 +943,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.bd9ac61fbfb5178386bd2e11b4a7528a.json"
+  data-offline-search-index-json-src="../../../offline-search-index.4e99e1fc0207e530d1899ac40c4b99aa.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -975,7 +975,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.bd9ac61fbfb5178386bd2e11b4a7528a.json"
+  data-offline-search-index-json-src="../../../offline-search-index.4e99e1fc0207e530d1899ac40c4b99aa.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1548,7 +1548,12 @@ HW_mul
 ## $M3$example
 ## [1] &quot;echo Hello Bioconcudctor! &gt; results/M3.txt&quot;
 </code></pre>
-<p><img src="images/SPR_CWL_hello.png" alt="Figure 1: Connectivity between CWL param files and targets files."></p>
+<center>
+<img title="sphm" src="../images/SPR_CWL_hello.png" width="500" />
+</center>
+<center>
+Figure 1: Connectivity between CWL param files and targets files.
+</center>
 <h2 id="creating-the-cwl-param-files-from-the-command-line">Creating the CWL param files from the command line</h2>
 <p>Users need to define the command line in a pseudo-bash script format:</p>
 <pre><code class="language-r">command &lt;- &quot;
@@ -2014,7 +2019,7 @@ cmd7 &lt;- replaceParam(cmd, &quot;outputs&quot;, index = 1, replace = new_outs)
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-26: <a  href="https://github.com/tgirke/GEN242//commit/c4ddc3cf5801da8ec61a1a3c8094339d4b66d3de">some edits (c4ddc3cf5)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-26: <a  href="https://github.com/tgirke/GEN242//commit/cf1ad3a7dc06b6e87e124966fd6206467ef1e50b">some edits (cf1ad3a7d)</a>
 </div>
 </div>
 
