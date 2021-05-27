@@ -470,7 +470,7 @@ enable = true
     weight = 217
   [[menu.main]]
     name = "Automate CWL Creation (T18)"
-    url = "/tutorials/cmdToCwl/cmdToCwl/"
+    url = "/tutorials/cmdtocwl/cmdtocwl/"
     parent = "Tutorials"
     weight = 218
 ##
