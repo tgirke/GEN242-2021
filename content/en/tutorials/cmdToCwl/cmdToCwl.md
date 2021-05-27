@@ -3,18 +3,19 @@ title: "Automate Creation of CWL Instructions"
 author: "Author: Daniela Cassol, Le Zhang, Thomas Girke"
 date: "Last update: 26 May, 2021" 
 output:
-  BiocStyle::html_document:
-    toc_float: true
+  html_document:
+    toc: true
+    toc_float:
+        collapsed: true
+        smooth_scroll: true
+    toc_depth: 3
+    fig_caption: yes
     code_folding: show
-  BiocStyle::pdf_document: default
-package: systemPipeR
-vignette: |
-  %\VignetteEncoding{UTF-8}
-  %\VignetteIndexEntry{systemPipeR and CWL}
-  %\VignetteEngine{knitr::rmarkdown}
+    number_sections: true
 fontsize: 14pt
-weight: 18
 bibliography: bibtex.bib
+weight: 18
+type: docs
 ---
 
 <!---
