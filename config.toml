@@ -373,6 +373,11 @@ enable = true
     url = "/slides/slides_20/"
     parent = "Slides"
     weight = 120
+  [[menu.main]]
+    name = "More on Workflows (S21)"
+    url = "/slides/slides_21/"
+    parent = "Slides"
+    weight = 121
 ##
 [[menu.main]]
   name = "Tutorials"
