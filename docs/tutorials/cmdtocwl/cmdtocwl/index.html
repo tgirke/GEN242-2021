@@ -1,0 +1,1772 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.80.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+
+<link rel="shortcut icon" href="../../../favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="../../../favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="../../../favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="../../../favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="../../../favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="../../../favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="../../../favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="../../../favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="../../../favicons/android-192x192.png" sizes="192x192">
+
+<title>Automate Creation of CWL Instructions | GEN242</title><meta property="og:title" content="Automate Creation of CWL Instructions" />
+<meta property="og:description" content="Source code downloads: [ .Rmd ] [ .R ]
+ Introduction A central concept for designing workflows within the systemPipeR environment is the use of workflow management containers. systemPipeR adopted the widely used community standard Common Workflow Language (CWL) (Amstutz et al. 2016) for describing analysis workflows in a generic and reproducible manner. Using this community standard in systemPipeR has many advantages. For instance, the integration of CWL allows running systemPipeR workflows from a single specification instance either entirely from within R, from various command line wrappers (e." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/tutorials/cmdtocwl/cmdtocwl/" />
+<meta property="og:site_name" content="GEN242" />
+<meta itemprop="name" content="Automate Creation of CWL Instructions">
+<meta itemprop="description" content="Source code downloads: [ .Rmd ] [ .R ]
+ Introduction A central concept for designing workflows within the systemPipeR environment is the use of workflow management containers. systemPipeR adopted the widely used community standard Common Workflow Language (CWL) (Amstutz et al. 2016) for describing analysis workflows in a generic and reproducible manner. Using this community standard in systemPipeR has many advantages. For instance, the integration of CWL allows running systemPipeR workflows from a single specification instance either entirely from within R, from various command line wrappers (e.">
+
+<meta itemprop="wordCount" content="3205">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Automate Creation of CWL Instructions"/>
+<meta name="twitter:description" content="Source code downloads: [ .Rmd ] [ .R ]
+ Introduction A central concept for designing workflows within the systemPipeR environment is the use of workflow management containers. systemPipeR adopted the widely used community standard Common Workflow Language (CWL) (Amstutz et al. 2016) for describing analysis workflows in a generic and reproducible manner. Using this community standard in systemPipeR has many advantages. For instance, the integration of CWL allows running systemPipeR workflows from a single specification instance either entirely from within R, from various command line wrappers (e."/>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-00000000-0', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+<link rel="preload" href="../../../scss/main.min.1f416e6a5f646f231d085681bf2b4ebdad5d41f149a3977625affc97f735ab7e.css" as="style">
+<link href="../../../scss/main.min.1f416e6a5f646f231d085681bf2b4ebdad5d41f149a3977625affc97f735ab7e.css" rel="stylesheet" integrity="">
+
+
+<script
+  src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+
+<link rel="stylesheet" href="../../../css/prism.css"/>
+
+
+<script src="../../../js/driver0.9.8.min.js"></script>
+<link rel="stylesheet" href="../../../css/driver0.9.8.min.css"/>
+
+
+<link rel="stylesheet" href="../../../css/site.css"/>
+<script src="../../../js/site.js"></script>
+
+
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="../../../">
+		<span class="navbar-logo"><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500" style="enable-background:new 0 0 500 500"><g><path style="fill:#fff" d="M116.8525 421.9722c-5.7041.0-10.3442-4.3127-10.3442-9.6129V88.183c0-5.3002 4.6401-9.6117 10.3442-9.6117H320.858c3.0347.0 9.3959.5498 11.7506 2.6302l.3545.3442 58.905 63.2912c2.3101 2.491 2.9202 8.4928 2.9202 11.3184v256.2039c0 5.3002-4.6407 9.6129-10.3436 9.6129H116.8525z"/><g><g><g><path style="fill:#767676" d="M384.4445 423.2066H116.852c-6.3839.0-11.5786-4.8658-11.5786-10.8474V88.1831c0-5.9804 5.1947-10.8461 11.5786-10.8461h204.0062c.377.0 9.2786.0329 12.568 2.9389l.3947.3833 58.9508 63.337c3.2135 3.4652 3.2514 11.7924 3.2514 12.1593v256.2036C396.0231 418.3408 390.8284 423.2066 384.4445 423.2066zM116.5079 411.9189c.0848.0278.1999.0531.3441.0531h267.5925c.1442.0.2581-.0253.3441-.0531V156.1556c-.0076-.9033-.3593-3.7347-.7034-5.0037l-57.6527-61.9416c-1.4651-.3176-4.4533-.6389-5.5742-.6389H116.852c-.143.0-.2594.024-.3441.0531V411.9189zm267.4533-261.149zM327.0321 89.371v.0013V89.371z"/></g></g></g><g><g><path style="fill:#5b7fc0" d="M189.0874 210.1754l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.025 2.454-11.4897 6.4116-15.4473C177.5953 212.627 183.0601 210.1742 189.0874 210.1754zM197.0804 232.033c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 234.1722 197.0804 232.033z"/><path style="opacity:.3;fill:#fff" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zM197.0839 232.0372c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/><g><defs><path id="SVGID_1_" d="M194.7376 237.6875c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 234.2399 196.1861 236.239 194.7376 237.6875z"/></defs><clipPath id="SVGID_2_"><use xlink:href="#SVGID_1_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_2_);fill:#fff" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/><path style="opacity:.13;clip-path:url(#SVGID_2_);fill:#020202" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/></g><g><defs><path id="SVGID_3_" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zM197.0839 232.0372c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/></defs><clipPath id="SVGID_4_"><use xlink:href="#SVGID_3_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_4_);fill:#5b7fc0" d="M172.6595 215.6045c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8475-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 209.1953 176.6171 211.647 172.6595 215.6045z"/></g></g><rect x="198.8952" y="225.1043" style="fill:#5b7fc0" width="122.6266" height="13.8671"/></g><g><path style="fill:#d95140" d="M189.0874 155.7611l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.0249 2.454-11.4897 6.4116-15.4473C177.5953 158.2128 183.0601 155.7599 189.0874 155.7611zM197.0804 177.6188c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.2508 181.7667 197.0816 179.758 197.0804 177.6188z"/><path style="opacity:.3;fill:#fff" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zM197.0839 177.623c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/><g><defs><path id="SVGID_5_" d="M194.7376 183.2733c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 179.8256 196.1861 181.8248 194.7376 183.2733z"/></defs><clipPath id="SVGID_6_"><use xlink:href="#SVGID_5_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_6_);fill:#fff" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/><path style="opacity:.13;clip-path:url(#SVGID_6_);fill:#020202" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/></g><g><defs><path id="SVGID_7_" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zM197.0839 177.623c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/></defs><clipPath id="SVGID_8_"><use xlink:href="#SVGID_7_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_8_);fill:#d95140" d="M172.6595 161.1903c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 154.7811 176.6171 157.2327 172.6595 161.1903z"/></g><rect x="198.8952" y="170.69" style="fill:#d95140" width="122.6266" height="13.8671"/></g><g><g><path style="fill:#56a55c" d="M189.5379 264.6147l.0012-.0012c7.7751.0012 15.0294 4.1862 18.932 10.9235 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032-5.8394.0-11.3281-2.2733-15.458-6.4032-4.13-4.13-6.4032-9.6186-6.4056-15.4628.0012-6.0249 2.454-11.4897 6.4116-15.4472C178.0458 267.0663 183.5105 264.6135 189.5379 264.6147zM197.5309 286.4723c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6538 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.7013 290.6202 197.5321 288.6115 197.5309 286.4723z"/><path style="opacity:.3;fill:#fff" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zM197.5344 286.4765c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/><g><defs><path id="SVGID_9_" d="M195.1881 292.1268c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9941 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.5344 288.6792 196.6366 290.6783 195.1881 292.1268z"/></defs><clipPath id="SVGID_10_"><use xlink:href="#SVGID_9_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_10_);fill:#fff" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/><path style="opacity:.13;clip-path:url(#SVGID_10_);fill:#020202" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/></g><g><defs><path id="SVGID_11_" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zM197.5344 286.4765c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/></defs><clipPath id="SVGID_12_"><use xlink:href="#SVGID_11_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_12_);fill:#56a55c" d="M173.11 270.0439c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7325-11.1497-10.9151-18.926-10.9151C182.5311 263.6346 177.0676 266.0863 173.11 270.0439z"/></g></g><rect x="199.3456" y="279.5436" style="fill:#56a55c" width="122.6266" height="13.8671"/></g><g><g><path style="fill:#f1bc42" d="M189.0874 318.7208l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3305-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.025 2.454-11.4897 6.4116-15.4472C177.5953 321.1724 183.0601 318.7196 189.0874 318.7208zM197.0804 340.5784c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 342.7176 197.0804 340.5784z"/><path style="opacity:.3;fill:#fff" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zM197.0839 340.5826c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/><g><defs><path id="SVGID_13_" d="M194.7376 346.2329c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 342.7853 196.1861 344.7844 194.7376 346.2329z"/></defs><clipPath id="SVGID_14_"><use xlink:href="#SVGID_13_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_14_);fill:#fff" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/><path style="opacity:.13;clip-path:url(#SVGID_14_);fill:#020202" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/></g><g><defs><path id="SVGID_15_" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zM197.0839 340.5826c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/></defs><clipPath id="SVGID_16_"><use xlink:href="#SVGID_15_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_16_);fill:#f1bc42" d="M172.6595 324.15c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8474-1.0151-7.6327-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 317.7407 176.6171 320.1924 172.6595 324.15z"/></g></g><rect x="198.8952" y="333.6497" style="fill:#f1bc42" width="122.6266" height="13.8671"/></g></g></svg></span><span class="font-weight-bold">GEN242</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0" style="position: relative">
+				
+				
+				
+				
+				
+          <a class="nav-link dropdown-toggle" href="../../../about/" id="navbarDropdown" role="button">
+          	About
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../about/introduction/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Introduction
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../about/syllabus/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Syllabus
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../about/schedule/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Schedule
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../about/internal/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Internal
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../about/internal/internal_resources/"
+                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 Resources
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../about/internal/install/"
+                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 Installation
+              </a>
+          	
+          </div>
+				
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0" style="position: relative">
+				
+				
+				
+				
+				
+          <a class="nav-link dropdown-toggle" href="../../../slides/" id="navbarDropdown" role="button">
+          	Slides
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_01"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Course Introduction (S1)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_02"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Genome Basics (S2)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_03"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Databases and Software (S3)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_04"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 DNA Sequencing (S4)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_05"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Introduction to R (S5)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_06"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Sequence Alignments (S6)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_07"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Programming in R (S7)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_08"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Multiple Alignments (S8)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_09"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Short Read Alignments (S9)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_10"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 R on HPC (S10)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_11"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 NGS Analysis Basics (S11)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_12"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Gene Expression Analysis (S12)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_13"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 NGS Workflows (S13)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_14/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 ChIP-Seq Overview (S14)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_15/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Enrichment Analysis (S15)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_16/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Cluster Analysis (S16)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_17/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Project Data (S17)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_18/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Graphics in R (S18)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_19/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Building R Packages (S19)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../slides/slides_20/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 dplyr, tidyr and SQLite (S20)
+              </a>
+          	
+          </div>
+				
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0" style="position: relative">
+				
+				
+				
+				
+				
+          <a class="nav-link dropdown-toggle" href="../../../tutorials/" id="navbarDropdown" role="button">
+          	Tutorials
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/github/github/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 GitHub Introduction (T1)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/linux/linux/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Linux and HPCC Cluster (T2)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/rbasics/rbasics/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Introduction to R (T3)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/rprogramming/rprogramming/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Programming in R (T4)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/rparallel/rparallel/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Parallel R (T5)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/rsequences/rsequences/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 NGS Analysis Basics (T6)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/systempiper/systempiper/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Workflows (T7)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/sprnaseq/sprnaseq/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 RNA-Seq Workflow (T8)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/spchipseq/spchipseq/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 ChIP-Seq Workflow (T9)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/rmarkdown/rmarkdown/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 R Markdown (T10)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/rfea/rfea/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Functional Enrichment Analysis (T11)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/rclustering/rclustering/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Cluster Analysis and Data Mining (T12)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../assignments/projects/project_data/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Project Data (T13)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/rgraphics/rgraphics/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Graphics and Visualization (T14)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/shinyapps/shinyapps/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Shiny Apps (T15)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/rpackages/rpackages/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Building R Packages (T16)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/dplyr/dplyr/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 dplyr, tidyr and SQLite (T17)
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../tutorials/cmdtocwl/cmdtocwl/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Automate CWL Creation (T18)
+              </a>
+          	
+          </div>
+				
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0" style="position: relative">
+				
+				
+				
+				
+				
+          <a class="nav-link dropdown-toggle" href="../../../manuals/" id="navbarDropdown" role="button">
+          	Manuals
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../manuals/github/github/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 GitHub
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../manuals/linux/linux/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Linux &amp; HPCC Cluster
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../manuals/rbasics/rbasics/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Introduction to R
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../manuals/rbasics/sample/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Sample R Markdown
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../manuals/rprogramming/rprogramming/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Programming in R
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../manuals/rparallel/rparallel/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Parallel Evaluations in R
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../manuals/rsequences/rsequences/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 NGS Analysis Basics
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../manuals/systempiper/systempiper/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 NGS Workflow Overview
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../manuals/sprnaseq/sprnaseq/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 RNA-Seq Workflow
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../manuals/spchipseq/spchipseq/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 ChIP-Seq Workflow
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../manuals/rfea/rfea/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Functional Enrichment Analysis
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../manuals/rclustering/rclustering/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Cluster Analysis and Data Mining
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../manuals/rgraphics/rgraphics/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Graphics and Visualization
+              </a>
+          	
+          </div>
+				
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0" style="position: relative">
+				
+				
+				
+				
+				
+          <a class="nav-link dropdown-toggle" href="../../../assignments/" id="navbarDropdown" role="button">
+          	Assignments
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../assignments/homework/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Homework
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/homework/hw01/hw01/"
+                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 HW1: Intro &amp; GitHub
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/homework/hw02/hw02/"
+                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 HW2: Linux &amp; HPC
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/homework/hw03/hw03/"
+                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 HW3: R Basics
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/homework/hw04/hw04/"
+                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 HW4: Alignments
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/homework/hw05/hw05"
+                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 HW5: R Programming
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/homework/hw06/hw06"
+                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 HW6: NGS Analysis Basics
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/homework/hw07/hw07"
+                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 HW7: RNA-Seq Analysis
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/homework/hw08/hw08"
+                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 HW8: R Markdown
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../assignments/projects/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Projects
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/projects/project_overview/"
+                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 Overview of Projects
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/projects/01_rnaseq_aligners/"
+                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 RNA-Seq Aligners
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/projects/02_rnaseq_deg/"
+                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 DEG Methods
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/projects/03_cluster_analysis/"
+                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 Cluster Analysis
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/projects/04_scrnaseq_embedding/"
+                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 scRNA-Seq Embedding
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/projects/05_chipseq_peakcaller/"
+                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 ChIP-Seq Peak Callers
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/projects/06_functional_enrichment/"
+                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 Functional Enrichment
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/projects/07_motif_enrichment/"
+                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 Motif Enrichment
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/projects/08_genome_graphics/"
+                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 Genome Graphics
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/projects/project_data/"
+                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 Project Data
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="../../../assignments/presentations/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Presentations
+              </a>
+          	
+          	  
+              
+                
+              
+              
+              <a class="dropdown-item" href="../../../assignments/presentations/paper_presentations/"
+                 style="padding-left: 2rem; font-weight: calc(3/4*500)">
+                 Paper Presentations
+              </a>
+          	
+          </div>
+				
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0" style="position: relative">
+				
+				
+				
+				
+				
+          <a class="nav-link dropdown-toggle" href="../../../external_resources/" id="navbarDropdown" role="button">
+          	Links
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="https://piazza.com/ucr/spring2021/gen242/home"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Piazza
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="https://classroom.github.com/classrooms/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 GitHub Classroom
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="https://github.com/tgirke/GEN242"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 GitHub Repo
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="https://bioconductor.org/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Bioconductor
+              </a>
+          	
+          	  
+              
+              
+              <a class="dropdown-item" href="https://www.dcassol.com/docsy_Rmarkdown/rmarkdown/install/"
+                 style="padding-left: 1rem; font-weight: calc(3/3*500)">
+                 Hugo, Docsy &amp; R
+              </a>
+          	
+          </div>
+				
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0" style="position: relative">
+				
+				
+				
+				
+				
+				
+				
+					<a class="nav-link" href="../../../blog/" ><span>News</span></a>
+				
+			</li>
+			
+			
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block">
+
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="../../../offline-search-index.04cc5ccad007019ab7f7ccd31be75665.json"
+  data-offline-search-base-href="../../../"
+  data-offline-search-max-results="10"
+>
+
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        
+
+<!---
+- Compile from command-line
+Rscript -e "rmarkdown::render('cmdToCwl.Rmd', c('html_document'), clean=FALSE); knitr::knit('cmdToCwl.Rmd', tangle=TRUE)"
+-->
+<div style="text-align: right">
+<p>Source code downloads:    
+[ <a href="https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/cmdToCwl/cmdToCwl.Rmd">.Rmd</a> ]    
+[ <a href="https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/cmdToCwl/cmdToCwl.R">.R</a> ]</p>
+</div>
+<h2 id="introduction">Introduction</h2>
+<p>A central concept for designing workflows within the <code>systemPipeR</code> environment is
+the use of workflow management containers. <code>systemPipeR</code> adopted the widely used community standard <a href="https://www.commonwl.org/">Common Workflow Language</a> (CWL)
+(Amstutz et al. 2016) for describing analysis workflows in a generic and reproducible
+manner.
+Using this community standard in <code>systemPipeR</code> has many advantages. For instance,
+the integration of CWL allows running <code>systemPipeR</code> workflows from a single
+specification instance either entirely from within R, from various command line
+wrappers (e.g., cwl-runner) or from other languages (, e.g., Bash or Python).
+<code>systemPipeR</code> includes support for both command line and R/Bioconductor software
+as well as resources for containerization, parallel evaluations on computer
+clusters along with the automated generation of interactive analysis reports.</p>
+<p>An important feature of <code>systemPipeR's</code> CWL interface is that it provides two
+options to run command line tools and workflows based on CWL.
+First, one can run CWL in its native way via an R-based wrapper utility for
+<code>cwl-runner</code> or <code>cwl-tools</code> (CWL-based approach). Second, one can run workflows
+using CWL’s command line and workflow instructions from within R (R-based approach).
+In the latter case the same CWL workflow definition files (e.g. <em>.cwl</em> and <em>.yml</em>)
+are used but rendered and executed entirely with R functions defined by <code>systemPipeR</code>,
+and thus use CWL mainly as a command line and workflow definition format rather
+than software to run workflows. In this regard <code>systemPipeR</code> also provides several
+convenience functions that are useful for designing and debugging workflows,
+such as a command line rendering function to retrieve the exact command line
+strings for each data set and processing step prior to running a command line.</p>
+<p>This overview introduces how CWL describes command line tools and how to connect
+them to create workflows. In addition, we will demonstrate how the workflow can
+be easily scalable with <code>systemPipeR.</code></p>
+<h2 id="load-package">Load package</h2>
+<p>Important: this tutorial uses several new functions that are currently
+only available in the development version of the <code>systemPipeR</code> package that is installed under R-4.0.3 and R-4.1.0
+on the HPCC cluster at UCR.</p>
+<h2 id="cwl-command-line-specifications">CWL command line specifications</h2>
+<p>CWL command line specifications are written in <a href="http://yaml.org/">YAML</a> format.</p>
+<p>In CWL, files with the extension <code>.cwl</code> define the parameters of a chosen
+command line step or workflow, while files with the extension <code>.yml</code> define
+the input variables of command line steps.</p>
+<p>Let’s explore the <code>.cwl</code> file:</p>
+<pre><code class="language-r">dir_path &lt;- system.file(&quot;extdata/cwl/example/&quot;, package=&quot;systemPipeR&quot;)
+cwl &lt;- yaml::read_yaml(file.path(dir_path, &quot;example.cwl&quot;))
+</code></pre>
+<ul>
+<li>The <code>cwlVersion</code> component shows the CWL specification version used by the document.</li>
+<li>The <code>class</code> component shows this document describes a command line tool.
+Note that CWL has another <code>class</code>, called <code>Workflow</code> which represents a union of one
+or more command line tools together.</li>
+</ul>
+<pre><code class="language-r">cwl[1:2]
+</code></pre>
+<pre><code>## $cwlVersion
+## [1] &quot;v1.0&quot;
+## 
+## $class
+## [1] &quot;CommandLineTool&quot;
+</code></pre>
+<ul>
+<li><code>baseCommand</code> component provides the name of the software that we desire to execute.</li>
+</ul>
+<pre><code class="language-r">cwl[3]
+</code></pre>
+<pre><code>## $baseCommand
+## [1] &quot;echo&quot;
+</code></pre>
+<ul>
+<li>The <code>inputs</code> section provides the input information to run the tool. Important
+components of this section are:
+<ul>
+<li><code>id</code>: each input has an id describing the input name;</li>
+<li><code>type</code>: describe the type of input value (string, int, long, float, double,
+File, Directory or Any);</li>
+<li><code>inputBinding</code>: It is optional. This component indicates if the input
+parameter should appear on the command line. If this component is missing
+when describing an input parameter, it will not appear in the command line
+but can be used to build the command line.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-r">cwl[4]
+</code></pre>
+<pre><code>## $inputs
+## $inputs$message
+## $inputs$message$type
+## [1] &quot;string&quot;
+## 
+## $inputs$message$inputBinding
+## $inputs$message$inputBinding$position
+## [1] 1
+## 
+## 
+## 
+## $inputs$SampleName
+## $inputs$SampleName$type
+## [1] &quot;string&quot;
+## 
+## 
+## $inputs$results_path
+## $inputs$results_path$type
+## [1] &quot;Directory&quot;
+</code></pre>
+<ul>
+<li>The <code>outputs</code> section should provide a list of the expected outputs after running the command line tools. Important
+components of this section are:
+<ul>
+<li><code>id</code>: each input has an id describing the output name;</li>
+<li><code>type</code>: describe the type of output value (string, int, long, float, double,
+File, Directory, Any or <code>stdout</code>);</li>
+<li><code>outputBinding</code>: This component defines how to set the outputs values. The <code>glob</code> component will define the name of the output value.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-r">cwl[5]
+</code></pre>
+<pre><code>## $outputs
+## $outputs$string
+## $outputs$string$type
+## [1] &quot;stdout&quot;
+</code></pre>
+<ul>
+<li><code>stdout</code>: component to specify a <code>filename</code> to capture standard output.
+Note here we are using a syntax that takes advantage of the inputs section,
+using results_path parameter and also the <code>SampleName</code> to construct the output <code>filename.</code></li>
+</ul>
+<pre><code class="language-r">cwl[6]
+</code></pre>
+<pre><code>## $stdout
+## [1] &quot;$(inputs.results_path.basename)/$(inputs.SampleName).txt&quot;
+</code></pre>
+<p>Next, let’s explore the <em>.yml</em> file, which provide the parameter values for all
+the components we describe above.</p>
+<p>For this simple example, we have three parameters defined:</p>
+<pre><code class="language-r">yaml::read_yaml(file.path(dir_path, &quot;example_single.yml&quot;))
+</code></pre>
+<pre><code>## $message
+## [1] &quot;Hello World!&quot;
+## 
+## $SampleName
+## [1] &quot;M1&quot;
+## 
+## $results_path
+## $results_path$class
+## [1] &quot;Directory&quot;
+## 
+## $results_path$path
+## [1] &quot;./results&quot;
+</code></pre>
+<p>Note that if we define an input component in the <em>.cwl</em> file, this value needs
+to be also defined here in the <em>.yml</em> file.</p>
+<h3 id="how-to-connect-cwl-description-files-within-systempiper">How to connect CWL description files within <code>systemPipeR</code></h3>
+<p><code>SYSargs2</code> container stores all the information and instructions needed for processing
+a set of input files with a single or many command-line steps within a workflow
+(i.e. several components of the software or several independent software tools).
+The <code>SYSargs2</code> object is created and fully populated with <code>loadWF</code> and `renderWF`` construct
+functions.</p>
+<p>The following imports a <code>.cwl</code> file (here <code>example.cwl</code>) for running the <code>echo Hello World</code>
+example.</p>
+<pre><code class="language-r">HW &lt;- loadWF( wf_file=&quot;example.cwl&quot;, input_file=&quot;example_single.yml&quot;,
+              dir_path = dir_path)
+HW &lt;- renderWF(HW)
+HW
+</code></pre>
+<pre><code>## Instance of 'SYSargs2':
+##    Slot names/accessors: 
+##       targets: 0 (...), targetsheader: 0 (lines)
+##       modules: 0
+##       wf: 0, clt: 1, yamlinput: 3 (components)
+##       input: 1, output: 1
+##       cmdlist: 1
+##    WF Steps:
+##       1. example (rendered: TRUE)
+</code></pre>
+<pre><code class="language-r">cmdlist(HW)
+</code></pre>
+<pre><code>## $defaultid
+## $defaultid$example
+## [1] &quot;echo Hello World! &gt; results/M1.txt&quot;
+</code></pre>
+<p>However, we are limited to run just one command line or one sample in this example.
+To scale the command line over many samples, a simple solution offered by <code>systemPipeR</code>
+is to provide a <code>variable</code> for each of the parameters that we want to run with multiple samples.</p>
+<p>Let’s explore the example:</p>
+<pre><code class="language-r">yml &lt;- yaml::read_yaml(file.path(dir_path, &quot;example.yml&quot;))
+yml
+</code></pre>
+<pre><code>## $message
+## [1] &quot;_STRING_&quot;
+## 
+## $SampleName
+## [1] &quot;_SAMPLE_&quot;
+## 
+## $results_path
+## $results_path$class
+## [1] &quot;Directory&quot;
+## 
+## $results_path$path
+## [1] &quot;./results&quot;
+</code></pre>
+<p>For the <code>message</code> and <code>SampleName</code> parameter, we are passing a variable connecting
+with a third file called <code>targets.</code></p>
+<p>Now, let’s explore the <code>targets</code> file structure:</p>
+<pre><code class="language-r">targetspath &lt;- system.file(&quot;extdata/cwl/example/targets_example.txt&quot;, package=&quot;systemPipeR&quot;)
+read.delim(targetspath, comment.char = &quot;#&quot;)
+</code></pre>
+<pre><code>##                Message SampleName
+## 1         Hello World!         M1
+## 2           Hello USA!         M2
+## 3 Hello Bioconcudctor!         M3
+</code></pre>
+<p>The <code>targets</code> file defines all input files or values and sample ids of an analysis workflow.
+For this example, we have defined a string message for the <code>echo</code> command line tool,
+in the first column that will be evaluated,
+and the second column is the <code>SampleName</code> id for each one of the messages.
+Any number of additional columns can be added as needed.</p>
+<p>Users should note here, the usage of <code>targets</code> files is optional when using
+<code>systemPipeR's</code> new CWL interface. Since for organizing experimental variables
+targets files are extremely useful and user-friendly. Thus, we encourage users to keep using them.</p>
+<h4 id="how-to-connect-the-parameter-files-and-targets-file-information">How to connect the parameter files and <code>targets</code> file information?</h4>
+<p>The constructor functions create an <code>SYSargs2</code> S4 class object connecting three input files:</p>
+<pre><code>- CWL command line specification file (`wf_file` argument);
+- Input variables (`input_file` argument);
+- Targets file (`targets` argument).
+</code></pre>
+<p>As demonstrated above, the latter is optional for workflow steps lacking input files.
+The connection between input variables (here defined by <code>input_file</code> argument)
+and the <code>targets</code> file are defined under the <code>inputvars</code> argument.
+A named vector is required, where each element name needs to match with column
+names in the <code>targets</code> file, and the value must match the names of the <em>.yml</em>
+variables. This is used to replace the CWL variable and construct all the command-line
+for that particular step.</p>
+<p>The variable pattern <code>_XXXX_</code> is used to distinguish CWL variables that target
+columns will replace. This pattern is recommended for consistency and easy identification
+but not enforced.</p>
+<p>The following imports a <code>.cwl</code> file (same example demonstrated above) for running
+the <code>echo Hello World</code> example. However, now we are connecting the variable defined
+on the <code>.yml</code> file with the <code>targets</code> file inputs.</p>
+<pre><code class="language-r">HW_mul &lt;- loadWorkflow(targets = targetspath, wf_file=&quot;example.cwl&quot;,
+                   input_file=&quot;example.yml&quot;, dir_path = dir_path)
+HW_mul &lt;- renderWF(HW_mul, inputvars = c(Message = &quot;_STRING_&quot;, SampleName = &quot;_SAMPLE_&quot;))
+HW_mul
+</code></pre>
+<pre><code>## Instance of 'SYSargs2':
+##    Slot names/accessors: 
+##       targets: 3 (M1...M3), targetsheader: 1 (lines)
+##       modules: 0
+##       wf: 0, clt: 1, yamlinput: 3 (components)
+##       input: 3, output: 3
+##       cmdlist: 3
+##    WF Steps:
+##       1. example (rendered: TRUE)
+</code></pre>
+<pre><code class="language-r">cmdlist(HW_mul)
+</code></pre>
+<pre><code>## $M1
+## $M1$example
+## [1] &quot;echo Hello World! &gt; results/M1.txt&quot;
+## 
+## 
+## $M2
+## $M2$example
+## [1] &quot;echo Hello USA! &gt; results/M2.txt&quot;
+## 
+## 
+## $M3
+## $M3$example
+## [1] &quot;echo Hello Bioconcudctor! &gt; results/M3.txt&quot;
+</code></pre>
+<p><img src="SPR_CWL_hello.png" alt="Figure 1: Connectivity between CWL param files and targets files."></p>
+<h2 id="creating-the-cwl-param-files-from-the-command-line">Creating the CWL param files from the command line</h2>
+<p>Users need to define the command line in a pseudo-bash script format:</p>
+<pre><code class="language-r">command &lt;- &quot;
+hisat2 \
+    -S &lt;F, out: ./results/M1A.sam&gt; \
+    -x &lt;F: ./data/tair10.fasta&gt; \
+    -k &lt;int: 1&gt; \
+    -min-intronlen &lt;int: 30&gt; \
+    -max-intronlen &lt;int: 3000&gt; \
+    -threads &lt;int: 4&gt; \
+    -U &lt;F: ./data/SRR446027_1.fastq.gz&gt;
+&quot;
+</code></pre>
+<h3 id="define-prefix-and-defaults">Define prefix and defaults</h3>
+<ul>
+<li>
+<p>First line is the base command. Each line is an argument with its default value.</p>
+</li>
+<li>
+<p>For argument lines (starting from the second line), any word before the first
+space with leading <code>-</code> or <code>--</code> in each will be treated as a prefix, like <code>-S</code> or
+<code>--min</code>. Any line without this first word will be treated as no prefix.</p>
+</li>
+<li>
+<p>All defaults are placed inside <code>&lt;...&gt;</code>.</p>
+</li>
+<li>
+<p>First argument is the input argument type. <code>F</code> for “File,” “int,” “string” are unchanged.</p>
+</li>
+<li>
+<p>Optional: use the keyword <code>out</code> followed the type with a <code>,</code> comma separation to
+indicate if this argument is also an CWL output.</p>
+</li>
+<li>
+<p>Then, use <code>:</code> to separate keywords and default values, any non-space value after the <code>:</code>
+will be treated as the default value.</p>
+</li>
+<li>
+<p>If any argument has no default value, just a flag, like <code>--verbose</code>, there is no need to add any <code>&lt;...&gt;</code></p>
+</li>
+</ul>
+<h3 id="createparamfiles-function"><code>createParamFiles</code> Function</h3>
+<p><code>createParamFiles</code> function requires the <code>string</code> as defined above as an input.</p>
+<p>First of all, the function will print the three components of the <code>cwl</code> file:</p>
+<ul>
+<li><code>BaseCommand</code>: Specifies the program to execute.</li>
+<li><code>Inputs</code>: Defines the input parameters of the process.</li>
+<li><code>Outputs</code>: Defines the parameters representing the output of the process.</li>
+</ul>
+<p>The four component is the original command line.</p>
+<p>If in interactive mode, the function will verify that everything is correct and
+will ask you to proceed. Here, the user can answer “no” and provide more
+information at the string level. Another question is to save the param created here.</p>
+<p>If running the workflow in non-interactive mode, the <code>createParamFiles</code> function will
+consider “yes” and returning the container.</p>
+<pre><code class="language-r">cmd &lt;- createParamFiles(command, writeParamFiles = FALSE) 
+</code></pre>
+<pre><code>## *****BaseCommand*****
+## hisat2 
+## *****Inputs*****
+## S:
+##     type: File
+##     preF: -S
+##     yml: ./results/M1A.sam
+## x:
+##     type: File
+##     preF: -x
+##     yml: ./data/tair10.fasta
+## k:
+##     type: int
+##     preF: -k
+##     yml: 1
+## min-intronlen:
+##     type: int
+##     preF: -min-intronlen
+##     yml: 30
+## max-intronlen:
+##     type: int
+##     preF: -max-intronlen
+##     yml: 3000
+## threads:
+##     type: int
+##     preF: -threads
+##     yml: 4
+## U:
+##     type: File
+##     preF: -U
+##     yml: ./data/SRR446027_1.fastq.gz
+## *****Outputs*****
+## output1:
+##     type: File
+##     value: ./results/M1A.sam
+## *****Parsed raw command line*****
+## hisat2 -S ./results/M1A.sam -x ./data/tair10.fasta -k 1 -min-intronlen 30 -max-intronlen 3000 -threads 4 -U ./data/SRR446027_1.fastq.gz
+</code></pre>
+<p>If the user chooses not to save the <code>param</code> files on the above operation,
+it can use the <code>writeParamFiles</code> function.</p>
+<pre><code class="language-r">writeParamFiles(cmd, overwrite = TRUE)
+</code></pre>
+<h3 id="how-to-access-and-edit-param-files">How to access and edit param files</h3>
+<h4 id="print-a-component">Print a component</h4>
+<pre><code class="language-r">printParam(cmd, position = &quot;baseCommand&quot;) ## Print a baseCommand section
+</code></pre>
+<pre><code>## *****BaseCommand*****
+## hisat2
+</code></pre>
+<pre><code class="language-r">printParam(cmd, position = &quot;outputs&quot;)
+</code></pre>
+<pre><code>## *****Outputs*****
+## output1:
+##     type: File
+##     value: ./results/M1A.sam
+</code></pre>
+<pre><code class="language-r">printParam(cmd, position = &quot;inputs&quot;, index = 1:2) ## Print by index
+</code></pre>
+<pre><code>## *****Inputs*****
+## S:
+##     type: File
+##     preF: -S
+##     yml: ./results/M1A.sam
+## x:
+##     type: File
+##     preF: -x
+##     yml: ./data/tair10.fasta
+</code></pre>
+<pre><code class="language-r">printParam(cmd, position = &quot;inputs&quot;, index = -1:-2) ## Negative indexing printing to exclude certain indices in a position
+</code></pre>
+<pre><code>## *****Inputs*****
+## k:
+##     type: int
+##     preF: -k
+##     yml: 1
+## min-intronlen:
+##     type: int
+##     preF: -min-intronlen
+##     yml: 30
+## max-intronlen:
+##     type: int
+##     preF: -max-intronlen
+##     yml: 3000
+## threads:
+##     type: int
+##     preF: -threads
+##     yml: 4
+## U:
+##     type: File
+##     preF: -U
+##     yml: ./data/SRR446027_1.fastq.gz
+</code></pre>
+<h4 id="subsetting-the-command-line">Subsetting the command line</h4>
+<pre><code class="language-r">cmd2 &lt;- subsetParam(cmd, position = &quot;inputs&quot;, index = 1:2, trim = TRUE)
+</code></pre>
+<pre><code>## *****Inputs*****
+## S:
+##     type: File
+##     preF: -S
+##     yml: ./results/M1A.sam
+## x:
+##     type: File
+##     preF: -x
+##     yml: ./data/tair10.fasta
+## *****Parsed raw command line*****
+## hisat2 -S ./results/M1A.sam -x ./data/tair10.fasta
+</code></pre>
+<pre><code class="language-r">cmdlist(cmd2)
+</code></pre>
+<pre><code>## $defaultid
+## $defaultid$hisat2
+## [1] &quot;hisat2 -S ./results/M1A.sam -x ./data/tair10.fasta&quot;
+</code></pre>
+<pre><code class="language-r">cmd2 &lt;- subsetParam(cmd, position = &quot;inputs&quot;, index = c(&quot;S&quot;, &quot;x&quot;), trim = TRUE)
+</code></pre>
+<pre><code>## *****Inputs*****
+## S:
+##     type: File
+##     preF: -S
+##     yml: ./results/M1A.sam
+## x:
+##     type: File
+##     preF: -x
+##     yml: ./data/tair10.fasta
+## *****Parsed raw command line*****
+## hisat2 -S ./results/M1A.sam -x ./data/tair10.fasta
+</code></pre>
+<pre><code class="language-r">cmdlist(cmd2)
+</code></pre>
+<pre><code>## $defaultid
+## $defaultid$hisat2
+## [1] &quot;hisat2 -S ./results/M1A.sam -x ./data/tair10.fasta&quot;
+</code></pre>
+<h4 id="replacing-a-existing-argument-in-the-command-line">Replacing a existing argument in the command line</h4>
+<pre><code class="language-r">cmd3 &lt;- replaceParam(cmd, &quot;base&quot;, index = 1, replace = list(baseCommand = &quot;bwa&quot;))
+</code></pre>
+<pre><code>## Replacing baseCommand
+## *****BaseCommand*****
+## bwa 
+## *****Parsed raw command line*****
+## bwa -S ./results/M1A.sam -x ./data/tair10.fasta -k 1 -min-intronlen 30 -max-intronlen 3000 -threads 4 -U ./data/SRR446027_1.fastq.gz
+</code></pre>
+<pre><code class="language-r">cmdlist(cmd3)
+</code></pre>
+<pre><code>## $defaultid
+## $defaultid$hisat2
+## [1] &quot;bwa -S ./results/M1A.sam -x ./data/tair10.fasta -k 1 -min-intronlen 30 -max-intronlen 3000 -threads 4 -U ./data/SRR446027_1.fastq.gz&quot;
+</code></pre>
+<pre><code class="language-r">new_inputs &lt;- new_inputs &lt;- list(
+    &quot;new_input1&quot; = list(type = &quot;File&quot;, preF=&quot;-b&quot;, yml =&quot;myfile&quot;),
+    &quot;new_input2&quot; = &quot;-L &lt;int: 4&gt;&quot;
+)
+cmd4 &lt;- replaceParam(cmd, &quot;inputs&quot;, index = 1:2, replace = new_inputs)
+</code></pre>
+<pre><code>## Replacing inputs
+## *****Inputs*****
+## new_input1:
+##     type: File
+##     preF: -b
+##     yml: myfile
+## new_input2:
+##     type: int
+##     preF: -L
+##     yml: 4
+## k:
+##     type: int
+##     preF: -k
+##     yml: 1
+## min-intronlen:
+##     type: int
+##     preF: -min-intronlen
+##     yml: 30
+## max-intronlen:
+##     type: int
+##     preF: -max-intronlen
+##     yml: 3000
+## threads:
+##     type: int
+##     preF: -threads
+##     yml: 4
+## U:
+##     type: File
+##     preF: -U
+##     yml: ./data/SRR446027_1.fastq.gz
+## *****Parsed raw command line*****
+## hisat2 -b myfile -L 4 -k 1 -min-intronlen 30 -max-intronlen 3000 -threads 4 -U ./data/SRR446027_1.fastq.gz
+</code></pre>
+<pre><code class="language-r">cmdlist(cmd4)
+</code></pre>
+<pre><code>## $defaultid
+## $defaultid$hisat2
+## [1] &quot;hisat2 -b myfile -L 4 -k 1 -min-intronlen 30 -max-intronlen 3000 -threads 4 -U ./data/SRR446027_1.fastq.gz&quot;
+</code></pre>
+<h4 id="adding-new-arguments">Adding new arguments</h4>
+<pre><code class="language-r">newIn &lt;- new_inputs &lt;- list(
+    &quot;new_input1&quot; = list(type = &quot;File&quot;, preF=&quot;-b1&quot;, yml =&quot;myfile1&quot;),
+    &quot;new_input2&quot; = list(type = &quot;File&quot;, preF=&quot;-b2&quot;, yml =&quot;myfile2&quot;),
+    &quot;new_input3&quot; = &quot;-b3 &lt;F: myfile3&gt;&quot;
+)
+cmd5 &lt;- appendParam(cmd, &quot;inputs&quot;, index = 1:2, append = new_inputs)
+</code></pre>
+<pre><code>## Replacing inputs
+## *****Inputs*****
+## S:
+##     type: File
+##     preF: -S
+##     yml: ./results/M1A.sam
+## x:
+##     type: File
+##     preF: -x
+##     yml: ./data/tair10.fasta
+## k:
+##     type: int
+##     preF: -k
+##     yml: 1
+## min-intronlen:
+##     type: int
+##     preF: -min-intronlen
+##     yml: 30
+## max-intronlen:
+##     type: int
+##     preF: -max-intronlen
+##     yml: 3000
+## threads:
+##     type: int
+##     preF: -threads
+##     yml: 4
+## U:
+##     type: File
+##     preF: -U
+##     yml: ./data/SRR446027_1.fastq.gz
+## new_input1:
+##     type: File
+##     preF: -b1
+##     yml: myfile1
+## new_input2:
+##     type: File
+##     preF: -b2
+##     yml: myfile2
+## new_input3:
+##     type: File
+##     preF: -b3
+##     yml: myfile3
+## *****Parsed raw command line*****
+## hisat2 -S ./results/M1A.sam -x ./data/tair10.fasta -k 1 -min-intronlen 30 -max-intronlen 3000 -threads 4 -U ./data/SRR446027_1.fastq.gz -b1 myfile1 -b2 myfile2 -b3 myfile3
+</code></pre>
+<pre><code class="language-r">cmdlist(cmd5)
+</code></pre>
+<pre><code>## $defaultid
+## $defaultid$hisat2
+## [1] &quot;hisat2 -S ./results/M1A.sam -x ./data/tair10.fasta -k 1 -min-intronlen 30 -max-intronlen 3000 -threads 4 -U ./data/SRR446027_1.fastq.gz -b1 myfile1 -b2 myfile2 -b3 myfile3&quot;
+</code></pre>
+<pre><code class="language-r">cmd6 &lt;- appendParam(cmd, &quot;inputs&quot;, index = 1:2, after=0, append = new_inputs)
+</code></pre>
+<pre><code>## Replacing inputs
+## *****Inputs*****
+## new_input1:
+##     type: File
+##     preF: -b1
+##     yml: myfile1
+## new_input2:
+##     type: File
+##     preF: -b2
+##     yml: myfile2
+## new_input3:
+##     type: File
+##     preF: -b3
+##     yml: myfile3
+## S:
+##     type: File
+##     preF: -S
+##     yml: ./results/M1A.sam
+## x:
+##     type: File
+##     preF: -x
+##     yml: ./data/tair10.fasta
+## k:
+##     type: int
+##     preF: -k
+##     yml: 1
+## min-intronlen:
+##     type: int
+##     preF: -min-intronlen
+##     yml: 30
+## max-intronlen:
+##     type: int
+##     preF: -max-intronlen
+##     yml: 3000
+## threads:
+##     type: int
+##     preF: -threads
+##     yml: 4
+## U:
+##     type: File
+##     preF: -U
+##     yml: ./data/SRR446027_1.fastq.gz
+## *****Parsed raw command line*****
+## hisat2 -b1 myfile1 -b2 myfile2 -b3 myfile3 -S ./results/M1A.sam -x ./data/tair10.fasta -k 1 -min-intronlen 30 -max-intronlen 3000 -threads 4 -U ./data/SRR446027_1.fastq.gz
+</code></pre>
+<pre><code class="language-r">cmdlist(cmd6)
+</code></pre>
+<pre><code>## $defaultid
+## $defaultid$hisat2
+## [1] &quot;hisat2 -b1 myfile1 -b2 myfile2 -b3 myfile3 -S ./results/M1A.sam -x ./data/tair10.fasta -k 1 -min-intronlen 30 -max-intronlen 3000 -threads 4 -U ./data/SRR446027_1.fastq.gz&quot;
+</code></pre>
+<h4 id="editing-output-param">Editing <code>output</code> param</h4>
+<pre><code class="language-r">new_outs &lt;- list(
+    &quot;sam_out&quot; = &quot;&lt;F: $(inputs.results_path)/test.sam&gt;&quot;
+) 
+cmd7 &lt;- replaceParam(cmd, &quot;outputs&quot;, index = 1, replace = new_outs)
+</code></pre>
+<pre><code>## Replacing outputs
+## *****Outputs*****
+## sam_out:
+##     type: File
+##     value: $(inputs.results_path)/test.sam
+## *****Parsed raw command line*****
+## hisat2 -S ./results/M1A.sam -x ./data/tair10.fasta -k 1 -min-intronlen 30 -max-intronlen 3000 -threads 4 -U ./data/SRR446027_1.fastq.gz
+</code></pre>
+<pre><code class="language-r">output(cmd7) 
+</code></pre>
+<pre><code>## $defaultid
+## $defaultid$hisat2
+## [1] &quot;./results/test.sam&quot;
+</code></pre>
+<h2 id="version-information">Version information</h2>
+<pre><code class="language-r">sessionInfo()
+</code></pre>
+<pre><code>## R version 4.1.0 (2021-05-18)
+## Platform: x86_64-pc-linux-gnu (64-bit)
+## Running under: Debian GNU/Linux 10 (buster)
+## 
+## Matrix products: default
+## BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.8.0
+## LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.8.0
+## 
+## locale:
+##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+##  [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+##  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+##  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+## 
+## attached base packages:
+## [1] stats4    parallel  stats     graphics  grDevices utils     datasets 
+## [8] methods   base     
+## 
+## other attached packages:
+##  [1] systemPipeR_1.27.3          ShortRead_1.50.0           
+##  [3] GenomicAlignments_1.28.0    SummarizedExperiment_1.22.0
+##  [5] Biobase_2.52.0              MatrixGenerics_1.4.0       
+##  [7] matrixStats_0.58.0          BiocParallel_1.26.0        
+##  [9] Rsamtools_2.8.0             Biostrings_2.60.0          
+## [11] XVector_0.32.0              GenomicRanges_1.44.0       
+## [13] GenomeInfoDb_1.28.0         IRanges_2.26.0             
+## [15] S4Vectors_0.30.0            BiocGenerics_0.38.0        
+## 
+## loaded via a namespace (and not attached):
+##   [1] colorspace_2.0-1         rjson_0.2.20             hwriter_1.3.2           
+##   [4] ellipsis_0.3.2           bit64_4.0.5              AnnotationDbi_1.54.0    
+##   [7] fansi_0.4.2              splines_4.1.0            cachem_1.0.5            
+##  [10] knitr_1.33               jsonlite_1.7.2           annotate_1.70.0         
+##  [13] GO.db_3.13.0             dbplyr_2.1.1             png_0.1-7               
+##  [16] pheatmap_1.0.12          graph_1.70.0             compiler_4.1.0          
+##  [19] httr_1.4.2               GOstats_2.58.0           backports_1.2.1         
+##  [22] assertthat_0.2.1         Matrix_1.3-3             fastmap_1.1.0           
+##  [25] limma_3.48.0             htmltools_0.5.1.1        prettyunits_1.1.1       
+##  [28] tools_4.1.0              gtable_0.3.0             glue_1.4.2              
+##  [31] GenomeInfoDbData_1.2.6   Category_2.58.0          dplyr_1.0.6             
+##  [34] rsvg_2.1.2               batchtools_0.9.15        rappdirs_0.3.3          
+##  [37] V8_3.4.2                 Rcpp_1.0.6               jquerylib_0.1.4         
+##  [40] vctrs_0.3.8              blogdown_1.3             rtracklayer_1.52.0      
+##  [43] xfun_0.23                stringr_1.4.0            lifecycle_1.0.0         
+##  [46] restfulr_0.0.13          XML_3.99-0.6             edgeR_3.34.0            
+##  [49] zlibbioc_1.38.0          scales_1.1.1             BSgenome_1.60.0         
+##  [52] VariantAnnotation_1.38.0 hms_1.1.0                RBGL_1.68.0             
+##  [55] RColorBrewer_1.1-2       yaml_2.2.1               curl_4.3.1              
+##  [58] memoise_2.0.0            ggplot2_3.3.3            sass_0.4.0              
+##  [61] biomaRt_2.48.0           latticeExtra_0.6-29      stringi_1.6.2           
+##  [64] RSQLite_2.2.7            genefilter_1.74.0        BiocIO_1.2.0            
+##  [67] checkmate_2.0.0          GenomicFeatures_1.44.0   filelock_1.0.2          
+##  [70] DOT_0.1                  rlang_0.4.11             pkgconfig_2.0.3         
+##  [73] bitops_1.0-7             evaluate_0.14            lattice_0.20-44         
+##  [76] purrr_0.3.4              bit_4.0.4                tidyselect_1.1.1        
+##  [79] GSEABase_1.54.0          AnnotationForge_1.34.0   magrittr_2.0.1          
+##  [82] bookdown_0.22            R6_2.5.0                 generics_0.1.0          
+##  [85] base64url_1.4            DelayedArray_0.18.0      DBI_1.1.1               
+##  [88] withr_2.4.2              pillar_1.6.1             survival_3.2-11         
+##  [91] KEGGREST_1.32.0          RCurl_1.98-1.3           tibble_3.1.2            
+##  [94] crayon_1.4.1             utf8_1.2.1               BiocFileCache_2.0.0     
+##  [97] rmarkdown_2.8            jpeg_0.1-8.1             progress_1.2.2          
+## [100] locfit_1.5-9.4           grid_4.1.0               data.table_1.14.0       
+## [103] blob_1.2.1               Rgraphviz_2.36.0         digest_0.6.27           
+## [106] xtable_1.8-4             brew_1.0-6               munsell_0.5.0           
+## [109] bslib_0.2.5.1
+</code></pre>
+<h2 id="funding">Funding</h2>
+<p>This project is funded by NSF award <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1661152">ABI-1661152</a>.</p>
+<h2 id="references">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Amstutz2016-ka" class="csl-entry">
+<p>Amstutz, Peter, Michael R Crusoe, Nebojša Tijanić, Brad Chapman, John Chilton, Michael Heuer, Andrey Kartashov, et al. 2016. “Common Workflow Language, V1.0,” July. <a href="https://doi.org/10.6084/m9.figshare.3115156.v2">https://doi.org/10.6084/m9.figshare.3115156.v2</a>.</p>
+</div>
+</div>
+
+
+
+      </main>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2021 The GEN242 Instructors All Rights Reserved</small>
+        <small class="ml-1"><a href="https://www.ucr.edu/privacy.html" target="_blank">Privacy Policy</a></small>
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+<script>
+  (function() {
+    var i, text, code, codes = document.getElementsByTagName('code');
+    for (i = 0; i < codes.length;) {
+      code = codes[i];
+      if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+        text = code.textContent;
+        if (/^\$[^$]/.test(text) && /[^$]\$$/.test(text)) {
+          text = text.replace(/^\$/, '\\(').replace(/\$$/, '\\)');
+          code.textContent = text;
+        }
+        if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+            /^\$(.|\s)+\$$/.test(text) ||
+            /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+          code.outerHTML = code.innerHTML;  
+          continue;
+        }
+      }
+      i++;
+    }
+  })();
+</script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true,
+        processEnvironments: true
+    },
+    // Center justify equations in code and markdown cells. Elsewhere
+    // we use CSS to left justify single line equations in code cells.
+    displayAlign: 'center',
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}},
+        linebreaks: { automatic: true }
+    }
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="../../../js/main.min.f820bfc507c3ebefe17f8881ec4ee10013f3b89ad9555a50acf9bb1771e6823f.js" integrity="sha256-&#43;CC/xQfD6&#43;/hf4iB7E7hABPzuJrZVVpQrPm7F3Hmgj8=" crossorigin="anonymous"></script>
+
+
+
+<script src='../../../js/prism.js'></script>
+
+
+
+  </body>
+</html>

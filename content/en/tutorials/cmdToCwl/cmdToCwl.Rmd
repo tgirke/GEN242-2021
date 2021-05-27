@@ -19,7 +19,7 @@ bibliography: bibtex.bib
 
 <!---
 - Compile from command-line
-Rscript -e "rmarkdown::render('systemPipeR_CWL_SYSargs2.Rmd', c('html_document'), clean=FALSE); knitr::knit('systemPipeR_CWL_SYSargs2.Rmd', tangle=TRUE)"
+Rscript -e "rmarkdown::render('cmdToCwl.Rmd', c('html_document'), clean=FALSE); knitr::knit('cmdToCwl.Rmd', tangle=TRUE)"
 -->
 
 <div style="text-align: right"> 
