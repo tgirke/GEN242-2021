@@ -83,6 +83,7 @@ Source code downloads:    
 
 The following analyzes the ChIP-Seq data from Kaufman et al. (2010) using
 for peak calling MACS2 where the uninduced sample serves as input (reference).
+The details about all download steps are provided [here](https://girke.bioinformatics.ucr.edu/GEN242/assignments/projects/project_data/).
 
 Users want to extend this section to provide all background information relevant for this
 ChIP-Seq project.
