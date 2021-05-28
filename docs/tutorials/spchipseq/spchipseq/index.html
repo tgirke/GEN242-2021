@@ -18,24 +18,21 @@
 <link rel="icon" type="image/png" href="../../../favicons/android-192x192.png" sizes="192x192">
 
 <title>ChIP-Seq Workflow Template | GEN242</title><meta property="og:title" content="ChIP-Seq Workflow Template" />
-<meta property="og:description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .Rmd_old_version ]
- Introduction Users want to provide here background information about the design of their ChIP-Seq project." />
+<meta property="og:description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .html ] [ old version .Rmd ]" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/spchipseq/spchipseq/" />
-<meta property="article:modified_time" content="2021-05-28T13:30:05-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-05-28T13:32:39-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="ChIP-Seq Workflow Template">
-<meta itemprop="description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .Rmd_old_version ]
- Introduction Users want to provide here background information about the design of their ChIP-Seq project.">
-<meta itemprop="dateModified" content="2021-05-28T13:30:05-07:00" />
-<meta itemprop="wordCount" content="5186">
+<meta itemprop="description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .html ] [ old version .Rmd ]">
+<meta itemprop="dateModified" content="2021-05-28T13:32:39-07:00" />
+<meta itemprop="wordCount" content="5117">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="ChIP-Seq Workflow Template"/>
-<meta name="twitter:description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .Rmd_old_version ]
- Introduction Users want to provide here background information about the design of their ChIP-Seq project."/>
+<meta name="twitter:description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .html ] [ old version .Rmd ]"/>
 
 
 <script type="application/javascript">
@@ -943,7 +940,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.626c703a156543ebe22401763fa3611c.json"
+  data-offline-search-index-json-src="../../../offline-search-index.567d2d5862347e7fcc098e32e3799ae9.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -975,7 +972,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.626c703a156543ebe22401763fa3611c.json"
+  data-offline-search-index-json-src="../../../offline-search-index.567d2d5862347e7fcc098e32e3799ae9.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1205,20 +1202,12 @@ if (!doNotTrack) {
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a>
+    <li>
       <ul>
-        <li><a href="#background-and-objectives">Background and objectives</a></li>
         <li><a href="#experimental-design">Experimental design</a></li>
         <li><a href="#workflow-environment">Workflow environment</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li><a href="#experimental-design-1">Experimental design</a></li>
-  </ul>
-
-  <ul>
     <li><a href="#load-packages">Load packages</a></li>
     <li><a href="#import-custom-functions">Import custom functions</a></li>
     <li><a href="#generate-workflow-environment">Generate workflow environment</a></li>
@@ -1345,13 +1334,14 @@ document.addEventListener("DOMContentLoaded", function() {
 <div style="text-align: right">
 <p>Source code downloads:    
 [ <a href="https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/spchipseq/spchipseq.Rmd">.Rmd</a> ]    
-[ <a href="https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/spchipseq/back_spchipseq_rmd">.Rmd_old_version</a> ]</p>
+[ <a href="http://cluster.hpcc.ucr.edu/~ttest/chipseq/systemPipeChIPseq.html">.html</a> ]    
+[ <a href="https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/spchipseq/back_spchipseq_rmd">old version .Rmd</a> ]</p>
 </div>
-<h2 id="introduction">Introduction</h2>
-<p>Users want to provide here background information about the design of their ChIP-Seq project.</p>
-<h3 id="background-and-objectives">Background and objectives</h3>
-<p>This report describes the analysis of several ChIP-Seq experiments
-studying the DNA binding patterns of the transcriptions factors … from <em>organism</em> ….</p>
+<h1 id="introduction">Introduction</h1>
+<p>The following analyzes the ChIP-Seq data from Kaufman et al. (2010) using
+for peak calling MACS2 where the uninduced sample serves as input (reference).</p>
+<p>Users want to extend this section to provide all background information relevant for this
+ChIP-Seq project.</p>
 <h3 id="experimental-design">Experimental design</h3>
 <p>Typically, users want to specify here all information relevant for the
 analysis of their NGS study. This includes detailed descriptions of
@@ -1403,17 +1393,6 @@ Subsequently, the workflow can be run as outlined below. For learning purposes i
 understood and possibly modified to custom needs, one can run the workflow from start to finish with a single command using <code>rmarkdown::render()</code> or <code>runWF()</code>.</p>
 </li>
 </ol>
-<h1 id="introduction-1">Introduction</h1>
-<p>The following analyzes the ChIP-Seq data from Kaufman et al. (2010) using
-for peak calling MACS2 where the uninduced sample serves as input (reference).</p>
-<p>Users want to extend this section to provide all background information relevant for this
-ChIP-Seq project.</p>
-<h2 id="experimental-design-1">Experimental design</h2>
-<p>Typically, users want to specify here all information relevant for the
-analysis of their NGS study. This includes detailed descriptions of
-FASTQ files, experimental design, reference genome, gene annotations,
-etc.</p>
-<h1 id="workflow-environment-1">Workflow environment</h1>
 <h2 id="load-packages">Load packages</h2>
 <p>The <code>systemPipeR</code> package needs to be loaded to perform the analysis
 steps shown in this report (H Backman and Girke 2016). The package allows users
@@ -1947,7 +1926,7 @@ Health (NIH) and the National Science Foundation (NSF).</p>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-28: <a  href="https://github.com/tgirke/GEN242//commit/c469d5154f1f4f68a584051e246e77462438ad3f">some edits (c469d5154)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-28: <a  href="https://github.com/tgirke/GEN242//commit/387a5194d40a696b2c91b8a53591694b8a5a7dd2">some edits (387a5194d)</a>
 </div>
 </div>
 

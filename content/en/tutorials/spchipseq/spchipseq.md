@@ -74,18 +74,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
 Source code downloads:    
 \[ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/spchipseq/spchipseq.Rmd) \]    
-\[ [.Rmd\_old\_version](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/spchipseq/back_spchipseq_rmd) \]
+\[ [.html](http://cluster.hpcc.ucr.edu/~ttest/chipseq/systemPipeChIPseq.html) \]    
+\[ [old version .Rmd](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/spchipseq/back_spchipseq_rmd) \]
 
 </div>
 
-## Introduction
+# Introduction
 
-Users want to provide here background information about the design of their ChIP-Seq project.
+The following analyzes the ChIP-Seq data from Kaufman et al. (2010) using
+for peak calling MACS2 where the uninduced sample serves as input (reference).
 
-### Background and objectives
-
-This report describes the analysis of several ChIP-Seq experiments
-studying the DNA binding patterns of the transcriptions factors … from *organism* ….
+Users want to extend this section to provide all background information relevant for this
+ChIP-Seq project.
 
 ### Experimental design
 
@@ -142,23 +142,6 @@ setwd("chipseq")
 4.  Now one can open from the root directory of the workflow the corresponding R Markdown script (*e.g.* systemPipeChIPseq.Rmd) using an R IDE, such as *nvim-r*, *ESS* or RStudio.
     Subsequently, the workflow can be run as outlined below. For learning purposes it is recommended to run workflows for the first time interactively. Once all workflow steps are
     understood and possibly modified to custom needs, one can run the workflow from start to finish with a single command using `rmarkdown::render()` or `runWF()`.
-
-# Introduction
-
-The following analyzes the ChIP-Seq data from Kaufman et al. (2010) using
-for peak calling MACS2 where the uninduced sample serves as input (reference).
-
-Users want to extend this section to provide all background information relevant for this
-ChIP-Seq project.
-
-## Experimental design
-
-Typically, users want to specify here all information relevant for the
-analysis of their NGS study. This includes detailed descriptions of
-FASTQ files, experimental design, reference genome, gene annotations,
-etc.
-
-# Workflow environment
 
 ## Load packages
 
