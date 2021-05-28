@@ -171,6 +171,8 @@ source("challengeProject_Fct.R")
 ### Experiment definition provided by `targets` file
 
 The `targets` file defines all FASTQ files and sample comparisons of the analysis workflow.
+If needed the tab separated (TSV) version of this file can be downloaded from [here](https://github.com/tgirke/GEN242/tree/main/content/en/assignments/Projects/targets_files)
+and the corresponding Google Sheet is [here](https://docs.google.com/spreadsheets/d/1w9V3JDOsXR8qW_qNqoXO0E0UR_Oev4k7-o2y6NMDTt8/edit#gid=472150521).
 
 ``` r
 targetspath <- "targets_chipseq.txt"

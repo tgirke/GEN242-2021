@@ -21,11 +21,11 @@
 <meta property="og:description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .html ] [ old version .Rmd ]" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/spchipseq/spchipseq/" />
-<meta property="article:modified_time" content="2021-05-28T13:40:00-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-05-28T13:50:28-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="ChIP-Seq Workflow Template">
 <meta itemprop="description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .html ] [ old version .Rmd ]">
-<meta itemprop="dateModified" content="2021-05-28T13:40:00-07:00" />
-<meta itemprop="wordCount" content="4914">
+<meta itemprop="dateModified" content="2021-05-28T13:50:28-07:00" />
+<meta itemprop="wordCount" content="4936">
 
 
 
@@ -940,7 +940,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.41da8bbbaad4ba733afbbde908f4c64a.json"
+  data-offline-search-index-json-src="../../../offline-search-index.efc3b26ea825d360dbfdcc314943f128.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -972,7 +972,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.41da8bbbaad4ba733afbbde908f4c64a.json"
+  data-offline-search-index-json-src="../../../offline-search-index.efc3b26ea825d360dbfdcc314943f128.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1419,7 +1419,9 @@ custom R package.</p>
 </code></pre>
 <h2 id="read-preprocessing">Read preprocessing</h2>
 <h3 id="experiment-definition-provided-by-targets-file">Experiment definition provided by <code>targets</code> file</h3>
-<p>The <code>targets</code> file defines all FASTQ files and sample comparisons of the analysis workflow.</p>
+<p>The <code>targets</code> file defines all FASTQ files and sample comparisons of the analysis workflow.
+If needed the tab separated (TSV) version of this file can be downloaded from <a href="https://github.com/tgirke/GEN242/tree/main/content/en/assignments/Projects/targets_files">here</a>
+and the corresponding Google Sheet is <a href="https://docs.google.com/spreadsheets/d/1w9V3JDOsXR8qW_qNqoXO0E0UR_Oev4k7-o2y6NMDTt8/edit#gid=472150521">here</a>.</p>
 <pre><code class="language-r">targetspath &lt;- &quot;targets_chipseq.txt&quot;
 targets &lt;- read.delim(targetspath, comment.char = &quot;#&quot;)
 DT::datatable(targets)
@@ -1909,7 +1911,7 @@ Health (NIH) and the National Science Foundation (NSF).</p>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-28: <a  href="https://github.com/tgirke/GEN242//commit/1a9e619084096a3ce6567f3b450d6bad248ad65f">some edits (1a9e61908)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-28: <a  href="https://github.com/tgirke/GEN242//commit/2dd5dc5c8dd0517d51adc176bb1820b2db5b45c3">some edits (2dd5dc5c8)</a>
 </div>
 </div>
 
