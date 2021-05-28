@@ -18,21 +18,24 @@
 <link rel="icon" type="image/png" href="../../../favicons/android-192x192.png" sizes="192x192">
 
 <title>ChIP-Seq Workflow Template | GEN242</title><meta property="og:title" content="ChIP-Seq Workflow Template" />
-<meta property="og:description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Introduction The following analyzes the ChIP-Seq data from Kaufman et al. (2010) using for peak calling MACS2 where the uninduced sample serves as input (reference)." />
+<meta property="og:description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .Rmd_old_version ]
+ Introduction Users want to provide here background information about the design of their ChIP-Seq project." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/spchipseq/spchipseq/" />
-<meta property="article:modified_time" content="2021-05-25T13:21:43-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-05-28T13:18:47-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="ChIP-Seq Workflow Template">
-<meta itemprop="description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Introduction The following analyzes the ChIP-Seq data from Kaufman et al. (2010) using for peak calling MACS2 where the uninduced sample serves as input (reference).">
-<meta itemprop="dateModified" content="2021-05-25T13:21:43-07:00" />
-<meta itemprop="wordCount" content="4764">
+<meta itemprop="description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .Rmd_old_version ]
+ Introduction Users want to provide here background information about the design of their ChIP-Seq project.">
+<meta itemprop="dateModified" content="2021-05-28T13:18:47-07:00" />
+<meta itemprop="wordCount" content="5186">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="ChIP-Seq Workflow Template"/>
-<meta name="twitter:description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Introduction The following analyzes the ChIP-Seq data from Kaufman et al. (2010) using for peak calling MACS2 where the uninduced sample serves as input (reference)."/>
+<meta name="twitter:description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .Rmd_old_version ]
+ Introduction Users want to provide here background information about the design of their ChIP-Seq project."/>
 
 
 <script type="application/javascript">
@@ -940,7 +943,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.d11a5e8cd7dbc9b7f675ead30b97774b.json"
+  data-offline-search-index-json-src="../../../offline-search-index.b04f1ca08ff86555e33aa7f037e62cd0.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -972,7 +975,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.d11a5e8cd7dbc9b7f675ead30b97774b.json"
+  data-offline-search-index-json-src="../../../offline-search-index.b04f1ca08ff86555e33aa7f037e62cd0.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1202,7 +1205,17 @@ if (!doNotTrack) {
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#experimental-design">Experimental design</a></li>
+    <li><a href="#introduction">Introduction</a>
+      <ul>
+        <li><a href="#background-and-objectives">Background and objectives</a></li>
+        <li><a href="#experimental-design">Experimental design</a></li>
+        <li><a href="#workflow-environment">Workflow environment</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#experimental-design-1">Experimental design</a></li>
   </ul>
 
   <ul>
@@ -1275,7 +1288,7 @@ if (!doNotTrack) {
 	<h1>ChIP-Seq Workflow Template</h1>
     
 	
-        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 23 minute read</p>
+        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 25 minute read</p>
            
 	<script src="../../../rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
 <script src="../../../rmarkdown-libs/jquery/jquery.min.js"></script>
@@ -1329,17 +1342,78 @@ document.addEventListener("DOMContentLoaded", function() {
       links[i].target = '_blank';
 });
 </script>
-<h1 id="introduction">Introduction</h1>
-<p>The following analyzes the ChIP-Seq data from Kaufman et al. (2010) using
-for peak calling MACS2 where the uninduced sample serves as input (reference).</p>
-<p>Users want to extend this section to provide all background information relevant for this
-ChIP-Seq project.</p>
-<h2 id="experimental-design">Experimental design</h2>
+<div style="text-align: right">
+<p>Source code downloads:    
+[ <a href="https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/spchipseq/spchipseq.Rmd">.Rmd</a> ]    
+[ <a href="https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/spchipseq/back_spchipseq_rmd">.Rmd_old_version</a> ]</p>
+</div>
+<h2 id="introduction">Introduction</h2>
+<p>Users want to provide here background information about the design of their ChIP-Seq project.</p>
+<h3 id="background-and-objectives">Background and objectives</h3>
+<p>This report describes the analysis of several ChIP-Seq experiments
+studying the DNA binding patterns of the transcriptions factors … from <em>organism</em> ….</p>
+<h3 id="experimental-design">Experimental design</h3>
 <p>Typically, users want to specify here all information relevant for the
 analysis of their NGS study. This includes detailed descriptions of
 FASTQ files, experimental design, reference genome, gene annotations,
 etc.</p>
-<h1 id="workflow-environment">Workflow environment</h1>
+<h3 id="workflow-environment">Workflow environment</h3>
+<p><font color="red">NOTE: this section</font> describes how to set up the proper environment (directory structure) for running
+<code>systemPipeR</code> workflows. After mastering this task the workflow run instructions <font color="red">can be deleted</font> since they are not expected
+to be included in a final HTML/PDF report of a workflow.</p>
+<ol>
+<li>
+<p>If a remote system or cluster is used, then users need to log in to the
+remote system first. The following applies to an HPC cluster (<em>e.g.</em> HPCC
+cluster).</p>
+<p>A terminal application needs to be used to log in to a user’s cluster account. Next, one
+can open an interactive session on a computer node with <code>srun</code>. More details about
+argument settings for <code>srun</code> are available in this <a href="http://hpcc.ucr.edu/manuals_linux-cluster_jobs.html#partitions">HPCC
+manual</a> or
+the HPCC section of this website
+<a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/linux/linux/#job-submission-with-sbatch">here</a>.
+Next, load the R version required for running the workflow with <code>module load</code>. Sometimes it may be necessary to
+first unload an active software version before loading another version, <em>e.g.</em> <code>module unload R</code>.</p>
+</li>
+</ol>
+<pre><code class="language-sh">srun --x11 --partition=short --mem=8gb --cpus-per-task 4 --ntasks 1 --time 2:00:00 --pty bash -l
+module unload R; module load R/4.0.3_gcc-8.3.0
+</code></pre>
+<ol start="2">
+<li>Load a workflow template with the <code>genWorkenvir</code> function. This can be done from the command-line or from within R.
+However, only one of the two options needs to be used.</li>
+</ol>
+<p>From command-line</p>
+<pre><code class="language-sh">$ Rscript -e &quot;systemPipeRdata::genWorkenvir(workflow='chipseq')&quot;
+$ cd chipseq
+</code></pre>
+<p>From R</p>
+<pre><code class="language-r">library(systemPipeRdata)
+genWorkenvir(workflow = &quot;chipseq&quot;)
+setwd(&quot;chipseq&quot;)
+</code></pre>
+<ol start="3">
+<li>
+<p>Optional: if the user wishes to use another <code>Rmd</code> file than the template instance provided by the <code>genWorkenvir</code> function, then it can be copied or downloaded
+into the root directory of the workflow environment (<em>e.g.</em> with <code>cp</code> or <code>wget</code>).</p>
+</li>
+<li>
+<p>Now one can open from the root directory of the workflow the corresponding R Markdown script (<em>e.g.</em> systemPipeChIPseq.Rmd) using an R IDE, such as <em>nvim-r</em>, <em>ESS</em> or RStudio.
+Subsequently, the workflow can be run as outlined below. For learning purposes it is recommended to run workflows for the first time interactively. Once all workflow steps are
+understood and possibly modified to custom needs, one can run the workflow from start to finish with a single command using <code>rmarkdown::render()</code> or <code>runWF()</code>.</p>
+</li>
+</ol>
+<h1 id="introduction-1">Introduction</h1>
+<p>The following analyzes the ChIP-Seq data from Kaufman et al. (2010) using
+for peak calling MACS2 where the uninduced sample serves as input (reference).</p>
+<p>Users want to extend this section to provide all background information relevant for this
+ChIP-Seq project.</p>
+<h2 id="experimental-design-1">Experimental design</h2>
+<p>Typically, users want to specify here all information relevant for the
+analysis of their NGS study. This includes detailed descriptions of
+FASTQ files, experimental design, reference genome, gene annotations,
+etc.</p>
+<h1 id="workflow-environment-1">Workflow environment</h1>
 <h2 id="load-packages">Load packages</h2>
 <p>The <code>systemPipeR</code> package needs to be loaded to perform the analysis
 steps shown in this report (H Backman and Girke 2016). The package allows users
@@ -1873,7 +1947,7 @@ Health (NIH) and the National Science Foundation (NSF).</p>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-25: <a  href="https://github.com/tgirke/GEN242//commit/cd151105e974cbecb2564eabc91b07af69160339">some edits (cd151105e)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-28: <a  href="https://github.com/tgirke/GEN242//commit/12321aabec5bc86fe92f162d220e767bab056bf7">some edits (12321aabe)</a>
 </div>
 </div>
 

@@ -55,6 +55,78 @@ suppressPackageStartupMessages({
 })
 ```
 
+<div style="text-align: right"> 
+Source code downloads: &nbsp; &nbsp;
+[ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/spchipseq/spchipseq.Rmd) ] &nbsp; &nbsp; 
+[ [.Rmd_old_version](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/spchipseq/back_spchipseq_rmd) ]
+</div>
+
+
+## Introduction
+
+Users want to provide here background information about the design of their ChIP-Seq project.
+
+### Background and objectives
+
+This report describes the analysis of several ChIP-Seq experiments
+studying the DNA binding patterns of the transcriptions factors ... from *organism* ....
+
+### Experimental design
+
+Typically, users want to specify here all information relevant for the
+analysis of their NGS study. This includes detailed descriptions of
+FASTQ files, experimental design, reference genome, gene annotations,
+etc.
+
+### Workflow environment
+
+<font color="red">NOTE: this section</font> describes how to set up the proper environment (directory structure) for running 
+`systemPipeR` workflows. After mastering this task the workflow run instructions <font color="red">can be deleted</font> since they are not expected
+to be included in a final HTML/PDF report of a workflow.
+
+1. If a remote system or cluster is used, then users need to log in to the
+   remote system first. The following applies to an HPC cluster (_e.g._ HPCC
+   cluster). 
+
+   A terminal application needs to be used to log in to a user's cluster account. Next, one
+   can open an interactive session on a computer node with `srun`. More details about
+   argument settings for `srun` are available in this [HPCC
+   manual](http://hpcc.ucr.edu/manuals_linux-cluster_jobs.html#partitions) or
+   the HPCC section of this website
+   [here](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/linux/linux/#job-submission-with-sbatch).
+   Next, load the R version required for running the workflow with `module load`. Sometimes it may be necessary to
+   first unload an active software version before loading another version, _e.g._ `module unload R`.
+
+```sh
+srun --x11 --partition=short --mem=8gb --cpus-per-task 4 --ntasks 1 --time 2:00:00 --pty bash -l
+module unload R; module load R/4.0.3_gcc-8.3.0
+```
+
+2. Load a workflow template with the `genWorkenvir` function. This can be done from the command-line or from within R. 
+   However, only one of the two options needs to be used.
+
+From command-line
+
+```sh
+$ Rscript -e "systemPipeRdata::genWorkenvir(workflow='chipseq')"
+$ cd chipseq
+```
+
+From R
+
+```{r gen_workflow_envir, eval=FALSE}
+library(systemPipeRdata)
+genWorkenvir(workflow="chipseq")
+setwd("chipseq")
+```
+
+3. Optional: if the user wishes to use another `Rmd` file than the template instance provided by the `genWorkenvir` function, then it can be copied or downloaded 
+   into the root directory of the workflow environment (_e.g._ with `cp` or `wget`).
+
+4. Now one can open from the root directory of the workflow the corresponding R Markdown script (_e.g._ systemPipeChIPseq.Rmd) using an R IDE, such as _nvim-r_, _ESS_ or RStudio. 
+   Subsequently, the workflow can be run as outlined below. For learning purposes it is recommended to run workflows for the first time interactively. Once all workflow steps are 
+   understood and possibly modified to custom needs, one can run the workflow from start to finish with a single command using `rmarkdown::render()` or `runWF()`.
+
 # Introduction
 
 The following analyzes the ChIP-Seq data from Kaufman et al. [-@Kaufmann2010-me] using 
