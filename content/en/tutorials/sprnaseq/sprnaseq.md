@@ -742,7 +742,7 @@ goBarplot(gos, gocat = "CC")
 dev.off()
 ```
 
-![](results/GOslimbarplotMF.png)
+![](../results/GOslimbarplotMF.png)
 
 <div align="center">
 

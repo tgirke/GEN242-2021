@@ -578,7 +578,7 @@ png("results/GOslimbarplotBP.png"); goBarplot(gos, gocat="BP"); dev.off()
 png("results/GOslimbarplotCC.png"); goBarplot(gos, gocat="CC"); dev.off()
 ```
 
-![](results/GOslimbarplotMF.png)
+![](../results/GOslimbarplotMF.png)
 <div align="center">Figure 5: GO Slim Barplot for MF Ontology</div></br>
 
 ## Clustering and heat maps
