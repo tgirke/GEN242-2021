@@ -269,8 +269,8 @@ can be run with the *`runCommandline`* function.
 The execution will be on a single machine without submitting to a queuing system 
 of a computer cluster. This way, the input FASTQ files will be processed sequentially. 
 By default *`runCommandline`* auto detects SAM file outputs and converts them 
-to sorted and indexed BAM files, using internally the `Rsamtools` package 
-[@Rsamtools]. Besides, *`runCommandline`* allows the user to create a dedicated
+to sorted and indexed BAM files, using internally the `Rsamtools` package.
+Besides, *`runCommandline`* allows the user to create a dedicated
 results folder for each workflow and a sub-folder for each sample 
 defined in the *targets* file. This includes all the output and log files for each 
 step. When these options are used, the output location will be updated by default 
