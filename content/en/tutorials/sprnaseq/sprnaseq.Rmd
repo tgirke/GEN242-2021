@@ -1,6 +1,6 @@
 ---
 title: "RNA-Seq Workflow Template" 
-author: "Author: Daniela Cassol, Le Zhang and Thomas Girke"
+author: "Author: Daniela Cassol (danielac@ucr.edu) and Thomas Girke (thomas.girke@ucr.edu)"
 date: "Last update: `r format(Sys.time(), '%d %B, %Y')`" 
 output:
   BiocStyle::html_document:
@@ -56,40 +56,25 @@ suppressPackageStartupMessages({
 
 <div style="text-align: right"> 
 Source code downloads: &nbsp; &nbsp;
-[ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/sprnaseq/sprnaseq.Rmd) ] &nbsp; &nbsp; 
-[ [.R](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/sprnaseq/sprnaseq.R) ]
+[ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/sprnsseq/sprnaseq.Rmd) ] &nbsp; &nbsp; 
+[ [.html](http://cluster.hpcc.ucr.edu/~ttest/rnaseq/systemPipeRNAseq.html) ] &nbsp; &nbsp; 
+[ [old version .Rmd](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/sprnaseq/back_sprnaseq_rmd) ]
 </div>
-
 
 
 ## Introduction
 
-Users want to provide here background information about the design of their ChIP-Seq project.
+This report describes the analysis of the RNA-Seq data set from 
+Howard et al [-@Howard2013-fq]. The corresponding FASTQ files were downloaded from
+GEO (Accession: [SRP010938](http://www.ncbi.nlm.nih.gov/sra/?term=SRP010938)).
+This data set contains 18 paired-end (PE) read sets from *Arabidposis thaliana*. 
+The details about all download steps are provided [here](https://girke.bioinformatics.ucr.edu/GEN242/assignments/projects/project_data/). 
 
-### Background and objectives
 
-This report describes the analysis of several ChIP-Seq experiments
-studying the DNA binding patterns of the transcriptions factors ... from *organism* ....
+Users want to provide here additional background information about the design of their 
+RNA-Seq project.
 
-### Experimental design
-
-Typically, users want to specify here all information relevant for the
-analysis of their NGS study. This includes detailed descriptions of
-FASTQ files, experimental design, reference genome, gene annotations,
-etc.
-
-Note: the mini sample FASTQ files (toy data set) used by this report as well as the associated reference genome files
-are loaded below via the `genWorkenvir` function from the `systemPipeRdata` package. 
-The chosen data set [SRP010938](http://www.ncbi.nlm.nih.gov/sra/?term=SRP010938)
-contains 18 paired-end (PE) read sets from *Arabidposis thaliana*
-[@Howard2013-fq]. To minimize processing time during testing, each FASTQ
-file has been subsetted to 90,000-100,000 randomly sampled PE reads that
-map to the first 100,000 nucleotides of each chromosome of the *A.
-thalina* genome. The corresponding reference genome sequence (FASTA) and
-its GFF annotation files have been truncated accordingly. This way the entire 
-test sample data set is less than 200MB in storage space. A PE read set has been
-chosen for this test data set for flexibility, because it can be used for testing both types
-of analysis routines requiring either SE (single end) reads or PE reads.
+## Samples and environment settings
 
 ### Workflow environment
 
@@ -141,6 +126,15 @@ setwd("rnaseq")
    understood and possibly modified to custom needs, one can run the workflow from start to finish with a single command using `rmarkdown::render()` or `runWF()`.
 
 
+### Environment settings and input data
+
+Typically, the user wants to record here the sources and versions of the
+reference genome sequence along with the corresponding annotations. In
+the provided sample data set all data inputs are stored in a `data`
+subdirectory and all results will be written to a separate `results` directory,
+while the `systemPipeRNAseq.Rmd` script and the `targets` file are expected to be 
+located in the parent directory. The R session is expected to run from this parent directory.
+
 ### Required packages and resources
 
 The `systemPipeR` package needs to be loaded to perform the analysis steps shown in
@@ -165,19 +159,20 @@ command from a local R script (here `custom_Fct.R`).  Skip this step if such a
 script is not available.  Alternatively, these functions can be loaded from a
 custom R package. 
 
-```{r load_custom_fct, eval=FALSE, message=FALSE}
-source("custom_Fct.R")
+```{r load_custom_fct, eval=TRUE, message=FALSE}
+source("challengeProject_Fct.R")
 ```
 
 ### Experiment definition provided by `targets` file
 
-The `targets` file defines all FASTQ files and sample
-comparisons of the analysis workflow.
+The `targets` file defines all FASTQ files and sample comparisons of the analysis workflow.
+If needed the tab separated (TSV) version of this file can be downloaded from [here](https://github.com/tgirke/GEN242/tree/main/content/en/assignments/Projects/targets_files)
+and the corresponding Google Sheet is [here](https://docs.google.com/spreadsheets/d/1DTgTGlZZscSPjlHOGdJC8QK4vvimN1BORjXKXzd_cfA/edit#gid=472150521).
 
-```{r load_targets, eval=TRUE}
-targetspath <- system.file("extdata", "targetsPE.txt", package="systemPipeR")
-targets <- read.delim(targetspath, comment.char = "#")[,1:4]
-targets
+```{r load_targets_file, eval=TRUE}
+targetspath <- "targetsPE.txt"
+targets <- read.delim(targetspath, comment.char = "#")
+DT::datatable(targets)
 ```
 
 ## Read preprocessing
@@ -199,7 +194,7 @@ trimmed FASTQ files.
 Construct _`SYSargs2`_ object from _`cwl`_ and _`yml`_ param and _`targets`_ files.
 
 ```{r construct_SYSargs2_trim-se, eval=FALSE}
-dir_path <- system.file("extdata/cwl/preprocessReads/trim-pe", package="systemPipeR")
+dir_path <- "param/cwl/preprocessReads/trim-pe"
 trim <- loadWorkflow(targets=targetspath, wf_file="trim-pe.cwl", input_file="trim-pe.yml", dir_path=dir_path)
 trim <- renderWF(trim, inputvars=c(FileName1="_FASTQ_PATH1_", FileName2="_FASTQ_PATH2_", SampleName="_SampleName_"))
 trim
@@ -224,7 +219,7 @@ written to a PDF file named `fastqReport.pdf`.
 
 ```{r fastq_report, eval=FALSE}
 fqlist <- seeFastq(fastq=infile1(trim), batchsize=10000, klength=8)
-pdf("./results/fastqReport.pdf", height=18, width=4*length(fqlist))
+png("./results/fastqReport.png", height=18*96, width=4*96*length(fqlist))
 seeFastqPlot(fqlist)
 dev.off()
 ``` 
@@ -243,13 +238,13 @@ queuing systems of clusters using the _`systemPipeR's`_ new CWL command-line int
 Build `Hisat2` index.
 
 ```{r hisat_index, eval=FALSE}
-dir_path <- system.file("extdata/cwl/hisat2/hisat2-idx", package="systemPipeR")
+dir_path <- "param/cwl/hisat2/hisat2-idx"
 idx <- loadWorkflow(targets=NULL, wf_file="hisat2-index.cwl", input_file="hisat2-index.yml", dir_path=dir_path)
 idx <- renderWF(idx)
 idx
 cmdlist(idx)
 
-### Run 
+## Run 
 runCommandline(idx, make_bam = FALSE)
 ```
 
@@ -258,7 +253,7 @@ and `hisat2-mapping-se.yml` files. The following shows how to construct the
 corresponding *SYSargs2* object, here *args*.
 
 ```{r hisat_SYSargs2_object, eval=TRUE}
-dir_path <- system.file("extdata/cwl/hisat2/hisat2-pe", package="systemPipeR")
+dir_path <- "param/cwl/hisat2/hisat2-pe"
 args <- loadWorkflow(targets=targetspath, wf_file="hisat2-mapping-pe.cwl", 
                      input_file="hisat2-mapping-pe.yml", dir_path=dir_path)
 args <- renderWF(args, inputvars=c(FileName1="_FASTQ_PATH1_", FileName2="_FASTQ_PATH2_", SampleName="_SampleName_"))
@@ -267,21 +262,22 @@ cmdlist(args)[1:2]
 output(args)[1:2]
 ```
 
-#### Interactive job submissions in a single machine
+#### Interactive job submissions on a single machine
 
 To simplify the short read alignment execution for the user, the command-line 
 can be run with the *`runCommandline`* function.
 The execution will be on a single machine without submitting to a queuing system 
 of a computer cluster. This way, the input FASTQ files will be processed sequentially. 
 By default *`runCommandline`* auto detects SAM file outputs and converts them 
-to sorted and indexed BAM files, using internally the `Rsamtools` package. Besides, *`runCommandline`* allows the user to create a dedicated
+to sorted and indexed BAM files, using internally the `Rsamtools` package 
+[@Rsamtools]. Besides, *`runCommandline`* allows the user to create a dedicated
 results folder for each workflow and a sub-folder for each sample 
 defined in the *targets* file. This includes all the output and log files for each 
 step. When these options are used, the output location will be updated by default 
 and can be assigned to the same object.
 
 ```{r hisat_SYSargs2_singleM, eval=FALSE}
-### Run single Machine
+## Run single Machine
 args <- runCommandline(args)
 ```
 
@@ -362,8 +358,7 @@ symLink2bam(sysargs=args, htmldir=c("~/.html/", "somedir/"),
 Reads overlapping with annotation ranges of interest are counted for
 each sample using the `summarizeOverlaps` function [@Lawrence2013-kt]. The read counting is
 preformed for exonic gene regions in a non-strand-specific manner while
-ignoring overlaps among different genes. If the corresponding bam files were generated from
-paired end reads, then `singleEnd` should be set to `FALSE`. Subsequently, the expression
+ignoring overlaps among different genes. Subsequently, the expression
 count values are normalized by *reads per kp per million mapped reads*
 (RPKM). The raw read count table (`countDFeByg.xls`) and the corresponding 
 RPKM table (`rpkmDFeByg.xls`) are written to separate files in the directory of this project. Parallelization is achieved with the `BiocParallel` package, here using 8 CPU cores.
@@ -374,14 +369,14 @@ txdb <- makeTxDbFromGFF(file="data/tair10.gff", format="gff", dataSource="TAIR",
 saveDb(txdb, file="./data/tair10.sqlite")
 txdb <- loadDb("./data/tair10.sqlite")
 outpaths <- subsetWF(args, slot="output", subset=1, index=1)
-(align <- readGAlignments(outpaths[1])) # Demonstrates how to read bam file into R
+# (align <- readGAlignments(outpaths[1])) # Demonstrates how to read bam file into R
 eByg <- exonsBy(txdb, by=c("gene"))
 bfl <- BamFileList(outpaths, yieldSize=50000, index=character())
-multicoreParam <- MulticoreParam(workers=2); register(multicoreParam); registered()
+multicoreParam <- MulticoreParam(workers=4); register(multicoreParam); registered()
 counteByg <- bplapply(bfl, function(x) summarizeOverlaps(eByg, x, mode="Union", 
-                                                         ignore.strand=TRUE, 
-                                                         inter.feature=FALSE, 
-                                                         singleEnd=TRUE)) 
+                                               ignore.strand=TRUE, 
+                                               inter.feature=FALSE, 
+                                               singleEnd=FALSE)) 
 countDFeByg <- sapply(seq(along=counteByg), function(x) assays(counteByg[[x]])$counts)
 rownames(countDFeByg) <- names(rowRanges(counteByg[[1]])); colnames(countDFeByg) <- names(bfl)
 rpkmDFeByg <- apply(countDFeByg, 2, function(x) returnRPKM(counts=x, ranges=eByg))
@@ -389,15 +384,17 @@ write.table(countDFeByg, "results/countDFeByg.xls", col.names=NA, quote=FALSE, s
 write.table(rpkmDFeByg, "results/rpkmDFeByg.xls", col.names=NA, quote=FALSE, sep="\t")
 ```
 
-Sample of data slice of count table
+Shows count table generated in previous step (`countDFeByg.xls`).
 
-```{r view_counts, eval=FALSE}
-read.delim("results/countDFeByg.xls", row.names=1, check.names=FALSE)[1:4,1:5]
+```{r show_counts_table, eval=TRUE}
+countDF <- read.delim("results/countDFeByg.xls", row.names=1, check.names=FALSE)
+library(DT)
+datatable(countDF, options=list(scrollX=TRUE, autoWidth=TRUE))
 ```
 
-Sample of data slice of RPKM table
+A data slice of RPKM table (`rpkmDFeByg.xls`) is shown here.
 
-```{r view_rpkm, eval=FALSE}
+```{r view_rpkm, eval=TRUE}
 read.delim("results/rpkmDFeByg.xls", row.names=1, check.names=FALSE)[1:4,1:4]
 ```
 
@@ -422,7 +419,7 @@ colData <- data.frame(row.names=targets.as.df(targets(args))$SampleName, conditi
 dds <- DESeqDataSetFromMatrix(countData = countDF, colData = colData, design = ~ condition)
 d <- cor(assay(rlog(dds)), method="spearman")
 hc <- hclust(dist(1-d))
-pdf("results/sample_tree.pdf")
+png("results/sample_tree.png")
 plot.phylo(as.phylo(hc), type="p", edge.col="blue", edge.width=2, show.node.label=TRUE, no.margin=TRUE)
 dev.off()
 ```
@@ -467,7 +464,7 @@ file. To open it, type `?filterDEGs` in the R console.
 
 ```{r filter_degs, eval=FALSE}
 edgeDF <- read.delim("results/edgeRglm_allcomp.xls", row.names=1, check.names=FALSE) 
-pdf("results/DEGcounts.pdf")
+png("results/DEGcounts.png")
 DEG_list <- filterDEGs(degDF=edgeDF, filter=c(Fold=2, FDR=20))
 dev.off()
 write.table(DEG_list$Summary, "./results/DEGcounts.xls", quote=FALSE, sep="\t", row.names=FALSE)
@@ -487,7 +484,7 @@ comparisons with the same number of sample sets in a single Venn diagram
 ```{r venn_diagram, eval=FALSE}
 vennsetup <- overLapper(DEG_list$Up[6:9], type="vennsets")
 vennsetdown <- overLapper(DEG_list$Down[6:9], type="vennsets")
-pdf("results/vennplot.pdf")
+png("results/vennplot.png")
 vennPlot(list(vennsetup, vennsetdown), mymain="", mysub="", colmode=2, ccol=c("blue", "red"))
 dev.off()
 ```
@@ -548,10 +545,22 @@ down <- DEG_list$Down; names(down) <- paste(names(down), "_down", sep="")
 DEGlist <- c(up_down, up, down)
 DEGlist <- DEGlist[sapply(DEGlist, length) > 0]
 BatchResult <- GOCluster_Report(catdb=catdb, setlist=DEGlist, method="all", id_type="gene", CLSZ=2, cutoff=0.9, gocats=c("MF", "BP", "CC"), recordSpecGO=NULL)
+write.table(BatchResult, "results/GOBatchAll.xls", row.names=FALSE, quote=FALSE, sep="\t")
 library("biomaRt")
 m <- useMart("plants_mart", dataset="athaliana_eg_gene", host="plants.ensembl.org")
 goslimvec <- as.character(getBM(attributes=c("goslim_goa_accession"), mart=m)[,1])
 BatchResultslim <- GOCluster_Report(catdb=catdb, setlist=DEGlist, method="slim", id_type="gene", myslimv=goslimvec, CLSZ=10, cutoff=0.01, gocats=c("MF", "BP", "CC"), recordSpecGO=NULL)
+write.table(BatchResultslim, "results/GOBatchSlim.xls", row.names=FALSE, quote=FALSE, sep="\t")
+```
+
+Shows GO term enrichment results from previous step. The last gene identifier column (10) 
+of this table has been excluded in this viewing instance to minimze the complexity of the
+result.
+
+```{r show_GO_table, eval=TRUE}
+BatchResult <- read.delim("results/GOBatchAll.xls")
+library(DT)
+datatable(BatchResult[,-10], options=list(scrollX=TRUE, autoWidth=TRUE))
 ```
 
 ### Plot batch GO term results
@@ -563,16 +572,13 @@ single sample sets is achieved by subsetting the input data frame as
 shown in the first line of the following example.
 
 ```{r go_plot, eval=FALSE}
-gos <- BatchResultslim[grep("M6-V6_up_down", BatchResultslim$CLID), ]
 gos <- BatchResultslim
-pdf("GOslimbarplotMF.pdf", height=8, width=10)
-goBarplot(gos, gocat="MF")
-dev.off()
-goBarplot(gos, gocat="BP")
-goBarplot(gos, gocat="CC")
+png("results/GOslimbarplotMF.png"); goBarplot(gos, gocat="MF"); dev.off()
+png("results/GOslimbarplotBP.png"); goBarplot(gos, gocat="BP"); dev.off()
+png("results/GOslimbarplotCC.png"); goBarplot(gos, gocat="CC"); dev.off()
 ```
 
-![](../results/GOslimbarplotMF.png)
+![](results/GOslimbarplotMF.png)
 <div align="center">Figure 5: GO Slim Barplot for MF Ontology</div></br>
 
 ## Clustering and heat maps
@@ -586,7 +592,7 @@ measure and complete linkage for cluster joining.
 library(pheatmap)
 geneids <- unique(as.character(unlist(DEG_list[[1]])))
 y <- assay(rlog(dds))[geneids, ]
-pdf("heatmap1.pdf")
+png("results/heatmap1.png")
 pheatmap(y, scale="row", clustering_distance_rows="correlation", clustering_distance_cols="correlation")
 dev.off()
 ```
@@ -602,6 +608,6 @@ sessionInfo()
 
 ## Funding
 
-This project is funded by NSF award [ABI-1661152](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1661152).
+This project was supported by funds from the National Institutes of Health (NIH).
 
 ## References
