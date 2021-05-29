@@ -172,7 +172,7 @@ and the corresponding Google Sheet is [here](https://docs.google.com/spreadsheet
 ```{r load_targets_file, eval=TRUE}
 targetspath <- "targetsPE.txt"
 targets <- read.delim(targetspath, comment.char = "#")
-DT::datatable(targets)
+DT::datatable(targets, options = list(scrollX = TRUE, autoWidth = TRUE))
 ```
 
 ## Read preprocessing
