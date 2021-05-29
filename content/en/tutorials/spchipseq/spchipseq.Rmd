@@ -451,7 +451,7 @@ To avoid slowdowns of the load time of this page, ony 200 rows of the source
 table are imported into the below `datatable` view .
 
 ```{r show_counts_table, eval=TRUE}
-countDF <- read.delim("results/C_1A_peaks.countDF.xls")[1:200,]
+countDF <- read.delim("results/C_1A_peaks.countDF.xls")[1:200, ]
 library(DT)
 datatable(countDF, options=list(scrollX=TRUE, autoWidth=TRUE))
 ```
