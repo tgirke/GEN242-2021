@@ -25,7 +25,7 @@
 <meta itemprop="name" content="ChIP-Seq Workflow Template">
 <meta itemprop="description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .html ] [ old version .Rmd ]">
 <meta itemprop="dateModified" content="2021-05-28T20:27:23-07:00" />
-<meta itemprop="wordCount" content="4953">
+<meta itemprop="wordCount" content="5086">
 
 
 
@@ -940,7 +940,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.ec5058bacd478873d5e2f59d1689ae41.json"
+  data-offline-search-index-json-src="../../../offline-search-index.6a9efa011ad2c8b11a69706d989dff85.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -972,7 +972,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.ec5058bacd478873d5e2f59d1689ae41.json"
+  data-offline-search-index-json-src="../../../offline-search-index.6a9efa011ad2c8b11a69706d989dff85.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1208,11 +1208,11 @@ if (!doNotTrack) {
         <li><a href="#workflow-environment">Workflow environment</a></li>
         <li><a href="#load-packages">Load packages</a></li>
         <li><a href="#import-custom-functions">Import custom functions</a></li>
+        <li><a href="#experiment-definition-provided-by-targets-file">Experiment definition provided by <code>targets</code> file</a></li>
       </ul>
     </li>
     <li><a href="#read-preprocessing">Read preprocessing</a>
       <ul>
-        <li><a href="#experiment-definition-provided-by-targets-file">Experiment definition provided by <code>targets</code> file</a></li>
         <li><a href="#read-quality-filtering-and-trimming">Read quality filtering and trimming</a></li>
         <li><a href="#fastq-quality-report">FASTQ quality report</a></li>
       </ul>
@@ -1411,6 +1411,13 @@ while also generating the corresponding analysis report. For details
 see <code>systemPipeR's</code> main <a href="http://www.bioconductor.org/packages/devel/bioc/vignettes/systemPipeR/inst/doc/systemPipeR.html">vignette</a>.</p>
 <pre><code class="language-r">library(systemPipeR)
 </code></pre>
+<p>To apply workflows to custom data, the user needs to modify the <em><code>targets</code></em> file and if
+necessary update the corresponding parameter (<em><code>.cwl</code></em> and <em><code>.yml</code></em>) files.
+A collection of pre-generated <em><code>.cwl</code></em> and <em><code>.yml</code></em> files are provided in the <em><code>param/cwl</code></em> subdirectory
+of each workflow template. They are also viewable in the GitHub repository of <em><code>systemPipeRdata</code></em> (<a href="https://github.com/tgirke/systemPipeRdata/tree/master/inst/extdata/param/cwl">see
+here</a>).
+For more information of the structure of the <em>targets</em> file, please consult the documentation
+<a href="http://www.bioconductor.org/packages/release/bioc/vignettes/systemPipeR/inst/doc/systemPipeR.html#25_structure_of_targets_file">here</a>. More details about the new parameter files from systemPipeR can be found <a href="http://www.bioconductor.org/packages/release/bioc/vignettes/systemPipeR/inst/doc/systemPipeR.html#26_structure_of_the_new_param_files_and_construct_sysargs2_container">here</a>.</p>
 <h3 id="import-custom-functions">Import custom functions</h3>
 <p>Custem functions for the challenge projects can be imported with the source
 command from a local R script (here <a href="https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/spchipseq/challengeProject_Fct.R">challengeProject_Fct.R</a>). Skip this step if such a
@@ -1418,7 +1425,6 @@ script is not available. Alternatively, these functions can be loaded from a
 custom R package.</p>
 <pre><code class="language-r">source(&quot;challengeProject_Fct.R&quot;)
 </code></pre>
-<h2 id="read-preprocessing">Read preprocessing</h2>
 <h3 id="experiment-definition-provided-by-targets-file">Experiment definition provided by <code>targets</code> file</h3>
 <p>The <code>targets</code> file defines all FASTQ files and sample comparisons of the analysis workflow.
 If needed the tab separated (TSV) version of this file can be downloaded from <a href="https://github.com/tgirke/GEN242/tree/main/content/en/assignments/Projects/targets_files">here</a>
@@ -1429,6 +1435,7 @@ DT::datatable(targets, options = list(scrollX = TRUE, autoWidth = TRUE))
 </code></pre>
 <div id="htmlwidget-1" style="width:100%;height:auto;" class="datatables html-widget"></div>
 <script type="application/json" data-for="htmlwidget-1">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7"],["./data/SRR038845_1.fastq.gz","./data/SRR038846_1.fastq.gz","./data/SRR038847_1.fastq.gz","./data/SRR038848_1.fastq.gz","./data/SRR038849_1.fastq.gz","./data/SRR038850_1.fastq.gz","./data/SRR038851_1.fastq.gz"],["AP1_1","AP1_2A","AP1_2B","C_1A","C_1B","C_2A","C_2B"],["AP1","AP1","AP1","C","C","C","C"],["APETALA1 Induced","APETALA1 Induced","APETALA1 Induced","Control Mock","Control Mock","Control Mock","Control Mock"],[1,1,1,1,1,1,1],["23-Mar-12","23-Mar-12","23-Mar-12","23-Mar-12","23-Mar-12","23-Mar-12","23-Mar-12"],["","","","AP1_1","AP1_1","AP1_2A","AP1_2B"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>FileName<\/th>\n      <th>SampleName<\/th>\n      <th>Factor<\/th>\n      <th>SampleLong<\/th>\n      <th>Experiment<\/th>\n      <th>Date<\/th>\n      <th>SampleReference<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"autoWidth":true,"columnDefs":[{"className":"dt-right","targets":5},{"orderable":false,"targets":0}],"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<h2 id="read-preprocessing">Read preprocessing</h2>
 <h3 id="read-quality-filtering-and-trimming">Read quality filtering and trimming</h3>
 <p>The following example shows how one can design a custom read
 preprocessing function using utilities provided by the <code>ShortRead</code> package, and then
@@ -1567,7 +1574,7 @@ subdirectory under <code>~/.html</code> called <code>somedir</code> of the user 
 name under <code>urlbase</code>, here <code>ttest</code>, needs to be changed to the corresponding
 user name of the person running this function.</p>
 <pre><code class="language-r">symLink2bam(sysargs = args, htmldir = c(&quot;~/.html/&quot;, &quot;somedir/&quot;), 
-    urlbase = &quot;http://cluster.hpcc.ucr.edu/~ttest/&quot;, urlfile = &quot;./results/IGVurl.txt&quot;)
+    urlbase = &quot;http://cluster.hpcc.ucr.edu/~&lt;username&gt;/&quot;, urlfile = &quot;./results/IGVurl.txt&quot;)
 </code></pre>
 <h2 id="peak-calling-with-macs2">Peak calling with MACS2</h2>
 <h3 id="merge-bam-files-of-replicates-prior-to-peak-calling">Merge BAM files of replicates prior to peak calling</h3>
@@ -1674,7 +1681,9 @@ countDFnames &lt;- countRangeset(bfl, args, mode = &quot;Union&quot;, ignore.str
 writeTargetsout(x = args, file = &quot;targets_countDF.txt&quot;, step = 1, 
     new_col = &quot;FileName&quot;, new_col_output_index = 1, overwrite = TRUE)
 </code></pre>
-<p>Shows count table generated in previous step (<code>C_1A_peaks.countDF.xls</code>).</p>
+<p>Shows count table generated in previous step (<code>C_1A_peaks.countDF.xls</code>).
+To avoid slowdowns of the load time of this page, ony 200 rows of the source
+table are imported into the below <code>datatable</code> view .</p>
 <pre><code class="language-r">countDF &lt;- read.delim(&quot;results/C_1A_peaks.countDF.xls&quot;)
 library(DT)
 datatable(countDF, options = list(scrollX = TRUE, autoWidth = TRUE))
@@ -1729,7 +1738,9 @@ write.table(BatchResult, &quot;results/GOBatchAll.xls&quot;, row.names = FALSE,
 </code></pre>
 <p>Shows GO term enrichment results from previous step. The last gene identifier column (10)
 of this table has been excluded in this viewing instance to minimze the complexity of the
-result.</p>
+result.
+To avoid slowdowns of the load time of this page, ony 200 rows of the source
+table are imported into the below <code>datatable</code> view .</p>
 <pre><code class="language-r">BatchResult &lt;- read.delim(&quot;results/GOBatchAll.xls&quot;)
 library(DT)
 datatable(BatchResult[, -10], options = list(scrollX = TRUE, 

@@ -1,6 +1,6 @@
 ---
 title: "RNA-Seq Workflow Template" 
-author: "Author: Daniela Cassol (danielac@ucr.edu) and Thomas Girke (thomas.girke@ucr.edu)"
+author: "Author: First Last"
 date: "Last update: `r format(Sys.time(), '%d %B, %Y')`" 
 output:
   BiocStyle::html_document:
@@ -17,10 +17,6 @@ weight: 8
 type: docs
 ---
 
-<!--
-Rscript -e "rmarkdown::render('sprnaseq.Rmd', c('BiocStyle::html_document'), clean=F); knitr::knit('sprnaseq.Rmd', tangle=TRUE)"
--->
-
 ```{css, echo=FALSE}
 pre code {
 white-space: pre !important;
@@ -29,6 +25,10 @@ word-break: keep-all !important;
 word-wrap: initial !important;
 }
 ```
+
+<!--
+Rscript -e "rmarkdown::render('sprnaseq.Rmd', c('BiocStyle::html_document'), clean=F); knitr::knit('sprnaseq.Rmd', tangle=TRUE)"
+-->
 
 ```{r style, echo = FALSE, results = 'asis'}
 BiocStyle::markdown()
@@ -74,7 +74,12 @@ The details about all download steps are provided [here](https://girke.bioinform
 Users want to provide here additional background information about the design of their 
 RNA-Seq project.
 
-## Samples and environment settings
+### Experimental design
+
+Typically, users want to specify here all information relevant for the
+analysis of their NGS study. This includes detailed descriptions of
+FASTQ files, experimental design, reference genome, gene annotations,
+etc.
 
 ### Workflow environment
 
@@ -126,19 +131,13 @@ setwd("rnaseq")
    understood and possibly modified to custom needs, one can run the workflow from start to finish with a single command using `rmarkdown::render()` or `runWF()`.
 
 
-### Environment settings and input data
+### Load packages
 
-Typically, the user wants to record here the sources and versions of the
-reference genome sequence along with the corresponding annotations. In
-the provided sample data set all data inputs are stored in a `data`
-subdirectory and all results will be written to a separate `results` directory,
-while the `systemPipeRNAseq.Rmd` script and the `targets` file are expected to be 
-located in the parent directory. The R session is expected to run from this parent directory.
-
-### Required packages and resources
-
-The `systemPipeR` package needs to be loaded to perform the analysis steps shown in
-this report [@H_Backman2016-bt].
+The `systemPipeR` package needs to be loaded to perform the analysis 
+steps shown in this report [@H_Backman2016-bt]. The package allows users
+to run the entire analysis workflow interactively or with a single command 
+while also generating the corresponding analysis report. For details
+see `systemPipeR's` main [vignette](http://www.bioconductor.org/packages/devel/bioc/vignettes/systemPipeR/inst/doc/systemPipeR.html).
 
 ```{r load_systempiper, eval=TRUE, message=FALSE}
 library(systemPipeR)
@@ -347,7 +346,7 @@ with a path specified under `urlfile` in the `results` directory.
 
 ```{r bam_urls, eval=FALSE}
 symLink2bam(sysargs=args, htmldir=c("~/.html/", "somedir/"), 
-            urlbase="http://cluster.hpcc.ucr.edu/~tgirke/", 
+            urlbase="http://cluster.hpcc.ucr.edu/~<username>/", 
 	        urlfile="./results/IGVurl.txt")
 ```
 
@@ -384,10 +383,12 @@ write.table(countDFeByg, "results/countDFeByg.xls", col.names=NA, quote=FALSE, s
 write.table(rpkmDFeByg, "results/rpkmDFeByg.xls", col.names=NA, quote=FALSE, sep="\t")
 ```
 
-Shows count table generated in previous step (`countDFeByg.xls`).
+Shows count table generated in previous step (`countDFeByg.xls`). 
+To avoid slowdowns of the load time of this page, ony 200 rows of the source 
+table are imported into the below `datatable` view .
 
 ```{r show_counts_table, eval=TRUE}
-countDF <- read.delim("results/countDFeByg.xls", row.names=1, check.names=FALSE)
+countDF <- read.delim("results/countDFeByg.xls", row.names=1, check.names=FALSE)[1:200,]
 library(DT)
 datatable(countDF, options=list(scrollX=TRUE, autoWidth=TRUE))
 ```
@@ -556,6 +557,8 @@ write.table(BatchResultslim, "results/GOBatchSlim.xls", row.names=FALSE, quote=F
 Shows GO term enrichment results from previous step. The last gene identifier column (10) 
 of this table has been excluded in this viewing instance to minimze the complexity of the
 result.
+To avoid slowdowns of the load time of this page, ony 200 rows of the source 
+table are imported into the below `datatable` view .
 
 ```{r show_GO_table, eval=TRUE}
 BatchResult <- read.delim("results/GOBatchAll.xls")

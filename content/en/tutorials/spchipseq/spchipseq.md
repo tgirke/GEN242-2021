@@ -1,7 +1,7 @@
 ---
 title: "ChIP-Seq Workflow Template" 
 author: "Author: First Last"
-date: "Last update: 28 May, 2021" 
+date: "Last update: 29 May, 2021" 
 output:
   BiocStyle::html_document:
     toc_float: true
@@ -156,6 +156,14 @@ see `systemPipeR's` main [vignette](http://www.bioconductor.org/packages/devel/b
 library(systemPipeR)
 ```
 
+To apply workflows to custom data, the user needs to modify the *`targets`* file and if
+necessary update the corresponding parameter (*`.cwl`* and *`.yml`*) files.
+A collection of pre-generated *`.cwl`* and *`.yml`* files are provided in the *`param/cwl`* subdirectory
+of each workflow template. They are also viewable in the GitHub repository of *`systemPipeRdata`* ([see
+here](https://github.com/tgirke/systemPipeRdata/tree/master/inst/extdata/param/cwl)).
+For more information of the structure of the *targets* file, please consult the documentation
+[here](http://www.bioconductor.org/packages/release/bioc/vignettes/systemPipeR/inst/doc/systemPipeR.html#25_structure_of_targets_file). More details about the new parameter files from systemPipeR can be found [here](http://www.bioconductor.org/packages/release/bioc/vignettes/systemPipeR/inst/doc/systemPipeR.html#26_structure_of_the_new_param_files_and_construct_sysargs2_container).
+
 ### Import custom functions
 
 Custem functions for the challenge projects can be imported with the source
@@ -166,8 +174,6 @@ custom R package.
 ``` r
 source("challengeProject_Fct.R")
 ```
-
-## Read preprocessing
 
 ### Experiment definition provided by `targets` file
 
@@ -183,6 +189,8 @@ DT::datatable(targets, options = list(scrollX = TRUE, autoWidth = TRUE))
 
 <div id="htmlwidget-1" style="width:100%;height:auto;" class="datatables html-widget"></div>
 <script type="application/json" data-for="htmlwidget-1">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7"],["./data/SRR038845_1.fastq.gz","./data/SRR038846_1.fastq.gz","./data/SRR038847_1.fastq.gz","./data/SRR038848_1.fastq.gz","./data/SRR038849_1.fastq.gz","./data/SRR038850_1.fastq.gz","./data/SRR038851_1.fastq.gz"],["AP1_1","AP1_2A","AP1_2B","C_1A","C_1B","C_2A","C_2B"],["AP1","AP1","AP1","C","C","C","C"],["APETALA1 Induced","APETALA1 Induced","APETALA1 Induced","Control Mock","Control Mock","Control Mock","Control Mock"],[1,1,1,1,1,1,1],["23-Mar-12","23-Mar-12","23-Mar-12","23-Mar-12","23-Mar-12","23-Mar-12","23-Mar-12"],["","","","AP1_1","AP1_1","AP1_2A","AP1_2B"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>FileName<\/th>\n      <th>SampleName<\/th>\n      <th>Factor<\/th>\n      <th>SampleLong<\/th>\n      <th>Experiment<\/th>\n      <th>Date<\/th>\n      <th>SampleReference<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"autoWidth":true,"columnDefs":[{"className":"dt-right","targets":5},{"orderable":false,"targets":0}],"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+
+## Read preprocessing
 
 ### Read quality filtering and trimming
 
@@ -363,7 +371,7 @@ user name of the person running this function.
 
 ``` r
 symLink2bam(sysargs = args, htmldir = c("~/.html/", "somedir/"), 
-    urlbase = "http://cluster.hpcc.ucr.edu/~ttest/", urlfile = "./results/IGVurl.txt")
+    urlbase = "http://cluster.hpcc.ucr.edu/~<username>/", urlfile = "./results/IGVurl.txt")
 ```
 
 ## Peak calling with MACS2
@@ -493,6 +501,8 @@ writeTargetsout(x = args, file = "targets_countDF.txt", step = 1,
 ```
 
 Shows count table generated in previous step (`C_1A_peaks.countDF.xls`).
+To avoid slowdowns of the load time of this page, ony 200 rows of the source
+table are imported into the below `datatable` view .
 
 ``` r
 countDF <- read.delim("results/C_1A_peaks.countDF.xls")
@@ -560,6 +570,8 @@ write.table(BatchResult, "results/GOBatchAll.xls", row.names = FALSE,
 Shows GO term enrichment results from previous step. The last gene identifier column (10)
 of this table has been excluded in this viewing instance to minimze the complexity of the
 result.
+To avoid slowdowns of the load time of this page, ony 200 rows of the source
+table are imported into the below `datatable` view .
 
 ``` r
 BatchResult <- read.delim("results/GOBatchAll.xls")

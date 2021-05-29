@@ -142,6 +142,14 @@ see `systemPipeR's` main [vignette](http://www.bioconductor.org/packages/devel/b
 library(systemPipeR)
 ```
 
+To apply workflows to custom data, the user needs to modify the _`targets`_ file and if
+necessary update the corresponding parameter (_`.cwl`_ and _`.yml`_) files. 
+A collection of pre-generated _`.cwl`_ and _`.yml`_ files are provided in the _`param/cwl`_ subdirectory 
+of each workflow template. They are also viewable in the GitHub repository of _`systemPipeRdata`_ ([see
+here](https://github.com/tgirke/systemPipeRdata/tree/master/inst/extdata/param/cwl)).
+For more information of the structure of the *targets* file, please consult the documentation 
+[here](http://www.bioconductor.org/packages/release/bioc/vignettes/systemPipeR/inst/doc/systemPipeR.html#25_structure_of_targets_file). More details about the new parameter files from systemPipeR can be found [here](http://www.bioconductor.org/packages/release/bioc/vignettes/systemPipeR/inst/doc/systemPipeR.html#26_structure_of_the_new_param_files_and_construct_sysargs2_container). 
+
 ### Import custom functions
 
 Custem functions for the challenge projects can be imported with the source
@@ -152,9 +160,6 @@ custom R package.
 ```{r load_custom_fct, eval=FALSE, message=FALSE}
 source("challengeProject_Fct.R")
 ```
-
-
-## Read preprocessing
 
 ### Experiment definition provided by `targets` file
 
@@ -167,6 +172,8 @@ targetspath <- "targets_chipseq.txt"
 targets <- read.delim(targetspath, comment.char = "#")
 DT::datatable(targets, options = list(scrollX = TRUE, autoWidth = TRUE))
 ```
+
+## Read preprocessing
 
 ### Read quality filtering and trimming
 
@@ -325,7 +332,7 @@ user name of the person running this function.
 
 ```{r symbol_links, eval=FALSE}
 symLink2bam(sysargs=args, htmldir=c("~/.html/", "somedir/"), 
-            urlbase="http://cluster.hpcc.ucr.edu/~ttest/", 
+            urlbase="http://cluster.hpcc.ucr.edu/~<username>/", 
             urlfile="./results/IGVurl.txt")
 ```
 
@@ -440,6 +447,8 @@ writeTargetsout(x=args, file="targets_countDF.txt", step = 1,
 ```
 
 Shows count table generated in previous step (`C_1A_peaks.countDF.xls`).
+To avoid slowdowns of the load time of this page, ony 200 rows of the source 
+table are imported into the below `datatable` view .
 
 ```{r show_counts_table, eval=TRUE}
 countDF <- read.delim("results/C_1A_peaks.countDF.xls")
@@ -496,6 +505,8 @@ write.table(BatchResult, "results/GOBatchAll.xls", row.names=FALSE, quote=FALSE,
 Shows GO term enrichment results from previous step. The last gene identifier column (10) 
 of this table has been excluded in this viewing instance to minimze the complexity of the
 result.
+To avoid slowdowns of the load time of this page, ony 200 rows of the source 
+table are imported into the below `datatable` view .
 
 ```{r show_GO_table, eval=TRUE}
 BatchResult <- read.delim("results/GOBatchAll.xls")
