@@ -25,7 +25,7 @@
 <meta itemprop="name" content="ChIP-Seq Workflow Template">
 <meta itemprop="description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .html ] [ old version .Rmd ]">
 <meta itemprop="dateModified" content="2021-05-28T14:50:03-07:00" />
-<meta itemprop="wordCount" content="4945">
+<meta itemprop="wordCount" content="4953">
 
 
 
@@ -940,7 +940,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.fcacb0dff9026b76070765d92ffcfca4.json"
+  data-offline-search-index-json-src="../../../offline-search-index.ec5058bacd478873d5e2f59d1689ae41.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -972,7 +972,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.fcacb0dff9026b76070765d92ffcfca4.json"
+  data-offline-search-index-json-src="../../../offline-search-index.ec5058bacd478873d5e2f59d1689ae41.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1425,10 +1425,10 @@ If needed the tab separated (TSV) version of this file can be downloaded from <a
 and the corresponding Google Sheet is <a href="https://docs.google.com/spreadsheets/d/1w9V3JDOsXR8qW_qNqoXO0E0UR_Oev4k7-o2y6NMDTt8/edit#gid=472150521">here</a>.</p>
 <pre><code class="language-r">targetspath &lt;- &quot;targets_chipseq.txt&quot;
 targets &lt;- read.delim(targetspath, comment.char = &quot;#&quot;)
-DT::datatable(targets)
+DT::datatable(targets, options = list(scrollX = TRUE, autoWidth = TRUE))
 </code></pre>
 <div id="htmlwidget-1" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7"],["./data/SRR038845_1.fastq.gz","./data/SRR038846_1.fastq.gz","./data/SRR038847_1.fastq.gz","./data/SRR038848_1.fastq.gz","./data/SRR038849_1.fastq.gz","./data/SRR038850_1.fastq.gz","./data/SRR038851_1.fastq.gz"],["AP1_1","AP1_2A","AP1_2B","C_1A","C_1B","C_2A","C_2B"],["AP1","AP1","AP1","C","C","C","C"],["APETALA1 Induced","APETALA1 Induced","APETALA1 Induced","Control Mock","Control Mock","Control Mock","Control Mock"],[1,1,1,1,1,1,1],["23-Mar-12","23-Mar-12","23-Mar-12","23-Mar-12","23-Mar-12","23-Mar-12","23-Mar-12"],["","","","AP1_1","AP1_1","AP1_2A","AP1_2B"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>FileName<\/th>\n      <th>SampleName<\/th>\n      <th>Factor<\/th>\n      <th>SampleLong<\/th>\n      <th>Experiment<\/th>\n      <th>Date<\/th>\n      <th>SampleReference<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":5},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7"],["./data/SRR038845_1.fastq.gz","./data/SRR038846_1.fastq.gz","./data/SRR038847_1.fastq.gz","./data/SRR038848_1.fastq.gz","./data/SRR038849_1.fastq.gz","./data/SRR038850_1.fastq.gz","./data/SRR038851_1.fastq.gz"],["AP1_1","AP1_2A","AP1_2B","C_1A","C_1B","C_2A","C_2B"],["AP1","AP1","AP1","C","C","C","C"],["APETALA1 Induced","APETALA1 Induced","APETALA1 Induced","Control Mock","Control Mock","Control Mock","Control Mock"],[1,1,1,1,1,1,1],["23-Mar-12","23-Mar-12","23-Mar-12","23-Mar-12","23-Mar-12","23-Mar-12","23-Mar-12"],["","","","AP1_1","AP1_1","AP1_2A","AP1_2B"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>FileName<\/th>\n      <th>SampleName<\/th>\n      <th>Factor<\/th>\n      <th>SampleLong<\/th>\n      <th>Experiment<\/th>\n      <th>Date<\/th>\n      <th>SampleReference<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"autoWidth":true,"columnDefs":[{"className":"dt-right","targets":5},{"orderable":false,"targets":0}],"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <h3 id="read-quality-filtering-and-trimming">Read quality filtering and trimming</h3>
 <p>The following example shows how one can design a custom read
 preprocessing function using utilities provided by the <code>ShortRead</code> package, and then
