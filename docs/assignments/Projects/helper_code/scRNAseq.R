@@ -22,7 +22,7 @@ library(scran); library(scater)
 sce <- logNormCounts(sce)
 colLabels(sce) <- factor(colData(sce)$Factor) # This uses replicate info from above targets file as pseudo-clusters
 
-## (3) Run and plot with different embedding methods Note: the embedding
+## (3) Run and plot with different embedding methods. Note: the embedding
 ## results are sequentially appended to the SingleCellExperiment object,
 ## meaning one can use the plot function whenever necessary.
 
