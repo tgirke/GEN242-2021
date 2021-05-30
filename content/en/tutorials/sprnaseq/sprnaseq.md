@@ -1,7 +1,7 @@
 ---
 title: "RNA-Seq Workflow Template" 
 author: "Author: First Last"
-date: "Last update: 29 May, 2021" 
+date: "Last update: 30 May, 2021" 
 output:
   BiocStyle::html_document:
     toc_float: true
@@ -107,7 +107,7 @@ to be included in a final HTML/PDF report of a workflow.
     first unload an active software version before loading another version, *e.g.* `module unload R`.
 
 ``` sh
-srun --x11 --partition=short --mem=8gb --cpus-per-task 4 --ntasks 1 --time 2:00:00 --pty bash -l
+srun --x11 --partition=gen242 --mem=20gb --cpus-per-task 8 --ntasks 1 --time 2:00:00 --pty bash -l
 module unload R; module load R/4.0.3_gcc-8.3.0
 ```
 
