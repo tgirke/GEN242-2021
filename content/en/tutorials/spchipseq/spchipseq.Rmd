@@ -57,8 +57,8 @@ suppressPackageStartupMessages({
 
 <div style="text-align: right"> 
 Source code downloads: &nbsp; &nbsp;
-[ [.Rmd](https://cluster.hpcc.ucr.edu/~ttest/chipseq/spchipseq.Rmd) ] &nbsp; &nbsp; 
-[ [.html](https://cluster.hpcc.ucr.edu/~ttest/chipseq/spchipseq.html) ] &nbsp; &nbsp; 
+[ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242/main/static/custom/spWFtemplates/spchipseq.Rmd) ] &nbsp; &nbsp; 
+[ [.html](https://girke.bioinformatics.ucr.edu/GEN242/custom/spWFtemplates/spchipseq.html) ] &nbsp; &nbsp; 
 [ [old version .Rmd](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/spchipseq/back_spchipseq_rmd) ]
 </div>
 
