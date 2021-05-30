@@ -696,12 +696,12 @@ write.table(BatchResultslim, "results/GOBatchSlim.xls", row.names = FALSE,
 Shows GO term enrichment results from previous step. The last gene identifier column (10)
 of this table has been excluded in this viewing instance to minimze the complexity of the
 result.
-To avoid slowdowns of the load time of this page, ony 200 rows of the source
-table are imported into the below `datatable` view .
+To avoid slowdowns of the load time of this page, ony 10 rows of the source table are shown
+below.
 
 ``` r
-BatchResult <- read.delim("results/GOBatchAll.xls")[1:199, ]
-knitr::kable(BatchResult[1:10, -10])
+BatchResult <- read.delim("results/GOBatchAll.xls")[1:10, ]
+knitr::kable(BatchResult[, -10])
 ```
 
 | CLID            | CLSZ | GOID       | NodeSize | SampleMatch |    Phyper |      Padj | Term                                                           | Ont |
