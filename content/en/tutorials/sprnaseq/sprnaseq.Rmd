@@ -561,7 +561,7 @@ To avoid slowdowns of the load time of this page, ony 200 rows of the source
 table are imported into the below `datatable` view .
 
 ```{r show_GO_table, eval=TRUE}
-BatchResult <- read.delim("results/GOBatchAll.xls")[1:200,]
+BatchResult <- read.delim("results/GOBatchAll.xls")[1:199,]
 library(DT)
 datatable(BatchResult[,-10], options=list(scrollX=TRUE, autoWidth=TRUE))
 ```
