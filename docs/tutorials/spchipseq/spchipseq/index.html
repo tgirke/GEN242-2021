@@ -940,7 +940,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.71c1f41ad7b7b22e763baeef427ab953.json"
+  data-offline-search-index-json-src="../../../offline-search-index.03a9be4583cc879cf4d3e065b35cdc73.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -972,7 +972,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.71c1f41ad7b7b22e763baeef427ab953.json"
+  data-offline-search-index-json-src="../../../offline-search-index.03a9be4583cc879cf4d3e065b35cdc73.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1342,8 +1342,8 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 <div style="text-align: right">
 <p>Source code downloads:    
-[ <a href="https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/spchipseq/spchipseq.Rmd">.Rmd</a> ]    
-[ <a href="http://cluster.hpcc.ucr.edu/~ttest/chipseq/systemPipeChIPseq.html">.html</a> ]    
+[ <a href="https://cluster.hpcc.ucr.edu/~ttest/chipseq/spchipseq.html">.Rmd</a> ]    
+[ <a href="https://cluster.hpcc.ucr.edu/~ttest/chipseq/spchipseq.html">.html</a> ]    
 [ <a href="https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/spchipseq/back_spchipseq_rmd">old version .Rmd</a> ]</p>
 </div>
 <h2 id="introduction">Introduction</h2>
@@ -1376,7 +1376,7 @@ Next, load the R version required for running the workflow with <code>module loa
 first unload an active software version before loading another version, <em>e.g.</em> <code>module unload R</code>.</p>
 </li>
 </ol>
-<pre><code class="language-sh">srun --x11 --partition=short --mem=8gb --cpus-per-task 4 --ntasks 1 --time 2:00:00 --pty bash -l
+<pre><code class="language-sh">srun --x11 --partition=gen242 --mem=20gb --cpus-per-task 8 --ntasks 1 --time 2:00:00 --pty bash -l
 module unload R; module load R/4.0.3_gcc-8.3.0
 </code></pre>
 <ol start="2">

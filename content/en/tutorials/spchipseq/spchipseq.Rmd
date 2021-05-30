@@ -57,8 +57,8 @@ suppressPackageStartupMessages({
 
 <div style="text-align: right"> 
 Source code downloads: &nbsp; &nbsp;
-[ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/spchipseq/spchipseq.Rmd) ] &nbsp; &nbsp; 
-[ [.html](http://cluster.hpcc.ucr.edu/~ttest/chipseq/systemPipeChIPseq.html) ] &nbsp; &nbsp; 
+[ [.Rmd](https://cluster.hpcc.ucr.edu/~ttest/chipseq/spchipseq.html) ] &nbsp; &nbsp; 
+[ [.html](https://cluster.hpcc.ucr.edu/~ttest/chipseq/spchipseq.html) ] &nbsp; &nbsp; 
 [ [old version .Rmd](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/spchipseq/back_spchipseq_rmd) ]
 </div>
 
@@ -100,7 +100,7 @@ to be included in a final HTML/PDF report of a workflow.
    first unload an active software version before loading another version, _e.g._ `module unload R`.
 
 ```sh
-srun --x11 --partition=short --mem=8gb --cpus-per-task 4 --ntasks 1 --time 2:00:00 --pty bash -l
+srun --x11 --partition=gen242 --mem=20gb --cpus-per-task 8 --ntasks 1 --time 2:00:00 --pty bash -l
 module unload R; module load R/4.0.3_gcc-8.3.0
 ```
 

@@ -1,7 +1,7 @@
 ---
 title: "ChIP-Seq Workflow Template" 
 author: "Author: First Last"
-date: "Last update: 29 May, 2021" 
+date: "Last update: 30 May, 2021" 
 output:
   BiocStyle::html_document:
     toc_float: true
@@ -73,8 +73,8 @@ document.addEventListener("DOMContentLoaded", function() {
 <div style="text-align: right">
 
 Source code downloads:    
-\[ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/spchipseq/spchipseq.Rmd) \]    
-\[ [.html](http://cluster.hpcc.ucr.edu/~ttest/chipseq/systemPipeChIPseq.html) \]    
+\[ [.Rmd](https://cluster.hpcc.ucr.edu/~ttest/chipseq/spchipseq.html) \]    
+\[ [.html](https://cluster.hpcc.ucr.edu/~ttest/chipseq/spchipseq.html) \]    
 \[ [old version .Rmd](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/spchipseq/back_spchipseq_rmd) \]
 
 </div>
@@ -115,7 +115,7 @@ to be included in a final HTML/PDF report of a workflow.
     first unload an active software version before loading another version, *e.g.* `module unload R`.
 
 ``` sh
-srun --x11 --partition=short --mem=8gb --cpus-per-task 4 --ntasks 1 --time 2:00:00 --pty bash -l
+srun --x11 --partition=gen242 --mem=20gb --cpus-per-task 8 --ntasks 1 --time 2:00:00 --pty bash -l
 module unload R; module load R/4.0.3_gcc-8.3.0
 ```
 
