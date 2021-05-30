@@ -404,20 +404,19 @@ write.table(read_statsDF, "results/alignStats.xls", row.names = FALSE,
 The following shows the alignment statistics for a sample file provided by the `systemPipeR` package.
 
 ``` r
-read.table(system.file("extdata", "alignStats.xls", package = "systemPipeR"), 
-    header = TRUE)[1:4, ]
+read.table("results/alignStats.xls", header = TRUE)[1:4, ]
 ```
 
-    ##   FileName Nreads2x Nalign Perc_Aligned Nalign_Primary
-    ## 1      M1A   192918 177961     92.24697         177961
-    ## 2      M1B   197484 159378     80.70426         159378
-    ## 3      A1A   189870 176055     92.72397         176055
-    ## 4      A1B   188854 147768     78.24457         147768
+    ##   FileName Nreads2x   Nalign Perc_Aligned Nalign_Primary
+    ## 1      M1A 33609678 32136300     95.61621       32136300
+    ## 2      M1B 53002402 43620124     82.29839       43620124
+    ## 3      A1A 50223496 48438407     96.44571       48438407
+    ## 4      A1B 43650000 35549889     81.44304       35549889
     ##   Perc_Aligned_Primary
-    ## 1             92.24697
-    ## 2             80.70426
-    ## 3             92.72397
-    ## 4             78.24457
+    ## 1             95.61621
+    ## 2             82.29839
+    ## 3             96.44571
+    ## 4             81.44304
 
 ### Create symbolic links for viewing BAM files in IGV
 

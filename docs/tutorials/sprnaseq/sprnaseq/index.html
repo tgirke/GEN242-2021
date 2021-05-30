@@ -21,11 +21,11 @@
 <meta property="og:description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .html ] [ old version .Rmd ]" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/sprnaseq/sprnaseq/" />
-<meta property="article:modified_time" content="2021-05-29T16:32:38-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-05-29T16:37:25-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="RNA-Seq Workflow Template">
 <meta itemprop="description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .html ] [ old version .Rmd ]">
-<meta itemprop="dateModified" content="2021-05-29T16:32:38-07:00" />
-<meta itemprop="wordCount" content="4556">
+<meta itemprop="dateModified" content="2021-05-29T16:37:25-07:00" />
+<meta itemprop="wordCount" content="4552">
 
 
 
@@ -940,7 +940,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.be1f3a7c5c6f126cf353369e961477bf.json"
+  data-offline-search-index-json-src="../../../offline-search-index.3eb7b2e358e48ddb2cd50b14d6eb76df.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -972,7 +972,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.be1f3a7c5c6f126cf353369e961477bf.json"
+  data-offline-search-index-json-src="../../../offline-search-index.3eb7b2e358e48ddb2cd50b14d6eb76df.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1062,14 +1062,6 @@ if (!doNotTrack) {
           
           
           <a class="td-sidebar-link td-sidebar-link__page  active" id="m-tutorialssprnaseqsprnaseq" href="../../../tutorials/sprnaseq/sprnaseq/">RNA-Seq Workflow Template</a>
-        
-      
-      
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-tutorialsspchipseqspchipseq" href="../../../tutorials/spchipseq/spchipseq/">ChIP-Seq Workflow Template</a>
         
       
       
@@ -1607,19 +1599,18 @@ write.table(read_statsDF, &quot;results/alignStats.xls&quot;, row.names = FALSE,
     quote = FALSE, sep = &quot;\t&quot;)
 </code></pre>
 <p>The following shows the alignment statistics for a sample file provided by the <code>systemPipeR</code> package.</p>
-<pre><code class="language-r">read.table(system.file(&quot;extdata&quot;, &quot;alignStats.xls&quot;, package = &quot;systemPipeR&quot;), 
-    header = TRUE)[1:4, ]
+<pre><code class="language-r">read.table(&quot;results/alignStats.xls&quot;, header = TRUE)[1:4, ]
 </code></pre>
-<pre><code>##   FileName Nreads2x Nalign Perc_Aligned Nalign_Primary
-## 1      M1A   192918 177961     92.24697         177961
-## 2      M1B   197484 159378     80.70426         159378
-## 3      A1A   189870 176055     92.72397         176055
-## 4      A1B   188854 147768     78.24457         147768
+<pre><code>##   FileName Nreads2x   Nalign Perc_Aligned Nalign_Primary
+## 1      M1A 33609678 32136300     95.61621       32136300
+## 2      M1B 53002402 43620124     82.29839       43620124
+## 3      A1A 50223496 48438407     96.44571       48438407
+## 4      A1B 43650000 35549889     81.44304       35549889
 ##   Perc_Aligned_Primary
-## 1             92.24697
-## 2             80.70426
-## 3             92.72397
-## 4             78.24457
+## 1             95.61621
+## 2             82.29839
+## 3             96.44571
+## 4             81.44304
 </code></pre>
 <h3 id="create-symbolic-links-for-viewing-bam-files-in-igv">Create symbolic links for viewing BAM files in IGV</h3>
 <p>The <code>symLink2bam</code> function creates symbolic links to view the BAM alignment files in a
@@ -2009,7 +2000,7 @@ dev.off()
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-29: <a  href="https://github.com/tgirke/GEN242//commit/59c7c07a5b3312a8817da1cc33723708d827dd0f">some edits (59c7c07a5)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-29: <a  href="https://github.com/tgirke/GEN242//commit/64c1b564ceca88ef83ab71f3ea7cce2e83b1f19a">some edits (64c1b564c)</a>
 </div>
 </div>
 

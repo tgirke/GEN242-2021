@@ -335,7 +335,7 @@ write.table(read_statsDF, "results/alignStats.xls", row.names=FALSE, quote=FALSE
 The following shows the alignment statistics for a sample file provided by the `systemPipeR` package. 
 
 ```{r align_stats_view, eval=TRUE}
-read.table(system.file("extdata", "alignStats.xls", package="systemPipeR"), header=TRUE)[1:4,]
+read.table("results/alignStats.xls", header=TRUE)[1:4,]
 ```
 
 ### Create symbolic links for viewing BAM files in IGV
