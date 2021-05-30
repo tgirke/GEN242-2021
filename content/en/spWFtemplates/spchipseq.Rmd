@@ -1,0 +1,574 @@
+---
+title: "ChIP-Seq Workflow Template" 
+author: "Author: First Last"
+date: "Last update: `r format(Sys.time(), '%d %B, %Y')`" 
+output:
+  BiocStyle::html_document:
+    toc_float: true
+    code_folding: show
+package: systemPipeR
+vignette: |
+  %\VignetteEncoding{UTF-8}
+  %\VignetteIndexEntry{WF: ChIP-Seq Workflow Template}
+  %\VignetteEngine{knitr::rmarkdown}
+fontsize: 14pt
+bibliography: bibtex.bib
+---
+
+```{css, echo=FALSE}
+pre code {
+white-space: pre !important;
+overflow-x: scroll !important;
+word-break: keep-all !important;
+word-wrap: initial !important;
+}
+```
+
+<!--
+- Compile from command-line
+Rscript -e "rmarkdown::render('spchipseq.Rmd', c('BiocStyle::html_document'), clean=F); knitr::knit('spchipseq.Rmd', tangle=TRUE)"
+-->
+
+```{r style, echo = FALSE, results = 'asis'}
+BiocStyle::markdown()
+options(width=60, max.print=1000)
+knitr::opts_chunk$set(
+    eval=as.logical(Sys.getenv("KNITR_EVAL", "TRUE")),
+    cache=as.logical(Sys.getenv("KNITR_CACHE", "TRUE")), 
+    tidy.opts=list(width.cutoff=60), tidy=TRUE)
+```
+
+```{r setup, echo=FALSE, message=FALSE, wwarning=FALSE, eval=FALSE}
+suppressPackageStartupMessages({
+    library(systemPipeR)
+    library(BiocParallel)
+    library(Biostrings)
+    library(Rsamtools)
+    library(GenomicRanges)
+    library(ggplot2)
+    library(GenomicAlignments)
+    library(ShortRead)
+    library(ape)
+    library(batchtools)
+})
+```
+
+
+# Introduction
+
+The following analyzes the ChIP-Seq data from Kaufman et al. [-@Kaufmann2010-me] using 
+for peak calling MACS2 where the uninduced sample serves as input (reference). 
+The details about all download steps are provided [here](https://girke.bioinformatics.ucr.edu/GEN242/assignments/projects/project_data/).
+
+Users want to extend this section to provide all background information relevant for this 
+ChIP-Seq project.
+
+
+## Experimental design
+
+Typically, users want to specify here all information relevant for the
+analysis of their NGS study. This includes detailed descriptions of
+FASTQ files, experimental design, reference genome, gene annotations,
+etc.
+
+## Workflow environment
+
+<font color="red">NOTE: this section</font> describes how to set up the proper environment (directory structure) for running 
+`systemPipeR` workflows. After mastering this task the workflow run instructions <font color="red">can be deleted</font> since they are not expected
+to be included in a final HTML/PDF report of a workflow.
+
+1. If a remote system or cluster is used, then users need to log in to the
+   remote system first. The following applies to an HPC cluster (_e.g._ HPCC
+   cluster). 
+
+   A terminal application needs to be used to log in to a user's cluster account. Next, one
+   can open an interactive session on a computer node with `srun`. More details about
+   argument settings for `srun` are available in this [HPCC
+   manual](http://hpcc.ucr.edu/manuals_linux-cluster_jobs.html#partitions) or
+   the HPCC section of this website
+   [here](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/linux/linux/#job-submission-with-sbatch).
+   Next, load the R version required for running the workflow with `module load`. Sometimes it may be necessary to
+   first unload an active software version before loading another version, _e.g._ `module unload R`.
+
+```sh
+srun --x11 --partition=gen242 --mem=20gb --cpus-per-task 8 --ntasks 1 --time 2:00:00 --pty bash -l
+module unload R; module load R/4.0.3_gcc-8.3.0
+```
+
+2. Load a workflow template with the `genWorkenvir` function. This can be done from the command-line or from within R. 
+   However, only one of the two options needs to be used.
+
+From command-line
+
+```sh
+$ Rscript -e "systemPipeRdata::genWorkenvir(workflow='chipseq')"
+$ cd chipseq
+```
+
+From R
+
+```{r gen_workflow_envir, eval=FALSE}
+library(systemPipeRdata)
+genWorkenvir(workflow="chipseq")
+setwd("chipseq")
+```
+
+3. Optional: if the user wishes to use another `Rmd` file than the template instance provided by the `genWorkenvir` function, then it can be copied or downloaded 
+   into the root directory of the workflow environment (_e.g._ with `cp` or `wget`).
+
+4. Now one can open from the root directory of the workflow the corresponding R Markdown script (_e.g._ systemPipeChIPseq.Rmd) using an R IDE, such as _nvim-r_, _ESS_ or RStudio. 
+   Subsequently, the workflow can be run as outlined below. For learning purposes it is recommended to run workflows for the first time interactively. Once all workflow steps are 
+   understood and possibly modified to custom needs, one can run the workflow from start to finish with a single command using `rmarkdown::render()` or `runWF()`.
+
+
+## Load packages
+
+The `systemPipeR` package needs to be loaded to perform the analysis 
+steps shown in this report [@H_Backman2016-bt]. The package allows users
+to run the entire analysis workflow interactively or with a single command 
+while also generating the corresponding analysis report. For details
+see `systemPipeR's` main [vignette](http://www.bioconductor.org/packages/devel/bioc/vignettes/systemPipeR/inst/doc/systemPipeR.html).
+
+```{r load_systempiper, eval=TRUE, message=FALSE, warning=FALSE}
+library(systemPipeR)
+```
+
+To apply workflows to custom data, the user needs to modify the _`targets`_ file and if
+necessary update the corresponding parameter (_`.cwl`_ and _`.yml`_) files. 
+A collection of pre-generated _`.cwl`_ and _`.yml`_ files are provided in the _`param/cwl`_ subdirectory 
+of each workflow template. They are also viewable in the GitHub repository of _`systemPipeRdata`_ ([see
+here](https://github.com/tgirke/systemPipeRdata/tree/master/inst/extdata/param/cwl)).
+For more information of the structure of the *targets* file, please consult the documentation 
+[here](http://www.bioconductor.org/packages/release/bioc/vignettes/systemPipeR/inst/doc/systemPipeR.html#25_structure_of_targets_file). More details about the new parameter files from systemPipeR can be found [here](http://www.bioconductor.org/packages/release/bioc/vignettes/systemPipeR/inst/doc/systemPipeR.html#26_structure_of_the_new_param_files_and_construct_sysargs2_container). 
+
+## Import custom functions
+
+Custem functions for the challenge projects can be imported with the source
+command from a local R script (here [challengeProject_Fct.R](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/spchipseq/challengeProject_Fct.R)).  Skip this step if such a
+script is not available.  Alternatively, these functions can be loaded from a
+custom R package. 
+
+```{r load_custom_fct, eval=FALSE, message=FALSE}
+source("challengeProject_Fct.R")
+```
+
+## Experiment definition provided by `targets` file
+
+The `targets` file defines all FASTQ files and sample comparisons of the analysis workflow. 
+If needed the tab separated (TSV) version of this file can be downloaded from [here](https://github.com/tgirke/GEN242/tree/main/content/en/assignments/Projects/targets_files)
+and the corresponding Google Sheet is [here](https://docs.google.com/spreadsheets/d/1w9V3JDOsXR8qW_qNqoXO0E0UR_Oev4k7-o2y6NMDTt8/edit#gid=472150521).
+
+```{r load_targets_file, eval=TRUE}
+targetspath <- "targets_chipseq.txt"
+targets <- read.delim(targetspath, comment.char = "#")
+DT::datatable(targets, options = list(scrollX = TRUE, autoWidth = TRUE))
+```
+
+# Read preprocessing
+
+## Read quality filtering and trimming
+
+The following example shows how one can design a custom read
+preprocessing function using utilities provided by the `ShortRead` package, and then
+apply it with `preprocessReads` in batch mode to all FASTQ samples referenced in the
+corresponding `SYSargs2` instance (`trim` object below). More detailed information on
+read preprocessing is provided in `systemPipeR's` main vignette.
+
+First, we construct _`SYSargs2`_ object from _`cwl`_ and _`yml`_ param and _`targets`_ files.
+
+```{r construct_SYSargs2_trim-se, eval=FALSE}
+trim <- loadWF(targets=targetspath, wf_file="trim-se.cwl", input_file="trim-se.yml", dir_path="param/cwl/preprocessReads/trim-se")
+trim <- renderWF(trim, inputvars=c(FileName="_FASTQ_PATH_", SampleName="_SampleName_"))
+trim
+output(trim)[1:2]
+```
+
+Next, we execute the code for trimming all the raw data. Note, the quality
+settings are relatively relaxed in this step (Phred score of at least 10 and tolerating 
+two Ns per read), because this data is from a time when the quality of 
+Illumina sequencing was still low. Setting the quality parameter
+more stringent would remove too many reads, which would negatively impact the
+read coverage required for the downstream peak calling.
+
+```{r proprocess_reads, eval=FALSE, message=FALSE, warning=FALSE, cache=TRUE}
+filterFct <- function(fq, cutoff=10, Nexceptions=2) {
+    qcount <- rowSums(as(quality(fq), "matrix") <= cutoff, na.rm=TRUE)
+    fq[qcount <= Nexceptions] 
+    # Retains reads where Phred scores are >= cutoff with N exceptions
+}
+preprocessReads(args=trim, Fct="filterFct(fq, cutoff=10, Nexceptions=2)",
+                batchsize=100000)
+writeTargetsout(x=trim, file="targets_chip_trim.txt", step=1, new_col = c("FileName"),
+                new_col_output_index = 1, overwrite = TRUE)
+```
+
+## FASTQ quality report
+
+The following `seeFastq` and `seeFastqPlot` functions generate and plot a
+series of useful quality statistics for a set of FASTQ files including per
+cycle quality box plots, base proportions, base-level quality trends,
+relative k-mer diversity, length and occurrence distribution of reads, number
+of reads above quality cutoffs and mean quality distribution. The results are
+written to a PDF file named `fastqReport.png`.  Parallelization of FASTQ
+quality report via scheduler (_e.g._ Slurm) across several compute nodes.
+
+```{r fastq_report, eval=FALSE}
+library(BiocParallel); library(batchtools) 
+f <- function(x) {
+  library(systemPipeR)
+  targets <- "targets_chip_trim.txt"
+  dir_path <- "param/cwl/preprocessReads/trim-se"
+  trim <- loadWorkflow(targets=targets, wf_file="trim-se.cwl", input_file="trim-se.yml", dir_path=dir_path)
+  trim <- renderWF(trim, inputvars=c(FileName="_FASTQ_PATH_", SampleName="_SampleName_"))
+  outfile <- subsetWF(trim, slot = "output", subset = 1, index = 1)
+  test=seeFastq(fastq=outfile[x], batchsize=100000, klength=8)
+}
+
+resources <- list(walltime = 120, ntasks = 1, ncpus = 4, memory = 1024)
+param <- BatchtoolsParam(workers = 4, cluster = "slurm", template = "batchtools.slurm.tmpl", resources = resources)
+fqlist <- bplapply(seq(along=trim), f, BPPARAM = param)
+
+png("./results/fastqReport.png", height=18*96, width=4*96*length(fqlist))
+seeFastqPlot(unlist(fqlist, recursive=FALSE))
+dev.off()
+``` 
+
+![](./results/fastqReport.png)
+<div align="center">Figure 1: FASTQ quality report for 7 samples.</div></br>
+
+# Alignments
+
+## Read mapping with `Bowtie2` 
+
+The NGS reads of this project will be aligned with `Bowtie2` against the
+reference genome sequence [@Langmead2012-bs]. The parameter settings of the
+aligner are defined in the `bowtie2-index.cwl` and `bowtie2-index.yml` files. 
+In ChIP-Seq experiments it is usually more appropriate to eliminate reads mapping 
+to multiple locations. To achieve this, users want to remove the argument setting 
+`-k 50 non-deterministic` in the configuration files.
+
+Building the index:
+
+```{r bowtie2_index, eval=FALSE}
+idx <- loadWorkflow(targets=NULL, wf_file="bowtie2-index.cwl", input_file="bowtie2-index.yml", dir_path="param/cwl/bowtie2/bowtie2-idx")
+idx <- renderWF(idx)
+idx
+cmdlist(idx)
+
+# Run in single machine
+runCommandline(idx, make_bam = FALSE)
+```
+
+The following submits 7 alignment jobs via a scheduler to a computer cluster.
+
+```{r bowtie2_align, eval=FALSE}
+targets <- "targets_chip_trim.txt"
+dir_path <- "param/cwl/bowtie2/bowtie2-se"
+args <- loadWF(targets = targets, wf_file="bowtie2-mapping-se.cwl", input_file="bowtie2-mapping-se.yml", dir_path=dir_path)
+args <- renderWF(args, inputvars=c(FileName="_FASTQ_PATH1_", SampleName="_SampleName_"))
+args
+cmdlist(args)[1:2]
+output(args)[1:2]
+```
+
+```{r bowtie2_align_cluster, eval=FALSE}
+moduleload(modules(args)) # Skip if a module system is not used
+resources <- list(walltime=120, ntasks=1, ncpus=4, memory=1024) 
+reg <- clusterRun(args, FUN=runCommandline, more.args= list(args=args, dir=FALSE), 
+                  conffile=".batchtools.conf.R", template="batchtools.slurm.tmpl", Njobs=7, runid ="01", resourceList=resources)
+getStatus(reg=reg) 
+waitForJobs(reg=reg) 
+args <- output_update(args, dir=FALSE, replace=TRUE, extension=c(".sam", ".bam")) ## Updates the output(args) to the right location in the subfolders
+output(args)
+```
+
+Alternatively, one can run the alignments sequentially on a single system.
+Note: this step is not used here! 
+
+```{r bowtie2_align_single, eval=FALSE}
+# args <- runCommandline(args, force=FALSE)
+```
+
+Check whether all BAM files and the corresponding new targets have been 
+created. 
+
+```{r check_files_exist, eval=FALSE}
+writeTargetsout(x=args, file="targets_bam.txt", step = 1, 
+                new_col="FileName", new_col_output_index=1, overwrite=TRUE, remove=TRUE)
+outpaths <- subsetWF(args, slot="output", subset=1, index=1)
+file.exists(outpaths)
+```
+
+## Read and alignment stats
+
+The following provides an overview of the number of reads in each sample
+and how many of them aligned to the reference.
+
+```{r align_stats, eval=FALSE}
+read_statsDF <- alignStats(args=args, output_index=1, subset="FileName") 
+write.table(read_statsDF, "results/alignStats.xls", row.names=FALSE, quote=FALSE, sep="\t")
+read.delim("results/alignStats.xls")
+```
+
+## Create symbolic links for viewing BAM files in IGV
+
+The `symLink2bam` function creates symbolic links to view the BAM alignment
+files in a genome browser such as IGV without moving these large files to a
+local system. The corresponding URLs are written to a file with a path
+specified under `urlfile`, here `IGVurl.txt`. Please replace the directory
+and the user name. The following parameter settings will create a
+subdirectory under `~/.html` called `somedir` of the user account. The user
+name under `urlbase`, here `ttest`, needs to be changed to the corresponding
+user name of the person running this function.
+
+```{r symbol_links, eval=FALSE}
+symLink2bam(sysargs=args, htmldir=c("~/.html/", "somedir/"), 
+            urlbase="http://cluster.hpcc.ucr.edu/~<username>/", 
+            urlfile="./results/IGVurl.txt")
+```
+
+# Peak calling with MACS2
+
+## Merge BAM files of replicates prior to peak calling
+
+Merging BAM files of technical and/or biological replicates can improve
+the sensitivity of the peak calling by increasing the depth of read
+coverage. The `mergeBamByFactor` function merges BAM files based on grouping information
+specified by a `factor`, here the `Factor` column of the imported targets file. It 
+also returns an updated `SYSargs2` object containing the paths to the
+merged BAM files as well as to any unmerged files without replicates.
+This step can be skipped if merging of BAM files is not desired.
+
+```{r merge_bams, eval=FALSE}
+dir_path <- "param/cwl/mergeBamByFactor"
+args <- loadWF(targets = "targets_bam.txt", wf_file = "merge-bam.cwl", input_file = "merge-bam.yml", dir_path = dir_path)
+args <- renderWF(args, inputvars = c(FileName = "_BAM_PATH_", SampleName = "_SampleName_"))
+args_merge <- mergeBamByFactor(args=args, overwrite=TRUE)
+writeTargetsout(x=args_merge, file="targets_mergeBamByFactor.txt", step=1, new_col="FileName", new_col_output_index=1, overwrite=TRUE, remove=TRUE)
+```
+
+## Peak calling with input/reference sample
+
+MACS2 can perform peak calling on ChIP-Seq data with and without input
+samples [@Zhang2008-pc]. 
+
+The following performs peak calling with input sample. The input sample 
+can be most conveniently specified in the `SampleReference` column of the 
+initial `targets` file. The `writeTargetsRef` function uses this 
+information to create a `targets` file intermediate for running MACS2 
+with the corresponding input sample(s).
+
+```{r call_peaks_macs_withref, eval=FALSE}
+writeTargetsRef(infile="targets_mergeBamByFactor.txt", outfile="targets_bam_ref.txt", silent=FALSE, overwrite=TRUE)
+dir_path <- "param/cwl/MACS2/MACS2-input"
+args_input <- loadWF(targets = "targets_bam_ref.txt", wf_file = "macs2-input.cwl", input_file = "macs2.yml", dir_path = dir_path)
+args_input <- renderWF(args_input, inputvars = c(FileName1 = "_FASTQ_PATH2_", FileName2 = "_FASTQ_PATH1_", SampleName = "_SampleName_"))
+cmdlist(args_input)[1]
+# Run MACS2
+args_input <- runCommandline(args_input, make_bam = FALSE, force=TRUE)
+outpaths_input <- subsetWF(args_input , slot="output", subset=1, index=1)
+file.exists(outpaths_input)
+writeTargetsout(x=args_input, file="targets_macs_input.txt", step = 1, new_col = "FileName", new_col_output_index = 1, overwrite = TRUE)
+```
+
+The peak calling results from MACS2 are written for each sample to the 
+`results` directory. They are named after the corresponding reference sample 
+with extensions used by MACS2.
+
+# Annotate peaks with genomic context
+
+## Annotation with `ChIPseeker` package
+
+To annotate the identified peaks with genomic context information
+one can use the `ChIPpeakAnno` or `ChIPseeker` package [@Zhu2010-zo; @Yu2015-xu]. 
+The following code uses the `ChIPseeker` package for annotating the peaks.
+
+```{r chip_peak_seeker, eval=FALSE}
+library(ChIPseeker); library(GenomicFeatures)
+dir_path <- "param/cwl/annotate_peaks"
+args <- loadWF(targets = "targets_macs_input.txt", wf_file = "annotate-peaks.cwl", 
+               input_file = "annotate-peaks.yml", dir_path = dir_path)
+args <- renderWF(args, inputvars = c(FileName = "_FASTQ_PATH1_", SampleName = "_SampleName_"))
+
+txdb <- makeTxDbFromGFF(file="data/tair10.gff", format="gff", dataSource="TAIR", 
+                        organism="Arabidopsis thaliana")
+for(i in seq(along=args)) {
+    peakAnno <- annotatePeak(infile1(args)[i], TxDb=txdb, verbose=FALSE)
+    df <- as.data.frame(peakAnno)
+    outpaths <- subsetWF(args , slot="output", subset=1, index=1)
+    write.table(df, outpaths[i], quote=FALSE, row.names=FALSE, sep="\t")
+}
+writeTargetsout(x=args, file="targets_peakanno.txt", step = 1, 
+                new_col = "FileName", new_col_output_index = 1, overwrite = TRUE )
+```
+
+The peak annotation results are written to the `results` directory. 
+The files are named after the corresponding peak files with extensions 
+specified in the `annotate_peaks.param` file,  here `*.peaks.annotated.xls`.
+
+# Count reads overlapping peaks
+
+The `countRangeset` function is a convenience wrapper to perform read counting
+iteratively over serveral range sets, here peak range sets. Internally,
+the read counting is performed with the `summarizeOverlaps` function from the 
+`GenomicAlignments` package. The resulting count tables are directly saved to 
+files, one for each peak set.
+
+```{r count_peak_ranges, eval=FALSE}
+library(GenomicRanges)
+dir_path <- "param/cwl/count_rangesets"
+args <- loadWF(targets = "targets_macs_input.txt", wf_file = "count_rangesets.cwl", 
+               input_file = "count_rangesets.yml", dir_path = dir_path)
+args <- renderWF(args, inputvars = c(FileName = "_FASTQ_PATH1_", SampleName = "_SampleName_"))
+
+# Bam Files
+targets <- "targets_chip_trim.txt"
+dir_path <- "param/cwl/bowtie2/bowtie2-se"
+args_bam <- loadWF(targets = targets, wf_file = "bowtie2-mapping-se.cwl", 
+                   input_file = "bowtie2-mapping-se.yml", dir_path = dir_path)
+args_bam <- renderWF(args_bam, inputvars = c(FileName = "_FASTQ_PATH1_", SampleName = "_SampleName_"))
+args_bam <- output_update(args_bam, dir=FALSE, replace=TRUE, extension=c(".sam", ".bam"))
+outpaths <- subsetWF(args_bam, slot="output", subset=1, index=1)
+
+register(MulticoreParam(workers=3))
+bfl <- BamFileList(outpaths, yieldSize=50000, index=character())
+countDFnames <- countRangeset(bfl, args, mode="Union", ignore.strand=TRUE)
+writeTargetsout(x=args, file="targets_countDF.txt", step = 1, 
+                new_col = "FileName", new_col_output_index = 1, overwrite = TRUE )
+```
+
+Shows count table generated in previous step (`C_1A_peaks.countDF.xls`).
+To avoid slowdowns of the load time of this page, ony 200 rows of the source 
+table are imported into the below `datatable` view .
+
+```{r show_counts_table, eval=TRUE}
+countDF <- read.delim("results/C_1A_peaks.countDF.xls")[1:200, ]
+library(DT)
+datatable(countDF, options=list(scrollX=TRUE, autoWidth=TRUE))
+```
+
+# Differential binding analysis
+
+The `runDiff` function performs differential binding analysis in batch mode for
+several count tables using `edgeR` or `DESeq2` [@Robinson2010-uk; @Love2014-sh].
+Internally, it calls the functions `run_edgeR` and `run_DESeq2`. It also returns 
+the filtering results and plots from the downstream `filterDEGs` function using 
+the fold change and FDR cutoffs provided under the `dbrfilter` argument.
+
+```{r diff_bind_analysis, eval=FALSE}
+dir_path <- "param/cwl/rundiff"
+args_diff <- loadWF(targets = "targets_countDF.txt", wf_file = "rundiff.cwl", 
+    input_file = "rundiff.yml", dir_path = dir_path)
+args_diff <- renderWF(args_diff, inputvars = c(FileName = "_FASTQ_PATH1_", SampleName = "_SampleName_"))
+
+cmp <- readComp(file=args_bam, format="matrix") 
+dbrlist <- runDiff(args=args_diff, diffFct=run_edgeR, 
+                   targets=targets.as.df(targets(args_bam)), cmp=cmp[[1]], 
+                   independent=TRUE, dbrfilter=c(Fold=2, FDR=1))
+writeTargetsout(x=args_diff, file="targets_rundiff.txt", step = 1, 
+                new_col = "FileName", new_col_output_index = 1, overwrite = TRUE )
+```
+
+# GO term enrichment analysis
+
+The following performs GO term enrichment analysis for each annotated peak
+set. Note: the following assumes that the GO annotation data exists under
+`data/GO/catdb.RData`. If this is not the case then it can be generated with
+the instructions from [here](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/sprnaseq/sprnaseq/#obtain-gene-to-go-mappings).
+
+```{r go_enrich, eval=FALSE}
+dir_path <- "param/cwl/annotate_peaks"
+args <- loadWF(targets = "targets_bam_ref.txt", wf_file = "annotate-peaks.cwl", input_file = "annotate-peaks.yml", dir_path = dir_path)
+args <- renderWF(args, inputvars = c(FileName1 = "_FASTQ_PATH1_", FileName2 = "_FASTQ_PATH2_", SampleName = "_SampleName_"))
+
+args_anno <- loadWF(targets = "targets_macs_input.txt", wf_file = "annotate-peaks.cwl",
+    input_file = "annotate-peaks.yml", dir_path = dir_path)
+args_anno <- renderWF(args_anno, inputvars = c(FileName = "_FASTQ_PATH1_", SampleName = "_SampleName_"))
+annofiles <- subsetWF(args_anno, slot="output", subset=1, index=1)
+gene_ids <- sapply(names(annofiles), function(x) unique(as.character(read.delim(annofiles[x])[,"geneId"])), simplify=FALSE)
+load("data/GO/catdb.RData")
+BatchResult <- GOCluster_Report(catdb=catdb, setlist=gene_ids, method="all", 
+                                id_type="gene", CLSZ=2, cutoff=0.9, 
+                                gocats=c("MF", "BP", "CC"), recordSpecGO=NULL)
+write.table(BatchResult, "results/GOBatchAll.xls", row.names=FALSE, quote=FALSE, sep="\t")
+```
+
+Shows GO term enrichment results from previous step. The last gene identifier column (10) 
+of this table has been excluded in this viewing instance to minimze the complexity of the
+result.
+To avoid slowdowns of the load time of this page, ony 200 rows of the source 
+table are imported into the below `datatable` view .
+
+```{r show_GO_table, eval=TRUE}
+BatchResult <- read.delim("results/GOBatchAll.xls")[1:200,]
+library(DT)
+datatable(BatchResult[,-10], options=list(scrollX=TRUE, autoWidth=TRUE))
+```
+
+# Motif analysis
+
+## Parse DNA sequences of peak regions from genome
+
+Enrichment analysis of known DNA binding motifs or _de novo_ discovery
+of novel motifs requires the DNA sequences of the identified peak
+regions. To parse the corresponding sequences from the reference genome,
+the `getSeq` function from the `Biostrings` package can be used. The 
+following example parses the sequences for each peak set and saves the 
+results to separate FASTA files, one for each peak set. In addition, the 
+sequences in the FASTA files are ranked (sorted) by increasing p-values 
+as expected by some motif discovery tools, such as `BCRANK`.
+
+```{r parse_peak_sequences, eval=FALSE}
+library(Biostrings); library(seqLogo); library(BCRANK)
+dir_path <- "param/cwl/annotate_peaks"
+args <- loadWF(targets = "targets_macs_input.txt", wf_file = "annotate-peaks.cwl", input_file = "annotate-peaks.yml", dir_path = dir_path)
+args <- renderWF(args, inputvars = c(FileName = "_FASTQ_PATH1_", SampleName = "_SampleName_"))
+
+rangefiles <- infile1(args)
+for(i in seq(along=rangefiles)) {
+    df <- read.delim(rangefiles[i], comment="#")
+    peaks <- as(df, "GRanges")
+    names(peaks) <- paste0(as.character(seqnames(peaks)), "_", start(peaks), "-", end(peaks))
+    peaks <- peaks[order(values(peaks)$X.log10.pvalue., decreasing=TRUE)]
+    pseq <- getSeq(FaFile("./data/tair10.fasta"), peaks)
+    names(pseq) <- names(peaks)
+    writeXStringSet(pseq, paste0(rangefiles[i], ".fasta")) 
+}
+```
+
+
+## Motif discovery with `BCRANK`
+
+The Bioconductor package `BCRANK` is one of the many tools available for 
+_de novo_ discovery of DNA binding motifs in peak regions of ChIP-Seq
+experiments. The given example applies this method on the first peak
+sample set and plots the sequence logo of the highest ranking motif.
+
+```{r bcrank_enrich, eval=FALSE}
+set.seed(0)
+BCRANKout <- bcrank(paste0(rangefiles[1], ".fasta"), restarts=25, use.P1=TRUE, use.P2=TRUE)
+toptable(BCRANKout)
+topMotif <- toptable(BCRANKout, 1)
+weightMatrix <- pwm(topMotif, normalize = FALSE)
+weightMatrixNormalized <- pwm(topMotif, normalize = TRUE)
+png("results/seqlogo.png")
+seqLogo(weightMatrixNormalized)
+dev.off()
+```
+
+![](./results/seqlogo.png)
+<div align="center">Figure 2: One of the motifs identified by `BCRANK`</div></br>
+
+# Version Information
+
+```{r sessionInfo}
+sessionInfo()
+```
+
+# Funding
+
+This project was supported by funds from the National Institutes of
+Health (NIH) and the National Science Foundation (NSF).
+
+# References
+
