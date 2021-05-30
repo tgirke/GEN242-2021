@@ -18,21 +18,24 @@
 <link rel="icon" type="image/png" href="../../../favicons/android-192x192.png" sizes="192x192">
 
 <title>RNA-Seq Workflow Template | GEN242</title><meta property="og:title" content="RNA-Seq Workflow Template" />
-<meta property="og:description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .html ] [ old version .Rmd ]" />
+<meta property="og:description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .html ] [ old version .Rmd ]
+ Introduction This report describes the analysis of the RNA-Seq data set from Howard et al (2013)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/sprnaseq/sprnaseq/" />
-<meta property="article:modified_time" content="2021-05-29T17:02:55-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-05-29T17:46:19-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="RNA-Seq Workflow Template">
-<meta itemprop="description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .html ] [ old version .Rmd ]">
-<meta itemprop="dateModified" content="2021-05-29T17:02:55-07:00" />
-<meta itemprop="wordCount" content="4550">
+<meta itemprop="description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .html ] [ old version .Rmd ]
+ Introduction This report describes the analysis of the RNA-Seq data set from Howard et al (2013).">
+<meta itemprop="dateModified" content="2021-05-29T17:46:19-07:00" />
+<meta itemprop="wordCount" content="4090">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="RNA-Seq Workflow Template"/>
-<meta name="twitter:description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .html ] [ old version .Rmd ]"/>
+<meta name="twitter:description" content="pre code { white-space: pre !important; overflow-x: scroll !important; word-break: keep-all !important; word-wrap: initial !important; }  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .html ] [ old version .Rmd ]
+ Introduction This report describes the analysis of the RNA-Seq data set from Howard et al (2013)."/>
 
 
 <script type="application/javascript">
@@ -940,7 +943,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.7dda1a81c69768141268364808b5844a.json"
+  data-offline-search-index-json-src="../../../offline-search-index.207ec06ddfc2d3c0796bfb7ea03c9444.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -972,7 +975,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.7dda1a81c69768141268364808b5844a.json"
+  data-offline-search-index-json-src="../../../offline-search-index.207ec06ddfc2d3c0796bfb7ea03c9444.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1292,18 +1295,9 @@ if (!doNotTrack) {
 	<h1>RNA-Seq Workflow Template</h1>
     
 	
-        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 22 minute read</p>
+        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 20 minute read</p>
            
 	<script src="../../../rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
-<script src="../../../rmarkdown-libs/jquery/jquery.min.js"></script>
-<link href="../../../rmarkdown-libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
-<script src="../../../rmarkdown-libs/datatables-binding/datatables.js"></script>
-<link href="../../../rmarkdown-libs/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="../../../rmarkdown-libs/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="../../../rmarkdown-libs/dt-core/js/jquery.dataTables.min.js"></script>
-<link href="../../../rmarkdown-libs/crosstalk/css/crosstalk.css" rel="stylesheet" />
-<script src="../../../rmarkdown-libs/crosstalk/js/crosstalk.min.js"></script>
-<script src="../../../rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
 <script src="../../../rmarkdown-libs/jquery/jquery.min.js"></script>
 <link href="../../../rmarkdown-libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
 <script src="../../../rmarkdown-libs/datatables-binding/datatables.js"></script>
@@ -1849,12 +1843,135 @@ result.
 To avoid slowdowns of the load time of this page, ony 200 rows of the source
 table are imported into the below <code>datatable</code> view .</p>
 <pre><code class="language-r">BatchResult &lt;- read.delim(&quot;results/GOBatchAll.xls&quot;)[1:199, ]
-library(DT)
-datatable(BatchResult[, -10], options = list(scrollX = TRUE, 
-    autoWidth = TRUE))
+knitr::kable(BatchResult[1:10, -10])
 </code></pre>
-<div id="htmlwidget-2" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120","121","122","123","124","125","126","127","128","129","130","131","132","133","134","135","136","137","138","139","140","141","142","143","144","145","146","147","148","149","150","151","152","153","154","155","156","157","158","159","160","161","162","163","164","165","166","167","168","169","170","171","172","173","174","175","176","177","178","179","180","181","182","183","184","185","186","187","188","189","190","191","192","193","194","195","196","197","198","199"],["M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-A1_up_down","M1-V1_up_down","M1-V1_up_down","M1-V1_up_down","M1-V1_up_down","M1-V1_up_down","M1-V1_up_down","M1-V1_up_down","M1-V1_up_down","M1-V1_up_down","M1-V1_up_down","M1-V1_up_down","M1-V1_up_down","M1-V1_up_down","M1-V1_up_down","M1-V1_up_down","M1-V1_up_down","M1-V1_up_down","M1-V1_up_down","M1-V1_up_down","M1-V1_up_down","M1-V1_up_down","M1-V1_up_down","M1-V1_up_down","M1-V1_up_down","M1-V1_up_down","M1-V1_up_down","M1-V1_up_down","M1-V1_up_down","M1-V1_up_down","M1-V1_up_down","M1-V1_up_down","M1-V1_up_down","M1-V1_up_down","M1-V1_up_down","M1-V1_up_down"],[26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164],["GO:0050291","GO:0004345","GO:0050664","GO:0052593","GO:0052594","GO:0052595","GO:0052596","GO:0052793","GO:0008131","GO:0016018","GO:0004144","GO:0008144","GO:0016411","GO:0009881","GO:0016641","GO:0048038","GO:0016638","GO:0008171","GO:0016747","GO:0004674","GO:0016301","GO:0005515","GO:0003755","GO:0016859","GO:0030247","GO:0016746","GO:0005488","GO:0016410","GO:0050661","GO:0042277","no_annot_MF","GO:0007623","GO:0048511","GO:0042752","GO:0009637","GO:0048580","GO:0009409","GO:0019438","GO:0032091","GO:0009646","GO:0010114","GO:0051100","GO:0006355","GO:1903506","GO:2001141","GO:2000028","GO:2000026","GO:0009662","GO:0043393","GO:2001007","GO:0051252","GO:0009737","GO:0097305","GO:0019219","GO:0048582","GO:0006351","GO:0097659","GO:0009266","GO:0051239","GO:0032774","GO:2000112","GO:0010556","GO:0044249","GO:1901362","GO:0031326","GO:0009889","GO:0009806","GO:0009807","GO:0051240","GO:2000241","GO:0009058","GO:0042759","GO:0048573","GO:0080167","GO:0051094","GO:2000113","GO:0010558","GO:0010677","GO:0010468","GO:0034654","GO:0050793","GO:0031327","GO:0009642","GO:0009648","GO:0033993","GO:0009890","GO:0042221","GO:0051171","GO:0042793","GO:0045912","GO:0018130","GO:0080090","GO:0009051","GO:0051098","GO:2001006","GO:0043207","GO:0051707","GO:0044271","GO:0032950","GO:0032951","GO:0045995","GO:0010033","GO:0009607","GO:0046513","GO:0050896","GO:1901576","GO:0044419","GO:0031323","GO:0002238","GO:0060255","GO:0010030","GO:0031324","GO:0009628","GO:0010228","GO:0009639","GO:0001676","GO:0010962","GO:0044237","GO:0006098","GO:0019432","GO:1901700","GO:0006071","GO:0006672","GO:0019400","GO:0006740","GO:0032885","GO:0046460","GO:0046463","GO:0019222","GO:0009682","GO:0006725","GO:0006641","GO:0051156","GO:0006638","GO:0006639","GO:0006739","GO:0006950","GO:0016070","GO:0071704","GO:0048608","GO:0061458","GO:0009911","GO:0030148","GO:0032881","GO:0009416","GO:0009605","GO:0010605","GO:0009314","GO:0045892","GO:1902679","GO:1903507","GO:0034645","no_annot_BP","GO:0000427","GO:0009505","GO:0031969","GO:0042170","GO:0042644","GO:0042646","GO:0005811","GO:0009295","GO:0009707","GO:0009527","no_annot_CC","GO:0016491","GO:0016829","GO:0003729","GO:0016830","GO:0016843","GO:0016987","GO:0035251","GO:0003913","GO:0009973","GO:0033741","GO:0046527","GO:0071949","GO:0046914","GO:0005506","GO:0004497","GO:0070330","GO:0080043","GO:0008171","GO:0080044","GO:0016840","GO:0004096","GO:0050373","GO:0016831","GO:0043295","GO:1900750","GO:0016712","GO:1901681","GO:0046906","GO:0004375","GO:0016594","GO:0016642","GO:0052638","GO:0097243","GO:2001147","GO:2001227"],[4,6,11,11,11,11,11,12,15,16,17,18,25,27,30,37,39,44,376,880,1498,8016,63,68,70,432,14627,77,80,93,null,140,149,54,88,397,416,3312,1,46,63,2,2447,2447,2447,71,574,3,3,3,2545,603,610,2605,87,2614,2615,632,632,2642,2710,2719,5519,3434,2804,2830,6,6,119,383,5767,7,127,127,130,401,402,8,3008,3012,811,422,140,140,813,428,3149,3186,12,12,3239,3263,14,14,15,1460,1460,4039,16,16,16,2061,1485,17,6430,5628,1511,3405,19,3482,21,591,2212,229,230,24,25,11348,26,26,1690,27,27,27,28,28,29,29,3733,30,5313,33,35,37,37,37,3899,3919,11761,1263,1266,40,40,40,745,1915,767,769,328,329,329,4065,null,9,237,293,301,51,55,56,62,66,68,null,1672,469,1028,113,20,6,142,3,3,3,180,80,1281,354,325,4,64,44,55,35,5,5,71,19,19,6,40,432,2,2,2,2,2,2,2],[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,3,4,12,1,1,1,2,18,1,1,1,5,4,4,3,3,4,4,10,1,2,2,1,8,8,8,2,4,1,1,1,8,4,4,8,2,8,8,4,4,8,8,8,12,9,8,8,1,1,2,3,12,1,2,2,2,3,3,1,8,8,4,3,2,2,4,3,8,8,1,1,8,8,1,1,1,5,5,9,1,1,1,6,5,1,12,11,5,8,1,8,1,3,6,2,2,1,1,17,1,1,5,1,1,1,1,1,1,1,8,1,10,1,1,1,1,1,8,8,17,4,4,1,1,1,3,5,3,3,2,2,2,8,2,1,2,2,2,1,1,1,1,1,1,5,115,43,76,17,7,4,18,3,3,3,20,12,84,31,29,3,10,8,9,7,3,3,10,5,5,3,7,33,2,2,2,2,2,2,2],[0.00396207240277524,0.00593749775518193,0.0108597499578255,0.0108597499578255,0.0108597499578255,0.0108597499578255,0.0108597499578255,0.011841410886506,0.0147808296665232,0.0157587840329912,0.0167358138384895,0.0177119199134345,0.0245188675894235,0.0264554433826766,0.0293534431388996,0.0360835258339547,0.0379982289149229,0.0427691521706767,0.0529073433456739,0.0545185204287504,0.056840052129226,0.0570632552980758,0.0606939608584034,0.0653576141384002,0.0672168937533096,0.0676011553685207,0.0726842568703283,0.0736966714483606,0.0764605755519373,0.0883469924359658,null,1.25484487597364e-05,1.60417470534208e-05,2.36776231188795e-05,0.000102350563099042,0.000698025863889206,0.000831087636599189,0.00103954361600856,0.00104004160166371,0.00104337239345001,0.00194768376635433,0.00207904654214364,0.00244035763538266,0.00244035763538266,0.00244035763538266,0.00246570013326211,0.00270973011552939,0.00311701580984691,0.00311701580984691,0.00311701580984691,0.00313156468046933,0.0032359677894733,0.00337278628031118,0.00362623680986932,0.00367451032305311,0.00370549526082861,0.00371438580088941,0.00382859056100743,0.00382859056100743,0.00396088979088355,0.00463928739860478,0.00473553190134841,0.00489653263459281,0.00554221581530132,0.00572411427706303,0.00605667219829232,0.00622471944690062,0.00622471944690062,0.00675797982076891,0.00708837654842155,0.0071506357854646,0.00725855588960855,0.00766241908184978,0.00766241908184978,0.00801495919796392,0.00803945399463063,0.00809440137601334,0.00829136158810706,0.00875720523106411,0.00882704277956502,0.00918470782652796,0.00924058875147424,0.00924203000058363,0.00924203000058363,0.00926291078104471,0.00960213637762476,0.0114891163851419,0.0123032764641655,0.0124122965870369,0.0124122965870369,0.0135449711992255,0.0141374484402185,0.0144666051373641,0.0144666051373641,0.0154922231009709,0.0155928707931346,0.0155928707931346,0.0160170086551973,0.0165168181595368,0.0165168181595368,0.0165168181595368,0.0166276534542345,0.0166815208694746,0.0175403912889455,0.0175904889886221,0.0177411639040473,0.0178673934569459,0.0180517765376037,0.0195844756593918,0.0204854779553819,0.0216244840016301,0.0226802870978921,0.0228785891697048,0.0234442884774654,0.0236350756420669,0.0246768709663364,0.0256923036878706,0.0265339486436073,0.0267067232233131,0.0267067232233131,0.0276016226747585,0.0277201305396971,0.0277201305396971,0.0277201305396971,0.0287325266031724,0.0287325266031724,0.0297439123790111,0.0297439123790111,0.030110369468071,0.0307542888316037,0.0325161732740539,0.0337793718806442,0.035791064938108,0.0377987437733969,0.0377987437733969,0.0377987437733969,0.0380432483076367,0.0390897338292566,0.0392726582011206,0.0395493526036962,0.0398436805323981,0.040802752117775,0.040802752117775,0.040802752117775,0.040982971677698,0.0440528511268703,0.0440680930821638,0.0443542965956777,0.0452612501494667,0.0455096065774526,0.0455096065774526,0.0473492100647661,null,0.00907818411455563,0.0236739455602806,0.0350080505847825,0.0367713298992154,0.0504151732037068,0.054265208102662,0.0552253913665304,0.0609670227854618,0.0647762983300598,0.0666754128376102,null,1.81515788700584e-06,6.750632216831e-06,1.03087384433365e-05,1.05924957878821e-05,1.59423079482841e-05,5.48248118467457e-05,6.28173292241127e-05,8.83836670914496e-05,8.83836670914496e-05,8.83836670914496e-05,0.000162070431673474,0.000211772857725349,0.000242676015481734,0.000284786439439802,0.000323837226419927,0.000341747674214289,0.000502732091758004,0.000643718606381178,0.000672503027486255,0.000770557719623788,0.000825948591497468,0.000825948591497468,0.00115768974409642,0.00120190615916265,0.00120190615916265,0.00159707237114819,0.0017604887930816,0.00194893355872084,0.00198619304528545,0.00198619304528545,0.00198619304528545,0.00198619304528545,0.00198619304528545,0.00198619304528545,0.00198619304528545],[0.0396207240277524,0.0593749775518193,0.108597499578255,0.108597499578255,0.108597499578255,0.108597499578255,0.108597499578255,0.11841410886506,0.147808296665232,0.157587840329912,0.167358138384895,0.177119199134345,0.245188675894235,0.264554433826766,0.293534431388996,0.360835258339547,0.379982289149229,0.427691521706767,0.529073433456739,0.545185204287504,0.56840052129226,0.570632552980759,0.606939608584034,0.653576141384002,0.672168937533096,0.676011553685207,0.726842568703283,0.736966714483606,0.764605755519373,0.883469924359658,null,0.000238420526434991,0.000304793194014996,0.00044987483925871,0.00194466069888179,0.0132624914138949,0.0157906650953846,0.0197513287041626,0.0197607904316105,0.0198240754755501,0.0370059915607322,0.0395018843007291,0.0463667950722706,0.0463667950722706,0.0463667950722706,0.0468483025319801,0.0514848721950584,0.0592233003870913,0.0592233003870913,0.0592233003870913,0.0594997289289172,0.0614833879999926,0.0640829393259124,0.0688984993875171,0.0698156961380091,0.0704044099557437,0.0705733302168989,0.0727432206591412,0.0727432206591412,0.0752569060267874,0.0881464605734908,0.0899751061256199,0.0930341200572635,0.105302100490725,0.108758171264198,0.115076771767554,0.118269669491112,0.118269669491112,0.128401616594609,0.134679154420009,0.135862079923827,0.137912561902563,0.145585962555146,0.145585962555146,0.152284224761315,0.152749625897982,0.153793626144254,0.157535870174034,0.166386899390218,0.167713812811735,0.174509448704031,0.175571186278011,0.175598570011089,0.175598570011089,0.17599530483985,0.18244059117487,0.218293211317696,0.233762252819144,0.235833635153701,0.235833635153701,0.257354452785285,0.268611520364152,0.274865497609918,0.274865497609918,0.294352238918447,0.296264545069557,0.296264545069557,0.304323164448749,0.313819545031198,0.313819545031198,0.313819545031198,0.315925415630455,0.316948896520017,0.333267434489964,0.33421929078382,0.337082114176898,0.339480475681972,0.342983754214471,0.372105037528444,0.389224081152257,0.410865196030972,0.430925454859951,0.434693194224391,0.445441481071842,0.449066437199272,0.468860548360392,0.488153770069541,0.504145024228539,0.50742774124295,0.50742774124295,0.524430830820411,0.526682480254245,0.526682480254245,0.526682480254245,0.545918005460275,0.545918005460275,0.565134335201211,0.565134335201211,0.572097019893349,0.58433148780047,0.617807292207025,0.641808065732239,0.680030233824052,0.718176131694541,0.718176131694541,0.718176131694541,0.722821717845098,0.742704942755876,0.746180505821291,0.751437699470228,0.757029930115564,0.775252290237724,0.775252290237724,0.775252290237724,0.778676461876262,0.837004171410537,0.837293768561113,0.842731635317876,0.859963752839867,0.8646825249716,0.8646825249716,0.899634991230556,null,0.118016393489223,0.307761292283648,0.455104657602173,0.478027288689801,0.655397251648189,0.705447705334606,0.717930087764895,0.792571296211004,0.842091878290778,0.866780366888933,null,0.000490092629491576,0.00182267069854437,0.00278335937970086,0.00285997386272817,0.0043044231460367,0.0148026991986213,0.0169606788905104,0.0238635901146914,0.0238635901146914,0.0238635901146914,0.0437590165518379,0.0571786715858443,0.0655225241800682,0.0768923386487466,0.0874360511333803,0.0922718720378579,0.135737664774661,0.173804023722918,0.181575817421289,0.208050584298423,0.223006119704316,0.223006119704316,0.312576230906033,0.324514662973917,0.324514662973917,0.431209540210012,0.475331974132031,0.526212060854626,0.536272122227072,0.536272122227072,0.536272122227072,0.536272122227072,0.536272122227072,0.536272122227072,0.536272122227072],["sphingosine N-acyltransferase activity","glucose-6-phosphate dehydrogenase activity","oxidoreductase activity, acting on NAD(P)H, oxygen as acceptor","tryptamine:oxygen oxidoreductase (deaminating) activity","aminoacetone:oxygen oxidoreductase(deaminating) activity","aliphatic-amine oxidase activity","phenethylamine:oxygen oxidoreductase (deaminating) activity","pectin acetylesterase activity","primary amine oxidase activity","cyclosporin A binding","diacylglycerol O-acyltransferase activity","drug binding","acylglycerol O-acyltransferase activity","photoreceptor activity","oxidoreductase activity, acting on the CH-NH2 group of donors, oxygen as acceptor","quinone binding","oxidoreductase activity, acting on the CH-NH2 group of donors","O-methyltransferase activity","transferase activity, transferring acyl groups other than amino-acyl groups","protein serine/threonine kinase activity","kinase activity","protein binding","peptidyl-prolyl cis-trans isomerase activity","cis-trans isomerase activity","polysaccharide binding","transferase activity, transferring acyl groups","binding","N-acyltransferase activity","NADP binding","peptide binding",null,"circadian rhythm","rhythmic process","regulation of circadian rhythm","response to blue light","regulation of post-embryonic development","response to cold","aromatic compound biosynthetic process","negative regulation of protein binding","response to absence of light","response to red light","negative regulation of binding","regulation of transcription, DNA-templated","regulation of nucleic acid-templated transcription","regulation of RNA biosynthetic process","regulation of photoperiodism, flowering","regulation of multicellular organismal development","etioplast organization","regulation of protein binding","negative regulation of cellulose biosynthetic process","regulation of RNA metabolic process","response to abscisic acid","response to alcohol","regulation of nucleobase-containing compound metabolic process","positive regulation of post-embryonic development","transcription, DNA-templated","nucleic acid-templated transcription","response to temperature stimulus","regulation of multicellular organismal process","RNA biosynthetic process","regulation of cellular macromolecule biosynthetic process","regulation of macromolecule biosynthetic process","cellular biosynthetic process","organic cyclic compound biosynthetic process","regulation of cellular biosynthetic process","regulation of biosynthetic process","lignan metabolic process","lignan biosynthetic process","positive regulation of multicellular organismal process","regulation of reproductive process","biosynthetic process","long-chain fatty acid biosynthetic process","photoperiodism, flowering","response to karrikin","positive regulation of developmental process","negative regulation of cellular macromolecule biosynthetic process","negative regulation of macromolecule biosynthetic process","negative regulation of cellular carbohydrate metabolic process","regulation of gene expression","nucleobase-containing compound biosynthetic process","regulation of developmental process","negative regulation of cellular biosynthetic process","response to light intensity","photoperiodism","response to lipid","negative regulation of biosynthetic process","response to chemical","regulation of nitrogen compound metabolic process","plastid transcription","negative regulation of carbohydrate metabolic process","heterocycle biosynthetic process","regulation of primary metabolic process","pentose-phosphate shunt, oxidative branch","regulation of binding","regulation of cellulose biosynthetic process","response to external biotic stimulus","response to other organism","cellular nitrogen compound biosynthetic process","regulation of beta-glucan metabolic process","regulation of beta-glucan biosynthetic process","regulation of embryonic development","response to organic substance","response to biotic stimulus","ceramide biosynthetic process","response to stimulus","organic substance biosynthetic process","interspecies interaction between organisms","regulation of cellular metabolic process","response to molecule of fungal origin","regulation of macromolecule metabolic process","positive regulation of seed germination","negative regulation of cellular metabolic process","response to abiotic stimulus","vegetative to reproductive phase transition of meristem","response to red or far red light","long-chain fatty acid metabolic process","regulation of glucan biosynthetic process","cellular metabolic process","pentose-phosphate shunt","triglyceride biosynthetic process","response to oxygen-containing compound","glycerol metabolic process","ceramide metabolic process","alditol metabolic process","NADPH regeneration","regulation of polysaccharide biosynthetic process","neutral lipid biosynthetic process","acylglycerol biosynthetic process","regulation of metabolic process","induced systemic resistance","cellular aromatic compound metabolic process","triglyceride metabolic process","glucose 6-phosphate metabolic process","neutral lipid metabolic process","acylglycerol metabolic process","NADP metabolic process","response to stress","RNA metabolic process","organic substance metabolic process","reproductive structure development","reproductive system development","positive regulation of flower development","sphingolipid biosynthetic process","regulation of polysaccharide metabolic process","response to light stimulus","response to external stimulus","negative regulation of macromolecule metabolic process","response to radiation","negative regulation of transcription, DNA-templated","negative regulation of RNA biosynthetic process","negative regulation of nucleic acid-templated transcription","cellular macromolecule biosynthetic process",null,"plastid-encoded plastid RNA polymerase complex","plant-type cell wall","chloroplast membrane","plastid membrane","chloroplast nucleoid","plastid nucleoid","lipid droplet","nucleoid","chloroplast outer membrane","plastid outer membrane",null,"oxidoreductase activity","lyase activity","mRNA binding","carbon-carbon lyase activity","amine-lyase activity","sigma factor activity","UDP-glucosyltransferase activity","DNA photolyase activity","adenylyl-sulfate reductase activity","adenylyl-sulfate reductase (glutathione) activity","glucosyltransferase activity","FAD binding","transition metal ion binding","iron ion binding","monooxygenase activity","aromatase activity","quercetin 3-O-glucosyltransferase activity","O-methyltransferase activity","quercetin 7-O-glucosyltransferase activity","carbon-nitrogen lyase activity","catalase activity","UDP-arabinose 4-epimerase activity","carboxy-lyase activity","glutathione binding","oligopeptide binding","oxidoreductase activity, acting on paired donors, with incorporation or reduction of molecular oxygen, reduced flavin or flavoprotein as one donor, and incorporation of one atom of oxygen","sulfur compound binding","tetrapyrrole binding","glycine dehydrogenase (decarboxylating) activity","glycine binding","oxidoreductase activity, acting on the CH-NH2 group of donors, disulfide as acceptor","indole-3-butyrate beta-glucosyltransferase activity","flavonoid binding","camalexin binding","quercitrin binding"],["MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","BP","CC","CC","CC","CC","CC","CC","CC","CC","CC","CC","CC","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF","MF"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>CLID<\/th>\n      <th>CLSZ<\/th>\n      <th>GOID<\/th>\n      <th>NodeSize<\/th>\n      <th>SampleMatch<\/th>\n      <th>Phyper<\/th>\n      <th>Padj<\/th>\n      <th>Term<\/th>\n      <th>Ont<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"autoWidth":true,"columnDefs":[{"className":"dt-right","targets":[2,4,5,6,7]},{"orderable":false,"targets":0}],"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">CLID</th>
+<th style="text-align:right">CLSZ</th>
+<th style="text-align:left">GOID</th>
+<th style="text-align:right">NodeSize</th>
+<th style="text-align:right">SampleMatch</th>
+<th style="text-align:right">Phyper</th>
+<th style="text-align:right">Padj</th>
+<th style="text-align:left">Term</th>
+<th style="text-align:left">Ont</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">M1-A1_up_down</td>
+<td style="text-align:right">26</td>
+<td style="text-align:left">GO:0050291</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">0.0039621</td>
+<td style="text-align:right">0.0396207</td>
+<td style="text-align:left">sphingosine N-acyltransferase activity</td>
+<td style="text-align:left">MF</td>
+</tr>
+<tr>
+<td style="text-align:left">M1-A1_up_down</td>
+<td style="text-align:right">26</td>
+<td style="text-align:left">GO:0004345</td>
+<td style="text-align:right">6</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">0.0059375</td>
+<td style="text-align:right">0.0593750</td>
+<td style="text-align:left">glucose-6-phosphate dehydrogenase activity</td>
+<td style="text-align:left">MF</td>
+</tr>
+<tr>
+<td style="text-align:left">M1-A1_up_down</td>
+<td style="text-align:right">26</td>
+<td style="text-align:left">GO:0050664</td>
+<td style="text-align:right">11</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">0.0108597</td>
+<td style="text-align:right">0.1085975</td>
+<td style="text-align:left">oxidoreductase activity, acting on NAD(P)H, oxygen as acceptor</td>
+<td style="text-align:left">MF</td>
+</tr>
+<tr>
+<td style="text-align:left">M1-A1_up_down</td>
+<td style="text-align:right">26</td>
+<td style="text-align:left">GO:0052593</td>
+<td style="text-align:right">11</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">0.0108597</td>
+<td style="text-align:right">0.1085975</td>
+<td style="text-align:left">tryptamine:oxygen oxidoreductase (deaminating) activity</td>
+<td style="text-align:left">MF</td>
+</tr>
+<tr>
+<td style="text-align:left">M1-A1_up_down</td>
+<td style="text-align:right">26</td>
+<td style="text-align:left">GO:0052594</td>
+<td style="text-align:right">11</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">0.0108597</td>
+<td style="text-align:right">0.1085975</td>
+<td style="text-align:left">aminoacetone:oxygen oxidoreductase(deaminating) activity</td>
+<td style="text-align:left">MF</td>
+</tr>
+<tr>
+<td style="text-align:left">M1-A1_up_down</td>
+<td style="text-align:right">26</td>
+<td style="text-align:left">GO:0052595</td>
+<td style="text-align:right">11</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">0.0108597</td>
+<td style="text-align:right">0.1085975</td>
+<td style="text-align:left">aliphatic-amine oxidase activity</td>
+<td style="text-align:left">MF</td>
+</tr>
+<tr>
+<td style="text-align:left">M1-A1_up_down</td>
+<td style="text-align:right">26</td>
+<td style="text-align:left">GO:0052596</td>
+<td style="text-align:right">11</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">0.0108597</td>
+<td style="text-align:right">0.1085975</td>
+<td style="text-align:left">phenethylamine:oxygen oxidoreductase (deaminating) activity</td>
+<td style="text-align:left">MF</td>
+</tr>
+<tr>
+<td style="text-align:left">M1-A1_up_down</td>
+<td style="text-align:right">26</td>
+<td style="text-align:left">GO:0052793</td>
+<td style="text-align:right">12</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">0.0118414</td>
+<td style="text-align:right">0.1184141</td>
+<td style="text-align:left">pectin acetylesterase activity</td>
+<td style="text-align:left">MF</td>
+</tr>
+<tr>
+<td style="text-align:left">M1-A1_up_down</td>
+<td style="text-align:right">26</td>
+<td style="text-align:left">GO:0008131</td>
+<td style="text-align:right">15</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">0.0147808</td>
+<td style="text-align:right">0.1478083</td>
+<td style="text-align:left">primary amine oxidase activity</td>
+<td style="text-align:left">MF</td>
+</tr>
+<tr>
+<td style="text-align:left">M1-A1_up_down</td>
+<td style="text-align:right">26</td>
+<td style="text-align:left">GO:0016018</td>
+<td style="text-align:right">16</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">0.0157588</td>
+<td style="text-align:right">0.1575878</td>
+<td style="text-align:left">cyclosporin A binding</td>
+<td style="text-align:left">MF</td>
+</tr>
+</tbody>
+</table>
 <h3 id="plot-batch-go-term-results">Plot batch GO term results</h3>
 <p>The <code>data.frame</code> generated by <code>GOCluster</code> can be plotted with the <code>goBarplot</code> function. Because of the
 variable size of the sample sets, it may not always be desirable to show
@@ -2008,7 +2125,7 @@ dev.off()
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-29: <a  href="https://github.com/tgirke/GEN242//commit/40e396e3706dc2b3ba32edc095bbf010ba6d51c7">some edits (40e396e37)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-29: <a  href="https://github.com/tgirke/GEN242//commit/e327a1cea574c3d68a9ba294839f664eb5410514">some edits (e327a1cea)</a>
 </div>
 </div>
 
