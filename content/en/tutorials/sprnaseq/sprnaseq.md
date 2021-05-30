@@ -159,7 +159,7 @@ For more information of the structure of the *targets* file, please consult the 
 ### Import custom functions
 
 Custem functions for the challenge projects can be imported with the source
-command from a local R script (here `custom_Fct.R`). Skip this step if such a
+command from a local R script (here [challengeProject\_Fct.R](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/tutorials/spchipseq/challengeProject_Fct.R)). Skip this step if such a
 script is not available. Alternatively, these functions can be loaded from a
 custom R package.
 
