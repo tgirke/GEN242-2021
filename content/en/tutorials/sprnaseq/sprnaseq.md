@@ -63,8 +63,8 @@ document.addEventListener("DOMContentLoaded", function() {
 <div style="text-align: right">
 
 Source code downloads:    
-\[ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/sprnaseq/sprnaseq.Rmd) \]    
-\[ [.html](http://cluster.hpcc.ucr.edu/~ttest/rnaseq/systemPipeRNAseq.html) \]    
+\[ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242/main/static/custom/spWFtemplates/sprnaseq.Rmd) \]    
+\[ [.html](https://girke.bioinformatics.ucr.edu/GEN242/custom/spWFtemplates/sprnaseq.html) \]    
 \[ [old version .Rmd](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/sprnaseq/back_sprnaseq_rmd) \]
 
 </div>

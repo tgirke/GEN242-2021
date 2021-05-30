@@ -56,8 +56,8 @@ suppressPackageStartupMessages({
 
 <div style="text-align: right"> 
 Source code downloads: &nbsp; &nbsp;
-[ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/sprnaseq/sprnaseq.Rmd) ] &nbsp; &nbsp; 
-[ [.html](http://cluster.hpcc.ucr.edu/~ttest/rnaseq/systemPipeRNAseq.html) ] &nbsp; &nbsp; 
+[ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242/main/static/custom/spWFtemplates/sprnaseq.Rmd) ] &nbsp; &nbsp; 
+[ [.html](https://girke.bioinformatics.ucr.edu/GEN242/custom/spWFtemplates/sprnaseq.html) ] &nbsp; &nbsp; 
 [ [old version .Rmd](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/sprnaseq/back_sprnaseq_rmd) ]
 </div>
 
