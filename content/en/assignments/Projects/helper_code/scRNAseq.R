@@ -7,8 +7,8 @@
 
 ## (1a) Creaat first Summarized Experiment object and then coerce to SingleCellExperiment
 library(SummarizedExperiment); library(SingleCellExperiment)                                                                                                                        
-targetspath <- "targetsPE.txt"                                                                                                                                                      
-countpath <- "results/countDFeByg.xls"                                                                                                                                              
+targetspath <- "targetsPE.txt" # Assumes targetsPE file from course project in your current directory                                                                                                                                                     
+countpath <- "results/countDFeByg.xls" # Assumes full count table from course project in results sub-directory                                                                                                                                            
 targets <- read.delim(targetspath, comment.char = "#")                                                                                                                              
 rownames(targets) <- targets$SampleName                                                                                                                                             
 countDF <- read.delim(countpath, row.names=1, check.names=FALSE)                                                                                                                    
@@ -17,7 +17,7 @@ countDF <- read.delim(countpath, row.names=1, check.names=FALSE)
 ## (1a) The SingleCellExperiment can also be created directly from the two tabular input files like this
 (sce2 <- SingleCellExperiment(assays=list(counts=countDF), colData=targets))
 
-## (2) Prepare data for plotting with run* embedding functions from scran
+## (2) Prepare data for plotting with run* embedding functions from scran/scater
 library(scran); library(scater)
 sce <- logNormCounts(sce)
 colLabels(sce) <- factor(colData(sce)$Factor) # This uses replicate info from above targets file as pseudo-clusters
@@ -46,4 +46,5 @@ sce <- runPCA(sce) # gives a warning but it still works
 reducedDimNames(sce)
 plotPCA(sce, colour_by="label", text_by="label")
 
-
+## Importantly: now compare the results in the four embedding plots with the sample
+## tree from the RNA-Seq workflow here: https://bit.ly/3c3z1j5
