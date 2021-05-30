@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <div style="text-align: right">
 
 Source code downloads:    
-\[ [.Rmd](https://cluster.hpcc.ucr.edu/~ttest/chipseq/spchipseq.html) \]    
+\[ [.Rmd](https://cluster.hpcc.ucr.edu/~ttest/chipseq/spchipseq.Rmd) \]    
 \[ [.html](https://cluster.hpcc.ucr.edu/~ttest/chipseq/spchipseq.html) \]    
 \[ [old version .Rmd](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/spchipseq/back_spchipseq_rmd) \]
 
