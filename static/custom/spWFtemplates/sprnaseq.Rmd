@@ -91,7 +91,7 @@ to be included in a final HTML/PDF report of a workflow.
    first unload an active software version before loading another version, _e.g._ `module unload R`.
 
 ```sh
-srun --x11 --partition=short --mem=8gb --cpus-per-task 4 --ntasks 1 --time 2:00:00 --pty bash -l
+srun --x11 --partition=short --mem=8gb --cpus-per-task 4 --ntasks 1 --time 20:00:00 --pty bash -l
 module unload R; module load R/4.0.3_gcc-8.3.0
 ```
 
@@ -243,7 +243,7 @@ corresponding *SYSargs2* object, here *args*.
 
 ```{r hisat_SYSargs2_object, eval=TRUE}
 dir_path <- "param/cwl/hisat2/hisat2-pe"
-args <- loadWorkflow(targets=targetspath, wf_file="hisat2-mapping-pe.cwl", 
+args <- loadWorkflow(targets="targets_trim.txt", wf_file="hisat2-mapping-pe.cwl", 
                      input_file="hisat2-mapping-pe.yml", dir_path=dir_path)
 args <- renderWF(args, inputvars=c(FileName1="_FASTQ_PATH1_", FileName2="_FASTQ_PATH2_", SampleName="_SampleName_"))
 args

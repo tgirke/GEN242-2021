@@ -4549,7 +4549,7 @@ function toggle_visibility(id1) {
 
 <h1 class="title toc-ignore">RNA-Seq Workflow Template</h1>
 <p class="author-name">Author: First Last</p>
-<h4 class="date">Last update: 30 May, 2021</h4>
+<h4 class="date">Last update: 31 May, 2021</h4>
 <h4 class="package">Package</h4>
 <p>systemPipeR 1.26.3</p>
 
@@ -4614,7 +4614,7 @@ the HPCC section of this website
 Next, load the R version required for running the workflow with <code>module load</code>. Sometimes it may be necessary to
 first unload an active software version before loading another version, <em>e.g.</em> <code>module unload R</code>.</p></li>
 </ol>
-<pre class="sh"><code>srun --x11 --partition=short --mem=8gb --cpus-per-task 4 --ntasks 1 --time 2:00:00 --pty bash -l
+<pre class="sh"><code>srun --x11 --partition=short --mem=8gb --cpus-per-task 4 --ntasks 1 --time 20:00:00 --pty bash -l
 module unload R; module load R/4.0.3_gcc-8.3.0</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Load a workflow template with the <code>genWorkenvir</code> function. This can be done from the command-line or from within R.
@@ -4743,7 +4743,7 @@ runCommandline(idx, make_bam = FALSE)</code></pre>
 and <code>hisat2-mapping-se.yml</code> files. The following shows how to construct the
 corresponding <em>SYSargs2</em> object, here <em>args</em>.</p>
 <pre class="r"><code>dir_path &lt;- &quot;param/cwl/hisat2/hisat2-pe&quot;
-args &lt;- loadWorkflow(targets = targetspath, wf_file = &quot;hisat2-mapping-pe.cwl&quot;, 
+args &lt;- loadWorkflow(targets = &quot;targets_trim.txt&quot;, wf_file = &quot;hisat2-mapping-pe.cwl&quot;, 
     input_file = &quot;hisat2-mapping-pe.yml&quot;, dir_path = dir_path)
 args &lt;- renderWF(args, inputvars = c(FileName1 = &quot;_FASTQ_PATH1_&quot;, 
     FileName2 = &quot;_FASTQ_PATH2_&quot;, SampleName = &quot;_SampleName_&quot;))
@@ -4760,12 +4760,12 @@ args</code></pre>
 <pre class="r"><code>cmdlist(args)[1:2]</code></pre>
 <pre><code>## $M1A
 ## $M1A$`hisat2-mapping-pe`
-## [1] &quot;hisat2 -S ./results/M1A.sam  -x ./data/tair10.fasta  -k 1  --min-intronlen 30  --max-intronlen 3000  -1 ./data/SRR446027_1.fastq.gz -2 ./data/SRR446027_2.fastq.gz --threads 4&quot;
+## [1] &quot;hisat2 -S ./results/M1A.sam  -x ./data/tair10.fasta  -k 1  --min-intronlen 30  --max-intronlen 3000  -1 ./results/M1A_1.fastq_trim.gz -2 ./results/M1A_2.fastq_trim.gz --threads 4&quot;
 ## 
 ## 
 ## $M1B
 ## $M1B$`hisat2-mapping-pe`
-## [1] &quot;hisat2 -S ./results/M1B.sam  -x ./data/tair10.fasta  -k 1  --min-intronlen 30  --max-intronlen 3000  -1 ./data/SRR446028_1.fastq.gz -2 ./data/SRR446028_2.fastq.gz --threads 4&quot;</code></pre>
+## [1] &quot;hisat2 -S ./results/M1B.sam  -x ./data/tair10.fasta  -k 1  --min-intronlen 30  --max-intronlen 3000  -1 ./results/M1B_1.fastq_trim.gz -2 ./results/M1B_2.fastq_trim.gz --threads 4&quot;</code></pre>
 <pre class="r"><code>output(args)[1:2]</code></pre>
 <pre><code>## $M1A
 ## $M1A$`hisat2-mapping-pe`
