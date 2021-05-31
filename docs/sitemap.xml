@@ -8,11 +8,6 @@
   </url>
   
   <url>
-    <loc>/manuals/github/github/</loc>
-    <lastmod>2021-02-18T20:54:40-08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tutorials/github/github/</loc>
     <lastmod>2021-04-01T18:00:53-07:00</lastmod>
   </url>
@@ -23,11 +18,6 @@
   </url>
   
   <url>
-    <loc>/manuals/linux/linux/</loc>
-    <lastmod>2021-04-12T17:51:25-07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tutorials/linux/linux/</loc>
     <lastmod>2021-05-06T08:46:36-07:00</lastmod>
   </url>
@@ -35,11 +25,6 @@
   <url>
     <loc>/about/schedule/</loc>
     <lastmod>2021-04-17T10:50:25-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/manuals/rbasics/rbasics/</loc>
-    <lastmod>2021-05-15T21:10:10-07:00</lastmod>
   </url>
   
   <url>
@@ -58,18 +43,8 @@
   </url>
   
   <url>
-    <loc>/manuals/rprogramming/rprogramming/</loc>
-    <lastmod>2021-05-25T11:46:55-07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/about/internal/internal_resources/</loc>
     <lastmod>2021-04-17T11:30:58-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/manuals/rbasics/sample/</loc>
-    <lastmod>2021-05-13T11:45:36-07:00</lastmod>
   </url>
   
   <url>
@@ -83,28 +58,8 @@
   </url>
   
   <url>
-    <loc>/manuals/rparallel/rparallel/</loc>
-    <lastmod>2021-05-01T15:45:51-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/manuals/rsequences/rsequences/</loc>
-    <lastmod>2021-05-01T15:45:51-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/manuals/systempiper/systempiper/</loc>
-    <lastmod>2021-05-01T15:18:21-07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tutorials/systempiper/systempiper/</loc>
     <lastmod>2021-05-21T10:37:30-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/manuals/sprnaseq/sprnaseq/</loc>
-    <lastmod>2021-05-05T08:25:12-07:00</lastmod>
   </url>
   
   <url>
@@ -113,28 +68,13 @@
   </url>
   
   <url>
-    <loc>/manuals/spchipseq/spchipseq/</loc>
-    <lastmod>2021-05-24T09:41:29-07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tutorials/spchipseq/spchipseq/</loc>
     <lastmod>2021-05-31T08:50:10-07:00</lastmod>
   </url>
   
   <url>
-    <loc>/manuals/rfea/rfea/</loc>
-    <lastmod>2021-05-07T11:34:55-07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tutorials/rmarkdown/rmarkdown/</loc>
     <lastmod>2021-05-13T11:45:36-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/manuals/rclustering/rclustering/</loc>
-    <lastmod>2021-05-05T20:24:56-07:00</lastmod>
   </url>
   
   <url>
@@ -145,11 +85,6 @@
   <url>
     <loc>/tutorials/rclustering/rclustering/</loc>
     <lastmod>2021-05-03T17:45:39-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/manuals/rgraphics/rgraphics/</loc>
-    <lastmod>2021-05-05T20:24:56-07:00</lastmod>
   </url>
   
   <url>
@@ -175,11 +110,6 @@
   <url>
     <loc>/tutorials/cmdtocwl/cmdtocwl/</loc>
     <lastmod>2021-05-26T22:03:31-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/manuals/</loc>
-    <lastmod>2021-02-18T20:54:40-08:00</lastmod>
   </url>
   
   <url>
