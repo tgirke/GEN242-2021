@@ -70,6 +70,10 @@ clusters <- quickCluster(sce)
 colLabels(sce) <- factor(clusters)
 table(colLabels(sce))
 
+## To color items in dot plots by cell type instead of above clustering, one can
+## use the cell type info under colData() 
+# colLabels(sce) <- colData(sce)$cluster
+
 ## (B3) Run and plot with different embedding methods Note: the embedding
 ## results are sequentially appended to the SingleCellExperiment object,
 ## meaning one can use the plot function whenever necessary.
