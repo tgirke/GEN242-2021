@@ -475,6 +475,81 @@ enable = true
     weight = 218
 ##
 [[menu.main]]
+  name = "Manuals"
+  weight = 4
+  url = "/manuals/"
+  [[menu.main]]
+    name = "Manuals"
+    url = "/manuals/"
+    parent = "manuals"
+    weight = 1
+  [[menu.main]]
+    name = "GitHub"
+    url = "/manuals/github/github/"
+    parent = "Manuals"
+    weight = 2
+  [[menu.main]]
+    name = "Linux & HPCC Cluster"
+    url = "/manuals/linux/linux/"
+    parent = "Manuals"
+    weight = 3
+  [[menu.main]]
+    name = "Introduction to R"
+    url = "/manuals/rbasics/rbasics/"
+    parent = "Manuals"
+    weight = 4
+  [[menu.main]]
+    name = "Sample R Markdown"
+    url = "/manuals/rbasics/sample/"
+    parent = "Manuals"
+    weight = 5
+  [[menu.main]]
+    name = "Programming in R"
+    url = "/manuals/rprogramming/rprogramming/"
+    parent = "Manuals"
+    weight = 6
+  [[menu.main]]
+    name = "Parallel Evaluations in R"
+    url = "/manuals/rparallel/rparallel/"
+    parent = "Manuals"
+    weight = 7
+  [[menu.main]]
+    name = "NGS Analysis Basics"
+    url = "/manuals/rsequences/rsequences/"
+    parent = "Manuals"
+    weight = 8
+  [[menu.main]]
+    name = "NGS Workflow Overview"
+    url = "/manuals/systempiper/systempiper/"
+    parent = "Manuals"
+    weight = 9
+  [[menu.main]]
+    name = "RNA-Seq Workflow"
+    url = "/manuals/sprnaseq/sprnaseq/"
+    parent = "Manuals"
+    weight = 10
+  [[menu.main]]
+    name = "ChIP-Seq Workflow"
+    url = "/manuals/spchipseq/spchipseq/"
+    parent = "Manuals"
+    weight = 11
+  [[menu.main]]
+    name = "Functional Enrichment Analysis"
+    url = "/manuals/rfea/rfea/"
+    parent = "Manuals"
+    weight = 12
+  [[menu.main]]
+    name = "Cluster Analysis and Data Mining"
+    url = "/manuals/rclustering/rclustering/"
+    parent = "Manuals"
+    weight = 13
+  [[menu.main]]
+    name = "Graphics and Visualization"
+    url = "/manuals/rgraphics/rgraphics/"
+    parent = "Manuals"
+    weight = 14
+##
+[[menu.main]]
   name = "Assignments"
   weight = 5
   url = "/assignments/"
