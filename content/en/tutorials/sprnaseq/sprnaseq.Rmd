@@ -253,7 +253,7 @@ corresponding *SYSargs2* object, here *args*.
 
 ```{r hisat_SYSargs2_object, eval=TRUE}
 dir_path <- "param/cwl/hisat2/hisat2-pe"
-args <- loadWorkflow(targets=targetspath, wf_file="hisat2-mapping-pe.cwl", 
+args <- loadWorkflow(targets="targets_trim.txt", wf_file="hisat2-mapping-pe.cwl", 
                      input_file="hisat2-mapping-pe.yml", dir_path=dir_path)
 args <- renderWF(args, inputvars=c(FileName1="_FASTQ_PATH1_", FileName2="_FASTQ_PATH2_", SampleName="_SampleName_"))
 args
