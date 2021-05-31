@@ -1,7 +1,7 @@
 ---
 title: "RNA-Seq Workflow Template" 
 author: "Author: First Last"
-date: "Last update: 30 May, 2021" 
+date: "Last update: 31 May, 2021" 
 output:
   BiocStyle::html_document:
     toc_float: true
@@ -107,7 +107,7 @@ to be included in a final HTML/PDF report of a workflow.
     first unload an active software version before loading another version, *e.g.* `module unload R`.
 
 ``` sh
-srun --x11 --partition=gen242 --mem=20gb --cpus-per-task 8 --ntasks 1 --time 2:00:00 --pty bash -l
+srun --x11 --partition=gen242 --mem=20gb --cpus-per-task 8 --ntasks 1 --time 20:00:00 --pty bash -l
 module unload R; module load R/4.0.3_gcc-8.3.0
 ```
 
@@ -275,7 +275,7 @@ corresponding *SYSargs2* object, here *args*.
 
 ``` r
 dir_path <- "param/cwl/hisat2/hisat2-pe"
-args <- loadWorkflow(targets = targetspath, wf_file = "hisat2-mapping-pe.cwl", 
+args <- loadWorkflow(targets = "targets_trim.txt", wf_file = "hisat2-mapping-pe.cwl", 
     input_file = "hisat2-mapping-pe.yml", dir_path = dir_path)
 args <- renderWF(args, inputvars = c(FileName1 = "_FASTQ_PATH1_", 
     FileName2 = "_FASTQ_PATH2_", SampleName = "_SampleName_"))
@@ -298,12 +298,12 @@ cmdlist(args)[1:2]
 
     ## $M1A
     ## $M1A$`hisat2-mapping-pe`
-    ## [1] "hisat2 -S ./results/M1A.sam  -x ./data/tair10.fasta  -k 1  --min-intronlen 30  --max-intronlen 3000  -1 ./data/SRR446027_1.fastq.gz -2 ./data/SRR446027_2.fastq.gz --threads 4"
+    ## [1] "hisat2 -S ./results/M1A.sam  -x ./data/tair10.fasta  -k 1  --min-intronlen 30  --max-intronlen 3000  -1 ./results/M1A_1.fastq_trim.gz -2 ./results/M1A_2.fastq_trim.gz --threads 4"
     ## 
     ## 
     ## $M1B
     ## $M1B$`hisat2-mapping-pe`
-    ## [1] "hisat2 -S ./results/M1B.sam  -x ./data/tair10.fasta  -k 1  --min-intronlen 30  --max-intronlen 3000  -1 ./data/SRR446028_1.fastq.gz -2 ./data/SRR446028_2.fastq.gz --threads 4"
+    ## [1] "hisat2 -S ./results/M1B.sam  -x ./data/tair10.fasta  -k 1  --min-intronlen 30  --max-intronlen 3000  -1 ./results/M1B_1.fastq_trim.gz -2 ./results/M1B_2.fastq_trim.gz --threads 4"
 
 ``` r
 output(args)[1:2]

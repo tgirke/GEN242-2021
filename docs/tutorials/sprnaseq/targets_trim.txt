@@ -1,0 +1,23 @@
+# Project ID: Arabidopsis - Pseudomonas alternative splicing study (SRA: SRP010938; PMID: 24098335)
+# The following line(s) allow to specify the contrasts needed for comparative analyses, such as DEG identification. All possible comparisons can be specified with 'CMPset: ALL'.
+# <CMP> CMPset1: M1-A1, M1-V1, A1-V1, M6-A6, M6-V6, A6-V6, M12-A12, M12-V12, A12-V12
+# <CMP> CMPset2: ALL
+FileName1	FileName2	SampleName	Factor	SampleLong	Experiment	Date
+./results/M1A_1.fastq_trim.gz	./results/M1A_2.fastq_trim.gz	M1A	M1	Mock.1h.A	1	23-Mar-2012
+./results/M1B_1.fastq_trim.gz	./results/M1B_2.fastq_trim.gz	M1B	M1	Mock.1h.B	1	23-Mar-2012
+./results/A1A_1.fastq_trim.gz	./results/A1A_2.fastq_trim.gz	A1A	A1	Avr.1h.A	1	23-Mar-2012
+./results/A1B_1.fastq_trim.gz	./results/A1B_2.fastq_trim.gz	A1B	A1	Avr.1h.B	1	23-Mar-2012
+./results/V1A_1.fastq_trim.gz	./results/V1A_2.fastq_trim.gz	V1A	V1	Vir.1h.A	1	23-Mar-2012
+./results/V1B_1.fastq_trim.gz	./results/V1B_2.fastq_trim.gz	V1B	V1	Vir.1h.B	1	23-Mar-2012
+./results/M6A_1.fastq_trim.gz	./results/M6A_2.fastq_trim.gz	M6A	M6	Mock.6h.A	1	23-Mar-2012
+./results/M6B_1.fastq_trim.gz	./results/M6B_2.fastq_trim.gz	M6B	M6	Mock.6h.B	1	23-Mar-2012
+./results/A6A_1.fastq_trim.gz	./results/A6A_2.fastq_trim.gz	A6A	A6	Avr.6h.A	1	23-Mar-2012
+./results/A6B_1.fastq_trim.gz	./results/A6B_2.fastq_trim.gz	A6B	A6	Avr.6h.B	1	23-Mar-2012
+./results/V6A_1.fastq_trim.gz	./results/V6A_2.fastq_trim.gz	V6A	V6	Vir.6h.A	1	23-Mar-2012
+./results/V6B_1.fastq_trim.gz	./results/V6B_2.fastq_trim.gz	V6B	V6	Vir.6h.B	1	23-Mar-2012
+./results/M12A_1.fastq_trim.gz	./results/M12A_2.fastq_trim.gz	M12A	M12	Mock.12h.A	1	23-Mar-2012
+./results/M12B_1.fastq_trim.gz	./results/M12B_2.fastq_trim.gz	M12B	M12	Mock.12h.B	1	23-Mar-2012
+./results/A12A_1.fastq_trim.gz	./results/A12A_2.fastq_trim.gz	A12A	A12	Avr.12h.A	1	23-Mar-2012
+./results/A12B_1.fastq_trim.gz	./results/A12B_2.fastq_trim.gz	A12B	A12	Avr.12h.B	1	23-Mar-2012
+./results/V12A_1.fastq_trim.gz	./results/V12A_2.fastq_trim.gz	V12A	V12	Vir.12h.A	1	23-Mar-2012
+./results/V12B_1.fastq_trim.gz	./results/V12B_2.fastq_trim.gz	V12B	V12	Vir.12h.B	1	23-Mar-2012
