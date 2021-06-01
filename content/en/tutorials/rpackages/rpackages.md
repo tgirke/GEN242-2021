@@ -1,7 +1,7 @@
 ---
 title: "Building R Packages" 
 author: "Author: Thomas Girke"
-date: "Last update: 25 May, 2021" 
+date: "Last update: 31 May, 2021" 
 output:
   html_document:
     toc: true
@@ -97,7 +97,7 @@ instructions for completing the package:
 
 ``` r
 ## Download R script (here pkg_build_fct.R) containing two sample functions
-download.file("https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/manuals/rprogramming/helper_functions/pkg_build_fct.R", "pkg_build_fct.R")
+download.file("https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/tutorials/rpackages/helper_functions/pkg_build_fct.R", "pkg_build_fct.R")
 ## Build package skeleton based on functions in pkg_build_fct.R
 package.skeleton(name="mypackage", code_files=c("pkg_build_fct.R"))
 ```
@@ -160,7 +160,7 @@ download an R file (`pkg_build_fct.R` from [here](https://bit.ly/3hK0mdH)) defin
 and `talkToMe`) and save it to the R directory of the package.
 
 ``` r
-download.file("https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/manuals/rprogramming/helper_functions/pkg_build_fct.R", "R/pkg_build_fct.R")
+download.file("https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/tutorials/rpackages/helper_functions/pkg_build_fct.R", "R/pkg_build_fct.R")
 ```
 
 ### (c) Auto-generate roxygen comment lines

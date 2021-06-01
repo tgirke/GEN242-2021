@@ -84,8 +84,8 @@ First login to your cluster account, open R and execute the following lines. Thi
 create a test directory (here `mytestdir`), redirect R into this directory and then download
 the required files: 
 
-+ [`slurm.tmpl`](https://github.com/tgirke/GEN242/blob/main/content/en/manuals/rparallel/demo_files/slurm.tmpl)
-+ [`.batchtools.conf.R`](https://github.com/tgirke/GEN242/blob/main/content/en/manuals/rparallel/demo_files/.batchtools.conf.R)
++ [`slurm.tmpl`](https://github.com/tgirke/GEN242/blob/main/content/en/tutorials/rparallel/demo_files/slurm.tmpl)
++ [`.batchtools.conf.R`](https://github.com/tgirke/GEN242/blob/main/content/en/tutorials/rparallel/demo_files/.batchtools.conf.R)
 
 
 ```{r setenvir, eval=FALSE}

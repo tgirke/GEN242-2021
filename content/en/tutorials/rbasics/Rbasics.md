@@ -1,7 +1,7 @@
 ---
 title: "Introduction to R" 
 author: "Author: Thomas Girke"
-date: "Last update: 21 May, 2021" 
+date: "Last update: 31 May, 2021" 
 output:
   html_document:
     toc: true
@@ -438,7 +438,7 @@ myDF[1:2, ]
 
 `Tibbles` are a more modern version of `data.frames`. Among many other advantages, one can see
 here that `tibbles` have a nicer printing bahavior. Much more detailed information on this object
-class is provided in the [`dplyr/tidyverse`](https://girke.bioinformatics.ucr.edu/GEN242/manuals/rbasics/rbasics/#dplyr-environment) manual section.
+class is provided in the [`dplyr/tidyverse`](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/dplyr/dplyr/) manual section.
 
 ``` r
 library(tidyverse)
@@ -749,7 +749,7 @@ library("readxl")
 mysheet <- read_excel(targets_path, sheet="Sheet1")
 ```
 
-Additional import functions are described in the `readr` package section [here](https://girke.bioinformatics.ucr.edu/GEN242/manuals/rbasics/rbasics/#reading-and-writing-tabular-files).
+Additional import functions are described in the `readr` package section [here](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/dplyr/dplyr/#reading-and-writing-tabular-files).
 
 ### Export of tabular data
 

@@ -824,7 +824,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.4c303ccdd6cdeea96d5c69353f72fab2.json"
+  data-offline-search-index-json-src="../../../offline-search-index.4b3698a258edf39b70ee28fdee688e2c.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -856,7 +856,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.4c303ccdd6cdeea96d5c69353f72fab2.json"
+  data-offline-search-index-json-src="../../../offline-search-index.4b3698a258edf39b70ee28fdee688e2c.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1226,7 +1226,7 @@ The basic structure of the package directory is described
 The package directory will also contain a file named <code>Read-and-delete-me</code> with
 instructions for completing the package:</p>
 <pre><code class="language-r">## Download R script (here pkg_build_fct.R) containing two sample functions
-download.file(&quot;https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/manuals/rprogramming/helper_functions/pkg_build_fct.R&quot;, &quot;pkg_build_fct.R&quot;)
+download.file(&quot;https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/tutorials/rpackages/helper_functions/pkg_build_fct.R&quot;, &quot;pkg_build_fct.R&quot;)
 ## Build package skeleton based on functions in pkg_build_fct.R
 package.skeleton(name=&quot;mypackage&quot;, code_files=c(&quot;pkg_build_fct.R&quot;))
 </code></pre>
@@ -1272,7 +1272,7 @@ package. Several functions can be organized in one <code>*.R</code> file, each i
 file or any combination. For demonstration purposes, the following will
 download an R file (<code>pkg_build_fct.R</code> from <a href="https://bit.ly/3hK0mdH">here</a>) defining two functions (named:<code>myMAcomp</code>
 and <code>talkToMe</code>) and save it to the R directory of the package.</p>
-<pre><code class="language-r">download.file(&quot;https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/manuals/rprogramming/helper_functions/pkg_build_fct.R&quot;, &quot;R/pkg_build_fct.R&quot;)
+<pre><code class="language-r">download.file(&quot;https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/tutorials/rpackages/helper_functions/pkg_build_fct.R&quot;, &quot;R/pkg_build_fct.R&quot;)
 </code></pre>
 <h3 id="c-auto-generate-roxygen-comment-lines">(c) Auto-generate roxygen comment lines</h3>
 <p>The <code>makeOxygen</code> function from the <code>sinew</code> package creates <code>roxygen2</code> comment

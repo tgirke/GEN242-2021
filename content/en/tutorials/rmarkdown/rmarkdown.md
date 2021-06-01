@@ -1,7 +1,7 @@
 ---
 title: R Markdown Tutorial
 author: "Author: Your Name"
-date: "Last update: 13 May, 2021" 
+date: "Last update: 31 May, 2021" 
 output:
   html_document:
     toc: true
@@ -74,8 +74,8 @@ then modify it as needed. Note the file name of an R Markdown scirpt needs to
 have the extension `.Rmd`. Template files for the following examples are available
 here:
 
--   R Markdown sample script: [`sample.Rmd`](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/manuals/rbasics/sample.Rmd)
--   Bibtex file for handling citations and reference section: [`bibtex.bib`](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/manuals/rbasics/bibtex.bib)
+-   R Markdown sample script: [`sample.Rmd`](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/tutorials/rmarkdown/rmarkdown.Rmd)
+-   Bibtex file for handling citations and reference section: [`bibtex.bib`](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/tutorials/rmarkdown/bibtex.bib)
 
 Users want to download these files, open the `sample.Rmd` file with their preferred R IDE
 (*e.g.* RStudio, vim or emacs), initilize an R session and then direct their R session to
@@ -93,7 +93,7 @@ package from Bioconductor.
      ---
     title: "My First R Markdown Document"
     author: "Author: First Last"
-    date: "Last update: 13 May, 2021"
+    date: "Last update: 31 May, 2021"
     output:
       BiocStyle::html_document:
         toc: true
@@ -306,7 +306,7 @@ If necessary access to the URL can be restricted with a password following the i
 sessionInfo()
 ```
 
-    ## R version 4.0.5 (2021-03-31)
+    ## R version 4.1.0 (2021-05-18)
     ## Platform: x86_64-pc-linux-gnu (64-bit)
     ## Running under: Debian GNU/Linux 10 (buster)
     ## 
@@ -326,20 +326,21 @@ sessionInfo()
     ## [1] stats     graphics  grDevices utils     datasets  methods   base     
     ## 
     ## other attached packages:
-    ## [1] ggplot2_3.3.2 DT_0.16       knitr_1.30   
+    ## [1] ggplot2_3.3.3 DT_0.18       knitr_1.33   
     ## 
     ## loaded via a namespace (and not attached):
-    ##  [1] bslib_0.2.4       compiler_4.0.5    pillar_1.4.7      jquerylib_0.1.3  
-    ##  [5] highr_0.8         tools_4.0.5       digest_0.6.27     viridisLite_0.3.0
-    ##  [9] jsonlite_1.7.1    evaluate_0.14     lifecycle_0.2.0   tibble_3.0.4     
-    ## [13] gtable_0.3.0      pkgconfig_2.0.3   rlang_0.4.8       crosstalk_1.1.0.1
-    ## [17] yaml_2.2.1        blogdown_1.2      xfun_0.22         withr_2.3.0      
-    ## [21] stringr_1.4.0     dplyr_1.0.2       generics_0.1.0    htmlwidgets_1.5.2
-    ## [25] sass_0.3.1        vctrs_0.3.5       tidyselect_1.1.0  grid_4.0.5       
-    ## [29] glue_1.4.2        R6_2.5.0          rmarkdown_2.7     bookdown_0.21    
-    ## [33] farver_2.0.3      purrr_0.3.4       magrittr_2.0.1    scales_1.1.1     
-    ## [37] htmltools_0.5.1.1 ellipsis_0.3.1    colorspace_2.0-0  labeling_0.4.2   
-    ## [41] stringi_1.5.3     munsell_0.5.0     crayon_1.3.4
+    ##  [1] bslib_0.2.5.1     compiler_4.1.0    pillar_1.6.1      jquerylib_0.1.4  
+    ##  [5] highr_0.9         tools_4.1.0       digest_0.6.27     viridisLite_0.4.0
+    ##  [9] jsonlite_1.7.2    evaluate_0.14     lifecycle_1.0.0   tibble_3.1.2     
+    ## [13] gtable_0.3.0      pkgconfig_2.0.3   rlang_0.4.11      DBI_1.1.1        
+    ## [17] crosstalk_1.1.1   yaml_2.2.1        blogdown_1.3      xfun_0.23        
+    ## [21] withr_2.4.2       dplyr_1.0.6       stringr_1.4.0     generics_0.1.0   
+    ## [25] htmlwidgets_1.5.3 sass_0.4.0        vctrs_0.3.8       tidyselect_1.1.1 
+    ## [29] grid_4.1.0        glue_1.4.2        R6_2.5.0          fansi_0.4.2      
+    ## [33] rmarkdown_2.8     bookdown_0.22     farver_2.1.0      purrr_0.3.4      
+    ## [37] magrittr_2.0.1    scales_1.1.1      htmltools_0.5.1.1 ellipsis_0.3.2   
+    ## [41] assertthat_0.2.1  colorspace_2.0-1  labeling_0.4.2    utf8_1.2.1       
+    ## [45] stringi_1.6.2     munsell_0.5.0     crayon_1.4.1
 
 ## References
 

@@ -1,7 +1,7 @@
 ---
 title: "Parallel Evaluations in R"
 author: Thomas Girke
-date: "Last update: 17 May, 2021" 
+date: "Last update: 31 May, 2021" 
 output:
   html_document:
     toc: true
@@ -83,8 +83,8 @@ First login to your cluster account, open R and execute the following lines. Thi
 create a test directory (here `mytestdir`), redirect R into this directory and then download
 the required files:
 
--   [`slurm.tmpl`](https://github.com/tgirke/GEN242/blob/main/content/en/manuals/rparallel/demo_files/slurm.tmpl)
--   [`.batchtools.conf.R`](https://github.com/tgirke/GEN242/blob/main/content/en/manuals/rparallel/demo_files/.batchtools.conf.R)
+-   [`slurm.tmpl`](https://github.com/tgirke/GEN242/blob/main/content/en/tutorials/rparallel/demo_files/slurm.tmpl)
+-   [`.batchtools.conf.R`](https://github.com/tgirke/GEN242/blob/main/content/en/tutorials/rparallel/demo_files/.batchtools.conf.R)
 
 ``` r
 dir.create("mytestdir")
@@ -189,7 +189,7 @@ reduceResults(rbind)
 sessionInfo()
 ```
 
-    ## R version 4.0.5 (2021-03-31)
+    ## R version 4.1.0 (2021-05-18)
     ## Platform: x86_64-pc-linux-gnu (64-bit)
     ## Running under: Debian GNU/Linux 10 (buster)
     ## 
@@ -209,11 +209,11 @@ sessionInfo()
     ## [1] stats     graphics  grDevices utils     datasets  methods   base     
     ## 
     ## loaded via a namespace (and not attached):
-    ##  [1] bookdown_0.21     digest_0.6.27     R6_2.5.0          jsonlite_1.7.1   
-    ##  [5] magrittr_2.0.1    evaluate_0.14     blogdown_1.2      stringi_1.5.3    
-    ##  [9] rlang_0.4.8       jquerylib_0.1.3   bslib_0.2.4       rmarkdown_2.7    
-    ## [13] tools_4.0.5       stringr_1.4.0     xfun_0.22         yaml_2.2.1       
-    ## [17] compiler_4.0.5    htmltools_0.5.1.1 knitr_1.30        sass_0.3.1
+    ##  [1] bookdown_0.22     digest_0.6.27     R6_2.5.0          jsonlite_1.7.2   
+    ##  [5] magrittr_2.0.1    evaluate_0.14     blogdown_1.3      stringi_1.6.2    
+    ##  [9] rlang_0.4.11      jquerylib_0.1.4   bslib_0.2.5.1     rmarkdown_2.8    
+    ## [13] tools_4.1.0       stringr_1.4.0     xfun_0.23         yaml_2.2.1       
+    ## [17] compiler_4.1.0    htmltools_0.5.1.1 knitr_1.33        sass_0.4.0
 
 ## References
 
