@@ -27,7 +27,7 @@
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: .Rmd .R
  Introduction The following introduces gene and protein annotation systems that are widely used for functional enrichment analysis (FEA). These include among many other annotation systems: Gene Ontology (GO), Disease Ontology (DO) and pathway annotations, such as KEGG and Reactome. Examples of widely used statistical enrichment methods are introduced as well.">
 <meta itemprop="dateModified" content="2021-05-07T11:34:55-07:00" />
-<meta itemprop="wordCount" content="1628">
+<meta itemprop="wordCount" content="1650">
 
 
 
@@ -824,7 +824,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.4b3698a258edf39b70ee28fdee688e2c.json"
+  data-offline-search-index-json-src="../../../offline-search-index.03db9eef67de1279600e14816502755f.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -856,7 +856,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.4b3698a258edf39b70ee28fdee688e2c.json"
+  data-offline-search-index-json-src="../../../offline-search-index.03db9eef67de1279600e14816502755f.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1271,7 +1271,8 @@ reacdb &lt;- load_reacList(org=&quot;R-HSA&quot;)
 </code></pre>
 <p>A very useful query interface for Reactome is the <code>ReactomeContentService4R</code> package.
 Its vignette provides many useful examples, see <a href="https://bioconductor.org/packages/devel/bioc/vignettes/ReactomeContentService4R/inst/doc/ReactomeContentService4R.html">here</a>.
-A sample plot from <code>ReactomeContentService4R</code> is shown below.</p>
+A sample plot from <code>ReactomeContentService4R</code> is shown below. For metabolite (set) enrichment analysis (MEA/MSEA) users might also be interested in the
+<a href="https://github.com/xia-lab/MetaboAnalystR">MetaboAnalystR</a> package that interfaces with the <a href="https://www.metaboanalyst.ca/home.xhtml">MataboAnalyst</a> web service.</p>
 <p><img src="../results/reactome_bigpicture.jpeg" alt=""></p>
 <div align="center">
 <p>Figure 1: Fireworks plot depicting genome-wide view of reactome pathways.</p>

@@ -1,7 +1,7 @@
 ---
 title: Functional Enrichment Analysis 
 author: "First/last name (first.last@ucr.edu)"
-date: "Last update: 07 May, 2021" 
+date: "Last update: 01 June, 2021" 
 output:
   html_document:
     toc: true
@@ -151,7 +151,8 @@ reacdb <- load_reacList(org="R-HSA")
 
 A very useful query interface for Reactome is the `ReactomeContentService4R` package.
 Its vignette provides many useful examples, see [here](https://bioconductor.org/packages/devel/bioc/vignettes/ReactomeContentService4R/inst/doc/ReactomeContentService4R.html).
-A sample plot from `ReactomeContentService4R` is shown below.
+A sample plot from `ReactomeContentService4R` is shown below. For metabolite (set) enrichment analysis (MEA/MSEA) users might also be interested in the
+[MetaboAnalystR](https://github.com/xia-lab/MetaboAnalystR) package that interfaces with the [MataboAnalyst](https://www.metaboanalyst.ca/home.xhtml) web service.
 
 ![](../results/reactome_bigpicture.jpeg)
 
