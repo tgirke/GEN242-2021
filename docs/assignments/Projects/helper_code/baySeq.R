@@ -2,12 +2,13 @@
 ## Run baySeq on sample comparisons defined in targets file ##
 ##############################################################
 
+## Load libraries, and targets and read counts table obtained from RNA-Seq workflow
 library(baySeq); library(systemPipeR)
-targets <- read.delim("targetsPE.txt", comment.char="#")
+targets <- read.delim("targetsPE.txt", comment.char="#") # Targets file use here: https://bit.ly/3fMB5hm
 samples <- as.character(targets$Factor)
 names(samples) <- paste(as.character(targets$SampleName), "", sep = "")
 group <- as.character(samples)
-counts <- read.delim("results/countDFeByg.xls", row.names=1, comment.char="#")
+counts <- read.delim("results/countDFeByg.xls", row.names=1, comment.char="#") # Count table generated here: https://bit.ly/3fMB5hm
 counts <- counts[, names(samples)]
 counts[is.na(counts)] <- 0
 
@@ -37,12 +38,12 @@ run_baySeq <- function(counts, cmp=cmp, samplesize=1000){
 }
 
 ## Run for single comparison
-single_comparison <- run_baySeq(counts[1:1000,], cmp=cmp["M1-A1",], samplesize=10)
+# single_comparison <- run_baySeq(counts, cmp=cmp["M1-A1",], samplesize=1000)
 ## Run for all comparisons and store results in list where each result is named by comparison
 ## For debugging/testing reduce count matrix and sample size 
 all_comparisons <- sapply(rownames(cmp), function(x) run_baySeq(counts=counts[1:1000,], cmp=cmp[x,], samplesize=10), simplify=FALSE)
 ## For full run use this line instead!!!
-# all_comparisons <- sapply(rownames(cmp), function(x) run_baySeq(counts=counts[1:1000,], cmp=cmp[x,], samplesize=10), simplify=FALSE)
+# all_comparisons <- sapply(rownames(cmp), function(x) run_baySeq(counts=counts, cmp=cmp[x,], samplesize=1000), simplify=FALSE)
 names(all_comparisons)
 sapply(all_comparisons, dim)
 
