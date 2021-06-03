@@ -139,7 +139,6 @@ screen and following along hands-on practicals on the other screen.
 
 ## Reading list
 
-<span style="color: red;">Note: this reading list is from a previous offering of this class. The list will be finalized during the first two weeks to include student suggestions.</span>
 
 ### Journal articles
 
