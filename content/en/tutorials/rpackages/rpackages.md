@@ -1,7 +1,7 @@
 ---
 title: "Building R Packages" 
 author: "Author: Thomas Girke"
-date: "Last update: 31 May, 2021" 
+date: "Last update: 02 June, 2021" 
 output:
   html_document:
     toc: true
@@ -156,7 +156,7 @@ use_mit_license() # Add license information to description file (here MIT). To l
 Next, R functions can be added to `*.R` file(s) under the R directory of the new
 package. Several functions can be organized in one `*.R` file, each in its own
 file or any combination. For demonstration purposes, the following will
-download an R file (`pkg_build_fct.R` from [here](https://bit.ly/3hK0mdH)) defining two functions (named:`myMAcomp`
+download an R file (`pkg_build_fct.R` from [here](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/tutorials/rpackages/helper_functions/pkg_build_fct.R)) defining two functions (named:`myMAcomp`
 and `talkToMe`) and save it to the R directory of the package.
 
 ``` r
