@@ -97,7 +97,6 @@ screen and following along hands-on practicals on the other screen.
 
 ## Schedule
 
-<span style="color: red;">Note: this schedule is from a previous offering of this class. The final schedule will be released during the first two weeks to include student suggestions.</span>
 
 |Week     |Topic                                                                |
 |---------|---------------------------------------------------------------------|
