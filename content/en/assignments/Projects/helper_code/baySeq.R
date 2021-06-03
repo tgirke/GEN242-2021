@@ -28,8 +28,8 @@ run_baySeq <- function(counts, cmp=cmp, samplesize=1000){
     resultDF <- topCounts(cd_ob, group="DE", number=nrow(counts))  
     rownames(resultDF) <- resultDF[,1]
     resultDF <- resultDF[,-1]
-	## baySeq lacks LFC output. To allow filtering, as with other DEG methods they are computed here in a naive manner
-	source("https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/tutorials/rpackages/helper_functions/pkg_build_fct.R")
+    ## baySeq lacks LFC output. To allow filtering, as with other DEG methods they are computed here in a naive manner
+    source("https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/tutorials/rpackages/helper_functions/pkg_build_fct.R")
     myMA <- resultDF[,names(group)]
     meanma <- myMAcomp(myMA=myMA, group=group, myfct=mean)
     lfc <- log2(meanma[,1]) - log2(meanma[,2])
