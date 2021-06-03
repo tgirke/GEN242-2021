@@ -4,11 +4,11 @@
 
 ## Load libraries, and targets and read counts table obtained from RNA-Seq workflow
 library(baySeq); library(systemPipeR)
-targets <- read.delim("targetsPE.txt", comment.char="#") # Targets file use here: https://bit.ly/3fMB5hm
+targets <- read.delim("targetsPE.txt", comment.char="#") # Imports targets file used here: https://bit.ly/3fMB5hm
 samples <- as.character(targets$Factor)
 names(samples) <- paste(as.character(targets$SampleName), "", sep = "")
 group <- as.character(samples)
-counts <- read.delim("results/countDFeByg.xls", row.names=1, comment.char="#") # Count table generated here: https://bit.ly/3fMB5hm
+counts <- read.delim("results/countDFeByg.xls", row.names=1, comment.char="#") # Imports read count table generated here: https://bit.ly/3fMB5hm
 counts <- counts[, names(samples)]
 counts[is.na(counts)] <- 0
 
