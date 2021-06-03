@@ -208,7 +208,7 @@ following files:&lt;/p&gt;
 &lt;li&gt;Compare at least 2-3 cluster analysis methods (e.g. hierarchical, k-means, Fuzzy C-Means, WGCNA, other) and assess the performance differences as follows:
 &lt;ul&gt;
 &lt;li&gt;Analyze the similarities and differences in the cluster groupings obtained from the two methods.&lt;/li&gt;
-&lt;li&gt;Do the differences affect the results of the downstream gene set enrichment analysis?&lt;/li&gt;
+&lt;li&gt;Do the differences affect the results of the downstream functional enrichment analysis?&lt;/li&gt;
 &lt;li&gt;Plot the performance of the clustering methods in form of ROC curves and/or record their AUC values. Functional annotations (e.g. GO, KEGG, Pfam) could be used as a benchmark for defining true results.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
