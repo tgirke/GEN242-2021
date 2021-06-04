@@ -27,7 +27,7 @@
 <meta itemprop="description" content="Source code downloads: [ .Rmd ] [ .R ]
  Introduction This tutorial introduces several embedding methods for high-dimensional gene expression data that are often used for single cell RNA-Seq (scRNA-Seq) data. For illustration purposes, the embedding methods are first applied to a bulk RNA-Seq data set (Howard et al. 2013) and then to a much more complex scRNA-Seq data set (Aztekin et al. 2019) obtained from the scRNAseq package.">
 <meta itemprop="dateModified" content="2021-06-03T19:24:18-07:00" />
-<meta itemprop="wordCount" content="1007">
+<meta itemprop="wordCount" content="1018">
 
 
 
@@ -824,7 +824,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.f162469da5213840ef71e2f98b04c5b4.json"
+  data-offline-search-index-json-src="../../../offline-search-index.1575bf2ffb5ae601e369a6824d705965.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -856,7 +856,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.f162469da5213840ef71e2f98b04c5b4.json"
+  data-offline-search-index-json-src="../../../offline-search-index.1575bf2ffb5ae601e369a6824d705965.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1192,7 +1192,7 @@ data set (Aztekin et al. 2019) obtained from the <a href="https://bioconductor.o
 into <code>SummarizedExperiment</code> and <code>SingleCellExperiment</code> objects. This is done
 by first creating a <code>SummarizedExperiment</code> object and then coercing it into a
 <code>SingleCellExperiment</code> object, as well as intializing the <code>SingleCellExperiment</code>
-directly.</p>
+directly. The corresponding <code>targetsPE.txt</code> and <code>countDFeByg.xls</code> files can be downloaded from <a href="https://github.com/tgirke/GEN242/tree/main/content/en/tutorials/scrnaseq/results">here</a>.</p>
 <h4 id="a-create-summarizedexperiment-and-coerce-to-singlecellexperiment">(a) Create <code>SummarizedExperiment</code> and coerce to <code>SingleCellExperiment</code></h4>
 <pre><code class="language-r">library(SummarizedExperiment); library(SingleCellExperiment)                                                                                                                        
 targetspath &lt;- &quot;results/targetsPE.txt&quot;                                                                                                                                                      
