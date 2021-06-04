@@ -47,9 +47,12 @@ The following loads the bulk RNA-Seq data from Howard *et al.* (2013)
 into `SummarizedExperiment` and `SingleCellExperiment` objects. This is done
 by first creating a `SummarizedExperiment` object and then coercing it into a
 `SingleCellExperiment` object, as well as intializing the `SingleCellExperiment`
-directly. The corresponding `targetsPE.txt` and `countDFeByg.xls` files can be downloaded from [here](https://github.com/tgirke/GEN242/tree/main/content/en/tutorials/scrnaseq/results).
+directly.
 
 #### (a) Create `SummarizedExperiment` and coerce to `SingleCellExperiment`
+
+The required `targetsPE.txt` and `countDFeByg.xls` files can be downloaded
+from [here](https://github.com/tgirke/GEN242/tree/main/content/en/tutorials/scrnaseq/results).
 
 ``` r
 library(SummarizedExperiment); library(SingleCellExperiment)                                                                                                                        
