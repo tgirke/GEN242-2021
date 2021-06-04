@@ -1,7 +1,7 @@
 ---
 title: "scRNA-Seq Embedding Methods" 
 author: "Author: Daniela Cassol, Le Zhang, Thomas Girke"
-date: "Last update: 03 June, 2021" 
+date: "Last update: 04 June, 2021" 
 output:
   html_document:
     toc: true
@@ -45,7 +45,7 @@ data set (Aztekin et al. 2019) obtained from the [`scRNAseq`](https://bioconduct
 
 The following loads the bulk RNA-Seq data from Howard *et al.* (2013)
 into `SummarizedExperiment` and `SingleCellExperiment` objects. This is done
-by first creating a `SummarizedExperiment` object and then coercing it into a
+by first creating a `SummarizedExperiment` object and then coercing it to a
 `SingleCellExperiment` object, as well as intializing the `SingleCellExperiment`
 directly.
 

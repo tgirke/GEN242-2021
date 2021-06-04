@@ -33,7 +33,7 @@ Instructor Name: Thomas Girke Email: thomas.girke@ucr.edu Office location: virtu
 TA Name: Le Zhang Email: le.zhang001@email.ucr.edu Office location: virtual via Zoom Office hour: Tue 11:00 - 12:00 PM Zoom URL: privately shared
 Description Introduction to algorithms, statistical methods and data analysis programming routines relevant for genome biology.">
 <meta itemprop="dateModified" content="2021-06-03T11:53:07-07:00" />
-<meta itemprop="wordCount" content="1965">
+<meta itemprop="wordCount" content="2199">
 
 
 
@@ -833,7 +833,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.ed9929a26e8a9cd599e88b138ce3a645.json"
+  data-offline-search-index-json-src="../../offline-search-index.138783fbbd46c35d8f4082ecc9f82b11.json"
   data-offline-search-base-href="../../"
   data-offline-search-max-results="10"
 >
@@ -865,7 +865,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.ed9929a26e8a9cd599e88b138ce3a645.json"
+  data-offline-search-index-json-src="../../offline-search-index.138783fbbd46c35d8f4082ecc9f82b11.json"
   data-offline-search-base-href="../../"
   data-offline-search-max-results="10"
 >
@@ -1083,7 +1083,7 @@ if (!doNotTrack) {
 	<h1>Syllabus - GEN242</h1>
     
 	
-        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 10 minute read</p>
+        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 11 minute read</p>
            
 	<h2 id="course-title">Course title</h2>
 <p>Data Analysis in Genome Biology <br>
@@ -1153,7 +1153,7 @@ and <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">Pu
 <a href="http://mobaxterm.mobatek.net/">MobaXterm</a> on Windows) as well as a file exchange software such as
 <a href="https://filezilla-project.org/download.php?type=client">FileZilla</a>. In
 addition, a recent version of <a href="http://www.r-project.org">R</a> and
-<a href="http://rstudio.org">RStudio</a> should be installed on each laptop.</p>
+<a href="http://rstudio.org">RStudio</a> should be installed.</p>
 <p>If possible students may want to attend class sessions from a monitor setup
 with either one large monitor (wide enough to display several windows) or two
 separate monitors. This allows simultaneous viewing of presentations on one
@@ -1205,11 +1205,11 @@ screen and following along hands-on practicals on the other screen.</p>
 </tr>
 <tr>
 <td></td>
-<td>Discussion: Programming in R</td>
+<td>Discussion: Programming in R and Parallel Evaluations</td>
 </tr>
 <tr>
 <td></td>
-<td>Reading: A5-A6, T4</td>
+<td>Reading: A5-A6, T4-T5</td>
 </tr>
 <tr>
 <td>Week 4</td>
@@ -1221,11 +1221,11 @@ screen and following along hands-on practicals on the other screen.</p>
 </tr>
 <tr>
 <td></td>
-<td>Reading: A7-A10, T5</td>
+<td>Reading: A7-A10, T6</td>
 </tr>
 <tr>
 <td>Week 5</td>
-<td>Gene Expression Analysis using Microarrays and RNA-Seq</td>
+<td>Gene Expression Analysis, Microarrays, bulk RNA-Seq and scRNA-Seq</td>
 </tr>
 <tr>
 <td></td>
@@ -1233,19 +1233,19 @@ screen and following along hands-on practicals on the other screen.</p>
 </tr>
 <tr>
 <td></td>
-<td>Reading: A11-A15, T6-T7</td>
+<td>Reading: A11-A15, T7-T8</td>
 </tr>
 <tr>
 <td>Week 6</td>
-<td>Analysis of ChIP-Seq and VAR-Seq Experiments</td>
+<td>Analysis of ChIP-Seq Experiments</td>
 </tr>
 <tr>
 <td></td>
-<td>Discussion: ChIP-Seq and VAR-Seq Analysis</td>
+<td>Discussion: ChIP-Seq Analysis</td>
 </tr>
 <tr>
 <td></td>
-<td>Reading: A16-A18, T8-T9</td>
+<td>Reading: A16-A18, T9-T10</td>
 </tr>
 <tr>
 <td>Week 7</td>
@@ -1273,7 +1273,7 @@ screen and following along hands-on practicals on the other screen.</p>
 </tr>
 <tr>
 <td></td>
-<td>Reading: A24-A26, T6 (Sec 3.14-3.15), T10</td>
+<td>Reading: A24-A26, T7 (Sec 3.14-3.15), T11</td>
 </tr>
 <tr>
 <td>Week 9</td>
@@ -1293,7 +1293,7 @@ screen and following along hands-on practicals on the other screen.</p>
 </tr>
 <tr>
 <td></td>
-<td>Reading: A27-A29, T11</td>
+<td>Reading: A27-A29, T12</td>
 </tr>
 <tr>
 <td>Week 10</td>
@@ -1343,18 +1343,33 @@ screen and following along hands-on practicals on the other screen.</p>
 <p>A30. Grabherr, M G, Haas, B J, Yassour, M, Levin, J Z, Thompson, D A, Amit, I, Adiconis, X, Fan, L, Raychowdhury, R, Zeng, Q, Chen, Z, Mauceli, E, Hacohen, N, Gnirke, A, Rhind, N, di Palma, F, Birren, B W, Nusbaum, C, Lindblad-Toh, K, Friedman, N, Regev, A (2011) Full-length transcriptome assembly from RNA-Seq data without a reference genome. Nat Biotechnol, 29: 644-652.</p>
 <p>A31. Zeitouni, B, Boeva, V, Janoueix-Lerosey, I, Loeillet, S, Legoix-ne, P, Nicolas, A, Delattre, O, Barillot, E (2010) SVDetect: a tool to identify genomic structural variations from paired-end and mate-pair sequencing data. Bioinformatics, 26: 1895-1896.</p>
 <p>A32. Ronquist F, Teslenko M, van der Mark P, Ayres DL, Darling A, Höhna S, Larget B, Liu L, Suchard MA, Huelsenbeck JP (2012) MrBayes 3.2: efficient Bayesian phylogenetic inference and model choice across a large model space. Syst Biol 61: 539–542.</p>
+<p>A33. Law CW, Zeglinski K, Dong X, Alhamdoosh M, Smyth GK, Ritchie ME (2020) A guide to creating design matrices for gene expression experiments. F1000Res 9: 1444</p>
+<p>A34. Langfelder P, Luo R, Oldham MC, Horvath S (2011) Is my network module preserved and reproducible? PLoS Comput Biol 7: e1001057</p>
+<p>A35. McInnes L, Healy J, Melville J (2018) UMAP: Uniform Manifold Approximation and Projection for Dimension Reduction. arXiv [stat.ML]</p>
+<p>A36. Rodriguez MZ, Comin CH, Casanova D, Bruno OM, Amancio DR, Costa L da F, Rodrigues FA (2019) Clustering algorithms: A comparative approach. PLoS One 14: e0210236</p>
+<p>A37. Shulse CN, Cole BJ, Ciobanu D, Lin J, Yoshinaga Y, Gouran M, Turco GM, Zhu Y, O’Malley RC, Brady SM, et al (2019) High-Throughput Single-Cell Transcriptome Profiling of Plant Cell Types. Cell Rep 27: 2241–2247.e4</p>
+<p>A38. Subramanian A, Tamayo P, Mootha VK, Mukherjee S, Ebert BL, Gillette MA, Paulovich A, Pomeroy SL, Golub TR, Lander ES, et al (2005) Gene set enrichment analysis: a knowledge-based approach for interpreting genome-wide expression profiles. Proc Natl Acad Sci U S A 102: 15545–15550</p>
+<p>A39. Sun S, Zhu J, Ma Y, Zhou X (2019) Accuracy, robustness and scalability of dimensionality reduction methods for single-cell RNA-seq analysis. Genome Biol 20: 269</p>
 <h3 id="tutorials">Tutorials</h3>
-<p>T1. <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/tutorial_01/">GitHub Introduction</a></p>
-<p>T2. <a href="http://girke.bioinformatics.ucr.edu/GEN242/tutorials/tutorial_02/">Introduction to Computer Clusters and Linux</a></p>
-<p>T3. <a href="http://girke.bioinformatics.ucr.edu/GEN242/tutorials/tutorial_03/">Introduction to R</a></p>
-<p>T4. <a href="http://girke.bioinformatics.ucr.edu/GEN242/tutorials/tutorial_04/">Programming in R</a></p>
-<p>T5. <a href="http://girke.bioinformatics.ucr.edu/GEN242/tutorials/tutorial_05/">NGS Analysis Basics</a></p>
-<p>T6. <a href="http://girke.bioinformatics.ucr.edu/GEN242/tutorials/tutorial_06/">NGS Workflows</a></p>
-<p>T7. <a href="http://girke.bioinformatics.ucr.edu/GEN242/tutorials/tutorial_07/">RNA-Seq Workflow</a></p>
-<p>T8. <a href="http://girke.bioinformatics.ucr.edu/GEN242/tutorials/tutorial_08">ChIP-Seq Workflow</a></p>
-<p>T9. <a href="http://girke.bioinformatics.ucr.edu/GEN242/tutorials/tutorial_09/">VAR-Seq Workflow</a></p>
-<p>T10. <a href="http://girke.bioinformatics.ucr.edu/GEN242/tutorials/tutorial_10/">Unsupervised Learning</a></p>
-<p>T11. <a href="http://girke.bioinformatics.ucr.edu/GEN242/tutorials/tutorial_11/">Data Visualization</a></p>
+<p>T1. <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/github/github/">GitHub Introduction</a></p>
+<p>T2. <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/linux/linux/">Introduction to Computer Clusters and Linux</a></p>
+<p>T3. <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rbasics/rbasics/">Introduction to R</a></p>
+<p>T4. <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rprogramming/rprogramming/">Programming in R</a></p>
+<p>T5. <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rparallel/rparallel/">Parallel R</a></p>
+<p>T6. <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rsequences/rsequences/">NGS Analysis Basics</a></p>
+<p>T7. <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/systempiper/systempiper/">NGS Workflows</a></p>
+<p>T8. <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/sprnaseq/sprnaseq/">RNA-Seq Workflow</a></p>
+<p>T9. <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/scrnaseq/scrnaseq/">scRNA-Seq Embedding Methods</a></p>
+<p>T10. <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/spchipseq/spchipseq/">ChIP-Seq Workflow</a></p>
+<p>T11. <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rmarkdown/rmarkdown/">R Markdown</a></p>
+<p>T12. <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rfea/rfea/">Functional Enrichment Analysis</a></p>
+<p>T13. <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rclustering/rclustering/">Clustering and Network Analysis</a></p>
+<p>T14. <a href="https://girke.bioinformatics.ucr.edu/GEN242/assignments/projects/project_data/">Project Data</a></p>
+<p>T15. <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rgraphics/rgraphics/">Data Visualization</a></p>
+<p>T16. <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/shinyapps/shinyapps/">Shiny Apps</a></p>
+<p>T17. <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rpackages/rpackages/">Building R Packages</a></p>
+<p>T18. <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/dplyr/dplyr/">dplyr, tidyr and some SQLite</a></p>
+<p>T19. <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/cmdtocwl/cmdtocwl/">Advanced: Common Workflow Language (CWL)</a></p>
 <h3 id="books">Books</h3>
 <p>Note: there is no need to purchase any books for this course as most reading material will be based on journal articles!</p>
 <p>General

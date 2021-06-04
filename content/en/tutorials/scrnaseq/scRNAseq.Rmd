@@ -46,7 +46,7 @@ data set [@Aztekin2019-sw] obtained from the [`scRNAseq`](https://bioconductor.o
 
 The following loads the bulk RNA-Seq data from Howard _et al._ [-@Howard2013-fq]
 into `SummarizedExperiment` and `SingleCellExperiment` objects. This is done
-by first creating a `SummarizedExperiment` object and then coercing it into a 
+by first creating a `SummarizedExperiment` object and then coercing it to a 
 `SingleCellExperiment` object, as well as intializing the `SingleCellExperiment` 
 directly. 
 

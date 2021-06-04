@@ -88,7 +88,7 @@ and [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) or
 [MobaXterm](http://mobaxterm.mobatek.net/) on Windows) as well as a file exchange software such as
 [FileZilla](https://filezilla-project.org/download.php?type=client). In
 addition, a recent version of [R](http://www.r-project.org) and
-[RStudio](http://rstudio.org) should be installed on each laptop.
+[RStudio](http://rstudio.org) should be installed.
 
 If possible students may want to attend class sessions from a monitor setup
 with either one large monitor (wide enough to display several windows) or two
@@ -109,29 +109,29 @@ screen and following along hands-on practicals on the other screen.
 |         | Reading: A2-A4, T3                                                  |
 | Week 3  | Sequence Alignments and Searching                                   |
 |         | Multiple Sequence Alignments                                        |
-|         | Discussion: Programming in R                                        |
-|         | Reading: A5-A6, T4                                                  |
+|         | Discussion: Programming in R and Parallel Evaluations               |
+|         | Reading: A5-A6, T4-T5                                               |
 | Week 4  | Short Read Alignment Algorithms                                     |
 |         | Discussion: Basics of NGS Analysis                                  |
-|         | Reading: A7-A10, T5                                                 |
-| Week 5  | Gene Expression Analysis using Microarrays and RNA-Seq              |
+|         | Reading: A7-A10, T6                                                 |
+| Week 5  | Gene Expression Analysis, Microarrays, bulk RNA-Seq and scRNA-Seq   |
 |         | Discussion: NGS Workflow Overview; RNA-Seq Analysis                 |
-|         | Reading: A11-A15, T6-T7                                             |
-| Week 6  | Analysis of ChIP-Seq and VAR-Seq Experiments                        |
-|         | Discussion: ChIP-Seq and VAR-Seq Analysis                           |
-|         | Reading: A16-A18, T8-T9                                             |
+|         | Reading: A11-A15, T7-T8                                             |
+| Week 6  | Analysis of ChIP-Seq Experiments                                    |
+|         | Discussion: ChIP-Seq Analysis                                       |
+|         | Reading: A16-A18, T9-T10                                            |
 | Week 7  | Students present publication related to their chosen course project |
 |         | Discussion: Q&A about papers                                        |
 |         | Reading: A19-A23                                                    |
 | Week 8  | Clustering algorithms                                               |
 |         | Pathway and GO annotation systems                                   |
 |         | Discussion: Gene Set Enrichment Analysis                            |
-|         | Reading: A24-A26, T6 (Sec 3.14-3.15), T10                           |
+|         | Reading: A24-A26, T7 (Sec 3.14-3.15), T11                           |
 | Week 9  | Genome and Transcriptome Assembly Algorithms                        | 
 |         | Profile HMMs for Protein Family Modeling                            |
 |         | Introduction to Phylogenetics                                       |
 |         | Discussion: Graphics and Data Visualization                         |
-|         | Reading: A27-A29, T11                                               |
+|         | Reading: A27-A29, T12                                               |
 | Week 10 | Final presentations of student data analysis projects               |
 |         | Discussion: Tips and tricks for efficient data analysis programming |
 |         | Reading: A30-A31, T3 (Sec 12,13-17)                                 |
@@ -207,30 +207,59 @@ A31. Zeitouni, B, Boeva, V, Janoueix-Lerosey, I, Loeillet, S, Legoix-ne, P, Nico
 
 A32. Ronquist F, Teslenko M, van der Mark P, Ayres DL, Darling A, Höhna S, Larget B, Liu L, Suchard MA, Huelsenbeck JP (2012) MrBayes 3.2: efficient Bayesian phylogenetic inference and model choice across a large model space. Syst Biol 61: 539–542.
 
+A33. Law CW, Zeglinski K, Dong X, Alhamdoosh M, Smyth GK, Ritchie ME (2020) A guide to creating design matrices for gene expression experiments. F1000Res 9: 1444
+
+A34. Langfelder P, Luo R, Oldham MC, Horvath S (2011) Is my network module preserved and reproducible? PLoS Comput Biol 7: e1001057
+
+A35. McInnes L, Healy J, Melville J (2018) UMAP: Uniform Manifold Approximation and Projection for Dimension Reduction. arXiv [stat.ML]
+
+A36. Rodriguez MZ, Comin CH, Casanova D, Bruno OM, Amancio DR, Costa L da F, Rodrigues FA (2019) Clustering algorithms: A comparative approach. PLoS One 14: e0210236
+
+A37. Shulse CN, Cole BJ, Ciobanu D, Lin J, Yoshinaga Y, Gouran M, Turco GM, Zhu Y, O’Malley RC, Brady SM, et al (2019) High-Throughput Single-Cell Transcriptome Profiling of Plant Cell Types. Cell Rep 27: 2241–2247.e4
+
+A38. Subramanian A, Tamayo P, Mootha VK, Mukherjee S, Ebert BL, Gillette MA, Paulovich A, Pomeroy SL, Golub TR, Lander ES, et al (2005) Gene set enrichment analysis: a knowledge-based approach for interpreting genome-wide expression profiles. Proc Natl Acad Sci U S A 102: 15545–15550
+
+A39. Sun S, Zhu J, Ma Y, Zhou X (2019) Accuracy, robustness and scalability of dimensionality reduction methods for single-cell RNA-seq analysis. Genome Biol 20: 269
 
 ### Tutorials
 
-T1. [GitHub Introduction](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/tutorial_01/)
+T1. [GitHub Introduction](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/github/github/)
 
-T2. [Introduction to Computer Clusters and Linux](http://girke.bioinformatics.ucr.edu/GEN242/tutorials/tutorial_02/)
+T2. [Introduction to Computer Clusters and Linux](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/linux/linux/)
 
-T3. [Introduction to R](http://girke.bioinformatics.ucr.edu/GEN242/tutorials/tutorial_03/) 
+T3. [Introduction to R](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rbasics/rbasics/) 
 
-T4. [Programming in R](http://girke.bioinformatics.ucr.edu/GEN242/tutorials/tutorial_04/)
+T4. [Programming in R](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rprogramming/rprogramming/)
 
-T5. [NGS Analysis Basics](http://girke.bioinformatics.ucr.edu/GEN242/tutorials/tutorial_05/)
+T5. [Parallel R](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rparallel/rparallel/)
 
-T6. [NGS Workflows](http://girke.bioinformatics.ucr.edu/GEN242/tutorials/tutorial_06/)
+T6. [NGS Analysis Basics](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rsequences/rsequences/)
+
+T7. [NGS Workflows](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/systempiper/systempiper/)
  
-T7. [RNA-Seq Workflow](http://girke.bioinformatics.ucr.edu/GEN242/tutorials/tutorial_07/) 
+T8. [RNA-Seq Workflow](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/sprnaseq/sprnaseq/) 
 
-T8. [ChIP-Seq Workflow](http://girke.bioinformatics.ucr.edu/GEN242/tutorials/tutorial_08)
+T9. [scRNA-Seq Embedding Methods](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/scrnaseq/scrnaseq/)
 
-T9. [VAR-Seq Workflow](http://girke.bioinformatics.ucr.edu/GEN242/tutorials/tutorial_09/) 
+T10. [ChIP-Seq Workflow](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/spchipseq/spchipseq/)
 
-T10. [Unsupervised Learning](http://girke.bioinformatics.ucr.edu/GEN242/tutorials/tutorial_10/)
+T11. [R Markdown](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rmarkdown/rmarkdown/)
 
-T11. [Data Visualization](http://girke.bioinformatics.ucr.edu/GEN242/tutorials/tutorial_11/)
+T12. [Functional Enrichment Analysis](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rfea/rfea/) 
+
+T13. [Clustering and Network Analysis](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rclustering/rclustering/)
+
+T14. [Project Data](https://girke.bioinformatics.ucr.edu/GEN242/assignments/projects/project_data/)
+
+T15. [Data Visualization](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rgraphics/rgraphics/)
+
+T16. [Shiny Apps](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/shinyapps/shinyapps/)
+
+T17. [Building R Packages](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rpackages/rpackages/)
+
+T18. [dplyr, tidyr and some SQLite](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/dplyr/dplyr/)
+
+T19. [Advanced: Common Workflow Language (CWL)](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/cmdtocwl/cmdtocwl/)
 
 
 ### Books 
