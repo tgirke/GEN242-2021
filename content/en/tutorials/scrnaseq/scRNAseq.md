@@ -47,7 +47,7 @@ some packages, such as the Bioconductor
 provide access to a wide range of embedding methods that can be conveniently and
 uniformly applied to Bioconductor’s S4 object class called [`SingleCellExperiment`](https://bioconductor.org/packages/3.12/bioc/html/SingleCellExperiment.html)
 for handling scRNA-Seq data (Senabouth et al. 2019; Amezquita et al. 2020). The performance of
-the different embedding methods for scRNA-Seq data has been intesively testing by several
+the different embedding methods for scRNA-Seq data has been intesively tested by several
 studies, including Sun et al. (2019; 2020).
 
 For illustration purposes, the following example code first applies several widely
