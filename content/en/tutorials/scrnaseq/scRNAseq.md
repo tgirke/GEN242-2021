@@ -33,11 +33,10 @@ Source code downloads:    
 
 ## Introduction
 
-This tutorial introduces the usage of several embedding algorithms for
-high-dimensional gene expression data that are often used for single cell
-RNA-Seq (scRNA-Seq) data (Duò, Robinson, and Soneson 2018). Many dimensionality reduction methods
-have been implemented as R packages, and are available on CRAN, Bioconductor
-and/or GitHub. Examples include PCA, MDS,
+This tutorial introduces the usage of several software implementations of
+embedding algorithms for high-dimensional gene expression data (Duò, Robinson, and Soneson 2018) that are often
+used for single cell RNA-Seq (scRNA-Seq) data. Many of them are available as R packages on CRAN,
+Bioconductor and/or GitHub. Examples include PCA, MDS,
 [SC3](http://bioconductor.org/packages/release/bioc/html/SC3.html)
 (Kiselev et al. 2017),
 [isomap](https://bioconductor.org/packages/release/bioc/html/RDRToolbox.html),
@@ -45,16 +44,16 @@ and/or GitHub. Examples include PCA, MDS,
 (Donaldson and Donaldson 2010), [FIt-SNE](https://github.com/KlugerLab/FIt-SNE)
 (Linderman et al. 2019), and
 [UMAP](https://cran.r-project.org/web/packages/umap/index.html)
-(McInnes, Healy, and Melville 2018). In addition, some packages, such as the Bioconductor
+(McInnes, Healy, and Melville 2018). In addition, some packages such as Bioconductor’s
 [scater](https://bioconductor.org/packages/release/bioc/vignettes/scater/inst/doc/overview.html)
-package, provide access to a wide range of embedding methods that can be
+package provide access to a wide range of embedding methods that can be
 conveniently and uniformly applied to Bioconductor’s S4 object class called
 [`SingleCellExperiment`](https://bioconductor.org/packages/3.12/bioc/html/SingleCellExperiment.html)
 for handling scRNA-Seq data (Senabouth et al. 2019; Amezquita et al. 2020). The
 performance of the different embedding methods for scRNA-Seq data has been
-intesively tested by several studies, including Sun et al. (2019; 2020).
+intensively tested by several studies, including Sun et al. (2019; 2020).
 
-For illustration purposes, the following example code first applies several widely
+For illustration purposes, the following example code first applies four widely
 used embedding methods to a bulk RNA-Seq data set (Howard et al. 2013), and then to a much more
 complex scRNA-Seq data set (Aztekin et al. 2019) obtained from the
 [`scRNAseq`](https://bioconductor.org/packages/release/data/experiment/html/scRNAseq.html)
@@ -70,7 +69,7 @@ by first creating a `SummarizedExperiment` object and then coercing it to a
 `SingleCellExperiment` object, as well as intializing the `SingleCellExperiment`
 directly.
 
-#### (a) Create `SummarizedExperiment` and coerce to `SingleCellExperiment`
+#### Create `SummarizedExperiment` and coerce to `SingleCellExperiment`
 
 The required `targetsPE.txt` and `countDFeByg.xls` files can be downloaded
 from [here](https://github.com/tgirke/GEN242/tree/main/content/en/tutorials/scrnaseq/results).
@@ -110,7 +109,7 @@ countDF <- read.delim(countpath, row.names=1, check.names=FALSE)
     ## mainExpName: NULL
     ## altExpNames(0):
 
-#### (b) Create `SingleCellExperiment` directly
+#### Create `SingleCellExperiment` directly
 
 ``` r
 sce2 <- SingleCellExperiment(assays=list(counts=countDF), colData=targets)
