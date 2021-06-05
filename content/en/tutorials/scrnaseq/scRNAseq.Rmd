@@ -118,10 +118,22 @@ plotUMAP(sce, colour_by="label", text_by="label")
 
 #### (d) PCA 
 
-```{r run_pca1, eval=TRUE, message=FALSE, warning=FALSE}
+PCA plot for first two components.
+
+```{r run_pca1a, eval=TRUE, message=FALSE, warning=FALSE}
 sce <- runPCA(sce) # gives a warning due to small size of data set but it still works 
 reducedDimNames(sce)
 plotPCA(sce, colour_by="label", text_by="label")
+```
+
+Multiple components can be plotted in a series of pairwise plots. When more
+than two components are plotted, the diagonal boxes in the scatter plot matrix
+show the density for each component.
+
+```{r run_pca1b, eval=TRUE, message=FALSE, warning=FALSE}
+sce <- runPCA(sce, ncomponents=20) # gives a warning due to small size of data set but it still works 
+reducedDimNames(sce)
+plotPCA(sce, colour_by="label", text_by="label", ncomponents = 4)
 ```
 
 ## scRNA-Seq data
@@ -209,6 +221,8 @@ plotUMAP(sce, colour_by="label", text_by="label")
 
 ## (d) PCA 
 
+PCA result plotted for first two components.
+
 ```{r run_pca2, eval=FALSE}
 sce <- runPCA(sce) 
 reducedDimNames(sce)
@@ -217,6 +231,19 @@ plotPCA(sce, colour_by="label", text_by="label")
 
 ![](../results/scpca.png)                                                                                                                                                     
 <div align="center">PCA embedding of scRNA-Seq data</div></br>  
+
+Multiple components can be plotted in a series of pairwise plots. When more
+than two components are plotted, the diagonal boxes in the scatter plot matrix
+show the density for each component.
+
+```{r run_pca2b, eval=TRUE, message=FALSE, warning=FALSE}
+sce <- runPCA(sce, ncomponents=20) 
+reducedDimNames(sce)
+plotPCA(sce, colour_by="label", text_by="label", ncomponents = 4)
+```
+
+![](../results/scpca_multi.png)                                                                                                                                                     
+<div align="center">PCA embedding of scRNA-Seq data for multiple components</div></br>  
 
 ## Version Information
 

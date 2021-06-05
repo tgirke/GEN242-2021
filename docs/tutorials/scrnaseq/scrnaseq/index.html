@@ -22,12 +22,12 @@
  Introduction This tutorial introduces several embedding methods for high-dimensional gene expression data that are often used for single cell RNA-Seq (scRNA-Seq) data. For illustration purposes, the embedding methods are first applied to a bulk RNA-Seq data set (Howard et al. 2013) and then to a much more complex scRNA-Seq data set (Aztekin et al. 2019) obtained from the scRNAseq package." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/scrnaseq/scrnaseq/" />
-<meta property="article:modified_time" content="2021-06-03T19:34:11-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-06-04T12:07:30-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="scRNA-Seq Embedding Methods">
 <meta itemprop="description" content="Source code downloads: [ .Rmd ] [ .R ]
  Introduction This tutorial introduces several embedding methods for high-dimensional gene expression data that are often used for single cell RNA-Seq (scRNA-Seq) data. For illustration purposes, the embedding methods are first applied to a bulk RNA-Seq data set (Howard et al. 2013) and then to a much more complex scRNA-Seq data set (Aztekin et al. 2019) obtained from the scRNAseq package.">
-<meta itemprop="dateModified" content="2021-06-03T19:34:11-07:00" />
-<meta itemprop="wordCount" content="1018">
+<meta itemprop="dateModified" content="2021-06-04T12:07:30-07:00" />
+<meta itemprop="wordCount" content="1152">
 
 
 
@@ -824,7 +824,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.138783fbbd46c35d8f4082ecc9f82b11.json"
+  data-offline-search-index-json-src="../../../offline-search-index.434adda47106bdee730378eae361ab34.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -856,7 +856,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.138783fbbd46c35d8f4082ecc9f82b11.json"
+  data-offline-search-index-json-src="../../../offline-search-index.434adda47106bdee730378eae361ab34.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1169,7 +1169,7 @@ if (!doNotTrack) {
 	<h1>scRNA-Seq Embedding Methods</h1>
     
 	
-        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 5 minute read</p>
+        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 6 minute read</p>
            
 	<!---
 - Compile from command-line
@@ -1271,6 +1271,7 @@ reducedDimNames(sce)
 </code></pre>
 <p><img src="../../../en/tutorials/scrnaseq/scRNAseq_files/figure-html/run_umap1-1.png" width="672" /></p>
 <h4 id="d-pca">(d) PCA</h4>
+<p>PCA plot for first two components.</p>
 <pre><code class="language-r">sce &lt;- runPCA(sce) # gives a warning due to small size of data set but it still works 
 reducedDimNames(sce)
 </code></pre>
@@ -1278,7 +1279,18 @@ reducedDimNames(sce)
 </code></pre>
 <pre><code class="language-r">plotPCA(sce, colour_by=&quot;label&quot;, text_by=&quot;label&quot;)
 </code></pre>
-<p><img src="../../../en/tutorials/scrnaseq/scRNAseq_files/figure-html/run_pca1-1.png" width="672" /></p>
+<p><img src="../../../en/tutorials/scrnaseq/scRNAseq_files/figure-html/run_pca1a-1.png" width="672" /></p>
+<p>Multiple components can be plotted in a series of pairwise plots. When more
+than two components are plotted, the diagonal boxes in the scatter plot matrix
+show the density for each component.</p>
+<pre><code class="language-r">sce &lt;- runPCA(sce, ncomponents=20) # gives a warning due to small size of data set but it still works 
+reducedDimNames(sce)
+</code></pre>
+<pre><code>## [1] &quot;TSNE&quot; &quot;MDS&quot;  &quot;UMAP&quot; &quot;PCA&quot;
+</code></pre>
+<pre><code class="language-r">plotPCA(sce, colour_by=&quot;label&quot;, text_by=&quot;label&quot;, ncomponents = 4)
+</code></pre>
+<p><img src="../../../en/tutorials/scrnaseq/scRNAseq_files/figure-html/run_pca1b-1.png" width="672" /></p>
 <h2 id="scrna-seq-data">scRNA-Seq data</h2>
 <h3 id="load-scrna-seq-data">Load scRNA-Seq data</h3>
 <p>The <code>scRNAseq</code> package is used to load the scRNA-Seq data set from Xenopus tail
@@ -1342,6 +1354,7 @@ plotUMAP(sce, colour_by=&quot;label&quot;, text_by=&quot;label&quot;)
 </div>
 </br>
 <h2 id="d-pca-1">(d) PCA</h2>
+<p>PCA result plotted for first two components.</p>
 <pre><code class="language-r">sce &lt;- runPCA(sce) 
 reducedDimNames(sce)
 plotPCA(sce, colour_by=&quot;label&quot;, text_by=&quot;label&quot;)
@@ -1349,6 +1362,22 @@ plotPCA(sce, colour_by=&quot;label&quot;, text_by=&quot;label&quot;)
 <p><img src="../results/scpca.png" alt=""></p>
 <div align="center">
 <p>PCA embedding of scRNA-Seq data</p>
+</div>
+</br>
+<p>Multiple components can be plotted in a series of pairwise plots. When more
+than two components are plotted, the diagonal boxes in the scatter plot matrix
+show the density for each component.</p>
+<pre><code class="language-r">sce &lt;- runPCA(sce, ncomponents=20) 
+reducedDimNames(sce)
+</code></pre>
+<pre><code>## [1] &quot;TSNE&quot; &quot;MDS&quot;  &quot;UMAP&quot; &quot;PCA&quot;
+</code></pre>
+<pre><code class="language-r">plotPCA(sce, colour_by=&quot;label&quot;, text_by=&quot;label&quot;, ncomponents = 4)
+</code></pre>
+<p><img src="../../../en/tutorials/scrnaseq/scRNAseq_files/figure-html/run_pca2b-1.png" width="672" /></p>
+<p><img src="../results/scpca_multi.png" alt=""></p>
+<div align="center">
+<p>PCA embedding of scRNA-Seq data for multiple components</p>
 </div>
 </br>
 <h2 id="version-information">Version Information</h2>
@@ -1439,7 +1468,7 @@ plotPCA(sce, colour_by=&quot;label&quot;, text_by=&quot;label&quot;)
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-06-03: <a  href="https://github.com/tgirke/GEN242//commit/06eb0ffd4b3b666d218d85af799a5237ba6b4cec">some edits (06eb0ffd4)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-06-04: <a  href="https://github.com/tgirke/GEN242//commit/24f530b6a8077b65a5865fc323c1e88b4aefd002">some edits (24f530b6a)</a>
 </div>
 </div>
 

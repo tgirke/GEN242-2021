@@ -161,6 +161,8 @@ plotUMAP(sce, colour_by="label", text_by="label")
 
 #### (d) PCA
 
+PCA plot for first two components.
+
 ``` r
 sce <- runPCA(sce) # gives a warning due to small size of data set but it still works 
 reducedDimNames(sce)
@@ -172,7 +174,24 @@ reducedDimNames(sce)
 plotPCA(sce, colour_by="label", text_by="label")
 ```
 
-<img src="/en/tutorials/scrnaseq/scRNAseq_files/figure-html/run_pca1-1.png" width="672" />
+<img src="/en/tutorials/scrnaseq/scRNAseq_files/figure-html/run_pca1a-1.png" width="672" />
+
+Multiple components can be plotted in a series of pairwise plots. When more
+than two components are plotted, the diagonal boxes in the scatter plot matrix
+show the density for each component.
+
+``` r
+sce <- runPCA(sce, ncomponents=20) # gives a warning due to small size of data set but it still works 
+reducedDimNames(sce)
+```
+
+    ## [1] "TSNE" "MDS"  "UMAP" "PCA"
+
+``` r
+plotPCA(sce, colour_by="label", text_by="label", ncomponents = 4)
+```
+
+<img src="/en/tutorials/scrnaseq/scRNAseq_files/figure-html/run_pca1b-1.png" width="672" />
 
 ## scRNA-Seq data
 
@@ -279,6 +298,8 @@ UMAP embedding of scRNA-Seq data
 
 ## (d) PCA
 
+PCA result plotted for first two components.
+
 ``` r
 sce <- runPCA(sce) 
 reducedDimNames(sce)
@@ -290,6 +311,33 @@ plotPCA(sce, colour_by="label", text_by="label")
 <div align="center">
 
 PCA embedding of scRNA-Seq data
+
+</div>
+
+</br>
+
+Multiple components can be plotted in a series of pairwise plots. When more
+than two components are plotted, the diagonal boxes in the scatter plot matrix
+show the density for each component.
+
+``` r
+sce <- runPCA(sce, ncomponents=20) 
+reducedDimNames(sce)
+```
+
+    ## [1] "TSNE" "MDS"  "UMAP" "PCA"
+
+``` r
+plotPCA(sce, colour_by="label", text_by="label", ncomponents = 4)
+```
+
+<img src="/en/tutorials/scrnaseq/scRNAseq_files/figure-html/run_pca2b-1.png" width="672" />
+
+![](../results/scpca_multi.png)  
+
+<div align="center">
+
+PCA embedding of scRNA-Seq data for multiple components
 
 </div>
 
