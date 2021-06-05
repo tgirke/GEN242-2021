@@ -323,15 +323,8 @@ show the density for each component.
 ``` r
 sce <- runPCA(sce, ncomponents=20) 
 reducedDimNames(sce)
-```
-
-    ## [1] "TSNE" "MDS"  "UMAP" "PCA"
-
-``` r
 plotPCA(sce, colour_by="label", text_by="label", ncomponents = 4)
 ```
-
-<img src="/en/tutorials/scrnaseq/scRNAseq_files/figure-html/run_pca2b-1.png" width="672" />
 
 ![](../results/scpca_multi.png)  
 

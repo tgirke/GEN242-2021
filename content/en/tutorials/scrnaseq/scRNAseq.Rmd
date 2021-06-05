@@ -236,7 +236,7 @@ Multiple components can be plotted in a series of pairwise plots. When more
 than two components are plotted, the diagonal boxes in the scatter plot matrix
 show the density for each component.
 
-```{r run_pca2b, eval=TRUE, message=FALSE, warning=FALSE}
+```{r run_pca2b, eval=FALSE, message=FALSE, warning=FALSE}
 sce <- runPCA(sce, ncomponents=20) 
 reducedDimNames(sce)
 plotPCA(sce, colour_by="label", text_by="label", ncomponents = 4)
