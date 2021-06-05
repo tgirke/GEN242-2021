@@ -378,6 +378,11 @@ enable = true
     url = "/slides/slides_21/"
     parent = "Slides"
     weight = 121
+  [[menu.main]]
+    name = "Additional Slide Shows (S22)"
+    url = "/slides/slides_22/"
+    parent = "Slides"
+    weight = 122
 ##
 [[menu.main]]
   name = "Tutorials"
