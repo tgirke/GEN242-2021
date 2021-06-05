@@ -46,7 +46,7 @@ Bioconductor and/or GitHub. Examples include PCA, MDS,
 [UMAP](https://cran.r-project.org/web/packages/umap/index.html)
 (McInnes, Healy, and Melville 2018). In addition, some packages such as Bioconductor’s
 [scater](https://bioconductor.org/packages/release/bioc/vignettes/scater/inst/doc/overview.html)
-package provide access to a wide range of embedding methods that can be
+package provide in a single environment access to a wide range of embedding methods that can be
 conveniently and uniformly applied to Bioconductor’s S4 object class called
 [`SingleCellExperiment`](https://bioconductor.org/packages/3.12/bioc/html/SingleCellExperiment.html)
 for handling scRNA-Seq data (Senabouth et al. 2019; Amezquita et al. 2020). The
