@@ -32,13 +32,31 @@ Source code downloads: &nbsp; &nbsp;
 ```{r, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
 ## Introduction
 
-This tutorial introduces several embedding methods for high-dimensional gene
-expression data that are often used for single cell RNA-Seq (scRNA-Seq) data. 
-For illustration purposes, the embedding methods are first applied to a bulk
-RNA-Seq data set [@Howard2013-fq] and then to a much more complex scRNA-Seq 
-data set [@Aztekin2019-sw] obtained from the [`scRNAseq`](https://bioconductor.org/packages/release/data/experiment/html/scRNAseq.html) package.
+
+This tutorial introduces several embedding algorithms for high-dimensional gene
+expression data that are often used for single cell RNA-Seq (scRNA-Seq) data [@Duo2018-oo].
+Many dimensionality reduction methods have been implemented as R packages. 
+Many of them are available on CRAN and/or Bioconductor. Examples include PCA, MDS,
+[SC3](http://bioconductor.org/packages/release/bioc/html/SC3.html) [@Kiselev2017-ye],
+[isomap](https://bioconductor.org/packages/release/bioc/html/RDRToolbox.html),
+[t-SNE](https://cran.r-project.org/web/packages/Rtsne/) [@donaldson2010package],
+[FIt-SNE](https://github.com/KlugerLab/FIt-SNE) [@Linderman2019-qh], and
+[UMAP](https://cran.r-project.org/web/packages/umap/index.html) [@McInnes2018-tc]. In addition,
+some packages, such as the Bioconductor
+[scater](https://bioconductor.org/packages/release/bioc/vignettes/scater/inst/doc/overview.html),
+provide access to several embedding methods that can be conveniently applied
+in a uniform manner to Bioconductor's S4 object class called [`SingleCellExperiment`](https://bioconductor.org/packages/3.12/bioc/html/SingleCellExperiment.html)
+for handling scRNA-Seq data [@Senabouth2019-cr; @Amezquita2020-vu]. Various studies have tested the performance of the 
+different embedding methods including Sun et al. [-@Sun2019-po; -@Sun2020-ct].
+
+For illustration purposes, the following examples first apply the embedding
+methods to a bulk RNA-Seq data set [@Howard2013-fq], and then to a much more
+complex scRNA-Seq data set [@Aztekin2019-sw] obtained from the
+[`scRNAseq`](https://bioconductor.org/packages/release/data/experiment/html/scRNAseq.html)
+package.
 
 ## Bulk RNA-Seq data
 

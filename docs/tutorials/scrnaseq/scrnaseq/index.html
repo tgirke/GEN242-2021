@@ -19,15 +19,15 @@
 
 <title>scRNA-Seq Embedding Methods | GEN242</title><meta property="og:title" content="scRNA-Seq Embedding Methods" />
 <meta property="og:description" content="Source code downloads: [ .Rmd ] [ .R ]
- Introduction This tutorial introduces several embedding methods for high-dimensional gene expression data that are often used for single cell RNA-Seq (scRNA-Seq) data. For illustration purposes, the embedding methods are first applied to a bulk RNA-Seq data set (Howard et al. 2013) and then to a much more complex scRNA-Seq data set (Aztekin et al. 2019) obtained from the scRNAseq package." />
+ Introduction This tutorial introduces several embedding algorithms for high-dimensional gene expression data that are often used for single cell RNA-Seq (scRNA-Seq) data (Duò, Robinson, and Soneson 2018). Many dimensionality reduction methods have been implemented as R packages. Many of them are available on CRAN and/or Bioconductor. Examples include PCA, MDS, SC3 (Kiselev et al. 2017), isomap, t-SNE (Donaldson and Donaldson 2010), FIt-SNE (Linderman et al." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/scrnaseq/scrnaseq/" />
-<meta property="article:modified_time" content="2021-06-04T19:10:40-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-06-04T19:13:26-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="scRNA-Seq Embedding Methods">
 <meta itemprop="description" content="Source code downloads: [ .Rmd ] [ .R ]
- Introduction This tutorial introduces several embedding methods for high-dimensional gene expression data that are often used for single cell RNA-Seq (scRNA-Seq) data. For illustration purposes, the embedding methods are first applied to a bulk RNA-Seq data set (Howard et al. 2013) and then to a much more complex scRNA-Seq data set (Aztekin et al. 2019) obtained from the scRNAseq package.">
-<meta itemprop="dateModified" content="2021-06-04T19:10:40-07:00" />
-<meta itemprop="wordCount" content="1146">
+ Introduction This tutorial introduces several embedding algorithms for high-dimensional gene expression data that are often used for single cell RNA-Seq (scRNA-Seq) data (Duò, Robinson, and Soneson 2018). Many dimensionality reduction methods have been implemented as R packages. Many of them are available on CRAN and/or Bioconductor. Examples include PCA, MDS, SC3 (Kiselev et al. 2017), isomap, t-SNE (Donaldson and Donaldson 2010), FIt-SNE (Linderman et al.">
+<meta itemprop="dateModified" content="2021-06-04T19:13:26-07:00" />
+<meta itemprop="wordCount" content="1495">
 
 
 
@@ -35,7 +35,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="scRNA-Seq Embedding Methods"/>
 <meta name="twitter:description" content="Source code downloads: [ .Rmd ] [ .R ]
- Introduction This tutorial introduces several embedding methods for high-dimensional gene expression data that are often used for single cell RNA-Seq (scRNA-Seq) data. For illustration purposes, the embedding methods are first applied to a bulk RNA-Seq data set (Howard et al. 2013) and then to a much more complex scRNA-Seq data set (Aztekin et al. 2019) obtained from the scRNAseq package."/>
+ Introduction This tutorial introduces several embedding algorithms for high-dimensional gene expression data that are often used for single cell RNA-Seq (scRNA-Seq) data (Duò, Robinson, and Soneson 2018). Many dimensionality reduction methods have been implemented as R packages. Many of them are available on CRAN and/or Bioconductor. Examples include PCA, MDS, SC3 (Kiselev et al. 2017), isomap, t-SNE (Donaldson and Donaldson 2010), FIt-SNE (Linderman et al."/>
 
 
 <script type="application/javascript">
@@ -824,7 +824,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.fac5f20b2dc3936c45e10221cdb7ffb7.json"
+  data-offline-search-index-json-src="../../../offline-search-index.6d150da67a25616f83616ff11bf356c3.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -856,7 +856,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.fac5f20b2dc3936c45e10221cdb7ffb7.json"
+  data-offline-search-index-json-src="../../../offline-search-index.6d150da67a25616f83616ff11bf356c3.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1169,7 +1169,7 @@ if (!doNotTrack) {
 	<h1>scRNA-Seq Embedding Methods</h1>
     
 	
-        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 6 minute read</p>
+        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 8 minute read</p>
            
 	<!---
 - Compile from command-line
@@ -1181,11 +1181,26 @@ Rscript -e "rmarkdown::render('scRNAseq.Rmd', c('html_document'), clean=FALSE); 
 [ <a href="https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/scrnaseq/scRNAseq.R">.R</a> ]</p>
 </div>
 <h2 id="introduction">Introduction</h2>
-<p>This tutorial introduces several embedding methods for high-dimensional gene
-expression data that are often used for single cell RNA-Seq (scRNA-Seq) data.
-For illustration purposes, the embedding methods are first applied to a bulk
-RNA-Seq data set (Howard et al. 2013) and then to a much more complex scRNA-Seq
-data set (Aztekin et al. 2019) obtained from the <a href="https://bioconductor.org/packages/release/data/experiment/html/scRNAseq.html"><code>scRNAseq</code></a> package.</p>
+<p>This tutorial introduces several embedding algorithms for high-dimensional gene
+expression data that are often used for single cell RNA-Seq (scRNA-Seq) data (Duò, Robinson, and Soneson 2018).
+Many dimensionality reduction methods have been implemented as R packages.
+Many of them are available on CRAN and/or Bioconductor. Examples include PCA, MDS,
+<a href="http://bioconductor.org/packages/release/bioc/html/SC3.html">SC3</a> (Kiselev et al. 2017),
+<a href="https://bioconductor.org/packages/release/bioc/html/RDRToolbox.html">isomap</a>,
+<a href="https://cran.r-project.org/web/packages/Rtsne/">t-SNE</a> (Donaldson and Donaldson 2010),
+<a href="https://github.com/KlugerLab/FIt-SNE">FIt-SNE</a> (Linderman et al. 2019), and
+<a href="https://cran.r-project.org/web/packages/umap/index.html">UMAP</a> (McInnes, Healy, and Melville 2018). In addition,
+some packages, such as the Bioconductor
+<a href="https://bioconductor.org/packages/release/bioc/vignettes/scater/inst/doc/overview.html">scater</a>,
+provide access to several embedding methods that can be conveniently applied
+in a uniform manner to Bioconductor’s S4 object class called <a href="https://bioconductor.org/packages/3.12/bioc/html/SingleCellExperiment.html"><code>SingleCellExperiment</code></a>
+for handling scRNA-Seq data (Senabouth et al. 2019; Amezquita et al. 2020). Various studies have tested the performance of the
+different embedding methods including Sun et al. (2019; 2020).</p>
+<p>For illustration purposes, the following examples first apply the embedding
+methods to a bulk RNA-Seq data set (Howard et al. 2013), and then to a much more
+complex scRNA-Seq data set (Aztekin et al. 2019) obtained from the
+<a href="https://bioconductor.org/packages/release/data/experiment/html/scRNAseq.html"><code>scRNAseq</code></a>
+package.</p>
 <h2 id="bulk-rna-seq-data">Bulk RNA-Seq data</h2>
 <h3 id="generate-summarizedexperiment-and-singlecellexperiment">Generate <code>SummarizedExperiment</code> and <code>SingleCellExperiment</code></h3>
 <p>The following loads the bulk RNA-Seq data from Howard <em>et al.</em> (2013)
@@ -1454,17 +1469,44 @@ plotPCA(sce, colour_by=&quot;label&quot;, text_by=&quot;label&quot;, ncomponents
 </code></pre>
 <h2 id="references">References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Amezquita2020-vu" class="csl-entry">
+<p>Amezquita, Robert A, Aaron T L Lun, Etienne Becht, Vince J Carey, Lindsay N Carpp, Ludwig Geistlinger, Federico Marini, et al. 2020. “<span class="nocase">Orchestrating single-cell analysis with Bioconductor</span>.” <em>Nat. Methods</em> 17 (2): 137–45. <a href="https://doi.org/10.1038/s41592-019-0654-x">https://doi.org/10.1038/s41592-019-0654-x</a>.</p>
+</div>
 <div id="ref-Aztekin2019-sw" class="csl-entry">
 <p>Aztekin, C, T W Hiscock, J C Marioni, J B Gurdon, B D Simons, and J Jullien. 2019. “<span class="nocase">Identification of a regeneration-organizing cell in the Xenopus tail</span>.” <em>Science</em> 364 (6441): 653–58. <a href="https://doi.org/10.1126/science.aav9996">https://doi.org/10.1126/science.aav9996</a>.</p>
 </div>
+<div id="ref-donaldson2010package" class="csl-entry">
+<p>Donaldson, Justin, and Maintainer Justin Donaldson. 2010. “Package ‘Tsne’.” <em>CRAN Repository</em>.</p>
+</div>
+<div id="ref-Duo2018-oo" class="csl-entry">
+<p>Duò, Angelo, Mark D Robinson, and Charlotte Soneson. 2018. “<span class="nocase">A systematic performance evaluation of clustering methods for single-cell RNA-seq data</span>.” <em>F1000Res.</em> 7 (July): 1141. <a href="https://doi.org/10.12688/f1000research.15666.3">https://doi.org/10.12688/f1000research.15666.3</a>.</p>
+</div>
 <div id="ref-Howard2013-fq" class="csl-entry">
 <p>Howard, Brian E, Qiwen Hu, Ahmet Can Babaoglu, Manan Chandra, Monica Borghi, Xiaoping Tan, Luyan He, et al. 2013. “High-Throughput RNA Sequencing of Pseudomonas-Infected Arabidopsis Reveals Hidden Transcriptome Complexity and Novel Splice Variants.” <em>PLoS One</em> 8 (10): e74183. <a href="https://doi.org/10.1371/journal.pone.0074183">https://doi.org/10.1371/journal.pone.0074183</a>.</p>
+</div>
+<div id="ref-Kiselev2017-ye" class="csl-entry">
+<p>Kiselev, Vladimir Yu, Kristina Kirschner, Michael T Schaub, Tallulah Andrews, Andrew Yiu, Tamir Chandra, Kedar N Natarajan, et al. 2017. “<span class="nocase">SC3: consensus clustering of single-cell RNA-seq data</span>.” <em>Nat. Methods</em> 14 (5): 483–86. <a href="https://doi.org/10.1038/nmeth.4236">https://doi.org/10.1038/nmeth.4236</a>.</p>
+</div>
+<div id="ref-Linderman2019-qh" class="csl-entry">
+<p>Linderman, George C, Manas Rachh, Jeremy G Hoskins, Stefan Steinerberger, and Yuval Kluger. 2019. “<span class="nocase">Fast interpolation-based t-SNE for improved visualization of single-cell RNA-seq data</span>.” <em>Nat. Methods</em> 16 (3): 243–45. <a href="https://doi.org/10.1038/s41592-018-0308-4">https://doi.org/10.1038/s41592-018-0308-4</a>.</p>
+</div>
+<div id="ref-McInnes2018-tc" class="csl-entry">
+<p>McInnes, Leland, John Healy, and James Melville. 2018. “<span class="nocase">UMAP: Uniform Manifold Approximation and Projection for Dimension Reduction</span>,” February. <a href="http://arxiv.org/abs/1802.03426">http://arxiv.org/abs/1802.03426</a>.</p>
+</div>
+<div id="ref-Senabouth2019-cr" class="csl-entry">
+<p>Senabouth, Anne, Samuel W Lukowski, Jose Alquicira Hernandez, Stacey B Andersen, Xin Mei, Quan H Nguyen, and Joseph E Powell. 2019. “<span class="nocase">ascend: R package for analysis of single-cell RNA-seq data</span>.” <em>Gigascience</em> 8 (8). <a href="https://doi.org/10.1093/gigascience/giz087">https://doi.org/10.1093/gigascience/giz087</a>.</p>
+</div>
+<div id="ref-Sun2019-po" class="csl-entry">
+<p>Sun, Shiquan, Jiaqiang Zhu, Ying Ma, and Xiang Zhou. 2019. “<span class="nocase">Accuracy, robustness and scalability of dimensionality reduction methods for single-cell RNA-seq analysis</span>.” <em>Genome Biol.</em> 20 (1): 269. <a href="https://doi.org/10.1186/s13059-019-1898-6">https://doi.org/10.1186/s13059-019-1898-6</a>.</p>
+</div>
+<div id="ref-Sun2020-ct" class="csl-entry">
+<p>Sun, Shiquan, Jiaqiang Zhu, and Xiang Zhou. 2020. “<span class="nocase">Statistical analysis of spatial expression patterns for spatially resolved transcriptomic studies</span>.” <em>Nat. Methods</em>, January. <a href="https://doi.org/10.1038/s41592-019-0701-7">https://doi.org/10.1038/s41592-019-0701-7</a>.</p>
 </div>
 </div>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-06-04: <a  href="https://github.com/tgirke/GEN242//commit/8bc5de79e801e84fe685f3a4fae5a48124b42424">some edits (8bc5de79e)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-06-04: <a  href="https://github.com/tgirke/GEN242//commit/eb19364db2a5f6a86cfab71223069e0aa27ca0a7">some edits (eb19364db)</a>
 </div>
 </div>
 

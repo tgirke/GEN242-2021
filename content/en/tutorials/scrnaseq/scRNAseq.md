@@ -1,7 +1,7 @@
 ---
 title: "scRNA-Seq Embedding Methods" 
 author: "Author: Daniela Cassol, Le Zhang, Thomas Girke"
-date: "Last update: 04 June, 2021" 
+date: "Last update: 05 June, 2021" 
 output:
   html_document:
     toc: true
@@ -33,11 +33,27 @@ Source code downloads:    
 
 ## Introduction
 
-This tutorial introduces several embedding methods for high-dimensional gene
-expression data that are often used for single cell RNA-Seq (scRNA-Seq) data.
-For illustration purposes, the embedding methods are first applied to a bulk
-RNA-Seq data set (Howard et al. 2013) and then to a much more complex scRNA-Seq
-data set (Aztekin et al. 2019) obtained from the [`scRNAseq`](https://bioconductor.org/packages/release/data/experiment/html/scRNAseq.html) package.
+This tutorial introduces several embedding algorithms for high-dimensional gene
+expression data that are often used for single cell RNA-Seq (scRNA-Seq) data (Duò, Robinson, and Soneson 2018).
+Many dimensionality reduction methods have been implemented as R packages.
+Many of them are available on CRAN and/or Bioconductor. Examples include PCA, MDS,
+[SC3](http://bioconductor.org/packages/release/bioc/html/SC3.html) (Kiselev et al. 2017),
+[isomap](https://bioconductor.org/packages/release/bioc/html/RDRToolbox.html),
+[t-SNE](https://cran.r-project.org/web/packages/Rtsne/) (Donaldson and Donaldson 2010),
+[FIt-SNE](https://github.com/KlugerLab/FIt-SNE) (Linderman et al. 2019), and
+[UMAP](https://cran.r-project.org/web/packages/umap/index.html) (McInnes, Healy, and Melville 2018). In addition,
+some packages, such as the Bioconductor
+[scater](https://bioconductor.org/packages/release/bioc/vignettes/scater/inst/doc/overview.html),
+provide access to several embedding methods that can be conveniently applied
+in a uniform manner to Bioconductor’s S4 object class called [`SingleCellExperiment`](https://bioconductor.org/packages/3.12/bioc/html/SingleCellExperiment.html)
+for handling scRNA-Seq data (Senabouth et al. 2019; Amezquita et al. 2020). Various studies have tested the performance of the
+different embedding methods including Sun et al. (2019; 2020).
+
+For illustration purposes, the following examples first apply the embedding
+methods to a bulk RNA-Seq data set (Howard et al. 2013), and then to a much more
+complex scRNA-Seq data set (Aztekin et al. 2019) obtained from the
+[`scRNAseq`](https://bioconductor.org/packages/release/data/experiment/html/scRNAseq.html)
+package.
 
 ## Bulk RNA-Seq data
 
@@ -419,15 +435,69 @@ sessionInfo()
 
 <div id="refs" class="references csl-bib-body hanging-indent">
 
+<div id="ref-Amezquita2020-vu" class="csl-entry">
+
+Amezquita, Robert A, Aaron T L Lun, Etienne Becht, Vince J Carey, Lindsay N Carpp, Ludwig Geistlinger, Federico Marini, et al. 2020. “<span class="nocase">Orchestrating single-cell analysis with Bioconductor</span>.” *Nat. Methods* 17 (2): 137–45. <https://doi.org/10.1038/s41592-019-0654-x>.
+
+</div>
+
 <div id="ref-Aztekin2019-sw" class="csl-entry">
 
 Aztekin, C, T W Hiscock, J C Marioni, J B Gurdon, B D Simons, and J Jullien. 2019. “<span class="nocase">Identification of a regeneration-organizing cell in the Xenopus tail</span>.” *Science* 364 (6441): 653–58. <https://doi.org/10.1126/science.aav9996>.
 
 </div>
 
+<div id="ref-donaldson2010package" class="csl-entry">
+
+Donaldson, Justin, and Maintainer Justin Donaldson. 2010. “Package ‘Tsne’.” *CRAN Repository*.
+
+</div>
+
+<div id="ref-Duo2018-oo" class="csl-entry">
+
+Duò, Angelo, Mark D Robinson, and Charlotte Soneson. 2018. “<span class="nocase">A systematic performance evaluation of clustering methods for single-cell RNA-seq data</span>.” *F1000Res.* 7 (July): 1141. <https://doi.org/10.12688/f1000research.15666.3>.
+
+</div>
+
 <div id="ref-Howard2013-fq" class="csl-entry">
 
 Howard, Brian E, Qiwen Hu, Ahmet Can Babaoglu, Manan Chandra, Monica Borghi, Xiaoping Tan, Luyan He, et al. 2013. “High-Throughput RNA Sequencing of Pseudomonas-Infected Arabidopsis Reveals Hidden Transcriptome Complexity and Novel Splice Variants.” *PLoS One* 8 (10): e74183. <https://doi.org/10.1371/journal.pone.0074183>.
+
+</div>
+
+<div id="ref-Kiselev2017-ye" class="csl-entry">
+
+Kiselev, Vladimir Yu, Kristina Kirschner, Michael T Schaub, Tallulah Andrews, Andrew Yiu, Tamir Chandra, Kedar N Natarajan, et al. 2017. “<span class="nocase">SC3: consensus clustering of single-cell RNA-seq data</span>.” *Nat. Methods* 14 (5): 483–86. <https://doi.org/10.1038/nmeth.4236>.
+
+</div>
+
+<div id="ref-Linderman2019-qh" class="csl-entry">
+
+Linderman, George C, Manas Rachh, Jeremy G Hoskins, Stefan Steinerberger, and Yuval Kluger. 2019. “<span class="nocase">Fast interpolation-based t-SNE for improved visualization of single-cell RNA-seq data</span>.” *Nat. Methods* 16 (3): 243–45. <https://doi.org/10.1038/s41592-018-0308-4>.
+
+</div>
+
+<div id="ref-McInnes2018-tc" class="csl-entry">
+
+McInnes, Leland, John Healy, and James Melville. 2018. “<span class="nocase">UMAP: Uniform Manifold Approximation and Projection for Dimension Reduction</span>,” February. <http://arxiv.org/abs/1802.03426>.
+
+</div>
+
+<div id="ref-Senabouth2019-cr" class="csl-entry">
+
+Senabouth, Anne, Samuel W Lukowski, Jose Alquicira Hernandez, Stacey B Andersen, Xin Mei, Quan H Nguyen, and Joseph E Powell. 2019. “<span class="nocase">ascend: R package for analysis of single-cell RNA-seq data</span>.” *Gigascience* 8 (8). <https://doi.org/10.1093/gigascience/giz087>.
+
+</div>
+
+<div id="ref-Sun2019-po" class="csl-entry">
+
+Sun, Shiquan, Jiaqiang Zhu, Ying Ma, and Xiang Zhou. 2019. “<span class="nocase">Accuracy, robustness and scalability of dimensionality reduction methods for single-cell RNA-seq analysis</span>.” *Genome Biol.* 20 (1): 269. <https://doi.org/10.1186/s13059-019-1898-6>.
+
+</div>
+
+<div id="ref-Sun2020-ct" class="csl-entry">
+
+Sun, Shiquan, Jiaqiang Zhu, and Xiang Zhou. 2020. “<span class="nocase">Statistical analysis of spatial expression patterns for spatially resolved transcriptomic studies</span>.” *Nat. Methods*, January. <https://doi.org/10.1038/s41592-019-0701-7>.
 
 </div>
 
