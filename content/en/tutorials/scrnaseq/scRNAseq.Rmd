@@ -38,8 +38,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 This tutorial introduces several embedding algorithms for high-dimensional gene
 expression data that are often used for single cell RNA-Seq (scRNA-Seq) data [@Duo2018-oo].
-Many dimensionality reduction methods have been implemented as R packages. 
-Many of them are available on CRAN and/or Bioconductor. Examples include PCA, MDS,
+Many dimensionality reduction methods have been implemented as R packages, and 
+are available on CRAN, Bioconductor and/or GitHub. Examples include PCA, MDS,
 [SC3](http://bioconductor.org/packages/release/bioc/html/SC3.html) [@Kiselev2017-ye],
 [isomap](https://bioconductor.org/packages/release/bioc/html/RDRToolbox.html),
 [t-SNE](https://cran.r-project.org/web/packages/Rtsne/) [@donaldson2010package],
@@ -52,8 +52,8 @@ in a uniform manner to Bioconductor's S4 object class called [`SingleCellExperim
 for handling scRNA-Seq data [@Senabouth2019-cr; @Amezquita2020-vu]. Various studies have tested the performance of the 
 different embedding methods including Sun et al. [-@Sun2019-po; -@Sun2020-ct].
 
-For illustration purposes, the following examples first apply the embedding
-methods to a bulk RNA-Seq data set [@Howard2013-fq], and then to a much more
+For illustration purposes, the following example code first applies several widely
+used embedding methods to a bulk RNA-Seq data set [@Howard2013-fq], and then to a much more
 complex scRNA-Seq data set [@Aztekin2019-sw] obtained from the
 [`scRNAseq`](https://bioconductor.org/packages/release/data/experiment/html/scRNAseq.html)
 package.
