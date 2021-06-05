@@ -9,11 +9,12 @@ weight: 122
 <br></br>
 
 The following provides links to slide shows covering topics that where not included in
-this year's offering of GEN242. The corresponding topics were dropped because
-(i) they operlapped with courses most of the students had already taken, (ii) a
-strong interest by most students to substitute these topics by more advanced data 
+this year's offering of GEN242. These topics were dropped because
+(i) they operlapped with similar material covered by other courses most of students in the class 
+had already taken, (ii) a strong interest by most students to substitute these topics by more advanced data 
 analysis programming techniques (_e.g._ modern R graphics, _dplyr/tidyr_, package development and Shiny Apps), 
-as well as (iii) time limitations.
+as well as (iii) simple time limitations. To provide access to the material, the corresponding slide shows
+are linked here:
 
 + [Profile HMMs for Sequence Family Modeling](https://drive.google.com/file/d/1dAP1uCUhpEDm0jDQ7q24vyV0dnBzbCfA/view)
 + [Phylogenetics](https://docs.google.com/presentation/d/1I50GYolslK8Nzj_Spk-mupIhW5AeqsYSXtLb7BTV8vg/edit)
