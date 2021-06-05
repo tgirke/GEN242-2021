@@ -33,22 +33,26 @@ Source code downloads:    
 
 ## Introduction
 
-This tutorial introduces several embedding algorithms for high-dimensional gene
-expression data that are often used for single cell RNA-Seq (scRNA-Seq) data (Duò, Robinson, and Soneson 2018).
-Many dimensionality reduction methods have been implemented as R packages, and
-are available on CRAN, Bioconductor and/or GitHub. Examples include PCA, MDS,
-[SC3](http://bioconductor.org/packages/release/bioc/html/SC3.html) (Kiselev et al. 2017),
+This tutorial introduces the usage of several embedding algorithms for
+high-dimensional gene expression data that are often used for single cell
+RNA-Seq (scRNA-Seq) data (Duò, Robinson, and Soneson 2018). Many dimensionality reduction methods
+have been implemented as R packages, and are available on CRAN, Bioconductor
+and/or GitHub. Examples include PCA, MDS,
+[SC3](http://bioconductor.org/packages/release/bioc/html/SC3.html)
+(Kiselev et al. 2017),
 [isomap](https://bioconductor.org/packages/release/bioc/html/RDRToolbox.html),
-[t-SNE](https://cran.r-project.org/web/packages/Rtsne/) (Donaldson and Donaldson 2010),
-[FIt-SNE](https://github.com/KlugerLab/FIt-SNE) (Linderman et al. 2019), and
-[UMAP](https://cran.r-project.org/web/packages/umap/index.html) (McInnes, Healy, and Melville 2018). In addition,
-some packages, such as the Bioconductor
-[scater](https://bioconductor.org/packages/release/bioc/vignettes/scater/inst/doc/overview.html) package,
-provide access to a wide range of embedding methods that can be conveniently and
-uniformly applied to Bioconductor’s S4 object class called [`SingleCellExperiment`](https://bioconductor.org/packages/3.12/bioc/html/SingleCellExperiment.html)
-for handling scRNA-Seq data (Senabouth et al. 2019; Amezquita et al. 2020). The performance of
-the different embedding methods for scRNA-Seq data has been intesively tested by several
-studies, including Sun et al. (2019; 2020).
+[t-SNE](https://cran.r-project.org/web/packages/Rtsne/)
+(Donaldson and Donaldson 2010), [FIt-SNE](https://github.com/KlugerLab/FIt-SNE)
+(Linderman et al. 2019), and
+[UMAP](https://cran.r-project.org/web/packages/umap/index.html)
+(McInnes, Healy, and Melville 2018). In addition, some packages, such as the Bioconductor
+[scater](https://bioconductor.org/packages/release/bioc/vignettes/scater/inst/doc/overview.html)
+package, provide access to a wide range of embedding methods that can be
+conveniently and uniformly applied to Bioconductor’s S4 object class called
+[`SingleCellExperiment`](https://bioconductor.org/packages/3.12/bioc/html/SingleCellExperiment.html)
+for handling scRNA-Seq data (Senabouth et al. 2019; Amezquita et al. 2020). The
+performance of the different embedding methods for scRNA-Seq data has been
+intesively tested by several studies, including Sun et al. (2019; 2020).
 
 For illustration purposes, the following example code first applies several widely
 used embedding methods to a bulk RNA-Seq data set (Howard et al. 2013), and then to a much more
