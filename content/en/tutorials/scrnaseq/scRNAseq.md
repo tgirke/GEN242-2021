@@ -43,11 +43,12 @@ are available on CRAN, Bioconductor and/or GitHub. Examples include PCA, MDS,
 [FIt-SNE](https://github.com/KlugerLab/FIt-SNE) (Linderman et al. 2019), and
 [UMAP](https://cran.r-project.org/web/packages/umap/index.html) (McInnes, Healy, and Melville 2018). In addition,
 some packages, such as the Bioconductor
-[scater](https://bioconductor.org/packages/release/bioc/vignettes/scater/inst/doc/overview.html),
-provide access to several embedding methods that can be conveniently applied
-in a uniform manner to Bioconductor’s S4 object class called [`SingleCellExperiment`](https://bioconductor.org/packages/3.12/bioc/html/SingleCellExperiment.html)
-for handling scRNA-Seq data (Senabouth et al. 2019; Amezquita et al. 2020). Various studies have tested the performance of the
-different embedding methods including Sun et al. (2019; 2020).
+[scater](https://bioconductor.org/packages/release/bioc/vignettes/scater/inst/doc/overview.html) package,
+provide access to a wide range of embedding methods that can be conveniently and
+uniformly applied to Bioconductor’s S4 object class called [`SingleCellExperiment`](https://bioconductor.org/packages/3.12/bioc/html/SingleCellExperiment.html)
+for handling scRNA-Seq data (Senabouth et al. 2019; Amezquita et al. 2020). The performance of
+the different embedding methods for scRNA-Seq data has been intesively testing by several
+studies, including Sun et al. (2019; 2020).
 
 For illustration purposes, the following example code first applies several widely
 used embedding methods to a bulk RNA-Seq data set (Howard et al. 2013), and then to a much more

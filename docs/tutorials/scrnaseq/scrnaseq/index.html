@@ -22,12 +22,12 @@
  Introduction This tutorial introduces several embedding algorithms for high-dimensional gene expression data that are often used for single cell RNA-Seq (scRNA-Seq) data (Duò, Robinson, and Soneson 2018). Many dimensionality reduction methods have been implemented as R packages, and are available on CRAN, Bioconductor and/or GitHub. Examples include PCA, MDS, SC3 (Kiselev et al. 2017), isomap, t-SNE (Donaldson and Donaldson 2010), FIt-SNE (Linderman et al." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/scrnaseq/scrnaseq/" />
-<meta property="article:modified_time" content="2021-06-05T14:52:51-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-06-05T14:58:58-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="scRNA-Seq Embedding Methods">
 <meta itemprop="description" content="Source code downloads: [ .Rmd ] [ .R ]
  Introduction This tutorial introduces several embedding algorithms for high-dimensional gene expression data that are often used for single cell RNA-Seq (scRNA-Seq) data (Duò, Robinson, and Soneson 2018). Many dimensionality reduction methods have been implemented as R packages, and are available on CRAN, Bioconductor and/or GitHub. Examples include PCA, MDS, SC3 (Kiselev et al. 2017), isomap, t-SNE (Donaldson and Donaldson 2010), FIt-SNE (Linderman et al.">
-<meta itemprop="dateModified" content="2021-06-05T14:52:51-07:00" />
-<meta itemprop="wordCount" content="1497">
+<meta itemprop="dateModified" content="2021-06-05T14:58:58-07:00" />
+<meta itemprop="wordCount" content="1505">
 
 
 
@@ -824,7 +824,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.4b889675e35680159c7c3406e6793924.json"
+  data-offline-search-index-json-src="../../../offline-search-index.1c6476db054a4ee1db245ea484cdbc50.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -856,7 +856,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.4b889675e35680159c7c3406e6793924.json"
+  data-offline-search-index-json-src="../../../offline-search-index.1c6476db054a4ee1db245ea484cdbc50.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1191,11 +1191,12 @@ are available on CRAN, Bioconductor and/or GitHub. Examples include PCA, MDS,
 <a href="https://github.com/KlugerLab/FIt-SNE">FIt-SNE</a> (Linderman et al. 2019), and
 <a href="https://cran.r-project.org/web/packages/umap/index.html">UMAP</a> (McInnes, Healy, and Melville 2018). In addition,
 some packages, such as the Bioconductor
-<a href="https://bioconductor.org/packages/release/bioc/vignettes/scater/inst/doc/overview.html">scater</a>,
-provide access to several embedding methods that can be conveniently applied
-in a uniform manner to Bioconductor’s S4 object class called <a href="https://bioconductor.org/packages/3.12/bioc/html/SingleCellExperiment.html"><code>SingleCellExperiment</code></a>
-for handling scRNA-Seq data (Senabouth et al. 2019; Amezquita et al. 2020). Various studies have tested the performance of the
-different embedding methods including Sun et al. (2019; 2020).</p>
+<a href="https://bioconductor.org/packages/release/bioc/vignettes/scater/inst/doc/overview.html">scater</a> package,
+provide access to a wide range of embedding methods that can be conveniently and
+uniformly applied to Bioconductor’s S4 object class called <a href="https://bioconductor.org/packages/3.12/bioc/html/SingleCellExperiment.html"><code>SingleCellExperiment</code></a>
+for handling scRNA-Seq data (Senabouth et al. 2019; Amezquita et al. 2020). The performance of
+the different embedding methods for scRNA-Seq data has been intesively testing by several
+studies, including Sun et al. (2019; 2020).</p>
 <p>For illustration purposes, the following example code first applies several widely
 used embedding methods to a bulk RNA-Seq data set (Howard et al. 2013), and then to a much more
 complex scRNA-Seq data set (Aztekin et al. 2019) obtained from the
@@ -1506,7 +1507,7 @@ plotPCA(sce, colour_by=&quot;label&quot;, text_by=&quot;label&quot;, ncomponents
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-06-05: <a  href="https://github.com/tgirke/GEN242//commit/2260639aa4b56547e1a8254b936876a847b1f7c6">some edits (2260639aa)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-06-05: <a  href="https://github.com/tgirke/GEN242//commit/39e26482bd351ff5f2ccacb53c6a8ad4c685fc04">some edits (39e26482b)</a>
 </div>
 </div>
 
