@@ -473,6 +473,11 @@ enable = true
     url = "/tutorials/cmdToCwl/cmdToCwl/"
     parent = "Tutorials"
     weight = 218
+  [[menu.main]]
+    name = "scRNA-Seq Embedding Methods (T19)"
+    url = "/tutorials/scrnaseq/scrnaseq/"
+    parent = "Tutorials"
+    weight = 219
 ##
 [[menu.main]]
   name = "Assignments"
