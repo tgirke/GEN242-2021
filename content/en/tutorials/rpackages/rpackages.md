@@ -169,7 +169,7 @@ include:
 
 -   Adding new functions, methods and classes to the script files in the ./R directory in your package
 -   Adding their names to the NAMESPACE file of the package
--   Additional *.Rd help templates can be generated with the prompt*() functions like this:
+-   Additional `.Rd` help templates can be generated with the `prompt()` function family like this:
 
 ``` r
 source("myscript.R") # imports functions, methods and classes from myscript.R
@@ -178,7 +178,7 @@ promptClass("myclass") # writes file myclass-class.Rd
 promptMethods("mymeth") # writes help file mymeth.Rd
 ```
 
-The resulting `*.Rd` help files can be edited in a text editor, and properly rendered and viewed from within R with help of
+The resulting `.Rd` help files can be edited in a text editor, and properly rendered and viewed from within R with help of
 the following functions.
 
 ``` r

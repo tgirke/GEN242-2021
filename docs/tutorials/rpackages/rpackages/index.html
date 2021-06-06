@@ -22,12 +22,12 @@
  Overview Motivation for building R packages  Organization  Consolidate functions with related utilties in single place Interdepencies among less complex functions make coding more efficient Minimizes duplications   Documentation  Help page infrastructure improves documentation of functions Big picture of utilties provided by package vignettes (manuals)   Sharability  Package can be easier shared with colleagues and public Increases code accessibilty for other users    Package development environments This page introduces two approaches for building R packages:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rpackages/rpackages/" />
-<meta property="article:modified_time" content="2021-06-06T14:29:17-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-06-06T14:32:52-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Building R Packages">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ Slides ] [ .Rmd ] [ .R ]
  Overview Motivation for building R packages  Organization  Consolidate functions with related utilties in single place Interdepencies among less complex functions make coding more efficient Minimizes duplications   Documentation  Help page infrastructure improves documentation of functions Big picture of utilties provided by package vignettes (manuals)   Sharability  Package can be easier shared with colleagues and public Increases code accessibilty for other users    Package development environments This page introduces two approaches for building R packages:">
-<meta itemprop="dateModified" content="2021-06-06T14:29:17-07:00" />
-<meta itemprop="wordCount" content="1975">
+<meta itemprop="dateModified" content="2021-06-06T14:32:52-07:00" />
+<meta itemprop="wordCount" content="1976">
 
 
 
@@ -840,7 +840,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.1a90f0989203410785954a5b696612ed.json"
+  data-offline-search-index-json-src="../../../offline-search-index.702e6cd61074dafe2b18757df67effbc.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -872,7 +872,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.1a90f0989203410785954a5b696612ed.json"
+  data-offline-search-index-json-src="../../../offline-search-index.702e6cd61074dafe2b18757df67effbc.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1311,14 +1311,14 @@ include:</p>
 <ul>
 <li>Adding new functions, methods and classes to the script files in the ./R directory in your package</li>
 <li>Adding their names to the NAMESPACE file of the package</li>
-<li>Additional <em>.Rd help templates can be generated with the prompt</em>() functions like this:</li>
+<li>Additional <code>.Rd</code> help templates can be generated with the <code>prompt()</code> function family like this:</li>
 </ul>
 <pre><code class="language-r">source(&quot;myscript.R&quot;) # imports functions, methods and classes from myscript.R
 prompt(myfct) # writes help file myfct.Rd
 promptClass(&quot;myclass&quot;) # writes file myclass-class.Rd
 promptMethods(&quot;mymeth&quot;) # writes help file mymeth.Rd
 </code></pre>
-<p>The resulting <code>*.Rd</code> help files can be edited in a text editor, and properly rendered and viewed from within R with help of
+<p>The resulting <code>.Rd</code> help files can be edited in a text editor, and properly rendered and viewed from within R with help of
 the following functions.</p>
 <pre><code class="language-r">library(tools)
 Rd2txt(&quot;./mypackage/man/myfct.Rd&quot;) # renders *.Rd files as they look in final help pages
@@ -1481,7 +1481,7 @@ private packages require a personal access token (PAT) that needs to be assigned
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-06-06: <a  href="https://github.com/tgirke/GEN242//commit/59486279ee4437f60aef0d65edaf24584d2e3241">some edits (59486279e)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-06-06: <a  href="https://github.com/tgirke/GEN242//commit/a2b8727be9b1c86c611fe0b7fa7ce9a23f894870">some edits (a2b8727be)</a>
 </div>
 </div>
 
