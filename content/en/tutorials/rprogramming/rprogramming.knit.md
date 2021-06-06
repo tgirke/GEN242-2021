@@ -1,7 +1,7 @@
 ---
 title: "Programming in R" 
 author: "Author: Thomas Girke"
-date: "Last update: `r format(Sys.time(), '%d %B, %Y')`" 
+date: "Last update: 06 June, 2021" 
 output:
   html_document:
     toc: true
@@ -24,13 +24,19 @@ type: docs
 Rscript -e "rmarkdown::render('Programming_in_R.Rmd', c('html_document'), clean=F); knitr::knit('Programming_in_R.Rmd', tangle=TRUE)"; Rscript ../md2jekyll.R Programming_in_R.knit.md 9; Rscript -e "rmarkdown::render('Programming_in_R.Rmd', c('pdf_document'))"
 -->
 
-```{r style, echo = FALSE, results = 'asis'}
-BiocStyle::markdown()
-options(width=100, max.print=1000)
-knitr::opts_chunk$set(
-    eval=as.logical(Sys.getenv("KNITR_EVAL", "TRUE")),
-    cache=as.logical(Sys.getenv("KNITR_CACHE", "TRUE")))
-```
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelector("h1").className = "title";
+});
+</script>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+  var links = document.links;  
+  for (var i = 0, linksLength = links.length; i < linksLength; i++)
+    if (links[i].hostname != window.location.hostname)
+      links[i].target = '_blank';
+});
+</script>
 
 <div style="text-align: right"> 
 Source code downloads: &nbsp; &nbsp;
@@ -134,7 +140,8 @@ is determined. The longer form is preferred for programming control-flow, _e.g._
 An `if` statement operates on length-one logical vectors.
 
 __Syntax__
-```{r if_statement, eval=FALSE}
+
+```r
 if (TRUE) { 
     statements_1 
 } else { 
@@ -146,7 +153,8 @@ In the `else` component, avoid inserting newlines between `} else`. For details 
 this [style guide](http://adv-r.had.co.nz/Style.html) is a good start. In addition, the [`formatR`](https://yihui.org/formatr/) package can be helpful.
 
 __Example__
-```{r if_statement_example, eval=TRUE}
+
+```r
 if (1==0) { 
     print(1) 
 } else { 
@@ -154,18 +162,28 @@ if (1==0) {
 }
 ```
 
+```
+## [1] 2
+```
+
 ### Conditional Executions: `ifelse` Statements
 
 The `ifelse` statement operates on vectors.
 
 __Syntax__
-```{r ifelse_statement, eval=FALSE}
+
+```r
 ifelse(test, true_value, false_value)
 ```
 __Example__
-```{r ifelse_statement_example, eval=TRUE}
+
+```r
 x <- 1:10 
 ifelse(x<5, sqrt(x), 0)
+```
+
+```
+##  [1] 1.000000 1.414214 1.732051 2.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
 ```
 
 ## Loops
@@ -175,13 +193,15 @@ ifelse(x<5, sqrt(x), 0)
 `for` loops iterate over elements of a looping vector.
 
 __Syntax__
-```{r for_loop, eval=FALSE}
+
+```r
 for(variable in sequence) { 
 	statements 
 }
 ```
 __Example__
-```{r for_loop_example, eval=TRUE}
+
+```r
 mydf <- iris
 myve <- NULL
 for(i in seq(along=mydf[,1])) {
@@ -190,10 +210,15 @@ for(i in seq(along=mydf[,1])) {
 myve[1:8]
 ```
 
+```
+## [1] 3.333333 3.100000 3.066667 3.066667 3.333333 3.666667 3.133333 3.300000
+```
+
 __Note:__ Inject into objecs is much faster than append approach with `c`, `cbind`, etc.
 
 __Example__
-```{r for_loop_inject_example, eval=TRUE}
+
+```r
 myve <- numeric(length(mydf[,1]))
 for(i in seq(along=myve)) {
 	myve[i] <- mean(as.numeric(mydf[i,1:3]))
@@ -201,12 +226,17 @@ for(i in seq(along=myve)) {
 myve[1:8]
 ```
 
+```
+## [1] 3.333333 3.100000 3.066667 3.066667 3.333333 3.666667 3.133333 3.300000
+```
+
 #### Conditional Stop of Loops
 
 The `stop` function can be used to break out of a loop (or a function) when a condition becomes `TRUE`. In addition, an error message will be printed.
 
 __Example__
-```{r for_loop_stop_example, eval=FALSE}
+
+```r
 x <- 1:10
 z <- NULL
 for(i in seq(along=x)) { 
@@ -223,14 +253,16 @@ for(i in seq(along=x)) {
 Iterates as long as a condition is true.
 
 __Syntax__
-```{r while_loop, eval=FALSE}
+
+```r
 while(condition) {
 	statements
 }
 ```
 
 __Example__
-```{r while_loop_example, eval=TRUE}
+
+```r
 z <- 0
 while(z<5) { 
 	z <- z + 2
@@ -238,12 +270,19 @@ while(z<5) {
 }
 ```
 
+```
+## [1] 2
+## [1] 4
+## [1] 6
+```
+
 ### The `apply` Function Family
 
 #### `apply`
 
 __Syntax__
-```{r apply_loop, eval=FALSE}
+
+```r
 apply(X, MARGIN, FUN, ARGs)
 ```
 
@@ -255,8 +294,14 @@ __Arguments__
 * `ARGs`: possible arguments for functions
 
 __Example__
-```{r apply_loop_example, eval=TRUE}
+
+```r
 apply(iris[1:8,1:3], 1, mean)
+```
+
+```
+##        1        2        3        4        5        6        7        8 
+## 3.333333 3.100000 3.066667 3.066667 3.333333 3.666667 3.133333 3.300000
 ```
 
 #### `tapply`
@@ -264,14 +309,30 @@ apply(iris[1:8,1:3], 1, mean)
 Applies a function to vector components that are defined by a factor.
 
 __Syntax__
-```{r tapply_loop, eval=FALSE}
+
+```r
 tapply(vector, factor, FUN)
 ```
 
 __Example__
-```{r tapply_loop_example, eval=TRUE}
+
+```r
 iris[1:2,]
+```
+
+```
+##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+```
+
+```r
 tapply(iris$Sepal.Length, iris$Species, mean)
+```
+
+```
+##     setosa versicolor  virginica 
+##      5.006      5.936      6.588
 ```
 
 #### `sapply`, `lapply` and `vapply`
@@ -284,15 +345,44 @@ returned.  The `vapply` function returns a vector or array of type matching the
 controlling specific output types to avoid exception handling problems.
 
 __Examples__
-```{r lapply_loop_example, eval=TRUE}
+
+```r
 l <- list(a = 1:10, beta = exp(-3:3), logic = c(TRUE,FALSE,FALSE,TRUE))
 lapply(l, mean)
+```
+
+```
+## $a
+## [1] 5.5
+## 
+## $beta
+## [1] 4.535125
+## 
+## $logic
+## [1] 0.5
+```
+
+```r
 sapply(l, mean)
+```
+
+```
+##        a     beta    logic 
+## 5.500000 4.535125 0.500000
+```
+
+```r
 vapply(l, mean, FUN.VALUE=numeric(1))
 ```
 
+```
+##        a     beta    logic 
+## 5.500000 4.535125 0.500000
+```
+
 Often used in combination with a function definition:
-```{r lapply_loop_fct_example, eval=FALSE}
+
+```r
 lapply(names(l), function(x) mean(l[[x]]))
 sapply(names(l), function(x) mean(l[[x]]))
 vapply(names(l), function(x) mean(l[[x]]), FUN.VALUE=numeric(1))
@@ -321,7 +411,8 @@ The following runs a `for` loop where the result is appended in each iteration
 with the `c()` function. The corresponding `cbind` and `rbind` for two dimensional 
 data objects would have a similar performance impact as `c()`.
 
-```{r for_loop_with_c_append, eval=FALSE}
+
+```r
 myMA <- matrix(rnorm(1000000), 100000, 10, dimnames=list(1:100000, paste("C", 1:10, sep="")))
 results <- NULL
 system.time(for(i in seq(along=myMA[,1])) results <- c(results, mean(myMA[i,])))
@@ -331,7 +422,8 @@ system.time(for(i in seq(along=myMA[,1])) results <- c(results, mean(myMA[i,])))
 
 Now the for loop is run with an inject approach for storing the results in each iteration.
 
-```{r for_loop_with_inject, eval=FALSE}
+
+```r
 results <- numeric(length(myMA[,1]))
 system.time(for(i in seq(along=myMA[,1])) results[i] <- mean(myMA[i,]))
    user  system elapsed
@@ -345,7 +437,8 @@ As one can see from the output of `system.time`, the inject approach is 20-50 ti
 The following performs a row-wise mean calculation on a large matrix first with an `apply` 
 loop and then with the `rowMeans` function.
 
-```{r apply_loop_mean, eval=FALSE}
+
+```r
 system.time(myMAmean <- apply(myMA, 1, mean))
   user  system elapsed
  1.452   0.005   1.456
@@ -363,7 +456,8 @@ than the `apply` loop.
 In this example row-wise standard deviations are computed with an `apply` loop and then 
 in a vectorized manner.
 
-```{r apply_loop_vs_vectorized, eval=FALSE}
+
+```r
 system.time(myMAsd <- apply(myMA, 1, sd))
    user  system elapsed
   3.707   0.014   3.721
@@ -390,13 +484,15 @@ The vector-based approach in the last step is over 200 times faster than the app
 A very useful feature of the R environment is the possibility to expand existing functions and to easily write custom functions. In fact, most of the R software can be viewed as a series of R functions.
 
 __Syntax__ to define function
-```{r function_def_syntax, eval=FALSE}
+
+```r
 myfct <- function(arg1, arg2, ...) { 
 	function_body 
 }
 ```
 __Syntax__ to call functions
-```{r function_call_syntax, eval=FALSE}
+
+```r
 myfct(arg1=..., arg2=...)
 ```
 The value returned by a function is the value of the function body, which is usually an unassigned final expression, _e.g._: `return()`
@@ -434,7 +530,8 @@ __Scope__
 
 __Define sample function__
 
-```{r define_function_example, eval=TRUE}
+
+```r
 myfct <- function(x1, x2=5) { 
 	z1 <- x1 / x1
 	z2 <- x2 * x2
@@ -447,22 +544,48 @@ __Function usage__
 
 
 Apply function to values `2` and `5`
-```{r usage_function_example1, eval=TRUE}
+
+```r
 myfct(x1=2, x2=5) 
 ```
 
+```
+## [1]  1 25
+```
+
 Run without argument names
-```{r usage_function_example2, eval=TRUE}
+
+```r
 myfct(2, 5) 
 ```
 
+```
+## [1]  1 25
+```
+
 Makes use of default value `5`
-```{r usage_function_example3, eval=TRUE}
+
+```r
 myfct(x1=2) 
 ```
+
+```
+## [1]  1 25
+```
 Print function definition (often unintended) 
-```{r usage_function_example4, eval=TRUE}
+
+```r
 myfct 
+```
+
+```
+## function(x1, x2=5) { 
+## 	z1 <- x1 / x1
+## 	z2 <- x2 * x2
+##         myvec <- c(z1, z2) 
+##         return(myvec)
+## }
+## <bytecode: 0x5865ccde4df0>
 ```
 
 ## Useful Utilities
@@ -486,16 +609,26 @@ R's regular expression utilities work similar as in other languages. To learn ho
 #### String matching with `grep`
 
 The grep function can be used for finding patterns in strings, here letter `A` in vector `month.name`.
-```{r grep_fct, eval=TRUE}
+
+```r
 month.name[grep("A", month.name)] 
+```
+
+```
+## [1] "April"  "August"
 ```
 
 #### String substitution with `gsub`
 
 Example for using regular expressions to substitute a pattern by another one using a back reference. Remember: single escapes `\` need to be double escaped `\\` in R.
 
-```{r gsub_fct, eval=TRUE}
+
+```r
 gsub('(i.*a)', 'xxx_\\1', "virginica", perl = TRUE) 
+```
+
+```
+## [1] "vxxx_irginica"
 ```
 
 ### Interpreting a Character String as Expression
@@ -503,23 +636,45 @@ gsub('(i.*a)', 'xxx_\\1', "virginica", perl = TRUE)
 Some useful examples
 
 Generates vector of object names in session
-```{r ls_fct, eval=TRUE}
+
+```r
 myfct <- function(x) x^2
 mylist <- ls()
 n <- which(mylist %in% "myfct")
 mylist[n] 
 ```
 
+```
+## [1] "myfct"
+```
+
 Executes entry in position `n` as expression
 
-```{r eval_expr, eval=TRUE}
+
+```r
 get(mylist[n])
+```
+
+```
+## function(x) x^2
+```
+
+```r
 get(mylist[n])(2)
 ```
 
+```
+## [1] 4
+```
+
 Alternative approach 
-```{r eval_expr2, eval=TRUE}
+
+```r
 eval(parse(text=mylist[n])) 
+```
+
+```
+## function(x) x^2
 ```
 
 ### Replacement, Split and Paste Functions for Strings
@@ -527,20 +682,36 @@ eval(parse(text=mylist[n]))
 __Selected examples__
 
 Substitution with back reference which inserts in this example `_` character
-```{r back_ref, eval=TRUE}
+
+```r
 x <- gsub("(a)","\\1_", month.name[1], perl=T) 
 x
 ```
 
+```
+## [1] "Ja_nua_ry"
+```
+
 Split string on inserted character from above
-```{r split_string, eval=TRUE}
+
+```r
 strsplit(x,"_")
+```
+
+```
+## [[1]]
+## [1] "Ja"  "nua" "ry"
 ```
 
 Reverse a character string by splitting first all characters into vector fields
 
-```{r reverse_string, eval=TRUE}
+
+```r
 paste(rev(unlist(strsplit(x, NULL))), collapse="") 
+```
+
+```
+## [1] "yr_aun_aJ"
 ```
 
 ### Time, Date and Sleep
@@ -548,17 +719,29 @@ paste(rev(unlist(strsplit(x, NULL))), collapse="")
 __Selected examples__
 
 Return CPU (and other) times that an expression used (here ls)
-```{r sys_time, eval=TRUE}
+
+```r
 system.time(ls()) 
 ```
 
+```
+##    user  system elapsed 
+##       0       0       0
+```
+
 Return the current system date and time
-```{r sys_date, eval=TRUE}
+
+```r
 date() 
 ```
 
+```
+## [1] "Sat Feb 13 18:30:39 2021"
+```
+
 Pause execution of R expressions for a given number of seconds (e.g. in loop)
-```{r sys_sleep, eval=TRUE}
+
+```r
 Sys.sleep(1) 
 ```
 
@@ -568,17 +751,33 @@ Sys.sleep(1)
 
 The following example demonstrates the retrieval of specific lines from an external file with a regular expression. First, an external file is created with the `cat` function, all lines of this file are imported into a vector with `readLines`, the specific elements (lines) are then retieved with the `grep` function, and the resulting lines are split into vector fields with `strsplit`.
 
-```{r read_lines, eval=TRUE}
+
+```r
 cat(month.name, file="zzz.txt", sep="\n")
 x <- readLines("zzz.txt")
 x[1:6] 
+```
+
+```
+## [1] "January"  "February" "March"    "April"    "May"      "June"
+```
+
+```r
 x <- x[c(grep("^J", as.character(x), perl = TRUE))]
 t(as.data.frame(strsplit(x, "u")))
+```
+
+```
+##                 [,1]  [,2] 
+## c..Jan....ary.. "Jan" "ary"
+## c..J....ne..    "J"   "ne" 
+## c..J....ly..    "J"   "ly"
 ```
 ## Calling External Software
 
 External command-line software can be called with `system`. The following example calls `blastall` from R
-```{r system_blast, eval=FALSE}
+
+```r
 system("blastall -p blastp -i seq.fasta -d uniprot -o seq.blastp")
 ```
 
@@ -587,13 +786,15 @@ system("blastall -p blastp -i seq.fasta -d uniprot -o seq.blastp")
 ### Possibilities for Executing R Scripts
 
 #### R console
-```{r r_script1, eval=FALSE}
+
+```r
 source("my_script.R")
 ```
 
 #### Command-line
 
-```{sh r_cmd_script1, eval=FALSE}
+
+```sh
 Rscript my_script.R # or just ./myscript.R after making it executable
 R CMD BATCH my_script.R # Alternative way 1 
 R --slave < my_script.R # Alternative way 2
@@ -602,13 +803,15 @@ R --slave < my_script.R # Alternative way 2
 
 Create an R script named `test.R` with the following content:
 
-```{sh r_cmd_script2, eval=FALSE}
+
+```sh
 myarg <- commandArgs()
 print(iris[1:myarg[6], ])
 ```
 
 Then run it from the command-line like this:
-```{sh r_cmd_script3, eval=FALSE}
+
+```sh
 Rscript test.R 10
 ```
 
@@ -638,7 +841,8 @@ information about OOP in R can be found in the following introductions:
 
 #### 1. Define S4 Classes with `setClass()` and `new()`
 
-```{r define_s4, eval=TRUE}
+
+```r
 y <- matrix(1:10, 2, 5) # Sample data set
 setClass(Class="myclass",
     representation=representation(a="ANY"),
@@ -666,14 +870,24 @@ The setClass function defines classes. Its most important arguments are
 
 The function `new` creates an instance of a class (here `myclass`).
 
-```{r new_s4, eval=TRUE}
+
+```r
 myobj <- new("myclass", a=y)
 myobj
 ```
 
+```
+## An object of class "myclass"
+## Slot "a":
+##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    3    5    7    9
+## [2,]    2    4    6    8   10
+```
+
 If evaluated the following would return an error due to wrong input type (`data.frame` instead of `matrix`).
 
-```{r new_s4_error, eval=FALSE}
+
+```r
 new("myclass", a=iris) # Returns error due to wrong input  
 ```
 
@@ -687,7 +901,8 @@ The arguments of `new` are:
 A more generic way of creating class instances is to define an initialization
 method (more details below).
 
-```{r s4_init_method, eval=TRUE}
+
+```r
 setMethod("initialize", "myclass", function(.Object, a) {
     .Object@a <- a/a
     .Object
@@ -695,25 +910,50 @@ setMethod("initialize", "myclass", function(.Object, a) {
 new("myclass", a = y)
 ```
 
+```
+## An object of class "myclass"
+## Slot "a":
+##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    1    1    1    1
+## [2,]    1    1    1    1    1
+```
+
 #### 4. Usage and helper functions
 
 The '@' operator extracts the contents of a slot. Its usage should be limited to internal 
 functions.
 
-```{r s4_helper_fct1, eval=TRUE}
+
+```r
 myobj@a 
+```
+
+```
+##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    3    5    7    9
+## [2,]    2    4    6    8   10
 ```
 
 Create a new S4 object from an old one.
 
-```{r s4_helper_fct2, eval=TRUE}
+
+```r
 initialize(.Object=myobj, a=as.matrix(cars[1:2,])) 
+```
+
+```
+## An object of class "myclass"
+## Slot "a":
+##   speed dist
+## 1     1    1
+## 2     1    1
 ```
 
 If evaluated the `removeClass` function removes an object from the current session.
 This does not apply to associated methods.
 
-```{r s4_helper_fct3, eval=FALSE}
+
+```r
 removeClass("myclass") 
 ```
 
@@ -723,14 +963,72 @@ Inheritance allows to define new classes that inherit all properties (e.g. data 
 from their existing parent classes. The `contains` argument used below allows to extend 
 existing classes. This propagates all slots of parent classes.
 
-```{r s4_inheritance1, eval=TRUE}
+
+```r
 setClass("myclass1", representation(a = "character", b = "character"))
 setClass("myclass2", representation(c = "numeric", d = "numeric"))
 setClass("myclass3", contains=c("myclass1", "myclass2"))
 new("myclass3", a=letters[1:4], b=letters[1:4], c=1:4, d=4:1)
+```
+
+```
+## An object of class "myclass3"
+## Slot "a":
+## [1] "a" "b" "c" "d"
+## 
+## Slot "b":
+## [1] "a" "b" "c" "d"
+## 
+## Slot "c":
+## [1] 1 2 3 4
+## 
+## Slot "d":
+## [1] 4 3 2 1
+```
+
+```r
 getClass("myclass1")
+```
+
+```
+## Class "myclass1" [in ".GlobalEnv"]
+## 
+## Slots:
+##                           
+## Name:          a         b
+## Class: character character
+## 
+## Known Subclasses: "myclass3"
+```
+
+```r
 getClass("myclass2")
+```
+
+```
+## Class "myclass2" [in ".GlobalEnv"]
+## 
+## Slots:
+##                       
+## Name:        c       d
+## Class: numeric numeric
+## 
+## Known Subclasses: "myclass3"
+```
+
+```r
 getClass("myclass3")
+```
+
+```
+## Class "myclass3" [in ".GlobalEnv"]
+## 
+## Slots:
+##                                               
+## Name:          a         b         c         d
+## Class: character character   numeric   numeric
+## 
+## Extends: "myclass1", "myclass2"
 ```
 
 #### 6. Coerce objects to another class
@@ -738,186 +1036,34 @@ getClass("myclass3")
 The following defines a coerce method. After this the standard `as(..., "...")`
 syntax can be used to coerce the new class to another one.
 
-```{r s4_coerce, eval=TRUE}
-setAs(from="myclass", to="character", def=function(from) as.character(as.matrix(from@a)))
-as(myobj, "character")
-...
-
-#### 7. Virtual classes
-
-Virtual classes are constructs for which no instances will be or can be
-created. They are used to link together classes which may have distinct
-representations (e.g. cannot inherit from each other) but for which one wants
-to provide similar functionality. Often it is desired to create a virtual class
-and to then have several other classes extend it. Virtual classes can be
-defined by leaving out the representation argument or including the class
-`VIRTUAL` as illustrated here:
-
-```{r s4_virtual, eval=TRUE}
-setClass("myVclass")
-setClass("myVclass", representation(a = "character", "VIRTUAL"))
-```
-
-#### 8. Introspection of classes
-
-Useful functions to introspect classes include:
-
-+ `getClass("myclass")`
-+ `getSlots("myclass")`
-+ `slotNames("myclass")`
-+ `extends("myclass2")`
-
-## Building R Packages
-
-This section has been moved to a dedicated tutorial on R package development [here](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rpackages/rpackages/).
-
-## Programming Exercises
-
-### Exercise 1
-
-#### `for` loop
-
-__Task 1.1__: Compute the mean of each row in `myMA` by applying the mean function in a `for` loop.
-
-```{r exercise1_for, eval=TRUE}
-myMA <- matrix(rnorm(500), 100, 5, dimnames=list(1:100, paste("C", 1:5, sep="")))
-myve_for <- NULL
-for(i in seq(along=myMA[,1])) {
-	myve_for <- c(myve_for, mean(as.numeric(myMA[i, ])))
-}
-myResult <- cbind(myMA, mean_for=myve_for)
-myResult[1:4, ]
-```
-
-#### `while` loop
-
-__Task 1.2__: Compute the mean of each row in `myMA` by applying the mean function in a `while` loop.
-
-```{r exercise1_while, eval=TRUE}
-z <- 1
-myve_while <- NULL
-while(z <= length(myMA[,1])) {
-	myve_while <- c(myve_while, mean(as.numeric(myMA[z, ])))
-	z <- z + 1
-}
-myResult <- cbind(myMA, mean_for=myve_for, mean_while=myve_while)
-myResult[1:4, -c(1,2)]
-```
-__Task 1.3__: Confirm that the results from both mean calculations are identical
-```{r exercise1_confirm, eval=TRUE}
-all(myResult[,6] == myResult[,7])
-```
-
-#### `apply` loop
-	
-__Task 1.4__: Compute the mean of each row in myMA by applying the mean function in an `apply` loop
-```{r exercise1_apply, eval=TRUE}
-myve_apply <- apply(myMA, 1, mean)
-myResult <- cbind(myMA, mean_for=myve_for, mean_while=myve_while, mean_apply=myve_apply)
-myResult[1:4, -c(1,2)]
-```
-
-#### Avoiding loops
-
-__Task 1.5__: When operating on large data sets it is much faster to use the `rowMeans` function
-
-```{r exercise1_noloops, eval=TRUE}
-mymean <- rowMeans(myMA)
-myResult <- cbind(myMA, mean_for=myve_for, mean_while=myve_while, mean_apply=myve_apply, mean_int=mymean)
-myResult[1:4, -c(1,2,3)]
-```
-To find out which other built-in functions for basic calculations exist, type `?rowMeans`.
-
-### Exercise 2 
-
-#### Custom functions
-
-__Task 2.1__: Use the following code as basis to implement a function that allows the user to compute the mean for any combination of columns in a matrix or data frame. The first argument of this function should specify the input data set, the second the mathematical function to be passed on (_e.g._ `mean`, `sd`, `max`) and the third one should allow the selection of the columns by providing a grouping vector.
-
-```{r exercise2_fct, eval=TRUE}
-myMA <- matrix(rnorm(100000), 10000, 10, dimnames=list(1:10000, paste("C", 1:10, sep="")))
-myMA[1:2,]
-myList <- tapply(colnames(myMA), c(1,1,1,2,2,2,3,3,4,4), list) 
-names(myList) <- sapply(myList, paste, collapse="_")
-myMAmean <- sapply(myList, function(x) apply(myMA[,x], 1, mean))
-myMAmean[1:4,] 
-```
-<!---
-Solution
-```{r exercise2_fct_solution, eval=FALSE, echo=FALSE, keep.source=TRUE}
-myMAcomp <- function(myMA=myMA, group=c(1,1,1,2,2,2,3,3,4,4), myfct=mean) {
-	myList <- tapply(colnames(myMA), group, list)
-	names(myList) <- sapply(myList, paste, collapse="_")
-	myMAmean <- sapply(myList, function(x) apply(myMA[, x, drop=FALSE], 1, myfct))
-	return(myMAmean)
-}
-myMAcomp(myMA=myMA, group=c(1,1,1,2,2,2,3,3,4,4), myfct=mean)[1:2,] 
-```
--->
 
 
-### Exercise 3
-
-#### Nested loops to generate similarity matrices
-
-__Task 3.1__: Create a sample list populated with character vectors of different lengths
-
-```{r nested_loops1, eval=TRUE}
-setlist <- lapply(11:30, function(x) sample(letters, x, replace=TRUE))
-names(setlist) <- paste("S", seq(along=setlist), sep="") 
-setlist[1:6]
-```
-
-__Task 3.2__: Compute the length for all pairwise intersects of the vectors stored in `setlist`. The intersects can be determined with the `%in%` function like this: `sum(setlist[[1]] %in% setlist[[2]])`
-
-```{r nested_loops2, eval=TRUE}
-setlist <- sapply(setlist, unique)
-olMA <- sapply(names(setlist), function(x) sapply(names(setlist), 
-               function(y) sum(setlist[[x]] %in% setlist[[y]])))
-olMA[1:12,] 
-```
-__Task 3.3__ Plot the resulting intersect matrix as heat map. 
-The `image` or the `pheatmap` functions can be used for this.
-```{r nested_loops3, eval=TRUE}
-library(pheatmap); library("RColorBrewer")
-pheatmap(olMA, color=brewer.pal(9,"Blues"), cluster_rows=FALSE, cluster_cols=FALSE, display_numbers=TRUE, number_format="%.0f", fontsize_number=10)
-# image(olMA) 
-```
-
-### Exercise 4
-
-#### Build your own R package
-
-__Task 4.1__: Save one or more of your functions to a file called `script.R` and build the package with the `package.skeleton` function.
-
-```{r package_skeleton2, eval=FALSE}
-package.skeleton(name="mypackage", code_files=c("script1.R"))
-```
-
-__Task 4.2__: Build tarball of the package
-
-```{r build_package_tar, eval=FALSE}
-system("R CMD build mypackage")
-```
-
-__Task 4.3__: Install and use package
-
-```{r install_package_tar, eval=FALSE}
-install.packages("mypackage_1.0.tar.gz", repos=NULL, type="source")
-library(mypackage)
-?myMAcomp # Opens help for function defined by mypackage
-```
-
-## Homework 5
-
-See homework section [here](https://girke.bioinformatics.ucr.edu/GEN242/assignments/homework/hw05/hw05/).
 
 
-## Session Info
 
-```{r sessionInfo}
-sessionInfo()
-```
 
-## References
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
