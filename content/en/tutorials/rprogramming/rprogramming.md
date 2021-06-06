@@ -1,7 +1,7 @@
 ---
 title: "Programming in R" 
 author: "Author: Thomas Girke"
-date: "Last update: 02 May, 2021" 
+date: "Last update: 06 June, 2021" 
 output:
   html_document:
     toc: true
@@ -371,6 +371,90 @@ lapply(names(l), function(x) mean(l[[x]]))
 sapply(names(l), function(x) mean(l[[x]]))
 vapply(names(l), function(x) mean(l[[x]]), FUN.VALUE=numeric(1))
 ```
+
+### Improving Speed Performance of Loops
+
+Looping over very large data sets can become slow in R. However, this
+limitation can be overcome by eliminating certain operations in loops or
+avoiding loops over the data intensive dimension in an object altogether. The
+latter can be achieved by performing mainly vectorized vector-to-vecor or
+matrix-to-matrix computations. These vectorize operations run in R often over
+100 times faster than the corresponding `for()` or `apply()` loops. In
+addition, one can make use of the existing speed-optimized C-level functions in
+R, such as `rowSums`, `rowMeans`, `table`, `tabulate`. Moreover, one can
+design custom functions that avoid expensive R loops by using vector- or
+matrix-based approaches. Alternatively, one can write programs that will
+perform all time consuming computations on the C-level.
+
+The following code samples illustrate the time-performance differences among
+the different approaches of running iterative operations in R.
+
+#### 1. `for` loop with append versus inject approach
+
+The following runs a `for` loop where the result is appended in each iteration
+with the `c()` function. The corresponding `cbind` and `rbind` for two dimensional
+data objects would have a similar performance impact as `c()`.
+
+``` r
+myMA <- matrix(rnorm(1000000), 100000, 10, dimnames=list(1:100000, paste("C", 1:10, sep="")))
+results <- NULL
+system.time(for(i in seq(along=myMA[,1])) results <- c(results, mean(myMA[i,])))
+   user  system elapsed
+ 39.156   6.369  45.559
+```
+
+Now the for loop is run with an inject approach for storing the results in each iteration.
+
+``` r
+results <- numeric(length(myMA[,1]))
+system.time(for(i in seq(along=myMA[,1])) results[i] <- mean(myMA[i,]))
+   user  system elapsed
+  1.550   0.005   1.556 
+```
+
+As one can see from the output of `system.time`, the inject approach is 20-50 times faster.
+
+#### 2. `apply` loop versus `rowMeans`
+
+The following performs a row-wise mean calculation on a large matrix first with an `apply`
+loop and then with the `rowMeans` function.
+
+``` r
+system.time(myMAmean <- apply(myMA, 1, mean))
+  user  system elapsed
+ 1.452   0.005   1.456
+
+system.time(myMAmean <- rowMeans(myMA))
+   user  system elapsed
+  0.005   0.001   0.006
+```
+
+Based on the results from `system.time` the `rowMeans` approach is over 200 times faster
+than the `apply` loop.
+
+#### 3. `apply` loop versus vectorized approach
+
+In this example row-wise standard deviations are computed with an `apply` loop and then
+in a vectorized manner.
+
+``` r
+system.time(myMAsd <- apply(myMA, 1, sd))
+   user  system elapsed
+  3.707   0.014   3.721
+myMAsd[1:4]
+        1         2         3         4
+0.8505795 1.3419460 1.3768646 1.3005428
+
+system.time(myMAsd <- sqrt((rowSums((myMA-rowMeans(myMA))^2)) / (length(myMA[1,])-1)))
+   user  system elapsed
+  0.020   0.009   0.028
+
+myMAsd[1:4]
+        1         2         3         4
+0.8505795 1.3419460 1.3768646 1.3005428
+```
+
+The vector-based approach in the last step is over 200 times faster than the apply loop.
 
 ## Functions
 

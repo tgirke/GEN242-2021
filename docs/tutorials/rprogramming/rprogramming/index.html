@@ -27,7 +27,7 @@
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
  Overview One of the main attractions of using the R (http://cran.at.r-project.org) environment is the ease with which users can write their own programs and custom functions. The R programming syntax is extremely easy to learn, even for users with no previous programming experience.">
 <meta itemprop="dateModified" content="2021-05-02T14:40:20-07:00" />
-<meta itemprop="wordCount" content="3412">
+<meta itemprop="wordCount" content="3815">
 
 
 
@@ -840,7 +840,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.34adcc94674d1bbd3f8084788ecf52d8.json"
+  data-offline-search-index-json-src="../../../offline-search-index.58249820543889024ae62f2b66987a47.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -872,7 +872,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.34adcc94674d1bbd3f8084788ecf52d8.json"
+  data-offline-search-index-json-src="../../../offline-search-index.58249820543889024ae62f2b66987a47.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1142,6 +1142,13 @@ if (!doNotTrack) {
             <li><a href="#sapply-lapply-and-vapply"><code>sapply</code>, <code>lapply</code> and <code>vapply</code></a></li>
           </ul>
         </li>
+        <li><a href="#improving-speed-performance-of-loops">Improving Speed Performance of Loops</a>
+          <ul>
+            <li><a href="#1-for-loop-with-append-versus-inject-approach">1. <code>for</code> loop with append versus inject approach</a></li>
+            <li><a href="#2-apply-loop-versus-rowmeans">2. <code>apply</code> loop versus <code>rowMeans</code></a></li>
+            <li><a href="#3-apply-loop-versus-vectorized-approach">3. <code>apply</code> loop versus vectorized approach</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#functions">Functions</a>
@@ -1259,7 +1266,7 @@ if (!doNotTrack) {
 	<h1>Programming in R</h1>
     
 	
-        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 17 minute read</p>
+        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 18 minute read</p>
            
 	<!--
 - Compile from command-line
@@ -1527,6 +1534,69 @@ lapply(l, mean)
 sapply(names(l), function(x) mean(l[[x]]))
 vapply(names(l), function(x) mean(l[[x]]), FUN.VALUE=numeric(1))
 </code></pre>
+<h3 id="improving-speed-performance-of-loops">Improving Speed Performance of Loops</h3>
+<p>Looping over very large data sets can become slow in R. However, this
+limitation can be overcome by eliminating certain operations in loops or
+avoiding loops over the data intensive dimension in an object altogether. The
+latter can be achieved by performing mainly vectorized vector-to-vecor or
+matrix-to-matrix computations. These vectorize operations run in R often over
+100 times faster than the corresponding <code>for()</code> or <code>apply()</code> loops. In
+addition, one can make use of the existing speed-optimized C-level functions in
+R, such as <code>rowSums</code>, <code>rowMeans</code>, <code>table</code>, <code>tabulate</code>. Moreover, one can
+design custom functions that avoid expensive R loops by using vector- or
+matrix-based approaches. Alternatively, one can write programs that will
+perform all time consuming computations on the C-level.</p>
+<p>The following code samples illustrate the time-performance differences among
+the different approaches of running iterative operations in R.</p>
+<h4 id="1-for-loop-with-append-versus-inject-approach">1. <code>for</code> loop with append versus inject approach</h4>
+<p>The following runs a <code>for</code> loop where the result is appended in each iteration
+with the <code>c()</code> function. The corresponding <code>cbind</code> and <code>rbind</code> for two dimensional
+data objects would have a similar performance impact as <code>c()</code>.</p>
+<pre><code class="language-r">myMA &lt;- matrix(rnorm(1000000), 100000, 10, dimnames=list(1:100000, paste(&quot;C&quot;, 1:10, sep=&quot;&quot;)))
+results &lt;- NULL
+system.time(for(i in seq(along=myMA[,1])) results &lt;- c(results, mean(myMA[i,])))
+   user  system elapsed
+ 39.156   6.369  45.559
+</code></pre>
+<p>Now the for loop is run with an inject approach for storing the results in each iteration.</p>
+<pre><code class="language-r">results &lt;- numeric(length(myMA[,1]))
+system.time(for(i in seq(along=myMA[,1])) results[i] &lt;- mean(myMA[i,]))
+   user  system elapsed
+  1.550   0.005   1.556 
+</code></pre>
+<p>As one can see from the output of <code>system.time</code>, the inject approach is 20-50 times faster.</p>
+<h4 id="2-apply-loop-versus-rowmeans">2. <code>apply</code> loop versus <code>rowMeans</code></h4>
+<p>The following performs a row-wise mean calculation on a large matrix first with an <code>apply</code>
+loop and then with the <code>rowMeans</code> function.</p>
+<pre><code class="language-r">system.time(myMAmean &lt;- apply(myMA, 1, mean))
+  user  system elapsed
+ 1.452   0.005   1.456
+
+system.time(myMAmean &lt;- rowMeans(myMA))
+   user  system elapsed
+  0.005   0.001   0.006
+</code></pre>
+<p>Based on the results from <code>system.time</code> the <code>rowMeans</code> approach is over 200 times faster
+than the <code>apply</code> loop.</p>
+<h4 id="3-apply-loop-versus-vectorized-approach">3. <code>apply</code> loop versus vectorized approach</h4>
+<p>In this example row-wise standard deviations are computed with an <code>apply</code> loop and then
+in a vectorized manner.</p>
+<pre><code class="language-r">system.time(myMAsd &lt;- apply(myMA, 1, sd))
+   user  system elapsed
+  3.707   0.014   3.721
+myMAsd[1:4]
+        1         2         3         4
+0.8505795 1.3419460 1.3768646 1.3005428
+
+system.time(myMAsd &lt;- sqrt((rowSums((myMA-rowMeans(myMA))^2)) / (length(myMA[1,])-1)))
+   user  system elapsed
+  0.020   0.009   0.028
+
+myMAsd[1:4]
+        1         2         3         4
+0.8505795 1.3419460 1.3768646 1.3005428
+</code></pre>
+<p>The vector-based approach in the last step is over 200 times faster than the apply loop.</p>
 <h2 id="functions">Functions</h2>
 <h3 id="function-overview">Function Overview</h3>
 <p>A very useful feature of the R environment is the possibility to expand existing functions and to easily write custom functions. In fact, most of the R software can be viewed as a series of R functions.</p>
