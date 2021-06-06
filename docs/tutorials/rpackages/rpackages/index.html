@@ -22,12 +22,12 @@
  Overview Motivation for building R packages  Organization  Consolidate functions with related utilties in single place Interdepencies among less complex functions make coding more efficient Minimizes duplications   Documentation  Help page infrastructure improves documentation of functions Big picture of utilties provided by package vignettes (manuals)   Sharability  Package can be easier shared with colleagues and public Increases code accessibilty for other users    Package development environments This page introduces two approaches for building R packages:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rpackages/rpackages/" />
-<meta property="article:modified_time" content="2021-06-06T14:32:52-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-06-06T14:34:49-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Building R Packages">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ Slides ] [ .Rmd ] [ .R ]
  Overview Motivation for building R packages  Organization  Consolidate functions with related utilties in single place Interdepencies among less complex functions make coding more efficient Minimizes duplications   Documentation  Help page infrastructure improves documentation of functions Big picture of utilties provided by package vignettes (manuals)   Sharability  Package can be easier shared with colleagues and public Increases code accessibilty for other users    Package development environments This page introduces two approaches for building R packages:">
-<meta itemprop="dateModified" content="2021-06-06T14:32:52-07:00" />
-<meta itemprop="wordCount" content="1976">
+<meta itemprop="dateModified" content="2021-06-06T14:34:49-07:00" />
+<meta itemprop="wordCount" content="1972">
 
 
 
@@ -840,7 +840,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.702e6cd61074dafe2b18757df67effbc.json"
+  data-offline-search-index-json-src="../../../offline-search-index.34adcc94674d1bbd3f8084788ecf52d8.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -872,7 +872,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.702e6cd61074dafe2b18757df67effbc.json"
+  data-offline-search-index-json-src="../../../offline-search-index.34adcc94674d1bbd3f8084788ecf52d8.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1116,7 +1116,7 @@ if (!doNotTrack) {
         <li><a href="#package-development-environments">Package development environments</a></li>
       </ul>
     </li>
-    <li><a href="#1-r-base-et-al-approach">1. R Base <em>et al.</em> Approach</a>
+    <li><a href="#1-r-base-approach">1. R Base Approach</a>
       <ul>
         <li><a href="#11-create-package-skeleton">1.1 Create package skeleton</a></li>
         <li><a href="#12-build-package">1.2 Build package</a></li>
@@ -1126,7 +1126,7 @@ if (!doNotTrack) {
         <li><a href="#16-submit-package-to-public-repository">1.6 Submit package to public repository</a></li>
       </ul>
     </li>
-    <li><a href="#2-r-devtools-et-al-approach">2. R <code>devtools</code> <em>et al.</em> Approach</a></li>
+    <li><a href="#2-r-devtools-approach">2. R <code>devtools</code> Approach</a></li>
     <li><a href="#workflow-for-building-r-packages">Workflow for building R packages</a>
       <ul>
         <li><a href="#21-create-package-skeleton">2.1 Create package skeleton</a></li>
@@ -1238,7 +1238,7 @@ document.addEventListener("DOMContentLoaded", function() {
 that can be installed and loaded on a user’s system. The instructions for the
 second appoach are more detailed since it is likely to provide the most
 practical solution for newer users of R.</p>
-<h2 id="1-r-base-et-al-approach">1. R Base <em>et al.</em> Approach</h2>
+<h2 id="1-r-base-approach">1. R Base Approach</h2>
 <p>R packages can be built with the <code>package.skeleton</code> function. The most
 comprehensive documentation on package development is provided by the <a href="https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Package-Dependencies">Writing
 R
@@ -1333,7 +1333,7 @@ submission pages:</p>
 <li><a href="http://www.bioconductor.org/developers/package-submission/">Submitting to Bioconductor</a></li>
 <li><a href="https://cran.r-project.org/">Submitting to CRAN</a></li>
 </ul>
-<h2 id="2-r-devtools-et-al-approach">2. R <code>devtools</code> <em>et al.</em> Approach</h2>
+<h2 id="2-r-devtools-approach">2. R <code>devtools</code> Approach</h2>
 <p>Several package develpment routines of the traditional method outlined above
 are manual, such as updating the NAMESPACE file and documenting functions in
 separate help (<code>*.Rd</code>) files. This process can be simplified and partially
@@ -1481,7 +1481,7 @@ private packages require a personal access token (PAT) that needs to be assigned
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-06-06: <a  href="https://github.com/tgirke/GEN242//commit/a2b8727be9b1c86c611fe0b7fa7ce9a23f894870">some edits (a2b8727be)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-06-06: <a  href="https://github.com/tgirke/GEN242//commit/05a99dd8d84e205b360c42e9ae59e99f4ea031b4">some edits (05a99dd8d)</a>
 </div>
 </div>
 

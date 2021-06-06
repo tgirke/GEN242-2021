@@ -73,7 +73,7 @@ that can be installed and loaded on a user’s system. The instructions for the
 second appoach are more detailed since it is likely to provide the most
 practical solution for newer users of R.
 
-## 1. R Base *et al.* Approach
+## 1. R Base Approach
 
 R packages can be built with the `package.skeleton` function. The most
 comprehensive documentation on package development is provided by the [Writing
@@ -197,7 +197,7 @@ submission pages:
 -   [Submitting to Bioconductor](http://www.bioconductor.org/developers/package-submission/)
 -   [Submitting to CRAN](https://cran.r-project.org/)
 
-## 2. R `devtools` *et al.* Approach
+## 2. R `devtools` Approach
 
 Several package develpment routines of the traditional method outlined above
 are manual, such as updating the NAMESPACE file and documenting functions in
