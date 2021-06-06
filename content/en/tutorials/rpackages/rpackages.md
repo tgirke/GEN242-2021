@@ -63,20 +63,12 @@ Source code downloads:    
 
 ### Package development environments
 
-This following introduces two approaches for building R packages:
+This page introduces two approaches for building R packages:
 
 1.  `R Base` and related functionalities
 2.  `devtools` and related packages (*e.g.* `usethis`, `roxygen2` and `sinew`)
 
-The sample code provided below creates for each method a simple test package
-that can be installed and loaded on a user’s system. The instructions for the
-second appoach are more detailed since it is likely to provide the most
-practical solution for newer users of R.
-
-1.  Traditional approach using base R functionalities
-2.  R package development with helper packages: `devtools`, `usethis`, `roxygen2` and `sinew`
-
-The sample code provided below creates for each method a simple test package
+The sample code provided below creates for each of the two methods a simple test package
 that can be installed and loaded on a user’s system. The instructions for the
 second appoach are more detailed since it is likely to provide the most
 practical solution for newer users of R.

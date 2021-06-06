@@ -19,15 +19,15 @@
 
 <title>Building R Packages | GEN242</title><meta property="og:title" content="Building R Packages" />
 <meta property="og:description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ Slides ] [ .Rmd ] [ .R ]
- Overview Motivation for building R packages  Organization  Consolidate functions with related utilties in single place Interdepencies among less complex functions make coding more efficient Minimizes duplications   Documentation  Help page infrastructure improves documentation of functions Big picture of utilties provided by package vignettes (manuals)   Sharability  Package can be easier shared with colleagues and public Increases code accessibilty for other users    Package development environments This following introduces two approaches for building R packages:" />
+ Overview Motivation for building R packages  Organization  Consolidate functions with related utilties in single place Interdepencies among less complex functions make coding more efficient Minimizes duplications   Documentation  Help page infrastructure improves documentation of functions Big picture of utilties provided by package vignettes (manuals)   Sharability  Package can be easier shared with colleagues and public Increases code accessibilty for other users    Package development environments This page introduces two approaches for building R packages:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rpackages/rpackages/" />
-<meta property="article:modified_time" content="2021-06-06T14:10:34-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-06-06T14:29:17-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Building R Packages">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ Slides ] [ .Rmd ] [ .R ]
- Overview Motivation for building R packages  Organization  Consolidate functions with related utilties in single place Interdepencies among less complex functions make coding more efficient Minimizes duplications   Documentation  Help page infrastructure improves documentation of functions Big picture of utilties provided by package vignettes (manuals)   Sharability  Package can be easier shared with colleagues and public Increases code accessibilty for other users    Package development environments This following introduces two approaches for building R packages:">
-<meta itemprop="dateModified" content="2021-06-06T14:10:34-07:00" />
-<meta itemprop="wordCount" content="2036">
+ Overview Motivation for building R packages  Organization  Consolidate functions with related utilties in single place Interdepencies among less complex functions make coding more efficient Minimizes duplications   Documentation  Help page infrastructure improves documentation of functions Big picture of utilties provided by package vignettes (manuals)   Sharability  Package can be easier shared with colleagues and public Increases code accessibilty for other users    Package development environments This page introduces two approaches for building R packages:">
+<meta itemprop="dateModified" content="2021-06-06T14:29:17-07:00" />
+<meta itemprop="wordCount" content="1975">
 
 
 
@@ -35,7 +35,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Building R Packages"/>
 <meta name="twitter:description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ Slides ] [ .Rmd ] [ .R ]
- Overview Motivation for building R packages  Organization  Consolidate functions with related utilties in single place Interdepencies among less complex functions make coding more efficient Minimizes duplications   Documentation  Help page infrastructure improves documentation of functions Big picture of utilties provided by package vignettes (manuals)   Sharability  Package can be easier shared with colleagues and public Increases code accessibilty for other users    Package development environments This following introduces two approaches for building R packages:"/>
+ Overview Motivation for building R packages  Organization  Consolidate functions with related utilties in single place Interdepencies among less complex functions make coding more efficient Minimizes duplications   Documentation  Help page infrastructure improves documentation of functions Big picture of utilties provided by package vignettes (manuals)   Sharability  Package can be easier shared with colleagues and public Increases code accessibilty for other users    Package development environments This page introduces two approaches for building R packages:"/>
 
 
 <script type="application/javascript">
@@ -840,7 +840,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.54778a3979578bf7bdb4ba324f02495f.json"
+  data-offline-search-index-json-src="../../../offline-search-index.1a90f0989203410785954a5b696612ed.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -872,7 +872,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.54778a3979578bf7bdb4ba324f02495f.json"
+  data-offline-search-index-json-src="../../../offline-search-index.1a90f0989203410785954a5b696612ed.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1229,20 +1229,12 @@ document.addEventListener("DOMContentLoaded", function() {
 </li>
 </ol>
 <h3 id="package-development-environments">Package development environments</h3>
-<p>This following introduces two approaches for building R packages:</p>
+<p>This page introduces two approaches for building R packages:</p>
 <ol>
 <li><code>R Base</code> and related functionalities</li>
 <li><code>devtools</code> and related packages (<em>e.g.</em> <code>usethis</code>, <code>roxygen2</code> and <code>sinew</code>)</li>
 </ol>
-<p>The sample code provided below creates for each method a simple test package
-that can be installed and loaded on a user’s system. The instructions for the
-second appoach are more detailed since it is likely to provide the most
-practical solution for newer users of R.</p>
-<ol>
-<li>Traditional approach using base R functionalities</li>
-<li>R package development with helper packages: <code>devtools</code>, <code>usethis</code>, <code>roxygen2</code> and <code>sinew</code></li>
-</ol>
-<p>The sample code provided below creates for each method a simple test package
+<p>The sample code provided below creates for each of the two methods a simple test package
 that can be installed and loaded on a user’s system. The instructions for the
 second appoach are more detailed since it is likely to provide the most
 practical solution for newer users of R.</p>
@@ -1489,7 +1481,7 @@ private packages require a personal access token (PAT) that needs to be assigned
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-06-06: <a  href="https://github.com/tgirke/GEN242//commit/838ed2abac046abdea10a0a619e3f7a252456700">some edits (838ed2aba)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-06-06: <a  href="https://github.com/tgirke/GEN242//commit/59486279ee4437f60aef0d65edaf24584d2e3241">some edits (59486279e)</a>
 </div>
 </div>
 
