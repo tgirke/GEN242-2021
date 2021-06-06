@@ -782,13 +782,13 @@ information about OOP in R can be found in the following introductions:
 
 #### 1. Define S4 Classes with `setClass()` and `new()`
 
-``` sh
-y <- matrix(1:50, 10, 5) # Sample data set
+``` r
+y <- matrix(1:10, 2, 5) # Sample data set
 setClass(Class="myclass",
     representation=representation(a="ANY"),
     prototype=prototype(a=y[1:2,]), # Defines default value (optional)
     validity=function(object) { # Can be defined in a separate step using setValidity
-        if(class(object@a)!="matrix") {
+        if(class(object@a)[1]!="matrix") {
             return(paste("expected matrix, but obtained", class(object@a)))
         } else {
             return(TRUE)
@@ -805,6 +805,32 @@ The setClass function defines classes. Its most important arguments are
 -   `contains`: the classes that this class extends.
 -   `validity`, `access`, `version`: control arguments included for compatibility with S-Plus.
 -   `where`: the environment to use to store or remove the definition as meta data.
+
+#### 2. Create new instance of class
+
+The function `new` creates an instance of a class (here `myclass`).
+
+``` r
+myobj <- new("myclass", a=y)
+myobj
+```
+
+    ## An object of class "myclass"
+    ## Slot "a":
+    ##      [,1] [,2] [,3] [,4] [,5]
+    ## [1,]    1    3    5    7    9
+    ## [2,]    2    4    6    8   10
+
+If evaluated the following would return an error due to wrong input type (`data.frame` instead of `matrix`).
+
+``` r
+new("myclass", a=iris) 
+```
+
+The arguments of `new` are:
+
+-   `Class`: the name of the class
+-   `...`: data to include in the new object with arguments according to slots in class definition
 
 ## Building R Packages
 

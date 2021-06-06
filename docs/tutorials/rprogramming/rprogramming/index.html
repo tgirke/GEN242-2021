@@ -22,12 +22,12 @@
  Overview One of the main attractions of using the R (http://cran.at.r-project.org) environment is the ease with which users can write their own programs and custom functions. The R programming syntax is extremely easy to learn, even for users with no previous programming experience." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rprogramming/rprogramming/" />
-<meta property="article:modified_time" content="2021-06-06T15:51:03-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-06-06T16:13:15-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Programming in R">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
  Overview One of the main attractions of using the R (http://cran.at.r-project.org) environment is the ease with which users can write their own programs and custom functions. The R programming syntax is extremely easy to learn, even for users with no previous programming experience.">
-<meta itemprop="dateModified" content="2021-06-06T15:51:03-07:00" />
-<meta itemprop="wordCount" content="4082">
+<meta itemprop="dateModified" content="2021-06-06T16:13:15-07:00" />
+<meta itemprop="wordCount" content="4179">
 
 
 
@@ -840,7 +840,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.6e21e4812c325341196af956e41ab239.json"
+  data-offline-search-index-json-src="../../../offline-search-index.166f36f81e1a1ace21c9c87d676c8616.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -872,7 +872,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.6e21e4812c325341196af956e41ab239.json"
+  data-offline-search-index-json-src="../../../offline-search-index.166f36f81e1a1ace21c9c87d676c8616.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1197,6 +1197,7 @@ if (!doNotTrack) {
         <li><a href="#define-s4-classes">Define S4 Classes</a>
           <ul>
             <li><a href="#1-define-s4-classes-with-setclass-and-new">1. Define S4 Classes with <code>setClass()</code> and <code>new()</code></a></li>
+            <li><a href="#2-create-new-instance-of-class">2. Create new instance of class</a></li>
           </ul>
         </li>
       </ul>
@@ -1829,12 +1830,12 @@ information about OOP in R can be found in the following introductions:</p>
 </ul>
 <h3 id="define-s4-classes">Define S4 Classes</h3>
 <h4 id="1-define-s4-classes-with-setclass-and-new">1. Define S4 Classes with <code>setClass()</code> and <code>new()</code></h4>
-<pre><code class="language-sh">y &lt;- matrix(1:50, 10, 5) # Sample data set
+<pre><code class="language-r">y &lt;- matrix(1:10, 2, 5) # Sample data set
 setClass(Class=&quot;myclass&quot;,
     representation=representation(a=&quot;ANY&quot;),
     prototype=prototype(a=y[1:2,]), # Defines default value (optional)
     validity=function(object) { # Can be defined in a separate step using setValidity
-        if(class(object@a)!=&quot;matrix&quot;) {
+        if(class(object@a)[1]!=&quot;matrix&quot;) {
             return(paste(&quot;expected matrix, but obtained&quot;, class(object@a)))
         } else {
             return(TRUE)
@@ -1850,6 +1851,25 @@ setClass(Class=&quot;myclass&quot;,
 <li><code>contains</code>: the classes that this class extends.</li>
 <li><code>validity</code>, <code>access</code>, <code>version</code>: control arguments included for compatibility with S-Plus.</li>
 <li><code>where</code>: the environment to use to store or remove the definition as meta data.</li>
+</ul>
+<h4 id="2-create-new-instance-of-class">2. Create new instance of class</h4>
+<p>The function <code>new</code> creates an instance of a class (here <code>myclass</code>).</p>
+<pre><code class="language-r">myobj &lt;- new(&quot;myclass&quot;, a=y)
+myobj
+</code></pre>
+<pre><code>## An object of class &quot;myclass&quot;
+## Slot &quot;a&quot;:
+##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    3    5    7    9
+## [2,]    2    4    6    8   10
+</code></pre>
+<p>If evaluated the following would return an error due to wrong input type (<code>data.frame</code> instead of <code>matrix</code>).</p>
+<pre><code class="language-r">new(&quot;myclass&quot;, a=iris) 
+</code></pre>
+<p>The arguments of <code>new</code> are:</p>
+<ul>
+<li><code>Class</code>: the name of the class</li>
+<li><code>...</code>: data to include in the new object with arguments according to slots in class definition</li>
 </ul>
 <h2 id="building-r-packages">Building R Packages</h2>
 <h3 id="short-overview-of-package-building-process">Short Overview of Package Building Process</h3>
@@ -2070,7 +2090,7 @@ library(mypackage)
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-06-06: <a  href="https://github.com/tgirke/GEN242//commit/1178e057048865fc71c214fb00ee57c0d344f99b">some edits (1178e0570)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-06-06: <a  href="https://github.com/tgirke/GEN242//commit/cb55e0e0f2c11ffece235f874c514af099f531cc">some edits (cb55e0e0f)</a>
 </div>
 </div>
 

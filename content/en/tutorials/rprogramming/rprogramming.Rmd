@@ -673,7 +673,7 @@ myobj
 
 If evaluated the following would return an error due to wrong input type (`data.frame` instead of `matrix`).
 
-```{r new_s4, eval=FALSE}
+```{r new_s4_error, eval=FALSE}
 new("myclass", a=iris) 
 ```
 
