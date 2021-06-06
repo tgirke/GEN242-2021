@@ -22,12 +22,12 @@
  Overview One of the main attractions of using the R (http://cran.at.r-project.org) environment is the ease with which users can write their own programs and custom functions. The R programming syntax is extremely easy to learn, even for users with no previous programming experience." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rprogramming/rprogramming/" />
-<meta property="article:modified_time" content="2021-05-02T14:40:20-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-06-06T15:51:03-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Programming in R">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
  Overview One of the main attractions of using the R (http://cran.at.r-project.org) environment is the ease with which users can write their own programs and custom functions. The R programming syntax is extremely easy to learn, even for users with no previous programming experience.">
-<meta itemprop="dateModified" content="2021-05-02T14:40:20-07:00" />
-<meta itemprop="wordCount" content="3815">
+<meta itemprop="dateModified" content="2021-06-06T15:51:03-07:00" />
+<meta itemprop="wordCount" content="4082">
 
 
 
@@ -840,7 +840,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.58249820543889024ae62f2b66987a47.json"
+  data-offline-search-index-json-src="../../../offline-search-index.6e21e4812c325341196af956e41ab239.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -872,7 +872,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.58249820543889024ae62f2b66987a47.json"
+  data-offline-search-index-json-src="../../../offline-search-index.6e21e4812c325341196af956e41ab239.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1192,6 +1192,15 @@ if (!doNotTrack) {
         </li>
       </ul>
     </li>
+    <li><a href="#object-oriented-programming-oop">Object-Oriented Programming (OOP)</a>
+      <ul>
+        <li><a href="#define-s4-classes">Define S4 Classes</a>
+          <ul>
+            <li><a href="#1-define-s4-classes-with-setclass-and-new">1. Define S4 Classes with <code>setClass()</code> and <code>new()</code></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
     <li><a href="#building-r-packages">Building R Packages</a>
       <ul>
         <li><a href="#short-overview-of-package-building-process">Short Overview of Package Building Process</a></li>
@@ -1266,7 +1275,7 @@ if (!doNotTrack) {
 	<h1>Programming in R</h1>
     
 	
-        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 18 minute read</p>
+        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 20 minute read</p>
            
 	<!--
 - Compile from command-line
@@ -1538,11 +1547,11 @@ vapply(names(l), function(x) mean(l[[x]]), FUN.VALUE=numeric(1))
 <p>Looping over very large data sets can become slow in R. However, this
 limitation can be overcome by eliminating certain operations in loops or
 avoiding loops over the data intensive dimension in an object altogether. The
-latter can be achieved by performing mainly vectorized vector-to-vecor or
-matrix-to-matrix computations. These vectorize operations run in R often over
+latter can be achieved by performing mainly vector-to-vecor or
+matrix-to-matrix computations. These vectorized operations run in R often over
 100 times faster than the corresponding <code>for()</code> or <code>apply()</code> loops. In
 addition, one can make use of the existing speed-optimized C-level functions in
-R, such as <code>rowSums</code>, <code>rowMeans</code>, <code>table</code>, <code>tabulate</code>. Moreover, one can
+R, such as <code>rowSums</code>, <code>rowMeans</code>, <code>table</code>, and <code>tabulate</code>. Moreover, one can
 design custom functions that avoid expensive R loops by using vector- or
 matrix-based approaches. Alternatively, one can write programs that will
 perform all time consuming computations on the C-level.</p>
@@ -1576,7 +1585,7 @@ system.time(myMAmean &lt;- rowMeans(myMA))
    user  system elapsed
   0.005   0.001   0.006
 </code></pre>
-<p>Based on the results from <code>system.time</code> the <code>rowMeans</code> approach is over 200 times faster
+<p>Based on the results from <code>system.time</code>, the <code>rowMeans</code> approach is over 200 times faster
 than the <code>apply</code> loop.</p>
 <h4 id="3-apply-loop-versus-vectorized-approach">3. <code>apply</code> loop versus vectorized approach</h4>
 <p>In this example row-wise standard deviations are computed with an <code>apply</code> loop and then
@@ -1800,6 +1809,48 @@ print(iris[1:myarg[6], ])
 <pre><code class="language-sh">Rscript test.R 10
 </code></pre>
 <p>In the given example the number <code>10</code> is passed on from the command-line as an argument to the R script which is used to return to <code>STDOUT</code> the first 10 rows of the <code>iris</code> sample data. If several arguments are provided, they will be interpreted as one string and need to be split in R with the strsplit function. A more detailed example can be found <a href="http://manuals.bioinformatics.ucr.edu/home/ht-seq#TOC-Quality-Reports-of-FASTQ-Files-">here</a>.</p>
+<h2 id="object-oriented-programming-oop">Object-Oriented Programming (OOP)</h2>
+<p>R supports several systems for object-oriented programming (OOP). An older S3
+system, and the more recently introduced R6 and S4 systems. The latter is the
+most formal version that supports multiple inheritance, multiple dispatch and
+introspection. Many of these features are not available in the older S3
+system. In general, the OOP approach taken by R is to separate the class
+specifications from the specifications of generic functions (function-centric
+system). The following introduction is restricted to the S4 system since it is
+nowadays the preferred OOP method for package development in Bioconductor. More
+information about OOP in R can be found in the following introductions:</p>
+<ul>
+<li><a href="http://zoonek2.free.fr/UNIX/48_R/02.html#4">Vincent Zoonekynd’s introduction to S3 Classes</a></li>
+<li><a href="https://cran.r-project.org/doc/contrib/Genolini-S4tutorialV0-5en.pdf">Christophe Genolini’s S4 Intro</a></li>
+<li><a href="http://master.bioconductor.org/help/course-materials/2008/advanced_R/">Advanced Bioconductor Courses</a></li>
+<li><a href="https://www.springer.com/gp/book/9780387759357">Programming with R by John Chambers</a></li>
+<li><a href="http://www.bioconductor.org/help/publications/books/r-programming-for-bioinformatics/">R Programming for Bioinformatics by Robert Gentleman</a></li>
+<li><a href="https://adv-r.hadley.nz/r6.html">Advanced R online book by Hadley Wichham</a></li>
+</ul>
+<h3 id="define-s4-classes">Define S4 Classes</h3>
+<h4 id="1-define-s4-classes-with-setclass-and-new">1. Define S4 Classes with <code>setClass()</code> and <code>new()</code></h4>
+<pre><code class="language-sh">y &lt;- matrix(1:50, 10, 5) # Sample data set
+setClass(Class=&quot;myclass&quot;,
+    representation=representation(a=&quot;ANY&quot;),
+    prototype=prototype(a=y[1:2,]), # Defines default value (optional)
+    validity=function(object) { # Can be defined in a separate step using setValidity
+        if(class(object@a)!=&quot;matrix&quot;) {
+            return(paste(&quot;expected matrix, but obtained&quot;, class(object@a)))
+        } else {
+            return(TRUE)
+        }
+    }
+)
+</code></pre>
+<p>The setClass function defines classes. Its most important arguments are</p>
+<ul>
+<li><code>Class</code>: the name of the class</li>
+<li><code>representation</code>: the slots that the new class should have and/or other classes that this class extends.</li>
+<li><code>prototype</code>: an object providing default data for the slots.</li>
+<li><code>contains</code>: the classes that this class extends.</li>
+<li><code>validity</code>, <code>access</code>, <code>version</code>: control arguments included for compatibility with S-Plus.</li>
+<li><code>where</code>: the environment to use to store or remove the definition as meta data.</li>
+</ul>
 <h2 id="building-r-packages">Building R Packages</h2>
 <h3 id="short-overview-of-package-building-process">Short Overview of Package Building Process</h3>
 <p>R packages can be built with the <code>package.skeleton</code> function. The given example will create a directory named <code>mypackage</code> containing the skeleton of the package for all functions, methods and classes defined in the R script(s) passed on to the <code>code_files</code> argument. The basic structure of the package directory is described <a href="http://manuals.bioinformatics.ucr.edu/home/programming-in-r#Progr_pack">here</a>. The package directory will also contain a file named <code>Read-and-delete-me</code> with instructions for completing the package:</p>
@@ -2019,7 +2070,7 @@ library(mypackage)
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-02: <a  href="https://github.com/tgirke/GEN242//commit/568ceb2a3690df59c14c200e04f7972b5d29aa67">some edits (568ceb2a3)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-06-06: <a  href="https://github.com/tgirke/GEN242//commit/1178e057048865fc71c214fb00ee57c0d344f99b">some edits (1178e0570)</a>
 </div>
 </div>
 

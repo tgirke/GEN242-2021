@@ -377,11 +377,11 @@ vapply(names(l), function(x) mean(l[[x]]), FUN.VALUE=numeric(1))
 Looping over very large data sets can become slow in R. However, this
 limitation can be overcome by eliminating certain operations in loops or
 avoiding loops over the data intensive dimension in an object altogether. The
-latter can be achieved by performing mainly vectorized vector-to-vecor or
-matrix-to-matrix computations. These vectorize operations run in R often over
+latter can be achieved by performing mainly vector-to-vecor or
+matrix-to-matrix computations. These vectorized operations run in R often over
 100 times faster than the corresponding `for()` or `apply()` loops. In
 addition, one can make use of the existing speed-optimized C-level functions in
-R, such as `rowSums`, `rowMeans`, `table`, `tabulate`. Moreover, one can
+R, such as `rowSums`, `rowMeans`, `table`, and `tabulate`. Moreover, one can
 design custom functions that avoid expensive R loops by using vector- or
 matrix-based approaches. Alternatively, one can write programs that will
 perform all time consuming computations on the C-level.
@@ -429,7 +429,7 @@ system.time(myMAmean <- rowMeans(myMA))
   0.005   0.001   0.006
 ```
 
-Based on the results from `system.time` the `rowMeans` approach is over 200 times faster
+Based on the results from `system.time`, the `rowMeans` approach is over 200 times faster
 than the `apply` loop.
 
 #### 3. `apply` loop versus vectorized approach
@@ -758,6 +758,53 @@ Rscript test.R 10
 ```
 
 In the given example the number `10` is passed on from the command-line as an argument to the R script which is used to return to `STDOUT` the first 10 rows of the `iris` sample data. If several arguments are provided, they will be interpreted as one string and need to be split in R with the strsplit function. A more detailed example can be found [here](http://manuals.bioinformatics.ucr.edu/home/ht-seq#TOC-Quality-Reports-of-FASTQ-Files-).
+
+## Object-Oriented Programming (OOP)
+
+R supports several systems for object-oriented programming (OOP). An older S3
+system, and the more recently introduced R6 and S4 systems. The latter is the
+most formal version that supports multiple inheritance, multiple dispatch and
+introspection. Many of these features are not available in the older S3
+system. In general, the OOP approach taken by R is to separate the class
+specifications from the specifications of generic functions (function-centric
+system). The following introduction is restricted to the S4 system since it is
+nowadays the preferred OOP method for package development in Bioconductor. More
+information about OOP in R can be found in the following introductions:
+
+-   [Vincent Zoonekynd’s introduction to S3 Classes](http://zoonek2.free.fr/UNIX/48_R/02.html#4)
+-   [Christophe Genolini’s S4 Intro](https://cran.r-project.org/doc/contrib/Genolini-S4tutorialV0-5en.pdf)
+-   [Advanced Bioconductor Courses](http://master.bioconductor.org/help/course-materials/2008/advanced_R/)
+-   [Programming with R by John Chambers](https://www.springer.com/gp/book/9780387759357)
+-   [R Programming for Bioinformatics by Robert Gentleman](http://www.bioconductor.org/help/publications/books/r-programming-for-bioinformatics/)
+-   [Advanced R online book by Hadley Wichham](https://adv-r.hadley.nz/r6.html)
+
+### Define S4 Classes
+
+#### 1. Define S4 Classes with `setClass()` and `new()`
+
+``` sh
+y <- matrix(1:50, 10, 5) # Sample data set
+setClass(Class="myclass",
+    representation=representation(a="ANY"),
+    prototype=prototype(a=y[1:2,]), # Defines default value (optional)
+    validity=function(object) { # Can be defined in a separate step using setValidity
+        if(class(object@a)!="matrix") {
+            return(paste("expected matrix, but obtained", class(object@a)))
+        } else {
+            return(TRUE)
+        }
+    }
+)
+```
+
+The setClass function defines classes. Its most important arguments are
+
+-   `Class`: the name of the class
+-   `representation`: the slots that the new class should have and/or other classes that this class extends.
+-   `prototype`: an object providing default data for the slots.
+-   `contains`: the classes that this class extends.
+-   `validity`, `access`, `version`: control arguments included for compatibility with S-Plus.
+-   `where`: the environment to use to store or remove the definition as meta data.
 
 ## Building R Packages
 
