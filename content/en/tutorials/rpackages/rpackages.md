@@ -1,7 +1,7 @@
 ---
 title: "Building R Packages" 
 author: "Author: Thomas Girke"
-date: "Last update: 02 June, 2021" 
+date: "Last update: 06 June, 2021" 
 output:
   html_document:
     toc: true
@@ -102,23 +102,65 @@ download.file("https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/t
 package.skeleton(name="mypackage", code_files=c("pkg_build_fct.R"))
 ```
 
+The given example will create a directory named `mypackage` containing the
+skeleton of the package for all functions, methods and classes defined in the R
+script(s) passed on to the `code_files` argument. The basic structure of the
+package directory is described [here](http://cran.fhcrc.org/doc/manuals/R-exts.html#Package-structure).
+The package directory will also contain a file named ‘Read-and-delete-me’ with the following
+instructions for completing the package:
+
+-   Edit the help file skeletons in man, possibly combining help files for multiple functions.
+-   Edit the exports in NAMESPACE, and add necessary imports.
+-   Put any C/C++/Fortran code in src.
+-   If you have compiled code, add a `useDynLib()` directive to `NAMESPACE`.
+-   Run R CMD build to build the package tarball.
+-   Run R CMD check to check the package tarball.
+-   Read Writing R Extensions for more information.
+
 Once a package skeleton is available one can build the package from the
-command-line (Linux/OS X). This will create a tarball of the package with its
-version number encoded in the file name. Subequently, the package tarball needs
-to be checked for errors with:
+command-line (Linux/OS X), or from within R by executing the command-line calls
+with R’s `system("...")` command. For instance, the command-line call `R CMD build ...`
+can be run from within R with `system("R CMD build ...")`. The following examples
+refer to the R console.
 
 ``` r
 system("R CMD build mypackage")
+```
+
+This will create a tarball of the package with its version number encoded in
+the file name (here `mypackage_1.0.tar.gz`). Subsequently, the package tarball
+needs to be checked for errors with `R CMD check`.
+
+``` r
 system("R CMD check mypackage_1.0.tar.gz")
 ```
 
-Install package from source
+All issues in a package’s source code and documentation should be addressed
+until `R CMD check` returns no error or warning messages anymore.
+
+Install package from source on Linux or OS X systems.
 
 ``` r
-install.packages("mypackage_1.0.tar.gz", repos=NULL) 
+install.packages("mypackage_1.0.tar.gz", repos=NULL) # On OS X include the argument type="source"
 ```
 
-For more details see [here](http://manuals.bioinformatics.ucr.edu/home/programming-in-r#TOC-Building-R-Packages).
+Windows requires a zip archive for installing R packages, which can be most
+conveniently created from the command-line (Linux/OS X) by installing the
+package in a local directory (here `tempdir`) and then creating a zip archive
+from the installed package directory:
+
+``` r
+$ mkdir tempdir
+$ R CMD INSTALL -l tempdir mypackage_1.0.tar.gz
+$ cd tempdir
+$ zip -r mypackage mypackage
+## The resulting mypackage.zip archive can be installed from R under Windows like this:
+install.packages("mypackage.zip", repos=NULL)
+```
+
+This procedure only works for packages which do not rely on compiled code (C/C++).
+Instructions to fully build an R package under Windows can be found [here](http://www.murdoch-sutherland.com/Rtools/) and
+[here](https://www.r-bloggers.com/2010/06/how-to-create-an-r-package-in-windows/).
 
 ## 2. R `devtools` *et al.* Approach
 

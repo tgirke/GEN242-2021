@@ -149,7 +149,7 @@ conveniently created from the command-line (Linux/OS X) by installing the
 package in a local directory (here `tempdir`) and then creating a zip archive
 from the installed package directory:
 
-```{r install_package, eval=FALSE}
+```{r install_package_windows, eval=FALSE}
 $ mkdir tempdir
 $ R CMD INSTALL -l tempdir mypackage_1.0.tar.gz
 $ cd tempdir

@@ -27,7 +27,7 @@
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ Slides ] [ .Rmd ] [ .R ]
  Overview Motivation for building R packages  Organization  Consolidate functions with related utilties in single place Interdepencies among less complex functions make coding more efficient Minimizes duplications   Documentation  Help page infrastructure improves documentation of functions Big picture of utilties provided by package vignettes (manuals)   Sharability  Package can be easier shared with colleagues and public Increases code accessibilty for other users    Package development environments This following introduces two approaches for building R packages:">
 <meta itemprop="dateModified" content="2021-06-02T19:04:28-07:00" />
-<meta itemprop="wordCount" content="1531">
+<meta itemprop="wordCount" content="1838">
 
 
 
@@ -840,7 +840,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.f9ec6faf0311eaa58ade0e1c0f3f5cc7.json"
+  data-offline-search-index-json-src="../../../offline-search-index.fb1202cd1f3bd5da843acfc8bec122e7.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -872,7 +872,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.f9ec6faf0311eaa58ade0e1c0f3f5cc7.json"
+  data-offline-search-index-json-src="../../../offline-search-index.fb1202cd1f3bd5da843acfc8bec122e7.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1171,7 +1171,7 @@ if (!doNotTrack) {
 	<h1>Building R Packages</h1>
     
 	
-        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 8 minute read</p>
+        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 9 minute read</p>
            
 	<!--
 - Compile from command-line
@@ -1254,17 +1254,52 @@ download.file(&quot;https://raw.githubusercontent.com/tgirke/GEN242/main/content
 ## Build package skeleton based on functions in pkg_build_fct.R
 package.skeleton(name=&quot;mypackage&quot;, code_files=c(&quot;pkg_build_fct.R&quot;))
 </code></pre>
+<p>The given example will create a directory named <code>mypackage</code> containing the
+skeleton of the package for all functions, methods and classes defined in the R
+script(s) passed on to the <code>code_files</code> argument. The basic structure of the
+package directory is described <a href="http://cran.fhcrc.org/doc/manuals/R-exts.html#Package-structure">here</a>.
+The package directory will also contain a file named ‘Read-and-delete-me’ with the following
+instructions for completing the package:</p>
+<ul>
+<li>Edit the help file skeletons in man, possibly combining help files for multiple functions.</li>
+<li>Edit the exports in NAMESPACE, and add necessary imports.</li>
+<li>Put any C/C++/Fortran code in src.</li>
+<li>If you have compiled code, add a <code>useDynLib()</code> directive to <code>NAMESPACE</code>.</li>
+<li>Run R CMD build to build the package tarball.</li>
+<li>Run R CMD check to check the package tarball.</li>
+<li>Read Writing R Extensions for more information.</li>
+</ul>
 <p>Once a package skeleton is available one can build the package from the
-command-line (Linux/OS X). This will create a tarball of the package with its
-version number encoded in the file name. Subequently, the package tarball needs
-to be checked for errors with:</p>
+command-line (Linux/OS X), or from within R by executing the command-line calls
+with R’s <code>system(&quot;...&quot;)</code> command. For instance, the command-line call <code>R CMD build ...</code>
+can be run from within R with <code>system(&quot;R CMD build ...&quot;)</code>. The following examples
+refer to the R console.</p>
 <pre><code class="language-r">system(&quot;R CMD build mypackage&quot;)
-system(&quot;R CMD check mypackage_1.0.tar.gz&quot;)
 </code></pre>
-<p>Install package from source</p>
-<pre><code class="language-r">install.packages(&quot;mypackage_1.0.tar.gz&quot;, repos=NULL) 
+<p>This will create a tarball of the package with its version number encoded in
+the file name (here <code>mypackage_1.0.tar.gz</code>). Subsequently, the package tarball
+needs to be checked for errors with <code>R CMD check</code>.</p>
+<pre><code class="language-r">system(&quot;R CMD check mypackage_1.0.tar.gz&quot;)
 </code></pre>
-<p>For more details see <a href="http://manuals.bioinformatics.ucr.edu/home/programming-in-r#TOC-Building-R-Packages">here</a>.</p>
+<p>All issues in a package’s source code and documentation should be addressed
+until <code>R CMD check</code> returns no error or warning messages anymore.</p>
+<p>Install package from source on Linux or OS X systems.</p>
+<pre><code class="language-r">install.packages(&quot;mypackage_1.0.tar.gz&quot;, repos=NULL) # On OS X include the argument type=&quot;source&quot;
+</code></pre>
+<p>Windows requires a zip archive for installing R packages, which can be most
+conveniently created from the command-line (Linux/OS X) by installing the
+package in a local directory (here <code>tempdir</code>) and then creating a zip archive
+from the installed package directory:</p>
+<pre><code class="language-r">$ mkdir tempdir
+$ R CMD INSTALL -l tempdir mypackage_1.0.tar.gz
+$ cd tempdir
+$ zip -r mypackage mypackage
+## The resulting mypackage.zip archive can be installed from R under Windows like this:
+install.packages(&quot;mypackage.zip&quot;, repos=NULL)
+</code></pre>
+<p>This procedure only works for packages which do not rely on compiled code (C/C++).
+Instructions to fully build an R package under Windows can be found <a href="http://www.murdoch-sutherland.com/Rtools/">here</a> and
+<a href="https://www.r-bloggers.com/2010/06/how-to-create-an-r-package-in-windows/">here</a>.</p>
 <h2 id="2-r-devtools-et-al-approach">2. R <code>devtools</code> <em>et al.</em> Approach</h2>
 <p>Several package develpment routines of the traditional method outlined above
 are manual, such as updating the NAMESPACE file and documenting functions in
