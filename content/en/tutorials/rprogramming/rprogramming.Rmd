@@ -767,6 +767,11 @@ Useful functions to introspect classes include:
 + `slotNames("myclass")`
 + `extends("myclass2")`
 
+### Assign Generics and Methods
+
+
+
+
 ## Building R Packages
 
 This section has been moved to a dedicated tutorial on R package development [here](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rpackages/rpackages/).
