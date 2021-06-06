@@ -22,12 +22,12 @@
  Overview Motivation for building R packages  Organization  Consolidate functions with related utilties in single place Interdepencies among less complex functions make coding more efficient Minimizes duplications   Documentation  Help page infrastructure improves documentation of functions Big picture of utilties provided by package vignettes (manuals)   Sharability  Package can be easier shared with colleagues and public Increases code accessibilty for other users    Package development environments This following introduces two approaches for building R packages:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rpackages/rpackages/" />
-<meta property="article:modified_time" content="2021-06-02T19:04:28-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-06-06T14:10:34-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Building R Packages">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ Slides ] [ .Rmd ] [ .R ]
  Overview Motivation for building R packages  Organization  Consolidate functions with related utilties in single place Interdepencies among less complex functions make coding more efficient Minimizes duplications   Documentation  Help page infrastructure improves documentation of functions Big picture of utilties provided by package vignettes (manuals)   Sharability  Package can be easier shared with colleagues and public Increases code accessibilty for other users    Package development environments This following introduces two approaches for building R packages:">
-<meta itemprop="dateModified" content="2021-06-02T19:04:28-07:00" />
-<meta itemprop="wordCount" content="1838">
+<meta itemprop="dateModified" content="2021-06-06T14:10:34-07:00" />
+<meta itemprop="wordCount" content="2036">
 
 
 
@@ -840,7 +840,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.fb1202cd1f3bd5da843acfc8bec122e7.json"
+  data-offline-search-index-json-src="../../../offline-search-index.54778a3979578bf7bdb4ba324f02495f.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -872,7 +872,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.fb1202cd1f3bd5da843acfc8bec122e7.json"
+  data-offline-search-index-json-src="../../../offline-search-index.54778a3979578bf7bdb4ba324f02495f.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1116,18 +1116,27 @@ if (!doNotTrack) {
         <li><a href="#package-development-environments">Package development environments</a></li>
       </ul>
     </li>
-    <li><a href="#1-r-base-et-al-approach">1. R Base <em>et al.</em> Approach</a></li>
+    <li><a href="#1-r-base-et-al-approach">1. R Base <em>et al.</em> Approach</a>
+      <ul>
+        <li><a href="#11-create-package-skeleton">1.1 Create package skeleton</a></li>
+        <li><a href="#12-build-package">1.2 Build package</a></li>
+        <li><a href="#13-check-package">1.3 Check package</a></li>
+        <li><a href="#14-install-package">1.4 Install package</a></li>
+        <li><a href="#15-maintain-package">1.5 Maintain package</a></li>
+        <li><a href="#16-submit-package-to-public-repository">1.6 Submit package to public repository</a></li>
+      </ul>
+    </li>
     <li><a href="#2-r-devtools-et-al-approach">2. R <code>devtools</code> <em>et al.</em> Approach</a></li>
     <li><a href="#workflow-for-building-r-packages">Workflow for building R packages</a>
       <ul>
-        <li><a href="#a-create-package-skeleton">(a) Create package skeleton</a></li>
-        <li><a href="#b-add-r-functions">(b) Add R functions</a></li>
-        <li><a href="#c-auto-generate-roxygen-comment-lines">(c) Auto-generate roxygen comment lines</a></li>
-        <li><a href="#d-autogenerate-help-files">(d) Autogenerate help files</a></li>
-        <li><a href="#e-add-a-vignette">(e) Add a vignette</a></li>
-        <li><a href="#f-check-install-and-build-package">(f) Check, install and build package</a></li>
-        <li><a href="#g-using-the-new-package">(g) Using the new package</a></li>
-        <li><a href="#h-share-package-on-github">(h) Share package on GitHub</a></li>
+        <li><a href="#21-create-package-skeleton">2.1 Create package skeleton</a></li>
+        <li><a href="#22-add-r-functions">2.2 Add R functions</a></li>
+        <li><a href="#23-auto-generate-roxygen-comment-lines">2.3 Auto-generate roxygen comment lines</a></li>
+        <li><a href="#24-autogenerate-help-files">2.4 Autogenerate help files</a></li>
+        <li><a href="#25-add-a-vignette">2.5 Add a vignette</a></li>
+        <li><a href="#26-check-install-and-build-package">2.6 Check, install and build package</a></li>
+        <li><a href="#27-using-the-new-package">2.7 Using the new package</a></li>
+        <li><a href="#28-share-package-on-github">2.8 Share package on GitHub</a></li>
       </ul>
     </li>
     <li><a href="#session-info">Session Info</a></li>
@@ -1171,7 +1180,7 @@ if (!doNotTrack) {
 	<h1>Building R Packages</h1>
     
 	
-        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 9 minute read</p>
+        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 10 minute read</p>
            
 	<!--
 - Compile from command-line
@@ -1249,6 +1258,7 @@ The basic structure of the package directory is described
 <a href="http://cran.fhcrc.org/doc/manuals/R-exts.html#Package-structure">here</a>.
 The package directory will also contain a file named <code>Read-and-delete-me</code> with
 instructions for completing the package:</p>
+<h3 id="11-create-package-skeleton">1.1 Create package skeleton</h3>
 <pre><code class="language-r">## Download R script (here pkg_build_fct.R) containing two sample functions
 download.file(&quot;https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/tutorials/rpackages/helper_functions/pkg_build_fct.R&quot;, &quot;pkg_build_fct.R&quot;)
 ## Build package skeleton based on functions in pkg_build_fct.R
@@ -1269,6 +1279,7 @@ instructions for completing the package:</p>
 <li>Run R CMD check to check the package tarball.</li>
 <li>Read Writing R Extensions for more information.</li>
 </ul>
+<h3 id="12-build-package">1.2 Build package</h3>
 <p>Once a package skeleton is available one can build the package from the
 command-line (Linux/OS X), or from within R by executing the command-line calls
 with R’s <code>system(&quot;...&quot;)</code> command. For instance, the command-line call <code>R CMD build ...</code>
@@ -1276,6 +1287,7 @@ can be run from within R with <code>system(&quot;R CMD build ...&quot;)</code>. 
 refer to the R console.</p>
 <pre><code class="language-r">system(&quot;R CMD build mypackage&quot;)
 </code></pre>
+<h3 id="13-check-package">1.3 Check package</h3>
 <p>This will create a tarball of the package with its version number encoded in
 the file name (here <code>mypackage_1.0.tar.gz</code>). Subsequently, the package tarball
 needs to be checked for errors with <code>R CMD check</code>.</p>
@@ -1283,6 +1295,7 @@ needs to be checked for errors with <code>R CMD check</code>.</p>
 </code></pre>
 <p>All issues in a package’s source code and documentation should be addressed
 until <code>R CMD check</code> returns no error or warning messages anymore.</p>
+<h3 id="14-install-package">1.4 Install package</h3>
 <p>Install package from source on Linux or OS X systems.</p>
 <pre><code class="language-r">install.packages(&quot;mypackage_1.0.tar.gz&quot;, repos=NULL) # On OS X include the argument type=&quot;source&quot;
 </code></pre>
@@ -1300,6 +1313,34 @@ install.packages(&quot;mypackage.zip&quot;, repos=NULL)
 <p>This procedure only works for packages which do not rely on compiled code (C/C++).
 Instructions to fully build an R package under Windows can be found <a href="http://www.murdoch-sutherland.com/Rtools/">here</a> and
 <a href="https://www.r-bloggers.com/2010/06/how-to-create-an-r-package-in-windows/">here</a>.</p>
+<h3 id="15-maintain-package">1.5 Maintain package</h3>
+<p>Several useful helper utilities exist for maintaing and extending packages. Typical package development routines
+include:</p>
+<ul>
+<li>Adding new functions, methods and classes to the script files in the ./R directory in your package</li>
+<li>Adding their names to the NAMESPACE file of the package</li>
+<li>Additional <em>.Rd help templates can be generated with the prompt</em>() functions like this:</li>
+</ul>
+<pre><code class="language-r">source(&quot;myscript.R&quot;) # imports functions, methods and classes from myscript.R
+prompt(myfct) # writes help file myfct.Rd
+promptClass(&quot;myclass&quot;) # writes file myclass-class.Rd
+promptMethods(&quot;mymeth&quot;) # writes help file mymeth.Rd
+</code></pre>
+<p>The resulting <code>*.Rd</code> help files can be edited in a text editor, and properly rendered and viewed from within R with help of
+the following functions.</p>
+<pre><code class="language-r">library(tools)
+Rd2txt(&quot;./mypackage/man/myfct.Rd&quot;) # renders *.Rd files as they look in final help pages
+checkRd(&quot;./mypackage/man/myfct.Rd&quot;) # checks *.Rd help file for problems
+</code></pre>
+<h3 id="16-submit-package-to-public-repository">1.6 Submit package to public repository</h3>
+<p>The best way of sharing an R package with the community is to submit it to one
+of the main R package repositories, such as CRAN or Bioconductor. The details
+about the submission process are given on the corresponding repository
+submission pages:</p>
+<ul>
+<li><a href="http://www.bioconductor.org/developers/package-submission/">Submitting to Bioconductor</a></li>
+<li><a href="https://cran.r-project.org/">Submitting to CRAN</a></li>
+</ul>
 <h2 id="2-r-devtools-et-al-approach">2. R <code>devtools</code> <em>et al.</em> Approach</h2>
 <p>Several package develpment routines of the traditional method outlined above
 are manual, such as updating the NAMESPACE file and documenting functions in
@@ -1319,13 +1360,13 @@ R package development:</p>
 <h2 id="workflow-for-building-r-packages">Workflow for building R packages</h2>
 <p>The following outlines the basic workflow for building, testing and extending R packages with
 the package development environment functionalities outlined above.</p>
-<h3 id="a-create-package-skeleton">(a) Create package skeleton</h3>
+<h3 id="21-create-package-skeleton">2.1 Create package skeleton</h3>
 <pre><code class="language-r">library(&quot;devtools&quot;); library(&quot;roxygen2&quot;); library(&quot;usethis&quot;); library(sinew) # If not availble install these packages with 'install.packages(...)'
 create(&quot;myfirstpkg&quot;) # Creates package skeleton. The chosen name (here myfirstpkg) will be the name of the package.
 setwd(&quot;myfirstpkg&quot;) # Set working directory of R session to package directory 'myfirstpkg'
 use_mit_license() # Add license information to description file (here MIT). To look up alternatives, do ?use_mit_license
 </code></pre>
-<h3 id="b-add-r-functions">(b) Add R functions</h3>
+<h3 id="22-add-r-functions">2.2 Add R functions</h3>
 <p>Next, R functions can be added to <code>*.R</code> file(s) under the R directory of the new
 package. Several functions can be organized in one <code>*.R</code> file, each in its own
 file or any combination. For demonstration purposes, the following will
@@ -1333,7 +1374,7 @@ download an R file (<code>pkg_build_fct.R</code> from <a href="https://raw.githu
 and <code>talkToMe</code>) and save it to the R directory of the package.</p>
 <pre><code class="language-r">download.file(&quot;https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/tutorials/rpackages/helper_functions/pkg_build_fct.R&quot;, &quot;R/pkg_build_fct.R&quot;)
 </code></pre>
-<h3 id="c-auto-generate-roxygen-comment-lines">(c) Auto-generate roxygen comment lines</h3>
+<h3 id="23-auto-generate-roxygen-comment-lines">2.3 Auto-generate roxygen comment lines</h3>
 <p>The <code>makeOxygen</code> function from the <code>sinew</code> package creates <code>roxygen2</code> comment
 skeletons based on the information from each function (below for <code>myMAcomp</code> example).
 The roxygen comment lines need to be added above the code of each function.
@@ -1347,7 +1388,7 @@ can be completed and/or revised any time.</p>
 <pre><code class="language-r">load_all() # Loads package in a simulated way without installing it. 
 writeLines(makeOxygen(myMAcomp), &quot;myroxylines&quot;) # This creates a 'myroxylines' file in current directory. Delete this file after adding its content to the corresponding functions.
 </code></pre>
-<h3 id="d-autogenerate-help-files">(d) Autogenerate help files</h3>
+<h3 id="24-autogenerate-help-files">2.4 Autogenerate help files</h3>
 <p>The <code>document</code> function autogenerates for each function one <code>*.Rd</code> file in the
 <code>man</code> directory of the package. The content in the <code>*.Rd</code> help files is based
 on the information in the roxygen comment lines generated in the
@@ -1359,14 +1400,14 @@ will be lost during the automation routines provided by <code>roxygen2</code>.</
 tools::Rd2txt(&quot;man/myMAcomp.Rd&quot;) # Renders Rd file from source
 tools::checkRd(&quot;man/myMAcomp.Rd&quot;) # Checks Rd file for problems
 </code></pre>
-<h3 id="e-add-a-vignette">(e) Add a vignette</h3>
+<h3 id="25-add-a-vignette">2.5 Add a vignette</h3>
 <p>A vignette template can be auto-generated with the <code>use_vignette</code> function from
 the <code>usethis</code> package. The <code>*.Rmd</code> source file of the vignette will be located
 under a new <code>vignette</code> directory. Additional vignettes can be manually added to
 this directory as needed.</p>
 <pre><code class="language-r">use_vignette(&quot;introduction&quot;, title=&quot;Introduction to this package&quot;)
 </code></pre>
-<h3 id="f-check-install-and-build-package">(f) Check, install and build package</h3>
+<h3 id="26-check-install-and-build-package">2.6 Check, install and build package</h3>
 <p>Now the package can be checked for problems. All warnings and errors should be
 addressed prior to submission to a public repository. After this it can be
 installed on a user’s system with the <code>install</code> command. In addition, the
@@ -1379,7 +1420,7 @@ check(&quot;myfirstpkg&quot;) # Check package for problems, when in pkg dir one 
 install(&quot;myfirstpkg&quot;, build_vignettes=TRUE) # Installs package  
 build(&quot;myfirstpkg&quot;) # Creates *.tar.gz file for package required to for submission to CRAN/Bioc
 </code></pre>
-<h3 id="g-using-the-new-package">(g) Using the new package</h3>
+<h3 id="27-using-the-new-package">2.7 Using the new package</h3>
 <p>After installing and loading the package its functions, help files and
 vignettes can be accessed as follows.</p>
 <pre><code class="language-r">library(&quot;myfirstpkg&quot;)
@@ -1388,7 +1429,7 @@ library(help=&quot;myfirstpkg&quot;)
 vignette(&quot;introduction&quot;, &quot;myfirstpkg&quot;)
 </code></pre>
 <p>Another very useful development function is <code>test</code> for evaluating the test code of a package.</p>
-<h3 id="h-share-package-on-github">(h) Share package on GitHub</h3>
+<h3 id="28-share-package-on-github">2.8 Share package on GitHub</h3>
 <p>To host and share the new package <code>myfirstpkg</code> on GitHub, one can use the following steps:</p>
 <ol>
 <li>Create an empty target GitHub repos online (<em>e.g.</em> named <code>mypkg_repos</code>) as outlined <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/github/github/#exercise">here</a>.</li>
@@ -1448,7 +1489,7 @@ private packages require a personal access token (PAT) that needs to be assigned
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-06-02: <a  href="https://github.com/tgirke/GEN242//commit/9a5baaefde9a8ab86364f3b7d07cd179a6bfdb7e">some edits (9a5baaefd)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-06-06: <a  href="https://github.com/tgirke/GEN242//commit/838ed2abac046abdea10a0a619e3f7a252456700">some edits (838ed2aba)</a>
 </div>
 </div>
 

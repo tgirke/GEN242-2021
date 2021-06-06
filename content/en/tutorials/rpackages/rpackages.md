@@ -95,6 +95,8 @@ The basic structure of the package directory is described
 The package directory will also contain a file named `Read-and-delete-me` with
 instructions for completing the package:
 
+### 1.1 Create package skeleton
+
 ``` r
 ## Download R script (here pkg_build_fct.R) containing two sample functions
 download.file("https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/tutorials/rpackages/helper_functions/pkg_build_fct.R", "pkg_build_fct.R")
@@ -117,6 +119,8 @@ instructions for completing the package:
 -   Run R CMD check to check the package tarball.
 -   Read Writing R Extensions for more information.
 
+### 1.2 Build package
+
 Once a package skeleton is available one can build the package from the
 command-line (Linux/OS X), or from within R by executing the command-line calls
 with R’s `system("...")` command. For instance, the command-line call `R CMD build ...`
@@ -126,6 +130,8 @@ refer to the R console.
 ``` r
 system("R CMD build mypackage")
 ```
+
+### 1.3 Check package
 
 This will create a tarball of the package with its version number encoded in
 the file name (here `mypackage_1.0.tar.gz`). Subsequently, the package tarball
@@ -137,6 +143,8 @@ system("R CMD check mypackage_1.0.tar.gz")
 
 All issues in a package’s source code and documentation should be addressed
 until `R CMD check` returns no error or warning messages anymore.
+
+### 1.4 Install package
 
 Install package from source on Linux or OS X systems.
 
@@ -162,6 +170,41 @@ This procedure only works for packages which do not rely on compiled code (C/C++
 Instructions to fully build an R package under Windows can be found [here](http://www.murdoch-sutherland.com/Rtools/) and
 [here](https://www.r-bloggers.com/2010/06/how-to-create-an-r-package-in-windows/).
 
+### 1.5 Maintain package
+
+Several useful helper utilities exist for maintaing and extending packages. Typical package development routines
+include:
+
+-   Adding new functions, methods and classes to the script files in the ./R directory in your package
+-   Adding their names to the NAMESPACE file of the package
+-   Additional *.Rd help templates can be generated with the prompt*() functions like this:
+
+``` r
+source("myscript.R") # imports functions, methods and classes from myscript.R
+prompt(myfct) # writes help file myfct.Rd
+promptClass("myclass") # writes file myclass-class.Rd
+promptMethods("mymeth") # writes help file mymeth.Rd
+```
+
+The resulting `*.Rd` help files can be edited in a text editor, and properly rendered and viewed from within R with help of
+the following functions.
+
+``` r
+library(tools)
+Rd2txt("./mypackage/man/myfct.Rd") # renders *.Rd files as they look in final help pages
+checkRd("./mypackage/man/myfct.Rd") # checks *.Rd help file for problems
+```
+
+### 1.6 Submit package to public repository
+
+The best way of sharing an R package with the community is to submit it to one
+of the main R package repositories, such as CRAN or Bioconductor. The details
+about the submission process are given on the corresponding repository
+submission pages:
+
+-   [Submitting to Bioconductor](http://www.bioconductor.org/developers/package-submission/)
+-   [Submitting to CRAN](https://cran.r-project.org/)
+
 ## 2. R `devtools` *et al.* Approach
 
 Several package develpment routines of the traditional method outlined above
@@ -184,7 +227,7 @@ R package development:
 The following outlines the basic workflow for building, testing and extending R packages with
 the package development environment functionalities outlined above.
 
-### (a) Create package skeleton
+### 2.1 Create package skeleton
 
 ``` r
 library("devtools"); library("roxygen2"); library("usethis"); library(sinew) # If not availble install these packages with 'install.packages(...)'
@@ -193,7 +236,7 @@ setwd("myfirstpkg") # Set working directory of R session to package directory 'm
 use_mit_license() # Add license information to description file (here MIT). To look up alternatives, do ?use_mit_license
 ```
 
-### (b) Add R functions
+### 2.2 Add R functions
 
 Next, R functions can be added to `*.R` file(s) under the R directory of the new
 package. Several functions can be organized in one `*.R` file, each in its own
@@ -205,7 +248,7 @@ and `talkToMe`) and save it to the R directory of the package.
 download.file("https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/tutorials/rpackages/helper_functions/pkg_build_fct.R", "R/pkg_build_fct.R")
 ```
 
-### (c) Auto-generate roxygen comment lines
+### 2.3 Auto-generate roxygen comment lines
 
 The `makeOxygen` function from the `sinew` package creates `roxygen2` comment
 skeletons based on the information from each function (below for `myMAcomp` example).
@@ -223,7 +266,7 @@ load_all() # Loads package in a simulated way without installing it.
 writeLines(makeOxygen(myMAcomp), "myroxylines") # This creates a 'myroxylines' file in current directory. Delete this file after adding its content to the corresponding functions.
 ```
 
-### (d) Autogenerate help files
+### 2.4 Autogenerate help files
 
 The `document` function autogenerates for each function one `*.Rd` file in the
 `man` directory of the package. The content in the `*.Rd` help files is based
@@ -239,7 +282,7 @@ tools::Rd2txt("man/myMAcomp.Rd") # Renders Rd file from source
 tools::checkRd("man/myMAcomp.Rd") # Checks Rd file for problems
 ```
 
-### (e) Add a vignette
+### 2.5 Add a vignette
 
 A vignette template can be auto-generated with the `use_vignette` function from
 the `usethis` package. The `*.Rmd` source file of the vignette will be located
@@ -250,7 +293,7 @@ this directory as needed.
 use_vignette("introduction", title="Introduction to this package")
 ```
 
-### (f) Check, install and build package
+### 2.6 Check, install and build package
 
 Now the package can be checked for problems. All warnings and errors should be
 addressed prior to submission to a public repository. After this it can be
@@ -267,7 +310,7 @@ install("myfirstpkg", build_vignettes=TRUE) # Installs package
 build("myfirstpkg") # Creates *.tar.gz file for package required to for submission to CRAN/Bioc
 ```
 
-### (g) Using the new package
+### 2.7 Using the new package
 
 After installing and loading the package its functions, help files and
 vignettes can be accessed as follows.
@@ -281,7 +324,7 @@ vignette("introduction", "myfirstpkg")
 
 Another very useful development function is `test` for evaluating the test code of a package.
 
-### (h) Share package on GitHub
+### 2.8 Share package on GitHub
 
 To host and share the new package `myfirstpkg` on GitHub, one can use the following steps:
 
