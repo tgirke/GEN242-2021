@@ -741,7 +741,7 @@ syntax can be used to coerce the new class to another one.
 ```{r s4_coerce, eval=TRUE}
 setAs(from="myclass", to="character", def=function(from) as.character(as.matrix(from@a)))
 as(myobj, "character")
-...
+```
 
 #### 7. Virtual classes
 

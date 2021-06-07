@@ -22,12 +22,12 @@
  Overview One of the main attractions of using the R (http://cran.at.r-project.org) environment is the ease with which users can write their own programs and custom functions. The R programming syntax is extremely easy to learn, even for users with no previous programming experience." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rprogramming/rprogramming/" />
-<meta property="article:modified_time" content="2021-06-06T16:31:10-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-06-06T17:40:30-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Programming in R">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
  Overview One of the main attractions of using the R (http://cran.at.r-project.org) environment is the ease with which users can write their own programs and custom functions. The R programming syntax is extremely easy to learn, even for users with no previous programming experience.">
-<meta itemprop="dateModified" content="2021-06-06T16:31:10-07:00" />
-<meta itemprop="wordCount" content="4179">
+<meta itemprop="dateModified" content="2021-06-06T17:40:30-07:00" />
+<meta itemprop="wordCount" content="4980">
 
 
 
@@ -840,7 +840,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.166f36f81e1a1ace21c9c87d676c8616.json"
+  data-offline-search-index-json-src="../../../offline-search-index.2a5d38e1c770b4561894747f1ce7ed0f.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -872,7 +872,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.166f36f81e1a1ace21c9c87d676c8616.json"
+  data-offline-search-index-json-src="../../../offline-search-index.2a5d38e1c770b4561894747f1ce7ed0f.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1197,16 +1197,29 @@ if (!doNotTrack) {
         <li><a href="#define-s4-classes">Define S4 Classes</a>
           <ul>
             <li><a href="#1-define-s4-classes-with-setclass-and-new">1. Define S4 Classes with <code>setClass()</code> and <code>new()</code></a></li>
-            <li><a href="#2-create-new-instance-of-class">2. Create new instance of class</a></li>
+            <li><a href="#2-create-new-class-instance">2. Create new class instance</a></li>
+            <li><a href="#3-initialization-method">3. Initialization method</a></li>
+            <li><a href="#4-usage-and-helper-functions">4. Usage and helper functions</a></li>
+            <li><a href="#5-inheritance">5. Inheritance</a></li>
+            <li><a href="#6-coerce-objects-to-another-class">6. Coerce objects to another class</a></li>
+            <li><a href="#7-virtual-classes">7. Virtual classes</a></li>
+            <li><a href="#8-introspection-of-classes">8. Introspection of classes</a></li>
+          </ul>
+        </li>
+        <li><a href="#assign-generics-and-methods">Assign Generics and Methods</a>
+          <ul>
+            <li><a href="#1-accessor-functions">1. Accessor functions</a></li>
+            <li><a href="#2-replacement-methods">2. Replacement methods</a></li>
+            <li><a href="#3-behavior-of-bracket-operator">3. Behavior of bracket operator</a></li>
+            <li><a href="#4-print-behavior">4. Print behavior</a></li>
+            <li><a href="#5-define-custom-methods">5. Define custom methods</a></li>
+            <li><a href="#6-plotting-method">6. Plotting method</a></li>
+            <li><a href="#7-utilities-to-inspect-methods">7. Utilities to inspect methods</a></li>
           </ul>
         </li>
       </ul>
     </li>
-    <li><a href="#building-r-packages">Building R Packages</a>
-      <ul>
-        <li><a href="#short-overview-of-package-building-process">Short Overview of Package Building Process</a></li>
-      </ul>
-    </li>
+    <li><a href="#building-r-packages">Building R Packages</a></li>
     <li><a href="#programming-exercises">Programming Exercises</a>
       <ul>
         <li><a href="#exercise-1">Exercise 1</a>
@@ -1276,7 +1289,7 @@ if (!doNotTrack) {
 	<h1>Programming in R</h1>
     
 	
-        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 20 minute read</p>
+        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 24 minute read</p>
            
 	<!--
 - Compile from command-line
@@ -1852,7 +1865,7 @@ setClass(Class=&quot;myclass&quot;,
 <li><code>validity</code>, <code>access</code>, <code>version</code>: control arguments included for compatibility with S-Plus.</li>
 <li><code>where</code>: the environment to use to store or remove the definition as meta data.</li>
 </ul>
-<h4 id="2-create-new-instance-of-class">2. Create new instance of class</h4>
+<h4 id="2-create-new-class-instance">2. Create new class instance</h4>
 <p>The function <code>new</code> creates an instance of a class (here <code>myclass</code>).</p>
 <pre><code class="language-r">myobj &lt;- new(&quot;myclass&quot;, a=y)
 myobj
@@ -1864,28 +1877,256 @@ myobj
 ## [2,]    2    4    6    8   10
 </code></pre>
 <p>If evaluated the following would return an error due to wrong input type (<code>data.frame</code> instead of <code>matrix</code>).</p>
-<pre><code class="language-r">new(&quot;myclass&quot;, a=iris) 
+<pre><code class="language-r">new(&quot;myclass&quot;, a=iris) # Returns error due to wrong input  
 </code></pre>
 <p>The arguments of <code>new</code> are:</p>
 <ul>
 <li><code>Class</code>: the name of the class</li>
 <li><code>...</code>: data to include in the new object with arguments according to slots in class definition</li>
 </ul>
+<h4 id="3-initialization-method">3. Initialization method</h4>
+<p>A more generic way of creating class instances is to define an initialization
+method (more details below).</p>
+<pre><code class="language-r">setMethod(&quot;initialize&quot;, &quot;myclass&quot;, function(.Object, a) {
+    .Object@a &lt;- a/a
+    .Object
+})
+new(&quot;myclass&quot;, a = y)
+</code></pre>
+<pre><code>## An object of class &quot;myclass&quot;
+## Slot &quot;a&quot;:
+##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    1    1    1    1
+## [2,]    1    1    1    1    1
+</code></pre>
+<h4 id="4-usage-and-helper-functions">4. Usage and helper functions</h4>
+<p>The ‘@’ operator extracts the contents of a slot. Its usage should be limited to internal
+functions.</p>
+<pre><code class="language-r">myobj@a 
+</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    3    5    7    9
+## [2,]    2    4    6    8   10
+</code></pre>
+<p>Create a new S4 object from an old one.</p>
+<pre><code class="language-r">initialize(.Object=myobj, a=as.matrix(cars[1:2,])) 
+</code></pre>
+<pre><code>## An object of class &quot;myclass&quot;
+## Slot &quot;a&quot;:
+##   speed dist
+## 1     1    1
+## 2     1    1
+</code></pre>
+<p>If evaluated the <code>removeClass</code> function removes an object from the current session.
+This does not apply to associated methods.</p>
+<pre><code class="language-r">removeClass(&quot;myclass&quot;) 
+</code></pre>
+<h4 id="5-inheritance">5. Inheritance</h4>
+<p>Inheritance allows to define new classes that inherit all properties (e.g. data slots, methods)
+from their existing parent classes. The <code>contains</code> argument used below allows to extend
+existing classes. This propagates all slots of parent classes.</p>
+<pre><code class="language-r">setClass(&quot;myclass1&quot;, representation(a = &quot;character&quot;, b = &quot;character&quot;))
+setClass(&quot;myclass2&quot;, representation(c = &quot;numeric&quot;, d = &quot;numeric&quot;))
+setClass(&quot;myclass3&quot;, contains=c(&quot;myclass1&quot;, &quot;myclass2&quot;))
+new(&quot;myclass3&quot;, a=letters[1:4], b=letters[1:4], c=1:4, d=4:1)
+</code></pre>
+<pre><code>## An object of class &quot;myclass3&quot;
+## Slot &quot;a&quot;:
+## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot;
+## 
+## Slot &quot;b&quot;:
+## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot;
+## 
+## Slot &quot;c&quot;:
+## [1] 1 2 3 4
+## 
+## Slot &quot;d&quot;:
+## [1] 4 3 2 1
+</code></pre>
+<pre><code class="language-r">getClass(&quot;myclass1&quot;)
+</code></pre>
+<pre><code>## Class &quot;myclass1&quot; [in &quot;.GlobalEnv&quot;]
+## 
+## Slots:
+##                           
+## Name:          a         b
+## Class: character character
+## 
+## Known Subclasses: &quot;myclass3&quot;
+</code></pre>
+<pre><code class="language-r">getClass(&quot;myclass2&quot;)
+</code></pre>
+<pre><code>## Class &quot;myclass2&quot; [in &quot;.GlobalEnv&quot;]
+## 
+## Slots:
+##                       
+## Name:        c       d
+## Class: numeric numeric
+## 
+## Known Subclasses: &quot;myclass3&quot;
+</code></pre>
+<pre><code class="language-r">getClass(&quot;myclass3&quot;)
+</code></pre>
+<pre><code>## Class &quot;myclass3&quot; [in &quot;.GlobalEnv&quot;]
+## 
+## Slots:
+##                                               
+## Name:          a         b         c         d
+## Class: character character   numeric   numeric
+## 
+## Extends: &quot;myclass1&quot;, &quot;myclass2&quot;
+</code></pre>
+<h4 id="6-coerce-objects-to-another-class">6. Coerce objects to another class</h4>
+<p>The following defines a coerce method. After this the standard <code>as(..., &quot;...&quot;)</code>
+syntax can be used to coerce the new class to another one.</p>
+<pre><code class="language-r">setAs(from=&quot;myclass&quot;, to=&quot;character&quot;, def=function(from) as.character(as.matrix(from@a)))
+as(myobj, &quot;character&quot;)
+</code></pre>
+<pre><code>##  [1] &quot;1&quot;  &quot;2&quot;  &quot;3&quot;  &quot;4&quot;  &quot;5&quot;  &quot;6&quot;  &quot;7&quot;  &quot;8&quot;  &quot;9&quot;  &quot;10&quot;
+</code></pre>
+<h4 id="7-virtual-classes">7. Virtual classes</h4>
+<p>Virtual classes are constructs for which no instances will be or can be
+created. They are used to link together classes which may have distinct
+representations (e.g. cannot inherit from each other) but for which one wants
+to provide similar functionality. Often it is desired to create a virtual class
+and to then have several other classes extend it. Virtual classes can be
+defined by leaving out the representation argument or including the class
+<code>VIRTUAL</code> as illustrated here:</p>
+<pre><code class="language-r">setClass(&quot;myVclass&quot;)
+setClass(&quot;myVclass&quot;, representation(a = &quot;character&quot;, &quot;VIRTUAL&quot;))
+</code></pre>
+<h4 id="8-introspection-of-classes">8. Introspection of classes</h4>
+<p>Useful functions to introspect classes include:</p>
+<ul>
+<li><code>getClass(&quot;myclass&quot;)</code></li>
+<li><code>getSlots(&quot;myclass&quot;)</code></li>
+<li><code>slotNames(&quot;myclass&quot;)</code></li>
+<li><code>extends(&quot;myclass2&quot;)</code></li>
+</ul>
+<h3 id="assign-generics-and-methods">Assign Generics and Methods</h3>
+<p>Generics and methods can be assigned with the methods <code>setGeneric()</code> and <code>setMethod()</code>.</p>
+<h4 id="1-accessor-functions">1. Accessor functions</h4>
+<p>This avoids the usage of the <code>@</code> operator.</p>
+<pre><code class="language-r">setGeneric(name=&quot;acc&quot;, def=function(x) standardGeneric(&quot;acc&quot;))
+</code></pre>
+<pre><code>## [1] &quot;acc&quot;
+</code></pre>
+<pre><code class="language-r">setMethod(f=&quot;acc&quot;, signature=&quot;myclass&quot;, definition=function(x) {
+    return(x@a)
+})
+acc(myobj)
+</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    3    5    7    9
+## [2,]    2    4    6    8   10
+</code></pre>
+<h4 id="2-replacement-methods">2. Replacement methods</h4>
+<ol>
+<li>Using custom accessor function with <code>acc &lt;-</code> syntax.</li>
+</ol>
+<pre><code class="language-r">setGeneric(name=&quot;acc&lt;-&quot;, def=function(x, value) standardGeneric(&quot;acc&lt;-&quot;))
+</code></pre>
+<pre><code>## [1] &quot;acc&lt;-&quot;
+</code></pre>
+<pre><code class="language-r">setReplaceMethod(f=&quot;acc&quot;, signature=&quot;myclass&quot;, definition=function(x, value) {
+                 x@a &lt;- value
+                 return(x)
+})
+## After this the following replace operations with 'acc' work on new object class
+acc(myobj)[1,1] &lt;- 999 # Replaces first value
+colnames(acc(myobj)) &lt;- letters[1:5] # Assigns new column names
+rownames(acc(myobj)) &lt;- letters[1:2] # Assigns new row names
+myobj
+</code></pre>
+<pre><code>## An object of class &quot;myclass&quot;
+## Slot &quot;a&quot;:
+##     a b c d  e
+## a 999 3 5 7  9
+## b   2 4 6 8 10
+</code></pre>
+<ol start="2">
+<li>Replacement method using <code>[</code> operator, here <code>[...] &lt;-</code> syntax.</li>
+</ol>
+<pre><code class="language-r">setReplaceMethod(f=&quot;[&quot;, signature=&quot;myclass&quot;, definition=function(x, i, j, value) {
+                 x@a[i,j] &lt;- value
+                 return(x)
+})
+myobj[1,2] &lt;- 999
+myobj
+</code></pre>
+<pre><code>## An object of class &quot;myclass&quot;
+## Slot &quot;a&quot;:
+##     a   b c d  e
+## a 999 999 5 7  9
+## b   2   4 6 8 10
+</code></pre>
+<h4 id="3-behavior-of-bracket-operator">3. Behavior of bracket operator</h4>
+<p>The behavior of the bracket <code>[</code> subsetting operator can be defined as follows.</p>
+<pre><code class="language-r">setMethod(f=&quot;[&quot;, signature=&quot;myclass&quot;,
+          definition=function(x, i, j, ..., drop) {
+          x@a &lt;- x@a[i,j]
+          return(x)
+})
+myobj[1:2, 1:3] # Standard subsetting works now on new class
+</code></pre>
+<pre><code>## An object of class &quot;myclass&quot;
+## Slot &quot;a&quot;:
+##     a   b c
+## a 999 999 5
+## b   2   4 6
+</code></pre>
+<h4 id="4-print-behavior">4. Print behavior</h4>
+<p>A convient summary printing behavior for a new class should always be defined.</p>
+<pre><code class="language-r">setMethod(f=&quot;show&quot;, signature=&quot;myclass&quot;, definition=function(object) {
+          cat(&quot;An instance of &quot;, &quot;\&quot;&quot;, class(object), &quot;\&quot;&quot;, &quot; with &quot;, length(acc(object)[,1]), &quot; elements&quot;, &quot;\n&quot;, sep=&quot;&quot;)
+          if(length(acc(object)[,1])&gt;=5) {
+                print(as.data.frame(rbind(acc(object)[1:2,], ...=rep(&quot;...&quot;, length(acc(object)[1,])), acc(object)[(length(acc(object)[,1])-1):length(acc(object)[,1]),])))
+          } else {
+                print(acc(object))
+          }
+})
+myobj # Prints object with custom method
+</code></pre>
+<pre><code>## An instance of &quot;myclass&quot; with 2 elements
+##     a   b c d  e
+## a 999 999 5 7  9
+## b   2   4 6 8 10
+</code></pre>
+<h4 id="5-define-custom-methods">5. Define custom methods</h4>
+<p>The following gives an example for defining a data specific method, here randomizing row
+order of matrix stored in new S4 class.</p>
+<pre><code class="language-r">setGeneric(name=&quot;randomize&quot;, def=function(x) standardGeneric(&quot;randomize&quot;))
+</code></pre>
+<pre><code>## [1] &quot;randomize&quot;
+</code></pre>
+<pre><code class="language-r">setMethod(f=&quot;randomize&quot;, signature=&quot;myclass&quot;, definition=function(x) {
+          acc(x)[sample(1:length(acc(x)[,1]), length(acc(x)[,1])), ]
+})
+randomize(myobj)
+</code></pre>
+<pre><code>##     a   b c d  e
+## b   2   4 6 8 10
+## a 999 999 5 7  9
+</code></pre>
+<h4 id="6-plotting-method">6. Plotting method</h4>
+<p>Define a graphical plotting method for new class and allow users to access it with
+R’s generic <code>plot</code> function.</p>
+<pre><code class="language-r">setMethod(f=&quot;plot&quot;, signature=&quot;myclass&quot;, definition=function(x, ...) {
+          barplot(as.matrix(acc(x)), ...)
+})
+plot(myobj)
+</code></pre>
+<p><img src="../../../en/tutorials/rprogramming/rprogramming_files/figure-html/s4_plot_methods-1.png" width="672" /></p>
+<h4 id="7-utilities-to-inspect-methods">7. Utilities to inspect methods</h4>
+<p>Important inspection methods for classes include:</p>
+<ul>
+<li><code>showMethods(class=&quot;myclass&quot;)</code></li>
+<li><code>findMethods(&quot;randomize&quot;)</code></li>
+<li><code>getMethod(&quot;randomize&quot;, signature=&quot;myclass&quot;)</code></li>
+<li><code>existsMethod(&quot;randomize&quot;, signature=&quot;myclass&quot;)</code></li>
+</ul>
 <h2 id="building-r-packages">Building R Packages</h2>
-<h3 id="short-overview-of-package-building-process">Short Overview of Package Building Process</h3>
-<p>R packages can be built with the <code>package.skeleton</code> function. The given example will create a directory named <code>mypackage</code> containing the skeleton of the package for all functions, methods and classes defined in the R script(s) passed on to the <code>code_files</code> argument. The basic structure of the package directory is described <a href="http://manuals.bioinformatics.ucr.edu/home/programming-in-r#Progr_pack">here</a>. The package directory will also contain a file named <code>Read-and-delete-me</code> with instructions for completing the package:</p>
-<pre><code class="language-r">package.skeleton(name=&quot;mypackage&quot;, code_files=c(&quot;script1.R&quot;, &quot;script2.R&quot;))
-</code></pre>
-<p>Once a package skeleton is available one can build the package from the command-line (Linux/OS X). This will create a tarball of the package with its version number encoded in the file name. Subequently, the package tarball needs to be checked for errors with:</p>
-<pre><code class="language-r">R CMD build mypackage
-R CMD check mypackage_1.0.tar.gz
-</code></pre>
-<p>Install package from source</p>
-<pre><code class="language-r">install.packages(&quot;mypackage_1.0.tar.gz&quot;, repos=NULL) 
-</code></pre>
-<p>For more details see <a href="http://manuals.bioinformatics.ucr.edu/home/programming-in-r#TOC-Building-R-Packages">here</a>.
-Additional utilities for building R packages are provided by <code>devtools::create</code> and <code>usethis::create_package</code> functions.
-For details see the <em>R Packages</em> online book by Hadley Wickham and Jenny Bryan <a href="https://r-pkgs.org/package-structure-state.html#in-memory-package">here</a>.</p>
+<p>This section has been moved to a dedicated tutorial on R package development <a href="https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rpackages/rpackages/">here</a>.</p>
 <h2 id="programming-exercises">Programming Exercises</h2>
 <h3 id="exercise-1">Exercise 1</h3>
 <h4 id="for-loop-1"><code>for</code> loop</h4>
@@ -2090,7 +2331,7 @@ library(mypackage)
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-06-06: <a  href="https://github.com/tgirke/GEN242//commit/55eead92fe8805ef710d9796a82fdb7b4e478f67">some edits (55eead92f)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-06-06: <a  href="https://github.com/tgirke/GEN242//commit/fe2e1abaad5cefb127f807110bac853a4eb74dc1">some edits (fe2e1abaa)</a>
 </div>
 </div>
 
