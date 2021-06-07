@@ -769,7 +769,111 @@ Useful functions to introspect classes include:
 
 ### Assign Generics and Methods
 
+Generics and methods can be assigned with the methods `setGeneric()` and `setMethod()`.
 
+#### 1. Accessor functions 
+
+This avoids the usage of the `@` operator.
+
+```{r s4_setgeneric, eval=TRUE}
+setGeneric(name="acc", def=function(x) standardGeneric("acc"))
+setMethod(f="acc", signature="myclass", definition=function(x) {
+	return(x@a)
+})
+acc(myobj)
+```
+
+#### 2. Replacement methods 
+
+a. Using custom accessor function with `acc <-` syntax.
+
+```{r s4_replace_acc, eval=TRUE}
+setGeneric(name="acc<-", def=function(x, value) standardGeneric("acc<-"))
+setReplaceMethod(f="acc", signature="myclass", definition=function(x, value) {
+				 x@a <- value
+                 return(x)
+})
+## After this the following replace operations with 'acc' work on new object class
+acc(myobj)[1,1] <- 999 # Replaces first value
+colnames(acc(myobj)) <- letters[1:5] # Assigns new column names
+rownames(acc(myobj)) <- letters[1:2] # Assigns new row names
+myobj
+```
+
+b. Replacement method using `[` operator, here `[...] <-` syntax.
+
+```{r s4_replace_bracket, eval=TRUE}
+setReplaceMethod(f="[", signature="myclass", definition=function(x, i, j, value) {
+				 x@a[i,j] <- value
+                 return(x)
+})
+myobj[1,2] <- 999
+myobj
+```
+
+#### 3. Behavior of bracket operator
+
+The behavior of the bracket `[` subsetting operator can be defined as follows.
+
+
+```{r s4_bracket_subsetting, eval=TRUE}
+setMethod(f="[", signature="myclass",
+		  definition=function(x, i, j, ..., drop) {
+          x@a <- x@a[i,j]
+          return(x)
+})
+myobj[1:2, 1:3] # Standard subsetting works now on new class
+```
+
+#### 4. Print behavior
+
+A convient summary printing behavior for a new class should always be defined.
+
+```{r s4_printing, eval=TRUE}
+setMethod(f="show", signature="myclass", definition=function(object) {
+		  cat("An instance of ", "\"", class(object), "\"", " with ", length(acc(object)[,1]), " elements", "\n", sep="")
+		  if(length(acc(object)[,1])>=5) {
+				print(as.data.frame(rbind(acc(object)[1:2,], ...=rep("...", length(acc(object)[1,])), acc(object)[(length(acc(object)[,1])-1):length(acc(object)[,1]),])))
+		  } else {
+				print(acc(object))
+		  }
+})
+myobj # Prints object with custom method
+```
+
+#### 5. Define custom methods
+
+The following gives an example for defining a data specific method, here randomizing row 
+order of matrix stored in new S4 class.
+
+```{r s4_custom_methods, eval=TRUE}
+setGeneric(name="randomize", def=function(x) standardGeneric("randomize"))
+setMethod(f="randomize", signature="myclass", definition=function(x) {
+		  acc(x)[sample(1:length(acc(x)[,1]), length(acc(x)[,1])), ]
+})
+randomize(myobj)
+```
+
+#### 6. Plotting method
+
+Define a graphical plotting method for new class and allow users to access it with 
+R's generic `plot` function.
+
+```{r s4_plot_methods, eval=TRUE}
+setMethod(f="plot", signature="myclass", definition=function(x, ...) {
+		  barplot(as.matrix(acc(x)), ...)
+})
+plot(myobj)
+```
+
+#### 7. Utilities to inspect methods
+
+Important inspection methods for classes include:
+
++ `showMethods(class="myclass")`
++ `findMethods("randomize")`
++ `getMethod("randomize", signature="myclass")`
++ `existsMethod("randomize", signature="myclass")`
 
 
 ## Building R Packages
