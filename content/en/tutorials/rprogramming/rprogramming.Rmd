@@ -617,8 +617,8 @@ In the given example the number `10` is passed on from the command-line as an ar
 
 ## Object-Oriented Programming (OOP)
 
-R supports several systems for object-oriented programming (OOP). An older S3
-system, and the more recently introduced R6 and S4 systems. The latter is the
+R supports several systems for object-oriented programming (OOP). This includes
+an older S3 system, and the more recently introduced R6 and S4 systems. The latter is the
 most formal version that supports multiple inheritance, multiple dispatch and
 introspection.  Many of these features are not available in the older S3
 system. In general, the OOP approach taken by R is to separate the class
