@@ -170,7 +170,7 @@ and the corresponding Google Sheet is [here](https://docs.google.com/spreadsheet
 ```{r load_targets_file, eval=TRUE}
 targetspath <- "targets_chipseq.txt"
 targets <- read.delim(targetspath, comment.char = "#")
-DT::datatable(targets, options = list(scrollX = TRUE, autoWidth = TRUE))
+knitr::kable(targets)
 ```
 
 ## Read preprocessing
@@ -451,9 +451,10 @@ To avoid slowdowns of the load time of this page, ony 200 rows of the source
 table are imported into the below `datatable` view .
 
 ```{r show_counts_table, eval=TRUE}
-countDF <- read.delim("results/C_1A_peaks.countDF.xls")[1:200, ]
+countDF <- read.delim("results/C_1A_peaks.countDF.xls")[1:200,]
+colnames(countDF)[1] <- "PeakIDs"
 library(DT)
-datatable(countDF, options=list(scrollX=TRUE, autoWidth=TRUE))
+datatable(countDF)
 ```
 
 ## Differential binding analysis
