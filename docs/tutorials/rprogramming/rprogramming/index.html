@@ -22,12 +22,12 @@
  Overview One of the main attractions of using the R (http://cran.at.r-project.org) environment is the ease with which users can write their own programs and custom functions. The R programming syntax is extremely easy to learn, even for users with no previous programming experience." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rprogramming/rprogramming/" />
-<meta property="article:modified_time" content="2021-06-07T17:17:33-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-06-07T17:35:58-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Programming in R">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
  Overview One of the main attractions of using the R (http://cran.at.r-project.org) environment is the ease with which users can write their own programs and custom functions. The R programming syntax is extremely easy to learn, even for users with no previous programming experience.">
-<meta itemprop="dateModified" content="2021-06-07T17:17:33-07:00" />
-<meta itemprop="wordCount" content="5775">
+<meta itemprop="dateModified" content="2021-06-07T17:35:58-07:00" />
+<meta itemprop="wordCount" content="5756">
 
 
 
@@ -840,7 +840,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.84e1f980dd5566b02b2e9d616c950278.json"
+  data-offline-search-index-json-src="../../../offline-search-index.159f0d0ba14886318c8b5387af7392ca.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -872,7 +872,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.84e1f980dd5566b02b2e9d616c950278.json"
+  data-offline-search-index-json-src="../../../offline-search-index.159f0d0ba14886318c8b5387af7392ca.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1643,23 +1643,18 @@ single <code>matrix</code> (or <code>data.frame</code>).</p>
     statsMA &lt;- cbind(lfc_ma, pval_ma)
     return(statsMA[, order(colnames(statsMA))])
 }
-degMA &lt;- lfcPvalMA(Nrow=100, Ncol=5, stats_labels=c(&quot;lfc&quot;, &quot;pval&quot;))
+degMA &lt;- lfcPvalMA(Nrow=100, Ncol=4, stats_labels=c(&quot;lfc&quot;, &quot;pval&quot;))
 dim(degMA) 
 </code></pre>
-<pre><code>## [1] 100  10
+<pre><code>## [1] 100   8
 </code></pre>
 <pre><code class="language-r">degMA[1:4,]
 </code></pre>
-<pre><code>##        t1_lfc    t1_pval     t2_lfc   t2_pval    t3_lfc   t3_pval    t4_lfc    t4_pval     t5_lfc
-## g1 -1.8476368 0.87391857  3.7785715 0.5218491  1.879310 0.2342309 3.8907212 0.39486484  0.1769551
-## g2  0.2542926 0.04779475 -2.1408475 0.2050060 -1.629778 0.9017057 0.8410635 0.04188993 -1.9280792
-## g3  3.4703657 0.22030125  0.5819055 0.9726451  2.047794 0.8763871 2.1245104 0.73881357 -3.8891714
-## g4 -2.8548158 0.73140379 -1.3344534 0.9914153 -2.710385 0.4167335 3.0672363 0.99201512  1.0920515
-##       t5_pval
-## g1 0.74530604
-## g2 0.01269369
-## g3 0.36995732
-## g4 0.26523668
+<pre><code>##        t1_lfc    t1_pval     t2_lfc    t2_pval    t3_lfc   t3_pval    t4_lfc   t4_pval
+## g1 -1.8476368 0.52211939  3.7785715 0.87391857  1.879310 0.5218491 3.8907212 0.2342309
+## g2  0.2542926 0.25899011 -2.1408475 0.04779475 -1.629778 0.2050060 0.8410635 0.9017057
+## g3  3.4703657 0.01385357  0.5819055 0.22030125  2.047794 0.9726451 2.1245104 0.8763871
+## g4 -2.8548158 0.63650644 -1.3344534 0.73140379 -2.710385 0.9914153 3.0672363 0.4167335
 </code></pre>
 <h5 id="b-organize-results-in-list">(b) Organize results in list</h5>
 <p>To filter the results efficiently, it is usually best to store the two different
@@ -2453,7 +2448,7 @@ library(mypackage)
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-06-07: <a  href="https://github.com/tgirke/GEN242//commit/20388713d661ad39d25f44197f740449fb6afacb">some edits (20388713d)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-06-07: <a  href="https://github.com/tgirke/GEN242//commit/7a1b7c363b0c5a179cbaeda7f14be42d150d6ec4">some edits (7a1b7c363)</a>
 </div>
 </div>
 

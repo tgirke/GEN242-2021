@@ -401,7 +401,7 @@ lfcPvalMA <- function(Nrow=100, Ncol=5, stats_labels=c("lfc", "pval")) {
     statsMA <- cbind(lfc_ma, pval_ma)
     return(statsMA[, order(colnames(statsMA))])
 }
-degMA <- lfcPvalMA(Nrow=100, Ncol=5, stats_labels=c("lfc", "pval"))
+degMA <- lfcPvalMA(Nrow=100, Ncol=4, stats_labels=c("lfc", "pval"))
 dim(degMA) 
 degMA[1:4,]
 ```
