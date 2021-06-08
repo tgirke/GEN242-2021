@@ -27,7 +27,7 @@
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
  Overview One of the main attractions of using the R (http://cran.at.r-project.org) environment is the ease with which users can write their own programs and custom functions. The R programming syntax is extremely easy to learn, even for users with no previous programming experience.">
 <meta itemprop="dateModified" content="2021-06-07T17:39:14-07:00" />
-<meta itemprop="wordCount" content="5756">
+<meta itemprop="wordCount" content="5735">
 
 
 
@@ -840,7 +840,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.159f0d0ba14886318c8b5387af7392ca.json"
+  data-offline-search-index-json-src="../../../offline-search-index.5307986e9c660058b134f407ae548cad.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -872,7 +872,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.159f0d0ba14886318c8b5387af7392ca.json"
+  data-offline-search-index-json-src="../../../offline-search-index.5307986e9c660058b134f407ae548cad.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1297,7 +1297,7 @@ if (!doNotTrack) {
 	<h1>Programming in R</h1>
     
 	
-        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 28 minute read</p>
+        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 27 minute read</p>
            
 	<!--
 - Compile from command-line
@@ -1648,7 +1648,7 @@ dim(degMA)
 </code></pre>
 <pre><code>## [1] 100   8
 </code></pre>
-<pre><code class="language-r">degMA[1:4,]
+<pre><code class="language-r">degMA[1:4,] # Prints first 4 rows of DEG matrix generated as a test data set 
 </code></pre>
 <pre><code>##        t1_lfc    t1_pval     t2_lfc    t2_pval    t3_lfc   t3_pval    t4_lfc   t4_pval
 ## g1 -1.8476368 0.52211939  3.7785715 0.87391857  1.879310 0.5218491 3.8907212 0.2342309
@@ -1660,7 +1660,7 @@ dim(degMA)
 <p>To filter the results efficiently, it is usually best to store the two different
 stats (here <code>lfc</code> and <code>pval</code>) in two separate matrices where each has the
 same dimensions and row/column ordering. Note, in this case a <code>list</code>
-is used to store the two matrices.</p>
+is used to store the two <code>matrices</code>.</p>
 <pre><code class="language-r">degList &lt;- list(lfc=degMA[ , grepl(&quot;lfc&quot;, colnames(degMA))], pval=degMA[ , grepl(&quot;pval&quot;, colnames(degMA))])
 names(degList)
 </code></pre>
@@ -1676,8 +1676,8 @@ names(degList)
 <p>With this data structure of two complementary matrices it is easy to apply
 combinatorial filtering routines that are both flexible and time-efficient (fast).
 The following example queries for fold changes of at least 2 (here <code>lfc &gt;= 1 | lfc &lt;= -1</code>)
-plus p-values of 0.5 or lower. Note, all intermediate and final results are stored in a
-logical matrix. The corresponding matrix-to-matrix comparisons performed here are very
+plus p-values of 0.5 or lower. Note, all intermediate and final results are stored in<br>
+logical matrices. The corresponding matrix-to-matrix comparisons performed here are very
 fast to compute and require zero looping instructions by the user.</p>
 <pre><code class="language-r">queryResult &lt;- (degList$lfc &lt;= 1 | degList$lfc &lt;= -1) &amp; degList$pval &lt;= 0.5 
 colnames(queryResult) &lt;- gsub(&quot;_.*&quot;, &quot;&quot;, colnames(queryResult)) # Adjust column names 
@@ -1692,7 +1692,7 @@ queryResult[1:4,]
 <h5 id="c-extract-query-results">(c) Extract query results</h5>
 <ol>
 <li>Retrieve row labels (genes) that match the query from the previous step, and store them in a
-a <code>list</code>.</li>
+<code>list</code>.</li>
 </ol>
 <pre><code class="language-r">matchingIDlist &lt;- sapply(colnames(queryResult), function(x) names(queryResult[queryResult[ , x] , x]), simplify=FALSE)
 matchingIDlist
@@ -1720,21 +1720,21 @@ matchingIDlist
 <ol start="2">
 <li>Return all row labels (genes) that match the above query in a specified number of columns
 (here 3). Note, the <code>rowSums</code> function is used for this, which performs the row-wise looping
-internally and runs extremely fast or time efficient.</li>
+internally and runs extremely fast (time efficient).</li>
 </ol>
-<pre><code class="language-r">matchingID &lt;- rowSums(queryResult) &gt; 2 
-matchingID[matchingID]
+<pre><code class="language-r">matchingID &lt;- rowSums(queryResult) &gt; 3 
+queryResult[matchingID,]
 </code></pre>
-<pre><code>##   g2  g11  g12  g21  g23  g24  g34  g55  g58  g60  g72  g77  g78  g84  g91  g92  g99 
-## TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
+<pre><code>##       t1   t2    t3    t4   t5
+## g2  TRUE TRUE FALSE  TRUE TRUE
+## g58 TRUE TRUE  TRUE FALSE TRUE
 </code></pre>
 <pre><code class="language-r">names(matchingID[matchingID])
 </code></pre>
-<pre><code>##  [1] &quot;g2&quot;  &quot;g11&quot; &quot;g12&quot; &quot;g21&quot; &quot;g23&quot; &quot;g24&quot; &quot;g34&quot; &quot;g55&quot; &quot;g58&quot; &quot;g60&quot; &quot;g72&quot; &quot;g77&quot; &quot;g78&quot; &quot;g84&quot; &quot;g91&quot; &quot;g92&quot;
-## [17] &quot;g99&quot;
+<pre><code>## [1] &quot;g2&quot;  &quot;g58&quot;
 </code></pre>
-<p>As demonstrated in the above examples, by setting up the proper data structures (here two
-<code>matrices</code> with same dimensions) and utilizing vectorized (matrix-to-matrix) operations
+<p>As demonstrated in the above query examples, by setting up the proper data structures (here two
+<code>matrices</code> with same dimensions), and utilizing vectorized (matrix-to-matrix) operations
 along with R’s built-in <code>row*</code> and <code>col*</code> stats function family (e.g. <code>rowSums</code>) one can
 design with very little code flexible query routines that also run extremly time-efficient.</p>
 <h2 id="functions">Functions</h2>
