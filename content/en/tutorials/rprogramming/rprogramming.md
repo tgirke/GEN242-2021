@@ -515,11 +515,18 @@ sapply(degList, dim)
 
 ##### (c) Combinatorial filter
 
-With the above generated data structure of two complementary matrices it is easy to apply
-combinatorial filtering routines that are both flexible and time-efficient (fast).
-The following example queries for fold changes of at least 2 (here `lfc >= 1 | lfc <= -1`)
-plus p-values of 0.5 or lower. Note, all intermediate and final results are stored in logical matrices. The corresponding matrix-to-matrix comparisons performed here are very
-fast to compute and require zero looping instructions by the user.
+With the above generated data structure of two complementary matrices it is
+easy to apply combinatorial filtering routines that are both flexible and
+time-efficient (fast). The following example queries for fold changes of at
+least 2 (here `lfc >= 1 | lfc <= -1`) plus p-values of 0.5 or lower. Note, all
+intermediate and final results are stored in logical matrices. In addition to
+boolean comparisons, one can apply basic mathematical operations, such as
+calculating the sum across many matrices. This returns a numeric matix of
+integers representing the counts of `TRUE` values in each position.
+Subsequently, one can perform summary and filtering routines on these
+count-based matrices which is convenient when working with large number of
+matrices. All these matrix-to-matrix comparisons are very fast to compute and
+require zero looping instructions by the user.
 
 ``` r
 queryResult <- (degList$lfc <= 1 | degList$lfc <= -1) & degList$pval <= 0.5 
