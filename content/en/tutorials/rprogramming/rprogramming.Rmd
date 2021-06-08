@@ -431,7 +431,7 @@ calculating the sum across many matrices. This returns a numeric matix of
 integers representing the counts of `TRUE` values in each position of the
 considered logical matrices. Subsequently, one can perform summary and
 filtering routines on these count-based matrices which is convenient when
-working with large number of matrices. All these matrix-to-matrix comparisons
+working with large numbers of matrices. All these matrix-to-matrix comparisons
 are very fast to compute and require zero looping instructions by the user.
 
 ```{r filter_stats, eval=TRUE}
