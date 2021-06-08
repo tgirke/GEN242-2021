@@ -419,7 +419,7 @@ names(degList)
 sapply(degList, dim)
 ```
 
-##### (b) Combinatorial filter
+##### (c) Combinatorial filter
 
 With the above generated data structure of two complementary matrices it is easy to apply 
 combinatorial filtering routines that are both flexible and time-efficient (fast). 
@@ -433,7 +433,7 @@ colnames(queryResult) <- gsub("_.*", "", colnames(queryResult)) # Adjust column 
 queryResult[1:4,]
 ```
 
-##### (c) Extract query results
+##### (d) Extract query results
 
 (i) Retrieve row labels (genes) that match the query from the previous step in each column, and 
 store them in a `list`.  

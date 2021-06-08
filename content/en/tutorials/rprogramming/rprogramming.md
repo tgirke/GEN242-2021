@@ -513,7 +513,7 @@ sapply(degList, dim)
     ## [1,] 100  100
     ## [2,]   5    5
 
-##### (b) Combinatorial filter
+##### (c) Combinatorial filter
 
 With the above generated data structure of two complementary matrices it is easy to apply
 combinatorial filtering routines that are both flexible and time-efficient (fast).
@@ -533,7 +533,7 @@ queryResult[1:4,]
     ## g3 FALSE FALSE FALSE FALSE  TRUE
     ## g4 FALSE FALSE  TRUE FALSE FALSE
 
-##### (c) Extract query results
+##### (d) Extract query results
 
 1.  Retrieve row labels (genes) that match the query from the previous step in each column, and
     store them in a `list`.
