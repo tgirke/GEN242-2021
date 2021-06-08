@@ -456,16 +456,18 @@ myMAsd[1:4]
 
 The vector-based approach in the last step is over 200 times faster than the apply loop.
 
-#### 4. Example of fast matrix querying routine
+#### 4. Example of fast querying routine applied to a large matrix
 
 ##### (a) Create a sample matrix
 
-The following sample `matrix` contains the log2 fold changes (LFCs) and p-values (pval)
-for 5 samples. For biologists this could mimick the results of analysis of differentially
-expressed genes (DEGs) from 5 contrasts stored in a single `matrix` (or `data.frame`).
+The following `lfcPvalMA` function creates a test `matrix` containing randomly generated log2 fold changes (LFCs)
+and p-values (pval or FDRs) for 5 samples or test results. In biology this dataset mimicks the
+results of an analysis of differentially expressed genes (DEGs) from 5 contrasts arranged in a
+single `matrix` (or `data.frame`).
 
 ``` r
 lfcPvalMA <- function(Nrow=100, Ncol=5, stats_labels=c("lfc", "pval")) {
+    set.seed(1410)
     assign(stats_labels[1], runif(n = Nrow * Ncol, min = -4, max = 4))
     assign(stats_labels[2], runif(n = Nrow * Ncol, min = 0, max = 1))
     lfc_ma <- matrix(lfc, Nrow, Ncol, dimnames=list(paste("g", 1:Nrow, sep=""), paste("t", 1:Ncol, "_lfc", sep=""))) 
@@ -475,36 +477,67 @@ lfcPvalMA <- function(Nrow=100, Ncol=5, stats_labels=c("lfc", "pval")) {
 }
 degMA <- lfcPvalMA(Nrow=100, Ncol=5, stats_labels=c("lfc", "pval"))
 dim(degMA) 
+```
+
+    ## [1] 100  10
+
+``` r
 degMA[1:4,]
 ```
 
+    ##        t1_lfc    t1_pval     t2_lfc   t2_pval    t3_lfc   t3_pval    t4_lfc    t4_pval     t5_lfc
+    ## g1 -1.8476368 0.87391857  3.7785715 0.5218491  1.879310 0.2342309 3.8907212 0.39486484  0.1769551
+    ## g2  0.2542926 0.04779475 -2.1408475 0.2050060 -1.629778 0.9017057 0.8410635 0.04188993 -1.9280792
+    ## g3  3.4703657 0.22030125  0.5819055 0.9726451  2.047794 0.8763871 2.1245104 0.73881357 -3.8891714
+    ## g4 -2.8548158 0.73140379 -1.3344534 0.9914153 -2.710385 0.4167335 3.0672363 0.99201512  1.0920515
+    ##       t5_pval
+    ## g1 0.74530604
+    ## g2 0.01269369
+    ## g3 0.36995732
+    ## g4 0.26523668
+
 ##### (b) Organize results in list
 
-To filter the results efficiently, it is best to store the two different
+To filter the results efficiently, it is usually best to store the two different
 stats (here `lfc` and `pval`) in two separate matrices where each has the
-same dimensions, and row and column order. Note, in this case a `list`
+same dimensions and row/column ordering. Note, in this case a `list`
 is used to store the two matrices.
 
 ``` r
-degList <- list(lfc=degMA[ , grepl("lfc", colnames(degMA))],
-                pval=degMA[ , grepl("pval", colnames(degMA))])
+degList <- list(lfc=degMA[ , grepl("lfc", colnames(degMA))], pval=degMA[ , grepl("pval", colnames(degMA))])
 names(degList)
+```
+
+    ## [1] "lfc"  "pval"
+
+``` r
 sapply(degList, dim)
 ```
 
+    ##      lfc pval
+    ## [1,] 100  100
+    ## [2,]   5    5
+
 ##### (b) Combinatorial filter
 
-With this it is easy to apply combinatorial filtering routines that are both
-flexible and time-efficient (fast). The following queries for fold changes of
-at least 2 (here `lfc >= 1 | lfc <= -1`) plus a p-values of 0.5 or lower. Note,
-all intermediate and final results are stored in a logical matrix. The corresponding
-matrix-to-matrix comparisons are very fast to compute and require zero looping code.
+With this data structure of two complementary matrices it is easy to apply
+combinatorial filtering routines that are both flexible and time-efficient (fast).
+The following example queries for fold changes of at least 2 (here `lfc >= 1 | lfc <= -1`)
+plus p-values of 0.5 or lower. Note, all intermediate and final results are stored in a
+logical matrix. The corresponding matrix-to-matrix comparisons performed here are very
+fast to compute and require zero looping instructions by the user.
 
 ``` r
 queryResult <- (degList$lfc <= 1 | degList$lfc <= -1) & degList$pval <= 0.5 
 colnames(queryResult) <- gsub("_.*", "", colnames(queryResult)) # Adjust column names 
 queryResult[1:4,]
 ```
+
+    ##       t1    t2    t3    t4    t5
+    ## g1 FALSE FALSE FALSE FALSE FALSE
+    ## g2  TRUE  TRUE FALSE  TRUE  TRUE
+    ## g3 FALSE FALSE FALSE FALSE  TRUE
+    ## g4 FALSE FALSE  TRUE FALSE FALSE
 
 ##### (c) Extract query results
 
@@ -516,20 +549,49 @@ matchingIDlist <- sapply(colnames(queryResult), function(x) names(queryResult[qu
 matchingIDlist
 ```
 
-2.  Return all row labels (genes) that match the above query in a specified number of columns (here 3).
-    Note, `rowSums` function is used for this, which performs the row-wise looping internally
-    and runs extremely fast (time efficient).
+    ## $t1
+    ##  [1] "g2"  "g5"  "g11" "g16" "g19" "g22" "g24" "g30" "g31" "g39" "g45" "g50" "g55" "g58" "g60" "g63"
+    ## [17] "g69" "g71" "g72" "g73" "g77" "g78" "g79" "g80" "g82" "g86" "g88" "g91" "g92" "g93" "g95"
+    ## 
+    ## $t2
+    ##  [1] "g2"  "g8"  "g11" "g12" "g13" "g15" "g21" "g26" "g28" "g34" "g39" "g40" "g46" "g53" "g55" "g58"
+    ## [17] "g69" "g77" "g78" "g81" "g83" "g91" "g92" "g95" "g99"
+    ## 
+    ## $t3
+    ##  [1] "g4"  "g5"  "g10" "g12" "g20" "g23" "g29" "g34" "g42" "g47" "g51" "g55" "g56" "g58" "g59" "g71"
+    ## [17] "g74" "g75" "g77" "g80" "g81" "g82" "g84" "g85" "g89" "g90" "g91" "g94" "g97" "g98" "g99"
+    ## 
+    ## $t4
+    ##  [1] "g2"  "g6"  "g7"  "g16" "g18" "g19" "g20" "g21" "g23" "g24" "g29" "g41" "g43" "g44" "g48" "g60"
+    ## [17] "g62" "g63" "g65" "g67" "g68" "g70" "g72" "g84" "g87" "g88" "g97"
+    ## 
+    ## $t5
+    ##  [1] "g2"  "g3"  "g11" "g12" "g13" "g21" "g23" "g24" "g26" "g27" "g30" "g31" "g34" "g40" "g50" "g53"
+    ## [17] "g57" "g58" "g60" "g62" "g72" "g73" "g78" "g84" "g85" "g86" "g89" "g90" "g92" "g99"
+
+2.  Return all row labels (genes) that match the above query in a specified number of columns
+    (here 3). Note, the `rowSums` function is used for this, which performs the row-wise looping
+    internally and runs extremely fast or time efficient.
 
 ``` r
 matchingID <- rowSums(queryResult) > 2 
 matchingID[matchingID]
+```
+
+    ##   g2  g11  g12  g21  g23  g24  g34  g55  g58  g60  g72  g77  g78  g84  g91  g92  g99 
+    ## TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
+
+``` r
 names(matchingID[matchingID])
 ```
 
-As one can see by setting up the proper data structures (here two `matrices` with same dimensions)
-and utilizing vectorized (matrix-to-matrix) operations along with R’s built-in `row*` and `col*`
-stats function family (e.g. `rowSums`) one can design with very little code flexible query
-routines that also run extremly time-efficient.
+    ##  [1] "g2"  "g11" "g12" "g21" "g23" "g24" "g34" "g55" "g58" "g60" "g72" "g77" "g78" "g84" "g91" "g92"
+    ## [17] "g99"
+
+As demonstrated in the above examples, by setting up the proper data structures (here two
+`matrices` with same dimensions) and utilizing vectorized (matrix-to-matrix) operations
+along with R’s built-in `row*` and `col*` stats function family (e.g. `rowSums`) one can
+design with very little code flexible query routines that also run extremly time-efficient.
 
 ## Functions
 
