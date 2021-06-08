@@ -392,16 +392,16 @@ results of an analysis of differentially expressed genes (DEGs) from 5 contrasts
 single `matrix` (or `data.frame`).
 
 ```{r create_stats_ma, eval=TRUE}
-lfcPvalMA <- function(Nrow=100, Ncol=5, stats_labels=c("lfc", "pval")) {
+lfcPvalMA <- function(Nrow=200, Ncol=4, stats_labels=c("lfc", "pval")) {
     set.seed(1410)
     assign(stats_labels[1], runif(n = Nrow * Ncol, min = -4, max = 4))
     assign(stats_labels[2], runif(n = Nrow * Ncol, min = 0, max = 1))
-    lfc_ma <- matrix(lfc, Nrow, Ncol, dimnames=list(paste("g", 1:Nrow, sep=""), paste("t", 1:Ncol, "_lfc", sep=""))) 
-    pval_ma <- matrix(pval, Nrow, Ncol, dimnames=list(paste("g", 1:Nrow, sep=""), paste("t", 1:Ncol, "_pval", sep=""))) 
+    lfc_ma <- matrix(lfc, Nrow, Ncol, dimnames=list(paste("g", 1:Nrow, sep=""), paste("t", 1:Ncol, "_", stats_labels[1], sep=""))) 
+    pval_ma <- matrix(pval, Nrow, Ncol, dimnames=list(paste("g", 1:Nrow, sep=""), paste("t", 1:Ncol, "_", stats_labels[2], sep=""))) 
     statsMA <- cbind(lfc_ma, pval_ma)
     return(statsMA[, order(colnames(statsMA))])
 }
-degMA <- lfcPvalMA(Nrow=100, Ncol=4, stats_labels=c("lfc", "pval"))
+degMA <- lfcPvalMA(Nrow=200, Ncol=4, stats_labels=c("lfc", "pval"))
 dim(degMA) 
 degMA[1:4,] # Prints first 4 rows of DEG matrix generated as a test data set 
 ```
@@ -444,12 +444,12 @@ matchingIDlist
 ```
 
 (ii) Return all row labels (genes) that match the above query across a specified number of columns 
-(here 3). Note, the `rowSums` function is used for this, which performs the row-wise looping 
+(here 2). Note, the `rowSums` function is used for this, which performs the row-wise looping 
 internally and extremely fast.
 
 ```{r id_result_list2, eval=TRUE}
-matchingID <- rowSums(queryResult) > 3 
-queryResult[matchingID,]
+matchingID <- rowSums(queryResult) > 2 
+queryResult[matchingID, , drop=FALSE]
 names(matchingID[matchingID])
 ```
 

@@ -466,30 +466,30 @@ results of an analysis of differentially expressed genes (DEGs) from 5 contrasts
 single `matrix` (or `data.frame`).
 
 ``` r
-lfcPvalMA <- function(Nrow=100, Ncol=5, stats_labels=c("lfc", "pval")) {
+lfcPvalMA <- function(Nrow=200, Ncol=4, stats_labels=c("lfc", "pval")) {
     set.seed(1410)
     assign(stats_labels[1], runif(n = Nrow * Ncol, min = -4, max = 4))
     assign(stats_labels[2], runif(n = Nrow * Ncol, min = 0, max = 1))
-    lfc_ma <- matrix(lfc, Nrow, Ncol, dimnames=list(paste("g", 1:Nrow, sep=""), paste("t", 1:Ncol, "_lfc", sep=""))) 
-    pval_ma <- matrix(pval, Nrow, Ncol, dimnames=list(paste("g", 1:Nrow, sep=""), paste("t", 1:Ncol, "_pval", sep=""))) 
+    lfc_ma <- matrix(lfc, Nrow, Ncol, dimnames=list(paste("g", 1:Nrow, sep=""), paste("t", 1:Ncol, "_", stats_labels[1], sep=""))) 
+    pval_ma <- matrix(pval, Nrow, Ncol, dimnames=list(paste("g", 1:Nrow, sep=""), paste("t", 1:Ncol, "_", stats_labels[2], sep=""))) 
     statsMA <- cbind(lfc_ma, pval_ma)
     return(statsMA[, order(colnames(statsMA))])
 }
-degMA <- lfcPvalMA(Nrow=100, Ncol=4, stats_labels=c("lfc", "pval"))
+degMA <- lfcPvalMA(Nrow=200, Ncol=4, stats_labels=c("lfc", "pval"))
 dim(degMA) 
 ```
 
-    ## [1] 100   8
+    ## [1] 200   8
 
 ``` r
 degMA[1:4,] # Prints first 4 rows of DEG matrix generated as a test data set 
 ```
 
-    ##        t1_lfc    t1_pval     t2_lfc    t2_pval    t3_lfc   t3_pval    t4_lfc   t4_pval
-    ## g1 -1.8476368 0.52211939  3.7785715 0.87391857  1.879310 0.5218491 3.8907212 0.2342309
-    ## g2  0.2542926 0.25899011 -2.1408475 0.04779475 -1.629778 0.2050060 0.8410635 0.9017057
-    ## g3  3.4703657 0.01385357  0.5819055 0.22030125  2.047794 0.9726451 2.1245104 0.8763871
-    ## g4 -2.8548158 0.63650644 -1.3344534 0.73140379 -2.710385 0.9914153 3.0672363 0.4167335
+    ##        t1_lfc    t1_pval    t2_lfc   t2_pval     t3_lfc   t3_pval     t4_lfc   t4_pval
+    ## g1 -1.8476368 0.39486484  1.879310 0.7785999  0.1769551 0.9904342  0.1747932 0.9536679
+    ## g2  0.2542926 0.04188993 -1.629778 0.6379570 -1.9280792 0.6106041 -2.3599518 0.1950022
+    ## g3  3.4703657 0.73881357  2.047794 0.3129176 -3.8891714 0.1508787  3.7811606 0.2560303
+    ## g4 -2.8548158 0.99201512 -2.710385 0.1772805  1.0920515 0.2826038  3.9313225 0.5519854
 
 ##### (b) Organize results in `list`
 
@@ -564,23 +564,39 @@ matchingIDlist
     ## [17] "g57" "g58" "g60" "g62" "g72" "g73" "g78" "g84" "g85" "g86" "g89" "g90" "g92" "g99"
 
 2.  Return all row labels (genes) that match the above query across a specified number of columns
-    (here 3). Note, the `rowSums` function is used for this, which performs the row-wise looping
+    (here 2). Note, the `rowSums` function is used for this, which performs the row-wise looping
     internally and extremely fast.
 
 ``` r
-matchingID <- rowSums(queryResult) > 3 
-queryResult[matchingID,]
+matchingID <- rowSums(queryResult) > 2 
+queryResult[matchingID, , drop=FALSE]
 ```
 
-    ##       t1   t2    t3    t4   t5
-    ## g2  TRUE TRUE FALSE  TRUE TRUE
-    ## g58 TRUE TRUE  TRUE FALSE TRUE
+    ##        t1    t2    t3    t4    t5
+    ## g2   TRUE  TRUE FALSE  TRUE  TRUE
+    ## g11  TRUE  TRUE FALSE FALSE  TRUE
+    ## g12 FALSE  TRUE  TRUE FALSE  TRUE
+    ## g21 FALSE  TRUE FALSE  TRUE  TRUE
+    ## g23 FALSE FALSE  TRUE  TRUE  TRUE
+    ## g24  TRUE FALSE FALSE  TRUE  TRUE
+    ## g34 FALSE  TRUE  TRUE FALSE  TRUE
+    ## g55  TRUE  TRUE  TRUE FALSE FALSE
+    ## g58  TRUE  TRUE  TRUE FALSE  TRUE
+    ## g60  TRUE FALSE FALSE  TRUE  TRUE
+    ## g72  TRUE FALSE FALSE  TRUE  TRUE
+    ## g77  TRUE  TRUE  TRUE FALSE FALSE
+    ## g78  TRUE  TRUE FALSE FALSE  TRUE
+    ## g84 FALSE FALSE  TRUE  TRUE  TRUE
+    ## g91  TRUE  TRUE  TRUE FALSE FALSE
+    ## g92  TRUE  TRUE FALSE FALSE  TRUE
+    ## g99 FALSE  TRUE  TRUE FALSE  TRUE
 
 ``` r
 names(matchingID[matchingID])
 ```
 
-    ## [1] "g2"  "g58"
+    ##  [1] "g2"  "g11" "g12" "g21" "g23" "g24" "g34" "g55" "g58" "g60" "g72" "g77" "g78" "g84" "g91" "g92"
+    ## [17] "g99"
 
 As demonstrated in the above query examples, by setting up the proper data structures (here two
 `matrices` with same dimensions), and utilizing vectorized (matrix-to-matrix) operations
