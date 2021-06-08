@@ -52,7 +52,7 @@ following files:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;.Rmd&lt;/code&gt; source script of project report&lt;/li&gt;
 &lt;li&gt;Report rendered from &lt;code&gt;.Rmd&lt;/code&gt; source in HTML or PDF format&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;._Fct.R&lt;/code&gt; file containing all helper functions used for challenge project&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;._Fct.R&lt;/code&gt; file containing all helper functions written for challenge project&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Submission Deadline&lt;/strong&gt; for reports: 6:00 PM, June 8th, 2021&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;structure-of-final-project-report&#34;&gt;Structure of final project report&lt;/h2&gt;
