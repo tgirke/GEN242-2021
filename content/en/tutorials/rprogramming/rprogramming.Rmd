@@ -406,7 +406,7 @@ dim(degMA)
 degMA[1:4,] # Prints first 4 rows of DEG matrix generated as a test data set 
 ```
 
-##### (b) Organize results in list
+##### (b) Organize results in `list`
 
 To filter the results efficiently, it is usually best to store the two different 
 stats (here `lfc` and `pval`) in two separate matrices where each has the 
@@ -421,11 +421,10 @@ sapply(degList, dim)
 
 ##### (b) Combinatorial filter
 
-With this data structure of two complementary matrices it is easy to apply 
+With the above generated data structure of two complementary matrices it is easy to apply 
 combinatorial filtering routines that are both flexible and time-efficient (fast). 
 The following example queries for fold changes of at least 2 (here `lfc >= 1 | lfc <= -1`) 
-plus p-values of 0.5 or lower. Note, all intermediate and final results are stored in  
-logical matrices. The corresponding matrix-to-matrix comparisons performed here are very 
+plus p-values of 0.5 or lower. Note, all intermediate and final results are stored in logical matrices. The corresponding matrix-to-matrix comparisons performed here are very 
 fast to compute and require zero looping instructions by the user.
 
 ```{r filter_stats, eval=TRUE}
