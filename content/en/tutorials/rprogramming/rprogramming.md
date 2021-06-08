@@ -1,7 +1,7 @@
 ---
 title: "Programming in R" 
 author: "Author: Thomas Girke"
-date: "Last update: 07 June, 2021" 
+date: "Last update: 08 June, 2021" 
 output:
   html_document:
     toc: true
@@ -462,7 +462,7 @@ The vector-based approach in the last step is over 200 times faster than the app
 
 The following `lfcPvalMA` function creates a test `matrix` containing randomly generated log2 fold changes (LFCs)
 and p-values (here: pval or FDRs) for 5 samples or test results. In biology this dataset mimics the
-results of an analysis of differentially expressed genes (DEGs) from 5 contrasts arranged in a
+results of an analysis of differentially expressed genes (DEGs) from several contrasts arranged in a
 single `matrix` (or `data.frame`).
 
 ``` r
