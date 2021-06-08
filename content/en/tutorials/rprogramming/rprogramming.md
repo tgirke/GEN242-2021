@@ -494,7 +494,7 @@ degMA[1:4,] # Prints first 4 rows of DEG matrix generated as a test data set
 ##### (b) Organize results in `list`
 
 To filter the results efficiently, it is usually best to store the two different
-stats (here `lfc` and `pval`) in two separate matrices where each has the
+stats (here `lfc` and `pval`) in separate matrices (here two) where each has the
 same dimensions and row/column ordering. Note, in this case a `list`
 is used to store the two `matrices`.
 
