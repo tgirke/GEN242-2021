@@ -535,8 +535,8 @@ queryResult[1:4,]
 
 ##### (c) Extract query results
 
-1.  Retrieve row labels (genes) that match the query from the previous step, and store them in a
-    `list`.
+1.  Retrieve row labels (genes) that match the query from the previous step in each column, and
+    store them in a `list`.
 
 ``` r
 matchingIDlist <- sapply(colnames(queryResult), function(x) names(queryResult[queryResult[ , x] , x]), simplify=FALSE)
@@ -563,9 +563,9 @@ matchingIDlist
     ##  [1] "g2"  "g3"  "g11" "g12" "g13" "g21" "g23" "g24" "g26" "g27" "g30" "g31" "g34" "g40" "g50" "g53"
     ## [17] "g57" "g58" "g60" "g62" "g72" "g73" "g78" "g84" "g85" "g86" "g89" "g90" "g92" "g99"
 
-2.  Return all row labels (genes) that match the above query in a specified number of columns
+2.  Return all row labels (genes) that match the above query across a specified number of columns
     (here 3). Note, the `rowSums` function is used for this, which performs the row-wise looping
-    internally and runs extremely fast (time efficient).
+    internally and extremely fast.
 
 ``` r
 matchingID <- rowSums(queryResult) > 3 
@@ -585,7 +585,7 @@ names(matchingID[matchingID])
 As demonstrated in the above query examples, by setting up the proper data structures (here two
 `matrices` with same dimensions), and utilizing vectorized (matrix-to-matrix) operations
 along with R’s built-in `row*` and `col*` stats function family (e.g. `rowSums`) one can
-design with very little code flexible query routines that also run extremly time-efficient.
+design with very little code flexible query routines that also run very time-efficient.
 
 ## Functions
 
