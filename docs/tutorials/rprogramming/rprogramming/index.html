@@ -27,7 +27,7 @@
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
  Overview One of the main attractions of using the R (http://cran.at.r-project.org) environment is the ease with which users can write their own programs and custom functions. The R programming syntax is extremely easy to learn, even for users with no previous programming experience.">
 <meta itemprop="dateModified" content="2021-06-06T17:47:20-07:00" />
-<meta itemprop="wordCount" content="4982">
+<meta itemprop="wordCount" content="5389">
 
 
 
@@ -840,7 +840,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.b7a5cd78b5d22c8744bc9cfb9bba2fbe.json"
+  data-offline-search-index-json-src="../../../offline-search-index.c566d5d9ca81f0a5a0c6b51e09d1a1c7.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -872,7 +872,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.b7a5cd78b5d22c8744bc9cfb9bba2fbe.json"
+  data-offline-search-index-json-src="../../../offline-search-index.c566d5d9ca81f0a5a0c6b51e09d1a1c7.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1147,6 +1147,14 @@ if (!doNotTrack) {
             <li><a href="#1-for-loop-with-append-versus-inject-approach">1. <code>for</code> loop with append versus inject approach</a></li>
             <li><a href="#2-apply-loop-versus-rowmeans">2. <code>apply</code> loop versus <code>rowMeans</code></a></li>
             <li><a href="#3-apply-loop-versus-vectorized-approach">3. <code>apply</code> loop versus vectorized approach</a></li>
+            <li><a href="#4-example-of-fast-matrix-querying-routine">4. Example of fast matrix querying routine</a>
+              <ul>
+                <li><a href="#a-create-a-sample-matrix">(a) Create a sample matrix</a></li>
+                <li><a href="#b-organize-results-in-list">(b) Organize results in list</a></li>
+                <li><a href="#b-combinatorial-filter">(b) Combinatorial filter</a></li>
+                <li><a href="#c-extract-query-results">(c) Extract query results</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
@@ -1289,7 +1297,7 @@ if (!doNotTrack) {
 	<h1>Programming in R</h1>
     
 	
-        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 24 minute read</p>
+        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 26 minute read</p>
            
 	<!--
 - Compile from command-line
@@ -1620,6 +1628,64 @@ myMAsd[1:4]
 0.8505795 1.3419460 1.3768646 1.3005428
 </code></pre>
 <p>The vector-based approach in the last step is over 200 times faster than the apply loop.</p>
+<h4 id="4-example-of-fast-matrix-querying-routine">4. Example of fast matrix querying routine</h4>
+<h5 id="a-create-a-sample-matrix">(a) Create a sample matrix</h5>
+<p>The following sample <code>matrix</code> contains the log2 fold changes (LFCs) and p-values (pval)
+for 5 samples. For biologists this could mimick the results of analysis of differentially
+expressed genes (DEGs) from 5 contrasts stored in a single <code>matrix</code> (or <code>data.frame</code>).</p>
+<pre><code class="language-r">lfcPvalMA &lt;- function(Nrow=100, Ncol=5, stats_labels=c(&quot;lfc&quot;, &quot;pval&quot;)) {
+    assign(stats_labels[1], runif(n = Nrow * Ncol, min = -4, max = 4))
+    assign(stats_labels[2], runif(n = Nrow * Ncol, min = 0, max = 1))
+    lfc_ma &lt;- matrix(lfc, Nrow, Ncol, dimnames=list(paste(&quot;g&quot;, 1:Nrow, sep=&quot;&quot;), paste(&quot;t&quot;, 1:Ncol, &quot;_lfc&quot;, sep=&quot;&quot;))) 
+    pval_ma &lt;- matrix(pval, Nrow, Ncol, dimnames=list(paste(&quot;g&quot;, 1:Nrow, sep=&quot;&quot;), paste(&quot;t&quot;, 1:Ncol, &quot;_pval&quot;, sep=&quot;&quot;))) 
+    statsMA &lt;- cbind(lfc_ma, pval_ma)
+    return(statsMA[, order(colnames(statsMA))])
+}
+degMA &lt;- lfcPvalMA(Nrow=100, Ncol=5, stats_labels=c(&quot;lfc&quot;, &quot;pval&quot;))
+dim(degMA) 
+degMA[1:4,]
+</code></pre>
+<h5 id="b-organize-results-in-list">(b) Organize results in list</h5>
+<p>To filter the results efficiently, it is best to store the two different
+stats (here <code>lfc</code> and <code>pval</code>) in two separate matrices where each has the
+same dimensions, and row and column order. Note, in this case a <code>list</code>
+is used to store the two matrices.</p>
+<pre><code class="language-r">degList &lt;- list(lfc=degMA[ , grepl(&quot;lfc&quot;, colnames(degMA))],
+                pval=degMA[ , grepl(&quot;pval&quot;, colnames(degMA))])
+names(degList)
+sapply(degList, dim)
+</code></pre>
+<h5 id="b-combinatorial-filter">(b) Combinatorial filter</h5>
+<p>With this it is easy to apply combinatorial filtering routines that are both
+flexible and time-efficient (fast). The following queries for fold changes of
+at least 2 (here <code>lfc &gt;= 1 | lfc &lt;= -1</code>) plus a p-values of 0.5 or lower. Note,
+all intermediate and final results are stored in a logical matrix. The corresponding
+matrix-to-matrix comparisons are very fast to compute and require zero looping code.</p>
+<pre><code class="language-r">queryResult &lt;- (degList$lfc &lt;= 1 | degList$lfc &lt;= -1) &amp; degList$pval &lt;= 0.5 
+colnames(queryResult) &lt;- gsub(&quot;_.*&quot;, &quot;&quot;, colnames(queryResult)) # Adjust column names 
+queryResult[1:4,]
+</code></pre>
+<h5 id="c-extract-query-results">(c) Extract query results</h5>
+<ol>
+<li>Retrieve row labels (genes) that match the query from the previous step, and store them in a
+a <code>list</code>.</li>
+</ol>
+<pre><code class="language-r">matchingIDlist &lt;- sapply(colnames(queryResult), function(x) names(queryResult[queryResult[ , x] , x]), simplify=FALSE)
+matchingIDlist
+</code></pre>
+<ol start="2">
+<li>Return all row labels (genes) that match the above query in a specified number of columns (here 3).
+Note, <code>rowSums</code> function is used for this, which performs the row-wise looping internally
+and runs extremely fast (time efficient).</li>
+</ol>
+<pre><code class="language-r">matchingID &lt;- rowSums(queryResult) &gt; 2 
+matchingID[matchingID]
+names(matchingID[matchingID])
+</code></pre>
+<p>As one can see by setting up the proper data structures (here two <code>matrices</code> with same dimensions)
+and utilizing vectorized (matrix-to-matrix) operations along with R’s built-in <code>row*</code> and <code>col*</code>
+stats function family (e.g. <code>rowSums</code>) one can design with very little code flexible query
+routines that also run extremly time-efficient.</p>
 <h2 id="functions">Functions</h2>
 <h3 id="function-overview">Function Overview</h3>
 <p>A very useful feature of the R environment is the possibility to expand existing functions and to easily write custom functions. In fact, most of the R software can be viewed as a series of R functions.</p>

@@ -1,7 +1,7 @@
 ---
 title: "Programming in R" 
 author: "Author: Thomas Girke"
-date: "Last update: 06 June, 2021" 
+date: "Last update: 07 June, 2021" 
 output:
   html_document:
     toc: true
@@ -455,6 +455,81 @@ myMAsd[1:4]
 ```
 
 The vector-based approach in the last step is over 200 times faster than the apply loop.
+
+#### 4. Example of fast matrix querying routine
+
+##### (a) Create a sample matrix
+
+The following sample `matrix` contains the log2 fold changes (LFCs) and p-values (pval)
+for 5 samples. For biologists this could mimick the results of analysis of differentially
+expressed genes (DEGs) from 5 contrasts stored in a single `matrix` (or `data.frame`).
+
+``` r
+lfcPvalMA <- function(Nrow=100, Ncol=5, stats_labels=c("lfc", "pval")) {
+    assign(stats_labels[1], runif(n = Nrow * Ncol, min = -4, max = 4))
+    assign(stats_labels[2], runif(n = Nrow * Ncol, min = 0, max = 1))
+    lfc_ma <- matrix(lfc, Nrow, Ncol, dimnames=list(paste("g", 1:Nrow, sep=""), paste("t", 1:Ncol, "_lfc", sep=""))) 
+    pval_ma <- matrix(pval, Nrow, Ncol, dimnames=list(paste("g", 1:Nrow, sep=""), paste("t", 1:Ncol, "_pval", sep=""))) 
+    statsMA <- cbind(lfc_ma, pval_ma)
+    return(statsMA[, order(colnames(statsMA))])
+}
+degMA <- lfcPvalMA(Nrow=100, Ncol=5, stats_labels=c("lfc", "pval"))
+dim(degMA) 
+degMA[1:4,]
+```
+
+##### (b) Organize results in list
+
+To filter the results efficiently, it is best to store the two different
+stats (here `lfc` and `pval`) in two separate matrices where each has the
+same dimensions, and row and column order. Note, in this case a `list`
+is used to store the two matrices.
+
+``` r
+degList <- list(lfc=degMA[ , grepl("lfc", colnames(degMA))],
+                pval=degMA[ , grepl("pval", colnames(degMA))])
+names(degList)
+sapply(degList, dim)
+```
+
+##### (b) Combinatorial filter
+
+With this it is easy to apply combinatorial filtering routines that are both
+flexible and time-efficient (fast). The following queries for fold changes of
+at least 2 (here `lfc >= 1 | lfc <= -1`) plus a p-values of 0.5 or lower. Note,
+all intermediate and final results are stored in a logical matrix. The corresponding
+matrix-to-matrix comparisons are very fast to compute and require zero looping code.
+
+``` r
+queryResult <- (degList$lfc <= 1 | degList$lfc <= -1) & degList$pval <= 0.5 
+colnames(queryResult) <- gsub("_.*", "", colnames(queryResult)) # Adjust column names 
+queryResult[1:4,]
+```
+
+##### (c) Extract query results
+
+1.  Retrieve row labels (genes) that match the query from the previous step, and store them in a
+    a `list`.
+
+``` r
+matchingIDlist <- sapply(colnames(queryResult), function(x) names(queryResult[queryResult[ , x] , x]), simplify=FALSE)
+matchingIDlist
+```
+
+2.  Return all row labels (genes) that match the above query in a specified number of columns (here 3).
+    Note, `rowSums` function is used for this, which performs the row-wise looping internally
+    and runs extremely fast (time efficient).
+
+``` r
+matchingID <- rowSums(queryResult) > 2 
+matchingID[matchingID]
+names(matchingID[matchingID])
+```
+
+As one can see by setting up the proper data structures (here two `matrices` with same dimensions)
+and utilizing vectorized (matrix-to-matrix) operations along with R’s built-in `row*` and `col*`
+stats function family (e.g. `rowSums`) one can design with very little code flexible query
+routines that also run extremly time-efficient.
 
 ## Functions
 
