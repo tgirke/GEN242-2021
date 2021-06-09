@@ -3,7 +3,7 @@ title: R Markdown Tutorial
 author: "Author: Your Name"
 date: "Last update: `r format(Sys.time(), '%d %B, %Y')`" 
 output:
-  BiocStyle::html_document:
+  html_document:
     toc: true
     toc_float:
         collapsed: true
@@ -20,7 +20,7 @@ weight: 10
 
 <!---
 - Compile from command-line
-Rscript -e "rmarkdown::render('rmarkdown.Rmd', c('html_document'), clean=FALSE); knitr::knit('rmarkdown.Rmd', tangle=TRUE)"
+Rscript -e "rmarkdown::render('rmarkdown.Rmd', c('BiocStyle::html_document'), clean=FALSE); knitr::knit('rmarkdown.Rmd', tangle=TRUE)"
 -->
 
 <div style="text-align: right"> 
