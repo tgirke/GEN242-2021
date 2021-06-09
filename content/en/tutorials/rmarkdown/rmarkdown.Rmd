@@ -11,7 +11,7 @@ output:
     toc_depth: 3
     fig_caption: yes
     code_folding: show
-    number_sections: true
+    number_sections: false
 fontsize: 14pt
 bibliography: bibtex.bib
 type: docs
