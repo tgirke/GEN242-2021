@@ -3,7 +3,7 @@ title: R Markdown Tutorial
 author: "Author: Your Name"
 date: "Last update: 08 June, 2021" 
 output:
-  html_document:
+  BiocStyle::html_document:
     toc: true
     toc_float:
         collapsed: true
