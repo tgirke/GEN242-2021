@@ -3,7 +3,7 @@ title: R Markdown Tutorial
 author: "Author: Your Name"
 date: "Last update: 08 June, 2021" 
 output:
-  html_document:
+  BiocStyle::html_document:
     toc: true
     toc_float:
         collapsed: true
@@ -40,7 +40,7 @@ Rscript -e "rmarkdown::render('rmarkdown.Rmd', c('html_document'), clean=FALSE);
 
 Source code downloads:    
 \[ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/rmarkdown/rmarkdown.Rmd) \]    
-\[ [.html](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/rmarkdown/rmarkdown.html) \]    
+\[ [.html](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rmarkdown/rmarkdown.html) \]    
 \[ [.R](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/rmarkdown/rmarkdown.R) \]
 
 </div>
