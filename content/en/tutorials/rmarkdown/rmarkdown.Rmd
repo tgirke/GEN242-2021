@@ -26,6 +26,7 @@ Rscript -e "rmarkdown::render('rmarkdown.Rmd', c('html_document'), clean=FALSE);
 <div style="text-align: right"> 
 Source code downloads: &nbsp; &nbsp;
 [ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/rmarkdown/rmarkdown.Rmd) ] &nbsp; &nbsp; 
+[ [.html](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/rmarkdown/rmarkdown.html) ] &nbsp; &nbsp; 
 [ [.R](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/rmarkdown/rmarkdown.R) ]
 </div>
 

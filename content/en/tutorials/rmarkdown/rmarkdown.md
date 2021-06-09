@@ -1,7 +1,7 @@
 ---
 title: R Markdown Tutorial
 author: "Author: Your Name"
-date: "Last update: 31 May, 2021" 
+date: "Last update: 08 June, 2021" 
 output:
   html_document:
     toc: true
@@ -40,6 +40,7 @@ Rscript -e "rmarkdown::render('rmarkdown.Rmd', c('html_document'), clean=FALSE);
 
 Source code downloads:    
 \[ [.Rmd](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/rmarkdown/rmarkdown.Rmd) \]    
+\[ [.html](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/rmarkdown/rmarkdown.html) \]    
 \[ [.R](https://raw.githubusercontent.com/tgirke/GEN242//main/content/en/tutorials/rmarkdown/rmarkdown.R) \]
 
 </div>
@@ -93,7 +94,7 @@ package from Bioconductor.
      ---
     title: "My First R Markdown Document"
     author: "Author: First Last"
-    date: "Last update: 31 May, 2021"
+    date: "Last update: 08 June, 2021"
     output:
       BiocStyle::html_document:
         toc: true
