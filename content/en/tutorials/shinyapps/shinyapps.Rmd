@@ -14,7 +14,7 @@ output:
     number_sections: true
 fontsize: 14pt
 bibliography: bibtex.bib
-weight: 15
+weight: 16
 type: docs
 editor_options: 
   chunk_output_type: console

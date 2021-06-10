@@ -1,7 +1,7 @@
 ---
 title: Shiny Apps
 author: "Le Zhang & Thomas Girke"
-date: "Last update: 18 May, 2021" 
+date: "Last update: 10 June, 2021" 
 output:
   html_document:
     toc: true
@@ -14,7 +14,7 @@ output:
     number_sections: true
 fontsize: 14pt
 bibliography: bibtex.bib
-weight: 15
+weight: 16
 type: docs
 editor_options: 
   chunk_output_type: console

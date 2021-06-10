@@ -1,7 +1,7 @@
 ---
 title: R Markdown Tutorial
 author: "Author: Your Name"
-date: "Last update: 08 June, 2021" 
+date: "Last update: 10 June, 2021" 
 output:
   BiocStyle::html_document:
     toc: true
@@ -15,7 +15,7 @@ output:
 fontsize: 14pt
 bibliography: bibtex.bib
 type: docs
-weight: 10
+weight: 11
 ---
 
 <script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
@@ -94,7 +94,7 @@ package from Bioconductor.
      ---
     title: "My First R Markdown Document"
     author: "Author: First Last"
-    date: "Last update: 08 June, 2021"
+    date: "Last update: 10 June, 2021"
     output:
       BiocStyle::html_document:
         toc: true

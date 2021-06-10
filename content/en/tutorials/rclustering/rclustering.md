@@ -1,7 +1,7 @@
 ---
 title: Cluster Analysis in R 
 author: "First/last name (first.last@ucr.edu)"
-date: "Last update: 03 May, 2021" 
+date: "Last update: 10 June, 2021" 
 output:
   html_document:
     toc: true
@@ -15,7 +15,7 @@ output:
 
 fontsize: 14pt
 bibliography: bibtex.bib
-weight: 12
+weight: 13
 type: docs
 ---
 

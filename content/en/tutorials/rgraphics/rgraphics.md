@@ -1,7 +1,7 @@
 ---
 title: Graphics and Data Visualization in R
 author: "First/last name (first.last@ucr.edu)"
-date: "Last update: 20 May, 2021" 
+date: "Last update: 10 June, 2021" 
 output:
   html_document:
     toc: true
@@ -15,53 +15,35 @@ output:
 
 fontsize: 14pt
 bibliography: bibtex.bib
-weight: 14
+weight: 15
 type: docs
 ---
 
 <script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
-
 <script src="/rmarkdown-libs/plotly-binding/plotly.js"></script>
-
 <script src="/rmarkdown-libs/typedarray/typedarray.min.js"></script>
-
 <script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
-
 <link href="/rmarkdown-libs/crosstalk/css/crosstalk.css" rel="stylesheet" />
-
 <script src="/rmarkdown-libs/crosstalk/js/crosstalk.min.js"></script>
-
 <link href="/rmarkdown-libs/plotly-htmlwidgets-css/plotly-htmlwidgets.css" rel="stylesheet" />
-
 <script src="/rmarkdown-libs/plotly-main/plotly-latest.min.js"></script>
-
 <script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
-
 <script src="/rmarkdown-libs/plotly-binding/plotly.js"></script>
-
 <script src="/rmarkdown-libs/typedarray/typedarray.min.js"></script>
-
 <script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
-
 <link href="/rmarkdown-libs/crosstalk/css/crosstalk.css" rel="stylesheet" />
-
 <script src="/rmarkdown-libs/crosstalk/js/crosstalk.min.js"></script>
-
 <link href="/rmarkdown-libs/plotly-htmlwidgets-css/plotly-htmlwidgets.css" rel="stylesheet" />
-
 <script src="/rmarkdown-libs/plotly-main/plotly-latest.min.js"></script>
-
 <!--
 - Compile from command-line
 Rscript -e "rmarkdown::render('rgraphics.Rmd', c('html_document'), clean=F); knitr::knit('rgraphics.Rmd', tangle=TRUE)"
 -->
-
 <script type="text/javascript">
 document.addEventListener("DOMContentLoaded", function() {
   document.querySelector("h1").className = "title";
 });
 </script>
-
 <script type="text/javascript">
 document.addEventListener("DOMContentLoaded", function() {
   var links = document.links;  
@@ -83,65 +65,65 @@ Source code downloads:    
 
 ### Graphics in R
 
-  - Powerful environment for visualizing scientific data
-  - Integrated graphics and statistics infrastructure
-  - Publication quality graphics
-  - Fully programmable
-  - Highly reproducible
-  - Full [LaTeX](http://www.latex-project.org/), [Sweave](http://www.stat.auckland.ac.nz/~dscott/782/Sweave-manual-20060104.pdf), [knitr](http://yihui.name/knitr/) and [R Markdown](http://rmarkdown.rstudio.com/) support.
-  - Vast number of R packages with graphics utilities
+-   Powerful environment for visualizing scientific data
+-   Integrated graphics and statistics infrastructure
+-   Publication quality graphics
+-   Fully programmable
+-   Highly reproducible
+-   Full [LaTeX](http://www.latex-project.org/), [Sweave](http://www.stat.auckland.ac.nz/~dscott/782/Sweave-manual-20060104.pdf), [knitr](http://yihui.name/knitr/) and [R Markdown](http://rmarkdown.rstudio.com/) support.
+-   Vast number of R packages with graphics utilities
 
 ### Documentation on Graphics in R
 
-  - General
-      - [Graphics Task Page](http://cran.r-project.org/web/views/Graphics.html)
-      - [R Graph Gallery](http://www.r-graph-gallery.com/)
-      - [R Graphical Manual](https://www.imsbio.co.jp/RGM/R_image_list?page=575&init=true)
-      - [Paul Murrell’s book R (Grid) Graphics](http://www.stat.auckland.ac.nz/~paul/RGraphics/rgraphics.html)
-  - Interactive graphics
-      - [rggobi (GGobi)](http://www.ggobi.org/)
-      - [iplots](http://www.iplots.org/)
-      - [Open GL (`rgl`)](http://rgl.neoscientists.org/gallery.shtml)
-      - [plotly](https://plotly.com/r/)
+-   General
+    -   [Graphics Task Page](http://cran.r-project.org/web/views/Graphics.html)
+    -   [R Graph Gallery](http://www.r-graph-gallery.com/)
+    -   [R Graphical Manual](https://www.imsbio.co.jp/RGM/R_image_list?page=575&init=true)
+    -   [Paul Murrell’s book R (Grid) Graphics](http://www.stat.auckland.ac.nz/~paul/RGraphics/rgraphics.html)
+-   Interactive graphics
+    -   [rggobi (GGobi)](http://www.ggobi.org/)
+    -   [iplots](http://www.iplots.org/)
+    -   [Open GL (`rgl`)](http://rgl.neoscientists.org/gallery.shtml)
+    -   [plotly](https://plotly.com/r/)
 
 ### Graphics Environments
 
-  - Viewing and savings graphics in R
-      - On-screen graphics
-      - postscript, pdf, svg
-      - jpeg/png/wmf/tiff/…
-  - Four major graphics environments
-      - Low-level infrastructure
-          - R Base Graphics (low- and high-level)
-          - `grid`: [Manual](http://www.stat.auckland.ac.nz/~paul/grid/grid.html), [Book](http://www.stat.auckland.ac.nz/~paul/RGraphics/rgraphics.html)
-      - High-level infrastructure
-          - `lattice`: [Manual](http://lmdvr.r-forge.r-project.org), [Intro](http://www.his.sunderland.ac.uk/~cs0her/Statistics/UsingLatticeGraphicsInR.htm), [Book](http://www.amazon.com/Lattice-Multivariate-Data-Visualization-Use/dp/0387759689)
-          - `ggplot2`: [Manual](http://docs.ggplot2.org/current/), [Intro](http://www.ling.upenn.edu/~joseff/rstudy/summer2010_ggplot2_intro.html), [Book](http://had.co.nz/ggplot2/book/)
+-   Viewing and savings graphics in R
+    -   On-screen graphics
+    -   postscript, pdf, svg
+    -   jpeg/png/wmf/tiff/…
+-   Four major graphics environments
+    -   Low-level infrastructure
+        -   R Base Graphics (low- and high-level)
+        -   `grid`: [Manual](http://www.stat.auckland.ac.nz/~paul/grid/grid.html), [Book](http://www.stat.auckland.ac.nz/~paul/RGraphics/rgraphics.html)
+    -   High-level infrastructure
+        -   `lattice`: [Manual](http://lmdvr.r-forge.r-project.org), [Intro](http://www.his.sunderland.ac.uk/~cs0her/Statistics/UsingLatticeGraphicsInR.htm), [Book](http://www.amazon.com/Lattice-Multivariate-Data-Visualization-Use/dp/0387759689)
+        -   `ggplot2`: [Manual](http://docs.ggplot2.org/current/), [Intro](http://www.ling.upenn.edu/~joseff/rstudy/summer2010_ggplot2_intro.html), [Book](http://had.co.nz/ggplot2/book/)
 
 ## Base Graphics
 
 ### Overview
 
-  - Important high-level plotting functions
-      - `plot`: generic x-y plotting
-      - `barplot`: bar plots
-      - `boxplot`: box-and-whisker plot
-      - `hist`: histograms
-      - `pie`: pie charts
-      - `dotchart`: cleveland dot plots
-      - `image, heatmap, contour, persp`: functions to generate image-like plots
-      - `qqnorm, qqline, qqplot`: distribution comparison plots
-      - `pairs, coplot`: display of multivariant data
-  - Help on these functions
-      - `?myfct`
-      - `?plot`
-      - `?par`
+-   Important high-level plotting functions
+    -   `plot`: generic x-y plotting
+    -   `barplot`: bar plots
+    -   `boxplot`: box-and-whisker plot
+    -   `hist`: histograms
+    -   `pie`: pie charts
+    -   `dotchart`: cleveland dot plots
+    -   `image, heatmap, contour, persp`: functions to generate image-like plots
+    -   `qqnorm, qqline, qqplot`: distribution comparison plots
+    -   `pairs, coplot`: display of multivariant data
+-   Help on these functions
+    -   `?myfct`
+    -   `?plot`
+    -   `?par`
 
 ### Preferred Input Data Objects
 
-  - Matrices and data frames
-  - Vectors
-  - Named vectors
+-   Matrices and data frames
+-   Vectors
+-   Named vectors
 
 ### Scatter Plots
 
@@ -211,12 +193,12 @@ par(op)
 ```
 
 Important arguments}
-\- `mar`: specifies the margin sizes around the plotting area in order: `c(bottom, left, top, right)`
-\- `col`: color of symbols
-\- `pch`: type of symbols, samples: `example(points)`
-\- `lwd`: size of symbols
-\- `cex.*`: control font sizes
-\- For details see `?par`
+- `mar`: specifies the margin sizes around the plotting area in order: `c(bottom, left, top, right)`
+- `col`: color of symbols
+- `pch`: type of symbols, samples: `example(points)`
+- `lwd`: size of symbols
+- `cex.*`: control font sizes
+- For details see `?par`
 
 Add a regression line to a plot
 
@@ -269,8 +251,8 @@ plot(y[,1], y[,2]); text(y[1,1], y[1,2],
 
 #### Exercise 1
 
-  - **Task 1**: Generate scatter plot for first two columns in `iris` data frame and color dots by its `Species` column.
-  - **Task 2**: Use the `xlim/ylim` arguments to set limits on the x- and y-axes so that all data points are restricted to the left bottom quadrant of the plot.
+-   **Task 1**: Generate scatter plot for first two columns in `iris` data frame and color dots by its `Species` column.
+-   **Task 2**: Use the `xlim/ylim` arguments to set limits on the x- and y-axes so that all data points are restricted to the left bottom quadrant of the plot.
 
 Structure of iris data set:
 
@@ -473,8 +455,8 @@ svg("test.svg"); plot(1:10, 1:10); dev.off()
 
 Bar plots
 
-  - **Task 1**: Calculate the mean values for the `Species` components of the first four columns in the `iris` data set. Organize the results in a matrix where the row names are the unique values from the `iris Species` column and the column names are the same as in the first four `iris` columns.
-  - **Task 2**: Generate two bar plots: one with stacked bars and one with horizontally arranged bars.
+-   **Task 1**: Calculate the mean values for the `Species` components of the first four columns in the `iris` data set. Organize the results in a matrix where the row names are the unique values from the `iris Species` column and the column names are the same as in the first four `iris` columns.
+-   **Task 2**: Generate two bar plots: one with stacked bars and one with horizontally arranged bars.
 
 Structure of iris data set:
 
@@ -504,28 +486,28 @@ table(iris$Species)
 
 ## Grid Graphics
 
-  - What is `grid`?
-      - Low-level graphics system
-      - Highly flexible and controllable system
-      - Does not provide high-level functions
-      - Intended as development environment for custom plotting functions
-      - Pre-installed on new R distributions
-  - Documentation and Help
-      - [Manual](http://www.stat.auckland.ac.nz/~paul/grid/grid.html)
-      - [Book](http://www.stat.auckland.ac.nz/~paul/RGraphics/rgraphics.html)
+-   What is `grid`?
+    -   Low-level graphics system
+    -   Highly flexible and controllable system
+    -   Does not provide high-level functions
+    -   Intended as development environment for custom plotting functions
+    -   Pre-installed on new R distributions
+-   Documentation and Help
+    -   [Manual](http://www.stat.auckland.ac.nz/~paul/grid/grid.html)
+    -   [Book](http://www.stat.auckland.ac.nz/~paul/RGraphics/rgraphics.html)
 
 ## lattice Graphics
 
-  - What is `lattice`?
-      - High-level graphics system
-      - Developed by Deepayan Sarkar
-      - Implements Trellis graphics system from S-Plus
-      - Simplifies high-level plotting tasks: arranging complex graphical features
-      - Syntax similar to R’s base graphics
-  - Documentation and Help
-      - [Manual](http://lmdvr.r-forge.r-project.org)
-      - [Intro](https://www.statmethods.net/advgraphs/trellis.html)
-      - [Book](http://www.amazon.com/Lattice-Multivariate-Data-Visualization-Use/dp/0387759689)
+-   What is `lattice`?
+    -   High-level graphics system
+    -   Developed by Deepayan Sarkar
+    -   Implements Trellis graphics system from S-Plus
+    -   Simplifies high-level plotting tasks: arranging complex graphical features
+    -   Syntax similar to R’s base graphics
+-   Documentation and Help
+    -   [Manual](http://lmdvr.r-forge.r-project.org)
+    -   [Intro](https://www.statmethods.net/advgraphs/trellis.html)
+    -   [Book](http://www.amazon.com/Lattice-Multivariate-Data-Visualization-Use/dp/0387759689)
 
 Open a list of all functions available in the lattice package
 
@@ -564,16 +546,16 @@ plot(p2)
 
 ## ggplot2 Graphics
 
-  - What is `ggplot2`?
-      - High-level graphics system developed by Hadley Wickham
-      - Implements grammar of graphics from [Leland Wilkinson](http://www.amazon.com/Grammar-Graphics-Leland-Wilkinson/dp/0387987746)
-      - Streamlines many graphics workflows for complex plots
-      - Syntax centered around main `ggplot` function
-      - Simpler `qplot` function provides many shortcuts
-  - Documentation and Help
-      - [Manual](https://ggplot2.tidyverse.org/reference/)
-      - [Book](https://ggplot2-book.org/)
-      - [Cookbook for R](http://www.cookbook-r.com/Graphs/)
+-   What is `ggplot2`?
+    -   High-level graphics system developed by Hadley Wickham
+    -   Implements grammar of graphics from [Leland Wilkinson](http://www.amazon.com/Grammar-Graphics-Leland-Wilkinson/dp/0387987746)
+    -   Streamlines many graphics workflows for complex plots
+    -   Syntax centered around main `ggplot` function
+    -   Simpler `qplot` function provides many shortcuts
+-   Documentation and Help
+    -   [Manual](https://ggplot2.tidyverse.org/reference/)
+    -   [Book](https://ggplot2-book.org/)
+    -   [Cookbook for R](http://www.cookbook-r.com/Graphs/)
 
 ### Design Concept of `ggplot2`
 
@@ -589,40 +571,38 @@ in `ggplot2` is devided into layers including:
 7.  Theme: styles to be used, such as fonts, backgrounds, etc.
 
 <center>
-
 <img title="sphm" src="../images/grammar_ggplot2.png" width="500" />
-
 </center>
 
 ### `ggplot2` Usage
 
-  - `ggplot` function accepts two main arguments
-      - Data set to be plotted
-      - Aesthetic mappings provided by `aes` function
-  - Additional parameters such as geometric objects (*e.g.* points, lines, bars) are passed on by appending them with `+` as separator.
-  - List of available `geom_*` functions see [here](https://ggplot2.tidyverse.org/reference/)
-  - Settings of plotting theme can be accessed with the command `theme_get()` and its settings can be changed with `theme()`.
-  - Preferred input data object
-      - `qplot`: `data.frame` or `tibble` (support for `vector`, `matrix`, `...`)
-      - `ggplot`: `data.frame` or `tibble`
-  - Packages with convenience utilities to create expected inputs
-      - `dplyr` (`plyr`)
-      - `tidyr` and `reshape2`
+-   `ggplot` function accepts two main arguments
+    -   Data set to be plotted
+    -   Aesthetic mappings provided by `aes` function
+-   Additional parameters such as geometric objects (*e.g.* points, lines, bars) are passed on by appending them with `+` as separator.
+-   List of available `geom_*` functions see [here](https://ggplot2.tidyverse.org/reference/)
+-   Settings of plotting theme can be accessed with the command `theme_get()` and its settings can be changed with `theme()`.
+-   Preferred input data object
+    -   `qplot`: `data.frame` or `tibble` (support for `vector`, `matrix`, `...`)
+    -   `ggplot`: `data.frame` or `tibble`
+-   Packages with convenience utilities to create expected inputs
+    -   `dplyr` (`plyr`)
+    -   `tidyr` and `reshape2`
 
 ### `qplot` Function
 
 The syntax of `qplot` is similar as R’s basic `plot` function
 
-  - Arguments
-      - `x`: x-coordinates (*e.g.* `col1`)
-      - `y`: y-coordinates (*e.g.* `col2`)
-      - `data`: `data.frame` or `tibble` with corresponding column names
-      - `xlim, ylim`: *e.g.* `xlim=c(0,10)`
-      - `log`: *e.g.* `log="x"` or `log="xy"`
-      - `main`: main title; see `?plotmath` for mathematical formula
-      - `xlab, ylab`: labels for the x- and y-axes
-      - `color`, `shape`, `size`
-      - `...`: many arguments accepted by `plot` function
+-   Arguments
+    -   `x`: x-coordinates (*e.g.* `col1`)
+    -   `y`: y-coordinates (*e.g.* `col2`)
+    -   `data`: `data.frame` or `tibble` with corresponding column names
+    -   `xlim, ylim`: *e.g.* `xlim=c(0,10)`
+    -   `log`: *e.g.* `log="x"` or `log="xy"`
+    -   `main`: main title; see `?plotmath` for mathematical formula
+    -   `xlab, ylab`: labels for the x- and y-axes
+    -   `color`, `shape`, `size`
+    -   `...`: many arguments accepted by `plot` function
 
 ### `qplot`: scatter plot basics
 
@@ -701,28 +681,28 @@ print(p) # Setting se=FALSE removes error shade
 
 ### `ggplot` Function
 
-  - More important than `qplot` to access full functionality of `ggplot2`
-  - Main arguments
-      - data set, usually a `data.frame` or `tibble`
-      - aesthetic mappings provided by `aes` function
-  - General `ggplot` syntax
-      - `ggplot(data, aes(...)) + geom() + ... + stat() + ...`
-  - Layer specifications
-      - `geom(mapping, data, ..., geom, position)`
-      - `stat(mapping, data, ..., stat, position)`
-  - Additional components
-      - `scales`
-      - `coordinates`
-      - `facet`
-  - `aes()` mappings can be passed on to all components (`ggplot, geom`, etc.). Effects are global when passed on to `ggplot()` and local for other components.
-      - `x, y`
-      - `color`: grouping vector (factor)
-      - `group`: grouping vector (factor)
+-   More important than `qplot` to access full functionality of `ggplot2`
+-   Main arguments
+    -   data set, usually a `data.frame` or `tibble`
+    -   aesthetic mappings provided by `aes` function
+-   General `ggplot` syntax
+    -   `ggplot(data, aes(...)) + geom() + ... + stat() + ...`
+-   Layer specifications
+    -   `geom(mapping, data, ..., geom, position)`
+    -   `stat(mapping, data, ..., stat, position)`
+-   Additional components
+    -   `scales`
+    -   `coordinates`
+    -   `facet`
+-   `aes()` mappings can be passed on to all components (`ggplot, geom`, etc.). Effects are global when passed on to `ggplot()` and local for other components.
+    -   `x, y`
+    -   `color`: grouping vector (factor)
+    -   `group`: grouping vector (factor)
 
 #### Changing Plotting Themes in `ggplot`
 
-  - Theme settings can be accessed with `theme_get()`
-  - Their settings can be changed with `theme()`
+-   Theme settings can be accessed with `theme_get()`
+-   Their settings can be changed with `theme()`
 
 Example how to change background color to white
 
@@ -847,9 +827,9 @@ print(p)
 
 Scatter plots with `ggplot2`
 
-  - **Task 1**: Generate scatter plot for first two columns in `iris` data frame and color dots by its `Species` column.
-  - **Task 2**: Use the `xlim` and `ylim` arguments to set limits on the x- and y-axes so that all data points are restricted to the left bottom quadrant of the plot.
-  - **Task 3**: Generate corresponding line plot with faceting presenting the individual data sets in saparate plots.
+-   **Task 1**: Generate scatter plot for first two columns in `iris` data frame and color dots by its `Species` column.
+-   **Task 2**: Use the `xlim` and `ylim` arguments to set limits on the x- and y-axes so that all data points are restricted to the left bottom quadrant of the plot.
+-   **Task 3**: Generate corresponding line plot with faceting presenting the individual data sets in saparate plots.
 
 Structure of `iris` data set
 
@@ -1007,8 +987,8 @@ print(p)
 
 Bar plots
 
-  - **Task 1**: Calculate the mean values for the `Species` components of the first four columns in the `iris` data set. Use the `melt` function from the `reshape2` package to bring the data into the expected format for `ggplot`.
-  - **Task 2**: Generate two bar plots: one with stacked bars and one with horizontally arranged bars.
+-   **Task 1**: Calculate the mean values for the `Species` components of the first four columns in the `iris` data set. Use the `melt` function from the `reshape2` package to bring the data into the expected format for `ggplot`.
+-   **Task 2**: Generate two bar plots: one with stacked bars and one with horizontally arranged bars.
 
 Structure of iris data set
 
@@ -1207,9 +1187,7 @@ print(b, vp=viewport(width=0.3, height=0.3, x=0.8, y=0.8))
 Spatial expression data can be visualized with the [`spatialHeatmap`](https://bioconductor.org/packages/release/bioc/vignettes/spatialHeatmap/inst/doc/spatialHeatmap.html) package.
 
 <center>
-
 <img title="sphm" src="../images/spatial_heatmap.jpeg" width="500" />
-
 </center>
 
 ### Venn Diagrams
@@ -1251,10 +1229,10 @@ pheatmap(y, color=brewer.pal(9,"Blues"))
 
 A variety of libraries are available for plotting receiver operating characteristic (ROC) curves in R:
 
-  - [ROCR](http://rocr.bioinf.mpi-sb.mpg.de/)
-  - [ROC](http://bioconductor.org/packages/release/bioc/html/ROC.html)
-  - [pROC](http://web.expasy.org/pROC/)
-  - [ggplot2](http://largedata.blogspot.com/2011/07/plotting-roc-curves-in-ggplot2.html)
+-   [ROCR](http://rocr.bioinf.mpi-sb.mpg.de/)
+-   [ROC](http://bioconductor.org/packages/release/bioc/html/ROC.html)
+-   [pROC](http://web.expasy.org/pROC/)
+-   [ggplot2](http://largedata.blogspot.com/2011/07/plotting-roc-curves-in-ggplot2.html)
 
 #### Example
 
@@ -1345,18 +1323,18 @@ cophyloplot(tree1, tree2, assoc = association,
 
 ### `ggbio`
 
-  - What is `ggbio`?
-      - A programmable genome browser environment
-  - Genome broswer concepts
-      - A genome browser is a visulalization tool for plotting different types of genomic data in separate tracks along chromosomes.
-      - The `ggbio` package (Yin, Cook, and Lawrence 2012) facilitates plotting of complex genome data objects, such as read alignments (SAM/BAM), genomic context/annotation information (gff/txdb), variant calls (VCF/BCF), and more. To easily compare these data sets, it extends the faceting facility of `ggplot2` to genome browser-like tracks.
-      - Most of the core object types for handling genomic data with R/Bioconductor are supported: `GRanges`, `GAlignments`, `VCF`, etc. For more details, see Table 1.1 of the `ggbio` vignette [here](http://www.bioconductor.org/packages/release/bioc/vignettes/ggbio/inst/doc/ggbio.pdf).
-      - `ggbio`’s convenience plotting function is `autoplot`. For more customizable plots, one can use the generic `ggplot` function.
-      - Apart from the standard `ggplot2` plotting components, `ggbio` defines serval new components useful for genomic data visualization. A detailed list is given in Table 1.2 of the vignette [here](http://www.bioconductor.org/packages/release/bioc/vignettes/ggbio/inst/doc/ggbio.pdf).
-      - Useful web sites:
-          - [ggbio Bioc vignette](http://bioconductor.org/packages/release/bioc/html/ggbio.html)
-          - [ggbio online manual](https://lawremi.github.io/ggbio/)
-          - [autoplot demo](https://lawremi.github.io/ggbio/docs/man/autoplot-method.html)
+-   What is `ggbio`?
+    -   A programmable genome browser environment
+-   Genome broswer concepts
+    -   A genome browser is a visulalization tool for plotting different types of genomic data in separate tracks along chromosomes.
+    -   The `ggbio` package (Yin, Cook, and Lawrence 2012) facilitates plotting of complex genome data objects, such as read alignments (SAM/BAM), genomic context/annotation information (gff/txdb), variant calls (VCF/BCF), and more. To easily compare these data sets, it extends the faceting facility of `ggplot2` to genome browser-like tracks.
+    -   Most of the core object types for handling genomic data with R/Bioconductor are supported: `GRanges`, `GAlignments`, `VCF`, etc. For more details, see Table 1.1 of the `ggbio` vignette [here](http://www.bioconductor.org/packages/release/bioc/vignettes/ggbio/inst/doc/ggbio.pdf).
+    -   `ggbio`’s convenience plotting function is `autoplot`. For more customizable plots, one can use the generic `ggplot` function.
+    -   Apart from the standard `ggplot2` plotting components, `ggbio` defines serval new components useful for genomic data visualization. A detailed list is given in Table 1.2 of the vignette [here](http://www.bioconductor.org/packages/release/bioc/vignettes/ggbio/inst/doc/ggbio.pdf).
+    -   Useful web sites:
+        -   [ggbio Bioc vignette](http://bioconductor.org/packages/release/bioc/html/ggbio.html)
+        -   [ggbio online manual](https://lawremi.github.io/ggbio/)
+        -   [autoplot demo](https://lawremi.github.io/ggbio/docs/man/autoplot-method.html)
 
 #### Tracks: aligning plots along chromosomes
 
@@ -1431,9 +1409,7 @@ ggplot() +
 ```
 
 <center>
-
 <img title="vim-r" src="../images/circularplot.png"/>
-
 </center>
 
 #### Alignments and variants
@@ -1460,40 +1436,36 @@ See `autoplot` demo [here](https://lawremi.github.io/ggbio/docs/man/autoplot-met
 
 ### Additional genome graphics
 
-  - [`Gviz`](http://www.bioconductor.org/packages/devel/bioc/html/Gviz.html)
-  - [`RCircos`](http://cran.us.r-project.org/web/packages/RCircos/index.html) (Zhang, Meltzer, and Davis 2013)
-  - [`genoPlotR`](http://genoplotr.r-forge.r-project.org/)
+-   [`Gviz`](http://www.bioconductor.org/packages/devel/bioc/html/Gviz.html)
+-   [`RCircos`](http://cran.us.r-project.org/web/packages/RCircos/index.html) (Zhang, Meltzer, and Davis 2013)
+-   [`genoPlotR`](http://genoplotr.r-forge.r-project.org/)
 
 ### Genome Browser: IGV
 
 View genome data in IGV
 
-  - Download and open [IGV](http://software.broadinstitute.org/software/igv/download)
-  - Select in menu in top left corner *A. thaliana* (TAIR10)
-  - Upload the following indexed/sorted Bam files with `File -> Load from URL...`
+-   Download and open [IGV](http://software.broadinstitute.org/software/igv/download)
+-   Select in menu in top left corner *A. thaliana* (TAIR10)
+-   Upload the following indexed/sorted Bam files with `File -> Load from URL...`
 
-<!-- end list -->
+<!-- -->
 
     https://cluster.hpcc.ucr.edu/~tgirke/Teaching/GEN242/bam_samples/SRR064154.fastq.bam
     https://cluster.hpcc.ucr.edu/~tgirke/Teaching/GEN242/bam_samples/SRR064155.fastq.bam
     https://cluster.hpcc.ucr.edu/~tgirke/Teaching/GEN242/bam_samples/SRR064166.fastq.bam
     https://cluster.hpcc.ucr.edu/~tgirke/Teaching/GEN242/bam_samples/SRR064167.fastq.bam
 
-  - To view area of interest, enter its coordinates `Chr1:49,457-51,457` in position menu on top.
+-   To view area of interest, enter its coordinates `Chr1:49,457-51,457` in position menu on top.
 
 <center>
-
 <img title="vim-r" src="../images/igv_peak_3.png"/>
-
 </center>
 
 #### Create symbolic links
 
 For viewing BAM files in IGV as part of `systemPipeR` workflows.
 
-  - `systemPipeR`: utilities for building NGS analysis pipelines.
-
-<!-- end list -->
+-   `systemPipeR`: utilities for building NGS analysis pipelines.
 
 ``` r
 library("systemPipeR")
@@ -1521,35 +1493,35 @@ IGVgoto(sock, 'Chr1:45296-47019')
 
 ## References
 
-<div id="refs" class="references">
+<div id="refs" class="references csl-bib-body hanging-indent">
 
-<div id="ref-Wickham2009-aq">
+<div id="ref-Wickham2009-aq" class="csl-entry">
 
-Wickham, Hadley. 2009. “ggplot2: elegant graphics for data analysis.” Springer New York. <http://had.co.nz/ggplot2/book>.
-
-</div>
-
-<div id="ref-Wickham2010-nu">
-
-———. 2010. “A Layered Grammar of Graphics.” *J. Comput. Graph. Stat.* 19 (1). Taylor & Francis: 3–28. <https://doi.org/10.1198/jcgs.2009.07098>.
+Wickham, Hadley. 2009. “<span class="nocase">ggplot2: elegant graphics for data analysis</span>.” <http://had.co.nz/ggplot2/book>.
 
 </div>
 
-<div id="ref-Wilkinson2012-wv">
+<div id="ref-Wickham2010-nu" class="csl-entry">
 
-Wilkinson, Leland. 2012. “The Grammar of Graphics.” In *Handbook of Computational Statistics: Concepts and Methods*, edited by James E Gentle, Wolfgang Karl Härdle, and Yuichi Mori, 375–414. Berlin, Heidelberg: Springer Berlin Heidelberg. <https://doi.org/10.1007/978-3-642-21551-3\_13>.
+———. 2010. “<span class="nocase">A Layered Grammar of Graphics</span>.” *J. Comput. Graph. Stat.* 19 (1): 3–28. <https://doi.org/10.1198/jcgs.2009.07098>.
 
 </div>
 
-<div id="ref-Yin2012-jj">
+<div id="ref-Wilkinson2012-wv" class="csl-entry">
+
+Wilkinson, Leland. 2012. “<span class="nocase">The Grammar of Graphics</span>.” In *<span class="nocase">Handbook of Computational Statistics: Concepts and Methods</span>*, edited by James E Gentle, Wolfgang Karl Härdle, and Yuichi Mori, 375–414. Berlin, Heidelberg: Springer Berlin Heidelberg. [https://doi.org/10.1007/978-3-642-21551-3\\\_13](https://doi.org/10.1007/978-3-642-21551-3\_13).
+
+</div>
+
+<div id="ref-Yin2012-jj" class="csl-entry">
 
 Yin, T, D Cook, and M Lawrence. 2012. “Ggbio: An R Package for Extending the Grammar of Graphics for Genomic Data.” *Genome Biol.* 13 (8). <https://doi.org/10.1186/gb-2012-13-8-r77>.
 
 </div>
 
-<div id="ref-Zhang2013-zn">
+<div id="ref-Zhang2013-zn" class="csl-entry">
 
-Zhang, H, P Meltzer, and S Davis. 2013. “RCircos: An R Package for Circos 2D Track Plots.” *BMC Bioinformatics* 14: 244–44. <https://doi.org/10.1186/1471-2105-14-244>.
+Zhang, H, P Meltzer, and S Davis. 2013. “RCircos: An R Package for Circos 2d Track Plots.” *BMC Bioinformatics* 14: 244–44. <https://doi.org/10.1186/1471-2105-14-244>.
 
 </div>
 

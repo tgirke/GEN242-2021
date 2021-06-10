@@ -1,7 +1,7 @@
 ---
 title: Environments dplyr, tidyr and some SQLite
 author: "Author: Thomas Girke"
-date: "Last update: 24 May, 2021" 
+date: "Last update: 10 June, 2021" 
 output:
   html_document:
     toc: true
@@ -14,7 +14,7 @@ output:
     number_sections: true
 fontsize: 14pt
 bibliography: bibtex.bib
-weight: 17
+weight: 18
 type: docs
 ---
 

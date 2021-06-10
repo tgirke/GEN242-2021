@@ -434,53 +434,53 @@ enable = true
     parent = "Tutorials"
     weight = 209
   [[menu.main]]
-    name = "R Markdown (T10)"
-    url = "/tutorials/rmarkdown/rmarkdown/"
+    name = "scRNA-Seq Embedding Methods (T10)"
+    url = "/tutorials/scrnaseq/scrnaseq/"
     parent = "Tutorials"
     weight = 210
   [[menu.main]]
-    name = "Functional Enrichment Analysis (T11)"
-    url = "/tutorials/rfea/rfea/"
+    name = "R Markdown (T11)"
+    url = "/tutorials/rmarkdown/rmarkdown/"
     parent = "Tutorials"
     weight = 211
   [[menu.main]]
-    name = "Cluster Analysis and Data Mining (T12)"
-    url = "/tutorials/rclustering/rclustering/"
+    name = "Functional Enrichment Analysis (T12)"
+    url = "/tutorials/rfea/rfea/"
     parent = "Tutorials"
     weight = 212
   [[menu.main]]
-    name = "Project Data (T13)"
-    url = "/assignments/Projects/project_data/"
+    name = "Cluster Analysis and Data Mining (T13)"
+    url = "/tutorials/rclustering/rclustering/"
     parent = "Tutorials"
     weight = 213
   [[menu.main]]
-    name = "Graphics and Visualization (T14)"
-    url = "/tutorials/rgraphics/rgraphics/"
+    name = "Project Data (T14)"
+    url = "/assignments/Projects/project_data/"
     parent = "Tutorials"
     weight = 214
   [[menu.main]]
-    name = "Shiny Apps (T15)"
-    url = "/tutorials/shinyapps/shinyapps/"
+    name = "Graphics and Visualization (T15)"
+    url = "/tutorials/rgraphics/rgraphics/"
     parent = "Tutorials"
     weight = 215
   [[menu.main]]
-    name = "Building R Packages (T16)"
-    url = "/tutorials/rpackages/rpackages/"
+    name = "Shiny Apps (T16)"
+    url = "/tutorials/shinyapps/shinyapps/"
     parent = "Tutorials"
     weight = 216
   [[menu.main]]
-    name = "dplyr, tidyr and SQLite (T17)"
-    url = "/tutorials/dplyr/dplyr/"
+    name = "Building R Packages (T17)"
+    url = "/tutorials/rpackages/rpackages/"
     parent = "Tutorials"
     weight = 217
   [[menu.main]]
-    name = "Automate CWL Creation (T18)"
-    url = "/tutorials/cmdToCwl/cmdToCwl/"
+    name = "dplyr, tidyr and SQLite (T18)"
+    url = "/tutorials/dplyr/dplyr/"
     parent = "Tutorials"
     weight = 218
   [[menu.main]]
-    name = "scRNA-Seq Embedding Methods (T19)"
-    url = "/tutorials/scrnaseq/scrnaseq/"
+    name = "Automate CWL Creation (T19)"
+    url = "/tutorials/cmdToCwl/cmdToCwl/"
     parent = "Tutorials"
     weight = 219
 ##

@@ -1,7 +1,7 @@
 ---
 title: "Building R Packages" 
 author: "Author: Thomas Girke"
-date: "Last update: 06 June, 2021" 
+date: "Last update: 10 June, 2021" 
 output:
   html_document:
     toc: true
@@ -15,7 +15,7 @@ output:
 
 fontsize: 14pt
 bibliography: bibtex.bib
-weight: 16
+weight: 17
 type: docs
 ---
 

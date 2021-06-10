@@ -1,7 +1,7 @@
 ---
 title: "Automate Creation of CWL Instructions" 
 author: "Author: Daniela Cassol, Le Zhang, Thomas Girke"
-date: "Last update: 26 May, 2021" 
+date: "Last update: 10 June, 2021" 
 output:
   html_document:
     toc: true
@@ -14,7 +14,7 @@ output:
     number_sections: true
 fontsize: 14pt
 bibliography: bibtex.bib
-weight: 18
+weight: 19
 type: docs
 ---
 
