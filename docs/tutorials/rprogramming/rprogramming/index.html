@@ -27,7 +27,7 @@
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
  Overview One of the main attractions of using the R (http://cran.at.r-project.org) environment is the ease with which users can write their own programs and custom functions. The R programming syntax is extremely easy to learn, even for users with no previous programming experience.">
 <meta itemprop="dateModified" content="2021-06-12T13:29:10-07:00" />
-<meta itemprop="wordCount" content="5930">
+<meta itemprop="wordCount" content="5976">
 
 
 
@@ -840,7 +840,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.0d86eb83f0470dffabc7397ae9f075b5.json"
+  data-offline-search-index-json-src="../../../offline-search-index.5e39313828c745b9840c6f38caabf516.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -872,7 +872,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.0d86eb83f0470dffabc7397ae9f075b5.json"
+  data-offline-search-index-json-src="../../../offline-search-index.5e39313828c745b9840c6f38caabf516.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1255,6 +1255,11 @@ if (!doNotTrack) {
         </li>
       </ul>
     </li>
+    <li><a href="#additional-exercises">Additional Exercises</a>
+      <ul>
+        <li><a href="#pattern-matching-and-positional-parsing-of-equences">Pattern matching and positional parsing of equences</a></li>
+      </ul>
+    </li>
     <li><a href="#homework-5">Homework 5</a></li>
     <li><a href="#session-info">Session Info</a></li>
     <li><a href="#references">References</a></li>
@@ -1297,7 +1302,7 @@ if (!doNotTrack) {
 	<h1>Programming in R</h1>
     
 	
-        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 28 minute read</p>
+        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 29 minute read</p>
            
 	<!--
 - Compile from command-line
@@ -2424,6 +2429,13 @@ pheatmap(olMA, color=brewer.pal(9,&quot;Blues&quot;), cluster_rows=FALSE, cluste
 <pre><code class="language-r">install.packages(&quot;mypackage_1.0.tar.gz&quot;, repos=NULL, type=&quot;source&quot;)
 library(mypackage)
 ?myMAcomp # Opens help for function defined by mypackage
+</code></pre>
+<h2 id="additional-exercises">Additional Exercises</h2>
+<h3 id="pattern-matching-and-positional-parsing-of-equences">Pattern matching and positional parsing of equences</h3>
+<p>Functions for importing sequences into R, retrieving reverse and complement of nucleotide sequences, pattern searching, positional parsing and exporting
+search results in HTML format: <a href="https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/tutorials/rprogramming/scripts/patternSearch.R">patternSearch.R</a>.
+Sourcing the script will return usage instructions for the included functions.</p>
+<pre><code class="language-r">source(&quot;https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/tutorials/rprogramming/scripts/patternSearch.R&quot;)
 </code></pre>
 <h2 id="homework-5">Homework 5</h2>
 <p>See homework section <a href="https://girke.bioinformatics.ucr.edu/GEN242/assignments/homework/hw05/hw05/">here</a>.</p>

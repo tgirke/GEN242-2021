@@ -1099,6 +1099,20 @@ library(mypackage)
 ?myMAcomp # Opens help for function defined by mypackage
 ```
 
+## Additional Exercises
+
+### Pattern matching and positional parsing of equences
+
+Functions for importing sequences into R, retrieving reverse and complement of nucleotide sequences, pattern searching, positional parsing and exporting 
+search results in HTML format: [patternSearch.R](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/tutorials/rprogramming/scripts/patternSearch.R). 
+Sourcing the script will return usage instructions for the included functions. 
+
+```{r pattern_matching, eval=FALSE}
+source("https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/tutorials/rprogramming/scripts/patternSearch.R")
+```
+
+
+
 ## Homework 5
 
 See homework section [here](https://girke.bioinformatics.ucr.edu/GEN242/assignments/homework/hw05/hw05/).
