@@ -55,7 +55,7 @@ mortgage <- function(P=500000, I=6, L=30, plotData=TRUE) {
     # Plot amortization results
     if(plotData==TRUE) {
     barplot(t(aDFyear[,c(3,4)]), 
-        col=c("blue", "red"), 
+        col=c("#00BFC4", "#F8766D"), 
         main="Annual Interest and Principal Payments", 
         sub="The data for this plot is stored in aDFyear.",
         xlab="Years", ylab="$ Amount", 
