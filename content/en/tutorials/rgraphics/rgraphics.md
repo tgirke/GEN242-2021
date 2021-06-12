@@ -368,19 +368,19 @@ source("https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/tutorial
     ##         L = length of the loan in years
 
 ``` r
-m <- mortgage(P=500000, I=6, L=20, plotData=TRUE)
+m <- mortgage(P=250000, I=6, L=15, plotData=TRUE)
 ```
 
     ## 
     ## The payments for this loan are:
     ##  
-    ##             Monthly payment: $3582.155 (stored in m$monthPay)
+    ##             Monthly payment: $2109.642 (stored in m$monthPay)
     ## 
-    ##             Total cost: $859717.3
+    ##             Total cost: $379735.6
     ## 
-    ## The amortization data for each of the 240 months are stored in "m$aDFmonth".
+    ## The amortization data for each of the 180 months are stored in "m$aDFmonth".
     ## 
-    ## The amortization data for each of the 20 years are stored in "m$aDFyear".
+    ## The amortization data for each of the 15 years are stored in "m$aDFyear".
 
 <img src="/en/tutorials/rgraphics/rgraphics_files/figure-html/bar_plot_mortgage-1.png" width="672" />
 
