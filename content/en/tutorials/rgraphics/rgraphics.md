@@ -357,9 +357,32 @@ plots the results. A Shiny App using this function has been created
 by Antoine Soetewey [here](http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/My_R_Scripts/mortgage.R).
 
 ``` r
-source("http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/My_R_Scripts/mortgage.R")
-m <- mortgage(P=500000, I=6, L=30, plotData=TRUE)
+source("https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/tutorials/rgraphics/scripts/mortgage.R")
 ```
+
+    ## The monthly mortgage payments and amortization rates can be calculted with the mortgage() function like this: 
+    ##  
+    ##     m <- mortgage(P=500000, I=6, L=30, plotData=TRUE)
+    ##         P = principal (loan amount)
+    ##         I = annual interest rate
+    ##         L = length of the loan in years
+
+``` r
+m <- mortgage(P=500000, I=6, L=20, plotData=TRUE)
+```
+
+    ## 
+    ## The payments for this loan are:
+    ##  
+    ##             Monthly payment: $3582.155 (stored in m$monthPay)
+    ## 
+    ##             Total cost: $859717.3
+    ## 
+    ## The amortization data for each of the 240 months are stored in "m$aDFmonth".
+    ## 
+    ## The amortization data for each of the 20 years are stored in "m$aDFyear".
+
+<img src="/en/tutorials/rgraphics/rgraphics_files/figure-html/bar_plot_mortgage-1.png" width="672" />
 
 ### Histograms
 
