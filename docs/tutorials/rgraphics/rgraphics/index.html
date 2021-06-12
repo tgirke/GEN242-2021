@@ -22,12 +22,12 @@
  Overview Graphics in R  Powerful environment for visualizing scientific data Integrated graphics and statistics infrastructure Publication quality graphics Fully programmable Highly reproducible Full LaTeX, Sweave, knitr and R Markdown support." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rgraphics/rgraphics/" />
-<meta property="article:modified_time" content="2021-05-20T18:57:47-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-06-10T07:36:30-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Graphics and Data Visualization in R">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
  Overview Graphics in R  Powerful environment for visualizing scientific data Integrated graphics and statistics infrastructure Publication quality graphics Fully programmable Highly reproducible Full LaTeX, Sweave, knitr and R Markdown support.">
-<meta itemprop="dateModified" content="2021-05-20T18:57:47-07:00" />
-<meta itemprop="wordCount" content="66895">
+<meta itemprop="dateModified" content="2021-06-10T07:36:30-07:00" />
+<meta itemprop="wordCount" content="66944">
 
 
 
@@ -840,7 +840,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.bc23a6a921bc6aef1d00407eb23ecfa0.json"
+  data-offline-search-index-json-src="../../../offline-search-index.3494683a48d2b3a6186b889a0fe408c8.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -872,7 +872,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.bc23a6a921bc6aef1d00407eb23ecfa0.json"
+  data-offline-search-index-json-src="../../../offline-search-index.3494683a48d2b3a6186b889a0fe408c8.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1141,6 +1141,7 @@ if (!doNotTrack) {
             <li><a href="#basics">Basics</a></li>
             <li><a href="#error-bars">Error bars</a></li>
             <li><a href="#mirrored-bar-plot">Mirrored bar plot</a></li>
+            <li><a href="#bar-plot-of-loan-payments-and-amortization-tables">Bar plot of loan payments and amortization tables</a></li>
           </ul>
         </li>
         <li><a href="#histograms">Histograms</a></li>
@@ -1589,6 +1590,14 @@ barplot(height = df$y[df$group == &quot;Above&quot;], add = TRUE, axes = FALSE)
 barplot(height = df$y[df$group == &quot;Below&quot;], add = TRUE, axes = FALSE)
 </code></pre>
 <p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/bar_plot_mirrored-1.png" width="672" /></p>
+<h4 id="bar-plot-of-loan-payments-and-amortization-tables">Bar plot of loan payments and amortization tables</h4>
+<p>The following imports a <code>mortgage</code> payment function that calculates
+monthly and annual mortgage/loan payments, generates amortization tables and
+plots the results. A Shiny App using this function has been created
+by Antoine Soetewey <a href="http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/My_R_Scripts/mortgage.R">here</a>.</p>
+<pre><code class="language-r">source(&quot;http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/My_R_Scripts/mortgage.R&quot;)
+m &lt;- mortgage(P=500000, I=6, L=30, plotData=TRUE)
+</code></pre>
 <h3 id="histograms">Histograms</h3>
 <pre><code class="language-r">hist(y, freq=TRUE, breaks=10)
 </code></pre>
@@ -2455,7 +2464,7 @@ IGVgoto(sock, 'Chr1:45296-47019')
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-05-20: <a  href="https://github.com/tgirke/GEN242//commit/a3c807b681ad61354f5b6263f8d70fa852609a1b">some edits (a3c807b68)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-06-10: <a  href="https://github.com/tgirke/GEN242//commit/4c291b93f1ea0b19def42a989afde27edd8faaf5">some edits (4c291b93f)</a>
 </div>
 </div>
 

@@ -1,7 +1,7 @@
 ---
 title: Graphics and Data Visualization in R
 author: "First/last name (first.last@ucr.edu)"
-date: "Last update: 10 June, 2021" 
+date: "Last update: 12 June, 2021" 
 output:
   html_document:
     toc: true
@@ -348,6 +348,18 @@ barplot(height = df$y[df$group == "Below"], add = TRUE, axes = FALSE)
 ```
 
 <img src="/en/tutorials/rgraphics/rgraphics_files/figure-html/bar_plot_mirrored-1.png" width="672" />
+
+#### Bar plot of loan payments and amortization tables
+
+The following imports a `mortgage` payment function that calculates
+monthly and annual mortgage/loan payments, generates amortization tables and
+plots the results. A Shiny App using this function has been created
+by Antoine Soetewey [here](http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/My_R_Scripts/mortgage.R).
+
+``` r
+source("http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/My_R_Scripts/mortgage.R")
+m <- mortgage(P=500000, I=6, L=30, plotData=TRUE)
+```
 
 ### Histograms
 

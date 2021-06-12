@@ -1,7 +1,7 @@
 ---
 title: "Programming in R" 
 author: "Author: Thomas Girke"
-date: "Last update: 08 June, 2021" 
+date: "Last update: 12 June, 2021" 
 output:
   html_document:
     toc: true
@@ -521,7 +521,7 @@ time-efficient (fast). The following example queries for fold changes of at
 least 2 (here `lfc >= 1 | lfc <= -1`) plus p-values of 0.5 or lower. Note, all
 intermediate and final results are stored in logical matrices. In addition to
 boolean comparisons, one can apply basic mathematical operations, such as
-calculating the sum across many matrices. This returns a numeric matix of
+calculating the sum of each cell across many matrices. This returns a numeric matix of
 integers representing the counts of `TRUE` values in each position of the
 considered logical matrices. Subsequently, one can perform summary and
 filtering routines on these count-based matrices which is convenient when
