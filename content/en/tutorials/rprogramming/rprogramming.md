@@ -21,7 +21,7 @@ type: docs
 
 <!--
 - Compile from command-line
-Rscript -e "rmarkdown::render('Programming_in_R.Rmd', c('html_document'), clean=F); knitr::knit('Programming_in_R.Rmd', tangle=TRUE)"; Rscript ../md2jekyll.R Programming_in_R.knit.md 9; Rscript -e "rmarkdown::render('Programming_in_R.Rmd', c('pdf_document'))"
+Rscript -e "rmarkdown::render('rprogramming.Rmd', c('html_document'), clean=F); knitr::knit('rprogramming.Rmd', tangle=TRUE)"
 -->
 <script type="text/javascript">
 document.addEventListener("DOMContentLoaded", function() {
