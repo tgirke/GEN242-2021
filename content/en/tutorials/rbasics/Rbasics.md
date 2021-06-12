@@ -1,7 +1,7 @@
 ---
 title: "Introduction to R" 
 author: "Author: Thomas Girke"
-date: "Last update: 31 May, 2021" 
+date: "Last update: 12 June, 2021" 
 output:
   html_document:
     toc: true
@@ -878,9 +878,9 @@ frame1 <- iris[sample(1:length(iris[,1]), 30), ]
 frame1[1:2,]
 ```
 
-    ##    Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
-    ## 55          6.5         2.8          4.6         1.5 versicolor
-    ## 49          5.3         3.7          1.5         0.2     setosa
+    ##     Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
+    ## 95           5.6         2.7          4.2         1.3 versicolor
+    ## 147          6.3         2.5          5.0         1.9  virginica
 
 ``` r
 dim(frame1)
@@ -1413,7 +1413,7 @@ source("exerciseRbasics.R")
 sessionInfo()
 ```
 
-    ## R version 4.0.3 (2020-10-10)
+    ## R version 4.1.0 (2021-05-18)
     ## Platform: x86_64-pc-linux-gnu (64-bit)
     ## Running under: Debian GNU/Linux 10 (buster)
     ## 
@@ -1431,27 +1431,26 @@ sessionInfo()
     ## [1] stats     graphics  grDevices utils     datasets  methods   base     
     ## 
     ## other attached packages:
-    ##  [1] knitr_1.30        gplots_3.1.1      RSQLite_2.2.1     data.table_1.13.2 forcats_0.5.0    
-    ##  [6] stringr_1.4.0     dplyr_1.0.2       purrr_0.3.4       readr_1.4.0       tidyr_1.1.2      
-    ## [11] tibble_3.0.4      tidyverse_1.3.0   ggplot2_3.3.2     limma_3.46.0      BiocStyle_2.18.0 
+    ##  [1] gplots_3.1.1     forcats_0.5.1    stringr_1.4.0    dplyr_1.0.6      purrr_0.3.4     
+    ##  [6] readr_1.4.0      tidyr_1.1.3      tibble_3.1.2     tidyverse_1.3.1  ggplot2_3.3.3   
+    ## [11] limma_3.48.0     BiocStyle_2.20.0
     ## 
     ## loaded via a namespace (and not attached):
-    ##  [1] httr_1.4.2          viridisLite_0.3.0   bit64_4.0.5         jsonlite_1.7.1     
-    ##  [5] modelr_0.1.8        gtools_3.8.2        assertthat_0.2.1    BiocManager_1.30.10
-    ##  [9] highr_0.8           blob_1.2.1          cellranger_1.1.0    yaml_2.2.1         
-    ## [13] pillar_1.4.7        backports_1.2.0     glue_1.4.2          digest_0.6.27      
-    ## [17] rvest_0.3.6         colorspace_2.0-0    htmltools_0.5.1.1   plyr_1.8.6         
-    ## [21] pkgconfig_2.0.3     broom_0.7.2         haven_2.3.1         bookdown_0.21      
-    ## [25] scales_1.1.1        generics_0.1.0      farver_2.0.3        ellipsis_0.3.1     
-    ## [29] withr_2.3.0         cli_2.2.0           magrittr_2.0.1      crayon_1.3.4       
-    ## [33] readxl_1.3.1        memoise_1.1.0       evaluate_0.14       ps_1.4.0           
-    ## [37] fs_1.5.0            fansi_0.4.1         xml2_1.3.2          blogdown_1.1.7     
-    ## [41] tools_4.0.3         hms_0.5.3           lifecycle_0.2.0     munsell_0.5.0      
-    ## [45] reprex_0.3.0        compiler_4.0.3      caTools_1.18.1      rlang_0.4.8        
-    ## [49] grid_4.0.3          rstudioapi_0.13     bitops_1.0-6        labeling_0.4.2     
-    ## [53] rmarkdown_2.5       gtable_0.3.0        codetools_0.2-16    DBI_1.1.0          
-    ## [57] reshape2_1.4.4      R6_2.5.0            lubridate_1.7.9.2   bit_4.0.4          
-    ## [61] utf8_1.1.4          KernSmooth_2.23-17  stringi_1.5.3       Rcpp_1.0.5         
-    ## [65] vctrs_0.3.5         dbplyr_2.0.0        tidyselect_1.1.0    xfun_0.20
+    ##  [1] Rcpp_1.0.6          lubridate_1.7.10    ps_1.6.0            gtools_3.8.2       
+    ##  [5] assertthat_0.2.1    digest_0.6.27       utf8_1.2.1          R6_2.5.0           
+    ##  [9] cellranger_1.1.0    backports_1.2.1     reprex_2.0.0        evaluate_0.14      
+    ## [13] httr_1.4.2          highr_0.9           blogdown_1.3.2      pillar_1.6.1       
+    ## [17] rlang_0.4.11        readxl_1.3.1        rstudioapi_0.13     jquerylib_0.1.4    
+    ## [21] rmarkdown_2.8       munsell_0.5.0       broom_0.7.6         compiler_4.1.0     
+    ## [25] modelr_0.1.8        xfun_0.23           pkgconfig_2.0.3     htmltools_0.5.1.1  
+    ## [29] tidyselect_1.1.1    bookdown_0.22       codetools_0.2-18    fansi_0.4.2        
+    ## [33] crayon_1.4.1        dbplyr_2.1.1        withr_2.4.2         bitops_1.0-7       
+    ## [37] grid_4.1.0          jsonlite_1.7.2      gtable_0.3.0        lifecycle_1.0.0    
+    ## [41] DBI_1.1.1           magrittr_2.0.1      scales_1.1.1        KernSmooth_2.23-20 
+    ## [45] cli_2.5.0           stringi_1.6.2       fs_1.5.0            xml2_1.3.2         
+    ## [49] bslib_0.2.5.1       ellipsis_0.3.2      generics_0.1.0      vctrs_0.3.8        
+    ## [53] tools_4.1.0         glue_1.4.2          hms_1.1.0           yaml_2.2.1         
+    ## [57] colorspace_2.0-1    BiocManager_1.30.15 caTools_1.18.2      rvest_1.0.0        
+    ## [61] knitr_1.33          haven_2.4.1         sass_0.4.0
 
 ## References

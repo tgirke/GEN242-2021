@@ -2,6 +2,7 @@ base
 BiocStyle
 lattice
 ggplot2
+plotly
 reshape2
 RColorBrewer
 gridExtra
@@ -22,6 +23,7 @@ GenomicAlignments
 ShortRead
 systemPipeR
 ChemmineR
+pheatmap
 ROCR
 ape
 ggbio
@@ -29,6 +31,3 @@ rtracklayer
 AnnotationDbi
 GenomicFeatures
 VariantAnnotation
-plotly
-ChemmineOB
-pheatmap

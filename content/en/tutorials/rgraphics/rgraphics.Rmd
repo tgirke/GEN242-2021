@@ -1208,4 +1208,10 @@ IGVload(sock, session)
 IGVgoto(sock, 'Chr1:45296-47019')
 ```
 
+## Session Info
+
+```{r sessionInfo}
+sessionInfo()
+```
+
 ## References

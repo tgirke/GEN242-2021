@@ -10,8 +10,4 @@ purrr
 dplyr
 stringr
 forcats
-data.table
-RSQLite
 gplots
-knitr
-DT
