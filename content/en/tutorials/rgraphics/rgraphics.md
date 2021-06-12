@@ -353,7 +353,7 @@ barplot(height = df$y[df$group == "Below"], add = TRUE, axes = FALSE)
 
 The following imports a `mortgage` payment function that calculates
 monthly and annual mortgage/loan payments, generates amortization tables and
-plots the results. A Shiny App using this function has been created
+plots the results in form of a bar plot. A Shiny App using this function has been created
 by Antoine Soetewey [here](http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/My_R_Scripts/mortgage.R).
 
 ``` r
