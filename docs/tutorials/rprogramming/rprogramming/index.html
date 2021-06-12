@@ -22,12 +22,12 @@
  Overview One of the main attractions of using the R (http://cran.at.r-project.org) environment is the ease with which users can write their own programs and custom functions. The R programming syntax is extremely easy to learn, even for users with no previous programming experience." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tutorials/rprogramming/rprogramming/" />
-<meta property="article:modified_time" content="2021-06-12T13:29:10-07:00" /><meta property="og:site_name" content="GEN242" />
+<meta property="article:modified_time" content="2021-06-12T14:18:58-07:00" /><meta property="og:site_name" content="GEN242" />
 <meta itemprop="name" content="Programming in R">
 <meta itemprop="description" content="document.addEventListener(&#34;DOMContentLoaded&#34;, function() { document.querySelector(&#34;h1&#34;).className = &#34;title&#34;; });  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { var links = document.links; for (var i = 0, linksLength = links.length; i Source code downloads: [ .Rmd ] [ .R ]
  Overview One of the main attractions of using the R (http://cran.at.r-project.org) environment is the ease with which users can write their own programs and custom functions. The R programming syntax is extremely easy to learn, even for users with no previous programming experience.">
-<meta itemprop="dateModified" content="2021-06-12T13:29:10-07:00" />
-<meta itemprop="wordCount" content="5976">
+<meta itemprop="dateModified" content="2021-06-12T14:18:58-07:00" />
+<meta itemprop="wordCount" content="6017">
 
 
 
@@ -840,7 +840,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.5e39313828c745b9840c6f38caabf516.json"
+  data-offline-search-index-json-src="../../../offline-search-index.fe611820e9ab27027821bd02ab25ed9e.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -872,7 +872,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.5e39313828c745b9840c6f38caabf516.json"
+  data-offline-search-index-json-src="../../../offline-search-index.fe611820e9ab27027821bd02ab25ed9e.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1255,12 +1255,13 @@ if (!doNotTrack) {
         </li>
       </ul>
     </li>
+    <li><a href="#homework-5">Homework 5</a></li>
     <li><a href="#additional-exercises">Additional Exercises</a>
       <ul>
         <li><a href="#pattern-matching-and-positional-parsing-of-equences">Pattern matching and positional parsing of equences</a></li>
+        <li><a href="#identify-over-represented-strings-in-sequence-sets">Identify over-represented strings in sequence sets</a></li>
       </ul>
     </li>
-    <li><a href="#homework-5">Homework 5</a></li>
     <li><a href="#session-info">Session Info</a></li>
     <li><a href="#references">References</a></li>
   </ul>
@@ -2430,15 +2431,21 @@ pheatmap(olMA, color=brewer.pal(9,&quot;Blues&quot;), cluster_rows=FALSE, cluste
 library(mypackage)
 ?myMAcomp # Opens help for function defined by mypackage
 </code></pre>
-<h2 id="additional-exercises">Additional Exercises</h2>
-<h3 id="pattern-matching-and-positional-parsing-of-equences">Pattern matching and positional parsing of equences</h3>
-<p>Functions for importing sequences into R, retrieving reverse and complement of nucleotide sequences, pattern searching, positional parsing and exporting
-search results in HTML format: <a href="https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/tutorials/rprogramming/scripts/patternSearch.R">patternSearch.R</a>.
-Sourcing the script will return usage instructions for the included functions.</p>
-<pre><code class="language-r">source(&quot;https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/tutorials/rprogramming/scripts/patternSearch.R&quot;)
-</code></pre>
 <h2 id="homework-5">Homework 5</h2>
 <p>See homework section <a href="https://girke.bioinformatics.ucr.edu/GEN242/assignments/homework/hw05/hw05/">here</a>.</p>
+<h2 id="additional-exercises">Additional Exercises</h2>
+<h3 id="pattern-matching-and-positional-parsing-of-equences">Pattern matching and positional parsing of equences</h3>
+<p>The following sample script <a href="https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/tutorials/rprogramming/scripts/patternSearch.R">patternSearch.R</a> defines
+functions for importing sequences into R, retrieving reverse and complement of nucleotide sequences, pattern searching, positional parsing and exporting
+search results in HTML format. Sourcing the script will return usage instructions of its functions.</p>
+<pre><code class="language-r">source(&quot;https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/tutorials/rprogramming/scripts/patternSearch.R&quot;)
+</code></pre>
+<h3 id="identify-over-represented-strings-in-sequence-sets">Identify over-represented strings in sequence sets</h3>
+<p>Example functions for finding over-represented words in sets of DNA, RNA or protein sequences
+are defined in this script: <a href="https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/tutorials/rprogramming/scripts/wordFinder.R">wordFinder.R</a>.
+Sourcing the script will return usage instructions of its functions.</p>
+<pre><code class="language-r">source(&quot;https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/tutorials/rprogramming/scripts/wordFinder.R&quot;)
+</code></pre>
 <h2 id="session-info">Session Info</h2>
 <pre><code class="language-r">sessionInfo()
 </code></pre>
@@ -2482,7 +2489,7 @@ Sourcing the script will return usage instructions for the included functions.</
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-06-12: <a  href="https://github.com/tgirke/GEN242//commit/da3c8d9b33b0d8303940dc954801e39d2e242970">some edits (da3c8d9b3)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 2021-06-12: <a  href="https://github.com/tgirke/GEN242//commit/58f2c9a9c0c12c336bb64adf28e841fb6cd186aa">some edits (58f2c9a9c)</a>
 </div>
 </div>
 

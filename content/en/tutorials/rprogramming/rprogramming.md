@@ -1511,21 +1511,31 @@ library(mypackage)
 ?myMAcomp # Opens help for function defined by mypackage
 ```
 
+## Homework 5
+
+See homework section [here](https://girke.bioinformatics.ucr.edu/GEN242/assignments/homework/hw05/hw05/).
+
 ## Additional Exercises
 
 ### Pattern matching and positional parsing of equences
 
-Functions for importing sequences into R, retrieving reverse and complement of nucleotide sequences, pattern searching, positional parsing and exporting
-search results in HTML format: [patternSearch.R](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/tutorials/rprogramming/scripts/patternSearch.R).
-Sourcing the script will return usage instructions for the included functions.
+The following sample script [patternSearch.R](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/tutorials/rprogramming/scripts/patternSearch.R) defines
+functions for importing sequences into R, retrieving reverse and complement of nucleotide sequences, pattern searching, positional parsing and exporting
+search results in HTML format. Sourcing the script will return usage instructions of its functions.
 
 ``` r
 source("https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/tutorials/rprogramming/scripts/patternSearch.R")
 ```
 
-## Homework 5
+### Identify over-represented strings in sequence sets
 
-See homework section [here](https://girke.bioinformatics.ucr.edu/GEN242/assignments/homework/hw05/hw05/).
+Example functions for finding over-represented words in sets of DNA, RNA or protein sequences
+are defined in this script: [wordFinder.R](https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/tutorials/rprogramming/scripts/wordFinder.R).
+Sourcing the script will return usage instructions of its functions.
+
+``` r
+source("https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/tutorials/rprogramming/scripts/wordFinder.R")
+```
 
 ## Session Info
 
