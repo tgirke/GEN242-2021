@@ -113,3 +113,11 @@ You should see a website is opened in your local browser or Rstudio viewer.
 cd YOUR_NEW_REPO_PATH
 hugo server
 ```
+
+### Customize
+
+#### Color settings
+
+The background color of the top menu bar can be changed under `assets/scss/_variables_project.scss`. One custom setting in this
+file is that the original `$primary: #30638E;` has been changed to `$primary: #28498f;`.
+

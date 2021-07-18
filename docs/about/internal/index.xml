@@ -130,6 +130,10 @@ change working directory to the repository and run:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd YOUR_NEW_REPO_PATH
 hugo server
 &lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;customize&#34;&gt;Customize&lt;/h3&gt;
+&lt;h4 id=&#34;color-settings&#34;&gt;Color settings&lt;/h4&gt;
+&lt;p&gt;The background color of the top menu bar can be changed under &lt;code&gt;assets/scss/_variables_project.scss&lt;/code&gt;. One custom setting in this
+file is that the original &lt;code&gt;$primary: #30638E;&lt;/code&gt; has been changed to &lt;code&gt;$primary: #28498f;&lt;/code&gt;.&lt;/p&gt;
 
       </description>
     </item>
