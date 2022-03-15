@@ -161,7 +161,7 @@ change working directory to the repository and run:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;blogdown::serve_site()
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;You should see a website is opened in your local browser or Rstudio viewer.&lt;/p&gt;
-&lt;h4 id=&#34;run-the-website-locally-on-the-terminal&#34;&gt;Run the website locally on the terminal&lt;/h4&gt;
+&lt;h4 id=&#34;run-the-website-locally-from-terminal&#34;&gt;Run the website locally from terminal&lt;/h4&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd YOUR_NEW_REPO_PATH
 hugo server
 &lt;/code&gt;&lt;/pre&gt;
