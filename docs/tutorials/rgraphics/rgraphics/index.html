@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.82.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+<meta name="generator" content="Hugo 0.94.2" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
 
 <link rel="shortcut icon" href="../../../favicons/favicon.ico" >
@@ -52,8 +52,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="../../../scss/main.min.b701b2547209d54f12e2bd5e320a9f8e61c9b22220c6bc67a0b71574c0e395ea.css" as="style">
-<link href="../../../scss/main.min.b701b2547209d54f12e2bd5e320a9f8e61c9b22220c6bc67a0b71574c0e395ea.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../../scss/main.min.299fcc8a804d9dd8538b845649d3793be4c1fbef1adf9ec85636bbda3364c9cf.css" as="style">
+<link href="../../../scss/main.min.299fcc8a804d9dd8538b845649d3793be4c1fbef1adf9ec85636bbda3364c9cf.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -838,7 +838,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.5d6ab8bae0f8591a01776895472e8438.json"
+  data-offline-search-index-json-src="../../../offline-search-index.801c42777df0332e8f3dad3593ef9672.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -870,7 +870,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.5d6ab8bae0f8591a01776895472e8438.json"
+  data-offline-search-index-json-src="../../../offline-search-index.801c42777df0332e8f3dad3593ef9672.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1456,16 +1456,16 @@ y
 </code></pre>
 <pre><code class="language-r">plot(y[,1], y[,2]) 
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/scatter_plot_basic-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/scatter_plot_basic-1.png" width="672" />
 <h4 id="all-pairs">All pairs</h4>
 <pre><code class="language-r">pairs(y) 
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/scatter_plot_allpairs-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/scatter_plot_allpairs-1.png" width="672" />
 <h4 id="plot-labels">Plot labels</h4>
 <pre><code class="language-r">plot(y[,1], y[,2], pch=20, col=&quot;red&quot;, main=&quot;Symbols and Labels&quot;)
 text(y[,1]+0.03, y[,2], rownames(y))
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/scatter_plot_labels-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/scatter_plot_labels-1.png" width="672" />
 <h4 id="more-examples">More examples</h4>
 <p>Print instead of symbols the row names</p>
 <pre><code class="language-r">plot(y[,1], y[,2], type=&quot;n&quot;, main=&quot;Plot of Labels&quot;)
@@ -1490,7 +1490,7 @@ par(op)
 <pre><code class="language-r">plot(y[,1], y[,2])
 myline &lt;- lm(y[,2]~y[,1]); abline(myline, lwd=2) 
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/scatter_plot_regress-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/scatter_plot_regress-1.png" width="672" />
 <pre><code class="language-r">summary(myline) 
 </code></pre>
 <pre><code>## 
@@ -1515,12 +1515,12 @@ myline &lt;- lm(y[,2]~y[,1]); abline(myline, lwd=2)
 <p>Same plot as above, but on log scale</p>
 <pre><code class="language-r">plot(y[,1], y[,2], log=&quot;xy&quot;) 
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/scatter_plot_log_scale-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/scatter_plot_log_scale-1.png" width="672" />
 <p>Add a mathematical expression to a plot</p>
 <pre><code class="language-r">plot(y[,1], y[,2]); text(y[1,1], y[1,2], 
      expression(sum(frac(1,sqrt(x^2*pi)))), cex=1.3) 
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/scatter_plot_math-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/scatter_plot_math-1.png" width="672" />
 <h4 id="exercise-1">Exercise 1</h4>
 <ul>
 <li><strong>Task 1</strong>: Generate scatter plot for first two columns in <code>iris</code> data frame and color dots by its <code>Species</code> column.</li>
@@ -1549,7 +1549,7 @@ myline &lt;- lm(y[,2]~y[,1]); abline(myline, lwd=2)
 <h4 id="single-data-set">Single Data Set</h4>
 <pre><code class="language-r">plot(y[,1], type=&quot;l&quot;, lwd=2, col=&quot;blue&quot;) 
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/line_plot_single-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/line_plot_single-1.png" width="672" />
 <h4 id="many-data-sets">Many Data Sets</h4>
 <p>Plots line graph for all columns in data frame <code>y</code>. The <code>split.screen</code> function is used in this example in a for loop to overlay several line graphs in the same plot.</p>
 <pre><code class="language-r">split.screen(c(1,1)) 
@@ -1563,7 +1563,7 @@ for(i in 2:length(y[1,])) {
              xlab=&quot;&quot;, main=&quot;&quot;, bty=&quot;n&quot;) 
 }
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/line_plot_many-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/line_plot_many-1.png" width="672" />
 <pre><code class="language-r">close.screen(all=TRUE) 
 </code></pre>
 <h3 id="bar-plots">Bar Plots</h3>
@@ -1573,20 +1573,20 @@ for(i in 2:length(y[1,])) {
 text(labels=round(as.vector(as.matrix(y[1:4,])),2), x=seq(1.5, 13, by=1)
      +sort(rep(c(0,1,2), 4)), y=as.vector(as.matrix(y[1:4,]))+0.04) 
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/bar_plot_basic-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/bar_plot_basic-1.png" width="672" />
 <h4 id="error-bars">Error bars</h4>
 <pre><code class="language-r">bar &lt;- barplot(m &lt;- rowMeans(y) * 10, ylim=c(0, 10))
 stdev &lt;- sd(t(y))
 arrows(bar, m, bar, m + stdev, length=0.15, angle = 90)
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/bar_plot_error_bar-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/bar_plot_error_bar-1.png" width="672" />
 <h4 id="mirrored-bar-plot">Mirrored bar plot</h4>
 <pre><code class="language-r">df &lt;- data.frame(group = rep(c(&quot;Above&quot;, &quot;Below&quot;), each=10), x = rep(1:10, 2), y = c(runif(10, 0, 1), runif(10, -1, 0)))
 plot(c(0,12), range(df$y), type = &quot;n&quot;)
 barplot(height = df$y[df$group == &quot;Above&quot;], add = TRUE, axes = FALSE)
 barplot(height = df$y[df$group == &quot;Below&quot;], add = TRUE, axes = FALSE)
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/bar_plot_mirrored-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/bar_plot_mirrored-1.png" width="672" />
 <h4 id="bar-plot-of-loan-payments-and-amortization-tables">Bar plot of loan payments and amortization tables</h4>
 <p>The following imports a <code>mortgage</code> payment function (from <a href="https://raw.githubusercontent.com/tgirke/GEN242/main/content/en/tutorials/rgraphics/scripts/mortgage.R">here</a>) that calculates
 monthly and annual mortgage/loan payments, generates amortization tables and
@@ -1614,21 +1614,21 @@ by Antoine Soetewey <a href="https://antoinesoetewey.shinyapps.io/mortgage-calcu
 ## 
 ## The amortization data for each of the 15 years are stored in &quot;m$aDFyear&quot;.
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/bar_plot_mortgage-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/bar_plot_mortgage-1.png" width="672" />
 <h3 id="histograms">Histograms</h3>
 <pre><code class="language-r">hist(y, freq=TRUE, breaks=10)
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/hist_plot-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/hist_plot-1.png" width="672" />
 <h3 id="density-plots">Density Plots}</h3>
 <pre><code class="language-r">plot(density(y), col=&quot;red&quot;)
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/density_plot-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/density_plot-1.png" width="672" />
 <h3 id="pie-charts">Pie Charts</h3>
 <pre><code class="language-r">pie(y[,1], col=rainbow(length(y[,1]), start=0.1, end=0.8), clockwise=TRUE)
 legend(&quot;topright&quot;, legend=row.names(y), cex=1.3, bty=&quot;n&quot;, pch=15, pt.cex=1.8, 
 col=rainbow(length(y[,1]), start=0.1, end=0.8), ncol=1) 
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/pie_chart-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/pie_chart-1.png" width="672" />
 <h3 id="color-selection-utilities">Color Selection Utilities</h3>
 <p>Default color palette and how to change it</p>
 <pre><code class="language-r">palette()
@@ -1657,7 +1657,7 @@ colorpanel(5, &quot;darkblue&quot;, &quot;yellow&quot;, &quot;white&quot;)
 <pre><code class="language-r">par(mfrow=c(2,3)) 
 for(i in 1:6) plot(1:10) 
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/par_mfrow-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/par_mfrow-1.png" width="672" />
 <h4 id="arranging-plots-with-variable-width">Arranging Plots with Variable Width</h4>
 <p>The <code>layout</code> function allows to divide the plotting device into variable numbers of rows and columns with the column-widths and the row-heights specified in the respective arguments.</p>
 <pre><code class="language-r">nf &lt;- layout(matrix(c(1,2,3,3), 2, 2, byrow=TRUE), c(3,7), c(5,5), 
@@ -1665,7 +1665,7 @@ for(i in 1:6) plot(1:10)
 # layout.show(nf)
 for(i in 1:3) barplot(1:10) 
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/layout_plot-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/layout_plot-1.png" width="672" />
 <h3 id="saving-graphics-to-files">Saving Graphics to Files</h3>
 <p>After the <code>pdf()</code> command all graphs are redirected to file <code>test.pdf</code>. Works for all common formats similarly: jpeg, png, ps, tiff, …</p>
 <pre><code class="language-r">pdf(&quot;test.pdf&quot;); plot(1:10, 1:10); dev.off() 
@@ -1748,14 +1748,14 @@ library(help=lattice)
 p1 &lt;- xyplot(1:8 ~ 1:8 | rep(LETTERS[1:4], each=2), as.table=TRUE) 
 plot(p1)
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/scatter_plot_lattice-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/scatter_plot_lattice-1.png" width="672" />
 <h3 id="line-plot-sample">Line Plot Sample</h3>
 <pre><code class="language-r">library(lattice)
 p2 &lt;- parallelplot(~iris[1:4] | Species, iris, horizontal.axis = FALSE, 
               layout = c(1, 3, 1))  
 plot(p2)
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/line_plot_lattice-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/line_plot_lattice-1.png" width="672" />
 <h2 id="ggplot2-graphics">ggplot2 Graphics</h2>
 <ul>
 <li>What is <code>ggplot2</code>?
@@ -1788,7 +1788,7 @@ in <code>ggplot2</code> is devided into layers including:</p>
 <li>Theme: styles to be used, such as fonts, backgrounds, etc.</li>
 </ol>
 <center>
-<p><img title="sphm" src="../images/grammar_ggplot2.png" width="500" /></p>
+<img title="sphm" src="../images/grammar_ggplot2.png" width="500" />
 </center>
 <h3 id="ggplot2-usage"><code>ggplot2</code> Usage</h3>
 <ul>
@@ -1839,28 +1839,28 @@ x &lt;- sample(1:10, 10); y &lt;- sample(1:10, 10); cat &lt;- rep(c(&quot;A&quot
 <p>Simple scatter plot</p>
 <pre><code class="language-r">qplot(x, y, geom=&quot;point&quot;)
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/qplot_scatter_plot-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/qplot_scatter_plot-1.png" width="672" />
 <p>Prints dots with different sizes and colors</p>
 <pre><code class="language-r">qplot(x, y, geom=&quot;point&quot;, size=x, color=cat, 
       main=&quot;Dot Size and Color Relative to Some Values&quot;)
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/qplot_scatter_plot_dot_param-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/qplot_scatter_plot_dot_param-1.png" width="672" />
 <p>Drops legend</p>
 <pre><code class="language-r">qplot(x, y, geom=&quot;point&quot;, size=x, color=cat) + 
       theme(legend.position = &quot;none&quot;)
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/qplot_scatter_plot_no_legend-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/qplot_scatter_plot_no_legend-1.png" width="672" />
 <p>Plot different shapes</p>
 <pre><code class="language-r">qplot(x, y, geom=&quot;point&quot;, size=5, shape=cat)
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/qplot_scatter_plot_shapes-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/qplot_scatter_plot_shapes-1.png" width="672" />
 <h4 id="colored-groups">Colored groups</h4>
 <pre><code class="language-r">p &lt;- qplot(x, y, geom=&quot;point&quot;, size=x, color=cat, 
             main=&quot;Dot Size and Color Relative to Some Values&quot;) + 
      theme(legend.position = &quot;none&quot;)
 print(p)
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/qplot_scatter_plot_colored_groups-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/qplot_scatter_plot_colored_groups-1.png" width="672" />
 <h4 id="regression-line">Regression line</h4>
 <pre><code class="language-r">set.seed(1410)
 dsmall &lt;- diamonds[sample(nrow(diamonds), 1000), ]
@@ -1868,12 +1868,12 @@ p &lt;- qplot(carat, price, data = dsmall) +
            geom_smooth(method=&quot;lm&quot;)
 print(p)
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/qplot_scatter_regression_line-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/qplot_scatter_regression_line-1.png" width="672" />
 <h4 id="local-regression-curve-loess">Local regression curve (loess)</h4>
 <pre><code class="language-r">p &lt;- qplot(carat, price, data=dsmall, geom=c(&quot;point&quot;, &quot;smooth&quot;)) 
 print(p) # Setting se=FALSE removes error shade
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/qplot_scatter_regression_loess-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/qplot_scatter_regression_loess-1.png" width="672" />
 <h3 id="ggplot-function"><code>ggplot</code> Function</h3>
 <ul>
 <li>More important than <code>qplot</code> to access full functionality of <code>ggplot2</code></li>
@@ -1944,7 +1944,7 @@ p &lt;- ggplot(dsmall, aes(carat, price, color=color)) +
             geom_point(size=4)
 print(p) 
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_scatter_plot1-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_scatter_plot1-1.png" width="672" />
 <p>Interactive version of above plot can be generated with the <code>ggplotly</code> function from
 the <code>plotly</code> package.</p>
 <pre><code class="language-r">library(plotly)
@@ -1958,32 +1958,32 @@ ggplotly(p)
             theme(panel.background=element_rect(fill = &quot;white&quot;, colour = &quot;black&quot;))
 print(p) 
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_regression_line-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_regression_line-1.png" width="672" />
 <h4 id="several-regression-lines">Several regression lines</h4>
 <pre><code class="language-r">p &lt;- ggplot(dsmall, aes(carat, price, group=color)) + 
             geom_point(aes(color=color), size=2) + 
             geom_smooth(aes(color=color), method = &quot;lm&quot;, se=FALSE) 
 print(p) 
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_many_regression_lines-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_many_regression_lines-1.png" width="672" />
 <h4 id="local-regression-curve-loess-1">Local regression curve (loess)</h4>
 <pre><code class="language-r">p &lt;- ggplot(dsmall, aes(carat, price)) + geom_point() + geom_smooth() 
 print(p) # Setting se=FALSE removes error shade
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_loess_regression-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_loess_regression-1.png" width="672" />
 <h3 id="ggplot-line-plot"><code>ggplot</code>: line plot</h3>
 <pre><code class="language-r">p &lt;- ggplot(iris, aes(Petal.Length, Petal.Width, group=Species, 
             color=Species)) + geom_line() 
 print(p) 
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_line_plot-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_line_plot-1.png" width="672" />
 <h3 id="faceting">Faceting</h3>
 <pre><code class="language-r">p &lt;- ggplot(iris, aes(Sepal.Length, Sepal.Width)) + 
             geom_line(aes(color=Species), size=1) + 
             facet_wrap(~Species, ncol=1)
 print(p) 
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_line_plot_faceting-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_line_plot_faceting-1.png" width="672" />
 <h4 id="exercise-3">Exercise 3</h4>
 <p>Scatter plots with <code>ggplot2</code></p>
 <ul>
@@ -2039,7 +2039,7 @@ df_mean3 &lt;- tidyr::pivot_longer(iris_mean, !Species, names_to=&quot;Samples&q
             geom_bar(position=&quot;dodge&quot;, stat=&quot;identity&quot;)
 print(p) 
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/iris_mean_bar_plot-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/iris_mean_bar_plot-1.png" width="672" />
 <p>To enforce that the bars are plotted in the order specified in the input data, one can instruct <code>ggplot</code>
 to do so by turning the corresponding column (here <code>Species</code>) into an ordered factor as follows.</p>
 <pre><code class="language-r">df_mean$Species &lt;- factor(df_mean$Species, levels=unique(df_mean$Species), ordered=TRUE)
@@ -2051,7 +2051,7 @@ to do so by turning the corresponding column (here <code>Species</code>) into an
             theme(axis.text.y=element_text(angle=0, hjust=1))
 print(p) 
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/iris_mean_bar_plot_sideways-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/iris_mean_bar_plot_sideways-1.png" width="672" />
 <h4 id="faceting-1">Faceting</h4>
 <pre><code class="language-r">p &lt;- ggplot(df_mean, aes(Samples, Values)) + geom_bar(aes(fill = Species), stat=&quot;identity&quot;) +
             facet_wrap(~Species, ncol=1)
@@ -2063,14 +2063,14 @@ print(p)
             geom_errorbar(limits, position=&quot;dodge&quot;) 
 print(p) 
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/iris_mean_bar_plot_error-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/iris_mean_bar_plot_error-1.png" width="672" />
 <h4 id="mirrored">Mirrored</h4>
 <pre><code class="language-r">df &lt;- data.frame(group = rep(c(&quot;Above&quot;, &quot;Below&quot;), each=10), x = rep(1:10, 2), y = c(runif(10, 0, 1), runif(10, -1, 0)))
 p &lt;- ggplot(df, aes(x=x, y=y, fill=group)) + 
             geom_bar(stat=&quot;identity&quot;, position=&quot;identity&quot;)
 print(p) 
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot2_mirrored_barplot-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot2_mirrored_barplot-1.png" width="672" />
 <h3 id="changing-color-settings">Changing Color Settings</h3>
 <pre><code class="language-r">library(RColorBrewer)
 # display.brewer.all() 
@@ -2079,7 +2079,7 @@ p &lt;- ggplot(df_mean, aes(Samples, Values, fill=Species, color=Species)) +
             scale_fill_brewer(palette=&quot;Blues&quot;) + scale_color_brewer(palette = &quot;Greys&quot;) 
 print(p) 
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot2_color1-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot2_color1-1.png" width="672" />
 <h4 id="using-standard-r-color-theme">Using standard R color theme</h4>
 <pre><code class="language-r">p &lt;- ggplot(df_mean, aes(Samples, Values, fill=Species, color=Species)) + 
             geom_bar(position=&quot;dodge&quot;, stat=&quot;identity&quot;) + geom_errorbar(limits, position=&quot;dodge&quot;) + 
@@ -2087,7 +2087,7 @@ print(p)
             scale_color_manual(values=c(&quot;red&quot;, &quot;green3&quot;, &quot;blue&quot;)) 
 print(p) 
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot2_color2-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot2_color2-1.png" width="672" />
 <h4 id="exercise-4">Exercise 4</h4>
 <p>Bar plots</p>
 <ul>
@@ -2129,7 +2129,7 @@ y[1:4, ] # First rows of input format expected by melt()
 p &lt;- ggplot(df, aes(Position, Values)) + geom_line(aes(color=Samples)) + facet_wrap(~Samples, ncol=1)
 print(p)
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_melt_data-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_melt_data-1.png" width="672" />
 <p>Same data can be represented in box plot as follows</p>
 <pre><code class="language-r">ggplot(df, aes(Samples, Values, fill=Samples)) + geom_boxplot() + geom_jitter(color=&quot;darkgrey&quot;)
 </code></pre>
@@ -2138,17 +2138,17 @@ print(p)
             geom_jitter(alpha = I(1 / 2), aes(color=color))
 print(p) 
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_jitter_plot-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_jitter_plot-1.png" width="672" />
 <h3 id="box-plots">Box plots</h3>
 <pre><code class="language-r">p &lt;- ggplot(dsmall, aes(color, price/carat, fill=color)) + geom_boxplot()
 print(p) 
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_box_plot2-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_box_plot2-1.png" width="672" />
 <h3 id="violin-plots">Violin plots</h3>
 <pre><code class="language-r">p &lt;- ggplot(dsmall, aes(color, price/carat, fill=color)) + geom_violin()                                                                                                      
 print(p)                                                                                                                                                                      
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_box_violin-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_box_violin-1.png" width="672" />
 <p>Same violin plot as interactive plot generated with <code>ggplotly</code>, where the actual data points
 are shown as well by including <code>geom_jitter()</code>.</p>
 <pre><code class="language-r">p &lt;- ggplot(dsmall, aes(color, price/carat, fill=color)) + geom_violin() + geom_jitter(aes(color=color))
@@ -2161,19 +2161,19 @@ ggplotly(p)
 <pre><code class="language-r">p &lt;- ggplot(dsmall, aes(carat)) + geom_density(aes(color = color))
 print(p) 
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_density_plot_linecol-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_density_plot_linecol-1.png" width="672" />
 <h4 id="area-coloring">Area coloring</h4>
 <pre><code class="language-r">p &lt;- ggplot(dsmall, aes(carat)) + geom_density(aes(fill = color))
 print(p) 
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_density_plot_areacol-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_density_plot_areacol-1.png" width="672" />
 <h3 id="histograms-1">Histograms</h3>
 <pre><code class="language-r">p &lt;- ggplot(iris, aes(x=Sepal.Width)) + 
             geom_histogram(aes(y = ..density.., fill = ..count..), binwidth=0.2) + 
             geom_density()  
 print(p) 
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_histogram-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_histogram-1.png" width="672" />
 <h3 id="pie-chart">Pie Chart</h3>
 <pre><code class="language-r">df &lt;- data.frame(variable=rep(c(&quot;cat&quot;, &quot;mouse&quot;, &quot;dog&quot;, &quot;bird&quot;, &quot;fly&quot;)), 
                  value=c(1,3,3,4,2)) 
@@ -2182,7 +2182,7 @@ p &lt;- ggplot(df, aes(x = &quot;&quot;, y = value, fill = variable)) +
             coord_polar(&quot;y&quot;, start=pi / 3) + ggtitle(&quot;Pie Chart&quot;) 
 print(p) 
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_pie_chart-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_pie_chart-1.png" width="672" />
 <h3 id="wind-rose-pie-chart">Wind Rose Pie Chart</h3>
 <pre><code class="language-r">p &lt;- ggplot(df, aes(x = variable, y = value, fill = variable)) + 
             geom_bar(width = 1, stat=&quot;identity&quot;) + 
@@ -2190,7 +2190,7 @@ print(p)
             ggtitle(&quot;Pie Chart&quot;) 
 print(p) 
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_windrose_pie_chart-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_windrose_pie_chart-1.png" width="672" />
 <h3 id="arranging-graphics-on-page">Arranging Graphics on Page</h3>
 <p>Using <code>grid</code> package</p>
 <pre><code class="language-r">library(grid)
@@ -2203,24 +2203,24 @@ print(a, vp = viewport(layout.pos.row = 1, layout.pos.col = 1:2))
 print(b, vp = viewport(layout.pos.row = 2, layout.pos.col = 1))
 print(c, vp = viewport(layout.pos.row = 2, layout.pos.col = 2, width=0.3, height=0.3, x=0.8, y=0.8))
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_arrange_graphics-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_arrange_graphics-1.png" width="672" />
 <p>Using <code>gridExtra</code> package</p>
 <pre><code class="language-r">library(gridExtra)                                                                                                                                                            
 grid.arrange(a, b, c, nrow = 2, ncol=2)                                                                                                                                       
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_arrange_graphics2-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_arrange_graphics2-1.png" width="672" />
 <p>Also see <code>patchwork</code> in ggplot2 book <a href="https://ggplot2-book.org/arranging-plots.html">here</a>.</p>
 <h3 id="inserting-graphics-into-plots">Inserting Graphics into Plots</h3>
 <pre><code class="language-r">library(grid)
 print(a)
 print(b, vp=viewport(width=0.3, height=0.3, x=0.8, y=0.8))
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_insert_graphics-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggplot_insert_graphics-1.png" width="672" />
 <h2 id="specialty-graphics">Specialty Graphics</h2>
 <h3 id="spatial-heatmap-diagrams">Spatial Heatmap Diagrams</h3>
 <p>Spatial expression data can be visualized with the <a href="https://bioconductor.org/packages/release/bioc/vignettes/spatialHeatmap/inst/doc/spatialHeatmap.html"><code>spatialHeatmap</code></a> package.</p>
 <center>
-<p><img title="sphm" src="../images/spatial_heatmap.jpeg" width="500" /></p>
+<img title="sphm" src="../images/spatial_heatmap.jpeg" width="500" />
 </center>
 <h3 id="venn-diagrams">Venn Diagrams</h3>
 <pre><code class="language-r">library(systemPipeR)
@@ -2228,21 +2228,21 @@ setlist5 &lt;- list(A=sample(letters, 18), B=sample(letters, 16), C=sample(lette
 OLlist5 &lt;- overLapper(setlist=setlist5, sep=&quot;_&quot;, type=&quot;vennsets&quot;)
 vennPlot(OLlist5, mymain=&quot;&quot;, mysub=&quot;default&quot;, colmode=2, ccol=c(&quot;blue&quot;, &quot;red&quot;))
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/specgraph_venn-1.png" width="480" style="display: block; margin: auto;" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/specgraph_venn-1.png" width="480" style="display: block; margin: auto;" />
 <h3 id="compound-structures">Compound Structures</h3>
 <p>Plots depictions of small molecules with <code>ChemmineR</code> package</p>
 <pre><code class="language-r">library(ChemmineR)
 data(sdfsample)
 plot(sdfsample[1], print=FALSE)
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/specgraph_structure-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/specgraph_structure-1.png" width="672" />
 <h3 id="heatmaps">Heatmaps</h3>
 <p>There are many packages for plotting heatmaps in R. The following uses <code>pheatmap</code>.</p>
 <pre><code class="language-r">library(pheatmap); library(&quot;RColorBrewer&quot;)
 y &lt;- matrix(rnorm(50), 10, 5, dimnames=list(paste(&quot;g&quot;, 1:10, sep=&quot;&quot;), paste(&quot;t&quot;, 1:5, sep=&quot;&quot;)))
 pheatmap(y, color=brewer.pal(9,&quot;Blues&quot;))
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/pheatmap-1.png" width="576" style="display: block; margin: auto;" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/pheatmap-1.png" width="576" style="display: block; margin: auto;" />
 <h3 id="roc-plots">ROC Plots</h3>
 <p>A variety of libraries are available for plotting receiver operating characteristic (ROC) curves in R:</p>
 <ul>
@@ -2302,7 +2302,7 @@ ROCR.simple
 perf &lt;- performance( pred, &quot;tpr&quot;, &quot;fpr&quot; )
 plot(perf)
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ROCR_example-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ROCR_example-1.png" width="672" />
 <p>Obtain area under the curve (AUC)</p>
 <pre><code class="language-r">auc &lt;- performance( pred, &quot;tpr&quot;, &quot;fpr&quot;, measure = &quot;auc&quot;)                                                                                                                      
 auc@y.values[[1]]                                                                                                                                                             
@@ -2320,7 +2320,7 @@ association &lt;- cbind(tree2$tip.label, tree2$tip.label)
 cophyloplot(tree1, tree2, assoc = association,
             length.line = 4, space = 28, gap = 3)
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/trees_ape1-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/trees_ape1-1.png" width="672" />
 <h2 id="genome-graphics">Genome Graphics</h2>
 <h3 id="ggbio"><code>ggbio</code></h3>
 <ul>
@@ -2354,18 +2354,18 @@ df2 &lt;- data.frame(time = 30:120, score = sin((30:120)/20)*10, value = rnorm(1
 p2 &lt;- ggplot(data = df2, aes(x = time, y = score)) + geom_line() + geom_point(size = 2, aes(color = value))
 tracks(time1 = p1, time2 = p2) + xlim(1, 40) + theme_tracks_sunset()
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggbio_align-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggbio_align-1.png" width="672" />
 <h4 id="plotting-genomic-ranges">Plotting genomic ranges</h4>
 <p><code>GRanges</code> objects are essential for storing alignment or annotation ranges in R/Bioconductor. The following creates a sample <code>GRanges</code> object and plots its content.</p>
 <pre><code class="language-r">library(GenomicRanges)
 set.seed(1); N &lt;- 100; gr &lt;- GRanges(seqnames = sample(c(&quot;chr1&quot;, &quot;chr2&quot;, &quot;chr3&quot;), size = N, replace = TRUE), IRanges(start = sample(1:300, size = N, replace = TRUE), width = sample(70:75, size = N,replace = TRUE)), strand = sample(c(&quot;+&quot;, &quot;-&quot;), size = N, replace = TRUE), value = rnorm(N, 10, 3), score = rnorm(N, 100, 30), sample = sample(c(&quot;Normal&quot;, &quot;Tumor&quot;), size = N, replace = TRUE), pair = sample(letters, size = N, replace = TRUE))
 autoplot(gr, aes(color = strand, fill = strand), facets = strand ~ seqnames)
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggbio_granges-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggbio_granges-1.png" width="672" />
 <h4 id="plotting-coverage">Plotting coverage</h4>
 <pre><code class="language-r">autoplot(gr, aes(color = strand, fill = strand), facets = strand ~ seqnames, stat = &quot;coverage&quot;)
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggbio_coverage-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggbio_coverage-1.png" width="672" />
 <h4 id="mirrored-coverage">Mirrored coverage</h4>
 <pre><code class="language-r">pos &lt;- sapply(coverage(gr[strand(gr)==&quot;+&quot;]), as.numeric)
 pos &lt;- data.frame(Chr=rep(names(pos), sapply(pos, length)), Strand=rep(&quot;+&quot;, length(unlist(pos))), Position=unlist(sapply(pos, function(x) 1:length(x))), Coverage=as.numeric(unlist(pos)))
@@ -2377,12 +2377,12 @@ p &lt;- ggplot(covdf, aes(Position, Coverage, fill=Strand)) +
             facet_wrap(~Chr)
 p
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggbio_mirrored_coverage-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggbio_mirrored_coverage-1.png" width="672" />
 <h3 id="circular-genome-plots">Circular genome plots</h3>
 <pre><code class="language-r">ggplot(gr) + 
     layout_circle(aes(fill = seqnames), geom = &quot;rect&quot;)
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggbio_circular1-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggbio_circular1-1.png" width="672" />
 <p>More complex circular example</p>
 <pre><code class="language-r">seqlengths(gr) &lt;- c(400, 500, 700)
 values(gr)$to.gr &lt;- gr[sample(1:length(gr), size = length(gr))]
@@ -2409,7 +2409,7 @@ txdb &lt;- makeTxDbFromGFF(file=&quot;./data/TAIR10_GFF3_trunc.gff&quot;, format
 p4 &lt;- autoplot(txdb, which=GRanges(&quot;Chr5&quot;, IRanges(4000, 8000)), names.expr = &quot;gene_id&quot;)
 tracks(Reads=p1, Coverage=p2, Variant=p3, Transcripts=p4, heights = c(0.3, 0.2, 0.1, 0.35)) + ylab(&quot;&quot;)
 </code></pre>
-<p><img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggbio_align_variants-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rgraphics/rgraphics_files/figure-html/ggbio_align_variants-1.png" width="672" />
 <h3 id="additional-examples">Additional examples</h3>
 <p>See <code>autoplot</code> demo <a href="https://lawremi.github.io/ggbio/docs/man/autoplot-method.html">here</a></p>
 <h3 id="additional-genome-graphics">Additional genome graphics</h3>
@@ -2654,7 +2654,7 @@ MathJax.Hub.Config({
 
 
 
-<script src="../../../js/main.min.906bd02f142be20eb94bb49539a18a3e93ec0b9ff5f5dcf3796eed436a6103d2.js" integrity="sha256-kGvQLxQr4g65S7SVOaGKPpPsC5/19dzzeW7tQ2phA9I=" crossorigin="anonymous"></script>
+<script src="../../../js/main.min.b98a3473667defb32cda6c536707346795949f52932465ac5010615f974ccd60.js" integrity="sha256-uYo0c2Z977Ms2mxTZwc0Z5WUn1KTJGWsUBBhX5dMzWA=" crossorigin="anonymous"></script>
 
 
 

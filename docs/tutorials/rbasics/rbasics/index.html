@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.82.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+<meta name="generator" content="Hugo 0.94.2" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
 
 <link rel="shortcut icon" href="../../../favicons/favicon.ico" >
@@ -52,8 +52,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="../../../scss/main.min.b701b2547209d54f12e2bd5e320a9f8e61c9b22220c6bc67a0b71574c0e395ea.css" as="style">
-<link href="../../../scss/main.min.b701b2547209d54f12e2bd5e320a9f8e61c9b22220c6bc67a0b71574c0e395ea.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../../scss/main.min.299fcc8a804d9dd8538b845649d3793be4c1fbef1adf9ec85636bbda3364c9cf.css" as="style">
+<link href="../../../scss/main.min.299fcc8a804d9dd8538b845649d3793be4c1fbef1adf9ec85636bbda3364c9cf.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -838,7 +838,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.5d6ab8bae0f8591a01776895472e8438.json"
+  data-offline-search-index-json-src="../../../offline-search-index.801c42777df0332e8f3dad3593ef9672.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -870,7 +870,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.5d6ab8bae0f8591a01776895472e8438.json"
+  data-offline-search-index-json-src="../../../offline-search-index.801c42777df0332e8f3dad3593ef9672.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1986,22 +1986,22 @@ y &lt;- matrix(runif(30), ncol=3, dimnames=list(letters[1:10], LETTERS[1:3]))
 <p>Plot data</p>
 <pre><code class="language-r">plot(y[,1], y[,2]) 
 </code></pre>
-<p><img src="../../../en/tutorials/rbasics/Rbasics_files/figure-html/basic_scatter_plot-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rbasics/Rbasics_files/figure-html/basic_scatter_plot-1.png" width="672" />
 <h4 id="all-pairs">All pairs</h4>
 <pre><code class="language-r">pairs(y) 
 </code></pre>
-<p><img src="../../../en/tutorials/rbasics/Rbasics_files/figure-html/pairs_scatter_plot-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rbasics/Rbasics_files/figure-html/pairs_scatter_plot-1.png" width="672" />
 <h4 id="with-labels">With labels</h4>
 <pre><code class="language-r">plot(y[,1], y[,2], pch=20, col=&quot;red&quot;, main=&quot;Symbols and Labels&quot;)
 text(y[,1]+0.03, y[,2], rownames(y))
 </code></pre>
-<p><img src="../../../en/tutorials/rbasics/Rbasics_files/figure-html/labels_scatter_plot-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rbasics/Rbasics_files/figure-html/labels_scatter_plot-1.png" width="672" />
 <h3 id="more-examples">More examples</h3>
 <p><strong>Print instead of symbols the row names</strong></p>
 <pre><code class="language-r">plot(y[,1], y[,2], type=&quot;n&quot;, main=&quot;Plot of Labels&quot;)
 text(y[,1], y[,2], rownames(y)) 
 </code></pre>
-<p><img src="../../../en/tutorials/rbasics/Rbasics_files/figure-html/row_scatter_plot-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rbasics/Rbasics_files/figure-html/row_scatter_plot-1.png" width="672" />
 <p><strong>Usage of important plotting parameters</strong></p>
 <pre><code class="language-r">grid(5, 5, lwd = 2) 
 op &lt;- par(mar=c(8,8,8,8), bg=&quot;lightblue&quot;)
@@ -2023,7 +2023,7 @@ par(op)
 <pre><code class="language-r">plot(y[,1], y[,2])
 myline &lt;- lm(y[,2]~y[,1]); abline(myline, lwd=2) 
 </code></pre>
-<p><img src="../../../en/tutorials/rbasics/Rbasics_files/figure-html/plot_regression-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rbasics/Rbasics_files/figure-html/plot_regression-1.png" width="672" />
 <pre><code class="language-r">summary(myline) 
 </code></pre>
 <pre><code>## 
@@ -2049,18 +2049,18 @@ myline &lt;- lm(y[,2]~y[,1]); abline(myline, lwd=2)
 <p>Same plot as above, but on log scale</p>
 <pre><code class="language-r">plot(y[,1], y[,2], log=&quot;xy&quot;) 
 </code></pre>
-<p><img src="../../../en/tutorials/rbasics/Rbasics_files/figure-html/plot_regression_log-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rbasics/Rbasics_files/figure-html/plot_regression_log-1.png" width="672" />
 <h4 id="add-a-mathematical-expression">Add a mathematical expression</h4>
 <pre><code class="language-r">plot(y[,1], y[,2]); text(y[1,1], y[1,2], expression(sum(frac(1,sqrt(x^2*pi)))), cex=1.3) 
 </code></pre>
-<p><img src="../../../en/tutorials/rbasics/Rbasics_files/figure-html/plot_regression_math-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rbasics/Rbasics_files/figure-html/plot_regression_math-1.png" width="672" />
 <h3 id="homework-3b">Homework 3B</h3>
 <p>Homework 3B: <a href="https://girke.bioinformatics.ucr.edu/GEN242/assignments/homework/hw03/hw03/">Scatter Plots</a></p>
 <h3 id="line-plots">Line Plots</h3>
 <h4 id="single-data-set">Single data set</h4>
 <pre><code class="language-r">plot(y[,1], type=&quot;l&quot;, lwd=2, col=&quot;blue&quot;) 
 </code></pre>
-<p><img src="../../../en/tutorials/rbasics/Rbasics_files/figure-html/plot_line_single-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rbasics/Rbasics_files/figure-html/plot_line_single-1.png" width="672" />
 <h4 id="many-data-sets">Many Data Sets</h4>
 <p>Plots line graph for all columns in data frame <code>y</code>. The <code>split.screen</code> function is used in this example in a for loop to overlay several line graphs in the same plot.</p>
 <pre><code class="language-r">split.screen(c(1,1)) 
@@ -2073,7 +2073,7 @@ for(i in 2:length(y[1,])) {
     plot(y[,i], ylim=c(0,1), type=&quot;l&quot;, lwd=2, col=i, xaxt=&quot;n&quot;, yaxt=&quot;n&quot;, ylab=&quot;&quot;, xlab=&quot;&quot;, main=&quot;&quot;, bty=&quot;n&quot;) 
 }
 </code></pre>
-<p><img src="../../../en/tutorials/rbasics/Rbasics_files/figure-html/plot_line_many-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rbasics/Rbasics_files/figure-html/plot_line_many-1.png" width="672" />
 <pre><code class="language-r">close.screen(all=TRUE) 
 </code></pre>
 <h3 id="bar-plots">Bar Plots</h3>
@@ -2081,27 +2081,27 @@ for(i in 2:length(y[1,])) {
 <pre><code class="language-r">barplot(y[1:4,], ylim=c(0, max(y[1:4,])+0.3), beside=TRUE, legend=letters[1:4]) 
 text(labels=round(as.vector(as.matrix(y[1:4,])),2), x=seq(1.5, 13, by=1) + sort(rep(c(0,1,2), 4)), y=as.vector(as.matrix(y[1:4,]))+0.04) 
 </code></pre>
-<p><img src="../../../en/tutorials/rbasics/Rbasics_files/figure-html/plot_bar_simple-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rbasics/Rbasics_files/figure-html/plot_bar_simple-1.png" width="672" />
 <h4 id="error-bars">Error Bars</h4>
 <pre><code class="language-r">bar &lt;- barplot(m &lt;- rowMeans(y) * 10, ylim=c(0, 10))
 stdev &lt;- sd(t(y))
 arrows(bar, m, bar, m + stdev, length=0.15, angle = 90)
 </code></pre>
-<p><img src="../../../en/tutorials/rbasics/Rbasics_files/figure-html/plot_bar_error-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rbasics/Rbasics_files/figure-html/plot_bar_error-1.png" width="672" />
 <h3 id="histograms">Histograms</h3>
 <pre><code class="language-r">hist(y, freq=TRUE, breaks=10)
 </code></pre>
-<p><img src="../../../en/tutorials/rbasics/Rbasics_files/figure-html/plot_hist-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rbasics/Rbasics_files/figure-html/plot_hist-1.png" width="672" />
 <h3 id="density-plots">Density Plots</h3>
 <pre><code class="language-r">plot(density(y), col=&quot;red&quot;)
 </code></pre>
-<p><img src="../../../en/tutorials/rbasics/Rbasics_files/figure-html/plot_dens-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rbasics/Rbasics_files/figure-html/plot_dens-1.png" width="672" />
 <h3 id="pie-charts">Pie Charts</h3>
 <pre><code class="language-r">pie(y[,1], col=rainbow(length(y[,1]), start=0.1, end=0.8), clockwise=TRUE)
 legend(&quot;topright&quot;, legend=row.names(y), cex=1.3, bty=&quot;n&quot;, pch=15, pt.cex=1.8, 
 col=rainbow(length(y[,1]), start=0.1, end=0.8), ncol=1) 
 </code></pre>
-<p><img src="../../../en/tutorials/rbasics/Rbasics_files/figure-html/plot_pie-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rbasics/Rbasics_files/figure-html/plot_pie-1.png" width="672" />
 <h3 id="color-selection-utilities">Color Selection Utilities</h3>
 <p>Default color palette and how to change it</p>
 <pre><code class="language-r">palette()
@@ -2272,7 +2272,7 @@ data.frame(my_mw_target4, mean=mymean, stdev=mystdev)[1:2,5:12]
 </ul>
 <pre><code class="language-r">plot(my_mw_target4[1:500,3:4], col=&quot;red&quot;)
 </code></pre>
-<p><img src="../../../en/tutorials/rbasics/Rbasics_files/figure-html/plot_example-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rbasics/Rbasics_files/figure-html/plot_example-1.png" width="672" />
 <h3 id="export-results-and-run-entire-exercise-as-script">Export Results and Run Entire Exercise as Script</h3>
 <ul>
 <li><strong>Step 11</strong>: Write the data frame <code>my_mw_target4</code> into a tab-delimited text file and inspect it in Excel.</li>
@@ -2424,7 +2424,7 @@ MathJax.Hub.Config({
 
 
 
-<script src="../../../js/main.min.906bd02f142be20eb94bb49539a18a3e93ec0b9ff5f5dcf3796eed436a6103d2.js" integrity="sha256-kGvQLxQr4g65S7SVOaGKPpPsC5/19dzzeW7tQ2phA9I=" crossorigin="anonymous"></script>
+<script src="../../../js/main.min.b98a3473667defb32cda6c536707346795949f52932465ac5010615f974ccd60.js" integrity="sha256-uYo0c2Z977Ms2mxTZwc0Z5WUn1KTJGWsUBBhX5dMzWA=" crossorigin="anonymous"></script>
 
 
 

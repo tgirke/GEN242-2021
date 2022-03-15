@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.82.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+<meta name="generator" content="Hugo 0.94.2" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
 
 <link rel="shortcut icon" href="../../../favicons/favicon.ico" >
@@ -52,8 +52,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="../../../scss/main.min.b701b2547209d54f12e2bd5e320a9f8e61c9b22220c6bc67a0b71574c0e395ea.css" as="style">
-<link href="../../../scss/main.min.b701b2547209d54f12e2bd5e320a9f8e61c9b22220c6bc67a0b71574c0e395ea.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../../scss/main.min.299fcc8a804d9dd8538b845649d3793be4c1fbef1adf9ec85636bbda3364c9cf.css" as="style">
+<link href="../../../scss/main.min.299fcc8a804d9dd8538b845649d3793be4c1fbef1adf9ec85636bbda3364c9cf.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -838,7 +838,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.5d6ab8bae0f8591a01776895472e8438.json"
+  data-offline-search-index-json-src="../../../offline-search-index.801c42777df0332e8f3dad3593ef9672.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -870,7 +870,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.5d6ab8bae0f8591a01776895472e8438.json"
+  data-offline-search-index-json-src="../../../offline-search-index.801c42777df0332e8f3dad3593ef9672.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1416,7 +1416,7 @@ $$ d(X,Y) = \sqrt[]{ \sum_{i=1}^{n}{(x_{i}-y_{i})^2} }$$
 y &lt;- matrix(rnorm(500), 100, 5, dimnames=list(paste(&quot;g&quot;, 1:100, sep=&quot;&quot;), paste(&quot;t&quot;, 1:5, sep=&quot;&quot;))) 
 heatmap.2(y) # Shortcut to final result
 </code></pre>
-<p><img src="../../../en/tutorials/rclustering/rclustering_files/figure-html/hclust_heatmap_example-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rclustering/rclustering_files/figure-html/hclust_heatmap_example-1.png" width="672" />
 <h5 id="stepwise-approach-with-tree-cutting">Stepwise Approach with Tree Cutting</h5>
 <pre><code class="language-r">## Row- and column-wise clustering 
 hr &lt;- hclust(as.dist(1-cor(t(y), method=&quot;pearson&quot;)), method=&quot;complete&quot;)
@@ -1427,7 +1427,7 @@ mycl &lt;- cutree(hr, h=max(hr$height)/1.5); mycolhc &lt;- rainbow(length(unique
 mycol &lt;- colorpanel(40, &quot;darkblue&quot;, &quot;yellow&quot;, &quot;white&quot;) # or try redgreen(75)
 heatmap.2(y, Rowv=as.dendrogram(hr), Colv=as.dendrogram(hc), col=mycol, scale=&quot;row&quot;, density.info=&quot;none&quot;, trace=&quot;none&quot;, RowSideColors=mycolhc) 
 </code></pre>
-<p><img src="../../../en/tutorials/rclustering/rclustering_files/figure-html/hclust_heatmap_example_setpwise-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rclustering/rclustering_files/figure-html/hclust_heatmap_example_setpwise-1.png" width="672" />
 <h3 id="k-means-clustering">K-Means Clustering</h3>
 <h4 id="overview-of-algorithm-1">Overview of algorithm</h4>
 <ol>
@@ -1524,8 +1524,8 @@ summary(pca) # Prints variance summary for all principal components
 <pre><code class="language-r">plot(pca$x, pch=20, col=&quot;blue&quot;, type=&quot;n&quot;) # To plot dots, drop type=&quot;n&quot;
 text(pca$x, rownames(pca$x), cex=0.8)
 </code></pre>
-<p><img src="../../../en/tutorials/rclustering/rclustering_files/figure-html/pca_example-1.png" width="672" />
-1st and 2nd principal components explain x% of variance in data.</p>
+<img src="../../../en/tutorials/rclustering/rclustering_files/figure-html/pca_example-1.png" width="672" />
+1st and 2nd principal components explain x% of variance in data.
 <h3 id="multidimensional-scaling-mds">Multidimensional Scaling (MDS)</h3>
 <ul>
 <li>Alternative dimensionality reduction approach</li>
@@ -1538,7 +1538,7 @@ text(pca$x, rownames(pca$x), cex=0.8)
 plot(loc[,1], -loc[,2], type=&quot;n&quot;, xlab=&quot;&quot;, ylab=&quot;&quot;, main=&quot;cmdscale(eurodist)&quot;)
 text(loc[,1], -loc[,2], rownames(loc), cex=0.8) 
 </code></pre>
-<p><img src="../../../en/tutorials/rclustering/rclustering_files/figure-html/mds_example-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rclustering/rclustering_files/figure-html/mds_example-1.png" width="672" />
 <h3 id="biclustering">Biclustering</h3>
 <p>Finds in matrix subgroups of rows and columns which are as similar as possible to each other and as different as possible to the remaining data points.</p>
 <center>
@@ -1577,7 +1577,7 @@ d &lt;- sapply(names(clVlist), function(x) sapply(names(clVlist), function(y) ci
 hv &lt;- hclust(as.dist(1-d))
 plot(as.dendrogram(hv), edgePar=list(col=3, lwd=4), horiz=T, main=&quot;Similarities of 10 Clara Clustering Results for k: 3-12&quot;) 
 </code></pre>
-<p><img src="../../../en/tutorials/rclustering/rclustering_files/figure-html/jaccard_index_clustering-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rclustering/rclustering_files/figure-html/jaccard_index_clustering-1.png" width="672" />
 <ul>
 <li>Remember: there are many additional clustering algorithms.</li>
 <li>Additional details can be found in the Clustering Section of the <a href="http://manuals.bioinformatics.ucr.edu/home/R_BioCondManual#TOC-Clustering-and-Data-Mining-in-R">R/Bioconductor Manual</a>.</li>
@@ -1640,18 +1640,18 @@ names(hr)
 </code></pre>
 <pre><code class="language-r">par(mfrow = c(1, 2)); plot(hr, hang = 0.1); plot(hr, hang = -1) 
 </code></pre>
-<p><img src="../../../en/tutorials/rclustering/rclustering_files/figure-html/hclust1-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rclustering/rclustering_files/figure-html/hclust1-1.png" width="672" />
 <h4 id="tree-plotting-i">Tree plotting I</h4>
 <pre><code class="language-r">plot(as.dendrogram(hr), edgePar=list(col=3, lwd=4), horiz=T) 
 </code></pre>
-<p><img src="../../../en/tutorials/rclustering/rclustering_files/figure-html/hclust_plot_tree1-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rclustering/rclustering_files/figure-html/hclust_plot_tree1-1.png" width="672" />
 <h4 id="tree-plotting-ii">Tree plotting II</h4>
 <p>The <code>ape</code> library provides more advanced features for tree plotting</p>
 <pre><code class="language-r">library(ape) 
 plot.phylo(as.phylo(hr), type=&quot;p&quot;, edge.col=4, edge.width=2, 
            show.node.label=TRUE, no.margin=TRUE)
 </code></pre>
-<p><img src="../../../en/tutorials/rclustering/rclustering_files/figure-html/hclust_plot_tree2-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rclustering/rclustering_files/figure-html/hclust_plot_tree2-1.png" width="672" />
 <h3 id="tree-cutting">Tree Cutting</h3>
 <p>Accessing information in <em>hclust</em> objects</p>
 <pre><code class="language-r">hr
@@ -1681,13 +1681,13 @@ mycl[hr$labels[hr$order]]
 <pre><code class="language-r">library(gplots)
 heatmap.2(y, col=redgreen(75))
 </code></pre>
-<p><img src="../../../en/tutorials/rclustering/rclustering_files/figure-html/heatmap2a-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rclustering/rclustering_files/figure-html/heatmap2a-1.png" width="672" />
 <h4 id="with-pheatmap">With <code>pheatmap</code></h4>
 <p>All in one step: clustering and heatmap plotting</p>
 <pre><code class="language-r">library(pheatmap); library(&quot;RColorBrewer&quot;)
 pheatmap(y, color=brewer.pal(9,&quot;Blues&quot;))
 </code></pre>
-<p><img src="../../../en/tutorials/rclustering/rclustering_files/figure-html/pheatmap-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rclustering/rclustering_files/figure-html/pheatmap-1.png" width="672" />
 <h4 id="customizing-heatmaps">Customizing heatmaps</h4>
 <p>Customizes row and column clustering and shows tree cutting result in row color bar. Additional color schemes can be found <a href="http://manuals.bioinformatics.ucr.edu/home/R_BioCondManual#clustering_hc_submap">here</a>.</p>
 <pre><code class="language-r">hc &lt;- hclust(as.dist(1-cor(y, method=&quot;spearman&quot;)), method=&quot;complete&quot;)
@@ -1696,7 +1696,7 @@ heatmap.2(y, Rowv=as.dendrogram(hr), Colv=as.dendrogram(hc), col=mycol,
           scale=&quot;row&quot;, density.info=&quot;none&quot;, trace=&quot;none&quot;, 
           RowSideColors=as.character(mycl))
 </code></pre>
-<p><img src="../../../en/tutorials/rclustering/rclustering_files/figure-html/heatmap2_custom-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rclustering/rclustering_files/figure-html/heatmap2_custom-1.png" width="672" />
 <h3 id="k-means-clustering-with-pam">K-Means Clustering with PAM</h3>
 <p>Runs K-means clustering with PAM (partitioning around medoids) algorithm and shows result in color bar of hierarchical clustering result from before.</p>
 <pre><code class="language-r">library(cluster)
@@ -1710,7 +1710,7 @@ pamy &lt;- pam(d, 4)
           scale=&quot;row&quot;, density.info=&quot;none&quot;, trace=&quot;none&quot;, 
           RowSideColors=as.character(kmcol))
 </code></pre>
-<p><img src="../../../en/tutorials/rclustering/rclustering_files/figure-html/kmeans2-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rclustering/rclustering_files/figure-html/kmeans2-1.png" width="672" />
 <h3 id="k-means-fuzzy-clustering">K-Means Fuzzy Clustering</h3>
 <p>Performs k-means fuzzy clustering</p>
 <pre><code class="language-r">library(cluster)
@@ -1744,7 +1744,7 @@ apply(fannyyMA, 1, function(x) paste(which(x), collapse=&quot;_&quot;))
 plot(loc[,1], -loc[,2], type=&quot;n&quot;, xlab=&quot;&quot;, ylab=&quot;&quot;, main=&quot;cmdscale(eurodist)&quot;)
 text(loc[,1], -loc[,2], rownames(loc), cex=0.8) 
 </code></pre>
-<p><img src="../../../en/tutorials/rclustering/rclustering_files/figure-html/cmdscale2-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rclustering/rclustering_files/figure-html/cmdscale2-1.png" width="672" />
 <h3 id="principal-component-analysis-pca-1">Principal Component Analysis (PCA)</h3>
 <p>Performs PCA analysis after scaling the data. It returns a list with class <code>prcomp</code> that contains five components: (1) the standard deviations (sdev) of the principal components, (2) the matrix of eigenvectors (rotation), (3) the principal component data (x), (4) the centering (center) and (5) scaling (scale) used.</p>
 <pre><code class="language-r">library(scatterplot3d)
@@ -1763,7 +1763,7 @@ names(pca)
 </code></pre>
 <pre><code class="language-r">scatterplot3d(pca$x[,1:3], pch=20, color=&quot;blue&quot;) 
 </code></pre>
-<p><img src="../../../en/tutorials/rclustering/rclustering_files/figure-html/pca2-1.png" width="672" /></p>
+<img src="../../../en/tutorials/rclustering/rclustering_files/figure-html/pca2-1.png" width="672" />
 <h3 id="additional-exercises">Additional Exercises</h3>
 <p>See <a href="http://manuals.bioinformatics.ucr.edu/home/R_BioCondManual#TOC-Clustering-Exercises">here</a></p>
 <h2 id="version-information">Version Information</h2>
@@ -1906,7 +1906,7 @@ MathJax.Hub.Config({
 
 
 
-<script src="../../../js/main.min.906bd02f142be20eb94bb49539a18a3e93ec0b9ff5f5dcf3796eed436a6103d2.js" integrity="sha256-kGvQLxQr4g65S7SVOaGKPpPsC5/19dzzeW7tQ2phA9I=" crossorigin="anonymous"></script>
+<script src="../../../js/main.min.b98a3473667defb32cda6c536707346795949f52932465ac5010615f974ccd60.js" integrity="sha256-uYo0c2Z977Ms2mxTZwc0Z5WUn1KTJGWsUBBhX5dMzWA=" crossorigin="anonymous"></script>
 
 
 

@@ -2633,7 +2633,7 @@ function. In addition, the help file for &lt;code&gt;?summarizeOverlaps&lt;/code
 &lt;li&gt;Exons&lt;/li&gt;
 &lt;li&gt;Exons by genes&lt;/li&gt;
 &lt;li&gt;Introns by transcripts&lt;/li&gt;
-&lt;li&gt;5&#39;-UTRs by transcripts&lt;/li&gt;
+&lt;li&gt;5&amp;rsquo;-UTRs by transcripts&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -2695,7 +2695,7 @@ and rename it to &lt;code&gt;hw7.Rmd&lt;/code&gt; when you upload it to GitHub.&
 &lt;li&gt;Exons: 0.5&lt;/li&gt;
 &lt;li&gt;Exons by genes: 0.5&lt;/li&gt;
 &lt;li&gt;Introns by transcripts: 0.5&lt;/li&gt;
-&lt;li&gt;5&#39;-UTRs by transcripts: 0.5&lt;/li&gt;
+&lt;li&gt;5&amp;rsquo;-UTRs by transcripts: 0.5&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Task5
