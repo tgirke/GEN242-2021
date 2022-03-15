@@ -85,6 +85,41 @@ cd &amp;lt;repository_name&amp;gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;blogdown::serve_site()
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;prerequisites-and-installation&#34;&gt;Prerequisites and Installation&lt;/h2&gt;
+&lt;h3 id=&#34;install-nodejs&#34;&gt;Install nodejs&lt;/h3&gt;
+&lt;p&gt;Download &lt;code&gt;nodejs&lt;/code&gt; binary for 64 bit linux from &lt;a href=&#34;https://nodejs.org/en/download/&#34;&gt;here&lt;/a&gt;.
+Next, install it according the following &lt;a href=&#34;https://bit.ly/3jVJzmU&#34;&gt;instructions&lt;/a&gt;.
+Note, the version in all commands needs to match the downloaded one (here v16.14.0).&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Unzip the binary archive to any directory, where you wish to install nodejs. The
+following uses &lt;code&gt;/usr/local/lib/nodejs&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;VERSION=v16.14.0                                                                                                                                                                    
+DISTRO=linux-x64                                                                                                                                                                    
+sudo mkdir -p /usr/local/lib/nodejs                                                                                                                                                 
+sudo tar -xJvf node-$VERSION-$DISTRO.tar.xz -C /usr/local/lib/nodejs
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Set the required environment variables by adding the following lines to your &lt;code&gt;~/.profile&lt;/code&gt; file.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;# Nodejs
+VERSION=v16.14.0                                                                                                                                                                    
+DISTRO=linux-x64                                                                                                                                                                    
+export PATH=/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin:$PATH
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Refresh &lt;code&gt;~/.profile&lt;/code&gt; and test versions&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;. ~/.profile
+node -v
+npm -v
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Make executables available to root when using &lt;code&gt;sudo npm install&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;sudo ln -s -f  /usr/local/lib/nodejs/node-v16.14.0-linux-x64/bin/node /usr/local/bin/node                                                                                           
+sudo ln -s -f  /usr/local/lib/nodejs/node-v16.14.0-linux-x64/bin/npm /usr/local/bin/npm                                                                                             
+sudo ln -s -f  /usr/local/lib/nodejs/node-v16.14.0-linux-x64/bin/npx /usr/local/bin/npx
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;install-blogdown-and-hugo&#34;&gt;Install blogdown and Hugo&lt;/h3&gt;
 &lt;h4 id=&#34;blogdown&#34;&gt;blogdown&lt;/h4&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;installed.packages(&amp;quot;rstudio/blogdown&amp;quot;)

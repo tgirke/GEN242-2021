@@ -45,6 +45,47 @@ blogdown::serve_site()
 
 ## Prerequisites and Installation
 
+### Install nodejs
+
+Download `nodejs` binary for 64 bit linux from [here](https://nodejs.org/en/download/). 
+Next, install it according the following [instructions](https://bit.ly/3jVJzmU). 
+Note, the version in all commands needs to match the downloaded one (here v16.14.0).
+
+1. Unzip the binary archive to any directory, where you wish to install nodejs. The
+following uses `/usr/local/lib/nodejs`.
+
+```sh
+VERSION=v16.14.0                                                                                                                                                                    
+DISTRO=linux-x64                                                                                                                                                                    
+sudo mkdir -p /usr/local/lib/nodejs                                                                                                                                                 
+sudo tar -xJvf node-$VERSION-$DISTRO.tar.xz -C /usr/local/lib/nodejs
+```
+
+2. Set the required environment variables by adding the following lines to your `~/.profile` file.
+
+```sh
+# Nodejs
+VERSION=v16.14.0                                                                                                                                                                    
+DISTRO=linux-x64                                                                                                                                                                    
+export PATH=/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin:$PATH
+```
+
+3. Refresh `~/.profile` and test versions
+
+```sh
+. ~/.profile
+node -v
+npm -v
+```
+
+4. Make executables available to root when using `sudo npm install`.
+
+```sh
+sudo ln -s -f  /usr/local/lib/nodejs/node-v16.14.0-linux-x64/bin/node /usr/local/bin/node                                                                                           
+sudo ln -s -f  /usr/local/lib/nodejs/node-v16.14.0-linux-x64/bin/npm /usr/local/bin/npm                                                                                             
+sudo ln -s -f  /usr/local/lib/nodejs/node-v16.14.0-linux-x64/bin/npx /usr/local/bin/npx
+```
+
 ### Install blogdown and Hugo
 
 #### blogdown

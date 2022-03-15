@@ -29,7 +29,7 @@
 <meta itemprop="description" content="This page provides instructions how to create new deployment instances of this teaching site, and how to configure and customize it. It uses the Docsy theme of the Hugo framework for building content driven websites.
  Quick start  Click on the Use this Template button. Choose a Repository Name Click on the Create repository from template button.  Usage locally  Go to your new repository that created from our template https://github.">
 <meta itemprop="dateModified" content="2021-07-17T17:12:49-07:00" />
-<meta itemprop="wordCount" content="379">
+<meta itemprop="wordCount" content="499">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Deployment and Maintenance of this Site"/>
 <meta name="twitter:description" content="This page provides instructions how to create new deployment instances of this teaching site, and how to configure and customize it. It uses the Docsy theme of the Hugo framework for building content driven websites.
@@ -838,7 +838,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.801c42777df0332e8f3dad3593ef9672.json"
+  data-offline-search-index-json-src="../../../offline-search-index.0682520a65bebb8f03aedd84b508fdaa.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -870,7 +870,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.801c42777df0332e8f3dad3593ef9672.json"
+  data-offline-search-index-json-src="../../../offline-search-index.0682520a65bebb8f03aedd84b508fdaa.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1036,6 +1036,7 @@ if (!doNotTrack) {
     </li>
     <li><a href="#prerequisites-and-installation">Prerequisites and Installation</a>
       <ul>
+        <li><a href="#install-nodejs">Install nodejs</a></li>
         <li><a href="#install-blogdown-and-hugo">Install blogdown and Hugo</a>
           <ul>
             <li><a href="#blogdown">blogdown</a></li>
@@ -1105,7 +1106,7 @@ if (!doNotTrack) {
 	<h1>Deployment and Maintenance of this Site</h1>
     
 	
-        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 2 minute read</p>
+        <p class="reading-time"><i class="fa fa-clock" aria-hidden="true"></i> 3 minute read</p>
            
 	<br/>
 <br/>
@@ -1141,6 +1142,41 @@ cd &lt;repository_name&gt;
 <pre><code class="language-r">blogdown::serve_site()
 </code></pre>
 <h2 id="prerequisites-and-installation">Prerequisites and Installation</h2>
+<h3 id="install-nodejs">Install nodejs</h3>
+<p>Download <code>nodejs</code> binary for 64 bit linux from <a href="https://nodejs.org/en/download/">here</a>.
+Next, install it according the following <a href="https://bit.ly/3jVJzmU">instructions</a>.
+Note, the version in all commands needs to match the downloaded one (here v16.14.0).</p>
+<ol>
+<li>Unzip the binary archive to any directory, where you wish to install nodejs. The
+following uses <code>/usr/local/lib/nodejs</code>.</li>
+</ol>
+<pre><code class="language-sh">VERSION=v16.14.0                                                                                                                                                                    
+DISTRO=linux-x64                                                                                                                                                                    
+sudo mkdir -p /usr/local/lib/nodejs                                                                                                                                                 
+sudo tar -xJvf node-$VERSION-$DISTRO.tar.xz -C /usr/local/lib/nodejs
+</code></pre>
+<ol start="2">
+<li>Set the required environment variables by adding the following lines to your <code>~/.profile</code> file.</li>
+</ol>
+<pre><code class="language-sh"># Nodejs
+VERSION=v16.14.0                                                                                                                                                                    
+DISTRO=linux-x64                                                                                                                                                                    
+export PATH=/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin:$PATH
+</code></pre>
+<ol start="3">
+<li>Refresh <code>~/.profile</code> and test versions</li>
+</ol>
+<pre><code class="language-sh">. ~/.profile
+node -v
+npm -v
+</code></pre>
+<ol start="4">
+<li>Make executables available to root when using <code>sudo npm install</code>.</li>
+</ol>
+<pre><code class="language-sh">sudo ln -s -f  /usr/local/lib/nodejs/node-v16.14.0-linux-x64/bin/node /usr/local/bin/node                                                                                           
+sudo ln -s -f  /usr/local/lib/nodejs/node-v16.14.0-linux-x64/bin/npm /usr/local/bin/npm                                                                                             
+sudo ln -s -f  /usr/local/lib/nodejs/node-v16.14.0-linux-x64/bin/npx /usr/local/bin/npx
+</code></pre>
 <h3 id="install-blogdown-and-hugo">Install blogdown and Hugo</h3>
 <h4 id="blogdown">blogdown</h4>
 <pre><code class="language-r">installed.packages(&quot;rstudio/blogdown&quot;)
