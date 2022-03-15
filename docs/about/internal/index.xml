@@ -132,9 +132,9 @@ to do local builds and previews of sites that use Docsy.&lt;/p&gt;
 &lt;p&gt;It is recommended to install &lt;code&gt;Hugo&lt;/code&gt; from R for working with blogdown&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;blogdown::install_hugo(extended = TRUE)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;or from commandline&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wget https://github.com/gohugoio/hugo/releases/download/v0.79.0/hugo_extended_0.79.0_Linux-64bit.deb
-sudo dpkg -i  hugo_extended_0.79.0_Linux-64bit.deb 
+&lt;p&gt;or from command-line from &lt;a href=&#34;https://github.com/gohugoio/hugo/releases/&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wget https://github.com/gohugoio/hugo/releases/download/v0.94.2/hugo_extended_0.94.2_Linux-64bit.deb                                                                                
+sudo dpkg -i hugo_extended_0.94.2_Linux-64bit.deb                                                                                                                                   
 hugo version
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;For &lt;code&gt;Windows&lt;/code&gt; and &lt;code&gt;macOS&lt;/code&gt; please see instructions &lt;a href=&#34;https://www.docsy.dev/docs/getting-started/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;

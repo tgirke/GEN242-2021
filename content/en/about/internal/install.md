@@ -105,11 +105,11 @@ It is recommended to install `Hugo` from R for working with blogdown
 ```r
 blogdown::install_hugo(extended = TRUE)
 ```
-or from commandline
+or from command-line from [here](https://github.com/gohugoio/hugo/releases/)
 
 ```bash
-wget https://github.com/gohugoio/hugo/releases/download/v0.79.0/hugo_extended_0.79.0_Linux-64bit.deb
-sudo dpkg -i  hugo_extended_0.79.0_Linux-64bit.deb 
+wget https://github.com/gohugoio/hugo/releases/download/v0.94.2/hugo_extended_0.94.2_Linux-64bit.deb                                                                                
+sudo dpkg -i hugo_extended_0.94.2_Linux-64bit.deb                                                                                                                                   
 hugo version
 ```
 
