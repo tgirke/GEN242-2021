@@ -838,7 +838,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.0fee97d5dbe31f08378220e2f01967a4.json"
+  data-offline-search-index-json-src="../../../offline-search-index.d731ec7b0c1b85f9ec87563baf4aad38.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -870,7 +870,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.0fee97d5dbe31f08378220e2f01967a4.json"
+  data-offline-search-index-json-src="../../../offline-search-index.d731ec7b0c1b85f9ec87563baf4aad38.json"
   data-offline-search-base-href="../../../"
   data-offline-search-max-results="10"
 >
@@ -1145,12 +1145,12 @@ cd &lt;repository_name&gt;
 <h3 id="install-nodejs">Install nodejs</h3>
 <p>Download <code>nodejs</code> binary for 64 bit linux from <a href="https://nodejs.org/en/download/">here</a>.
 Next, install it according the following <a href="https://bit.ly/3jVJzmU">instructions</a>.
-Note, the version in all commands needs to match the downloaded one (here v16.14.0).</p>
+Note, the version in all commands needs to match the downloaded one (here v16.14.2).</p>
 <ol>
 <li>Unzip the binary archive to any directory, where you wish to install nodejs. The
 following uses <code>/usr/local/lib/nodejs</code>.</li>
 </ol>
-<pre><code class="language-sh">VERSION=v16.14.0                                                                                                                                                                    
+<pre><code class="language-sh">VERSION=v16.14.2                                                                                                                                                                    
 DISTRO=linux-x64                                                                                                                                                                    
 sudo mkdir -p /usr/local/lib/nodejs                                                                                                                                                 
 sudo tar -xJvf node-$VERSION-$DISTRO.tar.xz -C /usr/local/lib/nodejs
@@ -1159,7 +1159,7 @@ sudo tar -xJvf node-$VERSION-$DISTRO.tar.xz -C /usr/local/lib/nodejs
 <li>Set the required environment variables by adding the following lines to your <code>~/.profile</code> file.</li>
 </ol>
 <pre><code class="language-sh"># Nodejs
-VERSION=v16.14.0                                                                                                                                                                    
+VERSION=v16.14.2                                                                                                                                                                   
 DISTRO=linux-x64                                                                                                                                                                    
 export PATH=/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin:$PATH
 </code></pre>
@@ -1173,9 +1173,9 @@ npm -v
 <ol start="4">
 <li>Make executables available to root when using <code>sudo npm install</code>.</li>
 </ol>
-<pre><code class="language-sh">sudo ln -s -f  /usr/local/lib/nodejs/node-v16.14.0-linux-x64/bin/node /usr/local/bin/node                                                                                           
-sudo ln -s -f  /usr/local/lib/nodejs/node-v16.14.0-linux-x64/bin/npm /usr/local/bin/npm                                                                                             
-sudo ln -s -f  /usr/local/lib/nodejs/node-v16.14.0-linux-x64/bin/npx /usr/local/bin/npx
+<pre><code class="language-sh">sudo ln -s -f  /usr/local/lib/nodejs/node-v16.14.2-linux-x64/bin/node /usr/local/bin/node                                                                                           
+sudo ln -s -f  /usr/local/lib/nodejs/node-v16.14.2-linux-x64/bin/npm /usr/local/bin/npm                                                                                             
+sudo ln -s -f  /usr/local/lib/nodejs/node-v16.14.2-linux-x64/bin/npx /usr/local/bin/npx
 </code></pre>
 <h3 id="install-blogdown-and-hugo">Install blogdown and Hugo</h3>
 <h4 id="blogdown">blogdown</h4>
