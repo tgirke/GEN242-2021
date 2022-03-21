@@ -4,7 +4,7 @@
 # replace USERNAME and REPO_NAME
 # To run locally with 'hugo server' or deploy on Netlify, enable the following line and disable the one after it.
 # baseURL = "/"
-baseURL = "https://girke.bioinformatics.ucr.edu/GEN242/"
+baseURL = "https://girke.bioinformatics.ucr.edu/GEN242-2021/"
 title = "GEN242"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit", "\\.utf8"]
 enableRobotsTXT = true
