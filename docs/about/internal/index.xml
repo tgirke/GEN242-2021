@@ -155,7 +155,7 @@ npm audit fix
 &lt;ul&gt;
 &lt;li&gt;Open R in console or Rstudio&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;This repo contains a &lt;code&gt;.Rprofile&lt;/code&gt; file that will automatically serve the site
+&lt;p&gt;This repo contains an &lt;code&gt;.Rprofile&lt;/code&gt; file that will automatically serve the site
 for you R starting directory is this newly cloned repository. Otherwise,
 change working directory to the repository and run:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;blogdown::serve_site()

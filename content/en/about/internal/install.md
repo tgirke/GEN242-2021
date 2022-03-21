@@ -138,7 +138,7 @@ npm audit fix
 
 * Open R in console or Rstudio
 
-This repo contains a `.Rprofile` file that will automatically serve the site
+This repo contains an `.Rprofile` file that will automatically serve the site
 for you R starting directory is this newly cloned repository. Otherwise, 
 change working directory to the repository and run:
 
