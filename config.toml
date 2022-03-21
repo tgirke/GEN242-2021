@@ -63,7 +63,7 @@ id = "UA-00000000-0"
 
 [languages]
 [languages.en]
-title = "GEN242"
+title = "GEN242-2021"
 description = "Spring 2021"
 languageName ="English"
 time_format_default = "2006-01-02"
@@ -116,12 +116,12 @@ visHideMethod = "soft"
 
 # A link to latest version of the docs. Used in the "version-banner" partial to
 # point people to the main doc site.
-url_latest_version = "https://github.com/tgirke/GEN242/"
+url_latest_version = "https://github.com/tgirke/GEN242-2021/"
 
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
-github_repo = "https://github.com/tgirke/GEN242/"
+github_repo = "https://github.com/tgirke/GEN242-2021/"
 # An optional link to a related project repo. For example, the sibling repository where your product code lives.
-github_project_repo = "https://github.com/tgirke/GEN242"
+github_project_repo = "https://github.com/tgirke/GEN242-2021"
 # Since Github change default from "master" to "main", specify here.
 github_branch = "main"
 # Specify a value here if your content directory is not in your repo's root directory
@@ -185,8 +185,8 @@ footer_about_disable = true
 [params.ui.feedback]
 enable = false
 # The responses that the user sees after clicking "yes" (the page was helpful) or "no" (the page was not helpful).
-yes = 'Glad to hear it! Please <a href="https://github.com/tgirke/GEN242/issues/new">tell us how we can improve</a>.'
-no = 'Sorry to hear that. Please <a href="https://github.com/tgirke/GEN242/issues/new">tell us how we can improve</a>.'
+yes = 'Glad to hear it! Please <a href="https://github.com/tgirke/GEN242-2021/issues/new">tell us how we can improve</a>.'
+no = 'Sorry to hear that. Please <a href="https://github.com/tgirke/GEN242-2021/issues/new">tell us how we can improve</a>.'
 
 # Adds a reading time to the top of each doc.
 # If you want this feature, but occasionally need to remove the Reading time from a single page,
@@ -654,7 +654,7 @@ enable = true
     weight = 2
   [[menu.main]]
     name = "GitHub Repo"
-    url = "https://github.com/tgirke/GEN242"
+    url = "https://github.com/tgirke/GEN242-2021"
     parent = "Links"
     weight = 3
   [[menu.main]]
