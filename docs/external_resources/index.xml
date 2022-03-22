@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>GEN242 – Links</title>
+    <title>GEN242-2021 – Links</title>
     <link>/external_resources/</link>
-    <description>Recent content in Links on GEN242</description>
+    <description>Recent content in Links on GEN242-2021</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	  <atom:link href="/external_resources/index.xml" rel="self" type="application/rss+xml" />

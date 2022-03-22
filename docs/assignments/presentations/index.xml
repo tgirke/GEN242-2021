@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>GEN242 – Project and Paper Presentations</title>
+    <title>GEN242-2021 – Project and Paper Presentations</title>
     <link>/assignments/presentations/</link>
-    <description>Recent content in Project and Paper Presentations on GEN242</description>
+    <description>Recent content in Project and Paper Presentations on GEN242-2021</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	  <atom:link href="/assignments/presentations/index.xml" rel="self" type="application/rss+xml" />

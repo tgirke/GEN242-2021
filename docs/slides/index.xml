@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>GEN242 – Slides</title>
+    <title>GEN242-2021 – Slides</title>
     <link>/slides/</link>
-    <description>Recent content in Slides on GEN242</description>
+    <description>Recent content in Slides on GEN242-2021</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	  <atom:link href="/slides/index.xml" rel="self" type="application/rss+xml" />
