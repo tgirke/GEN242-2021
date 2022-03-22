@@ -23,7 +23,7 @@ type: docs
 
 * Go to your new repository that created from our template `https://github.com/<username>/<repository_name>`
 * Click on the **Code** button.
-* Copy the URL `https://github.com/<username>/<repository_name>.git`
+* Copy the URL `git@github.com:<username>/<repository_name>.git`
 * Open terminal 
 
 ```
