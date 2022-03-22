@@ -13,6 +13,7 @@ type: docs
 
 ## Quick start
 
+* Visit this template [page](https://www.dcassol.com/docsy_Rmarkdown/)
 * Click on the **Use this Template** button.
 * Choose a Repository Name
 * Click on the **Create repository from template** button.
@@ -21,7 +22,7 @@ type: docs
 
 ### Usage locally
 
-* Go to your new repository that created from our template `https://github.com/<username>/<repository_name>`
+* Go to your new repository on GitHub 
 * Click on the **Code** button.
 * Copy the URL `git@github.com:<username>/<repository_name>.git`
 * Open terminal 
