@@ -71,7 +71,7 @@ It uses the Docsy theme of the Hugo framework for building content driven websit
 &lt;li&gt;Copy the URL &lt;code&gt;https://github.com/&amp;lt;username&amp;gt;/&amp;lt;repository_name&amp;gt;.git&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Open terminal&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;git clone --recurse-submodules --depth 1 https://github.com/&amp;lt;username&amp;gt;/&amp;lt;repository_name&amp;gt;.git
+&lt;pre&gt;&lt;code&gt;git clone --recurse-submodules --depth 1 git@github.com:&amp;lt;username&amp;gt;/&amp;lt;repository_name&amp;gt;.git
 cd &amp;lt;repository_name&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;

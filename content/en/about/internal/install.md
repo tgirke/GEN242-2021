@@ -27,7 +27,7 @@ type: docs
 * Open terminal 
 
 ```
-git clone --recurse-submodules --depth 1 https://github.com/<username>/<repository_name>.git
+git clone --recurse-submodules --depth 1 git@github.com:<username>/<repository_name>.git
 cd <repository_name>
 ```
 
